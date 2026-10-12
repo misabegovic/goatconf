@@ -174,3 +174,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #22: site: addresses without .html
    diff: 26 files, +98/-77
    restricted-paths: true
+2026-10-12 merge — PR #23: records: Luma registration without approval, guest list hidden
+   diff: 3 files, +19/-1
+   restricted-paths: false
