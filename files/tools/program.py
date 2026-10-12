@@ -5,7 +5,7 @@ A session is one Markdown file with YAML frontmatter under program/. The two
 core days, Thursday 3 and Friday 4 June 2027, run on one shared
 timetable in every room at IPI Academy at once: four one-hour slots, each of
 the first three followed by an hour off. Thursday runs 10:00 to 17:00; Friday
-runs 09:30 to 16:30, so the midday hour off covers Dzuma prayer. DAY_PLAN
+runs 09:30 to 16:30 (the reason is in the comment on DAY_PLAN). DAY_PLAN
 holds each day's times. Saturday 5 June is
 for the community. Events added around the talks come from extensions/.
 
@@ -52,10 +52,10 @@ DAY_PLAN = {
     # (podne in Tuzla is at 12:44 on 4 June 2027, per the Vaktija).
     dt.date(2027, 6, 4): {
         "welcome": "09:15", "end": "16:30",
-        "note": "Four slots, starting half an hour earlier so the hour off at 12:30 covers Džuma prayer. Welcome at 09:15.",
+        "note": "Four slots, starting half an hour earlier than Thursday. Welcome at 09:15.",
         "slots": ("09:30", "11:30", "13:30", "15:30"),
         "breaks": {"09:30": "Coffee on Freedom Square, one hour",
-                   "11:30": "Džuma prayer and lunch, one hour. The Čaršijska mosque is on Freedom Square, under five minutes' walk.",
+                   "11:30": "Lunch in town, one hour",
                    "13:30": "Coffee on Freedom Square, one hour"},
     },
 }
@@ -280,7 +280,7 @@ def page() -> str:
     <div class="copy">
       <p>Thursday 3 and Friday 4 June 2027 are the core days, at IPI Academy, Kulina bana 2, Tuzla. Each day runs on one timetable for every room, so you can change rooms at every break.</p>
       <p>Every slot is one hour: a talk with time for questions, a panel, or a workshop. After each slot comes a full hour off, in the cafés on Freedom Square under five minutes away. That is when you talk to the person you just heard.</p>
-      <p>Thursday runs from 10:00 to 17:00. Friday runs from 09:30 to 16:30. On Friday the 12:30 break covers lunch and Džuma prayer. The Čaršijska mosque is on Freedom Square.</p>
+      <p>Thursday runs from 10:00 to 17:00. Friday runs from 09:30 to 16:30.</p>
       <p>GoatConf does not record the talks. You may bring a camera or a podcast and record, and podcasts are welcome in some of the rooms.</p>
       <p>The slots fill as proposals come in and are accepted. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>
     </div>

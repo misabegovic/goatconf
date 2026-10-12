@@ -56,7 +56,7 @@ FACTS = [
     "Place: IPI Academy, Kulina bana 2, 75000 Tuzla, Bosnia and Herzegovina, next to Freedom Square (Trg slobode).",
     "Price: tickets are free. Registration asks only for a name and an email, on Luma.",
     "Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot. Each session has its own free registration on Luma that saves a seat up to the room's size, with a waiting list when full; empty seats go to whoever is at the door when it starts.",
-    "Friday starts half an hour earlier, so the hour off at 12:30 covers Džuma prayer.",
+    "Friday starts half an hour earlier, at 09:30, and ends at 16:30.",
     "Saturday has no talks: it is for events people add, such as the Pannonian salt lakes, the goat hunt, walks and meetups.",
     "Talks: an open call; anyone may propose a session, first-time speakers welcome. The organiser reads every proposal.",
     "Money: no money passes through the organiser. Supporters pay a supplier directly for one named thing, such as a speaker's travel, and every payment is in the public budget.",

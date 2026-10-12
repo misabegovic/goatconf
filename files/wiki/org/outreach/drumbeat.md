@@ -130,7 +130,7 @@ Each later beat gets the same treatment: a LinkedIn text, a short text and an im
 - **Week 8, fund a speaker's travel.** Supporters pay a named thing straight to the supplier; their logo goes on the supporters page and on the speaker's profile (source: sources/conversations/2026-10-12--org--speakers-and-supporters-approved.md).
 - **When a speaker is accepted,** one post each, with their "I'm speaking" card (`speaker-<name>-square.png` and `-wide.png`), and a nudge for the speaker to share it.
 - **When a supporter joins,** a thank-you naming exactly what they fund, with their card (`supporter-<name>-square.png` and `-wide.png`).
-- **The program fills up.** The first full day; Friday starting at 09:30 so the hour off covers Džuma (source: sources/conversations/2026-10-12--org--friday-dzuma-schedule.md).
+- **The program fills up.** The first full day; Friday starting at 09:30 (source: sources/conversations/2026-10-12--org--friday-dzuma-schedule.md).
 - **Saturday, the community day.** The lakes, the goat hunt, walks, as hosts add them.
 - **Travel.** How to get to Tuzla, where to stay, where to eat without meat.
 - **The last call for talks**, when the slots are nearly full.

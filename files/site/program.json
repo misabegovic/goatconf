@@ -43,10 +43,10 @@
       ],
       "after_each_slot": {
         "09:30": "Coffee on Freedom Square, one hour",
-        "11:30": "Džuma prayer and lunch, one hour. The Čaršijska mosque is on Freedom Square, under five minutes' walk.",
+        "11:30": "Lunch in town, one hour",
         "13:30": "Coffee on Freedom Square, one hour"
       },
-      "note": "Four slots, starting half an hour earlier so the hour off at 12:30 covers Džuma prayer. Welcome at 09:15."
+      "note": "Four slots, starting half an hour earlier than Thursday. Welcome at 09:15."
     },
     {
       "date": "2027-06-05",
