@@ -208,7 +208,7 @@ def page() -> str:
 <title>Events people add: GoatConf 2027</title>
 <meta name="description" content="Workshops, meetups, hackathons, walks and more that the organiser has accepted as part of GoatConf 2027 in Tuzla, each run by its host.">
 <meta name="theme-color" content="#0b3d91">
-<link rel="canonical" href="https://goatconf.com/extensions.html">
+<link rel="canonical" href="https://goatconf.com/extensions">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="goatconf.css">

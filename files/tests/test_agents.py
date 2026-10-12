@@ -48,3 +48,10 @@ def test_sitemap_and_llms_list_every_public_page():
     assert agents.sitemap().count("<url>") == len(names)
     assert "https://goatconf.com/program.json" in agents.llms()
     assert "Sitemap: https://goatconf.com/sitemap.xml" in agents.robots()
+
+
+def test_public_addresses_have_no_html_extension():
+    assert agents.url("index.html") == "https://goatconf.com/"
+    assert agents.url("talk.html") == "https://goatconf.com/talk"
+    assert agents.url("program.json") == "https://goatconf.com/program.json"
+    assert ".html" not in agents.sitemap()

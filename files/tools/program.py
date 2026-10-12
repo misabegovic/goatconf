@@ -259,7 +259,7 @@ def page() -> str:
 <title>Program: GoatConf 2027, 3 to 5 June, Tuzla</title>
 <meta name="description" content="The GoatConf 2027 program: two core days, Thursday 3 and Friday 4 June, in every room of IPI Academy, Tuzla, and Saturday 5 June for the community.">
 <meta name="theme-color" content="#0b3d91">
-<link rel="canonical" href="https://goatconf.com/program.html">
+<link rel="canonical" href="https://goatconf.com/program">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="goatconf.css">

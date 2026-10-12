@@ -70,7 +70,10 @@ START, END = "<!-- event data -->", "<!-- /event data -->"
 
 
 def url(name: str) -> str:
-    return BASE if name == "index.html" else BASE + name
+    """The public address: pages without .html (GitHub Pages serves both), other files as they are."""
+    if name == "index.html":
+        return BASE
+    return BASE + (name[:-5] if name.endswith(".html") else name)
 
 
 def pages() -> list[Path]:
@@ -220,7 +223,7 @@ def calendar() -> str:
     lines += ["BEGIN:VEVENT", f"UID:{sat.isoformat()}@goatconf.com", f"DTSTAMP:{STAMP}",
               f"DTSTART;VALUE=DATE:{sat.strftime('%Y%m%d')}", f"DTEND;VALUE=DATE:{(sat + dt.timedelta(days=1)).strftime('%Y%m%d')}",
               "SUMMARY:GoatConf 2027: the community day", "LOCATION:Tuzla\\, Bosnia and Herzegovina",
-              f"DESCRIPTION:{ics_text('No talks. Events people add: the lakes, the goat hunt, walks and meetups. ' + url('program.html#' + sat.isoformat()))}",
+              f"DESCRIPTION:{ics_text('No talks. Events people add: the lakes, the goat hunt, walks and meetups. ' + url('program.html') + '#' + sat.isoformat())}",
               f"URL:{url('program.html')}", "END:VEVENT", "END:VCALENDAR"]
     return "".join(fold(line) + "\r\n" for line in lines)
 
