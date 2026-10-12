@@ -180,3 +180,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #24: program: tell people they will register for sessions later
    diff: 10 files, +25/-9
    restricted-paths: true
+2026-10-12 merge — PR #25: records: Luma approval back on
+   diff: 4 files, +19/-3
+   restricted-paths: false
