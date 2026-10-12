@@ -40,7 +40,7 @@ STAMP = "20261012T000000Z"  # fixed, so the calendar file only changes when the 
 # and wiki/org/ipi-academy.md.
 EVENT = {
     "name": "GoatConf 2027",
-    "summary": "A free conference for people who build software, in any language or stack: engineers, designers, product people and founders. In Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027.",
+    "summary": "A free conference for people who build and sell software, in any language or stack: engineers, designers, product people, marketers, salespeople and founders. In Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027.",
     "venue": "IPI Academy (IPI Akademija Tuzla)",
     "street": "Kulina bana 2",
     "postcode": "75000",

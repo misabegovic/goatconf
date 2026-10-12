@@ -1,6 +1,6 @@
 # GoatConf 2027
 
-> A free conference for people who build software, in any language or stack: engineers, designers, product people and founders. In Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027. One-hour sessions in every room of IPI Academy, long breaks in town, and a day for the community.
+> A free conference for people who build and sell software, in any language or stack: engineers, designers, product people, marketers, salespeople and founders. In Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027. One-hour sessions in every room of IPI Academy, long breaks in town, and a day for the community.
 
 - Dates: Thursday 3 and Friday 4 June 2027 are talk days; Saturday 5 June 2027 is the community day.
 - Place: IPI Academy, Kulina bana 2, 75000 Tuzla, Bosnia and Herzegovina, next to Freedom Square (Trg slobode).
@@ -18,7 +18,7 @@ Contact: info@muhamed.at, or the form at https://goatconf.com/contact.html
 
 ## Pages
 
-- [GoatConf 2027: a free conference in Tuzla](https://goatconf.com/): GoatConf is a free conference for people who build software, in any language or stack: engineers, designers, product people and founders. In Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027. One-hour sessions in every room of IPI Academy, long breaks in town, and everything else added by the people who come.
+- [GoatConf 2027: a free conference in Tuzla](https://goatconf.com/): GoatConf is a free conference for people who build and sell software, in any language or stack: engineers, designers, product people, marketers, salespeople and founders. In Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027. One-hour sessions in every room of IPI Academy, long breaks in town, and everything else added by the people who come.
 - [Program: GoatConf 2027, 3 to 5 June, Tuzla](https://goatconf.com/program.html): The GoatConf 2027 program: two core days, Thursday 3 and Friday 4 June, in every room of IPI Academy, Tuzla, and Saturday 5 June for the community.
 - [Register: GoatConf 2027](https://goatconf.com/register.html): Register for free for GoatConf 2027 in Tuzla: core days Thursday 3 and Friday 4 June at IPI Academy, community day Saturday 5 June.
 - [Give a talk: GoatConf 2027](https://goatconf.com/talk.html): Propose a talk, a panel or a workshop for GoatConf 2027 in Tuzla: one-hour slots on 3 and 4 June, every proposal read by the organiser, no strict deadline.
