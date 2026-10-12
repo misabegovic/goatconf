@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-12
 confidence: medium
 sources:
+  - sources/conversations/2026-10-12--org--computer-centre-2-not-step-free.md
   - sources/conversations/2026-10-12--org--computer-centre-1-lift.md
   - sources/conversations/2026-10-12--org--accessibility.md
   - sources/conversations/2026-06--org--ipi-visit-notes.md
@@ -127,7 +128,7 @@ And from the organiser's answers on 2026-10-07
   anything not on the ground or first floor is not wheelchair accessible, that guide dogs cannot come in,
   and that accessible toilets probably exist but need verifying (source: sources/conversations/2026-10-12--org--accessibility.md).
   Computer centre 1 is on the first floor and is reached by the lift (source: sources/conversations/2026-10-12--org--computer-centre-1-lift.md).
-  Which floor computer centre 2 is on is (unknown, needs source).
+  Computer centre 2 is not step-free (source: sources/conversations/2026-10-12--org--computer-centre-2-not-step-free.md).
 - **Saturday or a weekday** both work.
 
 ## Dates and rooms for 2027

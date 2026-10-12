@@ -132,3 +132,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #8: site: an accessibility page
    diff: 25 files, +152/-21
    restricted-paths: true
+2026-10-12 merge — PR #9: access: computer centre 2 is not step-free
+   diff: 4 files, +15/-4
+   restricted-paths: false
