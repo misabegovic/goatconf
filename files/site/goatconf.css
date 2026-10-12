@@ -471,3 +471,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .place__links a { display: inline-block; padding-block: 0.5rem; margin-left: 1rem; }
   .speaker-page__links a { display: inline-block; padding-block: 0.5rem; }
 }
+
+/* A session's own registration */
+.session__register { display: inline-block; margin-top: 0.6rem; padding: 0.5rem 0.85rem; border-radius: 0.45rem; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 0.95rem; text-decoration: none; }
+.session__register:hover, .session__register:focus-visible { background: #ffe25a; }
