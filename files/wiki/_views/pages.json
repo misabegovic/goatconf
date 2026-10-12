@@ -236,6 +236,7 @@
         "org/prds/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-12--org--accepted-events-and-hackathons.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--adr-answers.md",
@@ -247,7 +248,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/tooling/google-forms-response-destination.md"
       ],
-      "tokens": 1414
+      "tokens": 1716
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
@@ -644,7 +645,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 2003
+      "tokens": 2012
     },
     {
       "path": "org/outreach/ipi-proposal.md",

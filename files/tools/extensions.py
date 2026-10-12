@@ -43,12 +43,13 @@ KINDS = {
     "venue": "Another venue",
     "support": "Support",
     "hiring": "Hiring",
+    "hackathon": "Hackathon",
 }
 FIELDS = ("name", "kind", "host", "location", "start", "end", "cost", "registration", "paid_by", "contact", "accepts")
 # GoatConf runs 3 to 5 June 2027; the window leaves room for arrivals, trips
 # and the weeks around it. Outside it, a record must say why.
 WINDOW = (dt.date(2027, 5, 25), dt.date(2027, 6, 20))
-NOT_OURS = re.compile(r"goatconf\s+(presents|proudly|official)", re.I)
+NOT_OURS = re.compile(r"goatconf\s+(presents|proudly)", re.I)
 
 
 def records(paths=None):
@@ -116,8 +117,15 @@ def check_record(path: Path):
         problems.append("no description below the frontmatter")
     name = str(meta.get("name", ""))
     if NOT_OURS.search(name) or NOT_OURS.search(body) or name.lower().startswith("goatconf"):
-        problems.append('the listing reads as GoatConf\'s own; name it as "<name>, a GoatConf fringe event"')
+        problems.append('the name reads as if the organiser runs it; name it as "<name>, part of GoatConf 2027"')
+    if not problems and meta.get("accepted") is not True:
+        notes.append("not yet accepted by the organiser, so not listed: set accepted: yes once it is")
     return problems, notes, meta
+
+
+def listed(meta) -> bool:
+    """Only events the organiser accepted are part of GoatConf and shown to attendees."""
+    return meta.get("accepted") is True
 
 
 def cmd_check(args) -> int:
@@ -136,7 +144,8 @@ def cmd_check(args) -> int:
             for p in problems:
                 print(f"  needs a change: {p}")
         else:
-            print(f"  ok: {KINDS[meta['kind']].lower()}, hosted by {meta['host']}, accepts the charter and the code of conduct")
+            state = "accepted, listed" if listed(meta) else "waiting for the organiser's acceptance"
+            print(f"  ok: {KINDS[meta['kind']].lower()}, hosted by {meta['host']}, accepts the charter and the code of conduct; {state}")
         for n in notes:
             print(f"  note: {n}")
     print(f"extensions: {len(paths)} record(s), {failed} need a change")
@@ -162,7 +171,7 @@ def listing(meta, body):
     para = "".join(f"<p>{html.escape(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
     return f"""  <li class="listing">
     <h2>{e('name')}</h2>
-    <p class="listing__kind">{KINDS[meta['kind']]}, run independently by {e('host')}</p>
+    <p class="listing__kind">{KINDS[meta['kind']]}, part of GoatConf 2027, run by {e('host')}</p>
     <dl class="facts">
       <dt>When</dt><dd>{when(meta)}</dd>
       <dt>Where</dt><dd>{e('location')}</dd>
@@ -179,7 +188,7 @@ def page() -> str:
     good = []
     for path in records():
         problems, _, meta = check_record(path)
-        if not problems:
+        if not problems and listed(meta):
             _, body, _ = parse(path)
             good.append((as_datetime(meta["start"]), meta, body))
     good.sort(key=lambda g: (g[0], str(g[1]["name"])))
@@ -197,7 +206,7 @@ def page() -> str:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Events people add: GoatConf 2027</title>
-<meta name="description" content="Workshops, meetups, walks and more that people add around GoatConf 2027 in Tuzla, each run independently by its host.">
+<meta name="description" content="Workshops, meetups, hackathons, walks and more that the organiser has accepted as part of GoatConf 2027 in Tuzla, each run by its host.">
 <meta name="theme-color" content="#0b3d91">
 <link rel="canonical" href="https://goatconf.com/extensions.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -210,17 +219,17 @@ def page() -> str:
 <header class="page-head">
   <img class="page-head__photo" src="img/city-old-town-aerial-paving.jpg" width="1375" height="696" alt="The old town from above: tiled roofs and a street paved in a red and blue mosaic" decoding="async">
   <h1 class="sign">Added by the people who come</h1>
-  <p class="lede">Workshops, meetups and events around the talk days, each run independently by its host.</p>
+  <p class="lede">Workshops, meetups, hackathons and events around the talk days, accepted as part of GoatConf 2027 and run by their hosts.</p>
 </header>
 <main id="main" class="prose">
-<p>Each host runs their own event and pays for it. GoatConf lists it and sends people their way. Every event here has accepted the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>.</p>
+<p>Every event here is part of GoatConf 2027: the organiser accepted it, and it follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>. Each host runs their own event and pays for it directly. Not everything people propose is accepted, and events that are not accepted are not GoatConf's.</p>
 {main}
-<h2>Add yours</h2>
-<p>Fill in the short form. The organiser checks it before it goes up. <a href="add.html">Add yours</a></p>
+<h2>Propose yours</h2>
+<p>Propose it through the short form. The organiser decides whether it becomes part of GoatConf. <a href="add.html">Propose yours</a></p>
 </main>
 <footer class="footer">
   <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3 to 5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
-  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Give a talk</a> <a href="add.html">Add something</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="budget.html">Budget</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
+  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Give a talk</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="budget.html">Budget</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
 </footer>
 <script src="album.js" defer></script>
 </body>

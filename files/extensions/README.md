@@ -22,7 +22,7 @@ talks) and a volunteer turns your answers into the same file.
 | Field | What to write |
 |-------|---------------|
 | `name` | The name of your extension. Not "GoatConf presents"; it is yours. |
-| `kind` | One of `fringe-event`, `workshop`, `hub`, `activity`, `venue`, `support`, `hiring`. |
+| `kind` | One of `fringe-event`, `workshop`, `hub`, `activity`, `venue`, `support`, `hiring`, `hackathon`. |
 | `host` | You, your group or your company. |
 | `location` | Where it happens, with an address. |
 | `start`, `end` | `YYYY-MM-DD HH:MM`, or just `YYYY-MM-DD` for a whole day. |
@@ -32,12 +32,15 @@ talks) and a volunteer turns your answers into the same file.
 | `supplier` | For `support` only: the supplier the supporter pays directly. |
 | `contact` | A public contact you choose. It will be shown on the site. |
 | `accepts` | `yes`: you accept the charter and the code of conduct. |
+| `accepted` | Set to `yes` by the organiser only. Until then the record is not listed and is not part of GoatConf. |
 | `outside_week_reason` | Only if your dates fall outside the GoatConf week: why. |
 
 The rules every listing follows are on the charter page (`site/charter.html`):
-the core never depends on an extension, listings are checked against the
-charter and the code of conduct and never for taste, each says it is run
-independently, and each host carries its own costs and risks.
+the core never depends on an extension; only events the organiser accepts
+become part of GoatConf and are listed, judged against the charter, the
+code of conduct and how they fit the program; each is named as part of
+GoatConf 2027 and run by its host; and each host carries its own costs and
+risks.
 
 ## Checking and building
 
