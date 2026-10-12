@@ -138,3 +138,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #10: events: only accepted events are part of GoatConf; hackathons; Propose an event
    diff: 30 files, +125/-78
    restricted-paths: true
+2026-10-12 merge — PR #11: site: say who GoatConf is for, and that it is not tied to a stack
+   diff: 8 files, +25/-12
+   restricted-paths: true
