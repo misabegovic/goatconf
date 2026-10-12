@@ -54,7 +54,7 @@ EVENT = {
 FACTS = [
     "Dates: Thursday 3 and Friday 4 June 2027 are talk days; Saturday 5 June 2027 is the community day.",
     "Place: IPI Academy, Kulina bana 2, 75000 Tuzla, Bosnia and Herzegovina, next to Freedom Square (Trg slobode).",
-    "Price: tickets are free. Registration asks only for a name and an email, on Luma.",
+    "Price: free to attend, with a free ticket. Registration asks only for a name and an email, on Luma.",
     "Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot. Each session has its own free registration on Luma that saves a seat up to the room's size, with a waiting list when full; empty seats go to whoever is at the door when it starts.",
     "Friday starts half an hour earlier, so the hour off at 12:30 covers Džuma prayer.",
     "Saturday has no talks: it is for events people add, such as the Pannonian salt lakes, the goat hunt, walks and meetups.",
