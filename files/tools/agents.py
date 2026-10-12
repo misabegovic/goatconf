@@ -49,6 +49,7 @@ EVENT = {
     "lat": 44.5404,
     "lon": 18.6738,
     "organiser": ("Muhamed Isabegović", "https://muhamed.at"),
+    "email": "info@muhamed.at",
 }
 FACTS = [
     "Dates: Thursday 3 and Friday 4 June 2027 are talk days; Saturday 5 June 2027 is the community day.",
@@ -167,7 +168,7 @@ def json_ld() -> str:
         "isAccessibleForFree": True,
         "image": ["https://goatconf.com/share/og.png"],
         "location": place,
-        "organizer": {"@type": "Person", "name": EVENT["organiser"][0], "url": EVENT["organiser"][1]},
+        "organizer": {"@type": "Person", "name": EVENT["organiser"][0], "url": EVENT["organiser"][1], "email": EVENT["email"]},
         "offers": {"@type": "Offer", "price": 0, "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": LUMA},
     }
     subs = [{"@type": "Event", "name": s["title"], "startDate": f'{s["day"]}T{s["start"]}:00{OFFSET}',
@@ -225,7 +226,7 @@ def calendar() -> str:
 def llms() -> str:
     lines = [f"# {EVENT['name']}", "", f"> {EVENT['summary']} One-hour sessions in every room of IPI Academy, long breaks in town, and a day for the community.", ""]
     lines += [f"- {f}" for f in FACTS]
-    lines += ["", f"Register: {LUMA}", f"Propose a session: {url('talk.html')}", ""]
+    lines += ["", f"Register: {LUMA}", f"Propose a session: {url('talk.html')}", f"Contact: {EVENT['email']}, or the form at {url('contact.html')}", ""]
     people = sorted(speakers.speakers().items(), key=lambda kv: str(kv[1][0]["name"]).lower())
     if people:
         lines += ["## Speakers", ""]
