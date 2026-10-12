@@ -77,7 +77,7 @@ The story in week 5 follows the EuRuKo 2024 account of the goat (source: sources
 - **Image:** `post-register-square.png`, `post-register-wide.png`
 - **LinkedIn:**
 
-  > Registration for GoatConf 2027 is open. It is free to attend: you only need a free ticket.
+  > Registration for GoatConf 2027 is open, and tickets are free.
   >
   > Come for the talks on Thursday 3 and Friday 4 June at IPI Academy in Tuzla, and stay for Saturday at the salt lakes. Seats are first come, first served at each room's door, and every session is followed by an hour off on Freedom Square.
   >
@@ -85,7 +85,7 @@ The story in week 5 follows the EuRuKo 2024 account of the goat (source: sources
 
 - **Short:**
 
-  > GoatConf 2027 is free to attend: get your free ticket. Talks on 3 and 4 June at IPI Academy, Tuzla, then a day at the salt lakes. Register in a minute: goatconf.com/register.html
+  > Registration for GoatConf 2027 is open, and tickets are free. Talks on 3 and 4 June at IPI Academy, Tuzla, then a day at the salt lakes. Register in a minute: goatconf.com/register.html
 
 ### Week 4: Add something to GoatConf
 
