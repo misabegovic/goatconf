@@ -256,7 +256,7 @@
       "title": "Website: goatconf.com on GitHub Pages, with every intake through Google Forms",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "depends_on": [
         "org/prds/website-and-registration.md",
@@ -265,6 +265,7 @@
       ],
       "supersedes": "org/adrs/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--forms-on-goatconf-com.md",
         "sources/conversations/2026-10-12--org--approval-back-on.md",
         "sources/conversations/2026-10-12--org--luma-no-approval-hidden-list.md",
         "sources/conversations/2026-10-12--org--site-rework-approved.md",
@@ -282,7 +283,7 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 2403
+      "tokens": 2514
     },
     {
       "path": "org/adrs/open-program-every-room.md",
