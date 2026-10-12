@@ -156,3 +156,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #16: site: any programming language
    diff: 6 files, +21/-10
    restricted-paths: true
+2026-10-12 merge — PR #17: site: version the stylesheet and scripts
+   diff: 19 files, +98/-33
+   restricted-paths: true

@@ -74,6 +74,14 @@ opens registration over the page. The other three are Google Forms in the
 organiser's GoatConf folder in Drive; `tools/google-forms/README.md` lists
 what each asks and how it is set up.
 
+## Stylesheet and script versions
+
+Every page links `goatconf.css`, `album.js` and `ledger.js` with a short
+hash of the file (`goatconf.css?v=1a2b3c4d`), so browsers fetch the new
+file as soon as it changes instead of keeping an old copy. After editing
+one of them, run `python3 tools/meta.py apply` and rebuild the generated
+pages; the local CI fails until the stamps match.
+
 ## Publishing
 
 goatconf.com is served by GitHub Pages from the public repository
