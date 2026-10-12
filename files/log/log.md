@@ -147,3 +147,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #13: home: fit the stack-agnostic sticker on a phone
    diff: 2 files, +4/-1
    restricted-paths: false
+2026-10-12 merge — PR #14: site: for people who build and sell software
+   diff: 8 files, +26/-12
+   restricted-paths: true
