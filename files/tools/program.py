@@ -104,6 +104,8 @@ def check_record(path: Path):
         problems.append(f"room must be one of: {', '.join(ROOMS)}")
     if meta.get("accepted") is not True:
         problems.append("accepted must be yes")
+    if meta.get("luma") and not str(meta["luma"]).startswith(("https://luma.com/", "https://lu.ma/")):
+        problems.append("luma must be the session's Luma event link, starting https://luma.com/")
     if not body:
         problems.append("no description below the frontmatter")
     return problems, meta, body
@@ -162,12 +164,19 @@ def who(meta) -> str:
     return ", ".join(linked) if linked else esc(meta["speakers"])
 
 
+def register(meta) -> str:
+    """The session's own registration on Luma, once its event exists."""
+    if not meta.get("luma"):
+        return ""
+    return f'<a class="session__register" href="{esc(meta["luma"])}">Register for this session</a>'
+
+
 def cell(n: int, found, room: str) -> str:
     where = f'<span class="room-name">{ROOMS[room][0]}</span>'
     if found:
         meta, body = found
         first = body.split("\n\n")[0].strip()
-        return f"""<li class="sticker sticker--session" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg"><span class="num">{n}</span><span class="session__format">{FORMATS[meta['format']]}, {ROOMS[room][0]}</span><strong>{esc(meta['title'])}</strong><small>{who(meta)}</small><p>{esc(first)}</p></li>"""
+        return f"""<li class="sticker sticker--session" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg"><span class="num">{n}</span><span class="session__format">{FORMATS[meta['format']]}, {ROOMS[room][0]}</span><strong>{esc(meta['title'])}</strong><small>{who(meta)}</small><p>{esc(first)}</p>{register(meta)}</li>"""
     return f"""<li class="slot slot--session"><span class="num num--printed">{n}</span>{where}<strong>Open</strong><small>Waiting for a talk, a panel or a workshop.</small><span class="stamp">Yours?</span></li>"""
 
 
@@ -280,7 +289,7 @@ def page() -> str:
       <ul class="rooms-list">
 {room_list}
       </ul>
-      <p class="checked">Seats are first come, first served at each room's door.</p>
+      <p class="checked">Each session has its own free registration on Luma, which saves you a seat up to the room's size; when a session is full, Luma keeps a waiting list. Empty seats go to whoever is at the door when it starts.</p>
       <p><a class="go go--ink" href="goatconf-2027.ics" download>Add the three days to your calendar</a></p>
     </div>
   </div>

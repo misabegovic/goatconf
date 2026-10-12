@@ -293,6 +293,7 @@
         "org/prds/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-12--org--register-per-session.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-12--org--program-model-open-everything.md",
@@ -304,7 +305,7 @@
         "sources/conversations/2026-10-12--org--extension-listings-judged.md",
         "sources/conversations/2026-10-07--org--ipi-rooms-and-fallback-money.md"
       ],
-      "tokens": 806
+      "tokens": 996
     },
     {
       "path": "org/adrs/operations-and-the-day.md",

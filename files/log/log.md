@@ -114,3 +114,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #2: site: more room between links on a phone
    diff: 2 files, +21/-0
    restricted-paths: false
+2026-10-12 merge — PR #3: program: a registration for every session
+   diff: 14 files, +69/-12
+   restricted-paths: true

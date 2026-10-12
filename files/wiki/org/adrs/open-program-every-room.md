@@ -9,6 +9,7 @@ depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/extension-slots-and-the-record.md
 sources:
+  - sources/conversations/2026-10-12--org--register-per-session.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-12--org--program-model-open-everything.md
@@ -80,6 +81,7 @@ event", as the extension rules say
 ## Amendments
 
 - **2026-10-12.** IPI Academy has given GoatConf access to all seven rooms on both core days, so every room in this decision is available (`sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md`).
+- **2026-10-12, a registration for every session.** Each accepted session gets its own free Luma event, so people register for the sessions they want (source: sources/conversations/2026-10-12--org--register-per-session.md). A session registration saves a seat up to the room's size, with no approval; when a session is full, Luma keeps a waiting list, and empty seats go to whoever is at the door when it starts. The main GoatConf registration, with the organiser's approval, stays as it is. When the organiser accepts a session, the agent creates its Luma event in the organiser's browser and records its link as `luma:` in the session's record; the program, the speaker's page and the agent files then link to it. This replaces "first come, first served at each room's door" wherever the site said it.
 
 ## Related
 
