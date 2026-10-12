@@ -577,6 +577,7 @@
       "updated": "2026-10-12",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-12--org--computer-centre-2-not-step-free.md",
         "sources/conversations/2026-10-12--org--computer-centre-1-lift.md",
         "sources/conversations/2026-10-12--org--accessibility.md",
         "sources/conversations/2026-06--org--ipi-visit-notes.md",
@@ -592,7 +593,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/tooling/sessionize-community-license.md"
       ],
-      "tokens": 2248
+      "tokens": 2267
     },
     {
       "path": "org/organiser.md",
