@@ -117,14 +117,14 @@ def event_list() -> list[dict]:
     out = []
     for path in extensions.records():
         problems, _, meta = extensions.check_record(path)
-        if problems:
+        if problems or not extensions.listed(meta):
             continue
         _, body, _ = extensions.parse(path)
         start, end = extensions.as_datetime(meta["start"]), extensions.as_datetime(meta["end"])
         out.append({"name": meta["name"], "kind": meta["kind"], "host": meta["host"], "where": meta["location"],
                     "start": start.strftime("%Y-%m-%dT%H:%M:00") + OFFSET, "end": end.strftime("%Y-%m-%dT%H:%M:00") + OFFSET,
                     "cost": meta["cost"], "registration": meta["registration"], "about": body.split("\n\n")[0].strip(),
-                    "note": "Run independently by its host, not by GoatConf."})
+                    "note": "Part of GoatConf 2027, accepted by the organiser and run by its host."})
     return sorted(out, key=lambda e: e["start"])
 
 

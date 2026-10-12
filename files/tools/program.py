@@ -202,7 +202,7 @@ def day_block(day, label, table, start_n) -> tuple[str, int]:
         if t in plan["breaks"]:
             rows.append(f'<li class="breakrow"><span class="breakrow__time">{int(t[:2]) + 1:02d}{t[2:]}</span>{plan["breaks"][t]}</li>')
     rows.insert(0, f'<li class="breakrow breakrow--welcome"><span class="breakrow__time">{plan["welcome"]}</span>Welcome, in the main hall</li>')
-    rows.append(f'<li class="breakrow"><span class="breakrow__time">{plan["end"]}</span>The day ends. The evening is yours, or someone else\'s fringe event.</li>')
+    rows.append(f'<li class="breakrow"><span class="breakrow__time">{plan["end"]}</span>The day ends. The evening is yours, or one of the events people add.</li>')
     return f"""<section class="album-page wrap day" id="{day.isoformat()}" aria-labelledby="h-{day.isoformat()}">
   <h2 class="band" id="h-{day.isoformat()}">{label}<span class="band__sub">Core day, {plan['slots'][0]} to {plan['end']}</span></h2>
   <ol class="timetable">
@@ -215,7 +215,7 @@ def extension_days():
     by_day = {}
     for path in extensions.records():
         problems, _, meta = extensions.check_record(path)
-        if problems:
+        if problems or not extensions.listed(meta):
             continue
         _, body, _ = extensions.parse(path)
         start = extensions.as_datetime(meta["start"])
@@ -224,7 +224,7 @@ def extension_days():
 
 
 def ext_item(meta) -> str:
-    return f"""<li class="sticker sticker--fact sticker--ext" data-peel style="--tilt:-1deg"><strong>{esc(meta['name'])}</strong><small>{extensions.KINDS[meta['kind']]}, run independently by {esc(meta['host'])}. {extensions.when(meta)}, {esc(meta['location'])}.</small></li>"""
+    return f"""<li class="sticker sticker--fact sticker--ext" data-peel style="--tilt:-1deg"><strong>{esc(meta['name'])}</strong><small>{extensions.KINDS[meta['kind']]}, part of GoatConf 2027, run by {esc(meta['host'])}. {extensions.when(meta)}, {esc(meta['location'])}.</small></li>"""
 
 
 def page() -> str:
@@ -247,7 +247,7 @@ def page() -> str:
         around.extend(ext_item(m) for _, m, _ in sorted(ext[day], key=lambda e: e[0]))
     for day in CORE_DAYS:
         around.extend(ext_item(m) for _, m, _ in sorted(ext.get(day, []), key=lambda e: e[0]))
-    around_html = ('<ul class="slots ext-list">\n' + "\n".join(around) + "\n</ul>") if around else '<p class="ledger-empty">No evening events or workshops yet. Want to run a workshop the evening before, or a dinner after the talks? <a href="add.html">Add yours</a>.</p>'
+    around_html = ('<ul class="slots ext-list">\n' + "\n".join(around) + "\n</ul>") if around else '<p class="ledger-empty">No evening events or workshops yet. Want to run a workshop the evening before, or a dinner after the talks? <a href="add.html">Propose yours</a>.</p>'
     sprite = extensions.SHELL.read_text(encoding="utf-8")
     sprite = sprite[sprite.index('<svg width="0"'):sprite.index("</svg>", sprite.index('<svg width="0"')) + 6]
     room_list = "\n".join(f"    <li><strong>{name}</strong>, {seats}</li>" for name, seats in ROOMS.values())
@@ -305,7 +305,7 @@ def page() -> str:
 {sat_items}
 {sat_open}
   </ul>
-  <p class="copy"><a class="go go--ink" href="add.html">Add something to Saturday</a></p>
+  <p class="copy"><a class="go go--ink" href="add.html">Propose something for Saturday</a></p>
 </section>
 <section class="album-page wrap" aria-labelledby="h-around">
   <h2 class="band" id="h-around">Around the talks</h2>
@@ -314,7 +314,7 @@ def page() -> str:
 </main>
 <footer class="footer">
   <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3 to 5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
-  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Give a talk</a> <a href="add.html">Add something</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="budget.html">Budget</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
+  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Give a talk</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="budget.html">Budget</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
 </footer>
 <script src="album.js" defer></script>
 </body>

@@ -283,7 +283,7 @@ def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: st
 
 
 FOOTER_LINKS = ('<a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> '
-                '<a href="talk.html">Give a talk</a> <a href="add.html">Add something</a> <a href="register.html">Register</a> '
+                '<a href="talk.html">Give a talk</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> '
                 '<a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="budget.html">Budget</a> '
                 '<a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a>')
 
@@ -334,7 +334,7 @@ def supporters_page() -> str:
 </section>
 <section class="album-page wrap" aria-labelledby="h-become">
   <h2 class="band" id="h-become">Fund a speaker's travel</h2>
-  <p class="copy copy--wide">Pick a speaker, or fund travel grants: tickets or rooms for speakers who ask for help. You pay the airline or hotel directly. Asking never affects whether a session is picked. Your logo shows on this page and on the profile of every speaker whose travel you covered. Tell us through the <a href="add.html">add-something form</a>. Choose Support.</p>
+  <p class="copy copy--wide">Pick a speaker, or fund travel grants: tickets or rooms for speakers who ask for help. You pay the airline or hotel directly. Asking never affects whether a session is picked. Your logo shows on this page and on the profile of every speaker whose travel you covered. Tell us through the <a href="add.html">proposal form</a>. Choose Support.</p>
 </section>"""
     return shell("supporters", "Supporters: GoatConf 2027, 3 to 5 June, Tuzla",
                  "The companies and people who make GoatConf 2027 possible, each thanked for exactly what they paid for, starting with speakers' travel.",

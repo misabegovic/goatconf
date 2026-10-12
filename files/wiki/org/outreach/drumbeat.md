@@ -87,7 +87,7 @@ The story in week 5 follows the EuRuKo 2024 account of the goat (source: sources
 
   > Registration for GoatConf 2027 is open, and tickets are free. Talks on 3 and 4 June at IPI Academy, Tuzla, then a day at the salt lakes. Register in a minute: goatconf.com/register.html
 
-### Week 4: Add something to GoatConf
+### Week 4: Propose an event for GoatConf
 
 - **State:** drafted
 - **Image:** `post-add-something-square.png`, `post-add-something-wide.png`
@@ -95,13 +95,13 @@ The story in week 5 follows the EuRuKo 2024 account of the goat (source: sources
 
   > GoatConf brings a small core: the rooms, the talks, the breaks. Everything else is added by the people who come.
   >
-  > Run a workshop the evening before, a meetup, a dinner, a city walk, a hike, a corner for your community, or the goat hunt on Saturday. You run it and you cover its costs; GoatConf lists it and sends people your way. Every listing says plainly that it is run independently.
+  > Propose a workshop the evening before, a meetup, a hackathon, a dinner, a city walk, a hike, or the goat hunt on Saturday. You run it and you cover its costs. If the organiser accepts it, it becomes part of GoatConf 2027 and is shared with everyone who comes.
   >
-  > Add yours: goatconf.com/add.html
+  > Propose yours: goatconf.com/add.html
 
 - **Short:**
 
-  > Run something around GoatConf 2027 in Tuzla: a workshop, a meetup, a dinner, a hike, the goat hunt. You run it, GoatConf lists it and sends people your way. goatconf.com/add.html
+  > Propose an event for GoatConf 2027 in Tuzla: a workshop, a meetup, a hackathon, a hike, the goat hunt. You run it; once accepted, it is part of GoatConf. goatconf.com/add.html
 
 ### Week 5: Why a goat
 

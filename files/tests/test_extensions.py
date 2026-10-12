@@ -18,6 +18,7 @@ registration: https://example.org/rust
 paid_by: The host
 contact: https://example.org/contact
 accepts: yes
+accepted: yes
 ---
 
 A morning of pairing on small Rust programs, for beginners.
@@ -65,7 +66,7 @@ def test_good_record_passes(ext, capsys):
     (("host: Tuzla Rustaceans\n", ""), "missing field: host"),
     (("end: 2027-06-11 13:00", "end: 2027-06-11 09:00"), "end comes before start"),
     (("2027-06-11 10:00", "2027-09-01 10:00"), "outside the GoatConf week"),
-    (("name: Rust by the lake", "name: GoatConf presents Rust"), "reads as GoatConf's own"),
+    (("name: Rust by the lake", "name: GoatConf presents Rust"), "reads as if the organiser runs it"),
     (("A morning of pairing on small Rust programs, for beginners.", ""), "no description"),
 ])
 def test_bad_records_fail(ext, capsys, change, message):
@@ -110,3 +111,15 @@ def test_build_lists_good_records_and_check_detects_staleness(ext):
     assert "Rust by the lake" in page and "Broken" not in page
     assert "11 June 2027, 10:00 to 13:00" in page
     assert mod.main(["build", "--check"]) == 0
+
+
+def test_only_accepted_events_are_listed(ext):
+    mod, root = ext
+    write(root, "rust.md", GOOD.replace("accepted: yes\n", ""))
+    write(root, "hack.md", GOOD.replace("Rust by the lake", "Lake hackathon").replace("kind: workshop", "kind: hackathon"))
+    assert mod.main(["build"]) == 0
+    page = (root / "site" / "extensions.html").read_text(encoding="utf-8")
+    assert "Lake hackathon" in page and "Rust by the lake" not in page
+    assert "part of GoatConf 2027, run by Tuzla Rustaceans" in page
+    problems, notes, _ = mod.check_record(root / "extensions" / "rust.md")
+    assert not problems and any("not yet accepted" in n for n in notes)
