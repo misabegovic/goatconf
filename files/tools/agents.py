@@ -55,7 +55,7 @@ FACTS = [
     "Dates: Thursday 3 and Friday 4 June 2027 are talk days; Saturday 5 June 2027 is the community day.",
     "Place: IPI Academy, Kulina bana 2, 75000 Tuzla, Bosnia and Herzegovina, next to Freedom Square (Trg slobode).",
     "Price: tickets are free. Registration asks only for a name and an email, on Luma.",
-    "Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot. Each session has its own free registration on Luma that saves a seat up to the room's size, with a waiting list when full; empty seats go to whoever is at the door when it starts.",
+    "Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot. Closer to June, each session gets a sign-up in the GoatConf app that saves a seat up to the room's size and builds a personal agenda; empty seats go to whoever is at the door when it starts.",
     "Friday starts half an hour earlier, at 09:30, and ends at 16:30.",
     "Saturday has no talks: it is for events people add, such as the Pannonian salt lakes, the goat hunt, walks and meetups.",
     "Talks: an open call; anyone may propose a session, first-time speakers welcome. The organiser reads every proposal.",
@@ -109,7 +109,7 @@ def session_list() -> list[dict]:
         out.append({"day": day.isoformat(), "start": start, "end": plus_hour(start), "room": program.ROOMS[room][0],
                     "format": program.FORMATS[meta["format"]], "title": meta["title"],
                     "about": body.split("\n\n")[0].strip(), "speakers": people,
-                    **({"register": meta["luma"]} if meta.get("luma") else {})})
+                    **({"signup": meta["signup"]} if meta.get("signup") else {})})
     return out
 
 
@@ -174,7 +174,7 @@ def json_ld() -> str:
     }
     subs = [{"@type": "Event", "name": s["title"], "startDate": f'{s["day"]}T{s["start"]}:00{OFFSET}',
              "endDate": f'{s["day"]}T{s["end"]}:00{OFFSET}', "location": {"@type": "Place", "name": f'{s["room"]}, {EVENT["venue"]}'},
-             **({"offers": {"@type": "Offer", "price": 0, "priceCurrency": "EUR", "url": s["register"]}} if "register" in s else {}),
+             **({"offers": {"@type": "Offer", "price": 0, "priceCurrency": "EUR", "url": s["signup"]}} if "signup" in s else {}),
              **({"performer": [{"@type": "Person", "name": p["name"], **({"url": p["page"]} if "page" in p else {})} for p in s["speakers"]]}
                 if s["speakers"] else {})} for s in session_list()]
     if subs:

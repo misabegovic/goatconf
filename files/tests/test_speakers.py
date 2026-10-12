@@ -97,16 +97,16 @@ def test_unknown_supporter_and_missing_logo_fail(tmp_path, monkeypatch):
 def test_session_registration_links_everywhere(tmp_path, monkeypatch):
     program, speakers = setup(tmp_path, monkeypatch)
     rec = tmp_path / "program" / "s.md"
-    rec.write_text(rec.read_text().replace("accepted: yes", "accepted: yes\nluma: https://luma.com/abc123"), encoding="utf-8")
-    assert '<a class="session__register" href="https://luma.com/abc123">Register for this session</a>' in program.page()
+    rec.write_text(rec.read_text().replace("accepted: yes", "accepted: yes\nsignup: https://app.goatconf.com/s/abc123"), encoding="utf-8")
+    assert '<a class="session__register" href="https://app.goatconf.com/s/abc123">Save a seat</a>' in program.page()
     detail = speakers.sessions_by_speaker(detail=True)["ana-example"]
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], detail, speakers.supporters())
-    assert "https://luma.com/abc123" in page
+    assert "https://app.goatconf.com/s/abc123" in page
 
 
-def test_session_registration_link_must_be_luma(tmp_path, monkeypatch):
+def test_session_signup_link_must_be_https(tmp_path, monkeypatch):
     program, _ = setup(tmp_path, monkeypatch)
     rec = tmp_path / "program" / "s.md"
-    rec.write_text(rec.read_text().replace("accepted: yes", "accepted: yes\nluma: https://example.com/x"), encoding="utf-8")
+    rec.write_text(rec.read_text().replace("accepted: yes", "accepted: yes\nsignup: http://example.com/x"), encoding="utf-8")
     problems, _, _ = program.check_record(rec)
-    assert any("luma must be" in p for p in problems)
+    assert any("signup must be" in p for p in problems)
