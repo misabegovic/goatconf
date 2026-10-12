@@ -478,3 +478,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 
 /* A fact sticker whose words are longer than the sticker is wide */
 .sticker--fact strong.sticker__long { font-size: clamp(1.6rem, 1rem + 1.8vw, 2.5rem); }
+
+/* The cover's second line: the feeling, a step quieter than the first */
+.cover-lede strong { color: var(--yellow); }
+.cover-lede--second { margin-top: 0.9rem; font-size: 1.2rem; line-height: 1.3; opacity: 0.92; }
