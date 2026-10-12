@@ -168,3 +168,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #20: home: on a phone, the seal is centred and bigger
    diff: 17 files, +25/-16
    restricted-paths: false
+2026-10-12 merge — PR #21: home: a bolder opening
+   diff: 20 files, +51/-23
+   restricted-paths: true
