@@ -150,3 +150,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #14: site: for people who build and sell software
    diff: 8 files, +26/-12
    restricted-paths: true
+2026-10-12 merge — PR #15: site: the audience list without marketers and salespeople
+   diff: 8 files, +25/-11
+   restricted-paths: true
