@@ -111,3 +111,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #1: site: info@muhamed.at as the contact email
    diff: 8 files, +23/-6
    restricted-paths: true
+2026-10-12 merge — PR #2: site: more room between links on a phone
+   diff: 2 files, +21/-0
+   restricted-paths: false
