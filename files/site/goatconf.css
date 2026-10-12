@@ -371,7 +371,7 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
   .page-head__photo { grid-row: auto; }
 }
 @media (max-width: 47.99rem) {
-  .cover-seal { width: 7.5rem; margin-bottom: 1rem; }
+  .cover-seal { width: min(15rem, 72%); margin: 0.4rem auto 1.4rem; transform: rotate(-4deg); }
   .topbar nav a.topbar__cta { padding: 0.35rem 0.6rem; }
 }
 .slot--speaker { min-height: 13rem; height: 100%; }
