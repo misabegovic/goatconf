@@ -108,3 +108,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #34: site: goatconf.com on GitHub Pages, published by one Actions workflow
    diff: 76 files, +449/-199
    restricted-paths: true
+2026-10-12 merge — PR #1: site: info@muhamed.at as the contact email
+   diff: 8 files, +23/-6
+   restricted-paths: true
