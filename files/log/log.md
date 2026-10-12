@@ -162,3 +162,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #18: program: registration on Luma; session sign-ups later in the Rails World app
    diff: 15 files, +74/-29
    restricted-paths: true
+2026-10-12 merge — PR #19: program: first come, first served, with Luma only
+   diff: 12 files, +33/-14
+   restricted-paths: true
