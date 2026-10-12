@@ -289,7 +289,7 @@ def page() -> str:
       <ul class="rooms-list">
 {room_list}
       </ul>
-      <p class="checked">Closer to June, each session gets its own sign-up in the GoatConf app, which saves you a seat up to the room's size and lets you build your own agenda. We will send everyone with a ticket the link. Empty seats go to whoever is at the door when a session starts.</p>
+      <p class="checked">Seats are first come, first served at each room's door.</p>
       <p><a class="go go--ink" href="goatconf-2027.ics" download>Add the three days to your calendar</a></p>
     </div>
   </div>
