@@ -255,7 +255,7 @@ def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: st
 <title>{title}</title>
 <meta name="description" content="{description}">
 <meta name="theme-color" content="#0b3d91">
-<link rel="canonical" href="https://goatconf.com/{slug}.html">
+<link rel="canonical" href="https://goatconf.com/{slug}">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="goatconf.css">

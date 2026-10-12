@@ -29,8 +29,8 @@ SUMMARY:GoatConf 2027: Thursday 3 June
 LOCATION:IPI Academy (IPI Akademija Tuzla)\, Kulina bana 2\, 75000 Tuzla\, 
  Bosnia and Herzegovina
 DESCRIPTION:Four one-hour slots in every room\, an hour off after each. Wel
- come at 09:45. The program: https://goatconf.com/program.html
-URL:https://goatconf.com/program.html
+ come at 09:45. The program: https://goatconf.com/program
+URL:https://goatconf.com/program
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-06-04@goatconf.com
@@ -41,8 +41,8 @@ SUMMARY:GoatConf 2027: Friday 4 June
 LOCATION:IPI Academy (IPI Akademija Tuzla)\, Kulina bana 2\, 75000 Tuzla\, 
  Bosnia and Herzegovina
 DESCRIPTION:Four slots\, starting half an hour earlier than Thursday. Welco
- me at 09:15. The program: https://goatconf.com/program.html
-URL:https://goatconf.com/program.html
+ me at 09:15. The program: https://goatconf.com/program
+URL:https://goatconf.com/program
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-06-05@goatconf.com
@@ -52,7 +52,7 @@ DTEND;VALUE=DATE:20270606
 SUMMARY:GoatConf 2027: the community day
 LOCATION:Tuzla\, Bosnia and Herzegovina
 DESCRIPTION:No talks. Events people add: the lakes\, the goat hunt\, walks 
- and meetups. https://goatconf.com/program.html#2027-06-05
-URL:https://goatconf.com/program.html
+ and meetups. https://goatconf.com/program#2027-06-05
+URL:https://goatconf.com/program
 END:VEVENT
 END:VCALENDAR
