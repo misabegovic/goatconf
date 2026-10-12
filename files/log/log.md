@@ -141,3 +141,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #11: site: say who GoatConf is for, and that it is not tied to a stack
    diff: 8 files, +25/-12
    restricted-paths: true
+2026-10-12 merge — PR #12: home: sticker 5 says tech stack agnostic
+   diff: 2 files, +12/-1
+   restricted-paths: false
