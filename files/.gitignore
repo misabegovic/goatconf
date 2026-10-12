@@ -1,0 +1,33 @@
+# brain-shell scaffold
+.env
+.env.*
+!.env.example
+*.swp
+*~
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.claude/worktrees/
+.claude/scheduled_tasks.lock
+wiki/_views/home-staleness.json
+# Inherited from claude-brain
+.mempalace/
+mempalace.db
+mempalace.yaml
+entities.json
+*.chroma/
+*.pyo
+.venv/
+.idea/
+.vscode/
+.tabula/
+.pytest_cache/
+# impeccable (installed 2026-10-07): the engine binary is platform-specific and
+# fetched, checksum-verified, by .claude/skills/impeccable/scripts/impeccable on first run.
+.claude/skills/impeccable/scripts/bin/
+.claude/settings.local.json
+# impeccable working files: screenshots and build state stay local
+.impeccable/review/
+.impeccable/build/
+.impeccable/config.local.json

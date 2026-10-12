@@ -1,0 +1,6 @@
+# Everyone, people and agents, may read every page.
+# A short guide for AI agents: https://goatconf.com/llms.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://goatconf.com/sitemap.xml

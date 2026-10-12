@@ -1,0 +1,26 @@
+# goatconf's tool config, read by tools/brain.py (and by tabula, once installed).
+# Inherited in shape from claude-brain's tabula.config.yml on 2026-10-07; the
+# estate-specific keys (chat, schedule, closed workspaces, evaluate) were not carried.
+#
+# Scope tiers: repositories this brain tracks. Add one with
+#   python3 tools/brain.py scope add <repo> --tier <active|reference|frozen> --desc "..."
+active_repos: []
+reference_repos: []
+frozen_repos: []
+archived_repos: []
+search:
+  factors:
+    - {pattern: "^org/", factor: 1.5}
+    - {pattern: "^patterns/", factor: 1.4}
+    - {pattern: "^brain/adrs/", factor: 1.4}
+    - {pattern: "^brain/prds/", factor: 1.3}
+    - {pattern: "^[^/]+/permanent/", factor: 1.4}
+    - {pattern: "^[^/]+/state\\.md$", factor: 1.3}
+    - {pattern: "^[^/]+/epics/", factor: 1.3}
+    - {pattern: "^[^/]+/(adrs|prds)/", factor: 1.2}
+    - {pattern: "^[^/]+/ai-suggestions/", factor: 0.75}
+    - {pattern: "^_archive/", factor: 0.3}
+checks:
+  home_page: wiki/index.md
+  readme: README.md
+  readme_triggers: [AGENTS.md, tools/brain.py, .claude/settings.json, "tools/templates/**", ".claude/skills/**"]

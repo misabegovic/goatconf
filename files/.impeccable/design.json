@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T12:00:00Z",
+  "title": "Design System: GoatConf",
+  "extensions": {
+    "colorMeta": {
+      "album": {
+        "role": "primary",
+        "displayName": "Album Blue",
+        "canonical": "#0b3d91",
+        "tonalRamp": [
+          "#000037",
+          "#001d5c",
+          "#06388c",
+          "#2859b0",
+          "#477bd4",
+          "#679dfa",
+          "#a4c5fd",
+          "#e6effe"
+        ]
+      },
+      "album-deep": {
+        "role": "primary",
+        "displayName": "Cover Blue",
+        "canonical": "#072a66",
+        "tonalRamp": [
+          "#000039",
+          "#001e59",
+          "#193d7a",
+          "#375c9d",
+          "#557dc0",
+          "#759fe5",
+          "#a6c5fa",
+          "#e6efff"
+        ]
+      },
+      "album-night": {
+        "role": "primary",
+        "displayName": "Night Blue",
+        "canonical": "#051d47",
+        "tonalRamp": [
+          "#00052e",
+          "#09224c",
+          "#243f6c",
+          "#415e8d",
+          "#607eb0",
+          "#809fd3",
+          "#a5c5fb",
+          "#e5efff"
+        ]
+      },
+      "album-soft": {
+        "role": "neutral",
+        "displayName": "Pale Album",
+        "canonical": "#c9d7f5",
+        "tonalRamp": [
+          "#040a1e",
+          "#1a233a",
+          "#343f57",
+          "#525d77",
+          "#717d98",
+          "#919ebb",
+          "#b6c4e2",
+          "#e7efff"
+        ]
+      },
+      "page": {
+        "role": "neutral",
+        "displayName": "Page White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ]
+      },
+      "page-print": {
+        "role": "neutral",
+        "displayName": "Page Print",
+        "canonical": "#edf2fb",
+        "tonalRamp": [
+          "#080b11",
+          "#21242b",
+          "#3c4047",
+          "#5a5e65",
+          "#797d85",
+          "#9a9fa7",
+          "#bfc4cd",
+          "#eaeff8"
+        ]
+      },
+      "slot-line": {
+        "role": "neutral",
+        "displayName": "Slot Line",
+        "canonical": "rgb(11 61 145 / 0.42)",
+        "tonalRamp": [
+          "#000037",
+          "#001d5c",
+          "#06388c",
+          "#2859b0",
+          "#477bd4",
+          "#679dfa",
+          "#a4c5fd",
+          "#e6effe"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Album Ink",
+        "canonical": "#12204a",
+        "tonalRamp": [
+          "#02052c",
+          "#12204a",
+          "#2c3d6a",
+          "#495c8b",
+          "#677cae",
+          "#889dd1",
+          "#adc3f9",
+          "#e7eefe"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#46557a",
+        "tonalRamp": [
+          "#020725",
+          "#162243",
+          "#303e62",
+          "#4d5d82",
+          "#6c7ca4",
+          "#8d9ec7",
+          "#b1c4ef",
+          "#e8eefe"
+        ]
+      },
+      "yellow": {
+        "role": "secondary",
+        "displayName": "Signal Yellow",
+        "canonical": "#ffd400",
+        "tonalRamp": [
+          "#120a00",
+          "#2d2300",
+          "#4d3e00",
+          "#6f5c06",
+          "#947b0a",
+          "#b99c27",
+          "#e7c11e",
+          "#feefb9"
+        ]
+      },
+      "red": {
+        "role": "tertiary",
+        "displayName": "Stamp Red",
+        "canonical": "#e30613",
+        "tonalRamp": [
+          "#220000",
+          "#4a0404",
+          "#7d0003",
+          "#b00e11",
+          "#e81519",
+          "#fe6558",
+          "#ffaba0",
+          "#fee9e6"
+        ]
+      },
+      "veg-tint": {
+        "role": "neutral",
+        "displayName": "Vegan Tint",
+        "canonical": "#d9f2df",
+        "tonalRamp": [
+          "#010f05",
+          "#16291b",
+          "#314637",
+          "#4e6454",
+          "#6d8473",
+          "#8ea594",
+          "#b3cbb9",
+          "#ddf6e3"
+        ]
+      },
+      "veg-ink": {
+        "role": "neutral",
+        "displayName": "Vegan Ink",
+        "canonical": "#0f4d24",
+        "tonalRamp": [
+          "#001101",
+          "#002d0e",
+          "#0f4d24",
+          "#326c41",
+          "#538d60",
+          "#74af80",
+          "#99d5a5",
+          "#c7ffd2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Cover Title",
+        "purpose": "The cover title, once per site."
+      },
+      "headline": {
+        "displayName": "Band",
+        "purpose": "Album-page bands, the shiny page title, inner-page signs."
+      },
+      "fact": {
+        "displayName": "Fact",
+        "purpose": "The yellow figure on a fact sticker."
+      },
+      "title": {
+        "displayName": "Page Title",
+        "purpose": "The spread's page title and prose-page headings."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Cover and inner-page ledes, sentence case."
+      },
+      "label": {
+        "displayName": "Lettered Label",
+        "purpose": "Sticker captions, slot titles, numbers, stamps, prices."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Top-bar links."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All running text, 62ch to 74ch."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Slot and fact explanations."
+      },
+      "credit": {
+        "displayName": "Credit",
+        "purpose": "Photo credits and last-checked dates."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lift",
+        "value": "0 0.7rem 1.2rem -0.6rem rgb(0 0 0 / 0.55), 0 0 0 1px rgb(0 0 0 / 0.08)",
+        "purpose": "Every stuck sticker at rest."
+      },
+      {
+        "name": "lift-peel",
+        "value": "0 1.6rem 2.2rem -1rem rgb(0 0 0 / 0.6), 0 0 0 1px rgb(0 0 0 / 0.08)",
+        "purpose": "A sticker held off the page before it settles."
+      },
+      {
+        "name": "page-drop",
+        "value": "0 2rem 3rem -2rem rgb(0 0 0 / 0.55)",
+        "purpose": "Album pages and the prose page on the blue ground."
+      },
+      {
+        "name": "spread-drop",
+        "value": "0 2.5rem 4rem -2rem rgb(0 0 0 / 0.6)",
+        "purpose": "The opening spread."
+      },
+      {
+        "name": "spine-cover",
+        "value": "inset -1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.55)",
+        "purpose": "The spread's fold, cover side."
+      },
+      {
+        "name": "spine-page",
+        "value": "inset 1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.25)",
+        "purpose": "The spread's fold, page side."
+      },
+      {
+        "name": "number-lift",
+        "value": "0 0.3rem 0.6rem -0.3rem rgb(0 0 0 / 0.6)",
+        "purpose": "The yellow number sticker."
+      },
+      {
+        "name": "goat-lift",
+        "value": "drop-shadow(0 0.7rem 0.6rem rgb(0 0 0 / 0.45))",
+        "purpose": "Under the die-cut goat, after its white edge (a filter, not a box-shadow)."
+      },
+      {
+        "name": "gloss",
+        "value": "linear-gradient(115deg, rgb(255 255 255 / 0.4) 0, rgb(255 255 255 / 0) 32%, rgb(255 255 255 / 0) 70%, rgb(255 255 255 / 0.18) 100%)",
+        "purpose": "The diagonal sheen on every sticker."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The settle curve for stickers and the goat."
+      },
+      {
+        "name": "settle",
+        "value": "900ms",
+        "purpose": "Peel to stuck, once, when 35% of a sticker is in view; staggered 120ms plus 90ms per sticker."
+      },
+      {
+        "name": "peel-start",
+        "value": "rotate(calc(var(--tilt) - 7deg)) translate(0.6rem, -0.9rem) scale(1.04)",
+        "purpose": "The lifted start state, set by a head script before first paint; reduced motion shows stickers stuck."
+      },
+      {
+        "name": "goat-wiggle",
+        "value": "500ms, rotate(-6deg) to rotate(4deg) scale(1.05)",
+        "purpose": "Hover on the die-cut goat; held still under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "47.99rem"
+      },
+      {
+        "name": "tablet",
+        "value": "61.99rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Photo Sticker",
+      "kind": "card",
+      "refersTo": "sticker-photo",
+      "description": "A decided place or thing, stuck in: photo over an album-blue caption, white die-cut border, lift and gloss; hover shows the peeled state.",
+      "html": "<figure class=\"ds-sticker\"><span class=\"ds-num\">9</span><div class=\"ds-photo\"></div><figcaption class=\"ds-cap\">The Korzo</figcaption></figure>",
+      "css": ".ds-sticker { position: relative; margin: 0; padding: 0.42rem; border-radius: 0.6rem; background: var(--page, #ffffff); color: var(--ink, #12204a); box-shadow: 0 0.7rem 1.2rem -0.6rem rgb(0 0 0 / 0.55), 0 0 0 1px rgb(0 0 0 / 0.08); transform: rotate(-1.5deg); transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 900ms cubic-bezier(0.16, 1, 0.3, 1); width: 12rem; } .ds-sticker::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: linear-gradient(115deg, rgb(255 255 255 / 0.4) 0, rgb(255 255 255 / 0) 32%, rgb(255 255 255 / 0) 70%, rgb(255 255 255 / 0.18) 100%); } .ds-sticker:hover { transform: rotate(-8.5deg) translate(0.6rem, -0.9rem) scale(1.04); box-shadow: 0 1.6rem 2.2rem -1rem rgb(0 0 0 / 0.6), 0 0 0 1px rgb(0 0 0 / 0.08); } @media (prefers-reduced-motion: reduce) { .ds-sticker { transition: none; } .ds-sticker:hover { transform: rotate(-1.5deg); box-shadow: 0 0.7rem 1.2rem -0.6rem rgb(0 0 0 / 0.55), 0 0 0 1px rgb(0 0 0 / 0.08); } } .ds-num { position: absolute; top: -0.7rem; left: -0.7rem; z-index: 2; min-width: 2.1rem; height: 2.1rem; padding-inline: 0.35rem; border-radius: 1.05rem; display: grid; place-items: center; background: var(--yellow, #ffd400); color: var(--album-night, #051d47); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.05rem; font-variant-numeric: tabular-nums; box-shadow: 0 0.3rem 0.6rem -0.3rem rgb(0 0 0 / 0.6); } .ds-photo { aspect-ratio: 4 / 3.4; border-radius: 0.35rem 0.35rem 0 0; background: linear-gradient(160deg, #7fa7d8, #c98b5a); } .ds-cap { margin: 0; padding: 0.45rem 0.6rem 0.5rem; border-radius: 0 0 0.35rem 0.35rem; background: var(--album, #0b3d91); color: var(--page, #ffffff); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.15rem; line-height: 1.05; }"
+    },
+    {
+      "name": "Fact Sticker",
+      "kind": "card",
+      "refersTo": "sticker-fact",
+      "description": "A decided fact: album-blue sticker with an inset white die-cut border, a big yellow figure and a pale explanation.",
+      "html": "<div class=\"ds-sticker ds-fact\"><span class=\"ds-num\">1</span><strong>Free</strong><small>No ticket. Registration is free.</small></div>",
+      "css": ".ds-sticker { position: relative; margin: 0; padding: 0.42rem; border-radius: 0.6rem; background: var(--page, #ffffff); color: var(--ink, #12204a); box-shadow: 0 0.7rem 1.2rem -0.6rem rgb(0 0 0 / 0.55), 0 0 0 1px rgb(0 0 0 / 0.08); transform: rotate(-1.5deg); transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 900ms cubic-bezier(0.16, 1, 0.3, 1); width: 12rem; } .ds-sticker::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: linear-gradient(115deg, rgb(255 255 255 / 0.4) 0, rgb(255 255 255 / 0) 32%, rgb(255 255 255 / 0) 70%, rgb(255 255 255 / 0.18) 100%); } .ds-sticker:hover { transform: rotate(-8.5deg) translate(0.6rem, -0.9rem) scale(1.04); box-shadow: 0 1.6rem 2.2rem -1rem rgb(0 0 0 / 0.6), 0 0 0 1px rgb(0 0 0 / 0.08); } @media (prefers-reduced-motion: reduce) { .ds-sticker { transition: none; } .ds-sticker:hover { transform: rotate(-1.5deg); box-shadow: 0 0.7rem 1.2rem -0.6rem rgb(0 0 0 / 0.55), 0 0 0 1px rgb(0 0 0 / 0.08); } } .ds-num { position: absolute; top: -0.7rem; left: -0.7rem; z-index: 2; min-width: 2.1rem; height: 2.1rem; padding-inline: 0.35rem; border-radius: 1.05rem; display: grid; place-items: center; background: var(--yellow, #ffd400); color: var(--album-night, #051d47); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.05rem; font-variant-numeric: tabular-nums; box-shadow: 0 0.3rem 0.6rem -0.3rem rgb(0 0 0 / 0.6); } .ds-fact { display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; padding: 1.2rem 1.1rem; background: var(--album, #0b3d91); color: var(--page, #ffffff); outline: 0.42rem solid var(--page, #ffffff); outline-offset: -0.42rem; min-height: 11rem; } .ds-fact strong { font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 75%; font-size: 3rem; line-height: 0.9; color: var(--yellow, #ffd400); } .ds-fact small { font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 0.98rem; line-height: 1.35; color: var(--album-soft, #c9d7f5); }"
+    },
+    {
+      "name": "Printed Slot",
+      "kind": "card",
+      "refersTo": "slot",
+      "description": "An undecided or open place: flat page-print fill, dashed outline, printed number, ghost goat and the red Yours? stamp.",
+      "html": "<div class=\"ds-slot\"><span class=\"ds-ghost\"><svg viewBox=\"0 0 124 100\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M27 49c-1-11 9-17 24-17.5 14-.5 25 .5 31 5.5 4 3.5 5.5 10 3.5 16.5-2.5 8-11 11.5-24 11.5-15 0-27-2-31.5-6.5C27.5 56.5 27 53 27 49z\" fill=\"var(--goat-fill, #f2f6f1)\"/><path d=\"M80 39c2-7 5.5-13 10-16.5 4.5-3.5 11-3 14.5 1 3 3.5 5 8 4.5 11-.5 2.5-3 3.5-6 3-3-.5-5 1-6.5 4.5-1.5 3.5-3 6.5-5.5 7.5\" fill=\"var(--goat-fill, #f2f6f1)\"/><path d=\"M93 21c-3-6-8.5-11-15-11.5-3.5-.3-6 1-7 3.5 5-.5 9.5 2.5 13 7.5\"/><path d=\"M97 22.5c-.5-6-4-11-9-13.5\"/><path d=\"M92.5 28c-3.5 1-7 3.5-9.5 3\"/><path d=\"M107 38.5c.5 4-1 9-4 12\"/><path d=\"M35 63l-2.5 22.5M45 64.5l.5 21M69 64.5l2 21M78.5 61.5l3.5 23.5\"/><path d=\"M29.5 45c-5-2-8-6-7-11\"/></g><circle cx=\"99.5\" cy=\"27.5\" r=\"2\" fill=\"currentColor\"/><path d=\"M31 85.5h4M44 85.5h4M69.5 85.5h4M80.5 85h4\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\"/></svg></span><span class=\"ds-pnum\">6</span><strong>Your talk</strong><small>The open call comes ahead of the event.</small><span class=\"ds-stamp\">Yours?</span></div>",
+      "css": ".ds-slot { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: 13rem; min-height: 9rem; padding: 1.1rem 1.1rem 2.9rem; border-radius: 0.6rem; border: 2px dashed var(--slot-line, rgb(11 61 145 / 0.42)); background: var(--page-print, #edf2fb); color: var(--ink, #12204a); } .ds-slot strong { font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 78%; font-size: 1.5rem; line-height: 1; color: var(--album, #0b3d91); } .ds-slot small { font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; margin-top: 0.35rem; font-size: 0.98rem; line-height: 1.35; color: var(--ink-soft, #46557a); } .ds-pnum { min-width: 2.1rem; height: 2.1rem; margin-bottom: 0.6rem; border-radius: 1.05rem; display: grid; place-items: center; box-shadow: inset 0 0 0 2px var(--slot-line, rgb(11 61 145 / 0.42)); color: var(--album, #0b3d91); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.05rem; } .ds-ghost { position: absolute; top: 0.7rem; right: 0.8rem; width: 3.4rem; color: var(--slot-line, rgb(11 61 145 / 0.42)); --goat-fill: transparent; opacity: 0.7; } .ds-stamp { position: absolute; right: 0.7rem; bottom: 0.6rem; transform: rotate(-9deg); padding: 0.05em 0.45em; border: 3px solid currentColor; border-radius: 0.35rem; color: var(--red, #e30613); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.05rem; letter-spacing: 0.04em; mix-blend-mode: multiply; }"
+    },
+    {
+      "name": "Status Sticker",
+      "kind": "chip",
+      "refersTo": "status-sticker",
+      "description": "The registration status in yellow; states only what is true now.",
+      "html": "<p class=\"ds-soon\"><span class=\"ds-dot\"></span>Free registration opens when the dates are confirmed</p>",
+      "css": ".ds-soon { display: inline-flex; align-items: center; gap: 0.7rem; margin: 0; padding: 0.8em 1.15em; border-radius: 0.45rem; background: var(--yellow, #ffd400); color: var(--album-night, #051d47); font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-stretch: 85%; font-size: 1.15rem; line-height: 1.15; box-shadow: 0 0.6rem 1.1rem -0.6rem rgb(0 0 0 / 0.7); } .ds-dot { width: 0.6rem; height: 0.6rem; flex: none; border-radius: 50%; background: var(--album-night, #051d47); }"
+    },
+    {
+      "name": "Go Link",
+      "kind": "button",
+      "refersTo": "link-go",
+      "description": "The lettered call-to-action link: yellow underline on blue, thickening on hover; yellow focus ring.",
+      "html": "<p class=\"ds-go-wrap\"><a class=\"ds-go\" href=\"#\">Propose a talk</a> <a class=\"ds-go\" href=\"#\">Add something</a></p>",
+      "css": ".ds-go-wrap { display: flex; gap: 1.6rem; margin: 0; padding: 1.2rem; background: var(--album-deep, #072a66); } .ds-go { color: var(--page, #ffffff); font-family: 'Bricolage Grotesque', sans-serif; font-weight: 750; font-stretch: 85%; font-size: 1.25rem; text-decoration: underline; text-decoration-color: var(--yellow, #ffd400); text-decoration-thickness: 3px; text-underline-offset: 0.2em; } .ds-go:hover { text-decoration-thickness: 4px; } .ds-go:focus-visible { outline: 3px solid var(--yellow, #ffd400); outline-offset: 3px; border-radius: 0.2rem; }"
+    },
+    {
+      "name": "Top Bar",
+      "kind": "nav",
+      "refersTo": "topbar",
+      "description": "Sticky night-blue bar: mini crest, GOATCONF 2027, uppercase condensed links that turn yellow on hover.",
+      "html": "<header class=\"ds-topbar\"><a class=\"ds-home\" href=\"#\"><span class=\"ds-crest\"><svg viewBox=\"0 0 124 100\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M27 49c-1-11 9-17 24-17.5 14-.5 25 .5 31 5.5 4 3.5 5.5 10 3.5 16.5-2.5 8-11 11.5-24 11.5-15 0-27-2-31.5-6.5C27.5 56.5 27 53 27 49z\" fill=\"var(--goat-fill, #f2f6f1)\"/><path d=\"M80 39c2-7 5.5-13 10-16.5 4.5-3.5 11-3 14.5 1 3 3.5 5 8 4.5 11-.5 2.5-3 3.5-6 3-3-.5-5 1-6.5 4.5-1.5 3.5-3 6.5-5.5 7.5\" fill=\"var(--goat-fill, #f2f6f1)\"/><path d=\"M93 21c-3-6-8.5-11-15-11.5-3.5-.3-6 1-7 3.5 5-.5 9.5 2.5 13 7.5\"/><path d=\"M97 22.5c-.5-6-4-11-9-13.5\"/><path d=\"M92.5 28c-3.5 1-7 3.5-9.5 3\"/><path d=\"M107 38.5c.5 4-1 9-4 12\"/><path d=\"M35 63l-2.5 22.5M45 64.5l.5 21M69 64.5l2 21M78.5 61.5l3.5 23.5\"/><path d=\"M29.5 45c-5-2-8-6-7-11\"/></g><circle cx=\"99.5\" cy=\"27.5\" r=\"2\" fill=\"currentColor\"/><path d=\"M31 85.5h4M44 85.5h4M69.5 85.5h4M80.5 85h4\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\"/></svg></span>GoatConf <span class=\"ds-year\">2027</span></a><nav class=\"ds-nav\"><a href=\"#\">Tuzla</a><a href=\"#\">Food</a><a href=\"#\">Talks</a><a href=\"#\">Add yours</a><a href=\"#\">Travel</a></nav></header>",
+      "css": ".ds-topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 0.6rem 1.5rem; background: var(--album-night, #051d47); color: var(--page, #ffffff); } .ds-home { display: flex; align-items: center; gap: 0.55rem; color: inherit; text-decoration: none; font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 78%; font-size: 1.35rem; } .ds-year { color: var(--yellow, #ffd400); } .ds-crest { width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--yellow, #ffd400); color: var(--album-night, #051d47); display: grid; place-items: center; --goat-fill: var(--yellow, #ffd400); } .ds-crest svg { width: 1.7rem; } .ds-nav { display: flex; gap: 0.2rem 1.1rem; font-family: 'Bricolage Grotesque', sans-serif; font-stretch: 85%; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.03em; } .ds-nav a { color: inherit; text-decoration: none; padding-block: 0.3rem; white-space: nowrap; } .ds-nav a:hover { color: var(--yellow, #ffd400); } .ds-nav a:focus-visible { outline: 3px solid var(--yellow, #ffd400); outline-offset: 3px; }"
+    },
+    {
+      "name": "Album Page with Band",
+      "kind": "card",
+      "refersTo": "album-page",
+      "description": "A white album page clipped to rounded corners, headed by the blue band with its yellow rule.",
+      "html": "<section class=\"ds-page\"><h2 class=\"ds-band\">Tuzla, the host town</h2><p>GoatConf happens at IPI Academy, in the centre of Tuzla. Each break is long, an hour or more.</p></section>",
+      "css": ".ds-page { padding: 0 1.75rem 1.75rem; background: var(--page, #ffffff); color: var(--ink, #12204a); border-radius: 0.8rem; overflow: clip; box-shadow: 0 2rem 3rem -2rem rgb(0 0 0 / 0.55); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 1.1rem; line-height: 1.6; max-width: 34rem; } .ds-band { margin: 0 -1.75rem 1.75rem; padding: 1.1rem 1.75rem 1rem; background: var(--album, #0b3d91); color: var(--page, #ffffff); border-bottom: 0.45rem solid var(--yellow, #ffd400); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 78%; font-size: 2.4rem; line-height: 0.95; }"
+    },
+    {
+      "name": "Price List",
+      "kind": "custom",
+      "refersTo": "pricelist",
+      "description": "Item, dotted slot-line leader, price lettered in album blue with tabular figures.",
+      "html": "<ul class=\"ds-prices\"><li><span>A simple meal</span><i></i><b>4.60&nbsp;€</b></li><li><span>A cappuccino</span><i></i><b>1.66&nbsp;€</b></li></ul>",
+      "css": ".ds-prices { list-style: none; margin: 0; padding: 1rem; max-width: 34rem; background: var(--page, #ffffff); color: var(--ink, #12204a); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-prices li { display: flex; align-items: baseline; gap: 0.6rem; padding-block: 0.45rem; } .ds-prices i { flex: 1; border-bottom: 2px dotted var(--slot-line, rgb(11 61 145 / 0.42)); transform: translateY(-0.3rem); } .ds-prices b { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-stretch: 78%; font-size: 1.6rem; line-height: 1; color: var(--album, #0b3d91); font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Die-cut Goat",
+      "kind": "custom",
+      "refersTo": "goat-sticker",
+      "description": "The one goat mark as a yellow die-cut sticker with a white edge; wiggles on hover.",
+      "html": "<div class=\"ds-goat-wrap\"><span class=\"ds-goat\"><svg viewBox=\"0 0 124 100\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M27 49c-1-11 9-17 24-17.5 14-.5 25 .5 31 5.5 4 3.5 5.5 10 3.5 16.5-2.5 8-11 11.5-24 11.5-15 0-27-2-31.5-6.5C27.5 56.5 27 53 27 49z\" fill=\"var(--goat-fill, #f2f6f1)\"/><path d=\"M80 39c2-7 5.5-13 10-16.5 4.5-3.5 11-3 14.5 1 3 3.5 5 8 4.5 11-.5 2.5-3 3.5-6 3-3-.5-5 1-6.5 4.5-1.5 3.5-3 6.5-5.5 7.5\" fill=\"var(--goat-fill, #f2f6f1)\"/><path d=\"M93 21c-3-6-8.5-11-15-11.5-3.5-.3-6 1-7 3.5 5-.5 9.5 2.5 13 7.5\"/><path d=\"M97 22.5c-.5-6-4-11-9-13.5\"/><path d=\"M92.5 28c-3.5 1-7 3.5-9.5 3\"/><path d=\"M107 38.5c.5 4-1 9-4 12\"/><path d=\"M35 63l-2.5 22.5M45 64.5l.5 21M69 64.5l2 21M78.5 61.5l3.5 23.5\"/><path d=\"M29.5 45c-5-2-8-6-7-11\"/></g><circle cx=\"99.5\" cy=\"27.5\" r=\"2\" fill=\"currentColor\"/><path d=\"M31 85.5h4M44 85.5h4M69.5 85.5h4M80.5 85h4\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\"/></svg></span></div>",
+      "css": ".ds-goat-wrap { padding: 2rem; background: var(--album-deep, #072a66); } .ds-goat { display: block; width: 10rem; color: var(--album-night, #051d47); --goat-fill: var(--yellow, #ffd400); transform: rotate(-6deg); filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 0.7rem 0.6rem rgb(0 0 0 / 0.45)); transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-goat:hover { transform: rotate(4deg) scale(1.05); } @media (prefers-reduced-motion: reduce) { .ds-goat { transition: none; } .ds-goat:hover { transform: rotate(-6deg); } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sticker Album",
+    "overview": "GoatConf is a sticker album opened flat on an album-blue ground. The organiser sticks in the core facts as glossy die-cut stickers; every other numbered slot is printed empty on the white page and waits for whoever brings a talk, a workshop or a walk. The album is the whole site: a blue ground printed with faint cloven-hoof marks, white album pages with rounded corners, a blue band across the top of each page, a numbered sequence that runs through the whole album, a night-blue \"shiny\" page for the goat story, and a night-blue back cover.\n\nThe material is printed paper and vinyl, not screen chrome. Stickers have a white die-cut border, a soft lift off the page and a diagonal gloss; empty slots are flat, dashed and printed in the album's own blue at low strength, each with a faint goat silhouette and a printed number. Hierarchy comes from scale contrast in condensed uppercase lettering, not from weight changes or colour noise. The goat itself appears once per spread as a die-cut yellow sticker with a white edge.\n\nThe world refuses the dark tech-conference hero with a speaker grid. It also refuses to pretend: what is decided is stuck in, what is undecided stays an empty printed slot, and nothing is announced as a sticker before it is true.",
+    "keyCharacteristics": [
+      "Album-blue ground with a faint hoof-print pattern; white pages float on it with rounded corners and a soft drop.",
+      "Two states of every fact: a stuck-in sticker (decided) or an empty printed slot (undecided or open to you).",
+      "One numbered sequence across the album, yellow on stickers, printed on slots.",
+      "Condensed uppercase Bricolage lettering at strong scale contrast; Atkinson Hyperlegible Next for reading.",
+      "Stickers peel and settle once as they enter view; reduced motion shows them already stuck."
+    ],
+    "rules": [
+      {
+        "name": "The Red Stamp Rule",
+        "body": "Red appears only as the \"Yours?\" stamp on an empty slot. It never marks an error, a price, a link or a heading.",
+        "section": "colors"
+      },
+      {
+        "name": "The Yellow Means Stuck Rule",
+        "body": "Yellow fills only things that are decided or numbered: a stuck-in number, a fact, the status. An empty slot never carries a yellow fill; its number is printed in blue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lettered, Not Typed Rule",
+        "body": "Every heading, caption, number and stamp is Bricolage at 800, condensed and uppercase. Weight never varies to make hierarchy; size does.",
+        "section": "typography"
+      },
+      {
+        "name": "The Reading Face Rule",
+        "body": "Any sentence longer than a label is Atkinson Hyperlegible Next, never the display face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed Is Flat Rule",
+        "body": "An empty slot, a printed number, the ghost goat and the stamp have no shadow. Only things stuck onto the page lift.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Gloss Rule",
+        "body": "Every sticker carries the same diagonal gloss, a 115-degree white sheen (40% at the top-left corner, clear through the middle, 18% at the far corner). Printed parts of the page never do.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** show a decided fact as a stuck-in sticker and an undecided or open one as an empty printed slot, with its reason in the slot's explanation.",
+      "**Do** give every sticker and slot the next number in the album's single sequence.",
+      "**Do** keep stickers sticker-sized: two across on phones, never full-width cards.",
+      "**Do** set a small per-sticker tilt between -2 and 2 degrees, and vary it between neighbours.",
+      "**Do** credit every photo on the page that shows it, in credit type under the stickers.",
+      "**Do** write plain sentences: one idea per sentence, common words, and no em dashes anywhere, including captions, alt text and generated pages."
+    ],
+    "donts": [
+      "**Don't** use red for anything but the \"Yours?\" stamp.",
+      "**Don't** put a fact on a sticker before it is true: an unconfirmed date stays \"June 2027\" on the fact sticker and an empty slot for the exact days.",
+      "**Don't** give printed things (slots, printed numbers, ghost goats, stamps) a lift or gloss, or stuck stickers a dashed outline.",
+      "**Don't** write self-aware copy about the album, the design or the site itself; the page talks about the conference, Tuzla and the visitor.",
+      "**Don't** add small labels above headings, glyph icons, or a second goat drawing; the band, the numbers and the one goat mark carry the page.",
+      "**Don't** let the goat cover a fact, stand in for text a screen reader needs, or appear on the code of conduct or budget content as a joke."
+    ]
+  }
+}

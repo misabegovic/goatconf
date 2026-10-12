@@ -1,0 +1,8 @@
+# The forms behind goatconf.com. Registration is the Luma event; the other three
+# are Google Forms in the organiser's GoatConf folder in Google Drive, built by
+# hand on 2026-10-12 (tools/google-forms/README.md). After changing a URL here,
+# run: python3 tools/formlinks.py links
+talk: "https://docs.google.com/forms/d/e/1FAIpQLSdRVeP2C8LmLp0CDjO2s8jAn-TBq1o2XMdaBR8QkH8nRMjBtQ/viewform"
+add: "https://docs.google.com/forms/d/e/1FAIpQLScZK2BJcsBY2W5lpSljaflGsPdimruLAfmK9MizR0EIcgWfXg/viewform"
+register: "https://luma.com/event/evt-dU4KbLhpIAm9Y9V"
+contact: "https://docs.google.com/forms/d/e/1FAIpQLSeLDeNIFsHBRT2ZaLNV_zrI1k1wOcSIrjs6kWoTlQOmGPkUGg/viewform"

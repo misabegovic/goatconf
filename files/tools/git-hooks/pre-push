@@ -1,0 +1,149 @@
+#!/usr/bin/env bash
+# brain pre-push hook — two guards on promoting work to the remote.
+#
+# Install with:
+#   ln -s ../../files/tools/git-hooks/pre-push .git/hooks/pre-push
+#
+# Guard 1 — never push to main, in any mode.
+#
+# AGENTS.md § Governance rule 1: agents work on feature branches and
+# never push to main. Every change lands via PR, because the PR *is*
+# the auditable diff — CI, the confidence floor, the human gate on
+# /shape artefacts and the review trail all hang off it. A direct
+# push to main skips all of them at once. This guard has no opt-out
+# short of --no-verify; if a push to main looks necessary, the
+# answer is a branch and a PR.
+#
+# Guard 2 — under LOCAL_FIRST=true, promoting needs an explicit ask.
+#
+# AGENTS.md § Local-first mode suspends the PR/CI ritual: work lands
+# as local commits, and promoting is the operator's call, made in
+# the moment, per promotion. An agent that decides on its own that
+# the work "looks done" and publishes it has taken a decision that
+# was never delegated — and unlike a local commit, a push is public
+# and cannot be walked back without rewriting shared history.
+#
+# When LOCAL_FIRST=true, pushing a branch requires a per-invocation
+# opt-in:
+#
+#   BRAIN_PROMOTE=1 git push -u origin agent/<slug>
+#
+# The agent contract for that variable is narrow: set it only in the
+# same turn the operator asked to promote, push, ship or open a PR.
+# It is not a session-wide unlock, it does not carry from one
+# promotion to the next, and "the operator approved a promotion an
+# hour ago" is not an ask. When in doubt, don't set it — report the
+# local commits and let the operator say go.
+#
+# Both written rules predate this hook and were both crossed in one
+# turn on 2026-07-31 (ten commits, pushed unasked, straight to
+# main). Hence the mechanical version.
+#
+# Bypassable with `git push --no-verify`, which for an agent is the
+# same violation wearing a different hat.
+
+set -euo pipefail
+
+REPO=$(git rev-parse --show-toplevel)
+cd "$REPO"
+
+# Guard 1 — refuse any push whose destination ref is main/master.
+# stdin gives us "<local ref> <local sha> <remote ref> <remote sha>"
+# per ref being pushed; a delete has an all-zero local sha.
+only_scheduled=yes
+pushed_any=no
+pushes_content=no
+while read -r _local_ref local_sha remote_ref _remote_sha; do
+  [ -z "${remote_ref:-}" ] && continue
+  pushed_any=yes
+  case "$local_sha" in *[!0]*) pushes_content=yes ;; esac
+  case "$remote_ref" in refs/heads/scheduled/*) ;; *) only_scheduled=no ;; esac
+  case "$remote_ref" in
+    refs/heads/main|refs/heads/master)
+      case "$local_sha" in *[!0]*) ;; *) continue ;; esac
+      cat >&2 <<EOF
+
+✗ Push refused — direct push to ${remote_ref#refs/heads/}.
+
+  AGENTS.md § Governance rule 1: agents work on feature branches
+  and never push to main. Every change lands via PR — that is
+  where CI, the confidence floor and the review trail attach.
+
+  Promote through the /pr path instead:
+
+      git switch -c agent/<slug>
+      BRAIN_PROMOTE=1 git push -u origin agent/<slug>
+      gh pr create ...
+
+EOF
+      exit 1
+      ;;
+  esac
+done
+
+# Guard 3: local CI must pass before anything leaves this machine.
+#
+# goatconf has no remote CI by the organiser's decision of 2026-10-07
+# (sources/conversations/2026-10-07--brain--local-ci-only.md), so this is
+# the gate every push is held behind: the full tools/ci-local.sh, not only
+# preflight. It runs once the other guards have allowed the push. A push
+# that only deletes a branch carries nothing to check and skips it.
+run_ci_then_allow() {
+  [ "$pushes_content" = yes ] || exit 0
+  echo "# brain pre-push: running files/tools/ci-local.sh" >&2
+  if ! bash files/tools/ci-local.sh >&2; then
+    cat >&2 <<EOF
+
+✗ Push refused: files/tools/ci-local.sh failed.
+
+  Fix the step it named and push again. There is no remote CI to
+  catch it later; this is the gate.
+
+EOF
+    exit 1
+  fi
+  exit 0
+}
+
+# Guard 2 — local-first promotions need an explicit per-push ask.
+[ -f .env ] || run_ci_then_allow
+grep -q '^LOCAL_FIRST=true$' .env || run_ci_then_allow
+
+# A push of nothing but scheduled/* branches is tabula's scheduled run,
+# which the operator authorised standing on 2026-10-05 ("Push to private
+# remotes", sources/conversations/2026-10-05--tabula--schedule-trust-and-push.md):
+# tabula checks the remote is private and runs the CI first, and the
+# branch lands through a pull request, never straight to main (guard 1
+# still refuses main above).
+if [ "$pushed_any" = yes ] && [ "$only_scheduled" = yes ]; then
+  echo "# brain pre-push: LOCAL_FIRST=true, scheduled/* only — tabula's scheduled run, on the operator's standing ask of 2026-10-05." >&2
+  run_ci_then_allow
+fi
+
+if [ "${BRAIN_PROMOTE:-}" = "1" ]; then
+  echo "# brain pre-push: LOCAL_FIRST=true, BRAIN_PROMOTE=1, promoting on an explicit ask." >&2
+  run_ci_then_allow
+fi
+
+ahead=$(git rev-list --count 'origin/main..HEAD' 2>/dev/null || echo "?")
+
+cat >&2 <<EOF
+
+✗ Push refused — LOCAL_FIRST=true.
+
+  This checkout is in local-first mode (AGENTS.md § Local-first
+  mode). Work lands as local commits; promoting to the remote is
+  the operator's call, made per promotion, in the moment.
+
+  ${ahead} commit(s) ahead of origin/main.
+
+  If the operator just asked to promote / push / ship, take the
+  /pr path on a branch:
+
+      BRAIN_PROMOTE=1 git push -u origin agent/<slug>
+
+  If they did not, this push is not yours to make. Report the
+  pending commits and wait for the ask.
+
+EOF
+exit 1

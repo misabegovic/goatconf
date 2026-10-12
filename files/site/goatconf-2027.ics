@@ -1,0 +1,59 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GoatConf//goatconf.com//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:GoatConf 2027
+BEGIN:VTIMEZONE
+TZID:Europe/Sarajevo
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:2027-06-03@goatconf.com
+DTSTAMP:20261012T000000Z
+DTSTART;TZID=Europe/Sarajevo:20270603T094500
+DTEND;TZID=Europe/Sarajevo:20270603T170000
+SUMMARY:GoatConf 2027: Thursday 3 June
+LOCATION:IPI Academy (IPI Akademija Tuzla)\, Kulina bana 2\, 75000 Tuzla\, 
+ Bosnia and Herzegovina
+DESCRIPTION:Four one-hour slots in every room\, an hour off after each. Wel
+ come at 09:45. The program: https://goatconf.com/program.html
+URL:https://goatconf.com/program.html
+END:VEVENT
+BEGIN:VEVENT
+UID:2027-06-04@goatconf.com
+DTSTAMP:20261012T000000Z
+DTSTART;TZID=Europe/Sarajevo:20270604T091500
+DTEND;TZID=Europe/Sarajevo:20270604T163000
+SUMMARY:GoatConf 2027: Friday 4 June
+LOCATION:IPI Academy (IPI Akademija Tuzla)\, Kulina bana 2\, 75000 Tuzla\, 
+ Bosnia and Herzegovina
+DESCRIPTION:Four slots\, starting half an hour earlier so the hour off at 1
+ 2:30 covers Džuma prayer. Welcome at 09:15. The program: https://goatconf
+ .com/program.html
+URL:https://goatconf.com/program.html
+END:VEVENT
+BEGIN:VEVENT
+UID:2027-06-05@goatconf.com
+DTSTAMP:20261012T000000Z
+DTSTART;VALUE=DATE:20270605
+DTEND;VALUE=DATE:20270606
+SUMMARY:GoatConf 2027: the community day
+LOCATION:Tuzla\, Bosnia and Herzegovina
+DESCRIPTION:No talks. Events people add: the lakes\, the goat hunt\, walks 
+ and meetups. https://goatconf.com/program.html#2027-06-05
+URL:https://goatconf.com/program.html
+END:VEVENT
+END:VCALENDAR

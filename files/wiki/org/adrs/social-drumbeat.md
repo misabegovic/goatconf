@@ -1,0 +1,98 @@
+---
+title: "Keep the email list in Luma, and the weekly beats as one calendar page here"
+kind: decision
+status: accepted
+updated: 2026-10-12
+confidence: medium
+depends_on:
+  - org/prds/social-drumbeat.md
+sources:
+  - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
+  - sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md
+  - sources/conversations/2026-10-12--org--registration-on-luma.md
+  - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
+  - sources/conversations/2026-10-07--org--adr-answers.md
+  - sources/conversations/2026-10-07--org--adrs-approved.md
+  - sources/conversations/2026-10-07--org--goatconf-will-be-public.md
+  - sources/web/tooling/luma-pricing.md
+  - sources/web/tooling/luma-privacy-policy.md
+  - sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md
+---
+
+# Keep the email list in Luma, and the weekly beats as one calendar page here
+
+Answers the "Decision needed" of
+[A weekly drumbeat](../prds/social-drumbeat.md). Accepted 2026-10-07 from
+the organiser's answer
+(`sources/conversations/2026-10-07--org--adr-answers.md`, question 7), and approved by the organiser (`sources/conversations/2026-10-07--org--adrs-approved.md`).
+
+## What
+
+GoatConf's one owned channel, the email list, lives in Luma. People who
+register get updates as guests of the core-day event; people who only
+want news follow GoatConf on Luma before or without registering. No
+second newsletter tool is used. The weekly beats are kept as one
+calendar page in this repository; nothing about subscribers is.
+
+## Why
+
+The organiser chose Luma's own updates over a separate newsletter tool or
+no list. Registration is already on Luma
+([Website and registration](website-and-registration.md)), so a second
+tool would ask people to sign up twice and hold a second copy of their
+data. Luma's free plan sends "up to 500 invites or newsletters per week"
+and blasts to an event's guests without limit
+(`sources/web/tooling/luma-pricing.md`), which covers an event capped at
+about 120 and a following of a few hundred.
+
+## How
+
+Consent is the act of registering or following, and the registration
+notice says what updates people will get and how to stop them, as Bosnia
+and Herzegovina's data law asks
+(`sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md`).
+Subscriber data stays in Luma and never enters this public repository.
+
+The calendar page holds one entry per beat: the week, the beat, its
+channels (the email list, LinkedIn, the community chat, the open
+network), a draft of the words, and its state (drafted, approved,
+published). Dates are filled in once IPI confirms, following the road's
+anchored steps ([The road to June 2027](road-to-june-2027.md)). An agent
+or a volunteer drafts; every post is published by the organiser or by
+the social volunteer the organiser names, because anything that reaches
+the public is the organiser's call
+(`sources/conversations/2026-10-07--org--goatconf-will-be-public.md`).
+
+## Alternatives
+
+- **Luma's own updates** *(chosen)*: one tool, one copy of the data,
+  consent at registration.
+- **A separate newsletter tool:** double opt-in and archives, at the cost
+  of a second sign-up and a second processor of the same people's data.
+- **No email list:** simplest, and it leaves GoatConf with no channel it
+  owns when a platform changes its reach.
+
+## Consequences
+
+- **Opens:** registrants and followers reached from one place.
+- **Costs:** the list is only as portable as Luma's CSV export, and Luma
+  does not say where it stores the data
+  (`sources/web/tooling/luma-privacy-policy.md`); the same open question
+  as registration.
+- **Costs:** whether people can follow GoatConf on Luma before the event
+  page exists, and how that page is set up, is (unverified, 2026-10-07),
+  and it decides whether the list can open before registration does.
+
+## Linked PRD
+
+[A weekly drumbeat](../prds/social-drumbeat.md).
+
+## Build notes
+
+*(empty until the work ships)*
+
+## Amendments
+
+- **2026-10-12, registration is back on Luma, the channels are chosen, and the calendar exists.** Registration moved to the organiser's Luma event (source: sources/conversations/2026-10-12--org--registration-on-luma.md), so registered guests can again get Luma updates; the earlier amendment's "Luma is no longer used" no longer holds. People who tick the news question on the contact form are the other part of the list. The organiser chose the channels: LinkedIn; X, Bluesky and Mastodon; and Luma with link previews (source: sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md). The calendar is [The drumbeat](../outreach/drumbeat.md), with the launch sequence drafted and the images in `site/share/`.
+- **2026-10-12.** Luma is no longer used. The email list is the people who tick an optional, unticked question on the registration or contact Google Form asking to be sent news about GoatConf; news goes by email from the organiser's Google account. Subscriber data stays in the organiser's Google Sheets and never enters this public repository. The weekly beats calendar here is unchanged. See [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
+- **2026-10-12.** IPI Academy has accepted the dates, Thursday 3 and Friday 4 June 2027 as core days and Saturday 5 June as the community day, and GoatConf has access to all seven rooms, as the organiser reported; no written copy is in the brain. The posts can carry the dates now (`sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md`).

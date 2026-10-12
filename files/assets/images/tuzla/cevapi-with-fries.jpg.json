@@ -1,0 +1,17 @@
+{
+  "title": "Cevapi in Bosnia",
+  "subject": "A plate of ćevapi with fries in Bosnia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Cevapi_in_Bosnia.jpg",
+  "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Cevapi_in_Bosnia.jpg/1920px-Cevapi_in_Bosnia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Cevapi_in_Bosnia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "author": "Hibasi",
+  "licence": "CC BY-SA 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "required_credit_line": "Photo: Hibasi, CC BY-SA 4.0, via Wikimedia Commons",
+  "retrieved": "2026-10-07",
+  "modifications": "downloaded the 1920px-wide Commons thumbnail, resized to 1600px wide, re-encoded as JPEG (quality 85), embedded metadata dropped; no crop, no colour change",
+  "width": 1600,
+  "height": 1067,
+  "snapshot": "sources/web/images/cevapi-with-fries.md",
+  "note": "Generic Bosnian ćevapi; not shown to be from Tuzla."
+}

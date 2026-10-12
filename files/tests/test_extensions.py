@@ -1,0 +1,112 @@
+"""tools/extensions.py: the record check and the generated page."""
+
+import importlib.util
+from pathlib import Path
+
+import pytest
+
+SCRIPT = Path(__file__).resolve().parent.parent / "tools" / "extensions.py"
+GOOD = """---
+name: Rust by the lake
+kind: workshop
+host: Tuzla Rustaceans
+location: Slana banja park, Tuzla
+start: 2027-06-11 10:00
+end: 2027-06-11 13:00
+cost: free
+registration: https://example.org/rust
+paid_by: The host
+contact: https://example.org/contact
+accepts: yes
+---
+
+A morning of pairing on small Rust programs, for beginners.
+"""
+
+
+@pytest.fixture
+def ext(tmp_path, monkeypatch):
+    spec = importlib.util.spec_from_file_location("extensions", SCRIPT)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    (tmp_path / "extensions").mkdir()
+    (tmp_path / "site").mkdir()
+    shell = SCRIPT.parent.parent / "site" / "budget.html"
+    (tmp_path / "site" / "budget.html").write_text(shell.read_text(encoding="utf-8"), encoding="utf-8")
+    monkeypatch.setattr(mod, "ROOT", tmp_path)
+    monkeypatch.setattr(mod, "RECORDS", tmp_path / "extensions")
+    monkeypatch.setattr(mod, "PAGE", tmp_path / "site" / "extensions.html")
+    monkeypatch.setattr(mod, "SHELL", tmp_path / "site" / "budget.html")
+    return mod, tmp_path
+
+
+def write(root, name, text):
+    path = root / "extensions" / name
+    path.write_text(text, encoding="utf-8")
+    return path
+
+
+def test_no_records_passes(ext, capsys):
+    mod, _ = ext
+    assert mod.main(["check"]) == 0
+    assert "no records yet" in capsys.readouterr().out
+
+
+def test_good_record_passes(ext, capsys):
+    mod, root = ext
+    write(root, "rust.md", GOOD)
+    assert mod.main(["check"]) == 0
+    assert "ok: workshop, hosted by Tuzla Rustaceans" in capsys.readouterr().out
+
+
+@pytest.mark.parametrize("change, message", [
+    (("kind: workshop", "kind: party"), "is not one of"),
+    (("accepts: yes", "accepts: no"), "accepts must be yes"),
+    (("host: Tuzla Rustaceans\n", ""), "missing field: host"),
+    (("end: 2027-06-11 13:00", "end: 2027-06-11 09:00"), "end comes before start"),
+    (("2027-06-11 10:00", "2027-09-01 10:00"), "outside the GoatConf week"),
+    (("name: Rust by the lake", "name: GoatConf presents Rust"), "reads as GoatConf's own"),
+    (("A morning of pairing on small Rust programs, for beginners.", ""), "no description"),
+])
+def test_bad_records_fail(ext, capsys, change, message):
+    mod, root = ext
+    write(root, "bad.md", GOOD.replace(*change))
+    assert mod.main(["check"]) == 1
+    assert message in capsys.readouterr().out
+
+
+def test_support_needs_a_supplier(ext, capsys):
+    mod, root = ext
+    write(root, "coffee.md", GOOD.replace("kind: workshop", "kind: support"))
+    assert mod.main(["check"]) == 1
+    assert "names the supplier" in capsys.readouterr().out
+
+
+def test_outside_week_with_reason_passes(ext, capsys):
+    mod, root = ext
+    text = GOOD.replace("2027-06-11 10:00", "2027-07-01 10:00").replace("2027-06-11 13:00", "2027-07-01 13:00")
+    write(root, "late.md", text.replace("accepts: yes", "accepts: yes\noutside_week_reason: a follow-up session"))
+    assert mod.main(["check"]) == 0
+    assert "with a reason" in capsys.readouterr().out
+
+
+def test_template_and_readme_are_not_records(ext):
+    mod, root = ext
+    write(root, "README.md", "# not a record\n")
+    write(root, "_template.md", GOOD.replace("kind: workshop", "kind: nonsense"))
+    assert mod.records() == []
+
+
+def test_build_lists_good_records_and_check_detects_staleness(ext):
+    mod, root = ext
+    assert mod.main(["build"]) == 0
+    page = (root / "site" / "extensions.html").read_text(encoding="utf-8")
+    assert "No events yet." in page
+    write(root, "rust.md", GOOD)
+    write(root, "bad.md", GOOD.replace("accepts: yes", "accepts: no").replace("Rust by the lake", "Broken"))
+    assert mod.main(["build", "--check"]) == 1
+    assert mod.main(["build"]) == 0
+    page = (root / "site" / "extensions.html").read_text(encoding="utf-8")
+    assert "Rust by the lake" in page and "Broken" not in page
+    assert "11 June 2027, 10:00 to 13:00" in page
+    assert mod.main(["build", "--check"]) == 0

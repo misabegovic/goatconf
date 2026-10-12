@@ -1,0 +1,522 @@
+# Places to eat and stay near IPI Academy, shown on the travel page and its maps.
+# Researched 2026-10-12 (sources/web/tuzla/places-research-2026-10-12.md).
+# Only places with approved: true appear on the site; the organiser approves each one.
+# vegetarian / vegan: yes only where a source says so; otherwise unknown.
+checked: '2026-10-12'
+ipi:
+  lat: 44.5404
+  lon: 18.6738
+trg_slobode:
+  lat: 44.5393
+  lon: 18.6746
+eat:
+- name: MamaMia Origins
+  kind: restaurant
+  offers: steak, grill, seafood, wine; vegetarian options listed
+  vegetarian: 'yes'
+  vegan: unknown
+  address: Trg slobode bb, Tuzla
+  lat: 44.5397095
+  lon: 18.6750821
+  hours: 09:00-23:00 daily (IYP, Restaurant Guru); OSM says Mo-Su 10:00-23:00
+  url: https://www.facebook.com/mamamiaorigins
+  confidence: high
+  notes: 'Vegetarian ''yes'' rests only on Restaurant Guru''s ''Vegetarian options'' tag (aggregated, not the restaurant''s own menu). The site in OSM (mamamiaorigins.com) loaded with unrelated gambling
+    links on 2026-10-12, so it is not used as the link. Restaurant Guru price range BAM 17-44 per person. Straight-line distance: about 127 m from IPI, 59 m from Trg slobode. Coordinates from OSM node 6044678285.'
+  sources:
+  - https://www.openstreetmap.org/node/6044678285
+  - https://www.inyourpocket.com/mama-mia-origins_166483v
+  - https://restaurantguru.com/MamaMia-Origins-Steak-and-Wine-Restaurant-Tuzla
+  - https://putujte.ba/gdje-jesti-u-tuzli-najbolja-mjesta-za-hranu-i-kafu/
+  - https://guest-house-pasha.hotelrunner.com/en-US/blog/restaurants-in-tuzla
+  approved: true
+- name: Barok
+  kind: cafe and pizzeria
+  offers: pizza, sandwiches, burgers, salads, breakfast, coffee
+  vegetarian: unknown
+  vegan: unknown
+  address: Trg slobode bb (Barok building), Tuzla
+  lat: 44.538999
+  lon: 18.674779
+  url: https://www.facebook.com/pizzeriabarok/
+  confidence: high
+  notes: 'Listed website pizzeriabarok.com did not resolve on 2026-10-12; Facebook is the only working link found. Hours not stated by any source used. Straight-line distance: about 174 m from IPI, 36 m
+    from Trg slobode. Coordinates from OSM node 5538355521.'
+  sources:
+  - https://www.openstreetmap.org/node/5538355521
+  - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/barok
+  - https://putujte.ba/gdje-jesti-u-tuzli-najbolja-mjesta-za-hranu-i-kafu/
+  approved: true
+- name: Caffe Bar Central
+  kind: cafe
+  offers: coffee, draught beer, terrace on the square
+  vegetarian: unknown
+  vegan: unknown
+  address: Trg slobode bb (Barok building), Tuzla
+  lat: 44.538958
+  lon: 18.674859
+  hours: 07:00-23:00 (IYP)
+  url: https://www.facebook.com/Caffe-Bar-Central-486716178371634/
+  confidence: medium
+  notes: 'IYP mentions no food. Straight-line distance: about 181 m from IPI, 43 m from Trg slobode. Coordinates from OSM node 4078191301 (name ''Central'').'
+  sources:
+  - https://www.openstreetmap.org/node/4078191301
+  - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/caffe-bar-central
+  approved: true
+- name: Pizza Bar
+  kind: pizzeria
+  offers: pizza, fresh salads, sandwiches, summer terrace
+  vegetarian: 'yes'
+  vegan: unknown
+  address: Trg žrtava genocida u Srebrenici 6, Tuzla
+  lat: 44.539085
+  lon: 18.675688
+  hours: Mo-Su 07:00-23:00 (OSM)
+  url: https://www.facebook.com/pizzabar.tz/
+  confidence: high
+  notes: 'Vegetarian ''yes'' is based on In Your Pocket''s vegan and vegetarian guide to BiH, which recommends pizzerias as the reliable vegetarian option and names ''Pizza Bar (Tuzla)''. It does not list
+    specific meat-free dishes. Straight-line distance: about 209 m from IPI, 89 m from Trg slobode. Coordinates from OSM node 4087768608.'
+  sources:
+  - https://www.openstreetmap.org/node/4087768608
+  - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/pizza-bar
+  - https://putujte.ba/gdje-jesti-u-tuzli-najbolja-mjesta-za-hranu-i-kafu/
+  - https://test.inyourpocket.com/vegan-and-vegetarian-eating-in-bosnia-herzegovina_77487f
+  approved: true
+- name: Don Papa
+  kind: restaurant
+  offers: sushi, wok dishes, pizza, Asian fusion
+  vegetarian: unknown
+  vegan: unknown
+  address: Trg slobode, Tuzla
+  lat: 44.5395713
+  lon: 18.6758676
+  hours: 10:00-23:00 daily (Restaurant Guru)
+  confidence: medium
+  notes: 'Not mapped in OSM; coordinates and hours come only from Restaurant Guru. Phone +387 62 606 106 (Restaurant Guru). Worth asking about vegetarian sushi or wok, but no source states it. Straight-line
+    distance: about 188 m from IPI, 105 m from Trg slobode. Coordinates from Restaurant Guru JSON-LD.'
+  sources:
+  - https://restaurantguru.com/Don-Papa-Tuzla
+  - https://sites.google.com/view/hotel-dorrah/local-guide/restaurants
+  approved: true
+- name: Čaršijska česma
+  kind: restaurant (traditional Bosnian)
+  offers: ćevapi, pljeskavica, Bosnian dishes, coffee, boza, Bosnian sweets
+  vegetarian: unknown
+  vegan: unknown
+  address: Trg žrtava genocida u Srebrenici 2, Tuzla
+  lat: 44.538976
+  lon: 18.675812
+  hours: 07:00-22:00 (IYP)
+  url: https://www.facebook.com/carsijskacesma1/
+  confidence: high
+  notes: 'Menu is meat-centred per IYP. Straight-line distance: about 225 m from IPI, 103 m from Trg slobode. Coordinates from OSM node 4087768407.'
+  sources:
+  - https://www.openstreetmap.org/node/4087768407
+  - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/carsijska-cesma
+  - https://putujte.ba/gdje-jesti-u-tuzli-najbolja-mjesta-za-hranu-i-kafu/
+  - https://sites.google.com/view/hotel-dorrah/local-guide/restaurants
+  approved: true
+- name: Cafe Sloboda
+  kind: cafe
+  offers: coffee, drinks, shaded terrace
+  vegetarian: unknown
+  vegan: unknown
+  address: Solni trg 10, Tuzla
+  lat: 44.537917
+  lon: 18.67617
+  hours: Mo-Su 07:00-01:00 (OSM, IYP)
+  url: https://www.facebook.com/cafe.sloboda/
+  confidence: high
+  notes: 'Website caffesloboda.ba returned a database error on 2026-10-12. IYP mentions no food. Straight-line distance: about 334 m from IPI, 198 m from Trg slobode. Coordinates from OSM node 4088235144.'
+  sources:
+  - https://www.openstreetmap.org/node/4088235144
+  - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/cafe-sloboda
+  approved: true
+- name: Pekara Hukić
+  kind: bakery
+  offers: bakery goods, pizza
+  vegetarian: unknown
+  vegan: unknown
+  address: Gradska 57, Tuzla (OSM says Gradska 59)
+  lat: 44.53999
+  lon: 18.673059
+  hours: 06:00-22:00 daily (Restaurant Guru)
+  confidence: medium
+  notes: 'House number differs between OSM (59) and Restaurant Guru (57). Closest bakery to IPI. Straight-line distance: about 74 m from IPI, 144 m from Trg slobode. Coordinates from OSM node 4090314202.'
+  sources:
+  - https://www.openstreetmap.org/node/4090314202
+  - https://restaurantguru.com/Pekara-Hukic-Tuzla-2
+  - https://sites.google.com/view/hotel-dorrah/local-guide/restaurants
+  approved: true
+- name: Pekara Mućaj
+  kind: bakery
+  offers: bakery goods
+  vegetarian: unknown
+  vegan: unknown
+  address: Tabašnice 1, Tuzla
+  lat: 44.538033
+  lon: 18.673059
+  hours: Restaurant Guru shows 05:00-12:00 most days (looks odd, confirm)
+  confidence: low
+  notes: 'Only OSM and Restaurant Guru; hours look unreliable. Cash only (Restaurant Guru). Straight-line distance: about 270 m from IPI, 186 m from Trg slobode. Coordinates from OSM node 4089842807.'
+  sources:
+  - https://www.openstreetmap.org/node/4089842807
+  - https://restaurantguru.com/Pekara-Mucaj-Tuzla-2
+  approved: true
+- name: Buregdžinica Kipovi
+  kind: burek place (buregdžinica)
+  offers: burek and other traditional pita
+  vegetarian: unknown
+  vegan: unknown
+  address: Tabašnice 2, Tuzla
+  lat: 44.5380186
+  lon: 18.6733539
+  confidence: medium
+  notes: 'Not mapped as a POI in OSM; coordinates are the Nominatim building at Tabašnice 2. putujte.ba (2025-04-08) says it offers ''širok izbor ostalih tradicionalnih pita''; pita such as sirnica or krompiruša
+    are usually meat-free but no source confirms what Kipovi sells, so vegetarian stays unknown. Tourism BiH page was behind a bot check; seen only as a search snippet. Straight-line distance: about 267
+    m from IPI, 173 m from Trg slobode. Coordinates from Nominatim (address Tabašnice 2).'
+  sources:
+  - https://putujte.ba/gdje-jesti-u-tuzli-najbolja-mjesta-za-hranu-i-kafu/
+  - https://www.tourismbih.com/location/buregdzinica-kipovi/
+  - https://nominatim.openstreetmap.org/search?q=Taba%C5%A1nice+2,+Tuzla&format=json
+  approved: true
+- name: Pekara Kabil
+  kind: bakery
+  offers: bakery goods
+  vegetarian: unknown
+  vegan: unknown
+  address: Franjevačka, Tuzla
+  lat: 44.538001
+  lon: 18.672443
+  confidence: low
+  notes: 'Local bakery chain. OSM maps a branch on Franjevačka (node and building). Restaurant Guru only covers the Klosterska 40 branch (about 870 m from IPI, Mo-Fr 06:00-21:00, Sa 06:00-20:00, Su closed);
+    hours of the Franjevačka branch not confirmed. Straight-line distance: about 288 m from IPI, 224 m from Trg slobode. Coordinates from OSM node 8671497999.'
+  sources:
+  - https://www.openstreetmap.org/node/8671497999
+  - https://www.openstreetmap.org/way/406156894
+  - https://restaurantguru.com/Pekara-Kabil-Tuzla-3
+  approved: true
+- name: Sarajka
+  kind: ćevabdžinica / aščinica
+  offers: ćevapi, traditional Bosnian cooked food
+  vegetarian: unknown
+  vegan: unknown
+  address: Jevrejska 6 (Korzo), Tuzla
+  lat: 44.538192
+  lon: 18.676676
+  hours: 07:00-22:00 daily (Restaurant Guru); IYP gives 08:00-22:00
+  url: https://www.facebook.com/ascinica.sarajka
+  confidence: high
+  notes: 'IYP lists another branch at Džemala Bijedića 2; the Jevrejska 6 branch is the one near the square. Straight-line distance: about 335 m from IPI, 206 m from Trg slobode. Coordinates from OSM node
+    4099597487.'
+  sources:
+  - https://www.openstreetmap.org/node/4099597487
+  - https://restaurantguru.com/Sarajka-Tuzla-2
+  - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/sarajka
+  - https://putujte.ba/gdje-jesti-u-tuzli-najbolja-mjesta-za-hranu-i-kafu/
+  - https://sites.google.com/view/hotel-dorrah/local-guide/restaurants
+  approved: true
+- name: Mozaik
+  kind: pizzeria / fast food
+  offers: pizza, quick meals
+  vegetarian: unknown
+  vegan: unknown
+  address: Trgovačka 2-4 / Turalibegova 2, Tuzla
+  lat: 44.538717
+  lon: 18.676906
+  hours: Mo-Sa 08:00-23:00, Su 10:00-23:00 (Restaurant Guru)
+  url: https://www.facebook.com/pizzeriamozaik/
+  confidence: medium
+  notes: 'Local chain with several outlets; sources give slightly different addresses (Trgovačka 2, Trgovačka 4, Turalibegova 2), probably one corner building. Straight-line distance: about 309 m from IPI,
+    194 m from Trg slobode. Coordinates from OSM node 5554887508.'
+  sources:
+  - https://www.openstreetmap.org/node/5554887508
+  - https://www.openstreetmap.org/node/4324934493
+  - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/mozaik
+  - https://restaurantguru.com/Mozaik-Tuzla-4
+  approved: true
+- name: Fabrika & Coffee
+  kind: cafe
+  offers: coffee, outdoor seating, free wifi
+  vegetarian: unknown
+  vegan: unknown
+  address: Turalibegova 2, Tuzla
+  lat: 44.538178
+  lon: 18.676938
+  hours: Mo-Su 07:00-23:00 (OSM)
+  url: https://fabrikacoffee.com/
+  confidence: medium
+  notes: 'Coffee roaster with cafés in BiH and Montenegro; its site lists no addresses, so this branch rests on OSM. Straight-line distance: about 351 m from IPI, 223 m from Trg slobode. Coordinates from
+    OSM node 11447389086.'
+  sources:
+  - https://www.openstreetmap.org/node/11447389086
+  - https://fabrikacoffee.com/
+  approved: true
+- name: Lijepa priča
+  kind: cafe and pancake place (palačinkara)
+  offers: pancakes with many fillings, coffee
+  vegetarian: unknown
+  vegan: unknown
+  address: Turalibegova 18, Tuzla
+  lat: 44.5376476
+  lon: 18.677454
+  confidence: low
+  notes: 'Not in OSM; coordinates are only the Turalibegova street (pedestrian part), not the exact door. Second branch at Ismeta Mujezinovića 39-41. Straight-line distance: about 421 m from IPI, 291 m
+    from Trg slobode. Coordinates from Nominatim street geometry (approximate).'
+  sources:
+  - https://putujte.ba/gdje-jesti-u-tuzli-najbolja-mjesta-za-hranu-i-kafu/
+  - https://www.tourismbih.com/location/lijepa-prica-caffeteria-palacinkara/
+  approved: true
+- name: Palačinkara kod Bagija
+  kind: pancake place
+  offers: sweet and savoury pancakes
+  vegetarian: unknown
+  vegan: unknown
+  address: Patriotske lige 10, Tuzla
+  lat: 44.538407
+  lon: 18.677617
+  confidence: medium
+  notes: 'Address from Tourism BiH search snippet (page itself behind bot check). Straight-line distance: about 375 m from IPI, 259 m from Trg slobode. Coordinates from OSM node 9522521363.'
+  sources:
+  - https://www.openstreetmap.org/node/9522521363
+  - https://www.tourismbih.com/location/palacinkara-kod-bagija/
+  - https://sites.google.com/view/hotel-dorrah/local-guide/restaurants
+  approved: true
+- name: House of Taste
+  kind: cafe / brunch
+  offers: waffles, pancakes, toast, ice cream, sandwiches, salads
+  vegetarian: unknown
+  vegan: unknown
+  address: Đorđa Mihajlovića bb (by the city park), Tuzla
+  lat: 44.5371131
+  lon: 18.6785711
+  hours: 08:00-22:00 (IYP)
+  url: https://www.facebook.com/HouseOfTasteTuzla
+  confidence: low
+  notes: 'Not in OSM; coordinates are only the street. Its website house-of-taste.net did not resolve on 2026-10-12 and the IYP page is undated, so it may have closed. Confirm before listing. Straight-line
+    distance: about 526 m from IPI, 398 m from Trg slobode. Coordinates from Nominatim street geometry (approximate).'
+  sources:
+  - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/house-of-taste
+  - https://test.inyourpocket.com/vegan-and-vegetarian-eating-in-bosnia-herzegovina_77487f
+  approved: true
+- name: Limenka
+  kind: ćevabdžinica
+  offers: ćevapi, grill, terrace by Pannonica lake
+  vegetarian: unknown
+  vegan: unknown
+  address: Patriotske lige 24, Tuzla
+  lat: 44.539161
+  lon: 18.678251
+  hours: Mo-Su 07:00-22:00 (limenka.ba)
+  url: https://limenka.ba/
+  confidence: high
+  notes: 'Tuzla institution since 1967 (limenka.ba). Meat-focused. Straight-line distance: about 379 m from IPI, 290 m from Trg slobode. Coordinates from OSM way 390709469.'
+  sources:
+  - https://www.openstreetmap.org/way/390709469
+  - https://limenka.ba/
+  - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/limenka
+  - https://putujte.ba/gdje-jesti-u-tuzli-najbolja-mjesta-za-hranu-i-kafu/
+  approved: true
+- name: Mamamia (Univerzitetska)
+  kind: restaurant
+  offers: European and international dishes; vegetarian options listed
+  vegetarian: 'yes'
+  vegan: unknown
+  address: Univerzitetska 16, 4th floor, Tuzla
+  lat: 44.5385663
+  lon: 18.6642621
+  hours: Mo-Sa 08:00-21:30, Su closed (Restaurant Guru)
+  confidence: medium
+  notes: 'Separate from MamaMia Origins. Vegetarian ''yes'' rests on Restaurant Guru''s ''Vegetarian options'' tag and a search-result snippet saying TripAdvisor''s vegetarian-friendly Tuzla list includes
+    ''Mama Mia Restaurant Tuzla'' at Univerzitetska 16 (TripAdvisor itself returned 403). Edge of the 1 km radius. Price range BAM 10-35 per person (Restaurant Guru). Straight-line distance: about 783 m
+    from IPI, 823 m from Trg slobode. Coordinates from Restaurant Guru JSON-LD.'
+  sources:
+  - https://restaurantguru.com/MamaMia-Tuzla
+  - https://www.tripadvisor.com/Restaurants-g303197-zfz10665-Tuzla_Tuzla_Canton_Federation_of_Bosnia_and_Herzegovina.html
+  approved: true
+stay:
+- name: Hotel Vertigos
+  kind: hotel (4 star)
+  offers: next door to IPI, restaurant, breakfast menu, free parking, wellness, 17 rooms (OSM)
+  address: Kulina bana 2, Tuzla (OSM says Kulina bana 4)
+  lat: 44.5405057
+  lon: 18.6738737
+  hours: Reception 24h (hotel site)
+  url: https://hotelvertigos.com
+  price_note: From USD 54 per night with taxes, deluxe room, Kayak search for Mon 19 Oct to Tue 20 Oct (2026), 2 guests, fetched 2026-10-12. Not a June 2027 rate.
+  confidence: high
+  notes: 'The venue''s own image notes place IPI ''beside Hotel Vertigos''. Straight-line distance: about 13 m from IPI, 146 m from Trg slobode. Coordinates from OSM node 8795554146.'
+  sources:
+  - https://www.openstreetmap.org/node/8795554146
+  - https://hotelvertigos.com
+  - https://www.es.kayak.com/Tuzla-Hoteles-Hotel-Vertigos.7520733.ksp
+  approved: true
+- name: Pansion Kipovi
+  kind: guesthouse (pansion)
+  offers: buffet breakfast, air conditioning, wifi, near Kipovi bridge
+  address: 'Franjevačka 10 (tourist board: Franjevačka bb), Tuzla'
+  lat: 44.537929
+  lon: 18.673419
+  url: http://www.pansionkipovi.com
+  price_note: USD 42 per night with fees, deluxe room, Kayak search for Mon 10/19 to Tue 10/20 (2026), 2 guests, fetched 2026-10-12. Not a June 2027 rate.
+  confidence: high
+  notes: 'Kayak rating 9.1 from 407 reviews (2026-10-12). Straight-line distance: about 276 m from IPI, 179 m from Trg slobode. Coordinates from OSM way 699180625.'
+  sources:
+  - https://www.openstreetmap.org/way/699180625
+  - https://tztz.ba/en/hotels/pansion-kipovi/
+  - https://www.kayak.com/Tuzla-Hotels-Pansion-Kipovi.3555297.ksp
+  approved: true
+- name: Prenoćište Stari Grad
+  kind: guesthouse (rooms)
+  offers: rooms for 1 to 5 people, private bathrooms, shared rooftop terrace
+  address: Franjevačka 4, Tuzla
+  lat: 44.537745
+  lon: 18.673941
+  confidence: high
+  notes: 'OSM check_date 2026-05-09. Phone +387 62 778 700 (tourist board). Good for groups. Straight-line distance: about 295 m from IPI, 181 m from Trg slobode. Coordinates from OSM node 13811498527.'
+  sources:
+  - https://www.openstreetmap.org/node/13811498527
+  - https://tztz.ba/en/sobe-i-apartmani/prenociste-stari-grad-tuzla/
+  approved: true
+- name: Apartman Tabašnice
+  kind: rooms / apartments
+  offers: 3 units (2 to 4 beds), shared kitchen, parking, wifi
+  address: Tabašnice 19, Tuzla
+  lat: 44.5384353
+  lon: 18.6735022
+  confidence: medium
+  notes: 'Only the tourist board lists it; coordinates from Nominatim address lookup. Straight-line distance: about 220 m from IPI, 130 m from Trg slobode. Coordinates from Nominatim (address Tabašnice
+    19).'
+  sources:
+  - https://tztz.ba/en/sobe-i-apartmani/apartman-tabasnice/
+  approved: true
+- name: Pansion Centar
+  kind: guesthouse (pansion)
+  offers: on Solni trg, breakfast buffet, free parking, about 200 m from the lakes
+  address: Trg Stara tržnica 8, Tuzla
+  lat: 44.537698
+  lon: 18.676053
+  url: http://www.pansioncentar.com/
+  confidence: high
+  notes: 'Breakfast and parking come from a Booking.com search snippet only (Booking page did not render for us). Straight-line distance: about 350 m from IPI, 212 m from Trg slobode. Coordinates from OSM
+    node 1875796442.'
+  sources:
+  - https://www.openstreetmap.org/node/1875796442
+  - https://tztz.ba/en/hotels/pansion-centar-tuzla/
+  - https://m.booking.com/hotel/ba/pansion-centar.en-gb.html
+  approved: true
+- name: Hotel Golden Star
+  kind: boutique hotel
+  offers: buffet breakfast included, free garage parking two streets away, lobby bar, 24h reception, meeting room for 50
+  address: Jevrejska 5, Tuzla
+  lat: 44.537829
+  lon: 18.676558
+  hours: Reception 24h (hotel site)
+  url: http://goldenstarhotel.ba/
+  confidence: high
+  notes: 'In OSM the building is tagged only as ''Motel'' at Jevrejska 5. Straight-line distance: about 360 m from IPI, 225 m from Trg slobode. Coordinates from OSM node 4090484836.'
+  sources:
+  - https://www.openstreetmap.org/node/4090484836
+  - https://tztz.ba/en/hotels/hotel-golden-star/
+  - http://goldenstarhotel.ba/
+  approved: true
+- name: Hotel Miris Dunja 88
+  kind: hotel (3 star per Kayak)
+  offers: pedestrian zone near the lakes, restaurant, 70 beds, meeting hall for 100
+  address: Goli brijeg 8, Tuzla
+  lat: 44.53635
+  lon: 18.675643
+  url: http://mirisdunja88.ba
+  confidence: high
+  notes: 'Straight-line distance: about 473 m from IPI, 338 m from Trg slobode. Coordinates from OSM way 699181201.'
+  sources:
+  - https://www.openstreetmap.org/way/699181201
+  - https://tztz.ba/en/hotels/hotel-miris-dunja-88/
+  - https://www.es.kayak.com/Tuzla-Hoteles-Hotel-Miris-Dunja-88.2759246.ksp
+  approved: true
+- name: Heartland City Hotel
+  kind: hotel / B&B
+  offers: about 200 m from the Pannonian lakes, breakfast, on-site parking, 24h reception, airport transfers
+  address: Kazan mahala 10, Tuzla
+  lat: 44.5362414
+  lon: 18.6780393
+  hours: Reception 24h (tourist board)
+  url: https://heartland.ba
+  price_note: 'Tourist board price list: double room with breakfast 75.00 BAM, twin 125.00 BAM, triple 155.00 BAM per night (page undated, fetched 2026-10-12). Kayak showed USD 100+ per night for Oct 10-11
+    (2026), fetched 2026-10-12.'
+  confidence: high
+  notes: 'Not in OSM; coordinates are the Nominatim house at Kazan mahala 10. Straight-line distance: about 572 m from IPI, 436 m from Trg slobode. Coordinates from Nominatim (address Kazan mahala 10).'
+  sources:
+  - https://tztz.ba/en/hotels/hotel-heartland-city/
+  - https://www.kayak.com/Tuzla-Hotels.23605.hotel.ksp
+  approved: true
+- name: Hotel Soni Lux
+  kind: hotel
+  offers: buffet breakfast, free private parking, near Pannonica lakes
+  address: Kulina bana 8, Tuzla
+  lat: 44.537665
+  lon: 18.681706
+  confidence: medium
+  notes: 'Only booking aggregators (seen as search snippets) describe it; no official site found. Phone +387 35 249 111 (2023 UNTZ accommodation sheet, seen as snippet). Straight-line distance: about 696
+    m from IPI, 592 m from Trg slobode. Coordinates from OSM node 6960504885.'
+  sources:
+  - https://www.openstreetmap.org/node/6960504885
+  - https://www.kayak.com/Tuzla-Hotels-Hotel-Soni-Lux.5926500.ksp
+  - https://hotel.routard.com/hotel/ba/soni-lux.en.html?aid=304142
+  approved: true
+- name: So i Sol Hotel
+  kind: boutique hotel
+  offers: 7 rooms, buffet or continental breakfast, parking and tourist tax included in B&B price
+  address: Obala Zmaja od Bosne (before no. 24), Tuzla
+  lat: 44.5349761
+  lon: 18.6780391
+  hours: Reception 08:00-22:00 (tourist board)
+  url: http://www.soisolhotel.ba/
+  confidence: medium
+  notes: 'Not in OSM; coordinates are the house at Obala Zmaja od Bosne 24, so approximate. Straight-line distance: about 690 m from IPI, 553 m from Trg slobode. Coordinates from Nominatim (address Obala
+    Zmaja od Bosne 24).'
+  sources:
+  - https://tztz.ba/en/hotels/so-i-sol-hotel/
+  approved: true
+- name: Banja Residence Apt. (Stan na dan Tuzla)
+  kind: apartment
+  offers: 30 m2 apartment for 2-4, kitchen, washing machine, private garage, lift, near Slana Banja and the lakes
+  address: Srpska Varoš 2, apt B1.3, Tuzla
+  lat: 44.537991
+  lon: 18.684059
+  url: https://stannadantuzla.ba/
+  confidence: high
+  notes: 'Single apartment, so only for one small party. Straight-line distance: about 856 m from IPI, 764 m from Trg slobode. Coordinates from OSM node 11585190750.'
+  sources:
+  - https://www.openstreetmap.org/node/11585190750
+  - https://tztz.ba/en/sobe-i-apartmani/banja-residence-apt/
+  approved: true
+- name: Hotel Mellain
+  kind: hotel
+  offers: 130 rooms, pool, saunas, fitness, spa and saltwater pool, panoramic restaurant
+  address: Aleja Alije Izetbegovića 3, Tuzla
+  lat: 44.53398
+  lon: 18.687263
+  url: http://mellainhotel.com/
+  price_note: Kayak showed USD 186+ per night for Oct 10-11 (2026), fetched 2026-10-12.
+  confidence: high
+  notes: 'Largest and most expensive option found; about 1.3 km from IPI. Straight-line distance: about 1284 m from IPI, 1165 m from Trg slobode. Coordinates from OSM node 2258139688.'
+  sources:
+  - https://www.openstreetmap.org/node/2258139688
+  - https://tztz.ba/en/hotels/hotel-mellain/
+  - https://www.kayak.com/Tuzla-Hotels.23605.hotel.ksp
+  approved: true
+- name: Hotel Tuzla
+  kind: hotel
+  offers: large hotel (12 floors), restaurant for 300, congress halls, 25 m indoor pool
+  address: ZAVNOBiH-a 13, Tuzla
+  lat: 44.5314599
+  lon: 18.6882247
+  confidence: medium
+  notes: 'Booking sites list a ''Grand Hotel Tuzla'' (43 rooms) at the same address, while the tourist board describes a 220+ room hotel; unclear if these are the same operation. No official site confirmed.
+    About 1.5 km from IPI, edge of the walking radius. Straight-line distance: about 1515 m from IPI, 1388 m from Trg slobode. Coordinates from Nominatim (OSM building ''Hotel Tuzla'').'
+  sources:
+  - https://tztz.ba/en/hotels/hotel-tuzla/
+  - https://nominatim.openstreetmap.org/search?q=Hotel+Tuzla&format=json
+  - https://fr.mappy.com/poi/695d5161f8258024c9c69718
+  approved: true

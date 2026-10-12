@@ -1,0 +1,44 @@
+# GoatConf 2027
+
+> A free conference in Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027. One-hour sessions in every room of IPI Academy, long breaks in town, and a day for the community.
+
+- Dates: Thursday 3 and Friday 4 June 2027 are talk days; Saturday 5 June 2027 is the community day.
+- Place: IPI Academy, Kulina bana 2, 75000 Tuzla, Bosnia and Herzegovina, next to Freedom Square (Trg slobode).
+- Price: free. Registration asks only for a name and an email, on Luma.
+- Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot. Seats are first come, first served at each room's door.
+- Friday starts half an hour earlier, so the hour off at 12:30 covers Džuma prayer.
+- Saturday has no talks: it is for events people add, such as the Pannonian salt lakes, the goat hunt, walks and meetups.
+- Talks: an open call; anyone may propose a session, first-time speakers welcome. The organiser reads every proposal.
+- Money: no money passes through the organiser. Supporters pay a supplier directly for one named thing, such as a speaker's travel, and every payment is in the public budget.
+- Recording: GoatConf does not record the talks. People may bring a camera or a podcast, and a supporter may pay for a crew.
+
+Register: https://luma.com/event/evt-dU4KbLhpIAm9Y9V
+Propose a session: https://goatconf.com/talk.html
+
+## Pages
+
+- [GoatConf 2027: a free conference in Tuzla](https://goatconf.com/): GoatConf is a free conference in Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027. One-hour sessions in every room of IPI Academy, long breaks in town, and everything else added by the people who come.
+- [Program: GoatConf 2027, 3 to 5 June, Tuzla](https://goatconf.com/program.html): The GoatConf 2027 program: two core days, Thursday 3 and Friday 4 June, in every room of IPI Academy, Tuzla, and Saturday 5 June for the community.
+- [Register: GoatConf 2027](https://goatconf.com/register.html): Register for free for GoatConf 2027 in Tuzla: core days Thursday 3 and Friday 4 June at IPI Academy, community day Saturday 5 June.
+- [Give a talk: GoatConf 2027](https://goatconf.com/talk.html): Propose a talk, a panel or a workshop for GoatConf 2027 in Tuzla: one-hour slots on 3 and 4 June, every proposal read by the organiser, no strict deadline.
+- [Getting here, staying and money: GoatConf 2027](https://goatconf.com/travel.html): How to reach Tuzla, where to stay, what things cost and what to plan for: flights, buses, hotels, money, phones and visas, with the date each price was checked.
+- [Speakers: GoatConf 2027, 3 to 5 June, Tuzla](https://goatconf.com/speakers.html): The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words, and who funded their travel.
+- [Add something: GoatConf 2027](https://goatconf.com/add.html): Add a workshop, a meetup, a dinner, a walk or support around GoatConf 2027 in Tuzla, 3 to 5 June. You run it, GoatConf lists it.
+- [Supporters: GoatConf 2027, 3 to 5 June, Tuzla](https://goatconf.com/supporters.html): The companies and people who make GoatConf 2027 possible, each thanked for exactly what they paid for, starting with speakers' travel.
+- [Events people add: GoatConf 2027](https://goatconf.com/extensions.html): Workshops, meetups, walks and more that people add around GoatConf 2027 in Tuzla, each run independently by its host.
+- [The budget: GoatConf 2027](https://goatconf.com/budget.html): Every euro GoatConf 2027 spends, and every gift it receives, in the open.
+- [The charter: GoatConf 2027](https://goatconf.com/charter.html): What GoatConf is and what it will not do: free, small on purpose, no money through the organiser, every euro public, and four rules for everything people add.
+- [Code of conduct: GoatConf 2027](https://goatconf.com/code-of-conduct.html): The code of conduct for GoatConf 2027 in Tuzla, and how to reach the two people who enforce it.
+- [Contact: GoatConf 2027](https://goatconf.com/contact.html): Contact the GoatConf 2027 organiser: questions, supporting the conference, press, data requests and confidential code of conduct reports.
+- [Brand: GoatConf 2027](https://goatconf.com/brand.html): The GoatConf seal, the goat, the wordmark, colours and type, with files to download for posts, slides, badges and T-shirts.
+
+## Data
+
+- [The program as JSON](https://goatconf.com/program.json): every day, room, session and event, with times in Central European Summer Time.
+- [The days for a calendar](https://goatconf.com/goatconf-2027.ics): Thursday, Friday and Saturday as calendar events.
+- [The public budget](https://goatconf.com/ledger.csv): every line of spending, as CSV.
+
+## Optional
+
+- [Sitemap](https://goatconf.com/sitemap.xml)
+- [The source and the records behind this site](https://github.com/misabegovic/goatconf)

@@ -1,0 +1,4 @@
+# Same union-merge rules as files/.gitattributes: the pi-brain log and home
+# page are append-only, so concurrent sessions resolve by keeping both.
+log/log.md      merge=union
+wiki/index.md   merge=union

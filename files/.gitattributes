@@ -1,0 +1,19 @@
+# Append-only files: concurrent sessions add entries at the same place,
+# so every parallel promotion conflicts on them and the resolution is
+# always "keep both". Git's built-in union driver does exactly that,
+# with no per-clone configuration.
+#
+# Deliberately NOT applied to wiki/_views/** — those are generated, and
+# merging them line by line would corrupt them. The `rebase` skill
+# resolves views by re-running `brain.py views` (byte-identical to
+# `tabula index`), which is deterministic against the merged tree and
+# therefore the correct resolution.
+#
+# The tradeoff union accepts: two sessions editing the *same existing*
+# line produce both versions silently instead of a conflict. That is
+# visible in review and cheap to fix, unlike the alternative it replaces
+# (hand-resolving the same union on every promotion, where the risk is a
+# mis-resolution that drops someone's entry).
+
+log/log.md      merge=union
+wiki/index.md   merge=union

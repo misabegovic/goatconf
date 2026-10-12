@@ -1,0 +1,211 @@
+#!/usr/bin/env python3
+"""GoatConf shareables: banners, covers, link previews and posts, in one look.
+
+Every image is an HTML card in the site's own type and colours, with the seal
+from site/brand/, rendered to PNG by headless Chrome into site/share/:
+
+  banners   LinkedIn profile banner, LinkedIn page cover, a 3:1 header for
+            X, Bluesky and Mastodon, the Luma event cover
+  og.png    the link preview every page uses
+  posts     save the date, the call for talks, registration, add something,
+            each square (1080) and wide (1200 x 675)
+  records   an "I'm speaking" card per published speaker and a "thank you"
+            card per supporter, built from speakers/ and supporters/
+
+  render [--only NAME]   write the PNG files (needs Chrome and Pillow)
+  list                   print what would be rendered
+
+Usage: python3 tools/shareables.py <render|list> [--only NAME]
+"""
+
+from __future__ import annotations
+
+import argparse
+import html
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import brand  # noqa: E402
+import speakers  # noqa: E402
+
+ROOT = Path(__file__).resolve().parent.parent
+SITE = ROOT / "site"
+OUT = SITE / "share"
+BLUE, YELLOW, NIGHT, SOFT = brand.BLUE, brand.YELLOW, brand.NIGHT, "#c9d7f5"
+FACTS = "Tuzla · 3 to 5 June 2027 · Free"
+URL = "goatconf.com"
+esc = html.escape
+
+HOOVES = ("url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E"
+          "%3Cg fill='white' fill-opacity='.06'%3E%3Cpath d='M30 40c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E"
+          "%3Cpath d='M34 40c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3Cpath d='M112 104c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E"
+          "%3Cpath d='M116 104c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3C/g%3E%3C/svg%3E\")")
+
+
+def page(w: int, h: int, body: str, bg: str = BLUE) -> str:
+    fonts = (SITE / "fonts").as_uri()
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face {{ font-family: "Bricolage Grotesque"; src: url("{fonts}/bricolage-wdth-latin.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; }}
+@font-face {{ font-family: "Bricolage Grotesque"; src: url("{fonts}/bricolage-wdth-latin-ext.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; unicode-range: U+0100-02BA; }}
+@font-face {{ font-family: "Atkinson Hyperlegible Next"; src: url("{fonts}/atkinson-latin.woff2") format("woff2"); font-weight: 200 800; }}
+@font-face {{ font-family: "Atkinson Hyperlegible Next"; src: url("{fonts}/atkinson-latin-ext.woff2") format("woff2"); font-weight: 200 800; unicode-range: U+0100-02BA; }}
+* {{ box-sizing: border-box; margin: 0; }}
+html, body {{ width: {w}px; height: {h}px; overflow: hidden; }}
+body {{ background: {bg} {HOOVES}; color: #fff; font-family: "Atkinson Hyperlegible Next", sans-serif; position: relative; }}
+.word {{ font-family: "Bricolage Grotesque"; font-weight: 800; font-stretch: 75%; line-height: .86; letter-spacing: .005em; text-transform: uppercase; }}
+.sub {{ font-family: "Bricolage Grotesque"; font-weight: 700; font-stretch: 85%; color: {YELLOW}; }}
+.url {{ font-weight: 700; color: {SOFT}; }}
+.seal {{ position: absolute; display: block; }}
+.rule {{ height: 6px; background: {YELLOW}; border-radius: 3px; }}
+</style></head><body>{body}</body></html>"""
+
+
+def seal(size: int, style: str, which: str = "seal.svg") -> str:
+    return f'<img class="seal" src="{(SITE / "brand" / which).as_uri()}" width="{size}" height="{size}" style="{style}" alt="">'
+
+
+def banner(w: int, h: int, word: int, sub: int, url: int, seal_size: int, left: int, right: int, top: int | None = None) -> str:
+    """A wide band: the name, the facts and the address on the left, the whole seal on the right."""
+    top_css = f"top:{top}px" if top is not None else "top:50%; transform:translateY(-50%)"
+    return page(w, h, f"""
+<div style="position:absolute; left:{left}px; {top_css}">
+  <div class="word" style="font-size:{word}px">GoatConf 2027</div>
+  <div class="sub" style="font-size:{sub}px; margin-top:{int(sub * .55)}px">{FACTS}</div>
+  <div class="url" style="font-size:{url}px; margin-top:{int(sub * .7)}px">{URL}</div>
+</div>
+{seal(seal_size, f"right:{right}px; top:50%; transform:translateY(-50%)")}""")
+
+
+def post(w: int, h: int, title: str, line: str, square: bool) -> str:
+    if square:
+        return page(w, h, f"""
+<div style="position:absolute; left:84px; top:96px; right:84px">
+  <div class="word" style="font-size:132px">{title}</div>
+  <div class="rule" style="width:120px; margin:44px 0 36px"></div>
+  <div class="sub" style="font-size:44px; line-height:1.15; max-width:24ch">{line}</div>
+</div>
+<div style="position:absolute; left:84px; bottom:92px">
+  <div class="sub" style="font-size:34px; color:#fff">{FACTS}</div>
+  <div class="url" style="font-size:32px; margin-top:16px">{URL}</div>
+</div>
+{seal(300, "right:72px; bottom:72px")}""")
+    return page(w, h, f"""
+<div style="position:absolute; left:72px; top:72px; width:720px">
+  <div class="word" style="font-size:104px">{title}</div>
+  <div class="rule" style="width:100px; margin:34px 0 28px"></div>
+  <div class="sub" style="font-size:36px; line-height:1.15">{line}</div>
+</div>
+<div style="position:absolute; left:72px; bottom:64px">
+  <div class="sub" style="font-size:28px; color:#fff">{FACTS}</div>
+  <div class="url" style="font-size:26px; margin-top:12px">{URL}</div>
+</div>
+{seal(340, "right:72px; top:50%; transform:translateY(-50%)")}""")
+
+
+POSTS = {
+    "save-the-date": ("Save<br>the date", "Two days of talks in every room of IPI Academy, then a day for the community."),
+    "call-for-talks": ("The call<br>for talks<br>is open", "One hour, one room, an audience. No strict deadline."),
+    "register": ("Register,<br>it is free", "Thursday and Friday for the talks, Saturday for the community."),
+    "add-something": ("Add<br>something", "A workshop, a meetup, a dinner, a hike: run it around GoatConf."),
+}
+
+
+def speaker_card(slug: str, meta, talks: list[str], square: bool) -> str:
+    name = esc(str(meta["name"]))
+    photo = (f'<img src="{(SITE / meta["photo"]).as_uri()}" style="width:100%;height:100%;object-fit:cover">'
+             if meta.get("photo") else
+             f'<img src="{(SITE / "brand" / "coin-yellow.svg").as_uri()}" style="width:70%;height:70%;margin:15%">')
+    talk = talks[0] if talks else "Speaking at GoatConf 2027"
+    size, w, h = (380, 1080, 1080) if square else (330, 1200, 675)
+    frame = (f'<div style="position:absolute; left:84px; top:96px; width:{size}px; height:{size}px; border-radius:50%; overflow:hidden; '
+             f'background:{YELLOW}; box-shadow:0 0 0 10px #fff">{photo}</div>')
+    return page(w, h, f"""
+{frame if square else frame.replace('left:84px; top:96px', 'left:72px; top:50%; transform:translateY(-50%)')}
+<div style="position:absolute; {'left:84px; top:540px; right:84px' if square else 'left:450px; top:84px; right:300px'}">
+  <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">I'm speaking at GoatConf 2027</div>
+  <div class="word" style="font-size:{120 if square else 92}px; margin-top:18px">{name}</div>
+  <div class="sub" style="font-size:{34 if square else 28}px; line-height:1.2; margin-top:28px; max-width:20ch">{talk}</div>
+</div>
+<div class="url" style="position:absolute; left:{84 if square else 450}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/speakers.html</div>
+{seal(240 if square else 230, "right:72px; bottom:72px")}""")
+
+
+def supporter_card(slug: str, meta, square: bool) -> str:
+    w, h = (1080, 1080) if square else (1200, 675)
+    logo = (SITE / meta["logo"]).as_uri()
+    return page(w, h, f"""
+<div style="position:absolute; left:{84 if square else 72}px; top:{96 if square else 72}px; right:{84 if square else 460}px">
+  <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">Thank you,</div>
+  <div class="word" style="font-size:{120 if square else 92}px; margin-top:16px">{esc(str(meta['name']))}</div>
+  <div class="sub" style="font-size:{36 if square else 28}px; line-height:1.2; margin-top:28px">for funding {esc(str(meta['funds'])[0].lower() + str(meta['funds'])[1:])}.</div>
+</div>
+<div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:#fff; border-radius:18px; display:grid; place-items:center; padding:28px">
+  <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
+<div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/supporters.html</div>
+{seal(240 if square else 220, "right:72px; bottom:72px")}""")
+
+
+def jobs() -> dict[str, tuple[int, int, str]]:
+    out = {
+        "linkedin-banner.png": (1584, 396, banner(1584, 396, 104, 36, 26, 320, 560, 90)),
+        "linkedin-page-cover.png": (1128, 191, banner(1128, 191, 64, 24, 18, 160, 56, 48)),
+        "header-3x1.png": (1500, 500, banner(1500, 500, 128, 40, 28, 400, 90, 96)),
+        "og.png": (1200, 630, banner(1200, 630, 104, 34, 26, 400, 64, 56)),
+        "luma-cover.png": (1080, 1080, page(1080, 1080, f"""
+{seal(600, "left:240px; top:110px")}
+<div style="position:absolute; left:0; right:0; bottom:110px; text-align:center">
+  <div class="word" style="font-size:120px">GoatConf 2027</div>
+  <div class="sub" style="font-size:42px; margin-top:24px">{FACTS}</div>
+</div>""")),
+    }
+    for key, (title, line) in POSTS.items():
+        out[f"post-{key}-square.png"] = (1080, 1080, post(1080, 1080, title, line, True))
+        out[f"post-{key}-wide.png"] = (1200, 675, post(1200, 675, title.replace("<br>", " "), line, False))
+    talks = speakers.sessions_by_speaker()
+    for slug, (meta, _) in speakers.speakers().items():
+        out[f"speaker-{slug}-square.png"] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True))
+        out[f"speaker-{slug}-wide.png"] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False))
+    for slug, (meta, _) in speakers.supporters().items():
+        out[f"supporter-{slug}-square.png"] = (1080, 1080, supporter_card(slug, meta, True))
+        out[f"supporter-{slug}-wide.png"] = (1200, 675, supporter_card(slug, meta, False))
+    return out
+
+
+def render(name: str, w: int, h: int, doc: str, tmp: Path, exe: str) -> None:
+    src = tmp / f"{name}.html"
+    src.write_text(doc, encoding="utf-8")
+    shot = tmp / name
+    subprocess.run([exe, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--virtual-time-budget=4000",
+                    f"--window-size={w},{h + 200}", f"--screenshot={shot}", src.as_uri()],
+                   check=True, capture_output=True, timeout=120)
+    brand.crop(shot, OUT / name, w, h)
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    r = sub.add_parser("render")
+    r.add_argument("--only")
+    sub.add_parser("list")
+    args = ap.parse_args(argv)
+    todo = jobs()
+    if args.cmd == "list":
+        for name, (w, h, _) in todo.items():
+            print(f"{name}  {w}x{h}")
+        return 0
+    OUT.mkdir(exist_ok=True)
+    exe = brand.chrome()
+    with tempfile.TemporaryDirectory() as tmp:
+        for name, (w, h, doc) in todo.items():
+            if args.only and args.only not in name:
+                continue
+            render(name, w, h, doc, Path(tmp), exe)
+            print(f"rendered site/share/{name}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

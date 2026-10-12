@@ -1,0 +1,16 @@
+{
+  "title": "Ajvar_toast",
+  "subject": "Ajvar on bread, a pepper relish usually made without meat or dairy",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Ajvar_toast.jpg",
+  "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Ajvar_toast.jpg",
+  "author": "Popo le Chien",
+  "licence": "CC0",
+  "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "required_credit_line": "Photo: Popo le Chien, CC0, via Wikimedia Commons",
+  "retrieved": "2026-10-12",
+  "modifications": "cropped to 3720 x 2067 px from the 3968 x 2976 original, to remove the jar label; resized to 1600 px wide; re-encoded as JPEG (quality 85); metadata dropped",
+  "width": 1600,
+  "height": 889,
+  "snapshot": "sources/web/images/ajvar-toast.md",
+  "note": "Ajvar is a Balkan relish, not Bosnia-specific. Usually vegan; the photo does not show the ingredients."
+}

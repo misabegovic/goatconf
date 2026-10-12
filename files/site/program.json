@@ -1,0 +1,89 @@
+{
+  "name": "GoatConf 2027",
+  "url": "https://goatconf.com/",
+  "summary": "A free conference in Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027.",
+  "timezone": "Europe/Sarajevo",
+  "venue": {
+    "name": "IPI Academy (IPI Akademija Tuzla)",
+    "address": "Kulina bana 2, 75000 Tuzla, Bosnia and Herzegovina",
+    "lat": 44.5404,
+    "lon": 18.6738
+  },
+  "register": "https://luma.com/event/evt-dU4KbLhpIAm9Y9V",
+  "propose_a_session": "https://goatconf.com/talk.html",
+  "days": [
+    {
+      "date": "2027-06-03",
+      "name": "Thursday 3 June",
+      "welcome": "09:45",
+      "end": "17:00",
+      "slots": [
+        "10:00",
+        "12:00",
+        "14:00",
+        "16:00"
+      ],
+      "after_each_slot": {
+        "10:00": "Coffee on Freedom Square, one hour",
+        "12:00": "Lunch in town, one hour",
+        "14:00": "Coffee on Freedom Square, one hour"
+      },
+      "note": "Four one-hour slots in every room, an hour off after each. Welcome at 09:45."
+    },
+    {
+      "date": "2027-06-04",
+      "name": "Friday 4 June",
+      "welcome": "09:15",
+      "end": "16:30",
+      "slots": [
+        "09:30",
+        "11:30",
+        "13:30",
+        "15:30"
+      ],
+      "after_each_slot": {
+        "09:30": "Coffee on Freedom Square, one hour",
+        "11:30": "Džuma prayer and lunch, one hour. The Čaršijska mosque is on Freedom Square, under five minutes' walk.",
+        "13:30": "Coffee on Freedom Square, one hour"
+      },
+      "note": "Four slots, starting half an hour earlier so the hour off at 12:30 covers Džuma prayer. Welcome at 09:15."
+    },
+    {
+      "date": "2027-06-05",
+      "name": "Saturday 5 June",
+      "note": "No talks. The community's day: events people add."
+    }
+  ],
+  "rooms": [
+    {
+      "name": "Main hall",
+      "seats": "ground floor, about 120 seats"
+    },
+    {
+      "name": "First-floor hall",
+      "seats": "100 seats"
+    },
+    {
+      "name": "Second-floor room",
+      "seats": "34 seats"
+    },
+    {
+      "name": "Computer centre 1",
+      "seats": "20 seats"
+    },
+    {
+      "name": "Computer centre 2",
+      "seats": "26 seats"
+    },
+    {
+      "name": "Top-floor room",
+      "seats": "24 seats"
+    },
+    {
+      "name": "The old student club",
+      "seats": "13 seats"
+    }
+  ],
+  "sessions": [],
+  "events": []
+}

@@ -1,0 +1,298 @@
+#!/usr/bin/env python3
+"""The rule checks local CI runs against a base ref.
+
+The goatconf brain lives under files/ inside this pi-brain clone, so
+every check scopes itself to the files/ subtree; the pi-brain root has
+its own conventions and tooling.
+
+Each check enforces a rule AGENTS.md states and nothing else enforced:
+
+  sources-additive   files/sources/ is additive only: no file under it is
+                     modified, deleted or renamed relative to the base.
+                     Content arriving from outside the subtree (the
+                     pi-brain conversion renames) counts as new.
+  confidence-floor   no page reaches `confidence: high` in the same change
+                     that writes it, unless a human recorded the promotion
+                     in files/wiki/_state/confidence-promotions.yml. Generated
+                     views under files/wiki/_views/ are not authored and skipped.
+  no-em-dashes       no em dash in a line this change adds under files/,
+                     outside verbatim sources, generated views and
+                     vendored skills.
+  no-ai-attribution  no commit since the base carries generation credit, a
+                     session link or an assistant named as co-author.
+
+Each compares the base with the working tree, so committed and uncommitted
+changes are both seen. Exit 0 when clean, 1 with one line per finding.
+
+Usage: python3 files/tools/ci_checks.py <check|all> [--base REF]
+"""
+
+from __future__ import annotations
+
+import argparse
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+import yaml
+
+ROOT = Path(
+    subprocess.run(
+        ["git", "rev-parse", "--show-toplevel"],
+        capture_output=True, text=True, check=True,
+    ).stdout.strip()
+)
+EM_DASH = "\u2014"
+PROMOTIONS = "files/wiki/_state/confidence-promotions.yml"
+
+EM_DASH_EXEMPT = (
+    "files/sources/",
+    "files/wiki/_views/",
+    # The .claude machinery is inherited from claude-brain (AGENTS.md,
+    # Lineage) and its prose style predates the no-em-dashes rule: those
+    # lines were grandfathered when the rule arrived. The rule polices
+    # goatconf-authored shelves, not the inherited machinery.
+    "files/.claude/",
+)
+LOG_LINE = re.compile(r"^[0-9]{4}-[0-9]{2}-[0-9]{2} [a-z][a-z+-]* \u2014 ")
+
+ATTRIBUTION = [
+    re.compile(r"co-authored-by:.*(claude|anthropic|copilot|chatgpt|openai|gpt-|gemini|cursor)", re.I),
+    re.compile(r"claude-session:", re.I),
+    re.compile(r"claude\.ai/code", re.I),
+    re.compile(r"generated (with|by) \[?(claude|chatgpt|copilot|cursor)", re.I),
+    re.compile(r"\U0001F916 generated", re.I),
+]
+
+
+def git(*args: str) -> str:
+    return subprocess.run(
+        ["git", *args], cwd=ROOT, capture_output=True, text=True, check=True
+    ).stdout
+
+
+def merge_base(base: str) -> str:
+    return git("merge-base", base, "HEAD").strip()
+
+
+def changed(base: str) -> list[tuple[str, str, str]]:
+    """(status, path, source) for every path under files/ that differs
+    between the merge base and the working tree, untracked files included
+    as additions. For renames, `path` is the destination and `source` the
+    base-side path ("" for additions)."""
+    out = []
+    for line in git("diff", "--name-status", "-M", merge_base(base), "--", "files/").splitlines():
+        parts = line.split("\t")
+        status = parts[0][0]
+        if status == "R":
+            out.append((status, parts[2], parts[1]))
+        else:
+            out.append((status, parts[-1], ""))
+    for path in git("ls-files", "--others", "--exclude-standard", "--", "files/").splitlines():
+        out.append(("A", path, ""))
+    return out
+
+
+def check_sources_additive(base: str) -> list[str]:
+    return [
+        f"sources-additive: {path} is {dict(M='modified', D='deleted', R='renamed').get(status, status)} "
+        f"relative to {base}; files/sources/ is additive only (AGENTS.md, Path conventions)"
+        for status, path, source in changed(base)
+        if path.startswith("files/sources/") and status in "MDR" and (status != "R" or source.startswith("files/"))
+    ]
+
+
+def frontmatter(text: str) -> dict:
+    if not text.startswith("---"):
+        return {}
+    end = text.find("\n---", 3)
+    if end < 0:
+        return {}
+    try:
+        return yaml.safe_load(text[3:end]) or {}
+    except yaml.YAMLError:
+        return {}
+
+
+def check_confidence_floor(base: str) -> list[str]:
+    allowed = set()
+    promotions = ROOT / PROMOTIONS
+    if promotions.exists():
+        for entry in yaml.safe_load(promotions.read_text()) or []:
+            if isinstance(entry, dict) and entry.get("page") and entry.get("by"):
+                allowed.add(entry["page"])
+    mb = merge_base(base)
+    findings = []
+    for status, path, source in changed(base):
+        if not (path.startswith("files/wiki/") and path.endswith(".md")) or status == "D":
+            continue
+        if path.startswith("files/wiki/_views/"):
+            continue  # generated by brain.py views / tabula index, not authored
+        page = ROOT / path
+        if not page.exists() or frontmatter(page.read_text()).get("confidence") != "high":
+            continue
+        before_path = source or path
+        try:
+            before = frontmatter(git("show", f"{mb}:{before_path}")).get("confidence")
+        except subprocess.CalledProcessError:
+            before = None
+        if before != "high" and path not in allowed:
+            findings.append(
+                f"confidence-floor: {path} reaches confidence: high in this change; "
+                f"agent-authored pages start at low or medium (AGENTS.md, rule 3). "
+                f"A human promotion is recorded in {PROMOTIONS}"
+            )
+    return findings
+
+
+def moved_from_base(base: str) -> set[str]:
+    """Paths added on this branch whose exact bytes already exist in the
+    base tree under a different path: pure moves (the pi-brain conversion
+    moved the whole brain under files/, and git's rename detection paired
+    some root lookalikes instead). Their lines are not new prose, so the
+    em-dash rule does not re-litigate them."""
+    mb = merge_base(base)
+    base_blobs = set()
+    try:
+        for line in git("ls-tree", "-r", mb).splitlines():
+            base_blobs.add(line.split(" ", 2)[2].split("\t", 1)[0])
+    except subprocess.CalledProcessError:
+        return set()
+    out = set()
+    for status, path, _ in changed(base):
+        if status != "A":
+            continue
+        f = ROOT / path
+        if not f.is_file():
+            continue
+        h = subprocess.run(
+            ["git", "hash-object", str(f)], capture_output=True, text=True, check=True
+        ).stdout.strip()
+        if h in base_blobs:
+            out.add(path)
+    return out
+
+
+def base_counterpart(base: str, path: str) -> str | None:
+    """The base-tree path this file moved from, when the branch moved the
+    whole subtree under files/ and then edited the file: the base holds the
+    same path without the files/ prefix. Returns None when there is no such
+    counterpart (a genuinely new file)."""
+    if not path.startswith("files/"):
+        return None
+    stripped = path[len("files/"):]
+    try:
+        git("cat-file", "-e", f"{merge_base(base)}:{stripped}")
+    except subprocess.CalledProcessError:
+        return None
+    return stripped
+
+
+def added_lines_vs_base(base: str, path: str) -> list[str]:
+    """Lines `path` adds over its base counterpart (move-with-edit), so the
+    em-dash rule sees only what this branch actually wrote."""
+    import difflib
+    counterpart = base_counterpart(base, path)
+    before = git("show", f"{merge_base(base)}:{counterpart}").splitlines()
+    after = (ROOT / path).read_text().splitlines()
+    return [
+        line[1:] for line in difflib.unified_diff(before, after, lineterm="")
+        if line.startswith("+") and not line.startswith("+++")
+    ]
+
+
+def check_no_em_dashes(base: str) -> list[str]:
+    findings = []
+    moved = moved_from_base(base)
+    symlinks = {
+        path for _, path, _ in changed(base) if (ROOT / path).is_symlink()
+    }
+    edited_moves = {
+        path for status, path, _ in changed(base)
+        if status == "A" and path not in moved and path not in symlinks
+        and not path.startswith(EM_DASH_EXEMPT)
+        and base_counterpart(base, path)
+    }
+    paths = [
+        p for s, p, _ in changed(base)
+        if s != "D" and not p.startswith(EM_DASH_EXEMPT) and p not in moved and p not in edited_moves and p not in symlinks
+    ]
+    tracked_diff = git("diff", "-U0", merge_base(base), "--", *paths) if paths else ""
+    current = None
+    for line in tracked_diff.splitlines():
+        if line.startswith("+++ "):
+            current = line[6:] if line.startswith("+++ b/") else None
+        elif line.startswith("+") and current and EM_DASH in line:
+            text = line[1:]
+            if current == "files/log/log.md" and LOG_LINE.match(text) and text.count(EM_DASH) == 1:
+                continue
+            findings.append(f"no-em-dashes: {current}: {text.strip()[:100]}")
+    for path in sorted(edited_moves):
+        for text in added_lines_vs_base(base, path):
+            if EM_DASH not in text:
+                continue
+            if path == "files/log/log.md" and LOG_LINE.match(text) and text.count(EM_DASH) == 1:
+                continue
+            findings.append(f"no-em-dashes: {path}: {text.strip()[:100]}")
+    for status, path, _ in changed(base):
+        if status != "A" or path.startswith(EM_DASH_EXEMPT) or path in moved or path in edited_moves or path in symlinks:
+            continue
+        file = ROOT / path
+        if path in git("ls-files", "--others", "--exclude-standard", "--", "files/").splitlines() and file.is_file():
+            try:
+                for text in file.read_text().splitlines():
+                    if EM_DASH in text:
+                        findings.append(f"no-em-dashes: {path}: {text.strip()[:100]}")
+            except UnicodeDecodeError:
+                pass
+    return findings
+
+
+def check_no_ai_attribution(base: str) -> list[str]:
+    findings = []
+    log = git("log", "--format=%H%x00%B%x1e", f"{merge_base(base)}..HEAD")
+    for record in filter(None, (r.strip() for r in log.split("\x1e"))):
+        sha, _, body = record.partition("\x00")
+        for pattern in ATTRIBUTION:
+            match = pattern.search(body)
+            if match:
+                findings.append(
+                    f"no-ai-attribution: commit {sha[:8]} carries {match.group(0)!r} "
+                    f"(AGENTS.md, Conventions: no AI attribution)"
+                )
+                break
+    return findings
+
+
+CHECKS = {
+    "sources-additive": check_sources_additive,
+    "confidence-floor": check_confidence_floor,
+    "no-em-dashes": check_no_em_dashes,
+    "no-ai-attribution": check_no_ai_attribution,
+}
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("check", choices=[*CHECKS, "all"])
+    ap.add_argument("--base", default="origin/main")
+    args = ap.parse_args()
+    names = list(CHECKS) if args.check == "all" else [args.check]
+    try:
+        merge_base(args.base)
+    except subprocess.CalledProcessError:
+        print(f"ci-checks: base {args.base!r} not found; fetch it first", file=sys.stderr)
+        return 2
+    total = 0
+    for name in names:
+        findings = CHECKS[name](args.base)
+        for finding in findings:
+            print(finding)
+        print(f"# {name}: {len(findings)} finding(s)", file=sys.stderr)
+        total += len(findings)
+    return 1 if total else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

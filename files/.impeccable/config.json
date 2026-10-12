@@ -1,0 +1,62 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "site/index.html"
+        ],
+        "createdAt": "2026-10-12T10:16:18.702Z",
+        "reason": "display type is set tight on purpose (DESIGN.md: Display 0.88, Headline 0.95); body text is 1.6 in goatconf.css"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "site/index.html"
+        ],
+        "createdAt": "2026-10-12T10:16:29.132Z",
+        "reason": "the flagged boxes are padded or full-bleed by design: .hero__sign has clamp padding in goatconf.css, and every .stop is a full-bleed photograph (DESIGN.md); body text is inset in .stop__body"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "site/*.html"
+        ],
+        "createdAt": "2026-10-12T10:16:29.139Z",
+        "reason": "DESIGN.md defines stone #ebe8e3 as Afternoon Stone, the page background token; a deliberate palette, not a default"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "site/index.html"
+        ],
+        "createdAt": "2026-10-12T11:41:36.666Z",
+        "reason": "Sticker album grammar: stickers and printed slots stuck on album pages, sanctioned by the finish review 2026-10-12"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "site/*.html"
+        ],
+        "createdAt": "2026-10-12T11:41:36.672Z",
+        "reason": "Album pages clip to their rounded corners so the blue band has no seam; nothing positioned leaves the page padding"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "site/program.html"
+        ],
+        "createdAt": "2026-10-12T12:00:38.126Z",
+        "reason": "The album band runs edge to edge across the top of each album page by design and carries its own padding; the detector reads the page as flush"
+      }
+    ]
+  }
+}

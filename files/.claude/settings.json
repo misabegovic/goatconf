@@ -1,0 +1,100 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PROJECT_DIR:-.}/tools/preflight-hook.sh\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ ! -f \"${CLAUDE_PROJECT_DIR}/files/.claude/skills/impeccable/scripts/impeccable\" ] || \"${CLAUDE_PROJECT_DIR}/files/.claude/skills/impeccable/scripts/impeccable\" hook",
+            "timeout": 5,
+            "statusMessage": "Preparing build session"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ ! -f \"${CLAUDE_PROJECT_DIR}/files/.claude/skills/impeccable/scripts/impeccable\" ] || \"${CLAUDE_PROJECT_DIR}/files/.claude/skills/impeccable/scripts/impeccable\" hook",
+            "timeout": 5,
+            "statusMessage": "Checking UI changes"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ ! -f \"${CLAUDE_PROJECT_DIR}/files/.claude/skills/impeccable/scripts/impeccable\" ] || \"${CLAUDE_PROJECT_DIR}/files/.claude/skills/impeccable/scripts/impeccable\" hook",
+            "timeout": 30,
+            "statusMessage": "Design deep pass"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(mempalace search:*)",
+      "Bash(mempalace status)",
+      "Bash(mempalace status:*)",
+      "Bash(mempalace wake-up)",
+      "Bash(mempalace wake-up:*)",
+      "Bash(mempalace mine:*)",
+      "Bash(mempalace split:*)",
+      "Bash(python3 files/tools/brain.py:*)",
+      "Bash(python files/tools/brain.py:*)",
+      "Bash(files/tools/brain:*)",
+      "Bash(brain:*)",
+      "Bash(files/tools/sync-siblings.sh:*)",
+      "Bash(bash files/tools/sync-siblings.sh:*)",
+      "Bash(files/tools/home-staleness.sh:*)",
+      "Bash(bash files/tools/home-staleness.sh:*)",
+      "Bash(files/tools/preflight.sh)",
+      "Bash(bash files/tools/preflight.sh)",
+      "Bash(gh:*)"
+    ],
+    "deny": [
+      "mcp__claude_ai_Notion__notion-create-attachment",
+      "mcp__claude_ai_Notion__notion-create-comment",
+      "mcp__claude_ai_Notion__notion-create-database",
+      "mcp__claude_ai_Notion__notion-create-pages",
+      "mcp__claude_ai_Notion__notion-create-view",
+      "mcp__claude_ai_Notion__notion-duplicate-page",
+      "mcp__claude_ai_Notion__notion-move-pages",
+      "mcp__claude_ai_Notion__notion-update-data-source",
+      "mcp__claude_ai_Notion__notion-update-page",
+      "mcp__claude_ai_Notion__notion-update-view",
+      "mcp__notion__notion-create-attachment",
+      "mcp__notion__notion-create-comment",
+      "mcp__notion__notion-create-database",
+      "mcp__notion__notion-create-pages",
+      "mcp__notion__notion-create-view",
+      "mcp__notion__notion-duplicate-page",
+      "mcp__notion__notion-move-pages",
+      "mcp__notion__notion-update-data-source",
+      "mcp__notion__notion-update-page",
+      "mcp__notion__notion-update-view"
+    ]
+  },
+  "env": {
+    "IMPECCABLE_NO_UPDATE_CHECK": "1",
+    "IMPECCABLE_NO_TELEMETRY": "1"
+  }
+}

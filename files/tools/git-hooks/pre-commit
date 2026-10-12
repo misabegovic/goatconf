@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# brain pre-commit hook: validate, views, links.
+#
+# Install with:
+#   ln -s ../../files/tools/git-hooks/pre-commit .git/hooks/pre-commit
+#
+# Inherited from claude-brain on 2026-10-07 without the code-graph steps
+# (intent stamp, export, intent-compile drift) and the attention-card lint,
+# which this brain has no use for yet.
+#
+# 1. `brain.py validate`: hard fail.
+# 2. Citations: `brain.py check --no-net`: hard fail.
+# 3. Views: `brain.py views`, a drift in wiki/_views/ fails. The generator
+#    is pinned to this repo's brain.py: a `tabula` binary found on PATH may
+#    be another organisation's build (2026-10-08) and can never reproduce
+#    the committed views.
+set -euo pipefail
+
+REPO=$(git rev-parse --show-toplevel)
+cd "$REPO"
+echo "# brain pre-commit: validate + views + links"
+
+PY=~/.local/share/mempalace-venv/bin/python3
+[ -x "$PY" ] || PY=python3
+if ! "$PY" files/tools/brain.py validate >&2; then
+  echo "✗ brain.py validate failed: commit refused." >&2
+  exit 1
+fi
+
+"$PY" files/tools/brain.py check --no-net >/dev/null 2>&1 || { echo "✗ brain.py check --no-net found an unresolved citation: commit refused." >&2; exit 1; }
+
+"$PY" files/tools/brain.py views >/dev/null || { echo "✗ brain.py views failed: commit refused." >&2; exit 1; }
+if ! git diff --quiet files/wiki/_views/ || [ -n "$(git ls-files --others --exclude-standard files/wiki/_views/)" ]; then
+  echo "  views regenerated: auto-staging files/wiki/_views/" >&2
+  git add files/wiki/_views/
+fi
+
+n=$("$PY" files/tools/brain.py reflection-check links 2>/dev/null | grep -c "^links:" || true)
+if [ "${n:-0}" -gt 0 ]; then
+  echo "✗ ${n} broken link(s): commit refused." >&2
+  "$PY" files/tools/brain.py reflection-check links 2>&1 | grep "^links:" | head -10 >&2
+  exit 1
+fi
+echo "  ✓ validate + citations + views + links clean"
