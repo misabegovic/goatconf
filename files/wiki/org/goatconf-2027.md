@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-12
 confidence: medium
 sources:
+  - sources/conversations/2026-10-12--org--audience-list.md
   - sources/conversations/2026-10-12--org--build-and-sell.md
   - sources/conversations/2026-10-12--org--what-goatconf-is.md
   - sources/conversations/2026-10-12--org--contact-email.md
@@ -60,7 +61,8 @@ above; nothing is inferred. Proposals live in the
   [Core days: parallel rooms](adrs/core-day-parallel-tracks.md)).
 - **Language:** English.
 - **Audience:** open and multi-discipline: engineers, designers, product
-  people, founders, and on 2026-10-12 also the people who sell software: marketers and salespeople (source: sources/conversations/2026-10-12--org--build-and-sell.md).
+  people, founders: people who build and sell software (sources: sources/conversations/2026-10-12--org--build-and-sell.md,
+  sources/conversations/2026-10-12--org--audience-list.md).
   Not tied to any language or stack, Ruby included (source: sources/conversations/2026-10-12--org--what-goatconf-is.md).
 - **Size:** 120 to 300 people for the first edition. Registration is one
   free pass per core day; each room is capped by its own seats at the
