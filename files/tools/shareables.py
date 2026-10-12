@@ -35,7 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 OUT = SITE / "share"
 BLUE, YELLOW, NIGHT, SOFT = brand.BLUE, brand.YELLOW, brand.NIGHT, "#c9d7f5"
-FACTS = "Tuzla · 3 to 5 June 2027 · Free"
+FACTS = "Tuzla · 3 to 5 June 2027 · Free to attend"
 URL = "goatconf.com"
 esc = html.escape
 
@@ -108,7 +108,7 @@ def post(w: int, h: int, title: str, line: str, square: bool) -> str:
 POSTS = {
     "save-the-date": ("Save<br>the date", "Two days of talks in every room of IPI Academy, then a day for the community."),
     "call-for-talks": ("The call<br>for talks<br>is open", "One hour, one room, an audience. No strict deadline."),
-    "register": ("Free<br>to attend", "Thursday and Friday for the talks, Saturday for the community."),
+    "register": ("Get your<br>free ticket", "Thursday and Friday for the talks, Saturday for the community."),
     "add-something": ("Add<br>something", "A workshop, a meetup, a dinner, a hike: run it around GoatConf."),
 }
 
