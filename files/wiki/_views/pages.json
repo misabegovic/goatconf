@@ -535,6 +535,7 @@
       "updated": "2026-10-12",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-12--org--build-and-sell.md",
         "sources/conversations/2026-10-12--org--what-goatconf-is.md",
         "sources/conversations/2026-10-12--org--contact-email.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
@@ -557,7 +558,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 1596
+      "tokens": 1639
     },
     {
       "path": "org/index.md",
