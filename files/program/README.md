@@ -17,10 +17,9 @@ record; the body is the speaker's own short description. Copy
   their profiles.
 - `accepted: yes` once the organiser has accepted the proposal and the
   speaker has confirmed.
-- `signup`: optional, the session's sign-up link in the GoatConf app (a copy of
-  the Rails World app), where people save a seat and build their agenda. Once
-  it is set, the program, the speaker's page and the agent files show it as
-  "Save a seat".
+- `signup`: optional and unused for now: a link where people save a seat in
+  the session, if session sign-ups are introduced later. Once set, the program,
+  the speaker's page and the agent files show it as "Save a seat".
 
 Then run `python3 tools/program.py build` to rebuild `site/program.html`.
 `python3 tools/program.py check` checks the records; the local CI runs both.

@@ -294,6 +294,7 @@
         "org/prds/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-12--org--first-come-luma-only.md",
         "sources/web/tooling/rails-world-app-2026-10-12.md",
         "sources/conversations/2026-10-12--org--agenda-in-rails-world-app.md",
         "sources/conversations/2026-10-12--org--register-per-session.md",
@@ -308,7 +309,7 @@
         "sources/conversations/2026-10-12--org--extension-listings-judged.md",
         "sources/conversations/2026-10-07--org--ipi-rooms-and-fallback-money.md"
       ],
-      "tokens": 1206
+      "tokens": 1337
     },
     {
       "path": "org/adrs/operations-and-the-day.md",
@@ -537,6 +538,7 @@
       "updated": "2026-10-12",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-12--org--first-come-luma-only.md",
         "sources/conversations/2026-10-12--org--agenda-in-rails-world-app.md",
         "sources/conversations/2026-10-12--org--audience-list.md",
         "sources/conversations/2026-10-12--org--build-and-sell.md",
@@ -562,7 +564,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 1712
+      "tokens": 1703
     },
     {
       "path": "org/index.md",
