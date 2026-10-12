@@ -34,7 +34,7 @@ def test_session_record_lands_in_its_slot(tmp_path, monkeypatch):
     assert "Salt, goats and servers" in page
     assert "Talk, First-floor hall" in page
     assert page.count('class="slot slot--session"') == 2 * 4 * len(program.ROOMS) - 1
-    assert "Džuma prayer" in page
+    assert "Džuma" not in page and "prayer" not in page
 
 
 def test_bad_and_clashing_records_fail(tmp_path, monkeypatch):

@@ -126,3 +126,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #6: share images: "Free to attend" on the images
    diff: 21 files, +21/-10
    restricted-paths: true
+2026-10-12 merge — PR #7: site: keep the site religion agnostic
+   diff: 12 files, +28/-18
+   restricted-paths: true
