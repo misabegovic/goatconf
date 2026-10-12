@@ -17,10 +17,10 @@ record; the body is the speaker's own short description. Copy
   their profiles.
 - `accepted: yes` once the organiser has accepted the proposal and the
   speaker has confirmed.
-- `luma`: optional, the session's own Luma event link (`https://luma.com/...`).
-  Each accepted session gets a Luma event: free, no approval, capacity the
-  room's seats, waiting list on. Once it is set, the program, the speaker's
-  page and the agent files link to it as "Register for this session".
+- `signup`: optional, the session's sign-up link in the GoatConf app (a copy of
+  the Rails World app), where people save a seat and build their agenda. Once
+  it is set, the program, the speaker's page and the agent files show it as
+  "Save a seat".
 
 Then run `python3 tools/program.py build` to rebuild `site/program.html`.
 `python3 tools/program.py check` checks the records; the local CI runs both.

@@ -104,8 +104,8 @@ def check_record(path: Path):
         problems.append(f"room must be one of: {', '.join(ROOMS)}")
     if meta.get("accepted") is not True:
         problems.append("accepted must be yes")
-    if meta.get("luma") and not str(meta["luma"]).startswith(("https://luma.com/", "https://lu.ma/")):
-        problems.append("luma must be the session's Luma event link, starting https://luma.com/")
+    if meta.get("signup") and not str(meta["signup"]).startswith("https://"):
+        problems.append("signup must be the session's sign-up link in the GoatConf app, starting https://")
     if not body:
         problems.append("no description below the frontmatter")
     return problems, meta, body
@@ -165,10 +165,10 @@ def who(meta) -> str:
 
 
 def register(meta) -> str:
-    """The session's own registration on Luma, once its event exists."""
-    if not meta.get("luma"):
+    """The session's own sign-up in the GoatConf app, once it exists."""
+    if not meta.get("signup"):
         return ""
-    return f'<a class="session__register" href="{esc(meta["luma"])}">Register for this session</a>'
+    return f'<a class="session__register" href="{esc(meta["signup"])}">Save a seat</a>'
 
 
 def cell(n: int, found, room: str) -> str:
@@ -289,7 +289,7 @@ def page() -> str:
       <ul class="rooms-list">
 {room_list}
       </ul>
-      <p class="checked">Each session has its own free registration on Luma, which saves you a seat up to the room's size; when a session is full, Luma keeps a waiting list. Empty seats go to whoever is at the door when it starts.</p>
+      <p class="checked">Closer to June, each session gets its own sign-up in the GoatConf app, which saves you a seat up to the room's size and lets you build your own agenda. We will send everyone with a ticket the link. Empty seats go to whoever is at the door when a session starts.</p>
       <p><a class="go go--ink" href="goatconf-2027.ics" download>Add the three days to your calendar</a></p>
     </div>
   </div>

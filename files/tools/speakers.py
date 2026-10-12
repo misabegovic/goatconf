@@ -166,7 +166,7 @@ def sessions_by_speaker(detail=False):
         for slug in meta.get("profiles") or []:
             if detail:
                 out.setdefault(slug, []).append({"day": day, "start": start, "room": program.ROOMS[room][0], "format": program.FORMATS[meta["format"]],
-                                                 "title": meta["title"], "about": body.split("\n\n")[0].strip(), "luma": meta.get("luma")})
+                                                 "title": meta["title"], "about": body.split("\n\n")[0].strip(), "signup": meta.get("signup")})
             else:
                 out.setdefault(slug, []).append(f"{program.FORMATS[meta['format']]}, {program.CORE_DAYS[day]} at {start}, {program.ROOMS[room][0]}: {esc(meta['title'])}")
     return out
@@ -199,7 +199,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     talks = "\n".join(
         f'<li class="talk"><span class="talk__when"><a href="program.html#{s["day"].isoformat()}">{program.CORE_DAYS[s["day"]]}, {s["start"]}</a>'
         f'<span>{esc(s["format"])}, {esc(s["room"])}</span></span><strong>{esc(s["title"])}</strong><p>{esc(s["about"])}</p>'
-        + (f'<a class="session__register" href="{esc(s["luma"])}">Register for this session</a>' if s.get("luma") else "") + '</li>' for s in sessions)
+        + (f'<a class="session__register" href="{esc(s["signup"])}">Save a seat</a>' if s.get("signup") else "") + '</li>' for s in sessions)
     links = "".join(f'<li><a href="{esc(u)}">{esc(re.sub(r"^https?://(www\.)?", "", str(u)).rstrip("/"))}</a></li>' for u in meta.get("links") or [])
     travel = ""
     if meta.get("travel_funded_by"):
