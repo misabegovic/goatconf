@@ -120,3 +120,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #4: site: tickets are free, not absent
    diff: 11 files, +19/-10
    restricted-paths: true
+2026-10-12 merge — PR #5: site: say "free to attend", with a free ticket
+   diff: 10 files, +20/-9
+   restricted-paths: true
