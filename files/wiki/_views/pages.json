@@ -264,6 +264,7 @@
       ],
       "supersedes": "org/adrs/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-10-12--org--luma-no-approval-hidden-list.md",
         "sources/conversations/2026-10-12--org--site-rework-approved.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
@@ -279,7 +280,7 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 2209
+      "tokens": 2318
     },
     {
       "path": "org/adrs/open-program-every-room.md",
