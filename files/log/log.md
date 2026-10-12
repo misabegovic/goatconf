@@ -144,3 +144,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #12: home: sticker 5 says tech stack agnostic
    diff: 2 files, +12/-1
    restricted-paths: false
+2026-10-12 merge — PR #13: home: fit the stack-agnostic sticker on a phone
+   diff: 2 files, +4/-1
+   restricted-paths: false
