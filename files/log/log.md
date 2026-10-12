@@ -117,3 +117,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #3: program: a registration for every session
    diff: 14 files, +69/-12
    restricted-paths: true
+2026-10-12 merge — PR #4: site: tickets are free, not absent
+   diff: 11 files, +19/-10
+   restricted-paths: true
