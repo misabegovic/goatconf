@@ -2,7 +2,7 @@
 title: "Website: goatconf.com on GitHub Pages, with every intake through Google Forms"
 kind: decision
 status: accepted
-updated: 2026-10-12
+updated: 2026-10-13
 confidence: medium
 depends_on:
   - org/prds/website-and-registration.md
@@ -10,6 +10,7 @@ depends_on:
   - org/prds/extension-slots-and-the-record.md
 supersedes: org/adrs/website-and-registration.md
 sources:
+  - sources/conversations/2026-10-13--org--forms-on-goatconf-com.md
   - sources/conversations/2026-10-12--org--approval-back-on.md
   - sources/conversations/2026-10-12--org--luma-no-approval-hidden-list.md
   - sources/conversations/2026-10-12--org--site-rework-approved.md
@@ -135,3 +136,4 @@ builds are checked by the local CI.
 - [The call: the organiser judges](call-organiser-judges.md)
 - [Program: every room open](open-program-every-room.md)
 - [Extension slots and the record](../prds/extension-slots-and-the-record.md)
+- **2026-10-13, the forms point to goatconf.com.** The propose-a-session and add-something forms still linked to goatconf.ba, which no longer resolves; both now link to goatconf.com, and the add-something form is titled "GoatConf 2027: propose an event" like the site. The data notes keep "organising team", because the Drive folder has another editor (source: sources/conversations/2026-10-13--org--forms-on-goatconf-com.md).
