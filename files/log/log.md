@@ -186,3 +186,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #26: site: answer an outside review
    diff: 10 files, +85/-26
    restricted-paths: false
+2026-10-13 merge — PR #27: records: the talk and event forms point to goatconf.com
+   diff: 3 files, +18/-3
+   restricted-paths: false
