@@ -459,3 +459,15 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 }
 .page-head__photo--portrait { aspect-ratio: 1; max-width: 22rem; justify-self: center; }
 @media (max-width: 47.99rem) { .page-head__photo--portrait { aspect-ratio: 1; max-width: 13rem; } }
+
+/* Rows of links get room to tap: each a full-height target, clearly apart,
+   and one per line on a phone (feedback, 2026-10-12) */
+a.go { display: inline-block; padding-block: 0.35rem; }
+p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.8rem; }
+@media (max-width: 47.99rem) {
+  p:has(> a.go ~ a.go) { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .footer__links, .back-cover__links { gap: 0.2rem 1.6rem; }
+  .footer__links a, .back-cover__links a { display: inline-block; padding-block: 0.6rem; }
+  .place__links a { display: inline-block; padding-block: 0.5rem; margin-left: 1rem; }
+  .speaker-page__links a { display: inline-block; padding-block: 0.5rem; }
+}
