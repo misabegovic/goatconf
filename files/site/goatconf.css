@@ -475,3 +475,6 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 /* A session's own registration */
 .session__register { display: inline-block; margin-top: 0.6rem; padding: 0.5rem 0.85rem; border-radius: 0.45rem; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 0.95rem; text-decoration: none; }
 .session__register:hover, .session__register:focus-visible { background: #ffe25a; }
+
+/* A fact sticker whose words are longer than the sticker is wide */
+.sticker--fact strong.sticker__long { font-size: clamp(1.6rem, 1rem + 1.8vw, 2.5rem); }
