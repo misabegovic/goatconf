@@ -109,7 +109,7 @@
       "title": "The call for talks: the organiser judges every proposal, with no strict deadlines",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "depends_on": [
         "org/prds/cfp-and-speakers.md",
@@ -117,6 +117,7 @@
       ],
       "supersedes": "org/adrs/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--outside-review-fixes.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-12--org--organiser-judges-no-strict-deadlines.md",
@@ -125,7 +126,7 @@
         "sources/conversations/2026-10-07--org--adr-answers.md",
         "sources/conversations/2026-10-07--org--coc-ledger-registration-cfp.md"
       ],
-      "tokens": 714
+      "tokens": 789
     },
     {
       "path": "org/adrs/cfp-and-speakers.md",
@@ -538,9 +539,10 @@
       "title": "GoatConf 2027: what is known",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-13--org--outside-review-fixes.md",
         "sources/conversations/2026-10-12--org--approval-back-on.md",
         "sources/conversations/2026-10-12--org--session-registration-later.md",
         "sources/conversations/2026-10-12--org--first-come-luma-only.md",
@@ -569,7 +571,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 1738
+      "tokens": 1833
     },
     {
       "path": "org/index.md",
