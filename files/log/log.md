@@ -135,3 +135,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #9: access: computer centre 2 is not step-free
    diff: 4 files, +15/-4
    restricted-paths: false
+2026-10-12 merge — PR #10: events: only accepted events are part of GoatConf; hackathons; Propose an event
+   diff: 30 files, +125/-78
+   restricted-paths: true
