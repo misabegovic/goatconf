@@ -129,3 +129,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-12 merge — PR #7: site: keep the site religion agnostic
    diff: 12 files, +28/-18
    restricted-paths: true
+2026-10-12 merge — PR #8: site: an accessibility page
+   diff: 25 files, +152/-21
+   restricted-paths: true

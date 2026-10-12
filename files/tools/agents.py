@@ -65,7 +65,7 @@ FACTS = [
 # The pages an agent most likely needs first, in this order; the rest follow.
 FIRST = ["index.html", "program.html", "register.html", "talk.html", "travel.html", "speakers.html",
          "add.html", "supporters.html", "extensions.html", "budget.html", "charter.html",
-         "code-of-conduct.html", "contact.html", "brand.html"]
+         "code-of-conduct.html", "access.html", "contact.html", "brand.html"]
 START, END = "<!-- event data -->", "<!-- /event data -->"
 
 

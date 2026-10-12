@@ -577,6 +577,8 @@
       "updated": "2026-10-12",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-12--org--computer-centre-1-lift.md",
+        "sources/conversations/2026-10-12--org--accessibility.md",
         "sources/conversations/2026-06--org--ipi-visit-notes.md",
         "sources/conversations/2026-10-07--org--ipi-rooms-and-fallback-money.md",
         "sources/conversations/2026-10-07--org--weekday-lecture-days.md",
@@ -590,7 +592,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/tooling/sessionize-community-license.md"
       ],
-      "tokens": 2137
+      "tokens": 2248
     },
     {
       "path": "org/organiser.md",
