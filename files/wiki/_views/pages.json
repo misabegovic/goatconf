@@ -264,6 +264,7 @@
       ],
       "supersedes": "org/adrs/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-10-12--org--approval-back-on.md",
         "sources/conversations/2026-10-12--org--luma-no-approval-hidden-list.md",
         "sources/conversations/2026-10-12--org--site-rework-approved.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -280,7 +281,7 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 2318
+      "tokens": 2403
     },
     {
       "path": "org/adrs/open-program-every-room.md",
@@ -540,6 +541,7 @@
       "updated": "2026-10-12",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-12--org--approval-back-on.md",
         "sources/conversations/2026-10-12--org--session-registration-later.md",
         "sources/conversations/2026-10-12--org--first-come-luma-only.md",
         "sources/conversations/2026-10-12--org--agenda-in-rails-world-app.md",
@@ -567,7 +569,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 1714
+      "tokens": 1738
     },
     {
       "path": "org/index.md",

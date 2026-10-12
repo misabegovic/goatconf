@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-12
 confidence: medium
 sources:
+  - sources/conversations/2026-10-12--org--approval-back-on.md
   - sources/conversations/2026-10-12--org--session-registration-later.md
   - sources/conversations/2026-10-12--org--first-come-luma-only.md
   - sources/conversations/2026-10-12--org--agenda-in-rails-world-app.md
@@ -93,7 +94,7 @@ above; nothing is inferred. Proposals live in the
 - **Code-of-conduct contacts:** the organiser and a staff member from IPI.
 - **Registration, the call for talks, additions and contact** are Google
   Forms, created by a script kept in this repository.
-- **Registration:** on Luma, with no limit and no approval. Closer to June, ticket holders also register for the sessions they want; how is not decided yet, and seats nobody registered for go to whoever is at the door (source: sources/conversations/2026-10-12--org--session-registration-later.md).
+- **Registration:** on Luma, with no limit; the organiser approves each registration (source: sources/conversations/2026-10-12--org--approval-back-on.md). Closer to June, ticket holders also register for the sessions they want; how is not decided yet, and seats nobody registered for go to whoever is at the door (source: sources/conversations/2026-10-12--org--session-registration-later.md).
 - **Contact:** info@muhamed.at, next to the contact form (source: sources/conversations/2026-10-12--org--contact-email.md).
 - **The website** is goatconf.com, with the public budget ledger as one of
   its pages, written and designed in this repository and published on
