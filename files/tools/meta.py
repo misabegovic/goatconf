@@ -8,6 +8,10 @@ shared preview image site/share/og.png (made by tools/shareables.py).
   apply           add or refresh the tags in every site/*.html
   check           fail if a page's tags are missing or out of date
 
+It also stamps the stylesheet and scripts with a short hash of their
+contents (goatconf.css?v=1a2b3c4d), so phones fetch them again whenever they
+change instead of keeping an old copy for ten minutes.
+
 The generators (program, extensions, speakers) call tag() on their output,
 so their pages stay current without a separate step.
 
@@ -16,6 +20,7 @@ Usage: python3 tools/meta.py <apply|check>
 
 from __future__ import annotations
 
+import hashlib
 import html
 import re
 import sys
@@ -49,11 +54,28 @@ def tags(text: str) -> str:
             f"{END}\n")
 
 
+ASSETS = ("goatconf.css", "album.js", "ledger.js")
+
+
+def version(name: str) -> str:
+    path = SITE / name
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:8] if path.exists() else "0"
+
+
+def stamp(text: str) -> str:
+    """Point every link to a stylesheet or script at its current version."""
+    for name in ASSETS:
+        text = re.sub(r'(href|src)="' + re.escape(name) + r'(\?v=[0-9a-f]+)?"', lambda m: f'{m.group(1)}="{name}?v={version(name)}"', text)
+    return text
+
+
 def tag(text: str) -> str:
-    """Return the page with its link-preview block added or refreshed, just before the stylesheet."""
+    """Return the page with its link-preview block added or refreshed, just before the stylesheet,
+    and its stylesheet and scripts stamped with their current version."""
     text = BLOCK.sub("", text)
+    text = re.sub(r'<link rel="stylesheet" href="goatconf\.css(\?v=[0-9a-f]+)?">', '<link rel="stylesheet" href="goatconf.css">', text)
     anchor = '<link rel="stylesheet" href="goatconf.css">'
-    return text.replace(anchor, tags(text) + anchor, 1)
+    return stamp(text.replace(anchor, tags(text) + anchor, 1))
 
 
 def pages():
