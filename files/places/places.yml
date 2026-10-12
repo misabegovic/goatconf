@@ -343,7 +343,7 @@ stay:
   lon: 18.6738737
   hours: Reception 24h (hotel site)
   url: https://hotelvertigos.com
-  price_note: From USD 54 per night with taxes, deluxe room, Kayak search for Mon 19 Oct to Tue 20 Oct (2026), 2 guests, fetched 2026-10-12. Not a June 2027 rate.
+  price_note: From about 48 EUR (USD 54) per night with taxes, deluxe room, Kayak search for Mon 19 Oct to Tue 20 Oct (2026), 2 guests, fetched 2026-10-12. Not a June 2027 rate.
   confidence: high
   notes: 'The venue''s own image notes place IPI ''beside Hotel Vertigos''. Straight-line distance: about 13 m from IPI, 146 m from Trg slobode. Coordinates from OSM node 8795554146.'
   sources:
@@ -358,7 +358,7 @@ stay:
   lat: 44.537929
   lon: 18.673419
   url: http://www.pansionkipovi.com
-  price_note: USD 42 per night with fees, deluxe room, Kayak search for Mon 10/19 to Tue 10/20 (2026), 2 guests, fetched 2026-10-12. Not a June 2027 rate.
+  price_note: About 38 EUR (USD 42) per night with fees, deluxe room, Kayak search for Mon 10/19 to Tue 10/20 (2026), 2 guests, fetched 2026-10-12. Not a June 2027 rate.
   confidence: high
   notes: 'Kayak rating 9.1 from 407 reviews (2026-10-12). Straight-line distance: about 276 m from IPI, 179 m from Trg slobode. Coordinates from OSM way 699180625.'
   sources:
@@ -442,7 +442,7 @@ stay:
   lon: 18.6780393
   hours: Reception 24h (tourist board)
   url: https://heartland.ba
-  price_note: 'Tourist board price list: double room with breakfast 75.00 BAM, twin 125.00 BAM, triple 155.00 BAM per night (page undated, fetched 2026-10-12). Kayak showed USD 100+ per night for Oct 10-11
+  price_note: 'Tourist board price list: double room with breakfast about 38 EUR (75.00 BAM), twin 64 EUR (125.00 BAM), triple 79 EUR (155.00 BAM) per night (page undated, fetched 2026-10-12). Kayak showed 89+ EUR (USD 100+) per night for Oct 10-11
     (2026), fetched 2026-10-12.'
   confidence: high
   notes: 'Not in OSM; coordinates are the Nominatim house at Kazan mahala 10. Straight-line distance: about 572 m from IPI, 436 m from Trg slobode. Coordinates from Nominatim (address Kazan mahala 10).'
@@ -498,7 +498,7 @@ stay:
   lat: 44.53398
   lon: 18.687263
   url: http://mellainhotel.com/
-  price_note: Kayak showed USD 186+ per night for Oct 10-11 (2026), fetched 2026-10-12.
+  price_note: Kayak showed 166+ EUR (USD 186+) per night for Oct 10-11 (2026), fetched 2026-10-12.
   confidence: high
   notes: 'Largest and most expensive option found; about 1.3 km from IPI. Straight-line distance: about 1284 m from IPI, 1165 m from Trg slobode. Coordinates from OSM node 2258139688.'
   sources:

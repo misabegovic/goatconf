@@ -2,9 +2,10 @@
 title: "GoatConf 2027: what is known"
 kind: reference
 status: living
-updated: 2026-10-12
+updated: 2026-10-13
 confidence: medium
 sources:
+  - sources/conversations/2026-10-13--org--outside-review-fixes.md
   - sources/conversations/2026-10-12--org--approval-back-on.md
   - sources/conversations/2026-10-12--org--session-registration-later.md
   - sources/conversations/2026-10-12--org--first-come-luma-only.md
@@ -68,7 +69,7 @@ above; nothing is inferred. Proposals live in the
   people, founders: people who build and sell software (sources: sources/conversations/2026-10-12--org--build-and-sell.md,
   sources/conversations/2026-10-12--org--audience-list.md).
   Not tied to any language or stack, Ruby included (source: sources/conversations/2026-10-12--org--what-goatconf-is.md).
-- **Size:** 120 to 300 people for the first edition. Registration is one
+- **Size:** 120 to 300 people for the first edition, as the home page says (source: sources/conversations/2026-10-13--org--outside-review-fixes.md). Registration is one
   free pass per core day; each room is capped by its own seats at the
   door ([Website: goatconf.com and Google Forms](adrs/goatconf-ba-and-google-forms.md)).
 - **Venue facts:** the hall has a projector, sound and Wi-Fi, no
@@ -90,11 +91,11 @@ above; nothing is inferred. Proposals live in the
   IPI's students and people from the community.
 - **Talks:** the keynotes fill four one-hour slots in every room on both
   core days, from an open call the organiser judges, filled as proposals
-  arrive ([The call](adrs/call-organiser-judges.md)).
+  arrive ([The call](adrs/call-organiser-judges.md)). Everyone who proposes hears back within three weeks (source: sources/conversations/2026-10-13--org--outside-review-fixes.md).
 - **Code-of-conduct contacts:** the organiser and a staff member from IPI.
 - **Registration, the call for talks, additions and contact** are Google
   Forms, created by a script kept in this repository.
-- **Registration:** on Luma, with no limit; the organiser approves each registration (source: sources/conversations/2026-10-12--org--approval-back-on.md). Closer to June, ticket holders also register for the sessions they want; how is not decided yet, and seats nobody registered for go to whoever is at the door (source: sources/conversations/2026-10-12--org--session-registration-later.md).
+- **Registration:** on Luma, with no limit; the organiser approves each registration (source: sources/conversations/2026-10-12--org--approval-back-on.md). The register page says the organiser confirms each registration, usually within a few days (source: sources/conversations/2026-10-13--org--outside-review-fixes.md). Closer to June, ticket holders also register for the sessions they want; how is not decided yet, and seats nobody registered for go to whoever is at the door (source: sources/conversations/2026-10-12--org--session-registration-later.md).
 - **Contact:** info@muhamed.at, next to the contact form (source: sources/conversations/2026-10-12--org--contact-email.md).
 - **The website** is goatconf.com, with the public budget ledger as one of
   its pages, written and designed in this repository and published on

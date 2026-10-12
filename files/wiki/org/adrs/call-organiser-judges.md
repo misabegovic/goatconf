@@ -2,13 +2,14 @@
 title: "The call for talks: the organiser judges every proposal, with no strict deadlines"
 kind: decision
 status: accepted
-updated: 2026-10-12
+updated: 2026-10-13
 confidence: medium
 depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/road-to-june-2027.md
 supersedes: org/adrs/cfp-and-speakers.md
 sources:
+  - sources/conversations/2026-10-13--org--outside-review-fixes.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-12--org--organiser-judges-no-strict-deadlines.md
@@ -83,3 +84,6 @@ closed.
 - [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md)
 - [Core days: parallel rooms](core-day-parallel-tracks.md)
 - [The road to June 2027](../prds/road-to-june-2027.md)
+
+## Amendments
+- **2026-10-13, a reply within three weeks.** Everyone who proposes a session hears back within three weeks, whatever the answer. No date is set for the first speaker announcement; speakers appear on the site as they are accepted (source: sources/conversations/2026-10-13--org--outside-review-fixes.md).
