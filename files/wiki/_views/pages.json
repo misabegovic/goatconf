@@ -533,6 +533,7 @@
       "updated": "2026-10-12",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-12--org--contact-email.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--host-on-railway.md",
         "sources/conversations/2026-10-12--org--recording-and-podcasts.md",
@@ -553,7 +554,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 1528
+      "tokens": 1563
     },
     {
       "path": "org/index.md",

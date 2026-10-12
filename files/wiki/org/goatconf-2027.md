@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-12
 confidence: medium
 sources:
+  - sources/conversations/2026-10-12--org--contact-email.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--host-on-railway.md
   - sources/conversations/2026-10-12--org--recording-and-podcasts.md
@@ -84,6 +85,7 @@ above; nothing is inferred. Proposals live in the
 - **Code-of-conduct contacts:** the organiser and a staff member from IPI.
 - **Registration, the call for talks, additions and contact** are Google
   Forms, created by a script kept in this repository.
+- **Contact:** info@muhamed.at, next to the contact form (source: sources/conversations/2026-10-12--org--contact-email.md).
 - **The website** is goatconf.com, with the public budget ledger as one of
   its pages, written and designed in this repository and published on
   GitHub Pages by one Actions workflow, from every merge to `main` ([Website: goatconf.com and Google Forms](adrs/goatconf-ba-and-google-forms.md);
