@@ -289,7 +289,7 @@ def page() -> str:
       <ul class="rooms-list">
 {room_list}
       </ul>
-      <p class="checked">Seats are first come, first served at each room's door.</p>
+      <p class="checked">Closer to June, you will also register for the sessions you want, because each room has only so many seats. Everyone with a ticket gets an email with how. Seats nobody registered for go to whoever is at the door when a session starts.</p>
       <p><a class="go go--ink" href="goatconf-2027.ics" download>Add the three days to your calendar</a></p>
     </div>
   </div>

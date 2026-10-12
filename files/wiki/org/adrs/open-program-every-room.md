@@ -9,6 +9,7 @@ depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/extension-slots-and-the-record.md
 sources:
+  - sources/conversations/2026-10-12--org--session-registration-later.md
   - sources/conversations/2026-10-12--org--first-come-luma-only.md
   - sources/web/tooling/rails-world-app-2026-10-12.md
   - sources/conversations/2026-10-12--org--agenda-in-rails-world-app.md
@@ -87,6 +88,7 @@ event", as the extension rules say
 - **2026-10-12, a registration for every session.** Each accepted session gets its own free Luma event, so people register for the sessions they want (source: sources/conversations/2026-10-12--org--register-per-session.md). A session registration saves a seat up to the room's size, with no approval; when a session is full, Luma keeps a waiting list, and empty seats go to whoever is at the door when it starts. The main GoatConf registration, with the organiser's approval, stays as it is. When the organiser accepts a session, the agent creates its Luma event in the organiser's browser and records its link as `luma:` in the session's record; the program, the speaker's page and the agent files then link to it. This replaces "first come, first served at each room's door" wherever the site said it.
 - **2026-10-12, session sign-ups move to an app, later.** This replaces the per-session Luma events of the amendment above (source: sources/conversations/2026-10-12--org--agenda-in-rails-world-app.md). The official GoatConf registration stays on Luma, with no limit. Closer to June, a copy of the Rails World conference app (TelosLabs/rails-world, GPL-3.0, Rails 8; sources/web/tooling/rails-world-app-2026-10-12.md) takes session sign-ups and personal agendas; its schedule and saved-session features exist, and a seat limit per session, which it lacks, is to be added. Ticket holders are sent its link. A session record's optional `signup:` link shows as "Save a seat" on the program and the speaker's page. Hosting, email and holding attendees' accounts are a decision of their own when the time comes, with any cost in the public budget.
 - **2026-10-12, first come, first served, with Luma only.** This replaces the two amendments above about session sign-ups (source: sources/conversations/2026-10-12--org--first-come-luma-only.md). Registration is on Luma only, with no limit, and seats are first come, first served at each room's door. A sign-up for specific sessions may be introduced later; the Rails World app, a workshops-only sign-up and Tito were looked at and none is decided. The session record's optional `signup:` field stays in place, unused, for that case.
+- **2026-10-12, people will register for sessions later.** The Luma registration has no limit. The site tells people now that, closer to June, they will also register for the sessions they want, because each room has only so many seats, and that everyone with a ticket gets an email with how; seats nobody registered for go to whoever is at the door (source: sources/conversations/2026-10-12--org--session-registration-later.md). The tool for session registration is not decided.
 
 ## Related
 
