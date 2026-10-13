@@ -8,6 +8,7 @@ appetite: medium
 confidence: medium
 supersedes: org/pitches/cfp-and-speakers.md
 sources:
+  - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
@@ -284,5 +285,6 @@ submissions use the same tool, so the ADR's choice binds that PRD too.
 
 ## Amendments
 
+- **2026-10-13, the travel question.** The talk form asks about travel with three optional choices: no travel support needed; the speaker's company covers it and is then listed on the site as a supporter; or the speaker pays and would welcome a refund if the budget allows, never promised. It replaced the travel grant question (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).
 - **2026-10-12.** The call is a Google Form on goatconf.com, open now with no strict deadline, and the organiser judges every proposal, reading it first without the name. The blind panel of two or three and the fixed window are superseded. Slots are the four one-hour slots in every room on both core days, filled as proposals are accepted; the talks are the keynotes. Accepted talks become program records built into the program page. See [The call: the organiser judges](../adrs/call-organiser-judges.md), [Core days: parallel rooms](../adrs/core-day-parallel-tracks.md), [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-13, superseded in part.** The no-gos on money through the organiser and the public budget no longer hold: online supporters pay the organiser's Austrian business, the budget is private, and speakers' travel is refunded only if the budget allows ([Online supporters pay the organiser's Austrian business](../adrs/online-supporters-through-the-business.md); source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).

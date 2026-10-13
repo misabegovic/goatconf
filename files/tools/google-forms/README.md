@@ -1,7 +1,9 @@
 # The Google Forms behind goatconf.com
 
 Three Google Forms take everything except registration, which is the Luma
-event in `files/forms.yml`. They were built by hand on 2026-10-12 and live,
+event in `files/forms.yml`. The Luma event asks for a name and an email, and
+one optional, multi-line question: why the person wants to come, to help the
+organiser confirm registrations (added 2026-10-13). They were built by hand on 2026-10-12 and live,
 with their response spreadsheets, in the organiser's GoatConf folder in
 Google Drive (its link is kept out of this public repository).
 The folder is shared with the organising team, so they see the responses
@@ -22,8 +24,9 @@ format (talk, panel, workshop, something else); what it is about; who it is
 for (optional); discipline (engineering, design, product, founding a company,
 or other); preferred day (Thursday 3 June, Friday 4 June, either); the name
 or names of everyone speaking; a link about you (optional); whether it is
-their first talk; whether they would like a travel grant if a supporter funds
-them (optional); anything to make it work for them (optional); a short bio
+their first talk; their travel (optional): they need no travel support, their company
+covers it and is then listed on the site as a supporter, or they pay their
+own and would welcome a refund if the budget allows, never promised; anything to make it work for them (optional); a short bio
 for a speaker profile (optional); whether a speaker profile may be
 published if the session is accepted; the code of conduct; and consent to the
 privacy notice. A speaker's photo comes later by email, once the session is
