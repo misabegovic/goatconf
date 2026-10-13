@@ -216,3 +216,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #36: site: the panel photo instead of Andrzej, and Grah instead of Pasulj
    diff: 4 files, +19/-2
    restricted-paths: false
+2026-10-13 merge — PR #37: site: food tags for burek, sirnica and zeljanica, and Bosnian coffee
+   diff: 5 files, +33/-7
+   restricted-paths: false
