@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-12",
+  "generated": "2026-10-13",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -86,13 +86,15 @@
       "path": "org/adrs/budget-and-public-ledger.md",
       "title": "Keep the public ledger as one CSV file here, rendered as the budget page",
       "kind": "decision",
-      "status": "accepted",
-      "updated": "2026-10-12",
+      "status": "superseded",
+      "updated": "2026-10-13",
       "confidence": "medium",
+      "superseded_by": "org/adrs/online-supporters-through-the-business.md",
       "depends_on": [
         "org/prds/budget-and-public-ledger.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--adr-answers.md",
@@ -102,7 +104,7 @@
         "sources/conversations/2026-10-07--org--ipi-rooms-and-fallback-money.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 890
+      "tokens": 974
     },
     {
       "path": "org/adrs/call-organiser-judges.md",
@@ -286,6 +288,25 @@
       "tokens": 2514
     },
     {
+      "path": "org/adrs/online-supporters-through-the-business.md",
+      "title": "Online supporters pay the organiser's Austrian business; the budget becomes private",
+      "kind": "decision",
+      "status": "accepted",
+      "updated": "2026-10-13",
+      "confidence": "medium",
+      "supersedes": "org/adrs/budget-and-public-ledger.md",
+      "depends_on": [
+        "org/adrs/speakers-and-travel-supporters.md",
+        "org/adrs/supporters-and-hiring.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
+        "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
+        "sources/conversations/2026-10-07--org--no-money-through-me.md"
+      ],
+      "tokens": 1109
+    },
+    {
       "path": "org/adrs/open-program-every-room.md",
       "title": "Program: every room open, with sessions posted as they are confirmed",
       "kind": "decision",
@@ -391,32 +412,37 @@
       "title": "Speaker profiles and travel supporters: consented records, a speakers page and a supporters wall",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "depends_on": [
         "org/prds/cfp-and-speakers.md",
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--speakers-and-supporters-approved.md",
         "sources/conversations/2026-10-12--org--google-forms-built-and-published.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 899
+      "tokens": 1028,
+      "consumed_by": [
+        "org/adrs/online-supporters-through-the-business.md"
+      ]
     },
     {
       "path": "org/adrs/supporters-and-hiring.md",
       "title": "Ask about open to work as an unticked Luma question, shared only for those who tick it",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "depends_on": [
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--adr-answers.md",
@@ -428,7 +454,10 @@
         "sources/web/funding/writethedocs-portland-2026-prospectus.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 892
+      "tokens": 984,
+      "consumed_by": [
+        "org/adrs/online-supporters-through-the-business.md"
+      ]
     },
     {
       "path": "org/adrs/two-core-days-first-week.md",
@@ -543,6 +572,7 @@
       "updated": "2026-10-13",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-13--org--outside-review-fixes.md",
         "sources/conversations/2026-10-12--org--approval-back-on.md",
         "sources/conversations/2026-10-12--org--session-registration-later.md",
@@ -572,7 +602,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 1833
+      "tokens": 1901
     },
     {
       "path": "org/index.md",
@@ -581,7 +611,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 1416,
+      "tokens": 1468,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1073,12 +1103,13 @@
       "title": "A base budget others cover, a menu of stretch goals, and every line public",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/budget-a-goat-and-a-menu.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--bet-on-every-pitch.md",
@@ -1104,7 +1135,7 @@
         "sources/web/funding/euruko-2024-sponsoring.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 3527,
+      "tokens": 3632,
       "consumed_by": [
         "org/adrs/budget-and-public-ledger.md"
       ]
@@ -1114,12 +1145,13 @@
       "title": "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--bet-on-every-pitch.md",
@@ -1143,7 +1175,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 3364,
+      "tokens": 3469,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -1381,12 +1413,13 @@
       "title": "Supporters who fund a named thing, and hiring that attendees opt into",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/partners-sponsors-and-hiring.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--bet-on-every-pitch.md",
@@ -1409,7 +1442,7 @@
         "sources/web/hiring/wbs-wearedevelopers-ben-ruschin.md",
         "sources/web/venue/ipi-akademija-about.md"
       ],
-      "tokens": 3144,
+      "tokens": 3249,
       "consumed_by": [
         "org/adrs/speakers-and-travel-supporters.md",
         "org/adrs/supporters-and-hiring.md"

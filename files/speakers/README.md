@@ -11,12 +11,10 @@ is their bio in their own words, at most 120 words.
 - `photo`: optional, a file the speaker sent, saved under
   `site/img/speakers/`. Without one the profile shows the goat.
 - `links`: optional, a list of web addresses.
-- `travel_funded_by`: optional, the file name (without `.md`) of the
-  supporter in `supporters/` that paid this speaker's travel.
 
 Link a session to its speakers with `profiles: [ada-lovelace]` in its
 record under `program/`. Then run `python3 tools/speakers.py build` and
 `python3 tools/program.py build`. The local CI checks both.
 
-Leave out lines you do not use; delete `travel_funded_by` if nobody
-funded the travel.
+Leave out lines you do not use. `travel_funded_by` is retired: no
+supporter pays for a named speaker's travel, and the check refuses it.

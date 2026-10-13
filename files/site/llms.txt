@@ -9,7 +9,7 @@
 - Friday starts half an hour earlier, at 09:30, and ends at 16:30.
 - Saturday has no talks: it is for events people add, such as the Pannonian salt lakes, the goat hunt, walks and meetups.
 - Talks: an open call; anyone may propose a session, first-time speakers welcome. The organiser reads every proposal.
-- Money: no money passes through the organiser. Supporters pay a supplier directly for one named thing, such as a speaker's travel, and every payment is in the public budget.
+- Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), invoiced by the organiser's Austrian business, or pay a supplier directly. Speakers pay their own travel; a refund only if the budget allows, never promised.
 - Recording: GoatConf does not record the talks. People may bring a camera or a podcast, and a supporter may pay for a crew.
 
 Register: https://luma.com/event/evt-dU4KbLhpIAm9Y9V
@@ -23,12 +23,11 @@ Contact: info@muhamed.at, or the form at https://goatconf.com/contact
 - [Register: GoatConf 2027](https://goatconf.com/register): Register for free for GoatConf 2027 in Tuzla: core days Thursday 3 and Friday 4 June at IPI Academy, community day Saturday 5 June.
 - [Give a talk: GoatConf 2027](https://goatconf.com/talk): Propose a talk, a panel or a workshop for GoatConf 2027 in Tuzla: one-hour slots on 3 and 4 June, every proposal read by the organiser, no strict deadline.
 - [Getting here, staying and money: GoatConf 2027](https://goatconf.com/travel): How to reach Tuzla, where to stay, what things cost and what to plan for: flights, buses, hotels, money, phones and visas, with the date each price was checked.
-- [Speakers: GoatConf 2027, 3 to 5 June, Tuzla](https://goatconf.com/speakers): The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words, and who funded their travel.
+- [Speakers: GoatConf 2027, 3 to 5 June, Tuzla](https://goatconf.com/speakers): The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words.
 - [Propose an event: GoatConf 2027](https://goatconf.com/add): Add a workshop, a meetup, a dinner, a walk or support around GoatConf 2027 in Tuzla, 3 to 5 June. You run it, GoatConf lists it.
-- [Supporters: GoatConf 2027, 3 to 5 June, Tuzla](https://goatconf.com/supporters): The companies and people who make GoatConf 2027 possible, each thanked for exactly what they paid for, starting with speakers' travel.
+- [Supporters: GoatConf 2027, 3 to 5 June, Tuzla](https://goatconf.com/supporters): The companies that make GoatConf 2027 possible, and how to support it online: one level, 500 euro, nothing at the venue.
 - [Events people add: GoatConf 2027](https://goatconf.com/extensions): Workshops, meetups, hackathons, walks and more that the organiser has accepted as part of GoatConf 2027 in Tuzla, each run by its host.
-- [The budget: GoatConf 2027](https://goatconf.com/budget): Every euro GoatConf 2027 spends, and every gift it receives, in the open.
-- [The charter: GoatConf 2027](https://goatconf.com/charter): What GoatConf is and what it will not do: free, small on purpose, no money through the organiser, every euro public, and four rules for everything people add.
+- [The charter: GoatConf 2027](https://goatconf.com/charter): What GoatConf is and what it will not do: free, small on purpose, supporters online only, and four rules for everything people add.
 - [Code of conduct: GoatConf 2027](https://goatconf.com/code-of-conduct): The code of conduct for GoatConf 2027 in Tuzla, and how to reach the two people who enforce it.
 - [Accessibility: GoatConf 2027](https://goatconf.com/access): What to expect at GoatConf 2027 if you use a wheelchair, are deaf or hard of hearing, or are blind or have low vision: what we know, what we are still checking, and how to tell us what you need.
 - [Contact: GoatConf 2027](https://goatconf.com/contact): Contact the GoatConf 2027 organiser: questions, supporting the conference, press, data requests and confidential code of conduct reports.
@@ -38,7 +37,6 @@ Contact: info@muhamed.at, or the form at https://goatconf.com/contact
 
 - [The program as JSON](https://goatconf.com/program.json): every day, room, session and event, with times in Central European Summer Time.
 - [The days for a calendar](https://goatconf.com/goatconf-2027.ics): Thursday, Friday and Saturday as calendar events.
-- [The public budget](https://goatconf.com/ledger.csv): every line of spending, as CSV.
 
 ## Optional
 

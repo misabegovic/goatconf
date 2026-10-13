@@ -54,7 +54,7 @@ def tags(text: str) -> str:
             f"{END}\n")
 
 
-ASSETS = ("goatconf.css", "album.js", "ledger.js")
+ASSETS = ("goatconf.css", "album.js")
 
 
 def version(name: str) -> str:

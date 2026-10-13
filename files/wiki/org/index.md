@@ -34,7 +34,7 @@ timeline, budget, and decisions that touch more than one area.
   - [Website and registration: goatconf.com and a free pass per core day](prds/website-and-registration.md)
 - ADRs, one per PRD, accepted by the organiser on 2026-10-07:
   - [The organiser runs the goat hunt; the core publishes prices, the breaks list and the lake day](adrs/activities-lake-and-town.md)
-  - [Keep the public ledger as one CSV file here, rendered as the budget page](adrs/budget-and-public-ledger.md)
+  - [Keep the public ledger as one CSV file here, rendered as the budget page](adrs/budget-and-public-ledger.md) (superseded)
   - [Take talks through Google Forms and review them blind with a panel of two or three](adrs/cfp-and-speakers.md) (superseded)
   - [Give the core day two long breaks on Freedom Square, coffee and then lunch](adrs/dates-and-the-core-day.md) (superseded)
   - [Build the pages in plain HTML and CSS, with the goat everywhere and playful](adrs/design-with-impeccable.md)
@@ -51,6 +51,8 @@ timeline, budget, and decisions that touch more than one area.
   - [Core days: every available room in parallel, four one-hour slots each, on one shared timetable](adrs/core-day-parallel-tracks.md)
   - [The call for talks: the organiser judges every proposal, with no strict deadlines](adrs/call-organiser-judges.md)
   - [Program: every room open, with sessions posted as they are confirmed](adrs/open-program-every-room.md)
+- ADRs accepted by the organiser on 2026-10-13:
+  - [Online supporters pay the organiser's Austrian business; the budget becomes private](adrs/online-supporters-through-the-business.md)
 - Outreach drafts, for the organiser to send:
   - [Draft: the date proposal to IPI Academy (Bosnian)](outreach/ipi-proposal.md)
   - [The drumbeat: the weekly posts, drafted, from launch to June 2027](outreach/drumbeat.md)

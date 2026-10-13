@@ -1,12 +1,13 @@
 # goatconf
 
 The knowledge base for goatconf, the conference: an LLM-maintained wiki
-of the program, speakers, sponsors, venue, attendees, budget and the
-decisions behind them.
+of the program, speakers, sponsors, venue, attendees and the decisions
+behind them.
 
-Two rules hold for everything here: **no money passes through the
-organiser** (supporters pay suppliers directly or give in kind), and
-**the budget is public**, line by line.
+Two rules hold for supporters: **they are online only** (one level, 500
+EUR, invoiced by the organiser's Austrian business, nothing at the venue;
+or they pay a supplier directly), and **they never buy content**. The
+budget is private.
 
 This repository is meant to be public. Anyone can add a side event,
 workshop, hub or activity by pull request (see `AGENTS.md`).
