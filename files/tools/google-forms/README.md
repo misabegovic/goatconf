@@ -38,11 +38,10 @@ way: hide the name columns while reading.
 ## GoatConf 2027: add something
 
 The same email, copy and notification settings, with its own spreadsheet. It
-asks, all required: the name of what is added; the kind (fringe event,
-workshop, community hub, activity, another venue, support, hiring, something
+asks, all required: the name of what is added; the kind (evening event,
+community trip, meetup, live podcast, hike, hackathon, karaoke, something
 else); the host; where; when it starts and ends (date and time); the cost for
-people who join; how people join; who pays (and, for support, the supplier
-paid directly); a public contact; a short description; acceptance of the
+people who join; how people join; who pays; a public contact; a short description; acceptance of the
 charter and the code of conduct; and consent to the privacy notice.
 
 ## GoatConf 2027: contact the organiser

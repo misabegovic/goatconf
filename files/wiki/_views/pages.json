@@ -1278,12 +1278,13 @@
       "title": "Extension slots and the record: how anyone adds to GoatConf",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/one-goat-minimal-core-and-extensions.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--bet-on-every-pitch.md",
@@ -1303,7 +1304,7 @@
         "sources/web/hiring/strangeloop-privacy-policy.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 3556,
+      "tokens": 3655,
       "consumed_by": [
         "org/adrs/extension-slots-and-the-record.md",
         "org/adrs/goatconf-ba-and-google-forms.md",

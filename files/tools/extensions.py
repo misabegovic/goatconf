@@ -36,13 +36,17 @@ PAGE = ROOT / "site" / "extensions.html"
 SHELL = ROOT / "site" / "contact.html"
 
 KINDS = {
-    "fringe-event": "Fringe event",
+    "evening-event": "Evening event",
+    "trip": "Community trip",
+    "meetup": "Meetup",
+    "podcast": "Live podcast",
+    "hike": "Hike",
     "workshop": "Workshop",
     "hub": "Community hub",
     "activity": "Activity",
     "venue": "Another venue",
     "support": "Support",
-    "hiring": "Hiring",
+    "karaoke": "Karaoke",
     "hackathon": "Hackathon",
 }
 FIELDS = ("name", "kind", "host", "location", "start", "end", "cost", "registration", "paid_by", "contact", "accepts")

@@ -2,12 +2,13 @@
 title: "Extension slots and the record: how anyone adds to GoatConf"
 kind: initiative
 status: living
-updated: 2026-10-12
+updated: 2026-10-13
 parent_epic: goatconf-2027
 appetite: small
 confidence: medium
 supersedes: org/pitches/one-goat-minimal-core-and-extensions.md
 sources:
+  - sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--bet-on-every-pitch.md
@@ -295,4 +296,5 @@ first.
 
 ## Amendments
 
+- **2026-10-13, the kinds renamed.** The list of events to propose is now Evening event, Community trip, Meetup, Live podcast, Hike, Hackathon, Karaoke and Something else, replacing Fringe event, Workshop, Community hub, Activity, Another venue, Support and Hiring; support is handled on the supporters page (source: sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md).
 - **2026-10-12.** Additions arrive through the add-something Google Form on goatconf.com, and the extension list is published there rather than on muhamed.at/goatconf. The organiser judges every listing. Events run independently by their hosts on the days around the core days, or on Saturday 5 June, are listed as GoatConf fringe events; sessions in the core days' rooms and slots are part of the program. See [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md), [The call: the organiser judges](../adrs/call-organiser-judges.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
