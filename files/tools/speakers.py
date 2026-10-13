@@ -329,6 +329,7 @@ def supporters_page() -> str:
   </ul>
   <p class="copy copy--wide">It is online only: no booth, no banner and nothing at the venue. The money pays the event's costs. The organiser's Austrian business sends the invoice, under a short written agreement.</p>
   <p class="copy copy--wide">You can also pay a supplier directly for one named thing, such as the printing or a round of coffee, or give something in kind.</p>
+  <p class="copy copy--wide">If you speak at GoatConf and your company covers your travel, your company is listed here as a supporter too, with its logo and link, the same as online supporters.</p>
   <p class="copy copy--wide"><a class="go go--ink" href="contact.html">Write to the organiser</a> <a class="go go--ink" href="mailto:info@muhamed.at">info@muhamed.at</a></p>
 </section>"""
     return shell("supporters", "Supporters: GoatConf 2027, 3 to 5 June, Tuzla",

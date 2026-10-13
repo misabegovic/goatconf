@@ -74,9 +74,11 @@ What is known about the conference lives on
 [`wiki/org/goatconf-2027.md`](wiki/org/goatconf-2027.md), each fact cited;
 anything not there is *(unknown, needs source)*. Two rules from the
 organiser bind every page: supporters are online only, paying the
-organiser's Austrian business or a supplier directly, and the budget is
-private, never mentioned on the site
-(`sources/conversations/2026-10-13--org--online-supporters-through-the-business.md`).
+organiser's Austrian business or a supplier directly (or, for a speaker's
+own company, covering that speaker's travel), and the budget is private,
+never mentioned on the site
+(`sources/conversations/2026-10-13--org--online-supporters-through-the-business.md`,
+`sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md`).
 
 ## What the brain tracks for every active piece of work
 

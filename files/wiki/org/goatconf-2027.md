@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-13
 confidence: medium
 sources:
+  - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-13--org--outside-review-fixes.md
   - sources/conversations/2026-10-12--org--approval-back-on.md
@@ -96,7 +97,7 @@ above; nothing is inferred. Proposals live in the
 - **Code-of-conduct contacts:** the organiser and a staff member from IPI.
 - **Registration, the call for talks, additions and contact** are Google
   Forms, created by a script kept in this repository.
-- **Registration:** on Luma, with no limit; the organiser approves each registration (source: sources/conversations/2026-10-12--org--approval-back-on.md). The register page says the organiser confirms each registration, usually within a few days (source: sources/conversations/2026-10-13--org--outside-review-fixes.md). Closer to June, ticket holders also register for the sessions they want; how is not decided yet, and seats nobody registered for go to whoever is at the door (source: sources/conversations/2026-10-12--org--session-registration-later.md).
+- **Registration:** on Luma, with no limit; the organiser approves each registration (source: sources/conversations/2026-10-12--org--approval-back-on.md). The register page says the organiser confirms each registration, usually within a few days (source: sources/conversations/2026-10-13--org--outside-review-fixes.md). Luma also asks one optional question, why the person wants to come, to help confirm registrations (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md). Closer to June, ticket holders also register for the sessions they want; how is not decided yet, and seats nobody registered for go to whoever is at the door (source: sources/conversations/2026-10-12--org--session-registration-later.md).
 - **Contact:** info@muhamed.at, next to the contact form (source: sources/conversations/2026-10-12--org--contact-email.md).
 - **The website** is goatconf.com, with the public budget ledger as one of
   its pages, written and designed in this repository and published on
@@ -115,7 +116,7 @@ above; nothing is inferred. Proposals live in the
   "No money goes through the organiser" on 2026-10-13 (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **The budget is private** and not mentioned on the site (same source).
 - **Speakers pay their own travel.** If the budget allows, the organiser
-  may refund some or all of it; never promised (same source).
+  may refund some or all of it; never promised (same source). A speaker's company that covers their travel is listed on the site as a supporter, the same as online supporters (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).
 - Expo, booths and companies that hire attendees are open ideas, named as
   the likely extensible part and as a way companies could support the
   event.

@@ -301,11 +301,12 @@
         "org/adrs/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md"
       ],
-      "tokens": 1109
+      "tokens": 1232
     },
     {
       "path": "org/adrs/open-program-every-room.md",
@@ -574,6 +575,7 @@
       "updated": "2026-10-13",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-13--org--outside-review-fixes.md",
         "sources/conversations/2026-10-12--org--approval-back-on.md",
@@ -604,7 +606,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 1901
+      "tokens": 1992
     },
     {
       "path": "org/index.md",
@@ -1157,6 +1159,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -1181,7 +1184,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 3469,
+      "tokens": 3564,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
