@@ -228,3 +228,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #40: site: speaker travel choices, and an optional why-come question on Luma
    diff: 13 files, +155/-13
    restricted-paths: true
+2026-10-13 merge — PR #41: site: no fixed reply time for proposals
+   diff: 7 files, +23/-4
+   restricted-paths: false
