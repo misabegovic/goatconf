@@ -2,11 +2,12 @@
 title: "Images of Tuzla for GoatConf: free to use, ask first, and gaps"
 kind: reference
 status: living
-updated: 2026-10-12
+updated: 2026-10-13
 confidence: medium
 depends_on:
   - org/tuzla.md
 sources:
+  - sources/web/images/food-dul-pita-2026-10-13.md
   - sources/conversations/2026-10-08--org--site-and-program-direction.md
   - sources/conversations/2026-10-07--org--city-photos-third.md
   - sources/conversations/2026-10-07--org--city-photos-more.md
@@ -289,3 +290,7 @@ photographer, the licence and Wikimedia Commons; link the licence name to its
 licence URL where the medium allows. Every image here was resized, so say
 "resized" if a page shows other changes, and keep CC BY-SA images under the
 same licence if they are edited into something new.
+
+## Food, added 2026-10-13
+
+A tenth food sticker: `site/img/food-dul-pita.jpg`, đul pita seen from above, by BuhaM, CC BY-SA 4.0, vegetarian (not verified from the photo). Licence record: `sources/web/images/food-dul-pita-2026-10-13.md`.
