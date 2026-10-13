@@ -1548,12 +1548,13 @@
       "title": "Images of Tuzla for GoatConf: free to use, ask first, and gaps",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "depends_on": [
         "org/tuzla.md"
       ],
       "sources": [
+        "sources/web/images/food-dul-pita-2026-10-13.md",
         "sources/conversations/2026-10-08--org--site-and-program-direction.md",
         "sources/conversations/2026-10-07--org--city-photos-third.md",
         "sources/conversations/2026-10-07--org--city-photos-more.md",
@@ -1600,7 +1601,7 @@
         "sources/web/images/burek-nisici.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 7067
+      "tokens": 7146
     },
     {
       "path": "org/tuzla.md",
