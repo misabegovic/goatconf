@@ -506,3 +506,4 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .slot--wait strong { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.8rem); }
 .slot--wait small { max-width: 44ch; font-size: 1.05rem; }
 .slot--wait .ghost { top: 50%; right: clamp(1.2rem, 4vw, 3rem); width: clamp(4.5rem, 12vw, 8.5rem); transform: translateY(-60%); }
+.sticker--photo .price { display: block; margin: 0.15rem 0.6rem 0.35rem; font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.15rem; color: var(--album); font-variant-numeric: tabular-nums; }

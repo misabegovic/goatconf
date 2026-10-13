@@ -1630,6 +1630,8 @@
       "updated": "2026-10-13",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-13--org--food-prices.md",
+        "sources/web/tuzla/dish-prices-2026-10-13.md",
         "sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md",
         "sources/web/tuzla/vegetarian-places-research-2026-10-13.md",
         "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md",
@@ -1725,7 +1727,7 @@
         "sources/web/tuzla/cvent-hotel-tuzla-address.md",
         "sources/web/tuzla/tztz-atelier-ismet-mujezinovic.md"
       ],
-      "tokens": 7083,
+      "tokens": 7312,
       "consumed_by": [
         "org/tuzla-images.md",
         "org/tuzla/history-and-old-town.md"
