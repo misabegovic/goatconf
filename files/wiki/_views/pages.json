@@ -647,14 +647,16 @@
       "title": "The organiser: Muhamed Isabegovic",
       "kind": "entity",
       "status": "living",
-      "updated": "2026-10-07",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-13--org--past-conferences-on-the-site.md",
+        "sources/web/organiser/past-conferences-2026-10-13.md",
         "sources/conversations/2026-10-07--org--organiser.md",
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/organiser/muhamed-at-home.md"
       ],
-      "tokens": 467
+      "tokens": 607
     },
     {
       "path": "org/outreach/cafe-message-draft.md",
