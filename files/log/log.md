@@ -198,3 +198,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #30: wiki: the home page lists the online supporters change
    diff: 1 files, +3/-2
    restricted-paths: false
+2026-10-13 merge — PR #31: site: a đul pita food photo, and Saturday at full width on phones
+   diff: 23 files, +94/-27
+   restricted-paths: false
