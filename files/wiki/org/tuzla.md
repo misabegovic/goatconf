@@ -2,9 +2,10 @@
 title: "Tuzla for GoatConf: getting there, staying, costs, June, the lakes, the rules"
 kind: reference
 status: living
-updated: 2026-10-08
+updated: 2026-10-13
 confidence: medium
 sources:
+  - sources/conversations/2026-10-13--org--lake-season-opens-1-june.md
   - sources/conversations/2026-10-08--org--site-and-program-direction.md
   - sources/conversations/2026-06--org--ipi-visit-notes.md
   - sources/web/tuzla/tztz-pannonian-lakes.md
@@ -286,7 +287,7 @@ and fond of a goat that one family hid when goats were banned
   (`sources/web/tuzla/tztz-pannonian-lakes.md`, `tuzla-wikipedia.md`). A
   36-seat tourist train runs from Freedom Square
   (`sources/web/tuzla/tuzla-city-guide-tztz-2025.md`).
-- **Season, uncertain for early June.** One report says swimming
+- **Season opens on 1 June.** The organiser confirmed on 2026-10-13 that the lakes' season opens on 1 June, so they are open for swimming during GoatConf (source: sources/conversations/2026-10-13--org--lake-season-opens-1-june.md). Earlier reports varied: one says swimming
   "traditionally starts at the beginning of May", weather permitting
   (`sources/web/tuzla/slana-jezera-sezona-kurir-2026-04.md`); the tourist
   board's calendar lists the "Summer Season Opening" in June
@@ -306,7 +307,7 @@ and fond of a goat that one family hid when goats were banned
   every day, not only on one designated day after; and "the day after can
   be whatever", including a trip to Lukomir or somewhere else magical in
   Bosnia (`sources/conversations/2026-10-08--org--site-and-program-direction.md`).
-  June swimming is weather-dependent (see Season above).
+  The season opens on 1 June (see Season above).
 
 ## June
 
