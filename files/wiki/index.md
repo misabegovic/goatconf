@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-13 -->
+- **2026-10-13**: **Sarma instead of uštipci.** Cabbage rolls, priced from three Tuzla menus ([images of Tuzla](org/tuzla-images.md)).
 - **2026-10-13**: **Punjene paprike instead of sataraš.** Stuffed peppers, priced from three Tuzla menus, replace sataraš, which was less Bosnian and priced only in Sarajevo ([images of Tuzla](org/tuzla-images.md)).
 - **2026-10-13**: **Uštipci instead of đul pita.** Đul pita had no price anywhere, so uštipci with cheese and kajmak took its place ([images of Tuzla](org/tuzla-images.md)).
 - **2026-10-13**: **Prices on the food cards.** Each dish on the home page shows a price range in euro from Tuzla menus and Bosnian news, checked 2026-10-13; none was found for đul pita ([Tuzla for GoatConf](org/tuzla.md)).
