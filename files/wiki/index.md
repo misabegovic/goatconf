@@ -17,7 +17,8 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 
 ## What changed
 
-<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-12 -->
+<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-13 -->
+- **2026-10-13** (accepted): [Online supporters pay the organiser's Austrian business; the budget becomes private](org/adrs/online-supporters-through-the-business.md), drafted first as an AI suggestion (`org/ai-suggestions/`). It supersedes [a CSV ledger](org/adrs/budget-and-public-ledger.md).
 - **2026-10-12**: **A seal, posts and a reworked site.** GoatConf's mark is a seal with the EuRuKo 2024 goat: "the one that feeds the community". Banners, a Luma cover, link previews and launch posts are made from it, every page shares one top bar, and the home page shows the days, the speakers and the supporters. The first five weekly posts are drafted for the organiser to publish ([the drumbeat](org/outreach/drumbeat.md)).
 - **2026-10-12**: **goatconf.ba, two core days and Google Forms, approved.** The organiser approved the four drafts and moved the site to its own domain. The core days are Thursday 3 and Friday 4 June 2027, 10:00 to 17:00, in every available IPI room in parallel, with Saturday 5 June free for the community. The organiser judges every proposal, with no strict deadline. Talks, additions, registration and contact all go through Google Forms, and the site is published on GitHub Pages ([website decision](org/adrs/goatconf-ba-and-google-forms.md), [two core days](org/adrs/two-core-days-first-week.md)).
 - **2026-10-12**: **Places to eat, still being checked.** A web search could not confirm any vegan or vegetarian place on Freedom Square, so the travel page says the list is being checked. A draft message to the cafés, for the organiser to send, is at [café message draft](org/outreach/cafe-message-draft.md), and the search is logged in the sources. The food section also has a bean-stew photo now.
