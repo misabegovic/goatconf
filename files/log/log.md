@@ -234,3 +234,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #42: site: more vegetarian and vegan food, and places nearby
    diff: 13 files, +152/-39
    restricted-paths: true
+2026-10-13 merge — PR #43: site: the hero says registration is approved and the call is open, in two columns
+   diff: 16 files, +28/-17
+   restricted-paths: false
