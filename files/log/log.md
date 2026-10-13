@@ -189,3 +189,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #27: records: the talk and event forms point to goatconf.com
    diff: 3 files, +18/-3
    restricted-paths: false
+2026-10-13 merge — PR #28: supporters: online only through the organiser's business, private budget
+   diff: 56 files, +420/-327
+   restricted-paths: true
