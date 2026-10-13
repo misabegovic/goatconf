@@ -213,3 +213,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #35: site: four stickers in the organiser block
    diff: 16 files, +37/-16
    restricted-paths: false
+2026-10-13 merge — PR #36: site: the panel photo instead of Andrzej, and Grah instead of Pasulj
+   diff: 4 files, +19/-2
+   restricted-paths: false
