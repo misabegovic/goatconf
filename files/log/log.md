@@ -225,3 +225,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #39: site: the lakes open on 1 June, planned on Saturday, and every evening
    diff: 26 files, +92/-49
    restricted-paths: true
+2026-10-13 merge — PR #40: site: speaker travel choices, and an optional why-come question on Luma
+   diff: 13 files, +155/-13
+   restricted-paths: true
