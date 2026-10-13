@@ -240,3 +240,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #44: site: no ajvar photo, and the food grid in four columns
    diff: 20 files, +51/-38
    restricted-paths: false
+2026-10-13 merge — PR #45: site: dates read 3–5 June 2027, and Thursday 3rd June
+   diff: 38 files, +109/-96
+   restricted-paths: true
