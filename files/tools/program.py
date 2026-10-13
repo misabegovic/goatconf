@@ -2,11 +2,11 @@
 """The program: check the session records, and build the site's program page.
 
 A session is one Markdown file with YAML frontmatter under program/. The two
-core days, Thursday 3 and Friday 4 June 2027, run on one shared
+core days, Thursday 3rd and Friday 4th June 2027, run on one shared
 timetable in every room at IPI Academy at once: four one-hour slots, each of
 the first three followed by an hour off. Thursday runs 10:00 to 17:00; Friday
 runs 09:30 to 16:30 (the reason is in the comment on DAY_PLAN). DAY_PLAN
-holds each day's times. Saturday 5 June is
+holds each day's times. Saturday 5th June is
 for the community. Events added around the talks come from extensions/.
 
   check [files...]   check every record (or the named ones). Exit 1 if any fails.
@@ -35,8 +35,8 @@ RECORDS = ROOT / "program"
 SPEAKER_RECORDS = ROOT / "speakers"
 PAGE = ROOT / "site" / "program.html"
 
-CORE_DAYS = {dt.date(2027, 6, 3): "Thursday 3 June", dt.date(2027, 6, 4): "Friday 4 June"}
-COMMUNITY_DAY = (dt.date(2027, 6, 5), "Saturday 5 June")
+CORE_DAYS = {dt.date(2027, 6, 3): "Thursday 3rd June", dt.date(2027, 6, 4): "Friday 4th June"}
+COMMUNITY_DAY = (dt.date(2027, 6, 5), "Saturday 5th June")
 # Each core day's plan: when people are welcomed, the one-hour slots, what
 # follows each slot, and when the day ends. Change a day here; the program
 # page, the checks and the slot grid follow.
@@ -256,8 +256,8 @@ def page() -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Program: GoatConf 2027, 3 to 5 June, Tuzla</title>
-<meta name="description" content="The GoatConf 2027 program: two core days, Thursday 3 and Friday 4 June, in every room of IPI Academy, Tuzla, and Saturday 5 June for the community.">
+<title>Program: GoatConf 2027, 3–5 June, Tuzla</title>
+<meta name="description" content="The GoatConf 2027 program: two core days, Thursday 3rd and Friday 4th June, in every room of IPI Academy, Tuzla, and Saturday 5th June for the community.">
 <meta name="theme-color" content="#0b3d91">
 <link rel="canonical" href="https://goatconf.com/program">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -278,7 +278,7 @@ def page() -> str:
   <h2 class="band" id="h-how">How a day runs</h2>
   <div class="page-grid">
     <div class="copy">
-      <p>Thursday 3 and Friday 4 June 2027 are the core days, at IPI Academy, Kulina bana 2, Tuzla. Each day runs on one timetable for every room, so you can change rooms at every break.</p>
+      <p>Thursday 3rd and Friday 4th June 2027 are the core days, at IPI Academy, Kulina bana 2, Tuzla. Each day runs on one timetable for every room, so you can change rooms at every break.</p>
       <p>Every slot is one hour: a talk with time for questions, a panel, or a workshop. After each slot comes a full hour off, in the cafés on Freedom Square under five minutes away. That is when you talk to the person you just heard.</p>
       <p>Thursday runs from 10:00 to 17:00. Friday runs from 09:30 to 16:30.</p>
       <p>GoatConf does not record the talks. You may bring a camera or a podcast and record, and podcasts are welcome in some of the rooms.</p>
@@ -313,7 +313,7 @@ def page() -> str:
 </section>
 </main>
 <footer class="footer">
-  <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3 to 5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
+  <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
   <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Give a talk</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
 </footer>
 <script src="album.js" defer></script>

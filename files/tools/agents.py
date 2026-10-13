@@ -40,7 +40,7 @@ STAMP = "20261012T000000Z"  # fixed, so the calendar file only changes when the 
 # and wiki/org/ipi-academy.md.
 EVENT = {
     "name": "GoatConf 2027",
-    "summary": "A free conference for people who build and sell software: engineers, designers, product people, founders, and the incurably curious dreamers and visionaries. Any programming language, any stack. An excuse to hang out with like-minded people and learn from folks sharing their current best. In Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027.",
+    "summary": "A free conference for people who build and sell software: engineers, designers, product people, founders, and the incurably curious dreamers and visionaries. Any programming language, any stack. An excuse to hang out with like-minded people and learn from folks sharing their current best. In Tuzla, Bosnia and Herzegovina, on 3–5 June 2027.",
     "venue": "IPI Academy (IPI Akademija Tuzla)",
     "street": "Kulina bana 2",
     "postcode": "75000",
@@ -52,7 +52,7 @@ EVENT = {
     "email": "info@muhamed.at",
 }
 FACTS = [
-    "Dates: Thursday 3 and Friday 4 June 2027 are talk days; Saturday 5 June 2027 is the community day.",
+    "Dates: Thursday 3rd and Friday 4th June 2027 are talk days; Saturday 5th June 2027 is the community day.",
     "Place: IPI Academy, Kulina bana 2, 75000 Tuzla, Bosnia and Herzegovina, next to Freedom Square (Trg slobode).",
     "Price: tickets are free. Registration asks only for a name and an email, on Luma.",
     "Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot. Closer to June, people with a ticket also register for the sessions they want, because each room has only so many seats; everyone with a ticket gets an email with how, and seats nobody registered for go to whoever is at the door.",

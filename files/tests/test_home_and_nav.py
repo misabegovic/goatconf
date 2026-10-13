@@ -19,7 +19,7 @@ def test_days_follow_the_day_plan():
     html = home.days()
     for day, plan in program.DAY_PLAN.items():
         assert f'{plan["slots"][0]} to {plan["end"]}' in html
-    assert "Saturday 5 June" in html
+    assert "Saturday 5th June" in html
 
 
 def test_top_bar_marks_the_current_page_and_replaces_itself():

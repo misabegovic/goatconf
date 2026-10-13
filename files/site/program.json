@@ -1,7 +1,7 @@
 {
   "name": "GoatConf 2027",
   "url": "https://goatconf.com/",
-  "summary": "A free conference for people who build and sell software: engineers, designers, product people, founders, and the incurably curious dreamers and visionaries. Any programming language, any stack. An excuse to hang out with like-minded people and learn from folks sharing their current best. In Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027.",
+  "summary": "A free conference for people who build and sell software: engineers, designers, product people, founders, and the incurably curious dreamers and visionaries. Any programming language, any stack. An excuse to hang out with like-minded people and learn from folks sharing their current best. In Tuzla, Bosnia and Herzegovina, on 3–5 June 2027.",
   "timezone": "Europe/Sarajevo",
   "venue": {
     "name": "IPI Academy (IPI Akademija Tuzla)",
@@ -14,7 +14,7 @@
   "days": [
     {
       "date": "2027-06-03",
-      "name": "Thursday 3 June",
+      "name": "Thursday 3rd June",
       "welcome": "09:45",
       "end": "17:00",
       "slots": [
@@ -32,7 +32,7 @@
     },
     {
       "date": "2027-06-04",
-      "name": "Friday 4 June",
+      "name": "Friday 4th June",
       "welcome": "09:15",
       "end": "16:30",
       "slots": [
@@ -50,7 +50,7 @@
     },
     {
       "date": "2027-06-05",
-      "name": "Saturday 5 June",
+      "name": "Saturday 5th June",
       "note": "No talks. The community's day: events people add."
     }
   ],
