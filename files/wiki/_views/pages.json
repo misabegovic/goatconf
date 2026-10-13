@@ -1566,6 +1566,8 @@
         "org/tuzla.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--punjene-paprike-instead-of-sataras.md",
+        "sources/web/images/food-punjene-paprike-2026-10-13.md",
         "sources/conversations/2026-10-13--org--ustipci-instead-of-dul-pita.md",
         "sources/web/images/food-ustipci-2026-10-13.md",
         "sources/conversations/2026-10-13--org--tuzla-section.md",
@@ -1622,7 +1624,7 @@
         "sources/web/images/burek-nisici.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 7754
+      "tokens": 7858
     },
     {
       "path": "org/tuzla.md",
@@ -1632,6 +1634,8 @@
       "updated": "2026-10-13",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-13--org--punjene-paprike-instead-of-sataras.md",
+        "sources/web/tuzla/punjene-paprike-prices-2026-10-13.md",
         "sources/conversations/2026-10-13--org--ustipci-instead-of-dul-pita.md",
         "sources/conversations/2026-10-13--org--food-prices.md",
         "sources/web/tuzla/dish-prices-2026-10-13.md",
@@ -1730,7 +1734,7 @@
         "sources/web/tuzla/cvent-hotel-tuzla-address.md",
         "sources/web/tuzla/tztz-atelier-ismet-mujezinovic.md"
       ],
-      "tokens": 7362,
+      "tokens": 7440,
       "consumed_by": [
         "org/tuzla-images.md",
         "org/tuzla/history-and-old-town.md"
