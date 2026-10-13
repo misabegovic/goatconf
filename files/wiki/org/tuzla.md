@@ -5,6 +5,8 @@ status: living
 updated: 2026-10-13
 confidence: medium
 sources:
+  - sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md
+  - sources/web/tuzla/vegetarian-places-research-2026-10-13.md
   - sources/conversations/2026-10-13--org--lake-season-opens-1-june.md
   - sources/conversations/2026-10-08--org--site-and-program-direction.md
   - sources/conversations/2026-06--org--ipi-visit-notes.md
@@ -255,8 +257,13 @@ and fond of a goat that one family hid when goats were banned
   lamb mix served in lepinja dipped in bone broth, but the pages were
   blocked and are not snapshotted. Burek and the best-known local grills
   are (unknown, needs source). The organiser's 2023 pitch promised
-  vegan and vegetarian options (`sources/web/tuzla/rubyevents-city-pitch-tuzla.md`);
-  which places offer them is (unknown, needs source).
+  vegan and vegetarian options (`sources/web/tuzla/rubyevents-city-pitch-tuzla.md`).
+  A menu search on 2026-10-13 (`sources/web/tuzla/vegetarian-places-research-2026-10-13.md`) found no fully vegetarian or vegan
+  place near IPI, but menus with meat-free dishes at Pizza Bar, Pekara Hukić,
+  Mozaik (which also sells sirnica, krompiruša and zeljanica), Caffe Pizzeria
+  Old School Pub and Zmaj od Bosne (a vegetarian platter), all on the travel
+  page's list; the one labelled vegan dish nearby, a sandwich at Zdravljak
+  Bosna, was not listed by the organiser's choice (`sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md`).
 - **Beer.** Pivara Tuzla was founded in 1884 as the Erste Dampf
   Bräuerei, brews a Czech-style pilsner with water piped from Konjuh, and
   makes Tuzlanski pilsner, Erster, a radler and Tuzlanski kiseljak

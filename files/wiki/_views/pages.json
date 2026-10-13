@@ -1565,6 +1565,8 @@
         "org/tuzla.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md",
+        "sources/web/images/food-vegetarian-dishes-2026-10-13.md",
         "sources/conversations/2026-10-13--org--begova-corba.md",
         "sources/web/images/food-begova-corba-2026-10-13.md",
         "sources/conversations/2026-10-13--org--burek-and-sirnica.md",
@@ -1615,7 +1617,7 @@
         "sources/web/images/burek-nisici.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 7333
+      "tokens": 7489
     },
     {
       "path": "org/tuzla.md",
@@ -1625,6 +1627,8 @@
       "updated": "2026-10-13",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md",
+        "sources/web/tuzla/vegetarian-places-research-2026-10-13.md",
         "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md",
         "sources/conversations/2026-10-08--org--site-and-program-direction.md",
         "sources/conversations/2026-06--org--ipi-visit-notes.md",
@@ -1718,7 +1722,7 @@
         "sources/web/tuzla/cvent-hotel-tuzla-address.md",
         "sources/web/tuzla/tztz-atelier-ismet-mujezinovic.md"
       ],
-      "tokens": 6920,
+      "tokens": 7083,
       "consumed_by": [
         "org/tuzla-images.md",
         "org/tuzla/history-and-old-town.md"

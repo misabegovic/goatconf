@@ -233,7 +233,7 @@ def block(data, ways, section, show_all) -> str:
         m = metres(ipi, (p["lat"], p["lon"]))
         return f"{round(m / 50) * 50} m {direction(ipi, (p['lat'], p['lon']))}"
     lis = "\n".join(item(p, i, section, off(p)) for i, p in enumerate(items, start=1))
-    checked = data["checked"]
+    checked = data.get(f"{section}_checked", data["checked"])
     note = ("Ask each place which dishes are vegetarian or vegan. " if eat else "Prices change: check the date, then the place itself. ")
     return (f'<figure class="map-frame">{svg}<figcaption>Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</figcaption></figure>\n'
             f'<ol class="places">\n{lis}\n</ol>\n<p class="checked">{note}Checked on {checked}.</p>')
