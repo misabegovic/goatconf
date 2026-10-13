@@ -192,3 +192,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #28: supporters: online only through the organiser's business, private budget
    diff: 56 files, +420/-327
    restricted-paths: true
+2026-10-13 merge — PR #29: wiki: link the online supporters decision from the home page
+   diff: 1 files, +2/-1
+   restricted-paths: false
