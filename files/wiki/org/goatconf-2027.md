@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-13
 confidence: medium
 sources:
+  - sources/conversations/2026-10-13--org--no-reply-deadline.md
   - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-13--org--outside-review-fixes.md
@@ -93,7 +94,7 @@ above; nothing is inferred. Proposals live in the
   IPI's students and people from the community.
 - **Talks:** the keynotes fill four one-hour slots in every room on both
   core days, from an open call the organiser judges, filled as proposals
-  arrive ([The call](adrs/call-organiser-judges.md)). Everyone who proposes hears back within three weeks (source: sources/conversations/2026-10-13--org--outside-review-fixes.md).
+  arrive ([The call](adrs/call-organiser-judges.md)). Everyone who proposes hears back, with no fixed reply time; the organiser builds the agenda at their own pace and may keep a proposal not picked straight away, in case someone drops out (source: sources/conversations/2026-10-13--org--no-reply-deadline.md).
 - **Code-of-conduct contacts:** the organiser and a staff member from IPI.
 - **Registration, the call for talks, additions and contact** are Google
   Forms, created by a script kept in this repository.

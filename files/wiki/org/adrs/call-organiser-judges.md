@@ -9,6 +9,7 @@ depends_on:
   - org/prds/road-to-june-2027.md
 supersedes: org/adrs/cfp-and-speakers.md
 sources:
+  - sources/conversations/2026-10-13--org--no-reply-deadline.md
   - sources/conversations/2026-10-13--org--outside-review-fixes.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
