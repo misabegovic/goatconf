@@ -51,6 +51,8 @@ timeline, budget, and decisions that touch more than one area.
   - [Core days: every available room in parallel, four one-hour slots each, on one shared timetable](adrs/core-day-parallel-tracks.md)
   - [The call for talks: the organiser judges every proposal, with no strict deadlines](adrs/call-organiser-judges.md)
   - [Program: every room open, with sessions posted as they are confirmed](adrs/open-program-every-room.md)
+- Proposed, waiting for the organiser's approval:
+  - [Online supporters pay the organiser's Austrian business; the budget becomes private](ai-suggestions/online-supporters-through-the-business.md)
 - Outreach drafts, for the organiser to send:
   - [Draft: the date proposal to IPI Academy (Bosnian)](outreach/ipi-proposal.md)
   - [The drumbeat: the weekly posts, drafted, from launch to June 2027](outreach/drumbeat.md)

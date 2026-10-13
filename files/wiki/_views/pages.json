@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-12",
+  "generated": "2026-10-13",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -404,7 +404,10 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 899
+      "tokens": 899,
+      "consumed_by": [
+        "org/ai-suggestions/online-supporters-through-the-business.md"
+      ]
     },
     {
       "path": "org/adrs/supporters-and-hiring.md",
@@ -428,7 +431,10 @@
         "sources/web/funding/writethedocs-portland-2026-prospectus.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 892
+      "tokens": 892,
+      "consumed_by": [
+        "org/ai-suggestions/online-supporters-through-the-business.md"
+      ]
     },
     {
       "path": "org/adrs/two-core-days-first-week.md",
@@ -490,6 +496,25 @@
       ],
       "superseded_by": "org/adrs/goatconf-ba-and-google-forms.md",
       "tokens": 1207
+    },
+    {
+      "path": "org/ai-suggestions/online-supporters-through-the-business.md",
+      "title": "Online supporters pay the organiser's Austrian business; the budget becomes private",
+      "kind": "decision",
+      "status": "proposed",
+      "updated": "2026-10-13",
+      "confidence": "low",
+      "supersedes": "org/adrs/budget-and-public-ledger.md",
+      "depends_on": [
+        "org/adrs/speakers-and-travel-supporters.md",
+        "org/adrs/supporters-and-hiring.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
+        "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
+        "sources/conversations/2026-10-07--org--no-money-through-me.md"
+      ],
+      "tokens": 1132
     },
     {
       "path": "org/epics/goatconf-2027.md",
@@ -581,7 +606,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 1416,
+      "tokens": 1457,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
