@@ -267,3 +267,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #53: site: mouth-watering food photos, chosen one by one
    diff: 22 files, +154/-18
    restricted-paths: false
+2026-10-13 merge — PR #54: site: speaker profiles and social media promotion are required
+   diff: 10 files, +30/-11
+   restricted-paths: true
