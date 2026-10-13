@@ -258,3 +258,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #50: site: uštipci instead of đul pita
    diff: 9 files, +47/-8
    restricted-paths: false
+2026-10-13 merge — PR #51: site: punjene paprike instead of sataraš
+   diff: 10 files, +68/-5
+   restricted-paths: false
