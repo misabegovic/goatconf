@@ -59,12 +59,12 @@ FACTS = [
     "Friday starts half an hour earlier, at 09:30, and ends at 16:30.",
     "Saturday has no talks: it is for events people add, such as the Pannonian salt lakes, the goat hunt, walks and meetups.",
     "Talks: an open call; anyone may propose a session, first-time speakers welcome. The organiser reads every proposal.",
-    "Money: no money passes through the organiser. Supporters pay a supplier directly for one named thing, such as a speaker's travel, and every payment is in the public budget.",
+    "Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), invoiced by the organiser's Austrian business, or pay a supplier directly. Speakers pay their own travel; a refund only if the budget allows, never promised.",
     "Recording: GoatConf does not record the talks. People may bring a camera or a podcast, and a supporter may pay for a crew.",
 ]
 # The pages an agent most likely needs first, in this order; the rest follow.
 FIRST = ["index.html", "program.html", "register.html", "talk.html", "travel.html", "speakers.html",
-         "add.html", "supporters.html", "extensions.html", "budget.html", "charter.html",
+         "add.html", "supporters.html", "extensions.html", "charter.html",
          "code-of-conduct.html", "access.html", "contact.html", "brand.html"]
 START, END = "<!-- event data -->", "<!-- /event data -->"
 
@@ -246,7 +246,6 @@ def llms() -> str:
     lines += ["", "## Data", "",
               f"- [The program as JSON]({url('program.json')}): every day, room, session and event, with times in Central European Summer Time.",
               f"- [The days for a calendar]({url('goatconf-2027.ics')}): Thursday, Friday and Saturday as calendar events.",
-              f"- [The public budget]({url('ledger.csv')}): every line of spending, as CSV.",
               "", "## Optional", "",
               f"- [Sitemap]({url('sitemap.xml')})",
               "- [The source and the records behind this site](https://github.com/misabegovic/goatconf)", ""]

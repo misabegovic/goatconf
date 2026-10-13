@@ -1,18 +1,17 @@
 # Supporters
 
-One Markdown file per company that pays a named thing, such as a speaker's
-travel, straight to the supplier (the charter: no money passes through the
-organiser, and a supporter is thanked for exactly what they funded). Name
-the file after the company in lowercase words joined by hyphens. Copy
-`_template.md` to start one.
+One Markdown file per company that supports GoatConf. Most are online
+supporters: one level, 500 EUR plus VAT where it applies, invoiced by the
+organiser's Austrian business, with nothing at the venue. A company may
+instead pay a supplier directly for one named thing, or give in kind. No
+supporter pays for a named speaker's travel. Name the file after the
+company in lowercase words joined by hyphens. Copy `_template.md` to start
+one.
 
 - `name`, `url`: required.
 - `logo`: required, the supporter's logo saved under
   `site/img/supporters/` (SVG or PNG on a transparent or white background).
-- `funds`: required, exactly what they pay for, in plain words, for
-  example "Travel for two speakers" or "The travel grant pot".
+- `funds`: required, how they support, in plain words, for example
+  "Online supporter" or "The printing, paid to the printer".
 
-Every payment also goes into `site/ledger.csv`. A speaker whose travel a
-supporter paid names them with `travel_funded_by` in their record, and the
-logo then shows on that speaker's profile too. Run
-`python3 tools/speakers.py build`; the local CI checks it.
+Run `python3 tools/speakers.py build`; the local CI checks it.

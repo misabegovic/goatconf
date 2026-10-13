@@ -101,9 +101,8 @@ def check_speaker(path: Path, known_supporters):
     links = meta.get("links") or []
     if not isinstance(links, list) or any(not URL.match(str(u)) for u in links):
         problems.append("links must be a list of addresses starting with http:// or https://")
-    funded = meta.get("travel_funded_by")
-    if funded and funded not in known_supporters:
-        problems.append(f"travel_funded_by '{funded}' is not a supporter record in supporters/")
+    if "travel_funded_by" in meta:
+        problems.append("travel_funded_by is retired: no supporter pays for a named speaker's travel; remove it")
     return problems, meta, body
 
 
@@ -180,15 +179,11 @@ def speaker_card(n: int, slug: str, meta, body, sessions, known) -> str:
     photo = f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo") else goat_photo()
     first = f'<span class="speaker__first">{sessions[0]}</span>' if sessions else ""
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
-    travel = ""
-    if meta.get("travel_funded_by"):
-        s_meta, _ = known[meta["travel_funded_by"]]
-        travel = f'<span class="speaker__travel"><img src="{esc(s_meta["logo"])}" alt=""><span>Travel funded by {esc(s_meta["name"])}</span></span>'
     return f"""  <li class="sticker sticker--speaker" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <a class="speaker__link" href="{page_name(slug)}">
     <span class="num">{n}</span>
     <figure class="speaker__photo">{photo}<figcaption>{esc(meta['name'])}</figcaption></figure>
-    <span class="speaker__body">{first}{more}{travel}</span>
+    <span class="speaker__body">{first}{more}</span>
     </a>
   </li>"""
 
@@ -201,12 +196,6 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
         f'<span>{esc(s["format"])}, {esc(s["room"])}</span></span><strong>{esc(s["title"])}</strong><p>{esc(s["about"])}</p>'
         + (f'<a class="session__register" href="{esc(s["signup"])}">Save a seat</a>' if s.get("signup") else "") + '</li>' for s in sessions)
     links = "".join(f'<li><a href="{esc(u)}">{esc(re.sub(r"^https?://(www\.)?", "", str(u)).rstrip("/"))}</a></li>' for u in meta.get("links") or [])
-    travel = ""
-    if meta.get("travel_funded_by"):
-        s_slug = meta["travel_funded_by"]
-        s_meta, _ = known[s_slug]
-        travel = (f'<p class="speaker-page__travel"><a href="supporters.html#{esc(s_slug)}"><img src="{esc(s_meta["logo"])}" alt="">'
-                  f'<span>{name.split()[0]}\'s travel is funded by {esc(s_meta["name"])}.</span></a></p>')
     card = SITE / "share" / f"speaker-{slug}-square.png"
     share = (f'<p><a class="go go--ink" href="share/speaker-{esc(slug)}-square.png" download>Download the "I\'m speaking" card</a></p>'
              if card.exists() else "")
@@ -218,7 +207,6 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
   <h2 class="band" id="h-about">About {name.split()[0]}</h2>
   <div class="copy copy--wide">{bio}</div>
   {f'<ul class="speaker-page__links">{links}</ul>' if links else ''}
-  {travel}
 </section>
 <section class="album-page wrap" aria-labelledby="h-talks">
   <h2 class="band" id="h-talks">{"Sessions" if len(sessions) > 1 else "Session"}</h2>
@@ -231,14 +219,13 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main)
 
 
-def supporter_card(n: int, slug: str, meta, body, funded_speakers) -> str:
+def supporter_card(n: int, slug: str, meta, body) -> str:
     words = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
-    names = ", ".join(f'<a href="{page_name(s)}">{esc(m["name"])}</a>' for s, m in funded_speakers)
     return f"""  <li class="sticker sticker--supporter" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <span class="num">{n}</span>
     <a class="supporter__logo" href="{esc(meta['url'])}"><img src="{esc(meta['logo'])}" alt="{esc(meta['name'])}" loading="lazy"></a>
     <strong>{esc(meta['name'])}</strong>
-    <p class="supporter__funds">Funds: {esc(meta['funds'])}</p>{f'<p class="supporter__funds">Travel for {names}.</p>' if names else ''}{words}
+    <p class="supporter__funds">{esc(meta['funds'])}</p>{words}
   </li>"""
 
 
@@ -284,7 +271,7 @@ def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: st
 
 FOOTER_LINKS = ('<a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> '
                 '<a href="talk.html">Give a talk</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> '
-                '<a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="budget.html">Budget</a> '
+                '<a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> '
                 '<a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a>')
 
 
@@ -307,10 +294,10 @@ def speakers_page() -> str:
 </section>
 <section class="album-page wrap" aria-labelledby="h-travel">
   <h2 class="band" id="h-travel">Getting speakers here</h2>
-  <p class="copy copy--wide">Speakers pay their own travel unless a supporter covers it. A supporter pays the airline or hotel directly. The speaker's profile then says who paid, and the payment is listed in the <a href="budget.html">public budget</a>. See the <a href="supporters.html">supporters</a>, or <a class="go go--ink" href="add.html">fund a speaker's travel</a>.</p>
+  <p class="copy copy--wide">Speakers pay their own travel and stay. If the budget allows, the organiser may refund some or all of it after the event. This is not promised or guaranteed. See <a href="talk.html">give a talk</a>.</p>
 </section>"""
     return shell("speakers", "Speakers: GoatConf 2027, 3 to 5 June, Tuzla",
-                 "The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words, and who funded their travel.",
+                 "The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words.",
                  ("img/ipi-lecture-hall.jpg", 1024, 768, "A talk in IPI Academy's lecture hall, students' faces blurred"),
                  "The speakers", "The people giving the talks, panels and workshops, in their own words.", main)
 
@@ -321,25 +308,33 @@ def supporters_page() -> str:
     order = sorted(known.items(), key=lambda kv: str(kv[1][0]["name"]).lower())
     if order:
         cards = '<ul class="slots slots--supporters">\n' + "\n".join(
-            supporter_card(i + 1, slug, m, b, sorted(((s, pm) for s, (pm, _) in people.items() if pm.get("travel_funded_by") == slug), key=lambda x: str(x[1]["name"]).lower()))
+            supporter_card(i + 1, slug, m, b)
             for i, (slug, (m, b)) in enumerate(order)) + "\n</ul>"
     else:
         cards = """<ul class="slots slots--supporters">
-  <li><a class="slot slot--link" href="add.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg><span class="num num--printed">1</span><strong>Your logo</strong><small>No supporters yet. Fund a speaker's travel and your logo goes here and on their profile.</small><span class="stamp">Yours?</span></a></li>
+  <li><a class="slot slot--link" href="#h-become"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg><span class="num num--printed">1</span><strong>Your logo</strong><small>No supporters yet. Support GoatConf online and your logo and link go here.</small><span class="stamp">Yours?</span></a></li>
 </ul>"""
     main = f"""<section class="album-page wrap" aria-labelledby="h-supporters">
   <h2 class="band" id="h-supporters">Who makes it possible</h2>
-  <p class="copy copy--wide">GoatConf is free, and no money passes through the organiser. A supporter pays the supplier directly for one named thing: a speaker's flight or room, a round of coffee, the printing. We thank each supporter for exactly what they paid for. Every payment is listed in the <a href="budget.html">public budget</a>. Supporters cannot buy talks, stage time or the attendee list. See <a href="charter.html">the charter</a>.</p>
+  <p class="copy copy--wide">GoatConf is free to attend. Companies help keep it that way. Supporters cannot buy talks, stage time or the attendee list, and who speaks is never decided by who supports. See <a href="charter.html">the charter</a>.</p>
   {cards}
 </section>
 <section class="album-page wrap" aria-labelledby="h-become">
-  <h2 class="band" id="h-become">Fund a speaker's travel</h2>
-  <p class="copy copy--wide">Pick a speaker, or fund travel grants: tickets or rooms for speakers who ask for help. You pay the airline or hotel directly. Asking never affects whether a session is picked. Your logo shows on this page and on the profile of every speaker whose travel you covered. Tell us through the <a href="add.html">proposal form</a>. Choose Support.</p>
+  <h2 class="band" id="h-become">Support GoatConf online</h2>
+  <p class="copy copy--wide">One level, the same for every supporter: 500 euro, plus VAT where it applies.</p>
+  <ul class="copy copy--wide">
+    <li>Your logo and a link on this page and on the home page.</li>
+    <li>One post about you on GoatConf's social channels.</li>
+    <li>A mention in the emails to everyone registered.</li>
+  </ul>
+  <p class="copy copy--wide">It is online only: no booth, no banner and nothing at the venue. The money pays the event's costs. The organiser's Austrian business sends the invoice, under a short written agreement.</p>
+  <p class="copy copy--wide">You can also pay a supplier directly for one named thing, such as the printing or a round of coffee, or give something in kind.</p>
+  <p class="copy copy--wide"><a class="go go--ink" href="contact.html">Write to the organiser</a> <a class="go go--ink" href="mailto:info@muhamed.at">info@muhamed.at</a></p>
 </section>"""
     return shell("supporters", "Supporters: GoatConf 2027, 3 to 5 June, Tuzla",
-                 "The companies and people who make GoatConf 2027 possible, each thanked for exactly what they paid for, starting with speakers' travel.",
+                 "The companies that make GoatConf 2027 possible, and how to support it online: one level, 500 euro, nothing at the venue.",
                  ("img/city-korzo-clock.jpg", 1160, 773, "The Korzo on a sunny day: the street clock, a pink corner house, café umbrellas and people walking"),
-                 "The supporters", "Companies and people who pay a supplier directly for one named thing, such as a speaker's travel.", main)
+                 "The supporters", "The companies that help keep GoatConf free, and how to join them.", main)
 
 
 def all_pages() -> dict:

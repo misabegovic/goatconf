@@ -26,7 +26,6 @@ name: Ana Example
 links:
   - https://example.com/ana
 publish: yes
-travel_funded_by: acme
 ---
 
 Ana builds small systems for small towns.
@@ -36,7 +35,7 @@ SUPPORTER = """---
 name: Acme
 logo: img/supporters/acme.svg
 url: https://acme.example
-funds: Travel for one speaker
+funds: Online supporter
 ---
 """
 
@@ -62,19 +61,19 @@ class Args:
     check = False
 
 
-def test_profile_session_and_travel_supporter_link_up(tmp_path, monkeypatch):
+def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     program, speakers = setup(tmp_path, monkeypatch)
     assert speakers.cmd_check(Args()) == 0
     people = speakers.speakers_page()
     assert 'id="ana-example"' in people
     assert "Salt, goats and servers" in people
-    assert "Travel funded by Acme" in people
     assert "speaker__goat" in people  # no photo: the goat stands in
     wall = speakers.supporters_page()
-    assert 'id="acme"' in wall and "Travel for <a" in wall
+    assert 'id="acme"' in wall and "Online supporter" in wall and "500 euro" in wall
     assert '<a href="speaker-ana-example.html">Ana Example</a>' in program.page()
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], speakers.sessions_by_speaker(detail=True)["ana-example"], speakers.supporters())
-    assert "<h1 class=\"sign\">Ana Example</h1>" in page and "Salt, goats and servers" in page and "funded by Acme" in page
+    assert "<h1 class=\"sign\">Ana Example</h1>" in page and "Salt, goats and servers" in page
+    assert "funded by" not in page
 
 
 def test_profile_without_consent_is_refused_and_not_linked(tmp_path, monkeypatch):
@@ -110,3 +109,10 @@ def test_session_signup_link_must_be_https(tmp_path, monkeypatch):
     rec.write_text(rec.read_text().replace("accepted: yes", "accepted: yes\nsignup: http://example.com/x"), encoding="utf-8")
     problems, _, _ = program.check_record(rec)
     assert any("signup must be" in p for p in problems)
+
+
+def test_travel_funded_by_is_refused(tmp_path, monkeypatch):
+    program, speakers = setup(tmp_path, monkeypatch)
+    record = tmp_path / "speakers" / "ana-example.md"
+    record.write_text(record.read_text(encoding="utf-8").replace("publish: yes\n", "publish: yes\ntravel_funded_by: acme\n"), encoding="utf-8")
+    assert speakers.cmd_check(Args()) == 1

@@ -73,9 +73,10 @@ accurate enough that:
 What is known about the conference lives on
 [`wiki/org/goatconf-2027.md`](wiki/org/goatconf-2027.md), each fact cited;
 anything not there is *(unknown, needs source)*. Two rules from the
-organiser bind every page: no money passes through the organiser, and
-the budget is public
-(`sources/conversations/2026-10-07--org--no-money-through-me.md`).
+organiser bind every page: supporters are online only, paying the
+organiser's Austrian business or a supplier directly, and the budget is
+private, never mentioned on the site
+(`sources/conversations/2026-10-13--org--online-supporters-through-the-business.md`).
 
 ## What the brain tracks for every active piece of work
 

@@ -1,9 +1,9 @@
 ---
 title: "Online supporters pay the organiser's Austrian business; the budget becomes private"
 kind: decision
-status: proposed
+status: accepted
 updated: 2026-10-13
-confidence: low
+confidence: medium
 supersedes: org/adrs/budget-and-public-ledger.md
 depends_on:
   - org/adrs/speakers-and-travel-supporters.md
@@ -16,9 +16,8 @@ sources:
 
 # Online supporters pay the organiser's Austrian business; the budget becomes private
 
-Proposed 2026-10-13 from the organiser's answers
-(`sources/conversations/2026-10-13--org--online-supporters-through-the-business.md`).
-Not accepted until the organiser approves this draft.
+Accepted 2026-10-13 by the organiser ("Approve and roll out"), from their
+answers in `sources/conversations/2026-10-13--org--online-supporters-through-the-business.md`.
 
 ## What
 
@@ -38,8 +37,8 @@ Not accepted until the organiser approves this draft.
   may refund some or all of a speaker's travel afterwards. It is never
   promised or guaranteed, and the site says so.
 - **A surplus** pays more of the event's costs, speakers' travel refunds
-  included; anything still left carries to the next GoatConf. (The organiser's answer was given before
-  travel grants were dropped; this reading needs confirming.)
+  included; anything still left carries to the next GoatConf. The
+  organiser approved this reading of their answer.
 - **The budget is private.** The budget page, `ledger.csv` and the home
   page's "Every euro in the open" section go. The site says nothing about
   the budget, and does not offer a summary.
@@ -100,8 +99,8 @@ A single level treats every supporter alike.
 
 ## Related
 
-- [Keep the public ledger as one CSV file here](../adrs/budget-and-public-ledger.md), superseded by this.
-- [Speaker profiles and travel supporters](../adrs/speakers-and-travel-supporters.md)
-- [Supporters and hiring](../adrs/supporters-and-hiring.md)
+- [Keep the public ledger as one CSV file here](budget-and-public-ledger.md), superseded by this.
+- [Speaker profiles and travel supporters](speakers-and-travel-supporters.md)
+- [Supporters and hiring](supporters-and-hiring.md)
 - `sources/conversations/2026-10-13--org--online-supporters-through-the-business.md`
 - `sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md`

@@ -2,12 +2,13 @@
 title: "A base budget others cover, a menu of stretch goals, and every line public"
 kind: initiative
 status: living
-updated: 2026-10-12
+updated: 2026-10-13
 parent_epic: goatconf-2027
 appetite: small
 confidence: medium
 supersedes: org/pitches/budget-a-goat-and-a-menu.md
 sources:
+  - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--bet-on-every-pitch.md
@@ -293,3 +294,4 @@ counts as funded.
 ## Amendments
 
 - **2026-10-12.** The ledger is published on goatconf.com. There are two core days, Thursday 3 and Friday 4 June 2027. See [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md), [Dates: two core days](../adrs/two-core-days-first-week.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
+- **2026-10-13, superseded in part.** The no-gos on money through the organiser and the public budget no longer hold: online supporters pay the organiser's Austrian business, the budget is private, and speakers' travel is refunded only if the budget allows ([Online supporters pay the organiser's Austrian business](../adrs/online-supporters-through-the-business.md); source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).

@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-13
 confidence: medium
 sources:
+  - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-13--org--outside-review-fixes.md
   - sources/conversations/2026-10-12--org--approval-back-on.md
   - sources/conversations/2026-10-12--org--session-registration-later.md
@@ -108,11 +109,13 @@ above; nothing is inferred. Proposals live in the
   fallback only: "Just in case there are any expenses I need to cover.
   Normally, I pay for nothing also." It is never spent on food or drink,
   for anyone: others cover it, or people pay their own.
-- **No money goes through the organiser.** Sponsors give the organiser
-  no money; they pay suppliers directly or give in kind.
-- **The budget is transparent:** what comes in and goes out is public.
-- **Speakers pay their own travel.** A contribution of about 100 EUR per
-  speaker is under consideration, possibly none.
+- **Online supporters** pay the organiser's Austrian business 500 EUR,
+  plus VAT where it applies, for online perks only; the money pays event
+  costs. Others may pay a supplier directly or give in kind. This replaced
+  "No money goes through the organiser" on 2026-10-13 (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
+- **The budget is private** and not mentioned on the site (same source).
+- **Speakers pay their own travel.** If the budget allows, the organiser
+  may refund some or all of it; never promised (same source).
 - Expo, booths and companies that hire attendees are open ideas, named as
   the likely extensible part and as a way companies could support the
   event.

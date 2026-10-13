@@ -2,12 +2,13 @@
 title: "Speaker profiles and travel supporters: consented records, a speakers page and a supporters wall"
 kind: decision
 status: accepted
-updated: 2026-10-12
+updated: 2026-10-13
 confidence: medium
 depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--speakers-and-supporters-approved.md
   - sources/conversations/2026-10-12--org--google-forms-built-and-published.md
@@ -89,3 +90,6 @@ profile goes up only with the speaker's consent.
 - [Supporters and hiring](../prds/supporters-and-hiring.md)
 - [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md)
 - [Program: every room open](open-program-every-room.md)
+
+## Amendments
+- **2026-10-13, online supporters and no travel per speaker.** Supporters are online only: one level, 500 EUR, paid to the organiser's Austrian business, or a supplier paid directly. No supporter pays for a named speaker's travel; `travel_funded_by` is retired and the check refuses it. Speakers pay their own travel, refunded only if the budget allows, never promised ([Online supporters pay the organiser's Austrian business](online-supporters-through-the-business.md); source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).

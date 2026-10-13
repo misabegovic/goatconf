@@ -1,12 +1,14 @@
 ---
 title: "Keep the public ledger as one CSV file here, rendered as the budget page"
 kind: decision
-status: accepted
-updated: 2026-10-12
+status: superseded
+updated: 2026-10-13
 confidence: medium
+superseded_by: org/adrs/online-supporters-through-the-business.md
 depends_on:
   - org/prds/budget-and-public-ledger.md
 sources:
+  - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--adr-answers.md
@@ -92,3 +94,4 @@ published within two weeks of the core day.
 ## Amendments
 
 - **2026-10-12.** The public ledger is published on goatconf.com, not muhamed.at/goatconf. See [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
+- **2026-10-13, superseded.** The budget is private: the budget page, `ledger.csv` and `ledger.js` are gone, and the site does not mention the budget ([Online supporters pay the organiser's Austrian business](online-supporters-through-the-business.md); source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
