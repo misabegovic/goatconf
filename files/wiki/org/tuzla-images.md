@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/tuzla.md
 sources:
+  - sources/conversations/2026-10-13--org--burek-and-sirnica.md
   - sources/web/images/food-dul-pita-2026-10-13.md
   - sources/conversations/2026-10-08--org--site-and-program-direction.md
   - sources/conversations/2026-10-07--org--city-photos-third.md
@@ -164,8 +165,8 @@ Four food photos are now on the site. Each was chosen from the Commons searches 
 | File | Subject | Author | Licence | Vegan status (not verified from the photo) |
 |------|---------|--------|---------|------|
 | `assets/images/food/ajvar-toast.jpg` | Ajvar on bread, cropped to remove a jar label | Popo le Chien | CC0 | usually vegan |
-| `assets/images/food/zeljanica-burek.jpg` | Zeljanica, a spinach and cheese pie | BiHVolim | CC BY-SA 4.0 | vegetarian, not vegan |
-| `assets/images/food/burek-nisici.jpg` | Burek, a pita served with sour milk, cropped | Minja Klarić | CC BY-SA 4.0 | not vegan: filling not stated, and sour milk is dairy |
+| `assets/images/food/zeljanica-burek.jpg` | Zeljanica, a pita usually with cheese and spinach (source: sources/conversations/2026-10-13--org--burek-and-sirnica.md) | BiHVolim | CC BY-SA 4.0 | vegetarian, not vegan |
+| `assets/images/food/burek-nisici.jpg` | Burek, a pita with meat, here served with sour milk, cropped | Minja Klarić | CC BY-SA 4.0 | meat: burek is a pita with meat, as the organiser said on 2026-10-13 (source: sources/conversations/2026-10-13--org--burek-and-sirnica.md) |
 | `assets/images/food/pljeskavica-sarajevo.jpg` | Pljeskavica, grilled meat with raw onion (on file, not on the site) | BiHVolim | CC BY-SA 4.0 | meat |
 | `assets/images/food/turkish-coffee-bih.jpg` | Coffee in copper džezvas, with sugar cubes | Raffaello | CC BY-SA 3.0 | vegan if served black; milk not shown |
 
