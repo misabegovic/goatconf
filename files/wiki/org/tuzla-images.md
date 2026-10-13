@@ -7,6 +7,8 @@ confidence: medium
 depends_on:
   - org/tuzla.md
 sources:
+  - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
+  - sources/web/images/food-photos-chosen-2026-10-13.md
   - sources/conversations/2026-10-13--org--sarma-instead-of-ustipci.md
   - sources/web/images/food-sarma-2026-10-13.md
   - sources/conversations/2026-10-13--org--punjene-paprike-instead-of-sataras.md
@@ -321,3 +323,7 @@ Later the same day, đul pita came off the site, since no price was found for it
 Sataraš then came off the site too, and `site/img/food-punjene-paprike.jpg` (Herzegovinian stuffed peppers, by BiHVolim, CC BY-SA 4.0) took its place (source: sources/conversations/2026-10-13--org--punjene-paprike-instead-of-sataras.md; licence record `sources/web/images/food-punjene-paprike-2026-10-13.md`).
 
 Uštipci then gave way to `site/img/food-sarma.jpg` (sarma in a pot, by BiHVolim, CC BY-SA 4.0) (source: sources/conversations/2026-10-13--org--sarma-instead-of-ustipci.md; licence record `sources/web/images/food-sarma-2026-10-13.md`).
+
+## Food photos chosen one by one, 2026-10-13
+
+The organiser replaced all twelve food photos on the home page with ones picked from sheets of candidates, dish by dish (source: sources/conversations/2026-10-13--org--food-photos-one-by-one.md). They are **not freely licensed**: they come from recipe, news and blog sites, Pinterest and Tuzla restaurants' Korpa.ba menus, and are used on the organiser's decision, who takes one down if its owner asks. Every image and the page it came from is in `sources/web/images/food-photos-chosen-2026-10-13.md`. The earlier Commons photos for grah (pasulj) and burek (Nišići) are no longer on the site; the Commons licence records above stay as history.
