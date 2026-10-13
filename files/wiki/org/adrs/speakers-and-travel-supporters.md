@@ -8,6 +8,7 @@ depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-10-13--org--speaker-profile-required.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--speakers-and-supporters-approved.md

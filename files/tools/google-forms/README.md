@@ -27,8 +27,9 @@ or names of everyone speaking; a link about you (optional); whether it is
 their first talk; their travel (optional): they need no travel support, their company
 covers it and is then listed on the site as a supporter, or they pay their
 own and would welcome a refund if the budget allows, never promised; anything to make it work for them (optional); a short bio
-for a speaker profile (optional); whether a speaker profile may be
-published if the session is accepted; the code of conduct; and consent to the
+for a speaker profile (optional); agreement, required, that if the session
+is accepted GoatConf publishes a speaker profile and promotes the speaker on
+social media; the code of conduct; and consent to the
 privacy notice. A speaker's photo comes later by email, once the session is
 accepted (`files/speakers/README.md`).
 

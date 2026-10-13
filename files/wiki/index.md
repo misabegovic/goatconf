@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-13 -->
+- **2026-10-13**: **Speaker profiles are required.** Proposing a session means agreeing that, if accepted, GoatConf publishes the speaker's profile and promotes them on social media ([speaker profiles](org/adrs/speakers-and-travel-supporters.md)).
 - **2026-10-13**: **Mouth-watering food photos, picked one by one.** The organiser chose all twelve food photos from candidate sheets; they are not freely licensed and come down if an owner asks. The ćevapi card is now tuzlanski ćevapi, in lepinja dipped in broth, and tufahija says it has walnuts inside ([images of Tuzla](org/tuzla-images.md), [Tuzla for GoatConf](org/tuzla.md)).
 - **2026-10-13**: **Sarma instead of uštipci.** Cabbage rolls, priced from three Tuzla menus ([images of Tuzla](org/tuzla-images.md)).
 - **2026-10-13**: **Punjene paprike instead of sataraš.** Stuffed peppers, priced from three Tuzla menus, replace sataraš, which was less Bosnian and priced only in Sarajevo ([images of Tuzla](org/tuzla-images.md)).
