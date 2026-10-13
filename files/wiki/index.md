@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-13 -->
+- **2026-10-13**: **New kinds of event to propose.** Evening event, community trip, meetup, live podcast, hike, hackathon and karaoke, on the site and the live form; support moved to the supporters page ([extension slots](org/prds/extension-slots-and-the-record.md)).
 - **2026-10-13**: **The Tuzla section, filled out.** The home page tells the salt story, the goat legend behind the seal, and how to get there, with two more city photos ([images of Tuzla](org/tuzla-images.md), [Tuzla's history](org/tuzla/history-and-old-town.md)).
 - **2026-10-13**: **More vegetarian and vegan food.** The home page adds sataraš and krompiruša (an ajvar photo was added and then removed) and a tip to ask for posno; the travel page lists two more places with vegetarian dishes and marks Mozaik and Pekara Hukić from their menus. No fully vegetarian or vegan place was found near IPI ([Tuzla for GoatConf](org/tuzla.md), [images](org/tuzla-images.md)).
 - **2026-10-13**: **No fixed reply time for proposals.** The three-week reply is withdrawn: everyone still hears back, the organiser builds the agenda at their own pace, and a proposal not picked straight away may be kept in case someone drops out ([the call](org/adrs/call-organiser-judges.md)).

@@ -247,7 +247,7 @@ def page() -> str:
         around.extend(ext_item(m) for _, m, _ in sorted(ext[day], key=lambda e: e[0]))
     for day in CORE_DAYS:
         around.extend(ext_item(m) for _, m, _ in sorted(ext.get(day, []), key=lambda e: e[0]))
-    around_html = ('<ul class="slots ext-list">\n' + "\n".join(around) + "\n</ul>") if around else '<p class="ledger-empty">No evening events or workshops yet. Want to run a workshop the evening before, or a dinner after the talks? <a href="add.html">Propose yours</a>.</p>'
+    around_html = ('<ul class="slots ext-list">\n' + "\n".join(around) + "\n</ul>") if around else '<p class="ledger-empty">No evening events or meetups yet. Want to run a meetup the evening before, or a dinner after the talks? <a href="add.html">Propose yours</a>.</p>'
     sprite = extensions.SHELL.read_text(encoding="utf-8")
     sprite = sprite[sprite.index('<svg width="0"'):sprite.index("</svg>", sprite.index('<svg width="0"')) + 6]
     room_list = "\n".join(f"    <li><strong>{name}</strong>, {seats}</li>" for name, seats in ROOMS.values())

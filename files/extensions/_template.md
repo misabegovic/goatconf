@@ -1,6 +1,6 @@
 ---
 name: Your extension's name
-kind: fringe-event
+kind: evening-event
 host: Your name, group or company
 location: Place, street and number, Tuzla
 start: 2027-06-10 18:00
