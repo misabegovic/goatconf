@@ -219,3 +219,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #37: site: food tags for burek, sirnica and zeljanica, and Bosnian coffee
    diff: 5 files, +33/-7
    restricted-paths: false
+2026-10-13 merge — PR #38: site: begova čorba instead of fruit at the market
+   diff: 8 files, +46/-10
+   restricted-paths: false
