@@ -264,3 +264,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #52: site: sarma instead of uštipci
    diff: 10 files, +59/-4
    restricted-paths: false
+2026-10-13 merge — PR #53: site: mouth-watering food photos, chosen one by one
+   diff: 22 files, +154/-18
+   restricted-paths: false

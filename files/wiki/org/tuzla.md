@@ -5,6 +5,8 @@ status: living
 updated: 2026-10-13
 confidence: medium
 sources:
+  - sources/web/tuzla/tasteatlas-tuzlanski-cevapi-2026-10-13.md
+  - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
   - sources/conversations/2026-10-13--org--sarma-instead-of-ustipci.md
   - sources/web/tuzla/sarma-prices-2026-10-13.md
   - sources/conversations/2026-10-13--org--punjene-paprike-instead-of-sataras.md
@@ -259,10 +261,10 @@ and fond of a goat that one family hid when goats were banned
   usually beef, with onion and spices, served in lepinja or somun with
   chopped onion and often kajmak or yoghurt, in portions of five, ten or
   more at a ćevabdžinica (`sources/web/tuzla/cevapi-wikipedia-bs.md`).
-  What makes Tuzla's ćevapi Tuzla's is (unknown, needs source): a search
-  on 2026-10-07 summarised food sites as describing a mutton, beef and
-  lamb mix served in lepinja dipped in bone broth, but the pages were
-  blocked and are not snapshotted. Burek and the best-known local grills
+  What makes Tuzla's ćevapi Tuzla's: TasteAtlas says the meat is usually
+  mutton, beef and lamb (2:1:1), and they are served in a lepinja first
+  dipped in poljev, a beef-bone broth, with onion; it lists Restoran
+  Limenka (`sources/web/tuzla/tasteatlas-tuzlanski-cevapi-2026-10-13.md`). Burek and the best-known local grills
   are (unknown, needs source). The organiser's 2023 pitch promised
   vegan and vegetarian options (`sources/web/tuzla/rubyevents-city-pitch-tuzla.md`).
   A menu search on 2026-10-13 (`sources/web/tuzla/vegetarian-places-research-2026-10-13.md`) found no fully vegetarian or vegan
