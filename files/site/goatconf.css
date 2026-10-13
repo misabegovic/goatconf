@@ -161,7 +161,8 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .copy--wide { max-width: 74ch; margin-bottom: 2rem; }
 .copy a:not(.go) { color: var(--album); }
 .album-page .slots .sticker--photo img { aspect-ratio: 4 / 3.4; }
-.slots--food { grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr)); }
+.slots--food { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 61.99rem) { .slots--food { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .slots--food .sticker--photo img { aspect-ratio: 4 / 3.2; }
 .slots--kinds { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 1.8rem; }
 .slots--kinds .slot { min-height: 10rem; justify-content: flex-start; }
