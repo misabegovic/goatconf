@@ -243,3 +243,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #45: site: dates read 3–5 June 2027, and Thursday 3rd June
    diff: 38 files, +109/-96
    restricted-paths: true
+2026-10-13 merge — PR #46: site: the Tuzla section tells more about the city, with six photos
+   diff: 19 files, +73/-48
+   restricted-paths: false
