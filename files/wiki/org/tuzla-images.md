@@ -7,6 +7,8 @@ confidence: medium
 depends_on:
   - org/tuzla.md
 sources:
+  - sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md
+  - sources/web/images/food-vegetarian-dishes-2026-10-13.md
   - sources/conversations/2026-10-13--org--begova-corba.md
   - sources/web/images/food-begova-corba-2026-10-13.md
   - sources/conversations/2026-10-13--org--burek-and-sirnica.md
@@ -299,3 +301,5 @@ same licence if they are edited into something new.
 A tenth food sticker: `site/img/food-dul-pita.jpg`, đul pita seen from above, by BuhaM, CC BY-SA 4.0, vegetarian (not verified from the photo). Licence record: `sources/web/images/food-dul-pita-2026-10-13.md`.
 
 Later the same day, on the organiser's ask (source: sources/conversations/2026-10-13--org--begova-corba.md), `site/img/food-begova-corba.jpg` replaced the fruit market photo: begova čorba in a metal bowl with flatbread, by BiHVolim, CC BY-SA 4.0, shot in Sarajevo in 2010, tagged "Chicken soup". Licence record: `sources/web/images/food-begova-corba-2026-10-13.md`.
+
+Three more, for vegetarian and vegan food (source: sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md): `site/img/food-sataras.jpg` (sataraš, by Maduixa, public domain, vegan by the listed ingredients), `site/img/food-ajvar.jpg` (ajvar on bread, by Popo le Chien, CC0, cropped below the jar label) and `site/img/food-krompirusa.jpg` (krompiruša, by Petar Milošević, CC BY 4.0, often vegan). Licence record: `sources/web/images/food-vegetarian-dishes-2026-10-13.md`.

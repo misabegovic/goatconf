@@ -1,8 +1,10 @@
 # Places to eat and stay near IPI Academy, shown on the travel page and its maps.
-# Researched 2026-10-12 (sources/web/tuzla/places-research-2026-10-12.md).
+# Researched 2026-10-12 (sources/web/tuzla/places-research-2026-10-12.md); vegetarian
+# menus checked 2026-10-13 (sources/web/tuzla/vegetarian-places-research-2026-10-13.md).
 # Only places with approved: true appear on the site; the organiser approves each one.
 # vegetarian / vegan: yes only where a source says so; otherwise unknown.
 checked: '2026-10-12'
+eat_checked: '2026-10-13'  # vegetarian menus re-checked; the stay list keeps checked
 ipi:
   lat: 44.5404
   lon: 18.6738
@@ -74,10 +76,10 @@ eat:
   hours: Mo-Su 07:00-23:00 (OSM)
   url: https://www.facebook.com/pizzabar.tz/
   confidence: high
-  notes: 'Vegetarian ''yes'' is based on In Your Pocket''s vegan and vegetarian guide to BiH, which recommends pizzerias as the reliable vegetarian option and names ''Pizza Bar (Tuzla)''. It does not list
-    specific meat-free dishes. Straight-line distance: about 209 m from IPI, 89 m from Trg slobode. Coordinates from OSM node 4087768608.'
+  notes: 'Vegetarian ''yes'' rests on its Korpa.ba menu, read 2026-10-13 (sources/web/tuzla/vegetarian-places-research-2026-10-13.md): Margarita, Fungi, Vegetarijana, Špinat and Četiri sira pizzas, a vegetable omelette, a cheese and kajmak sandwich and a Šopska salad. In Your Pocket''s vegan and vegetarian guide to BiH also names it. Straight-line distance: about 209 m from IPI, 89 m from Trg slobode. Coordinates from OSM node 4087768608.'
   sources:
   - https://www.openstreetmap.org/node/4087768608
+  - https://korpa.ba/partner/pizza-bar
   - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/pizza-bar
   - https://putujte.ba/gdje-jesti-u-tuzli-najbolja-mjesta-za-hranu-i-kafu/
   - https://test.inyourpocket.com/vegan-and-vegetarian-eating-in-bosnia-herzegovina_77487f
@@ -134,17 +136,18 @@ eat:
   approved: true
 - name: Pekara Hukić
   kind: bakery
-  offers: bakery goods, pizza
-  vegetarian: unknown
+  offers: bakery goods, pizza, cheese pastries
+  vegetarian: 'yes'
   vegan: unknown
-  address: Gradska 57, Tuzla (OSM says Gradska 59)
+  address: Gradska 59, Tuzla
   lat: 44.53999
   lon: 18.673059
   hours: 06:00-22:00 daily (Restaurant Guru)
   confidence: medium
-  notes: 'House number differs between OSM (59) and Restaurant Guru (57). Closest bakery to IPI. Straight-line distance: about 74 m from IPI, 144 m from Trg slobode. Coordinates from OSM node 4090314202.'
+  notes: 'House number: OSM and the Korpa.ba menu say 59, Restaurant Guru 57. Vegetarian ''yes'' rests on its Korpa.ba menu, read 2026-10-13 (sources/web/tuzla/vegetarian-places-research-2026-10-13.md): Margherita, Funghi, Vegetariana, Napolitana and Quattro formaggi pizzas, and cheese pastries; no krompiruša or other pita listed. Closest bakery to IPI. Straight-line distance: about 74 m from IPI, 144 m from Trg slobode. Coordinates from OSM node 4090314202.'
   sources:
   - https://www.openstreetmap.org/node/4090314202
+  - https://korpa.ba/partner/pekara-hukic
   - https://restaurantguru.com/Pekara-Hukic-Tuzla-2
   - https://sites.google.com/view/hotel-dorrah/local-guide/restaurants
   approved: true
@@ -218,8 +221,8 @@ eat:
   approved: true
 - name: Mozaik
   kind: pizzeria / fast food
-  offers: pizza, quick meals
-  vegetarian: unknown
+  offers: pizza, quick meals; sirnica, krompiruša and zeljanica by the 100 g
+  vegetarian: 'yes'
   vegan: unknown
   address: Trgovačka 2-4 / Turalibegova 2, Tuzla
   lat: 44.538717
@@ -227,10 +230,11 @@ eat:
   hours: Mo-Sa 08:00-23:00, Su 10:00-23:00 (Restaurant Guru)
   url: https://www.facebook.com/pizzeriamozaik/
   confidence: medium
-  notes: 'Local chain with several outlets; sources give slightly different addresses (Trgovačka 2, Trgovačka 4, Turalibegova 2), probably one corner building. Straight-line distance: about 309 m from IPI,
+  notes: 'Local chain with several outlets; sources give slightly different addresses (Trgovačka 2, Trgovačka 4, Turalibegova 2), probably one corner building. Vegetarian ''yes'' rests on its Korpa.ba menu, read 2026-10-13 (sources/web/tuzla/vegetarian-places-research-2026-10-13.md): Pizza Vegetariana, Margherita, Funghi, Pasta funghi, breaded vegetable patties, stir-fried vegetables with rice, and sirnica, krompiruša and zeljanica. Straight-line distance: about 309 m from IPI,
     194 m from Trg slobode. Coordinates from OSM node 5554887508.'
   sources:
   - https://www.openstreetmap.org/node/5554887508
+  - https://korpa.ba/partner/pizzeria-mozaik
   - https://www.openstreetmap.org/node/4324934493
   - https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/mozaik
   - https://restaurantguru.com/Mozaik-Tuzla-4
@@ -333,6 +337,37 @@ eat:
   sources:
   - https://restaurantguru.com/MamaMia-Tuzla
   - https://www.tripadvisor.com/Restaurants-g303197-zfz10665-Tuzla_Tuzla_Canton_Federation_of_Bosnia_and_Herzegovina.html
+  approved: true
+- name: Caffe Pizzeria Old School Pub
+  kind: cafe, pub and pizzeria
+  offers: pizza, omelettes, salads, cheese plates, sandwiches
+  vegetarian: 'yes'
+  vegan: unknown
+  address: Turalibegova 34, Tuzla
+  lat: 44.5363118
+  lon: 18.6789445
+  hours: Mo-Su 08:00-00:00 (OSM, under the name 'Old Story Pub')
+  url: https://korpa.ba/partner/caffe-pizzeria-old-school-pub
+  confidence: medium
+  notes: 'Korpa.ba menu, read 2026-10-13 (sources/web/tuzla/vegetarian-places-research-2026-10-13.md): Veggi omlet, Margarita and Quattro formaggi pizza, Pohovani sir, Sirna plata, Sezonska salata. OSM and In Your Pocket name the venue at this address Old Story Pub; it may have been renamed. Straight-line distance: about 611 m from IPI, 479 m from Trg slobode. Coordinates from OSM node 5302551721.'
+  sources:
+  - https://korpa.ba/partner/caffe-pizzeria-old-school-pub
+  - https://www.openstreetmap.org/node/5302551721
+  approved: true
+- name: Zmaj od Bosne
+  kind: restaurant (traditional Bosnian)
+  offers: cooked dishes, breakfast, grill, salads, a vegetarian platter
+  vegetarian: 'yes'
+  vegan: unknown
+  address: Klosterska 11, Tuzla
+  lat: 44.5371419
+  lon: 18.6798222
+  hours: Mo-Fr 08:15-22:00, Sa-Su 10:00-22:00 (tanjir.ba)
+  confidence: low
+  notes: 'tanjir.ba menu (sources/web/tuzla/vegetarian-places-research-2026-10-13.md): Vegeterijanska plata (seasonal vegetables, mushrooms, kajmak) and Šampinjoni Indija (mushrooms in cream on rice, curry). The menu prices look many years old, so the page may be stale. Straight-line distance: about 599 m from IPI, 478 m from Trg slobode. Coordinates from Nominatim (Klosterska 11, OSM way 406368672).'
+  sources:
+  - https://www.tanjir.ba/tuzla/zmaj-od-bosne
+  - https://www.openstreetmap.org/way/406368672
   approved: true
 stay:
 - name: Hotel Vertigos

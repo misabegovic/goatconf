@@ -231,3 +231,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #41: site: no fixed reply time for proposals
    diff: 7 files, +23/-4
    restricted-paths: false
+2026-10-13 merge — PR #42: site: more vegetarian and vegan food, and places nearby
+   diff: 13 files, +152/-39
+   restricted-paths: true
