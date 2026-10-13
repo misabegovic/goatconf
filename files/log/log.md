@@ -207,3 +207,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #33: site: RubyConf Austria's logo on black, and stage photos
    diff: 25 files, +76/-23
    restricted-paths: false
+2026-10-13 merge — PR #34: site: name Chad Fowler in the opening keynote photo
+   diff: 2 files, +12/-1
+   restricted-paths: false
