@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-13
 confidence: medium
 sources:
+  - sources/conversations/2026-10-13--org--ustipci-instead-of-dul-pita.md
   - sources/conversations/2026-10-13--org--food-prices.md
   - sources/web/tuzla/dish-prices-2026-10-13.md
   - sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md
@@ -266,7 +267,7 @@ and fond of a goat that one family hid when goats were banned
   Old School Pub and Zmaj od Bosne (a vegetarian platter), all on the travel
   page's list; the one labelled vegan dish nearby, a sandwich at Zdravljak
   Bosna, was not listed by the organiser's choice (`sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md`).
-- **What dishes cost.** Prices read on 2026-10-13, mostly from Tuzla menus on Korpa.ba (`sources/web/tuzla/dish-prices-2026-10-13.md`): grah 6 to 13 KM, begova čorba 6 to 9 KM, ćevapi 7 to 10 KM for five and 12 to 15 KM for ten, tufahija 3.5 to 5 KM, hurmašice 1.7 to 4 KM; pita (zeljanica, sirnica, krompiruša, burek) about 3 to 5.5 KM for 250 g, with one Tuzla menu (Mozaik, 1.7 KM per 100 g) and the rest Bosnia-wide; sataraš and Bosnian coffee only from Sarajevo; no price found for đul pita. The home page shows these in euro (`sources/conversations/2026-10-13--org--food-prices.md`).
+- **What dishes cost.** Prices read on 2026-10-13, mostly from Tuzla menus on Korpa.ba (`sources/web/tuzla/dish-prices-2026-10-13.md`): grah 6 to 13 KM, begova čorba 6 to 9 KM, ćevapi 7 to 10 KM for five and 12 to 15 KM for ten, tufahija 3.5 to 5 KM, hurmašice 1.7 to 4 KM; pita (zeljanica, sirnica, krompiruša, burek) about 3 to 5.5 KM for 250 g, with one Tuzla menu (Mozaik, 1.7 KM per 100 g) and the rest Bosnia-wide; sataraš and Bosnian coffee only from Sarajevo; no price found for đul pita, which the home page replaced with uštipci (10 KM at Pizza Bar, with cheese and kajmak; `sources/conversations/2026-10-13--org--ustipci-instead-of-dul-pita.md`). The home page shows these in euro (`sources/conversations/2026-10-13--org--food-prices.md`).
 - **Beer.** Pivara Tuzla was founded in 1884 as the Erste Dampf
   Bräuerei, brews a Czech-style pilsner with water piped from Konjuh, and
   makes Tuzlanski pilsner, Erster, a radler and Tuzlanski kiseljak

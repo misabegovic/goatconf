@@ -7,6 +7,8 @@ confidence: medium
 depends_on:
   - org/tuzla.md
 sources:
+  - sources/conversations/2026-10-13--org--ustipci-instead-of-dul-pita.md
+  - sources/web/images/food-ustipci-2026-10-13.md
   - sources/conversations/2026-10-13--org--tuzla-section.md
   - sources/conversations/2026-10-13--org--food-grid-no-ajvar.md
   - sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md
@@ -309,3 +311,5 @@ Three more, for vegetarian and vegan food (source: sources/conversations/2026-10
 ## City photos, added 2026-10-13
 
 The home page's Tuzla section shows six photos: the four from before, plus `site/img/city-aerial-summer.jpg` (Tuzla from above) and `site/img/city-archaeological-park.jpg` (the Neolithic village), both from the organiser's city photo batches recorded above (source: sources/conversations/2026-10-13--org--tuzla-section.md).
+
+Later the same day, đul pita came off the site, since no price was found for it, and `site/img/food-ustipci.jpg` (uštipci, by Milica Buha, CC BY-SA 4.0, Commons title "Priganice 01.jpg") took its place (source: sources/conversations/2026-10-13--org--ustipci-instead-of-dul-pita.md; licence record `sources/web/images/food-ustipci-2026-10-13.md`).
