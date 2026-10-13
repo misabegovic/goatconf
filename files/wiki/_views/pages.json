@@ -120,6 +120,7 @@
       ],
       "supersedes": "org/adrs/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--no-reply-deadline.md",
         "sources/conversations/2026-10-13--org--outside-review-fixes.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -575,6 +576,7 @@
       "updated": "2026-10-13",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-13--org--no-reply-deadline.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-13--org--outside-review-fixes.md",
@@ -606,7 +608,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 1992
+      "tokens": 2022
     },
     {
       "path": "org/index.md",
