@@ -494,3 +494,6 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .slots--photos .sticker--photo img { aspect-ratio: 4 / 3.2; }
 .past-confs__credit { margin-top: 1.2rem; font-size: 0.9rem; color: var(--ink-soft); }
 @media (max-width: 47.99rem) { .slots--photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 0.9rem; } }
+.ledger-stickers--quad { grid-template-columns: repeat(2, minmax(0, 1fr)); align-self: start; }
+.ledger-stickers--quad .sticker--fact { justify-content: flex-start; }
+.ledger-stickers--quad .sticker--fact strong { font-size: clamp(2rem, 1.5rem + 1.4vw, 2.8rem); }
