@@ -65,12 +65,13 @@
       "title": "The organiser runs the goat hunt; the core publishes prices, the breaks list and the lake day",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "depends_on": [
         "org/prds/activities-lake-and-town.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--adr-answers.md",
         "sources/conversations/2026-10-07--org--adrs-approved.md",
@@ -80,7 +81,7 @@
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md",
         "sources/web/tuzla/tuzla-wikipedia.md"
       ],
-      "tokens": 887
+      "tokens": 1004
     },
     {
       "path": "org/adrs/budget-and-public-ledger.md",
@@ -1072,6 +1073,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/activities-the-lake-and-the-town.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md",
         "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -1097,7 +1099,7 @@
         "sources/web/venue/tztz-peace-flame-house.md",
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md"
       ],
-      "tokens": 3263,
+      "tokens": 3340,
       "consumed_by": [
         "org/adrs/activities-lake-and-town.md"
       ]

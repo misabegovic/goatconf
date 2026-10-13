@@ -47,7 +47,7 @@ def days() -> str:
     sat, label = program.COMMUNITY_DAY
     items.append(f'    <li class="sticker sticker--fact sticker--day" data-peel style="--tilt:1deg"><span class="num">0</span>'
                  f'<strong>{label}</strong><span class="day__hours">The community\'s day</span>'
-                 f'<small>The lakes, the goat hunt, walks and meetups, each run by the people who come.</small></li>')
+                 f'<small>A day at the lakes and the goat hunt, planned by the organiser, plus walks and meetups people add.</small></li>')
     return f"""<section class="album-page wrap" id="days" aria-labelledby="days-title">
   <h2 class="band" id="days-title">Three days in June</h2>
   <ul class="slots slots--days">

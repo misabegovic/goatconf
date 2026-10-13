@@ -202,7 +202,7 @@ def day_block(day, label, table, start_n) -> tuple[str, int]:
         if t in plan["breaks"]:
             rows.append(f'<li class="breakrow"><span class="breakrow__time">{int(t[:2]) + 1:02d}{t[2:]}</span>{plan["breaks"][t]}</li>')
     rows.insert(0, f'<li class="breakrow breakrow--welcome"><span class="breakrow__time">{plan["welcome"]}</span>Welcome, in the main hall</li>')
-    rows.append(f'<li class="breakrow"><span class="breakrow__time">{plan["end"]}</span>The day ends. The evening is yours, or one of the events people add.</li>')
+    rows.append(f'<li class="breakrow"><span class="breakrow__time">{plan["end"]}</span>The day ends. Many people head to the salt lakes around 17:00 or 18:00; come along, or join one of the events people add.</li>')
     return f"""<section class="album-page wrap day" id="{day.isoformat()}" aria-labelledby="h-{day.isoformat()}">
   <h2 class="band" id="h-{day.isoformat()}">{label}<span class="band__sub">Core day, {plan['slots'][0]} to {plan['end']}</span></h2>
   <ol class="timetable">
@@ -237,11 +237,11 @@ def page() -> str:
         days.append(block)
     sat, sat_label = COMMUNITY_DAY
     sat_items = "\n".join(ext_item(m) for _, m, _ in sorted(ext.get(sat, []), key=lambda e: e[0]))
-    sat_open = "\n".join(f'<li class="slot"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp">Yours?</span></li>'
-                         for i, (name, what) in enumerate([("A day at the lakes", "Swimming, the salt waterfalls and the beach at the Pannonian Lakes."),
-                                                           ("The goat hunt", "Clues through town for teams of people who just met, ending at the goat statue."),
-                                                           ("A walk or a hike", "The old town, the salt story, the hills above Tuzla."),
-                                                           ("Something else?", "A meetup, a dinner, a corner for your community.")]))
+    sat_open = "\n".join(f'<li class="slot"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp{" stamp--planned" if planned else ""}">{"Planned" if planned else "Yours?"}</span></li>'
+                         for i, (name, what, planned) in enumerate([("A day at the lakes", "Swimming, the salt waterfalls and the beach at the Pannonian Lakes.", True),
+                                                           ("The goat hunt", "Clues through town for teams of people who just met, ending at the goat statue.", True),
+                                                           ("A walk or a hike", "The old town, the salt story, the hills above Tuzla.", False),
+                                                           ("Something else?", "A meetup, a dinner, a corner for your community.", False)]))
     around = []
     for day in sorted(d for d in ext if d not in CORE_DAYS and d != sat):
         around.extend(ext_item(m) for _, m, _ in sorted(ext[day], key=lambda e: e[0]))
@@ -300,7 +300,7 @@ def page() -> str:
 {chr(10).join(days)}
 <section class="album-page wrap day" id="{sat.isoformat()}" aria-labelledby="h-sat">
   <h2 class="band" id="h-sat">{sat_label}<span class="band__sub">The community's day</span></h2>
-  <p class="copy copy--wide">No talks on Saturday. The day is for events people add: the lakes, the goat hunt, walks and meetups. Each host runs their own event and says how to join.</p>
+  <p class="copy copy--wide">No talks on Saturday. The organiser plans a day at the lakes and runs the goat hunt. Walks, meetups and anything else are events people add; each host runs their own and says how to join.</p>
   <ul class="slots slots--kinds">
 {sat_items}
 {sat_open}

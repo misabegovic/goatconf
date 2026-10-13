@@ -8,6 +8,7 @@ appetite: small
 confidence: medium
 supersedes: org/pitches/activities-the-lake-and-the-town.md
 sources:
+  - sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md
   - sources/conversations/2026-10-13--org--lake-season-opens-1-june.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
@@ -254,5 +255,6 @@ links the extension listings.
 
 ## Amendments
 
+- **2026-10-13, the lakes every evening.** The organiser plans Saturday's lake day, and the lakes are also an everyday activity after the talks, since many people go around 17:00 or 18:00 (source: sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md).
 - **2026-10-13, the lakes are open.** The lakes' swimming season opens on 1 June, as the organiser confirmed, so swimming is possible on every GoatConf day (source: sources/conversations/2026-10-13--org--lake-season-opens-1-june.md).
 - **2026-10-12.** The core days are Thursday 3 and Friday 4 June 2027, and Saturday 5 June is the community day for the lakes and the town. The site is goatconf.com. See [Dates: two core days](../adrs/two-core-days-first-week.md), [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
