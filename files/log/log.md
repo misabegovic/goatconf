@@ -222,3 +222,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #38: site: begova čorba instead of fruit at the market
    diff: 8 files, +46/-10
    restricted-paths: false
+2026-10-13 merge — PR #39: site: the lakes' season opens on 1 June
+   diff: 7 files, +35/-17
+   restricted-paths: false
