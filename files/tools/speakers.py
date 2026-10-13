@@ -289,7 +289,7 @@ def speakers_page() -> str:
 </ul>"""
     main = f"""<section class="album-page wrap" aria-labelledby="h-speakers">
   <h2 class="band" id="h-speakers">Who is speaking</h2>
-  <p class="copy copy--wide">Each speaker here has a session on Thursday 3rd or Friday 4th June 2027. They chose to have a profile, and wrote it themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
+  <p class="copy copy--wide">Each speaker here has a session on Thursday 3rd or Friday 4th June 2027. They wrote their profiles themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
   {cards}
 </section>
 <section class="album-page wrap" aria-labelledby="h-travel">
