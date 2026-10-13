@@ -252,3 +252,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #48: site: one wide card while no speaker is announced
    diff: 18 files, +70/-59
    restricted-paths: true
+2026-10-13 merge — PR #49: site: price ranges on the food cards
+   diff: 20 files, +230/-26
+   restricted-paths: false
