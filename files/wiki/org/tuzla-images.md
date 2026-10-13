@@ -7,6 +7,8 @@ confidence: medium
 depends_on:
   - org/tuzla.md
 sources:
+  - sources/conversations/2026-10-13--org--begova-corba.md
+  - sources/web/images/food-begova-corba-2026-10-13.md
   - sources/conversations/2026-10-13--org--burek-and-sirnica.md
   - sources/web/images/food-dul-pita-2026-10-13.md
   - sources/conversations/2026-10-08--org--site-and-program-direction.md
@@ -295,3 +297,5 @@ same licence if they are edited into something new.
 ## Food, added 2026-10-13
 
 A tenth food sticker: `site/img/food-dul-pita.jpg`, đul pita seen from above, by BuhaM, CC BY-SA 4.0, vegetarian (not verified from the photo). Licence record: `sources/web/images/food-dul-pita-2026-10-13.md`.
+
+Later the same day, on the organiser's ask (source: sources/conversations/2026-10-13--org--begova-corba.md), `site/img/food-begova-corba.jpg` replaced the fruit market photo: begova čorba in a metal bowl with flatbread, by BiHVolim, CC BY-SA 4.0, shot in Sarajevo in 2010, tagged "Chicken soup". Licence record: `sources/web/images/food-begova-corba-2026-10-13.md`.
