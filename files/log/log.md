@@ -237,3 +237,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #43: site: the hero says registration is approved and the call is open, in two columns
    diff: 16 files, +28/-17
    restricted-paths: false
+2026-10-13 merge — PR #44: site: no ajvar photo, and the food grid in four columns
+   diff: 20 files, +51/-38
+   restricted-paths: false
