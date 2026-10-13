@@ -2,13 +2,14 @@
 title: "Dates: two core days, Thursday 3 and Friday 4 June 2027, with Saturday 5 June free for the community"
 kind: decision
 status: accepted
-updated: 2026-10-12
+updated: 2026-10-13
 confidence: medium
 depends_on:
   - org/prds/dates-and-the-core-day.md
   - org/epics/goatconf-2027.md
 supersedes: org/adrs/dates-and-the-core-day.md
 sources:
+  - sources/conversations/2026-10-13--org--lake-season-opens-1-june.md
   - sources/conversations/2026-10-12--org--friday-dzuma-schedule.md
   - sources/web/tuzla/vaktija-tuzla-2027-06-03-04.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
@@ -97,6 +98,7 @@ Friday 4 June 2027, with Saturday 5 June, as the organiser reported on
 
 ## Amendments
 
+- **2026-10-13, the lakes open on 1 June.** The lakes' swimming season opens on 1 June, as the organiser confirmed, so the first week of June no longer carries the swimming risk named under Costs (source: sources/conversations/2026-10-13--org--lake-season-opens-1-june.md).
 - **2026-10-12, Friday starts at 09:30 for Džuma.** Friday 4 June keeps four one-hour slots but starts half an hour earlier: welcome 09:15, slots at 09:30, 11:30, 13:30 and 15:30, and the end at 16:30, so the midday hour off, 12:30 to 13:30, covers Džuma prayer (podne in Tuzla is at 12:44 that day) and lunch. Thursday keeps 10:00 to 17:00. The organiser wants it kept easy to change; each day's times live in one place in the program generator (source: sources/conversations/2026-10-12--org--friday-dzuma-schedule.md, sources/web/tuzla/vaktija-tuzla-2027-06-03-04.md).
 
 ## Related

@@ -2,12 +2,14 @@
 title: "Activities: the salt lake, a goat hunt, and a cheap city as the gift"
 kind: initiative
 status: living
-updated: 2026-10-12
+updated: 2026-10-13
 parent_epic: goatconf-2027
 appetite: small
 confidence: medium
 supersedes: org/pitches/activities-the-lake-and-the-town.md
 sources:
+  - sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md
+  - sources/conversations/2026-10-13--org--lake-season-opens-1-june.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--conference-vision.md
@@ -116,9 +118,7 @@ who pays their own travel and gains most from knowing the city is cheap.
 - **Perceived.** "Tuzla is cheap" is believed by the organiser and is
   true on the snapshots, but an attendee from abroad does not know it
   unless the numbers are in front of them. The lake is perceived as a
-  swim; whether the swimming season has opened in early June 2027 is
-  (unknown, needs source), which is why the lake day must work without
-  swimming.
+  swim, and it is: the season opens on 1 June (source: sources/conversations/2026-10-13--org--lake-season-opens-1-june.md).
 - **Target.** By the week of the event, the site carries a prices and
   places page with a "last checked" date, a short list of cafés and
   places to eat around Freedom Square, a lake day with a rain plan, a
@@ -238,8 +238,6 @@ people who join them, so they cost the core nothing to scale.
   marked as the organiser's own?
 - Is one message to the tourist board or the lakes' operator about a
   group rate worth sending? Sending it is the organiser's act.
-- Whether the swimming season is open in the chosen week (unknown, needs
-  source).
 - Which of Tuzla's own June events (the lakes' season opening, Astronomy
   Days, Summer at Pannonica) fall in the chosen week in 2027 (unknown,
   needs source).
@@ -257,4 +255,6 @@ links the extension listings.
 
 ## Amendments
 
+- **2026-10-13, the lakes every evening.** The organiser plans Saturday's lake day, and the lakes are also an everyday activity after the talks, since many people go around 17:00 or 18:00 (source: sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md).
+- **2026-10-13, the lakes are open.** The lakes' swimming season opens on 1 June, as the organiser confirmed, so swimming is possible on every GoatConf day (source: sources/conversations/2026-10-13--org--lake-season-opens-1-june.md).
 - **2026-10-12.** The core days are Thursday 3 and Friday 4 June 2027, and Saturday 5 June is the community day for the lakes and the town. The site is goatconf.com. See [Dates: two core days](../adrs/two-core-days-first-week.md), [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).

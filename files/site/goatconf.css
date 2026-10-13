@@ -497,3 +497,4 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .ledger-stickers--quad { grid-template-columns: repeat(2, minmax(0, 1fr)); align-self: start; }
 .ledger-stickers--quad .sticker--fact { justify-content: flex-start; }
 .ledger-stickers--quad .sticker--fact strong { font-size: clamp(2rem, 1.5rem + 1.4vw, 2.8rem); }
+.stamp--planned { color: var(--album); }

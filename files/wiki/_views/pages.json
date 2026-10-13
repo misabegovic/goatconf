@@ -65,12 +65,13 @@
       "title": "The organiser runs the goat hunt; the core publishes prices, the breaks list and the lake day",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "depends_on": [
         "org/prds/activities-lake-and-town.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--adr-answers.md",
         "sources/conversations/2026-10-07--org--adrs-approved.md",
@@ -80,7 +81,7 @@
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md",
         "sources/web/tuzla/tuzla-wikipedia.md"
       ],
-      "tokens": 887
+      "tokens": 1004
     },
     {
       "path": "org/adrs/budget-and-public-ledger.md",
@@ -464,7 +465,7 @@
       "title": "Dates: two core days, Thursday 3 and Friday 4 June 2027, with Saturday 5 June free for the community",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "depends_on": [
         "org/prds/dates-and-the-core-day.md",
@@ -472,6 +473,7 @@
       ],
       "supersedes": "org/adrs/dates-and-the-core-day.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md",
         "sources/conversations/2026-10-12--org--friday-dzuma-schedule.md",
         "sources/web/tuzla/vaktija-tuzla-2027-06-03-04.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -486,7 +488,7 @@
         "sources/web/tuzla/panonika-n1-2019.md",
         "sources/web/tuzla/slana-jezera-sezona-kurir-2026-04.md"
       ],
-      "tokens": 1279,
+      "tokens": 1355,
       "consumed_by": [
         "org/adrs/core-day-parallel-tracks.md"
       ]
@@ -1065,12 +1067,14 @@
       "title": "Activities: the salt lake, a goat hunt, and a cheap city as the gift",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-13",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/activities-the-lake-and-the-town.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md",
+        "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--conference-vision.md",
@@ -1095,7 +1099,7 @@
         "sources/web/venue/tztz-peace-flame-house.md",
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md"
       ],
-      "tokens": 3212,
+      "tokens": 3340,
       "consumed_by": [
         "org/adrs/activities-lake-and-town.md"
       ]
@@ -1613,9 +1617,10 @@
       "title": "Tuzla for GoatConf: getting there, staying, costs, June, the lakes, the rules",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-08",
+      "updated": "2026-10-13",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md",
         "sources/conversations/2026-10-08--org--site-and-program-direction.md",
         "sources/conversations/2026-06--org--ipi-visit-notes.md",
         "sources/web/tuzla/tztz-pannonian-lakes.md",
@@ -1708,7 +1713,7 @@
         "sources/web/tuzla/cvent-hotel-tuzla-address.md",
         "sources/web/tuzla/tztz-atelier-ismet-mujezinovic.md"
       ],
-      "tokens": 6857,
+      "tokens": 6920,
       "consumed_by": [
         "org/tuzla-images.md",
         "org/tuzla/history-and-old-town.md"

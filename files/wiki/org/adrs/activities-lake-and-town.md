@@ -2,11 +2,12 @@
 title: "The organiser runs the goat hunt; the core publishes prices, the breaks list and the lake day"
 kind: decision
 status: accepted
-updated: 2026-10-12
+updated: 2026-10-13
 confidence: medium
 depends_on:
   - org/prds/activities-lake-and-town.md
 sources:
+  - sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--adr-answers.md
   - sources/conversations/2026-10-07--org--adrs-approved.md
@@ -90,4 +91,5 @@ since June is Tuzla's wettest month (`sources/web/tuzla/tuzla-wikipedia.md`).
 
 ## Amendments
 
+- **2026-10-13, the lake day is planned by the organiser, and the lakes fit every evening.** The organiser plans Saturday's lake day; nobody else needs to own it, so the program stamps it "Planned", as it does the goat hunt. Many people go to the lakes around 17:00 or 18:00, so the lakes are also an activity after the talks on both core days (source: sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md).
 - **2026-10-12.** The day after the talks is Saturday 5 June 2027, the community day. See [Dates: two core days](two-core-days-first-week.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
