@@ -285,11 +285,11 @@ def speakers_page() -> str:
             speaker_card(i + 1, slug, m, b, talks.get(slug, []), known) for i, (slug, (m, b)) in enumerate(order)) + "\n</ul>"
     else:
         cards = """<ul class="slots slots--speakers">
-  <li><a class="slot slot--link" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg><span class="num num--printed">1</span><strong>The first speaker</strong><small>No speakers yet: the call is open and every one-hour slot is waiting. Propose a session.</small><span class="stamp">Yours?</span></a></li>
+  <li class="slots__wide"><a class="slot slot--link slot--wait" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg><span class="num num--printed">1</span><strong>The first speaker could be you</strong><small>No one is announced yet. Speakers appear here as their sessions are accepted, and the call for proposals is open now.</small><span class="stamp">Yours?</span></a></li>
 </ul>"""
     main = f"""<section class="album-page wrap" aria-labelledby="h-speakers">
   <h2 class="band" id="h-speakers">Who is speaking</h2>
-  <p class="copy copy--wide">Each speaker here has a session on Thursday 3 or Friday 4th June 2027. They chose to have a profile, and wrote it themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
+  <p class="copy copy--wide">Each speaker here has a session on Thursday 3rd or Friday 4th June 2027. They chose to have a profile, and wrote it themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
   {cards}
 </section>
 <section class="album-page wrap" aria-labelledby="h-travel">

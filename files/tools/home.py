@@ -71,16 +71,15 @@ def speakers_block() -> str:
         more = f'<a class="go go--ink" href="speakers.html">All {len(people)} speakers</a>' if len(people) > SHOWN else '<a class="go go--ink" href="speakers.html">Meet the speakers</a>'
         intro = "The people giving the talks, panels and workshops so far. More are added as proposals are accepted."
     else:
-        empty = ('    <li class="slot slot--speaker" aria-hidden="true"><svg class="ghost" viewBox="0 0 124 100"><use href="#goat"/></svg>'
-                 '<span class="num num--printed">0</span><span class="nameline"></span></li>')
-        cards = ('    <li><a class="slot slot--link slot--speaker" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
-                 '<span class="num num--printed">0</span><strong>The first speaker</strong><small>The call is open. It could be you.</small><span class="stamp">Yours?</span></a></li>\n'
-                 + "\n".join([empty] * 3))
+        cards = ('    <li class="slots__wide"><a class="slot slot--link slot--wait" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+                 '<span class="num num--printed">0</span><strong>The first speaker could be you</strong>'
+                 '<small>No one is announced yet. Speakers appear here as their sessions are accepted, and the call for proposals is open now.</small>'
+                 '<span class="stamp">Yours?</span></a></li>')
         more = '<a class="go go--ink" href="talk.html">Propose a session</a>'
-        intro = "Speakers appear here as their sessions are accepted. The call for talks is open now."
+        intro = ""
+    intro_html = f'\n  <p class="copy copy--wide">{intro}</p>' if intro else ""
     return f"""<section class="album-page wrap" id="speakers" aria-labelledby="speakers-title">
-  <h2 class="band" id="speakers-title">Who is speaking</h2>
-  <p class="copy copy--wide">{intro}</p>
+  <h2 class="band" id="speakers-title">Who is speaking</h2>{intro_html}
   <ul class="slots slots--mini">
 {cards}
   </ul>
