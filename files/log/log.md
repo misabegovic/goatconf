@@ -201,3 +201,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #31: site: a đul pita food photo, and Saturday at full width on phones
    diff: 23 files, +94/-27
    restricted-paths: false
+2026-10-13 merge — PR #32: site: the organiser block shows EuRuKo 2024 and RubyConf Austria
+   diff: 25 files, +149/-45
+   restricted-paths: false
