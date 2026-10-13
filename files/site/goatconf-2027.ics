@@ -25,7 +25,7 @@ UID:2027-06-03@goatconf.com
 DTSTAMP:20261012T000000Z
 DTSTART;TZID=Europe/Sarajevo:20270603T094500
 DTEND;TZID=Europe/Sarajevo:20270603T170000
-SUMMARY:GoatConf 2027: Thursday 3 June
+SUMMARY:GoatConf 2027: Thursday 3rd June
 LOCATION:IPI Academy (IPI Akademija Tuzla)\, Kulina bana 2\, 75000 Tuzla\, 
  Bosnia and Herzegovina
 DESCRIPTION:Four one-hour slots in every room\, an hour off after each. Wel
@@ -37,7 +37,7 @@ UID:2027-06-04@goatconf.com
 DTSTAMP:20261012T000000Z
 DTSTART;TZID=Europe/Sarajevo:20270604T091500
 DTEND;TZID=Europe/Sarajevo:20270604T163000
-SUMMARY:GoatConf 2027: Friday 4 June
+SUMMARY:GoatConf 2027: Friday 4th June
 LOCATION:IPI Academy (IPI Akademija Tuzla)\, Kulina bana 2\, 75000 Tuzla\, 
  Bosnia and Herzegovina
 DESCRIPTION:Four slots\, starting half an hour earlier than Thursday. Welco

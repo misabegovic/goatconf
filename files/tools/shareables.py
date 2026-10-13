@@ -35,7 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 OUT = SITE / "share"
 BLUE, YELLOW, NIGHT, SOFT = brand.BLUE, brand.YELLOW, brand.NIGHT, "#c9d7f5"
-FACTS = "Tuzla · 3 to 5 June 2027 · Free to attend"
+FACTS = "Tuzla · 3–5 June 2027 · Free to attend"
 URL = "goatconf.com"
 esc = html.escape
 

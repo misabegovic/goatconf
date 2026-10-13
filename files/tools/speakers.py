@@ -215,7 +215,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
   {share}
 </section>"""
     title = f"{meta['name']}: speaking at GoatConf 2027, Tuzla"
-    desc = f"{meta['name']} speaks at GoatConf 2027 in Tuzla, 3 to 5 June 2027: " + (esc(first["title"]) if first else "a session at IPI Academy") + "."
+    desc = f"{meta['name']} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: " + (esc(first["title"]) if first else "a session at IPI Academy") + "."
     return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main)
 
 
@@ -260,7 +260,7 @@ def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: st
 {main}
 </main>
 <footer class="footer">
-  <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3 to 5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
+  <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
   <p class="footer__links">{FOOTER_LINKS}</p>
 </footer>
 <script src="album.js" defer></script>
@@ -289,14 +289,14 @@ def speakers_page() -> str:
 </ul>"""
     main = f"""<section class="album-page wrap" aria-labelledby="h-speakers">
   <h2 class="band" id="h-speakers">Who is speaking</h2>
-  <p class="copy copy--wide">Each speaker here has a session on Thursday 3 or Friday 4 June 2027. They chose to have a profile, and wrote it themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
+  <p class="copy copy--wide">Each speaker here has a session on Thursday 3 or Friday 4th June 2027. They chose to have a profile, and wrote it themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
   {cards}
 </section>
 <section class="album-page wrap" aria-labelledby="h-travel">
   <h2 class="band" id="h-travel">Getting speakers here</h2>
   <p class="copy copy--wide">Speakers pay their own travel and stay. If the budget allows, the organiser may refund some or all of it after the event. This is not promised or guaranteed. See <a href="talk.html">give a talk</a>.</p>
 </section>"""
-    return shell("speakers", "Speakers: GoatConf 2027, 3 to 5 June, Tuzla",
+    return shell("speakers", "Speakers: GoatConf 2027, 3–5 June, Tuzla",
                  "The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words.",
                  ("img/ipi-lecture-hall.jpg", 1024, 768, "A talk in IPI Academy's lecture hall, students' faces blurred"),
                  "The speakers", "The people giving the talks, panels and workshops, in their own words.", main)
@@ -332,7 +332,7 @@ def supporters_page() -> str:
   <p class="copy copy--wide">If you speak at GoatConf and your company covers your travel, your company is listed here as a supporter too, with its logo and link, the same as online supporters.</p>
   <p class="copy copy--wide"><a class="go go--ink" href="contact.html">Write to the organiser</a> <a class="go go--ink" href="mailto:info@muhamed.at">info@muhamed.at</a></p>
 </section>"""
-    return shell("supporters", "Supporters: GoatConf 2027, 3 to 5 June, Tuzla",
+    return shell("supporters", "Supporters: GoatConf 2027, 3–5 June, Tuzla",
                  "The companies that make GoatConf 2027 possible, and how to support it online: one level, 500 euro, nothing at the venue.",
                  ("img/city-korzo-clock.jpg", 1160, 773, "The Korzo on a sunny day: the street clock, a pink corner house, café umbrellas and people walking"),
                  "The supporters", "The companies that help keep GoatConf free, and how to join them.", main)

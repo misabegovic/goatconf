@@ -46,7 +46,7 @@ KINDS = {
     "hackathon": "Hackathon",
 }
 FIELDS = ("name", "kind", "host", "location", "start", "end", "cost", "registration", "paid_by", "contact", "accepts")
-# GoatConf runs 3 to 5 June 2027; the window leaves room for arrivals, trips
+# GoatConf runs 3–5 June 2027; the window leaves room for arrivals, trips
 # and the weeks around it. Outside it, a record must say why.
 WINDOW = (dt.date(2027, 5, 25), dt.date(2027, 6, 20))
 NOT_OURS = re.compile(r"goatconf\s+(presents|proudly)", re.I)
@@ -228,7 +228,7 @@ def page() -> str:
 <p>Propose it through the short form. The organiser decides whether it becomes part of GoatConf. <a href="add.html">Propose yours</a></p>
 </main>
 <footer class="footer">
-  <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3 to 5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
+  <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
   <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Give a talk</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
 </footer>
 <script src="album.js" defer></script>

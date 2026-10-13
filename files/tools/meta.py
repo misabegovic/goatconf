@@ -49,7 +49,7 @@ def tags(text: str) -> str:
             f'<meta property="og:image" content="{IMAGE}">\n'
             f'<meta property="og:image:width" content="1200">\n'
             f'<meta property="og:image:height" content="630">\n'
-            f'<meta property="og:image:alt" content="GoatConf 2027, Tuzla, 3 to 5 June 2027, free. The GoatConf seal: the one that feeds the community.">\n'
+            f'<meta property="og:image:alt" content="GoatConf 2027, Tuzla, 3–5 June 2027, free. The GoatConf seal: the one that feeds the community.">\n'
             f'<meta name="twitter:card" content="summary_large_image">\n'
             f"{END}\n")
 
