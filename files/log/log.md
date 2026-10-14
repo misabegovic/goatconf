@@ -282,3 +282,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-14 merge — PR #58: site: accepted speakers are invited to a speakers dinner
    diff: 8 files, +42/-7
    restricted-paths: false
+2026-10-14 merge — PR #59: site: six confirmed speakers, with roles and the organiser's order
+   diff: 91 files, +1877/-69
+   restricted-paths: true
