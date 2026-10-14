@@ -111,6 +111,22 @@ def test_session_signup_link_must_be_https(tmp_path, monkeypatch):
     assert any("signup must be" in p for p in problems)
 
 
+def test_role_shows_everywhere_the_name_does(tmp_path, monkeypatch):
+    program, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("name: Ana Example\n", "name: Ana Example\nrole: Engineer at A&B\n"))
+    assert speakers.cmd_check(Args()) == 0
+    assert '<span class="speaker__role">Engineer at A&amp;B</span>' in speakers.speakers_page()
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], speakers.sessions_by_speaker(detail=True)["ana-example"], speakers.supporters())
+    assert '<span class="lede__role">Engineer at A&amp;B</span>' in page
+    assert 'content="Ana Example (Engineer at A&amp;B) speaks at GoatConf 2027' in page
+    home = importlib.reload(importlib.import_module("home"))
+    assert '<small class="sticker__role">Engineer at A&amp;B</small>' in home.speaker_sticker(0, "ana-example", speakers.speakers()["ana-example"][0])
+
+
+def test_role_must_be_one_short_line(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("name: Ana Example\n", "name: Ana Example\nrole: " + "x" * 81 + "\n"))
+    assert speakers.cmd_check(Args()) == 1
+
+
 def test_travel_funded_by_is_refused(tmp_path, monkeypatch):
     program, speakers = setup(tmp_path, monkeypatch)
     record = tmp_path / "speakers" / "ana-example.md"

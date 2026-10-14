@@ -12,6 +12,12 @@ is their bio in their own words, at most 120 words.
 - `photo`: optional, a file the speaker sent, saved under
   `site/img/speakers/`. Without one the profile shows the goat.
 - `links`: optional, a list of web addresses.
+- `role`: optional, one line of at most 80 characters saying what they do
+  and where, as they would put it (for example `Staff Engineer at Vinted`,
+  `Independent consultant`). It shows under their name on their page, the
+  speakers page, the home page, their "I'm speaking" cards and the files for
+  agents. Text only: an employer's logo never appears, so it cannot read as
+  a supporter.
 
 A confirmed speaker can be added before their session has a slot or a
 topic (since 2026-10-14): their page then says the session will be on the

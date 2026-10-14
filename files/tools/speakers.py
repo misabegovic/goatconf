@@ -36,6 +36,7 @@ PAGES = {"speakers": SITE / "speakers.html", "supporters": SITE / "supporters.ht
 URL = re.compile(r"^https?://\S+$")
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 BIO_WORDS = 120
+ROLE_CHARS = 80
 esc = program.esc
 
 
@@ -94,6 +95,8 @@ def check_speaker(path: Path, known_supporters):
         problems.append("no bio below the frontmatter")
     elif len(body.split()) > BIO_WORDS:
         problems.append(f"the bio is longer than {BIO_WORDS} words")
+    if "role" in meta and (not isinstance(meta["role"], str) or not meta["role"].strip() or "\n" in meta["role"] or len(meta["role"]) > ROLE_CHARS):
+        problems.append(f"role must be one line of at most {ROLE_CHARS} characters, for example: Staff Engineer at Vinted")
     if meta.get("photo"):
         p = image_problem(meta["photo"], "speakers", "photo")
         if p:
@@ -177,13 +180,14 @@ def goat_photo() -> str:
 
 def speaker_card(n: int, slug: str, meta, body, sessions, known) -> str:
     photo = f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo") else goat_photo()
+    role = f'<span class="speaker__role">{esc(meta["role"])}</span>' if meta.get("role") else ""
     first = f'<span class="speaker__first">{sessions[0]}</span>' if sessions else ""
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
     return f"""  <li class="sticker sticker--speaker" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <a class="speaker__link" href="{page_name(slug)}">
     <span class="num">{n}</span>
     <figure class="speaker__photo">{photo}<figcaption>{esc(meta['name'])}</figcaption></figure>
-    <span class="speaker__body">{first}{more}</span>
+    <span class="speaker__body">{role}{first}{more}</span>
     </a>
   </li>"""
 
@@ -203,6 +207,8 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     first = sessions[0] if sessions else None
     lede = (f'{esc(first["format"])} on {program.CORE_DAYS[first["day"]]} at {first["start"]}, {esc(first["room"])}.' if first
             else "Speaking at GoatConf 2027 in Tuzla.")
+    if meta.get("role"):
+        lede = f'<span class="lede__role">{esc(meta["role"])}</span>{lede}'
     main = f"""<section class="album-page wrap speaker-page" aria-labelledby="h-about">
   <h2 class="band" id="h-about">About {name.split()[0]}</h2>
   <div class="copy copy--wide">{bio}</div>
@@ -215,7 +221,8 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
   {share}
 </section>"""
     title = f"{meta['name']}: speaking at GoatConf 2027, Tuzla"
-    desc = f"{meta['name']} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: " + (esc(first["title"]) if first else "a session at IPI Academy") + "."
+    who = f"{meta['name']} ({meta['role']})" if meta.get("role") else meta["name"]
+    desc = f"{esc(who)} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: " + (esc(first["title"]) if first else "a session at IPI Academy") + "."
     return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main)
 
 

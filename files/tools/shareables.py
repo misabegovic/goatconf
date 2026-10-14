@@ -127,6 +127,7 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool) -> str:
 <div style="position:absolute; {'left:84px; top:540px; right:84px' if square else 'left:450px; top:84px; right:300px'}">
   <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">I'm speaking at GoatConf 2027</div>
   <div class="word" style="font-size:{120 if square else 92}px; margin-top:18px">{name}</div>
+  {f'<div style="font-size:{34 if square else 28}px; font-weight:700; line-height:1.2; margin-top:22px">{esc(str(meta["role"]))}</div>' if meta.get("role") else ""}
   <div class="sub" style="font-size:{34 if square else 28}px; line-height:1.2; margin-top:28px; max-width:20ch">{talk}</div>
 </div>
 <div class="url" style="position:absolute; left:{84 if square else 450}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/speakers.html</div>

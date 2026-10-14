@@ -435,6 +435,7 @@
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--speaker-role-and-employer.md",
         "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
@@ -446,7 +447,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 1392,
+      "tokens": 1522,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]
@@ -1598,12 +1599,13 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--speaker-role-and-employer.md",
         "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/web/speakers/menges-dev-2026-10-14.md",
         "sources/web/speakers/compass-summit-dejan-menges-2026-10-14.md",
         "sources/web/organiser/muhamed-at-about.md"
       ],
-      "tokens": 676
+      "tokens": 740
     },
     {
       "path": "org/tuzla/history-and-old-town.md",

@@ -104,7 +104,8 @@ def session_list() -> list[dict]:
     published = speakers.speakers()
     out = []
     for (day, start, room), (meta, body) in sorted(table.items(), key=lambda kv: (kv[0][0], kv[0][1], list(program.ROOMS).index(kv[0][2]))):
-        people = [{"name": names[s], "page": url(speakers.page_name(s))} for s in meta.get("profiles") or [] if s in names and s in published]
+        people = [{"name": names[s], "page": url(speakers.page_name(s)), **({"role": published[s][0]["role"]} if published[s][0].get("role") else {})}
+                  for s in meta.get("profiles") or [] if s in names and s in published]
         named = {p["name"] for p in people}
         for name in re.split(r"\s*,\s*", str(meta.get("speakers") or "")):
             if name and name not in named:
@@ -178,7 +179,7 @@ def json_ld() -> str:
     subs = [{"@type": "Event", "name": s["title"], "startDate": f'{s["day"]}T{s["start"]}:00{OFFSET}',
              "endDate": f'{s["day"]}T{s["end"]}:00{OFFSET}', "location": {"@type": "Place", "name": f'{s["room"]}, {EVENT["venue"]}'},
              **({"offers": {"@type": "Offer", "price": 0, "priceCurrency": "EUR", "url": s["signup"]}} if "signup" in s else {}),
-             **({"performer": [{"@type": "Person", "name": p["name"], **({"url": p["page"]} if "page" in p else {})} for p in s["speakers"]]}
+             **({"performer": [{"@type": "Person", "name": p["name"], **({"url": p["page"]} if "page" in p else {}), **({"jobTitle": p["role"]} if "role" in p else {})} for p in s["speakers"]]}
                 if s["speakers"] else {})} for s in session_list()]
     if subs:
         data["subEvent"] = subs
@@ -235,7 +236,7 @@ def llms() -> str:
     people = sorted(speakers.speakers().items(), key=lambda kv: str(kv[1][0]["name"]).lower())
     if people:
         lines += ["## Speakers", ""]
-        lines += [f"- [{m['name']}]({url(speakers.page_name(s))})" for s, (m, _) in people]
+        lines += [f"- [{m['name']}]({url(speakers.page_name(s))})" + (f": {m['role']}" if m.get("role") else "") for s, (m, _) in people]
         lines.append("")
     lines += ["## Pages", ""]
     for page in pages():
