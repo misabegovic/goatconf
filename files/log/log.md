@@ -294,3 +294,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-14 merge — PR #62: site: IPI Academy's logo leads the supporters, marked host and partner
    diff: 39 files, +151/-42
    restricted-paths: true
+2026-10-14 merge — PR #63: site: renting a car at Sarajevo or Tuzla, on the travel page
+   diff: 7 files, +223/-1
+   restricted-paths: false

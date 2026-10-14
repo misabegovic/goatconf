@@ -5,6 +5,9 @@ status: living
 updated: 2026-10-13
 confidence: medium
 sources:
+  - sources/conversations/2026-10-14--org--car-rental-companies.md
+  - sources/conversations/2026-10-14--org--car-rentals.md
+  - sources/web/travel/car-rental-2026-10-14.md
   - sources/web/tuzla/tasteatlas-tuzlanski-cevapi-2026-10-13.md
   - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
   - sources/conversations/2026-10-13--org--sarma-instead-of-ustipci.md
@@ -164,6 +167,7 @@ and fond of a goat that one family hid when goats were banned
   does is (unknown, needs source). Bases have come and gone here, so
   the public travel page should not promise a route before it is on
   sale.
+- **Renting a car:** Sarajevo airport lists about 20 rental companies with desks there, and Tuzla airport says rental desks are in its arrivals hall, without naming them; Enterprise allows one-way rentals between Sarajevo and Tuzla for a drop fee. Expect a licence held for two years and a minimum age of 21; licences not in the Latin alphabet need an international driving permit or a certified translation, and UK licence holders renting in Bosnia and Herzegovina need the 1968 permit. Dipped headlights are required at all times. Rental prices for June 2027 and Tuzla's parking rates are (unknown, needs source) (source: sources/web/travel/car-rental-2026-10-14.md). The travel page says so in a short "Renting a car" block (source: sources/conversations/2026-10-14--org--car-rentals.md), which names the 20 companies on Sarajevo airport's list and, for Tuzla airport, Enterprise with Alamo, and Carwiz (source: sources/conversations/2026-10-14--org--car-rental-companies.md).
 - **Airport to the city:** a private transfer at 25 EUR for a car, about
   12 minutes (`sources/web/travel/easybalkan-tzl-transfers.md`); a taxi
   estimated at 13 to 17 USD (`sources/web/travel/rome2rio-tzl-airport-tuzla.md`).
