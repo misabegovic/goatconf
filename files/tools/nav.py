@@ -58,13 +58,18 @@ def pages():
     return sorted(SITE.glob("*.html"))
 
 
+def section(name: str) -> str:
+    """The link a page marks as current: a speaker's own page sits under Speakers."""
+    return "speakers.html" if name.startswith("speaker-") else name
+
+
 def main(argv=None) -> int:
     cmd = (argv or sys.argv[1:] or ["check"])[0]
     stale = 0
     for p in pages():
         old = p.read_text(encoding="utf-8")
         try:
-            new = place(old, p.name)
+            new = place(old, section(p.name))
         except ValueError as err:
             print(f"site/{p.name}: {err}")
             stale += 1

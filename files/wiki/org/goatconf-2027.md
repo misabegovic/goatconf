@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-14
 confidence: medium
 sources:
+  - sources/conversations/2026-10-14--org--speakers-before-sessions.md
   - sources/conversations/2026-10-14--org--speakers-dinner.md
   - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
@@ -100,6 +101,7 @@ is cited to the sources above; nothing is inferred. Proposals live in the
 - **Talks:** the keynotes fill four one-hour slots in every room on both
   core days, from an open call the organiser judges, filled as proposals
   arrive ([The call](adrs/call-organiser-judges.md)). Everyone who proposes hears back, with no fixed reply time; the organiser builds the agenda at their own pace and may keep a proposal not picked straight away, in case someone drops out (source: sources/conversations/2026-10-13--org--no-reply-deadline.md).
+- **Speakers so far:** [Dejan Menges](speakers/dejan-menges.md), confirmed on 2026-10-14 with his profile published before his session has a slot or a topic (source: sources/conversations/2026-10-14--org--speakers-before-sessions.md).
 - **Speakers dinner:** every accepted speaker is invited, with the date still to come; it is paid from online supporters' money if the budget allows, and otherwise everyone pays for their own meal (source: sources/conversations/2026-10-14--org--speakers-dinner.md).
 - **Code-of-conduct contacts:** the organiser alone for now, until IPI names a member of staff (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md).
 - **The call for talks, proposed events and contact** are Google Forms,

@@ -435,6 +435,7 @@
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--speaker-profile-required.md",
@@ -445,7 +446,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 1247,
+      "tokens": 1392,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]
@@ -603,6 +604,7 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
@@ -640,7 +642,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2300
+      "tokens": 2367
     },
     {
       "path": "org/index.md",
@@ -649,7 +651,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 1468,
+      "tokens": 1521,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1206,6 +1208,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-13--org--speaker-profile-required.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
@@ -1233,7 +1236,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 3726,
+      "tokens": 3846,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -1586,6 +1589,21 @@
         "sources/conversations/2026-10-07--org--first-answers.md"
       ],
       "tokens": 1891
+    },
+    {
+      "path": "org/speakers/dejan-menges.md",
+      "title": "Speaker: Dejan Menges",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
+        "sources/web/speakers/menges-dev-2026-10-14.md",
+        "sources/web/speakers/compass-summit-dejan-menges-2026-10-14.md",
+        "sources/web/organiser/muhamed-at-about.md"
+      ],
+      "tokens": 676
     },
     {
       "path": "org/tuzla/history-and-old-town.md",

@@ -118,7 +118,7 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool) -> str:
     photo = (f'<img src="{(SITE / meta["photo"]).as_uri()}" style="width:100%;height:100%;object-fit:cover">'
              if meta.get("photo") else
              f'<img src="{(SITE / "brand" / "coin-yellow.svg").as_uri()}" style="width:70%;height:70%;margin:15%">')
-    talk = talks[0] if talks else "Speaking at GoatConf 2027"
+    talk = talks[0] if talks else "Tuzla · 3–5 June 2027"
     size, w, h = (380, 1080, 1080) if square else (330, 1200, 675)
     frame = (f'<div style="position:absolute; left:84px; top:96px; width:{size}px; height:{size}px; border-radius:50%; overflow:hidden; '
              f'background:{YELLOW}; box-shadow:0 0 0 10px #fff">{photo}</div>')

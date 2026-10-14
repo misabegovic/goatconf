@@ -2,10 +2,10 @@
 """Speakers and supporters: check their records, and build the site's pages.
 
 A speaker is one Markdown file with YAML frontmatter under speakers/, written
-once their session is accepted and they agree to a public profile. A
-supporter is one file under supporters/: a company that pays a named thing,
-such as a speaker's travel, straight to the supplier. The body of each file is
-their own words. README.md and files whose names start with "_" are not
+once they are confirmed and agree to a public profile, with or without a
+session on the program yet. A supporter is one file under supporters/: a
+company that pays a named thing, such as a speaker's travel, straight to the
+supplier. The body of each file is their own words. README.md and files whose names start with "_" are not
 records.
 
   check              check every speaker and supporter record. Exit 1 if any fails.
@@ -289,7 +289,7 @@ def speakers_page() -> str:
 </ul>"""
     main = f"""<section class="album-page wrap" aria-labelledby="h-speakers">
   <h2 class="band" id="h-speakers">Who is speaking</h2>
-  <p class="copy copy--wide">Each speaker here has a session on Thursday 3rd or Friday 4th June 2027. They wrote their profiles themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
+  <p class="copy copy--wide">Each speaker here has a session on Thursday 3rd or Friday 4th June 2027, or will have one soon: some are confirmed before their session has a time and room. They wrote their profiles themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
   {cards}
 </section>
 <section class="album-page wrap" aria-labelledby="h-travel">
@@ -345,7 +345,7 @@ def all_pages() -> dict:
     detail = sessions_by_speaker(detail=True)
     for slug, (m, b) in speakers().items():
         name = page_name(slug)
-        out[SITE / name] = nav.place(meta.tag(speaker_page(slug, m, b, detail.get(slug, []), known)), "speakers.html")
+        out[SITE / name] = nav.place(meta.tag(speaker_page(slug, m, b, detail.get(slug, []), known)), nav.section(name))
     return out
 
 

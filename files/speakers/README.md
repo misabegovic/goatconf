@@ -1,6 +1,6 @@
 # Speakers
 
-One Markdown file per speaker with an accepted session. Every speaker
+One Markdown file per confirmed speaker. Every speaker
 agrees on the talk form to a public profile and to social media promotion
 (required since 2026-10-13), named after them in lowercase words joined by hyphens
 (for example `ada-lovelace.md`). Copy `_template.md` to start one. The body
@@ -12,6 +12,12 @@ is their bio in their own words, at most 120 words.
 - `photo`: optional, a file the speaker sent, saved under
   `site/img/speakers/`. Without one the profile shows the goat.
 - `links`: optional, a list of web addresses.
+
+A confirmed speaker can be added before their session has a slot or a
+topic (since 2026-10-14): their page then says the session will be on the
+program soon. If they have not sent a photo or a bio, a public one from
+their own site or a conference they spoke at may be used, with where it
+came from recorded under `sources/web/speakers/`.
 
 Link a session to its speakers with `profiles: [ada-lovelace]` in its
 record under `program/`. Then run `python3 tools/speakers.py build` and

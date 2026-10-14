@@ -31,6 +31,16 @@ def test_top_bar_marks_the_current_page_and_replaces_itself():
     assert nav.place(once, "speakers.html") == once
 
 
+def test_a_speaker_page_marks_speakers_and_nav_agrees(tmp_path, monkeypatch):
+    nav = importlib.reload(importlib.import_module("nav"))
+    assert nav.section("speaker-ana-example.html") == "speakers.html"
+    assert nav.section("program.html") == "program.html"
+    monkeypatch.setattr(nav, "SITE", tmp_path)
+    page = '<html><body>\n<main id="main"></main></body></html>'
+    (tmp_path / "speaker-ana-example.html").write_text(nav.place(page, "speakers.html"), encoding="utf-8")
+    assert nav.main(["check"]) == 0
+
+
 def test_top_bar_fits_a_body_with_attributes_and_names_a_page_without_one():
     nav = importlib.reload(importlib.import_module("nav"))
     page = '<html><body class="album">\n<main id="main"></main></body></html>'
