@@ -98,14 +98,14 @@ def speakers_block() -> str:
 
 
 def supporters_block() -> str:
-    known = sorted(speakers.supporters().items(), key=lambda kv: str(kv[1][0]["name"]).lower())
-    if known:
-        logos = "\n".join(
-            f'    <li><a class="supporter-chip" href="supporters.html#{esc(s)}"><img src="{esc(m["logo"])}" alt="{esc(m["name"])}" loading="lazy">'
-            f'<small>{esc(m["funds"])}</small></a></li>' for s, (m, _) in known)
-    else:
-        logos = ('    <li><a class="slot slot--link" href="supporters.html#h-become"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
-                 '<span class="num num--printed">0</span><strong>Your logo</strong><small>Support GoatConf online for 500 euro, and your logo and link go here.</small><span class="stamp">Yours?</span></a></li>')
+    known = speakers.listed_supporters(speakers.supporters())
+    chips = [f'    <li><a class="supporter-chip{' supporter-chip--dark' if m.get('logo_on') == 'dark' else ''}" href="supporters.html#{esc(s)}"><img src="{esc(m["logo"])}" alt="{esc(m["name"])}" loading="lazy">'
+             f'<small>{esc(m["funds"])}</small></a></li>' for s, (m, _) in known]
+    # Until a company supports GoatConf (the host does not count), keep a place inviting one.
+    if not any(m.get("host") is not True for _, (m, _b) in known):
+        chips.append('    <li><a class="slot slot--link" href="supporters.html#h-become"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+                     '<span class="num num--printed">0</span><strong>Your logo</strong><small>Support GoatConf online for 500 euro, and your logo and link go here.</small><span class="stamp">Yours?</span></a></li>')
+    logos = "\n".join(chips)
     return f"""<h3 class="list-title">Who makes it possible</h3>
     <ul class="slots slots--supporters-home">
 {logos}

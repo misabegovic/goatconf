@@ -169,3 +169,40 @@ def test_a_speaker_page_shares_their_own_card_and_the_check_wants_it(tmp_path, m
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], detail, speakers.supporters())
     assert '<link rel="image_src" href="https://goatconf.com/share/speaker-ana-example-preview.png">' in page
     assert 'og:image" content="https://goatconf.com/share/speaker-ana-example-preview.png"' in meta.tag(page)
+
+
+HOST = """---
+name: Zeta Academy
+logo: img/supporters/zeta.png
+logo_on: dark
+url: https://zeta.example
+funds: "Host and partner: the rooms"
+host: yes
+---
+"""
+
+
+def test_the_host_leads_the_supporters_and_the_invitation_stays_until_a_company_supports(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch)
+    (tmp_path / "supporters" / "zeta-academy.md").write_text(HOST, encoding="utf-8")
+    (tmp_path / "site" / "img" / "supporters" / "zeta.png").write_bytes(b"png")
+    assert speakers.cmd_check(Args()) == 0
+    assert [s for s, _ in speakers.listed_supporters(speakers.supporters())] == ["zeta-academy", "acme"]  # host first, though Z
+    wall = speakers.supporters_page()
+    assert wall.index('id="zeta-academy"') < wall.index('id="acme"')
+    assert "supporter__logo--dark" in wall and "<strong>Your logo</strong>" not in wall  # a paying supporter exists
+    (tmp_path / "supporters" / "acme.md").unlink()
+    wall = speakers.supporters_page()
+    assert "Be the first supporter." in wall  # only the host: keep inviting
+    home = importlib.reload(importlib.import_module("home"))
+    block = home.supporters_block()
+    assert "supporter-chip--dark" in block and "<strong>Your logo</strong>" in block
+
+
+def test_host_and_logo_background_are_checked(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch)
+    rec = tmp_path / "supporters" / "zeta-academy.md"
+    rec.write_text(HOST.replace("host: yes", "host: maybe").replace("logo_on: dark", "logo_on: purple"), encoding="utf-8")
+    (tmp_path / "site" / "img" / "supporters" / "zeta.png").write_bytes(b"png")
+    problems, _, _ = speakers.check_supporter(rec)
+    assert any("host must be yes" in p for p in problems) and any("logo_on must be" in p for p in problems)

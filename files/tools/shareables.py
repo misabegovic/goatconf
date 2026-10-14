@@ -145,9 +145,9 @@ def supporter_card(slug: str, meta, square: bool) -> str:
 <div style="position:absolute; left:{84 if square else 72}px; top:{96 if square else 72}px; right:{84 if square else 460}px">
   <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">Thank you,</div>
   <div class="word" style="font-size:{120 if square else 92}px; margin-top:16px">{esc(str(meta['name']))}</div>
-  <div class="sub" style="font-size:{36 if square else 28}px; line-height:1.2; margin-top:28px">for funding {esc(str(meta['funds'])[0].lower() + str(meta['funds'])[1:])}.</div>
+  <div class="sub" style="font-size:{36 if square else 28}px; line-height:1.2; margin-top:28px">{'for hosting GoatConf 2027.' if meta.get('host') is True else 'for funding ' + esc(str(meta['funds'])[0].lower() + str(meta['funds'])[1:]) + '.'}</div>
 </div>
-<div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:#fff; border-radius:18px; display:grid; place-items:center; padding:28px">
+<div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:{NIGHT if meta.get('logo_on') == 'dark' else '#fff'}; border-radius:18px; display:grid; place-items:center; padding:28px">
   <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
 <div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/supporters.html</div>
 {seal(240 if square else 220, "right:72px; bottom:72px")}""")
