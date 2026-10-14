@@ -279,3 +279,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-14 merge — PR #57: records: twelve open questions decided, from leftover money to journal files
    diff: 39 files, +179/-155
    restricted-paths: true
+2026-10-14 merge — PR #58: site: accepted speakers are invited to a speakers dinner
+   diff: 8 files, +42/-7
+   restricted-paths: false
