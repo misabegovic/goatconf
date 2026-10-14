@@ -1816,6 +1816,8 @@
       "updated": "2026-10-13",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--car-rentals.md",
+        "sources/web/travel/car-rental-2026-10-14.md",
         "sources/web/tuzla/tasteatlas-tuzlanski-cevapi-2026-10-13.md",
         "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
         "sources/conversations/2026-10-13--org--sarma-instead-of-ustipci.md",
@@ -1920,7 +1922,7 @@
         "sources/web/tuzla/cvent-hotel-tuzla-address.md",
         "sources/web/tuzla/tztz-atelier-ismet-mujezinovic.md"
       ],
-      "tokens": 7538,
+      "tokens": 7735,
       "consumed_by": [
         "org/tuzla-images.md",
         "org/tuzla/history-and-old-town.md"
