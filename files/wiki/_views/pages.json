@@ -606,6 +606,7 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--jan-grodowski.md",
         "sources/conversations/2026-10-14--org--cristian-planas.md",
         "sources/conversations/2026-10-14--org--carmine-paolino.md",
         "sources/conversations/2026-10-14--org--paul-campbell.md",
@@ -648,7 +649,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2690
+      "tokens": 2769
     },
     {
       "path": "org/index.md",
@@ -657,7 +658,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 1733,
+      "tokens": 1789,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1655,6 +1656,19 @@
         "sources/web/organiser/muhamed-at-about.md"
       ],
       "tokens": 740
+    },
+    {
+      "path": "org/speakers/jan-grodowski.md",
+      "title": "Speaker: Jan Grodowski",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--jan-grodowski.md",
+        "sources/web/speakers/grodowski-com-2026-10-14.md"
+      ],
+      "tokens": 790
     },
     {
       "path": "org/speakers/paul-campbell.md",
