@@ -607,6 +607,7 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--dinner-wording.md",
         "sources/conversations/2026-10-14--org--jan-grodowski.md",
         "sources/conversations/2026-10-14--org--cristian-planas.md",
         "sources/conversations/2026-10-14--org--carmine-paolino.md",
@@ -650,7 +651,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2769
+      "tokens": 2811
     },
     {
       "path": "org/index.md",
