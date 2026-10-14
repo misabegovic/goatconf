@@ -605,6 +605,7 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--paul-campbell.md",
         "sources/conversations/2026-10-14--org--amar-mahmutbegovic.md",
         "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
@@ -644,7 +645,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2432
+      "tokens": 2487
     },
     {
       "path": "org/index.md",
@@ -653,7 +654,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 1579,
+      "tokens": 1623,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1622,6 +1623,22 @@
         "sources/web/organiser/muhamed-at-about.md"
       ],
       "tokens": 740
+    },
+    {
+      "path": "org/speakers/paul-campbell.md",
+      "title": "Speaker: Paul Campbell",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--paul-campbell.md",
+        "sources/web/speakers/paulca-com-2026-10-14.md",
+        "sources/web/speakers/confex-paul-campbell-2026-10-14.md",
+        "sources/web/speakers/team-tito-2026-10-14.md",
+        "sources/web/organiser/muhamed-at-about.md"
+      ],
+      "tokens": 969
     },
     {
       "path": "org/tuzla/history-and-old-town.md",
