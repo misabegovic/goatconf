@@ -291,3 +291,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-14 merge — PR #61: site: travel terms only where speakers apply, and a softer dinner line
    diff: 12 files, +55/-12
    restricted-paths: true
+2026-10-14 merge — PR #62: site: IPI Academy's logo leads the supporters, marked host and partner
+   diff: 39 files, +151/-42
+   restricted-paths: true

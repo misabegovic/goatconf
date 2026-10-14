@@ -5,6 +5,8 @@ status: living
 updated: 2026-10-14
 confidence: medium
 sources:
+  - sources/conversations/2026-10-14--org--ipi-academy-logo.md
+  - sources/web/venue/ipi-akademija-logo-2026-10-14.md
   - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-12--org--computer-centre-2-not-step-free.md
   - sources/conversations/2026-10-12--org--computer-centre-1-lift.md
@@ -29,6 +31,10 @@ GoatConf's partner and, "for now", its venue
 (`sources/conversations/2026-10-07--org--venue-ipi.md`). It agreed to
 partner and host (`sources/conversations/2026-10-07--org--conference-vision.md`).
 Site: [ipi-akademija.ba](https://ipi-akademija.ba/).
+
+## On the site
+
+- Its logo leads the supporters page and the home page's "Who makes it possible", marked "Host and partner: the rooms at IPI Academy", before any paying supporter; it is shown white on the site's dark blue, as IPI publishes it (sources: sources/conversations/2026-10-14--org--ipi-academy-logo.md, sources/web/venue/ipi-akademija-logo-2026-10-14.md). It is not an online supporter and pays nothing; until a company supports GoatConf, the wall keeps a "Your logo" place inviting one (source: sources/conversations/2026-10-14--org--ipi-academy-logo.md).
 
 ## What it is
 

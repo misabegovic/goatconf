@@ -321,6 +321,7 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .sticker--supporter { padding: 0.9rem; }
 .supporter__logo { display: grid; place-items: center; aspect-ratio: 3 / 2; padding: 0.8rem; border-radius: 0.35rem; background: var(--page-print); }
 .supporter__logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.supporter__logo--dark { background: var(--album-deep); }
 .sticker--supporter strong { font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; color: var(--album); font-size: 1.2rem; line-height: 1; }
 .sticker--supporter p { margin: 0; font-size: 0.88rem; line-height: 1.4; color: var(--ink-soft); }
 @media (max-width: 47.99rem) {
@@ -369,6 +370,7 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .supporter-chip { display: grid; gap: 0.5rem; padding: 0.9rem; border-radius: 0.6rem; background: var(--page-print); text-decoration: none; color: var(--ink-soft); }
 .supporter-chip img { width: 100%; aspect-ratio: 3 / 2; object-fit: contain; }
 .supporter-chip small { font-size: 0.85rem; line-height: 1.35; }
+.supporter-chip--dark img { box-sizing: border-box; padding: 0.6rem; border-radius: 0.35rem; background: var(--album-deep); }
 @media (max-width: 61.99rem) {
   .slots--days { grid-template-columns: minmax(0, 1fr); }
   .page-head__photo { grid-row: auto; }

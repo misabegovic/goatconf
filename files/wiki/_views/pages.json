@@ -673,6 +673,8 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--ipi-academy-logo.md",
+        "sources/web/venue/ipi-akademija-logo-2026-10-14.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-12--org--computer-centre-2-not-step-free.md",
         "sources/conversations/2026-10-12--org--computer-centre-1-lift.md",
@@ -690,7 +692,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/tooling/sessionize-community-license.md"
       ],
-      "tokens": 2235
+      "tokens": 2386
     },
     {
       "path": "org/organiser.md",

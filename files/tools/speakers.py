@@ -69,6 +69,10 @@ def check_supporter(path: Path):
             problems.append(p)
     if meta.get("url") and not URL.match(str(meta["url"])):
         problems.append("url must start with http:// or https://")
+    if "host" in meta and meta["host"] is not True:
+        problems.append("host must be yes, or left out")
+    if meta.get("logo_on", "light") not in ("light", "dark"):
+        problems.append("logo_on must be light or dark: the background the logo is made for")
     return problems, meta, body
 
 
@@ -79,6 +83,11 @@ def supporters():
         if not problems:
             out[path.stem] = (meta, body)
     return out
+
+
+def listed_supporters(known: dict) -> list:
+    """The host and partner first, then every other supporter by name."""
+    return sorted(known.items(), key=lambda kv: (kv[1][0].get("host") is not True, str(kv[1][0]["name"]).lower()))
 
 
 def check_speaker(path: Path, known_supporters):
@@ -256,7 +265,7 @@ def supporter_card(n: int, slug: str, meta, body) -> str:
     words = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
     return f"""  <li class="sticker sticker--supporter" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <span class="num">{n}</span>
-    <a class="supporter__logo" href="{esc(meta['url'])}"><img src="{esc(meta['logo'])}" alt="{esc(meta['name'])}" loading="lazy"></a>
+    <a class="supporter__logo{' supporter__logo--dark' if meta.get('logo_on') == 'dark' else ''}" href="{esc(meta['url'])}"><img src="{esc(meta['logo'])}" alt="{esc(meta['name'])}" loading="lazy"></a>
     <strong>{esc(meta['name'])}</strong>
     <p class="supporter__funds">{esc(meta['funds'])}</p>{words}
   </li>"""
@@ -335,15 +344,13 @@ def speakers_page() -> str:
 def supporters_page() -> str:
     known = supporters()
     people = speakers()
-    order = sorted(known.items(), key=lambda kv: str(kv[1][0]["name"]).lower())
-    if order:
-        cards = '<ul class="slots slots--supporters">\n' + "\n".join(
-            supporter_card(i + 1, slug, m, b)
-            for i, (slug, (m, b)) in enumerate(order)) + "\n</ul>"
-    else:
-        cards = """<ul class="slots slots--supporters">
-  <li><a class="slot slot--link" href="#h-become"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg><span class="num num--printed">1</span><strong>Your logo</strong><small>No supporters yet. Support GoatConf online and your logo and link go here.</small><span class="stamp">Yours?</span></a></li>
-</ul>"""
+    order = listed_supporters(known)
+    # Until a company supports GoatConf (the host does not count), the wall keeps a place inviting one.
+    invite = ("" if any(m.get("host") is not True for _, (m, _b) in order) else
+              f'  <li><a class="slot slot--link" href="#h-become"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg><span class="num num--printed">{len(order) + 1}</span>'
+              f'<strong>Your logo</strong><small>{"Be the first supporter." if order else "No supporters yet."} Support GoatConf online and your logo and link go here.</small><span class="stamp">Yours?</span></a></li>')
+    cards = '<ul class="slots slots--supporters">\n' + "\n".join(
+        [supporter_card(i + 1, slug, m, b) for i, (slug, (m, b)) in enumerate(order)] + ([invite] if invite else [])) + "\n</ul>"
     main = f"""<section class="album-page wrap" aria-labelledby="h-supporters">
   <h2 class="band" id="h-supporters">Who makes it possible</h2>
   <p class="copy copy--wide">GoatConf is free to attend. Companies help keep it that way. Supporters cannot buy talks, stage time or the attendee list, and who speaks is never decided by who supports. See <a href="charter.html">the charter</a>.</p>

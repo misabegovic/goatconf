@@ -13,5 +13,10 @@ one.
   `site/img/supporters/` (SVG or PNG on a transparent or white background).
 - `funds`: required, how they support, in plain words, for example
   "Online supporter" or "The printing, paid to the printer".
+- `host: yes`: optional, for the host and partner, IPI Academy. It is listed
+  first, before every other supporter, and its "thank you" card thanks it for
+  hosting.
+- `logo_on: dark`: optional, for a logo made for a dark background (white
+  lettering); it is shown on the site's dark blue. The default is `light`.
 
 Run `python3 tools/speakers.py build`; the local CI checks it.
