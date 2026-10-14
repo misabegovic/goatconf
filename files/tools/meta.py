@@ -3,7 +3,9 @@
 
 Each page already has a <title>, a meta description and a canonical link.
 This adds Open Graph and Twitter card tags built from them, pointing at the
-shared preview image site/share/og.png (made by tools/shareables.py).
+shared preview image site/share/og.png (made by tools/shareables.py), or at
+the page's own image when it names one with <link rel="image_src" href="...">,
+as each speaker's page does with their card.
 
   apply           add or refresh the tags in every site/*.html
   check           fail if a page's tags are missing or out of date
@@ -43,16 +45,19 @@ def tags(text: str) -> str:
     desc = desc_m.group(1) if desc_m else ""
     url = url_m.group(1) if url_m else "https://goatconf.com/"
     t = html.escape(html.unescape(title), quote=True)
+    own = re.search(r'<link rel="image_src" href="([^"]*)">', text)
+    image = own.group(1) if own else IMAGE
+    alt = t if own else "GoatConf 2027, Tuzla, 3–5 June 2027, free. The GoatConf seal: the one that feeds the community."
     return (f"{START}\n"
             f'<meta property="og:type" content="website">\n'
             f'<meta property="og:site_name" content="GoatConf">\n'
             f'<meta property="og:title" content="{t}">\n'
             f'<meta property="og:description" content="{desc}">\n'
             f'<meta property="og:url" content="{url}">\n'
-            f'<meta property="og:image" content="{IMAGE}">\n'
+            f'<meta property="og:image" content="{image}">\n'
             f'<meta property="og:image:width" content="1200">\n'
             f'<meta property="og:image:height" content="630">\n'
-            f'<meta property="og:image:alt" content="GoatConf 2027, Tuzla, 3–5 June 2027, free. The GoatConf seal: the one that feeds the community.">\n'
+            f'<meta property="og:image:alt" content="{alt}">\n'
             f'<meta name="twitter:card" content="summary_large_image">\n'
             f"{END}\n")
 

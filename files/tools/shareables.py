@@ -9,8 +9,9 @@ from site/brand/, rendered to PNG by headless Chrome into site/share/:
   og.png    the link preview every page uses
   posts     save the date, the call for talks, registration, add something,
             each square (1080) and wide (1200 x 675)
-  records   an "I'm speaking" card per published speaker and a "thank you"
-            card per supporter, built from speakers/ and supporters/
+  records   an "I'm speaking" card per published speaker (square, wide, and a
+            1200 x 630 preview that their page's link preview shows) and a
+            "thank you" card per supporter, built from speakers/ and supporters/
 
   render [--only NAME]   write the PNG files (needs Chrome and Pillow)
   list                   print what would be rendered
@@ -113,13 +114,13 @@ POSTS = {
 }
 
 
-def speaker_card(slug: str, meta, talks: list[str], square: bool) -> str:
+def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 675) -> str:
     name = esc(str(meta["name"]))
     photo = (f'<img src="{(SITE / meta["photo"]).as_uri()}" style="width:100%;height:100%;object-fit:cover">'
              if meta.get("photo") else
              f'<img src="{(SITE / "brand" / "coin-yellow.svg").as_uri()}" style="width:70%;height:70%;margin:15%">')
     talk = talks[0] if talks else "Tuzla · 3–5 June 2027"
-    size, w, h = (380, 1080, 1080) if square else (330, 1200, 675)
+    size, w, h = (380, 1080, 1080) if square else (330, 1200, height)
     # A long name on the square card shrinks to stay on one line, so the role
     # and the session keep their room above the address.
     name_px = (120 if len(str(meta["name"])) <= 14 else 88) if square else 92
@@ -172,6 +173,7 @@ def jobs() -> dict[str, tuple[int, int, str]]:
     for slug, (meta, _) in speakers.speakers().items():
         out[f"speaker-{slug}-square.png"] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True))
         out[f"speaker-{slug}-wide.png"] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False))
+        out[speakers.preview_name(slug)] = (1200, 630, speaker_card(slug, meta, talks.get(slug, []), False, 630))
     for slug, (meta, _) in speakers.supporters().items():
         out[f"supporter-{slug}-square.png"] = (1080, 1080, supporter_card(slug, meta, True))
         out[f"supporter-{slug}-wide.png"] = (1200, 675, supporter_card(slug, meta, False))

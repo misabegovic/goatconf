@@ -34,3 +34,13 @@ def test_a_page_without_a_title_or_stylesheet_is_named_not_crashed():
             assert reason in str(err)
         else:
             raise AssertionError("expected a ValueError")
+
+
+def test_a_page_can_name_its_own_preview_image():
+    meta = importlib.reload(importlib.import_module("meta"))
+    own = PAGE.replace('<link rel="stylesheet"', '<link rel="image_src" href="https://goatconf.com/share/speaker-ana-preview.png">\n<link rel="stylesheet"')
+    tagged = meta.tag(own)
+    assert '<meta property="og:image" content="https://goatconf.com/share/speaker-ana-preview.png">' in tagged
+    assert '<meta property="og:image:alt" content="Program: GoatConf &amp; friends">' in tagged
+    assert "share/og.png" not in tagged
+    assert meta.tag(tagged) == tagged

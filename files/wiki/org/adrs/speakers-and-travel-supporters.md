@@ -8,6 +8,7 @@ depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-10-14--org--speaker-link-previews.md
   - sources/conversations/2026-10-14--org--speaker-order.md
   - sources/conversations/2026-10-14--org--speaker-role-and-employer.md
   - sources/conversations/2026-10-14--org--speakers-before-sessions.md
@@ -103,3 +104,4 @@ profile goes up only with the speaker's consent.
 - **2026-10-14, confirmed speakers before a session.** "Each speaker with an accepted session" widens to each confirmed speaker: a record may go up before the session has a slot or a topic, and the speakers page says some speakers are confirmed before their session has a time and room. A speaker who has not sent a photo or a bio may get a public one from their own site or a conference they spoke at, with where it came from recorded under `sources/web/speakers/`. A speaker's own page counts as part of the Speakers section in the top bar (source: sources/conversations/2026-10-14--org--speakers-before-sessions.md).
 - **2026-10-14, role and employer.** A record may carry an optional `role`, one free-text line such as "Staff Engineer at Vinted", shown wherever the speaker's name is: their page, the speakers page, the home page, the "I'm speaking" cards and the files for agents. It is text only, never an employer's logo, so an employer is not mistaken for a supporter. The agent finds it from the speaker's own site or a past conference and records where (source: sources/conversations/2026-10-14--org--speaker-role-and-employer.md).
 - **2026-10-14, the organiser's order.** Speakers are listed in the order the organiser sets by each speaker's standing, not alphabetically: a record's `order` (1 first) decides it on the speakers page, the home page and `llms.txt`, and speakers without one follow by name. Two speakers cannot share a number (source: sources/conversations/2026-10-14--org--speaker-order.md).
+- **2026-10-14, each speaker's own link preview.** When a speaker's page is shared, the preview shows that speaker's card, a 1200 by 630 version of their "I'm speaking" card, not the generic banner; the local CI fails while a published speaker has none (source: sources/conversations/2026-10-14--org--speaker-link-previews.md).

@@ -153,3 +153,18 @@ def test_travel_funded_by_is_refused(tmp_path, monkeypatch):
     record = tmp_path / "speakers" / "ana-example.md"
     record.write_text(record.read_text(encoding="utf-8").replace("publish: yes\n", "publish: yes\ntravel_funded_by: acme\n"), encoding="utf-8")
     assert speakers.cmd_check(Args()) == 1
+
+
+def test_a_speaker_page_shares_their_own_card_and_the_check_wants_it(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch)
+    meta = importlib.import_module("meta")
+    monkeypatch.setattr(speakers, "PAGES", {"speakers": tmp_path / "site" / "speakers.html", "supporters": tmp_path / "site" / "supporters.html"})
+    detail = speakers.sessions_by_speaker(detail=True)["ana-example"]
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], detail, speakers.supporters())
+    assert "image_src" not in page  # no card yet: the generic banner
+    assert speakers.cmd_build(type("A", (), {"check": True})()) == 1
+    (tmp_path / "site" / "share").mkdir()
+    (tmp_path / "site" / "share" / "speaker-ana-example-preview.png").write_bytes(b"png")
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], detail, speakers.supporters())
+    assert '<link rel="image_src" href="https://goatconf.com/share/speaker-ana-example-preview.png">' in page
+    assert 'og:image" content="https://goatconf.com/share/speaker-ana-example-preview.png"' in meta.tag(page)
