@@ -7,6 +7,7 @@ links:
   - https://github.com/dejo1307
   - https://www.linkedin.com/in/dejanmenges/
   - https://x.com/djn_mngs
+order: 2
 publish: yes
 ---
 

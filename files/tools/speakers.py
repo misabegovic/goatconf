@@ -104,6 +104,8 @@ def check_speaker(path: Path, known_supporters):
     links = meta.get("links") or []
     if not isinstance(links, list) or any(not URL.match(str(u)) for u in links):
         problems.append("links must be a list of addresses starting with http:// or https://")
+    if "order" in meta and (type(meta["order"]) is not int or meta["order"] < 1):
+        problems.append("order must be a whole number from 1, where 1 is listed first")
     if "travel_funded_by" in meta:
         problems.append("travel_funded_by is retired: no supporter pays for a named speaker's travel; remove it")
     return problems, meta, body
@@ -117,6 +119,20 @@ def speakers():
         if not problems:
             out[path.stem] = (meta, body)
     return out
+
+
+def listed(people: dict) -> list:
+    """Speakers in the organiser's order: by `order` (1 first), then those without one, by name."""
+    return sorted(people.items(), key=lambda kv: (kv[1][0].get("order") or float("inf"), str(kv[1][0]["name"]).lower()))
+
+
+def order_problems():
+    """Two published speakers with the same order would leave the list's order to chance."""
+    seen = {}
+    for slug, (meta, _) in speakers().items():
+        if meta.get("order"):
+            seen.setdefault(meta["order"], []).append(slug)
+    return [f"order {n} is given to more than one speaker: {', '.join(slugs)}" for n, slugs in sorted(seen.items()) if len(slugs) > 1]
 
 
 def session_problems():
@@ -152,6 +168,10 @@ def cmd_check(_args) -> int:
     linked = session_problems()
     for p in linked:
         print(f"program/{p}")
+    clashes = order_problems()
+    for p in clashes:
+        print(f"speakers: {p}")
+        failed += 1
     print(f"speakers and supporters: {count} record(s), {failed} need a change, {len(linked)} broken profile link(s)")
     return 1 if failed or linked else 0
 
@@ -286,7 +306,7 @@ def speakers_page() -> str:
     known = supporters()
     people = speakers()
     talks = sessions_by_speaker()
-    order = sorted(people.items(), key=lambda kv: str(kv[1][0]["name"]).lower())
+    order = listed(people)
     if order:
         cards = '<ul class="slots slots--speakers">\n' + "\n".join(
             speaker_card(i + 1, slug, m, b, talks.get(slug, []), known) for i, (slug, (m, b)) in enumerate(order)) + "\n</ul>"

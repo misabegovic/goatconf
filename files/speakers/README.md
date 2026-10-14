@@ -12,6 +12,11 @@ is their bio in their own words, at most 120 words.
 - `photo`: optional, a file the speaker sent, saved under
   `site/img/speakers/`. Without one the profile shows the goat.
 - `links`: optional, a list of web addresses.
+- `order`: optional, a whole number from 1 setting where the speaker is
+  listed: on the speakers page, the home page and the files for agents, 1
+  comes first. The organiser sets it by the speaker's standing, not the
+  alphabet. Speakers without one come after, by name. No two speakers may
+  share a number; the check refuses it.
 - `role`: optional, one line of at most 80 characters saying what they do
   and where, as they would put it (for example `Staff Engineer at Vinted`,
   `Independent consultant`). It shows under their name on their page, the

@@ -66,7 +66,7 @@ def speaker_sticker(i: int, slug: str, meta) -> str:
 
 
 def speakers_block() -> str:
-    people = sorted(speakers.speakers().items(), key=lambda kv: str(kv[1][0]["name"]).lower())
+    people = speakers.listed(speakers.speakers())
     if people:
         cards = "\n".join(speaker_sticker(i, s, m) for i, (s, (m, _)) in enumerate(people[:SHOWN]))
         more = f'<a class="go go--ink" href="speakers.html">All {len(people)} speakers</a>' if len(people) > SHOWN else '<a class="go go--ink" href="speakers.html">Meet the speakers</a>'

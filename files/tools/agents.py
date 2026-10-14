@@ -233,7 +233,7 @@ def llms() -> str:
     lines = [f"# {EVENT['name']}", "", f"> {EVENT['summary']} One-hour sessions in every room of IPI Academy, long breaks in town, and a day for the community.", ""]
     lines += [f"- {f}" for f in FACTS]
     lines += ["", f"Register: {LUMA}", f"Propose a session: {url('talk.html')}", f"Contact: {EVENT['email']}, or the form at {url('contact.html')}", ""]
-    people = sorted(speakers.speakers().items(), key=lambda kv: str(kv[1][0]["name"]).lower())
+    people = speakers.listed(speakers.speakers())
     if people:
         lines += ["## Speakers", ""]
         lines += [f"- [{m['name']}]({url(speakers.page_name(s))})" + (f": {m['role']}" if m.get("role") else "") for s, (m, _) in people]

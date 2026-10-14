@@ -6,6 +6,7 @@ links:
   - https://www.linkedin.com/in/amar-mahmutbegovic/
   - https://semblie.com/modern-cpp/
   - https://www.embeddedrelated.com/blogs-1/nf/Amar_Mahmutbegovic.php
+order: 3
 publish: yes
 ---
 

@@ -8,6 +8,7 @@ links:
   - https://github.com/paulca
   - https://bsky.app/profile/paulca.com
   - https://mastodon.social/@paulca
+order: 1
 publish: yes
 ---
 

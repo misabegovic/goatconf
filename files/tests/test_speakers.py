@@ -127,6 +127,27 @@ def test_role_must_be_one_short_line(tmp_path, monkeypatch):
     assert speakers.cmd_check(Args()) == 1
 
 
+def test_speakers_are_listed_in_the_organisers_order(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch)
+    folder = tmp_path / "speakers"
+    for slug, name, order in (("zed-first", "Zed First", "order: 1\n"), ("bea-second", "Bea Second", "order: 2\n"), ("al-unranked", "Al Unranked", "")):
+        (folder / f"{slug}.md").write_text(f"---\nname: {name}\n{order}publish: yes\n---\n\nA bio.\n", encoding="utf-8")
+    assert [s for s, _ in speakers.listed(speakers.speakers())] == ["zed-first", "bea-second", "al-unranked", "ana-example"]
+    page = speakers.speakers_page()
+    assert page.index('id="zed-first"') < page.index('id="bea-second"') < page.index('id="al-unranked"')
+    assert speakers.cmd_check(Args()) == 0
+
+
+def test_two_speakers_cannot_share_an_order(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("publish: yes", "order: 1\npublish: yes"))
+    (tmp_path / "speakers" / "bo-other.md").write_text("---\nname: Bo Other\norder: 1\npublish: yes\n---\n\nA bio.\n", encoding="utf-8")
+    assert speakers.cmd_check(Args()) == 1
+    record = tmp_path / "speakers" / "bo-other.md"
+    record.write_text(record.read_text().replace("order: 1", "order: first"), encoding="utf-8")
+    problems, _, _ = speakers.check_speaker(record, {})
+    assert any("order must be" in p for p in problems)
+
+
 def test_travel_funded_by_is_refused(tmp_path, monkeypatch):
     program, speakers = setup(tmp_path, monkeypatch)
     record = tmp_path / "speakers" / "ana-example.md"
