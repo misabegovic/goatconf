@@ -106,8 +106,9 @@ EOF
 }
 
 # Guard 2 — local-first promotions need an explicit per-push ask.
+# LOCAL_FIRST=true counts quoted or not, as .env.example once wrote it quoted.
 [ -f .env ] || run_ci_then_allow
-grep -q '^LOCAL_FIRST=true$' .env || run_ci_then_allow
+grep -Eq "^LOCAL_FIRST=[\"']?true[\"']?\$" .env || run_ci_then_allow
 
 # A push of nothing but scheduled/* branches is tabula's scheduled run,
 # which the operator authorised standing on 2026-10-05 ("Push to private

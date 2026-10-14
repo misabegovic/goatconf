@@ -40,7 +40,7 @@ under local-first:
   stop.
 
 ```bash
-[ -f .env ] && grep -q '^LOCAL_FIRST=true$' .env && LOCAL_FIRST=1
+[ -f .env ] && grep -Eq "^LOCAL_FIRST=[\"']?true[\"']?\$" .env && LOCAL_FIRST=1
 ```
 
 ## Inputs

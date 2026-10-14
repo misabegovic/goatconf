@@ -15,9 +15,9 @@
 #   validate / check; the venv carries tiktoken and pytest as CI does,
 #   so brain.py's token counts and the test suite agree with CI.
 #
-#   This script creates the venv and installs the deps validate.yml
-#   uses (pyyaml + tiktoken + pytest), so local preflight and CI
-#   converge.
+#   This script creates the venv and installs the deps the local CI
+#   (tools/ci-local.sh) uses (pyyaml + tiktoken + pytest), so the
+#   hooks, preflight and CI all run with the same Python.
 #
 # Idempotent: re-running re-installs the deps against the existing venv.
 #

@@ -30,7 +30,7 @@ each boundary, per `/shape` skill's local-first preamble. No
 remote push, no `gh pr` calls.
 
 ```bash
-[ -f .env ] && grep -q '^LOCAL_FIRST=true$' .env && LOCAL_FIRST=1
+[ -f .env ] && grep -Eq "^LOCAL_FIRST=[\"']?true[\"']?\$" .env && LOCAL_FIRST=1
 ```
 
 The skill is a **router**, not a re-implementation of /shape's
