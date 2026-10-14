@@ -34,5 +34,12 @@ Link a session to its speakers with `profiles: [ada-lovelace]` in its
 record under `program/`. Then run `python3 tools/speakers.py build` and
 `python3 tools/program.py build`. The local CI checks both.
 
+Each speaker has three cards made by `python3 tools/shareables.py render`
+(it needs Chrome): `speaker-<name>-square.png` and `-wide.png` to post, and
+`-preview.png`, the 1200 by 630 image their page shows when its link is
+shared. Render them before building the pages; the local CI fails while a
+published speaker has no preview card, so a shared link never falls back to
+the generic banner. Render them again when a name, role or photo changes.
+
 Leave out lines you do not use. `travel_funded_by` is retired: no
 supporter pays for a named speaker's travel, and the check refuses it.

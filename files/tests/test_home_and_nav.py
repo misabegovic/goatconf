@@ -51,3 +51,19 @@ def test_top_bar_fits_a_body_with_attributes_and_names_a_page_without_one():
         assert "no <body>" in str(err)
     else:
         raise AssertionError("expected a ValueError")
+
+
+def test_home_plans_eight_places_and_invites_proposals_for_the_open_ones(monkeypatch):
+    home = importlib.reload(importlib.import_module("home"))
+    speakers = importlib.import_module("speakers")
+    def people(n):
+        return {f"s{i}": ({"name": f"Speaker {i}", "order": i + 1}, "Bio.") for i in range(n)}
+    monkeypatch.setattr(speakers, "speakers", lambda: people(6))
+    html = home.speakers_block()
+    assert html.count("sticker--mini") == 6 and html.count("slot--open") == 2
+    assert html.count('href="talk.html"') == 2 and "Meet the speakers" in html
+    monkeypatch.setattr(speakers, "speakers", lambda: people(9))
+    html = home.speakers_block()
+    assert html.count("sticker--mini") == 8 and "slot--open" not in html and "All 9 speakers" in html
+    monkeypatch.setattr(speakers, "speakers", lambda: {})
+    assert "The first speaker could be you" in home.speakers_block()

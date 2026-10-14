@@ -435,6 +435,7 @@
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--speaker-link-previews.md",
         "sources/conversations/2026-10-14--org--speaker-order.md",
         "sources/conversations/2026-10-14--org--speaker-role-and-employer.md",
         "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
@@ -448,7 +449,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 1618,
+      "tokens": 1705,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]

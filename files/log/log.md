@@ -285,3 +285,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-14 merge — PR #59: site: six confirmed speakers, with roles and the organiser's order
    diff: 91 files, +1877/-69
    restricted-paths: true
+2026-10-14 merge — PR #60: site: eight places on the home page, and each speaker's own link preview
+   diff: 44 files, +210/-76
+   restricted-paths: true

@@ -358,7 +358,8 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .slots--days { grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; }
 .sticker--day strong { font-size: clamp(1.7rem, 1.2rem + 1.6vw, 2.5rem); }
 .day__hours { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.35rem; color: var(--page); font-variant-numeric: tabular-nums; }
-.slots--mini { grid-template-columns: repeat(auto-fill, minmax(min(100%, 10.5rem), 1fr)); list-style: none; margin-bottom: 1.4rem; }
+.slots--mini { grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; margin-bottom: 1.4rem; }
+@media (max-width: 47.99rem) { .slots--mini { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .sticker--mini { display: block; text-decoration: none; }
 .sticker--mini img, .sticker--mini .speaker__goat { aspect-ratio: 1; width: 100%; object-fit: cover; border-radius: 0.35rem 0.35rem 0 0; }
 .sticker__name { display: block; padding: 0.45rem 0.6rem 0.5rem; border-radius: 0 0 0.35rem 0.35rem; background: var(--album); color: var(--page); font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.05rem; line-height: 1; }
@@ -377,7 +378,12 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
   .topbar nav a.topbar__cta { padding: 0.35rem 0.6rem; }
 }
 .slot--speaker { min-height: 13rem; height: 100%; }
-.slots--mini > li { list-style: none; }
+.slots--mini > li { list-style: none; display: grid; }
+.slot--open { min-height: 0; justify-content: flex-end; gap: 0.3rem; }
+.slot--open strong { font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.25rem; line-height: 1.05; }
+.slot--open small { font-size: 0.85rem; line-height: 1.3; color: var(--ink-soft); }
+.slots--mini .slot--open { padding: 0.9rem 0.9rem 3.3rem; }
+.slot--open .stamp { font-size: 0.9rem; right: 0.6rem; bottom: 0.7rem; }
 .slots--days + .copy { margin-top: 1.6rem; }
 @media (max-width: 47.99rem) { .topbar { position: static; } }
 

@@ -176,6 +176,11 @@ def cmd_check(_args) -> int:
     return 1 if failed or linked else 0
 
 
+def preview_name(slug: str) -> str:
+    """The speaker's own link-preview card in site/share/, made by tools/shareables.py."""
+    return f"speaker-{slug}-preview.png"
+
+
 def page_name(slug: str) -> str:
     """Each speaker's own page, next to the other pages so relative links keep working."""
     return f"speaker-{slug}.html"
@@ -243,7 +248,8 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     title = f"{meta['name']}: speaking at GoatConf 2027, Tuzla"
     who = f"{meta['name']} ({meta['role']})" if meta.get("role") else meta["name"]
     desc = f"{esc(who)} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: " + (esc(first["title"]) if first else "a session at IPI Academy") + "."
-    return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main)
+    preview = preview_name(slug) if (SITE / "share" / preview_name(slug)).exists() else ""
+    return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main, preview)
 
 
 def supporter_card(n: int, slug: str, meta, body) -> str:
@@ -256,7 +262,7 @@ def supporter_card(n: int, slug: str, meta, body) -> str:
   </li>"""
 
 
-def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: str, main: str) -> str:
+def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: str, main: str, preview: str = "") -> str:
     sprite = extensions.SHELL.read_text(encoding="utf-8")
     sprite = sprite[sprite.index('<svg width="0"'):sprite.index("</svg>", sprite.index('<svg width="0"')) + 6]
     src, width, height, alt = photo
@@ -269,7 +275,8 @@ def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: st
 <title>{title}</title>
 <meta name="description" content="{description}">
 <meta name="theme-color" content="#0b3d91">
-<link rel="canonical" href="https://goatconf.com/{slug}">
+<link rel="canonical" href="https://goatconf.com/{slug}">{f"""
+<link rel="image_src" href="https://goatconf.com/share/{preview}">""" if preview else ""}
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="goatconf.css">
@@ -387,6 +394,12 @@ def cmd_build(args) -> int:
             else:
                 old.unlink()
                 print(f"removed site/{old.name}")
+    if args.check:
+        for slug in speakers():
+            if not (SITE / "share" / preview_name(slug)).exists():
+                print(f"site/share/{preview_name(slug)} is missing, so the page would share the generic banner: "
+                      f"run python3 tools/shareables.py render --only {preview_name(slug)}")
+                stale += 1
     for path, want in pages.items():
         if args.check:
             have = path.read_text(encoding="utf-8") if path.exists() else ""
