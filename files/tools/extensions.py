@@ -48,6 +48,7 @@ KINDS = {
     "support": "Support",
     "karaoke": "Karaoke",
     "hackathon": "Hackathon",
+    "other": "Something else",
 }
 FIELDS = ("name", "kind", "host", "location", "start", "end", "cost", "registration", "paid_by", "contact", "accepts")
 # GoatConf runs 3–5 June 2027; the window leaves room for arrivals, trips

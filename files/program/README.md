@@ -3,8 +3,12 @@
 One Markdown file per accepted session, named `<day>-<start>-<room>.md`
 (for example `2027-06-03-1000-hall-ground.md`). The frontmatter is the
 record; the body is the speaker's own short description. Copy
-`_template.md` to start one.
+`_template.md` to start one. `title`, `speakers`, `format`, `day`, `start`,
+`room` and `accepted` are required.
 
+- `title`: the session's title.
+- `speakers`: the speakers' names as they should appear, for example
+  `Ada Lovelace and Grace Hopper`.
 - `format`: `talk`, `panel`, `workshop` or `other`.
 - `day`: `2027-06-03` or `2027-06-04`, the two core days.
 - `start`: `"10:00"`, `"12:00"`, `"14:00"` or `"16:00"` on Thursday;

@@ -29,3 +29,15 @@ def test_top_bar_marks_the_current_page_and_replaces_itself():
     assert '<a href="speakers.html" aria-current="page">Speakers</a>' in once
     assert once.count("<!-- topbar -->") == 1
     assert nav.place(once, "speakers.html") == once
+
+
+def test_top_bar_fits_a_body_with_attributes_and_names_a_page_without_one():
+    nav = importlib.reload(importlib.import_module("nav"))
+    page = '<html><body class="album">\n<main id="main"></main></body></html>'
+    assert nav.place(page, "index.html").count("<!-- topbar -->") == 1
+    try:
+        nav.place("<html><main></main></html>", "index.html")
+    except ValueError as err:
+        assert "no <body>" in str(err)
+    else:
+        raise AssertionError("expected a ValueError")

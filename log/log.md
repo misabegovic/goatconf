@@ -5,3 +5,4 @@
 - 2026-10-08T13:36:41Z — PR #19 merged: the repository is now a pi-brain clone; goatconf brain lives under files/ with local CI green
 - 2026-10-08: capture: Organiser feedback 2026-10-08 after previewing the site locally: (1) explore more photos to make the site rich; (2) work
 - 2026-10-14: digest: the three inbox items of 2026-10-08 are digested; state, roadmap and options now point into the goatconf brain under files/
+- 2026-10-14: decisions: twelve open questions decided one by one; state updated (source: files/sources/conversations/2026-10-14--org--decisions-one-by-one.md)

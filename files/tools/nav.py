@@ -48,7 +48,9 @@ def bar(current: str) -> str:
 def place(text: str, current: str) -> str:
     """Put the bar right after the sprite (or <body>), replacing an old one."""
     text = BLOCK.sub("", text)
-    m = re.search(r"<body>\n(<svg width=\"0\".*?</svg>\n)?", text, re.S)
+    m = re.search(r"<body[^>]*>\n(<svg width=\"0\".*?</svg>\n)?", text, re.S)
+    if not m:
+        raise ValueError("no <body> tag on its own line to put the top bar after")
     return text[:m.end()] + bar(current) + text[m.end():]
 
 
@@ -61,7 +63,12 @@ def main(argv=None) -> int:
     stale = 0
     for p in pages():
         old = p.read_text(encoding="utf-8")
-        new = place(old, p.name)
+        try:
+            new = place(old, p.name)
+        except ValueError as err:
+            print(f"site/{p.name}: {err}")
+            stale += 1
+            continue
         if cmd == "apply":
             if new != old:
                 p.write_text(new, encoding="utf-8")

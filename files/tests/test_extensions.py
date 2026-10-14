@@ -76,6 +76,15 @@ def test_bad_records_fail(ext, capsys, change, message):
     assert message in capsys.readouterr().out
 
 
+def test_something_else_is_a_kind(ext, capsys):
+    mod, root = ext
+    write(root, "quiz.md", GOOD.replace("kind: workshop", "kind: other"))
+    assert mod.main(["check"]) == 0
+    assert "ok: something else" in capsys.readouterr().out
+    mod.main(["build"])
+    assert "Something else" in (root / "site" / "extensions.html").read_text(encoding="utf-8")
+
+
 def test_support_needs_a_supplier(ext, capsys):
     mod, root = ext
     write(root, "coffee.md", GOOD.replace("kind: workshop", "kind: support"))

@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/operations-and-the-day.md
 sources:
+  - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-12--org--registration-on-luma.md
   - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
@@ -117,3 +118,4 @@ later amendment if the CoC team wants it.
 
 - **2026-10-12.** Read the core day as the two core days, Thursday 3 and Friday 4 June 2027. Check-in uses the printed registration export from Google Forms. See [Dates: two core days](two-core-days-first-week.md), [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-12, registration is on Luma.** Registration moved to the organiser's Luma event, so the Google Forms registration export named in the amendment above does not exist (source: sources/conversations/2026-10-12--org--registration-on-luma.md). How check-in works on the two core days is (unknown, needs source).
+- **2026-10-14, check-in with Luma, and one code-of-conduct contact for now.** Volunteers check guests in at the door by scanning their Luma QR codes with Luma's free check-in app; the guest list stays in Luma, and the attendance count comes from it. The organiser is the only code-of-conduct contact until IPI names a member of staff, and the code-of-conduct page says so (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md).
