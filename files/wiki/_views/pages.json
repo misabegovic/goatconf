@@ -606,6 +606,7 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--cristian-planas.md",
         "sources/conversations/2026-10-14--org--carmine-paolino.md",
         "sources/conversations/2026-10-14--org--paul-campbell.md",
         "sources/conversations/2026-10-14--org--amar-mahmutbegovic.md",
@@ -647,7 +648,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2612
+      "tokens": 2690
     },
     {
       "path": "org/index.md",
@@ -656,7 +657,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 1685,
+      "tokens": 1733,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1624,6 +1625,20 @@
         "sources/web/organiser/muhamed-at-home.md"
       ],
       "tokens": 836
+    },
+    {
+      "path": "org/speakers/cristian-planas.md",
+      "title": "Speaker: Cristian Planas",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--cristian-planas.md",
+        "sources/web/speakers/kaigi-on-rails-2026-cristian-planas-2026-10-14.md",
+        "sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md"
+      ],
+      "tokens": 922
     },
     {
       "path": "org/speakers/dejan-menges.md",

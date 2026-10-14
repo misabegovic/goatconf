@@ -20,6 +20,7 @@ timeline, budget, and decisions that touch more than one area.
   - [Carmine Paolino](speakers/carmine-paolino.md): creator of RubyLLM, founder of Plenty in Berlin; spoke at RubyConf Austria 2026; confirmed 2026-10-14, session to come.
   - [Dejan Menges](speakers/dejan-menges.md): staff engineer at Vinted, author of Enola; confirmed 2026-10-14, session to come.
   - [Amar Mahmutbegović](speakers/amar-mahmutbegovic.md): co-founder and Head of Engineering at Semblie in Tuzla, author of C++ in Embedded Systems; confirmed 2026-10-14, session to come.
+  - [Cristian Planas](speakers/cristian-planas.md): author of Rails Scales!, long at Zendesk, now at Combinaut; confirmed 2026-10-14, session to come.
 - [IPI Academy](ipi-academy.md): host, partner and the venue for now; what it brings and what is unknown.
 - [Tuzla for GoatConf](tuzla.md): getting there, money, phones and papers, staying and eating, June, the salt lakes, day trips, the tech scene, practical facts, other venues, the gathering and data rules.
   - [Tuzla's history, the goat and the old town on foot](tuzla/history-and-old-town.md): salt since the Neolithic, Austria-Hungary, Husino, the Kapija, the goat legend and statue, and a walk from Freedom Square.

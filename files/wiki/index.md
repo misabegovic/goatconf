@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-14 -->
+- **2026-10-14**: **A fifth speaker, Cristian Planas, listed last.** The author of Rails Scales! (Pragmatic Bookshelf, 2025), long at Zendesk and now at Combinaut, is confirmed with his session to come ([Cristian Planas](org/speakers/cristian-planas.md); source: sources/conversations/2026-10-14--org--cristian-planas.md).
 - **2026-10-14**: **A fourth speaker, Carmine Paolino, listed second.** The creator of RubyLLM and founder of Plenty in Berlin, who spoke at RubyConf Austria 2026, is confirmed with his session to come. The order is now Paul Campbell, Carmine Paolino, Dejan Menges, Amar Mahmutbegović ([Carmine Paolino](org/speakers/carmine-paolino.md); source: sources/conversations/2026-10-14--org--carmine-paolino.md).
 - **2026-10-14**: **Speakers in the organiser's order.** The speakers are listed by an `order` the organiser sets, not alphabetically: Paul Campbell, Dejan Menges, then Amar Mahmutbegović ([Speaker profiles](org/adrs/speakers-and-travel-supporters.md); source: sources/conversations/2026-10-14--org--speaker-order.md).
 - **2026-10-14**: **A third speaker, Paul Campbell.** The co-founder and CEO of Tito, the Dublin ticketing company, and organiser of Funconf, is confirmed with his session to come, with his Confex bio and the portrait from his own site ([Paul Campbell](org/speakers/paul-campbell.md); source: sources/conversations/2026-10-14--org--paul-campbell.md).
