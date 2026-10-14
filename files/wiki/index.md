@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-14 -->
+- **2026-10-14**: **No travel terms under the speakers.** The speakers page drops "Getting speakers here"; who pays for travel is said only where people apply to speak, on the talk page and the home page's "Give a talk" (source: sources/conversations/2026-10-14--org--speakers-page-no-travel.md).
 - **2026-10-14**: **Each speaker's own link preview.** A shared speaker page now shows that speaker's card (photo, name, role) instead of the generic GoatConf banner; the local CI fails while a published speaker has no preview card (source: sources/conversations/2026-10-14--org--speaker-link-previews.md).
 - **2026-10-14**: **Eight places on the home page.** "Who is speaking" now plans for eight speakers, four to a row, and fills each open place with a call-for-proposals card, so there is no ragged last row; the speakers page is unchanged (source: sources/conversations/2026-10-14--org--home-eight-places.md).
 - **2026-10-14**: **A sixth speaker, Jan Grodowski, listed fourth.** A Staff Software Engineer on Shopify's Database Platform team in Salzburg and author of the undercover gem (over 32 million downloads), who ran a workshop at RubyConf Austria 2026, is confirmed with his session to come. The home page now shows all six speakers it has room for ([Jan Grodowski](org/speakers/jan-grodowski.md); source: sources/conversations/2026-10-14--org--jan-grodowski.md).

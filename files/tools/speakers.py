@@ -325,10 +325,6 @@ def speakers_page() -> str:
   <h2 class="band" id="h-speakers">Who is speaking</h2>
   <p class="copy copy--wide">Each speaker here has a session on Thursday 3rd or Friday 4th June 2027, or will have one soon: some are confirmed before their session has a time and room. They wrote their profiles themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
   {cards}
-</section>
-<section class="album-page wrap" aria-labelledby="h-travel">
-  <h2 class="band" id="h-travel">Getting speakers here</h2>
-  <p class="copy copy--wide">Speakers pay their own travel and stay. If the budget allows, the organiser may refund some or all of it after the event. This is not promised or guaranteed. See <a href="talk.html">give a talk</a>.</p>
 </section>"""
     return shell("speakers", "Speakers: GoatConf 2027, 3–5 June, Tuzla",
                  "The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words.",

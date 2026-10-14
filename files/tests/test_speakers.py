@@ -68,6 +68,7 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     assert 'id="ana-example"' in people
     assert "Salt, goats and servers" in people
     assert "speaker__goat" in people  # no photo: the goat stands in
+    assert "pay their own travel" not in people  # travel terms live on the talk page, not under the speakers
     wall = speakers.supporters_page()
     assert 'id="acme"' in wall and "Online supporter" in wall and "500 euro" in wall
     assert '<a href="speaker-ana-example.html">Ana Example</a>' in program.page()
