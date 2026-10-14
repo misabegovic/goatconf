@@ -2,11 +2,15 @@
 title: "Ask about open to work as an unticked Luma question, shared only for those who tick it"
 kind: decision
 status: accepted
-updated: 2026-10-13
+updated: 2026-10-14
 confidence: medium
 depends_on:
   - org/prds/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md
+  - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
+  - sources/conversations/2026-10-12--org--registration-on-luma.md
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
@@ -96,3 +100,4 @@ same line appears on the public ledger
 
 - **2026-10-12.** Luma is no longer used. The same optional, unticked open-to-work question sits on the registration Google Form, and the organiser exports the ticked rows from its response sheet. See [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-13, money through the organiser's business.** "The money never passes through the organiser" no longer holds for online supporters, who pay the organiser's Austrian business 500 EUR for online perks only ([Online supporters pay the organiser's Austrian business](online-supporters-through-the-business.md); source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
+- **2026-10-14, registration is back on Luma.** On 2026-10-12 registration moved to the organiser's Luma event, so the registration Google Form in the first amendment does not exist (source: sources/conversations/2026-10-12--org--registration-on-luma.md). The Luma event asks one optional question, why the person wants to come, and not the open-to-work question (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md). Whether and where the open-to-work question returns is (unknown, needs source). "Support" is no longer a kind on the propose-an-event form; the add page points people who want to support GoatConf to the supporters page, and the older `support` kind stays accepted in the records (source: sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md).

@@ -2,11 +2,13 @@
 title: "Adopt RubyConf Austria's code of conduct and its reporting route, with an IPI contact added"
 kind: decision
 status: accepted
-updated: 2026-10-12
+updated: 2026-10-14
 confidence: medium
 depends_on:
   - org/prds/operations-and-the-day.md
 sources:
+  - sources/conversations/2026-10-12--org--registration-on-luma.md
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--adr-answers.md
@@ -114,3 +116,4 @@ later amendment if the CoC team wants it.
 ## Amendments
 
 - **2026-10-12.** Read the core day as the two core days, Thursday 3 and Friday 4 June 2027. Check-in uses the printed registration export from Google Forms. See [Dates: two core days](two-core-days-first-week.md), [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
+- **2026-10-12, registration is on Luma.** Registration moved to the organiser's Luma event, so the Google Forms registration export named in the amendment above does not exist (source: sources/conversations/2026-10-12--org--registration-on-luma.md). How check-in works on the two core days is (unknown, needs source).

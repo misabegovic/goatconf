@@ -2,13 +2,17 @@
 title: "Core days: every available room in parallel, four one-hour slots each, on one shared timetable"
 kind: decision
 status: accepted
-updated: 2026-10-12
+updated: 2026-10-14
 confidence: medium
 depends_on:
   - org/prds/dates-and-the-core-day.md
   - org/prds/cfp-and-speakers.md
   - org/adrs/two-core-days-first-week.md
 sources:
+  - sources/conversations/2026-10-12--org--approval-back-on.md
+  - sources/conversations/2026-10-12--org--session-registration-later.md
+  - sources/conversations/2026-10-12--org--first-come-luma-only.md
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-12--org--friday-dzuma-schedule.md
   - sources/web/tuzla/vaktija-tuzla-2027-06-03-04.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
@@ -93,6 +97,7 @@ rooms on both core days, as the organiser reported on 2026-10-12
 ## Amendments
 
 - **2026-10-12, Friday starts at 09:30 for Džuma.** Friday 4 June keeps four one-hour slots but starts half an hour earlier: welcome 09:15, slots at 09:30, 11:30, 13:30 and 15:30, and the end at 16:30, so the midday hour off, 12:30 to 13:30, covers Džuma prayer (podne in Tuzla is at 12:44 that day) and lunch. Thursday keeps 10:00 to 17:00. The organiser wants it kept easy to change; each day's times live in one place in the program generator (source: sources/conversations/2026-10-12--org--friday-dzuma-schedule.md, sources/web/tuzla/vaktija-tuzla-2027-06-03-04.md).
+- **2026-10-12, registration on Luma, with no limit.** The How section's "one free pass per day" no longer holds. Registration is one Luma event with no limit, and the organiser approves each registration; seats in each room are first come, first served at the door. Closer to June, ticket holders also register for the sessions they want, with the tool not decided yet (sources: sources/conversations/2026-10-12--org--first-come-luma-only.md, sources/conversations/2026-10-12--org--session-registration-later.md, sources/conversations/2026-10-12--org--approval-back-on.md).
 
 ## Related
 

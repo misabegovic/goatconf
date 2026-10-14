@@ -2,11 +2,17 @@
 title: "The drumbeat: the weekly posts, drafted, from launch to June 2027"
 kind: reference
 status: draft
-updated: 2026-10-12
+updated: 2026-10-14
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
+  - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
+  - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
+  - sources/conversations/2026-10-13--org--outside-review-fixes.md
+  - sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md
+  - sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md
   - sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md
   - sources/conversations/2026-10-12--org--registration-on-luma.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
@@ -81,7 +87,7 @@ The story in week 5 follows the EuRuKo 2024 account of the goat (source: sources
   >
   > Come for the talks on Thursday 3 and Friday 4 June at IPI Academy in Tuzla, and stay for Saturday at the salt lakes. Seats are first come, first served at each room's door, and every session is followed by an hour off on Freedom Square.
   >
-  > Register in a minute: goatconf.com/register
+  > Register in a minute, and the organiser confirms your place, usually within a few days: goatconf.com/register
 
 - **Short:**
 
@@ -95,13 +101,13 @@ The story in week 5 follows the EuRuKo 2024 account of the goat (source: sources
 
   > GoatConf brings a small core: the rooms, the talks, the breaks. Everything else is added by the people who come.
   >
-  > Propose a workshop the evening before, a meetup, a hackathon, a dinner, a city walk, a hike, or the goat hunt on Saturday. You run it and you cover its costs. If the organiser accepts it, it becomes part of GoatConf 2027 and is shared with everyone who comes.
+  > Propose an evening event, a meetup, a hackathon, a dinner, a city walk, a hike or a karaoke night. You run it and you cover its costs. If the organiser accepts it, it becomes part of GoatConf 2027 and is shared with everyone who comes.
   >
   > Propose yours: goatconf.com/add
 
 - **Short:**
 
-  > Propose an event for GoatConf 2027 in Tuzla: a workshop, a meetup, a hackathon, a hike, the goat hunt. You run it; once accepted, it is part of GoatConf. goatconf.com/add
+  > Propose an event for GoatConf 2027 in Tuzla: an evening event, a meetup, a hackathon, a hike, karaoke. You run it; once accepted, it is part of GoatConf. goatconf.com/add
 
 ### Week 5: Why a goat
 
@@ -126,12 +132,12 @@ The story in week 5 follows the EuRuKo 2024 account of the goat (source: sources
 Each later beat gets the same treatment: a LinkedIn text, a short text and an image.
 
 - **Week 6, Tuzla on a budget.** What a week costs: a simple meal about 4.60 euro, a cappuccino about 1.66 euro, a lake ticket 3.60 to 4.60 euro (prices checked 2026-10-07, see [Tuzla](../tuzla.md)); link to the travel page.
-- **Week 7, every euro in the open.** No money passes through the organiser; the public ledger (source: sources/conversations/2026-10-07--org--no-money-through-me.md).
-- **Week 8, fund a speaker's travel.** Supporters pay a named thing straight to the supplier; their logo goes on the supporters page and on the speaker's profile (source: sources/conversations/2026-10-12--org--speakers-and-supporters-approved.md).
+- **Week 7, support GoatConf online.** One level for everyone: 500 EUR, invoiced by the organiser's Austrian business, for online perks only, with nothing at the venue. The budget itself is not mentioned (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
+- **Week 8, speak at GoatConf with your company behind you.** Speakers pay their own travel, refunded only if the budget allows, never promised; a speaker's company that covers their travel is listed on the supporters page, the same as online supporters (sources: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md, sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).
 - **When a speaker is accepted,** one post each, with their "I'm speaking" card (`speaker-<name>-square.png` and `-wide.png`), and a nudge for the speaker to share it.
 - **When a supporter joins,** a thank-you naming exactly what they fund, with their card (`supporter-<name>-square.png` and `-wide.png`).
 - **The program fills up.** The first full day; Friday starting at 09:30 (source: sources/conversations/2026-10-12--org--friday-dzuma-schedule.md).
-- **Saturday, the community day.** The lakes, the goat hunt, walks, as hosts add them.
+- **Saturday, the community day.** The lake day and the goat hunt the organiser plans, and the walks and meetups hosts add (source: sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md).
 - **Travel.** How to get to Tuzla, where to stay, where to eat without meat.
 - **The last call for talks**, when the slots are nearly full.
 - **The week before; live from the day; thank you and photos afterwards.**

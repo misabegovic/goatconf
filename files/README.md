@@ -29,9 +29,12 @@ home described above.
 - `sources/`: raw inputs, immutable once added.
 - `wiki/`: the synthesis; `wiki/index.md` is the home.
 - `log/log.md`: the operations log.
-- `site/`: the website, plain HTML and CSS copied into muhamed.at/goatconf (see `site/README.md`).
+- `site/`: the website, plain HTML and CSS, published at goatconf.com on GitHub Pages (see `site/README.md`).
 - `extensions/`: one file per extension people add around the conference (see `extensions/README.md`).
-- `tools/`: `brain.py` (validate, check, views, search, stats), `extensions.py` (check the records, build the extensions page), hooks, templates, CI.
+- `program/`, `speakers/`, `supporters/`: one file per accepted session, speaker and supporter, built into the site (each folder has a `README.md`).
+- `places/places.yml`: the places to eat and stay shown on the travel page.
+- `forms.yml`: the addresses of the Google Forms and the Luma event the site links to.
+- `tools/`: `brain.py` (validate, check, views, search, stats), the generators that build and check parts of the site (program, speakers, extensions, places, navigation, link previews, files for agents), hooks, templates, CI.
 - `.claude/`: skills, slash commands, agent personas, settings.
 
 ## Getting started
@@ -41,7 +44,8 @@ tools/setup-local.sh      # prerequisites, venv, git hooks, and a first CI run
 bash tools/ci-local.sh    # the full CI, any time
 ```
 
-CI is local only: there are no GitHub Actions. Every `git push` runs
+CI is local only. The one GitHub Actions workflow publishes `site/` to
+GitHub Pages and checks nothing. Every `git push` runs
 `tools/ci-local.sh` first and is refused if a step fails. What it checks
 is listed in [`AGENTS.md`](AGENTS.md) § Local CI.
 

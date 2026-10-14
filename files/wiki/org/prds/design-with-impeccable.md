@@ -2,12 +2,13 @@
 title: "Design with impeccable: one look for the site, the shareables and the hosts"
 kind: initiative
 status: living
-updated: 2026-10-12
+updated: 2026-10-14
 parent_epic: goatconf-2027
 appetite: small
 confidence: medium
 supersedes: org/pitches/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--bet-on-every-pitch.md
@@ -231,3 +232,4 @@ the goat appears.
 ## Amendments
 
 - **2026-10-12.** The site is published on goatconf.com from this repository, not copied into muhamed.at. See [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
+- **2026-10-14, read with the later decisions.** The site no longer sits inside muhamed.at, so the body's rule against fighting that site's look, and its pi-brain layout, no longer constrains the design (source: sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md).

@@ -2,12 +2,14 @@
 title: "Speaker profiles and travel supporters: consented records, a speakers page and a supporters wall"
 kind: decision
 status: accepted
-updated: 2026-10-13
+updated: 2026-10-14
 confidence: medium
 depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-13--org--speaker-profile-required.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
@@ -94,3 +96,4 @@ profile goes up only with the speaker's consent.
 
 ## Amendments
 - **2026-10-13, online supporters and no travel per speaker.** Supporters are online only: one level, 500 EUR, paid to the organiser's Austrian business, or a supplier paid directly. No supporter pays for a named speaker's travel; `travel_funded_by` is retired and the check refuses it. Speakers pay their own travel, refunded only if the budget allows, never promised ([Online supporters pay the organiser's Austrian business](online-supporters-through-the-business.md); source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
+- **2026-10-13, the profile is required, and the budget is private.** A speaker profile is no longer optional: every speaker agrees on the talk form that, if their session is accepted, GoatConf publishes their profile (name, bio, photo, links and session) on goatconf.com and promotes them and their session on social media; the form's one choice is "I agree" (source: sources/conversations/2026-10-13--org--speaker-profile-required.md). A record still needs `publish: yes`, which now follows from that agreement. The How section's "every supporter payment is still a line in the public ledger" no longer holds: the budget is private, with no budget page (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md). A speaker's company that covers their travel is listed as a supporter, the same as online supporters (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).
