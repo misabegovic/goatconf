@@ -606,6 +606,7 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--carmine-paolino.md",
         "sources/conversations/2026-10-14--org--paul-campbell.md",
         "sources/conversations/2026-10-14--org--amar-mahmutbegovic.md",
         "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
@@ -646,7 +647,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2487
+      "tokens": 2612
     },
     {
       "path": "org/index.md",
@@ -655,7 +656,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 1630,
+      "tokens": 1685,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1608,6 +1609,21 @@
         "sources/web/speakers/semblie-about-2026-10-14.md"
       ],
       "tokens": 797
+    },
+    {
+      "path": "org/speakers/carmine-paolino.md",
+      "title": "Speaker: Carmine Paolino",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--carmine-paolino.md",
+        "sources/web/speakers/paolino-me-2026-10-14.md",
+        "sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md",
+        "sources/web/organiser/muhamed-at-home.md"
+      ],
+      "tokens": 836
     },
     {
       "path": "org/speakers/dejan-menges.md",

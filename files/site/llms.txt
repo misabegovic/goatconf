@@ -19,6 +19,7 @@ Contact: info@muhamed.at, or the form at https://goatconf.com/contact
 ## Speakers
 
 - [Paul Campbell](https://goatconf.com/speaker-paul-campbell): Co-founder and CEO of Tito
+- [Carmine Paolino](https://goatconf.com/speaker-carmine-paolino): Creator of RubyLLM, founder of Plenty
 - [Dejan Menges](https://goatconf.com/speaker-dejan-menges): Staff Engineer at Vinted
 - [Amar Mahmutbegović](https://goatconf.com/speaker-amar-mahmutbegovic): Co-founder and Head of Engineering at Semblie
 

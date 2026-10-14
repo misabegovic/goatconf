@@ -17,6 +17,7 @@ timeline, budget, and decisions that touch more than one area.
 - [The organiser](organiser.md): Muhamed Isabegovic, organiser of EuRuKo 2024 and RubyConf Austria, IPI Akademija alumnus.
 - Speakers, one page each, from public sources, in the organiser's order:
   - [Paul Campbell](speakers/paul-campbell.md): co-founder and CEO of Tito in Dublin, organiser of Funconf; confirmed 2026-10-14, session to come.
+  - [Carmine Paolino](speakers/carmine-paolino.md): creator of RubyLLM, founder of Plenty in Berlin; spoke at RubyConf Austria 2026; confirmed 2026-10-14, session to come.
   - [Dejan Menges](speakers/dejan-menges.md): staff engineer at Vinted, author of Enola; confirmed 2026-10-14, session to come.
   - [Amar Mahmutbegović](speakers/amar-mahmutbegovic.md): co-founder and Head of Engineering at Semblie in Tuzla, author of C++ in Embedded Systems; confirmed 2026-10-14, session to come.
 - [IPI Academy](ipi-academy.md): host, partner and the venue for now; what it brings and what is unknown.
