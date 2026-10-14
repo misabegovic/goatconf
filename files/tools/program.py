@@ -105,7 +105,7 @@ def check_record(path: Path):
     if meta.get("accepted") is not True:
         problems.append("accepted must be yes")
     if meta.get("signup") and not str(meta["signup"]).startswith("https://"):
-        problems.append("signup must be the session's sign-up link in the GoatConf app, starting https://")
+        problems.append("signup must be the session's own sign-up link, starting https://")
     if not body:
         problems.append("no description below the frontmatter")
     return problems, meta, body
@@ -165,7 +165,7 @@ def who(meta) -> str:
 
 
 def register(meta) -> str:
-    """The session's own sign-up in the GoatConf app, once it exists."""
+    """The session's own sign-up link, if session registration is introduced later."""
     if not meta.get("signup"):
         return ""
     return f'<a class="session__register" href="{esc(meta["signup"])}">Save a seat</a>'

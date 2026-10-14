@@ -35,7 +35,7 @@ home described above.
 - `places/places.yml`: the places to eat and stay shown on the travel page.
 - `forms.yml`: the addresses of the Google Forms and the Luma event the site links to.
 - `tools/`: `brain.py` (validate, check, views, search, stats), the generators that build and check parts of the site (program, speakers, extensions, places, navigation, link previews, files for agents), hooks, templates, CI.
-- `.claude/`: skills, slash commands, agent personas, settings.
+- `.claude/`: skills, slash commands, agent personas, settings. Sessions start at the repository root, whose `.claude/settings.json` links to the settings here.
 
 ## Getting started
 
@@ -47,7 +47,8 @@ bash tools/ci-local.sh    # the full CI, any time
 CI is local only. The one GitHub Actions workflow publishes `site/` to
 GitHub Pages and checks nothing. Every `git push` runs
 `tools/ci-local.sh` first and is refused if a step fails. What it checks
-is listed in [`AGENTS.md`](AGENTS.md) § Local CI.
+is listed in [`AGENTS.md`](AGENTS.md) § Local CI. Its checks look only at
+this folder, not at the pi-brain layer at the repository root.
 
 Then talk to the agent: `/in <source>` to add material, `/capture org`
 for something just decided, `/ask <question>` to query, `/shape` to turn

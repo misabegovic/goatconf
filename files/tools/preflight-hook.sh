@@ -29,10 +29,10 @@
 #      unidentifiable target exits 0 — sibling repos have their own CI.
 #
 # Note preflight.sh mirrors only three of the CI gates (validate,
-# check --no-net, views+diff). The PR-only gates — check-home-fresh,
-# check-readme-fresh, check-no-notion-writes, pytest, ui-build — are
-# not covered here and still need running before a PR. Passing this
-# hook is not the same as green CI.
+# check --no-net, views+diff). The rest of tools/ci-local.sh (the rule
+# checks, the site generators, check-home-fresh, check-readme-fresh,
+# check-no-notion-writes, pytest) is not covered here; the git pre-push
+# hook runs all of it. Passing this hook is not the same as green CI.
 
 set -uo pipefail
 
@@ -101,9 +101,8 @@ if ! "$script" >&2; then
 ✗ Blocked: files/tools/preflight.sh failed for $root.
 
   Fix the gate it named, then retry. Remember preflight covers only
-  validate / check --no-net / views: the PR-only gates
-  (check-home-fresh --base origin/main, check-readme-fresh, pytest,
-  ui-build) still need running separately.
+  validate / check --no-net / views. The full CI
+  (bash files/tools/ci-local.sh) runs from the git pre-push hook.
 
 EOF
   exit 2

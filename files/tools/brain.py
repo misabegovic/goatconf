@@ -89,7 +89,7 @@ def _load_repo_dotenv() -> None:
         if not line or line.startswith("#") or "=" not in line:
             continue
         key, _, value = line.partition("=")
-        os.environ.setdefault(key.strip(), value.strip())
+        os.environ.setdefault(key.strip(), value.strip().strip('"\''))
 
 
 _load_repo_dotenv()
@@ -1981,9 +1981,11 @@ def cmd_check_home_fresh(args) -> int:
     and wiki/index.md itself. Modified or added.
     """
     base = getattr(args, "base", "origin/main") or "origin/main"
-    diff_cmd = ["git", "diff", "--name-only", f"{base}...HEAD"]
+    # --relative, run from the brain home: paths are relative to it and
+    # limited to it, so the root pi-brain's own wiki/ never counts here.
+    diff_cmd = ["git", "diff", "--relative", "--name-only", f"{base}...HEAD"]
     try:
-        diff = subprocess.check_output(diff_cmd, text=True,
+        diff = subprocess.check_output(diff_cmd, text=True, cwd=REPO,
                                        stderr=subprocess.PIPE)
     except subprocess.CalledProcessError as e:
         # If the base ref doesn't exist (fresh clone, force-pushed
@@ -2005,9 +2007,7 @@ def cmd_check_home_fresh(args) -> int:
             continue
         # Machine state (the inbox queue, sync cursors, promotion
         # records), not reader-facing content; a queue line must not
-        # require a home-page entry. Also, in a pi-brain-nested checkout
-        # the root brain's wiki/ changes surface here under the same
-        # relative names, and the root inbox is not this brain's content.
+        # require a home-page entry.
         if f.startswith("wiki/_state/"):
             continue
         if f.startswith("wiki/"):
@@ -2067,8 +2067,8 @@ def _home_rendered_changed(base: str) -> bool:
     """
     try:
         before = subprocess.check_output(
-            ["git", "show", f"{base}:wiki/index.md"],
-            text=True, stderr=subprocess.PIPE)
+            ["git", "show", f"{base}:./wiki/index.md"],
+            text=True, cwd=REPO, stderr=subprocess.PIPE)
     except subprocess.CalledProcessError:
         return True
     try:
@@ -2130,9 +2130,11 @@ def cmd_check_readme_fresh(args) -> int:
     Trigger paths: see _is_readme_trigger above.
     """
     base = getattr(args, "base", "origin/main") or "origin/main"
-    diff_cmd = ["git", "diff", "--name-status", f"{base}...HEAD"]
+    # Relative to the brain home, as in check-home-fresh: the root
+    # pi-brain layer's files are not this brain's README triggers.
+    diff_cmd = ["git", "diff", "--relative", "--name-status", f"{base}...HEAD"]
     try:
-        diff = subprocess.check_output(diff_cmd, text=True,
+        diff = subprocess.check_output(diff_cmd, text=True, cwd=REPO,
                                        stderr=subprocess.PIPE)
     except subprocess.CalledProcessError as e:
         print(f"ERR: git diff failed against {base}: {e.stderr}", file=sys.stderr)
@@ -2148,10 +2150,7 @@ def cmd_check_readme_fresh(args) -> int:
             continue
         status = parts[0][0]  # First char (handles R100 etc.)
         path = parts[-1]      # Last entry (handles renames -> dest)
-        # The pi-brain conversion nested this brain under files/; a README
-        # edit shows as README.md from the brain home or files/README.md
-        # from the repository root.
-        if path in ("README.md", "files/README.md"):
+        if path == "README.md":
             readme_touched = True
             continue
         if _is_readme_trigger(path, status):

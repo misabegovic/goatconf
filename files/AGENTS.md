@@ -338,7 +338,8 @@ operator's decision, asked in that turn.
 ## Notion and other external tools
 
 Notion is read-only from this brain: every Notion write tool is denied
-in `.claude/settings.json`, and `python3 files/tools/brain.py
+in `.claude/settings.json` (loaded from the repository root through the
+link `/.claude/settings.json`, since sessions start there), and `python3 files/tools/brain.py
 check-no-notion-writes` (run by CI) verifies it. Snapshot a page with
 `files/tools/notion-export.py <url-or-id>` into `sources/notion/` before
 synthesising from it.

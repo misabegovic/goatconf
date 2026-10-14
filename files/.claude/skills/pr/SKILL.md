@@ -26,7 +26,7 @@ session flips into remote mode. After the PR opens, the next
 operation reverts to local-first.
 
 ```bash
-[ -f .env ] && grep -q '^LOCAL_FIRST=true$' .env && LOCAL_FIRST=1
+[ -f .env ] && grep -Eq "^LOCAL_FIRST=[\"']?true[\"']?\$" .env && LOCAL_FIRST=1
 ```
 
 If `LOCAL_FIRST=1` and the agent reached this skill *without* the

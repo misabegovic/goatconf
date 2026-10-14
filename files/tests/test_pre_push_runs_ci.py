@@ -52,3 +52,18 @@ def test_main_is_refused_before_ci_runs(repo):
     stub_ci(repo, 0)
     r = push(repo, f"refs/heads/main {SHA} refs/heads/main {ZERO}")
     assert r.returncode == 1 and "stub-ci-ran" not in r.stderr
+
+
+@pytest.mark.parametrize("line", ["LOCAL_FIRST=true", 'LOCAL_FIRST="true"', "LOCAL_FIRST='true'"])
+def test_local_first_refuses_a_push_quoted_or_not(repo, line):
+    stub_ci(repo, 0)
+    (repo / ".env").write_text(line + "\n")
+    r = push(repo, f"refs/heads/work {SHA} refs/heads/work {ZERO}")
+    assert r.returncode == 1 and "LOCAL_FIRST=true" in r.stderr and "stub-ci-ran" not in r.stderr
+
+
+def test_local_first_false_lets_a_push_through_ci(repo):
+    stub_ci(repo, 0)
+    (repo / ".env").write_text('LOCAL_FIRST="false"\n')
+    r = push(repo, f"refs/heads/work {SHA} refs/heads/work {ZERO}")
+    assert r.returncode == 0 and "stub-ci-ran" in r.stderr

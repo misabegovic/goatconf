@@ -40,7 +40,7 @@ applies; it just moves from PR-approval to inline conversational
 approval.
 
 ```bash
-[ -f .env ] && grep -q '^LOCAL_FIRST=true$' .env && LOCAL_FIRST=1
+[ -f .env ] && grep -Eq "^LOCAL_FIRST=[\"']?true[\"']?\$" .env && LOCAL_FIRST=1
 ```
 
 ## Decision policy — manual by default, `--auto` opts in to autonomous

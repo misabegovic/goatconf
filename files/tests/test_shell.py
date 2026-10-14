@@ -52,6 +52,19 @@ def test_settings_carry_no_machine_paths():
     assert "/home/" not in text, "settings.json must stay portable: use ${CLAUDE_PROJECT_DIR} or a PATH lookup"
 
 
+def test_sessions_from_the_repository_root_load_the_settings():
+    # Sessions run from the repository root, which only reads .claude/ there.
+    root_settings = ROOT.parent / ".claude" / "settings.json"
+    assert root_settings.is_symlink() and os.readlink(root_settings) == "../files/.claude/settings.json"
+    hooks = json.loads(root_settings.read_text())["hooks"]
+    for group in hooks.values():
+        for entry in group:
+            for hook in entry["hooks"]:
+                path = re.search(r'\$\{CLAUDE_PROJECT_DIR:-\.\}/(\S+?)"', hook["command"])
+                assert path, hook["command"]
+                assert (ROOT.parent / path.group(1)).exists(), path.group(1)
+
+
 def test_every_skill_has_its_protocol():
     skills = [d for d in (ROOT / ".claude" / "skills").iterdir() if d.is_dir()]
     assert skills

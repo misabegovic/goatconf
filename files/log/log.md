@@ -273,3 +273,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-14 merge — PR #55: records: stale pages catch up with the decisions of 12 and 13 October
    diff: 28 files, +359/-152
    restricted-paths: true
+2026-10-14 merge — PR #56: tools: the remaining loose ends, from root settings to stale wording
+   diff: 25 files, +248/-96
+   restricted-paths: true
