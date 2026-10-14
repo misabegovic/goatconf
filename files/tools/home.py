@@ -4,7 +4,7 @@
 The home page is hand-written, with three parts filled from the records:
 
   <!-- home:days -->        the three days, from DAY_PLAN in tools/program.py
-  <!-- home:speakers -->    the first speakers, from speakers/
+  <!-- home:speakers -->    the first speakers, from speakers/, in eight places
   <!-- home:supporters -->  the supporters' logos, from supporters/
 
 Then every sticker and slot number on the page is renumbered in order, so
@@ -28,7 +28,9 @@ import speakers  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGE = ROOT / "site" / "index.html"
-SHOWN = 6
+# The home page plans for eight speakers: two full rows of four on a wide screen,
+# four rows of two on a phone. Places not yet taken invite a proposal.
+SHOWN = 8
 esc = program.esc
 TILTS = (-1.5, 1, -1, 1.5, -0.5, 0.5)
 
@@ -65,10 +67,17 @@ def speaker_sticker(i: int, slug: str, meta) -> str:
             f'<span class="num">0</span>{photo}<span class="sticker__name">{esc(meta["name"])}{role}</span></a></li>')
 
 
+def open_place() -> str:
+    return ('    <li><a class="slot slot--link slot--open" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+            '<span class="num num--printed">0</span><strong>Your talk here?</strong><small>The call for proposals is open.</small>'
+            '<span class="stamp">Yours?</span></a></li>')
+
+
 def speakers_block() -> str:
     people = speakers.listed(speakers.speakers())
     if people:
-        cards = "\n".join(speaker_sticker(i, s, m) for i, (s, (m, _)) in enumerate(people[:SHOWN]))
+        cards = "\n".join([speaker_sticker(i, s, m) for i, (s, (m, _)) in enumerate(people[:SHOWN])]
+                          + [open_place() for _ in range(SHOWN - len(people[:SHOWN]))])
         more = f'<a class="go go--ink" href="speakers.html">All {len(people)} speakers</a>' if len(people) > SHOWN else '<a class="go go--ink" href="speakers.html">Meet the speakers</a>'
         intro = "The people giving the talks, panels and workshops so far. More are added as proposals are accepted."
     else:
