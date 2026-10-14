@@ -270,3 +270,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-13 merge — PR #54: site: speaker profiles and social media promotion are required
    diff: 10 files, +30/-11
    restricted-paths: true
+2026-10-14 merge — PR #55: records: stale pages catch up with the decisions of 12 and 13 October
+   diff: 28 files, +359/-152
+   restricted-paths: true
