@@ -4,6 +4,7 @@ status: living
 confidence: low
 updated: 2026-10-14
 sources:
+  - files/sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - files/sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md
   - files/sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - files/sources/conversations/2026-10-14--org--catch-up-stale-pages.md
@@ -33,9 +34,9 @@ private (source: files/sources/conversations/2026-10-13--org--online-supporters-
 
 ## What needs attention
 
-- IPI's written confirmation of the dates, the main hall's seat count,
-  and the IPI staff member who joins the code-of-conduct team.
 - A tax adviser before the first supporter invoice.
+- The tool for registering for single sessions, picked in spring once the
+  program fills (source: files/sources/conversations/2026-10-14--org--decisions-one-by-one.md).
 - The café message and the launch posts, drafted and waiting for the
   organiser to send.
 

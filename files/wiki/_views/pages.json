@@ -301,7 +301,7 @@
       "title": "Online supporters pay the organiser's Austrian business; the budget becomes private",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-13",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "supersedes": "org/adrs/budget-and-public-ledger.md",
       "depends_on": [
@@ -309,19 +309,20 @@
         "org/adrs/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md"
       ],
-      "tokens": 1232
+      "tokens": 1313
     },
     {
       "path": "org/adrs/open-program-every-room.md",
       "title": "Program: every room open, with sessions posted as they are confirmed",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "depends_on": [
         "org/prds/dates-and-the-core-day.md",
@@ -329,6 +330,7 @@
         "org/prds/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-12--org--session-registration-later.md",
         "sources/conversations/2026-10-12--org--first-come-luma-only.md",
         "sources/web/tooling/rails-world-app-2026-10-12.md",
@@ -345,7 +347,7 @@
         "sources/conversations/2026-10-12--org--extension-listings-judged.md",
         "sources/conversations/2026-10-07--org--ipi-rooms-and-fallback-money.md"
       ],
-      "tokens": 1446
+      "tokens": 1535
     },
     {
       "path": "org/adrs/operations-and-the-day.md",
@@ -358,6 +360,7 @@
         "org/prds/operations-and-the-day.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
@@ -373,7 +376,7 @@
         "sources/web/coc/confcodeofconduct-com.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 1273
+      "tokens": 1390
     },
     {
       "path": "org/adrs/road-to-june-2027.md",
@@ -450,13 +453,14 @@
       "path": "org/adrs/supporters-and-hiring.md",
       "title": "Ask about open to work as an unticked Luma question, shared only for those who tick it",
       "kind": "decision",
-      "status": "accepted",
+      "status": "deprecated",
       "updated": "2026-10-14",
       "confidence": "medium",
       "depends_on": [
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
@@ -473,7 +477,7 @@
         "sources/web/funding/writethedocs-portland-2026-prospectus.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 1188,
+      "tokens": 1269,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]
@@ -549,6 +553,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/one-goat-minimal-core-and-extensions.md",
       "sources": [
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--approval-back-on.md",
         "sources/conversations/2026-10-12--org--first-come-luma-only.md",
@@ -571,7 +576,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 2817,
+      "tokens": 2918,
       "consumed_by": [
         "org/adrs/two-core-days-first-week.md"
       ],
@@ -597,6 +602,7 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--no-reply-deadline.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
@@ -632,7 +638,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2141
+      "tokens": 2238
     },
     {
       "path": "org/index.md",
@@ -651,9 +657,10 @@
       "title": "IPI Academy (IPI Akademija Tuzla): host and venue",
       "kind": "entity",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-12--org--computer-centre-2-not-step-free.md",
         "sources/conversations/2026-10-12--org--computer-centre-1-lift.md",
         "sources/conversations/2026-10-12--org--accessibility.md",
@@ -670,7 +677,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/tooling/sessionize-community-license.md"
       ],
-      "tokens": 2267
+      "tokens": 2235
     },
     {
       "path": "org/organiser.md",
@@ -735,10 +742,13 @@
       "path": "org/outreach/ipi-proposal.md",
       "title": "Draft: the date proposal to IPI Academy (Bosnian)",
       "kind": "reference",
-      "status": "draft",
-      "updated": "2026-10-12",
+      "status": "archived",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-12--org--session-registration-later.md",
+        "sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md",
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-07--org--saying-confirmed.md",
         "sources/web/tuzla/mondo-tuzlanska-koza-legenda.md",
         "sources/conversations/2026-10-07--org--next-ipi-and-website.md",
@@ -757,7 +767,7 @@
         "sources/web/venue/ipi-akademija-app-challenge.md",
         "sources/web/venue/ipi-akademija-kontakt.md"
       ],
-      "tokens": 2490
+      "tokens": 2723
     },
     {
       "path": "org/pitches/activities-the-lake-and-the-town.md",
@@ -1358,6 +1368,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/operations-people-rules-and-the-day.md",
       "sources": [
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--session-registration-later.md",
         "sources/conversations/2026-10-12--org--approval-back-on.md",
@@ -1391,7 +1402,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/tooling/fosdem-video-equipment-overview.md"
       ],
-      "tokens": 4235,
+      "tokens": 4343,
       "consumed_by": [
         "org/adrs/operations-and-the-day.md"
       ]
@@ -1407,6 +1418,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/the-road-to-june-2027.md",
       "sources": [
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--session-registration-later.md",
         "sources/conversations/2026-10-12--org--approval-back-on.md",
@@ -1427,7 +1439,7 @@
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3470,
+      "tokens": 3540,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/road-to-june-2027.md"
@@ -1479,6 +1491,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/partners-sponsors-and-hiring.md",
       "sources": [
+        "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
@@ -1505,7 +1518,7 @@
         "sources/web/hiring/wbs-wearedevelopers-ben-ruschin.md",
         "sources/web/venue/ipi-akademija-about.md"
       ],
-      "tokens": 3456,
+      "tokens": 3535,
       "consumed_by": [
         "org/adrs/speakers-and-travel-supporters.md",
         "org/adrs/supporters-and-hiring.md"

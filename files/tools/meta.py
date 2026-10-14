@@ -34,7 +34,10 @@ BLOCK = re.compile(re.escape(START) + r".*?" + re.escape(END) + r"\n?", re.S)
 
 
 def tags(text: str) -> str:
-    title = re.search(r"<title>(.*?)</title>", text, re.S).group(1).strip()
+    title_m = re.search(r"<title>(.*?)</title>", text, re.S)
+    if not title_m:
+        raise ValueError("no <title> to build the link preview from")
+    title = title_m.group(1).strip()
     desc_m = re.search(r'<meta name="description" content="([^"]*)">', text)
     url_m = re.search(r'<link rel="canonical" href="([^"]*)">', text)
     desc = desc_m.group(1) if desc_m else ""
@@ -75,6 +78,8 @@ def tag(text: str) -> str:
     text = BLOCK.sub("", text)
     text = re.sub(r'<link rel="stylesheet" href="goatconf\.css(\?v=[0-9a-f]+)?">', '<link rel="stylesheet" href="goatconf.css">', text)
     anchor = '<link rel="stylesheet" href="goatconf.css">'
+    if anchor not in text:
+        raise ValueError("no goatconf.css stylesheet link to put the link-preview tags before")
     return stamp(text.replace(anchor, tags(text) + anchor, 1))
 
 
@@ -87,7 +92,12 @@ def main(argv=None) -> int:
     stale = 0
     for p in pages():
         old = p.read_text(encoding="utf-8")
-        new = tag(old)
+        try:
+            new = tag(old)
+        except ValueError as err:
+            print(f"site/{p.name}: {err}")
+            stale += 1
+            continue
         if cmd == "apply":
             if new != old:
                 p.write_text(new, encoding="utf-8")

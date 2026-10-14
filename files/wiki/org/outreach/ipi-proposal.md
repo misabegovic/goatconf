@@ -1,10 +1,13 @@
 ---
 title: "Draft: the date proposal to IPI Academy (Bosnian)"
 kind: reference
-status: draft
-updated: 2026-10-12
+status: archived
+updated: 2026-10-14
 confidence: medium
 sources:
+  - sources/conversations/2026-10-12--org--session-registration-later.md
+  - sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md
+  - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-07--org--saying-confirmed.md
   - sources/web/tuzla/mondo-tuzlanska-koza-legenda.md
   - sources/conversations/2026-10-07--org--next-ipi-and-website.md
@@ -175,3 +178,7 @@ Still for the organiser to decide before sending:
 - Whether the letter goes out with two core days. The one-core-day rule in the dates PRD is still in place, and a draft ADR waits for approval.
 - The hall's seats: 150 in the June 2026 visit notes, under 120 on 2026-10-07. The letter asks IPI to confirm them.
 - The 120-place cap. It stays in the letter as a registration cap. The parallel-room format would change it.
+
+## Update, 2026-10-14: not sent, and no longer needed
+
+IPI Academy accepted the two core days, Saturday 5 June and all seven rooms, as the organiser reported on 2026-10-12 (`sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md`), and the organiser is satisfied with that verbal acceptance, so no written confirmation is sought (`sources/conversations/2026-10-14--org--decisions-one-by-one.md`). The three points above are settled: the two-core-days decision was approved on 2026-10-12 ([Dates: two core days](../adrs/two-core-days-first-week.md)); the main hall has 120 seats, as the organiser decided on 2026-10-14 (`sources/conversations/2026-10-14--org--decisions-one-by-one.md`); and registration has no cap (`sources/conversations/2026-10-12--org--session-registration-later.md`). The letter is kept as a record of what was drafted.

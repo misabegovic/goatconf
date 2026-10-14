@@ -2,9 +2,10 @@
 title: "IPI Academy (IPI Akademija Tuzla): host and venue"
 kind: entity
 status: living
-updated: 2026-10-12
+updated: 2026-10-14
 confidence: medium
 sources:
+  - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-12--org--computer-centre-2-not-step-free.md
   - sources/conversations/2026-10-12--org--computer-centre-1-lift.md
   - sources/conversations/2026-10-12--org--accessibility.md
@@ -75,7 +76,7 @@ same day (`sources/conversations/2026-06--org--ipi-visit-notes.md`):
 
 | Room | Seats | Floor | Wheelchair access (June message) | Notes |
 |------|-------|-------|------|-------|
-| Main hall, ground floor | 150 in June; "under 120" on 2026-10-07 (see below) | ground | yes | |
+| Main hall, ground floor | 120 (organiser, 2026-10-14; see below) | ground | yes | |
 | Main hall, first floor | 100 | 1 | yes, through the hotel | |
 | Main hall, second floor | 34 | 2 | not stated | smaller lecture, panel or special workshop |
 | Computer centre 1 | 20 | - | yes, through the hotel | |
@@ -83,14 +84,13 @@ same day (`sources/conversations/2026-06--org--ipi-visit-notes.md`):
 | Top-floor room | 24 | top | not stated | |
 | Former student club | 13-14 | top | not stated | probably no slides |
 
-The largest hall's seats are not settled. The June message, written on the
-visit day, says 150. On 2026-10-07 the organiser picked "under 120" and,
-asked for a number, said "120 i think"
+The largest hall has 120 seats, as the organiser decided on 2026-10-14
+(`sources/conversations/2026-10-14--org--decisions-one-by-one.md`). The June message, written on the visit day, said 150; on
+2026-10-07 the organiser picked "under 120" and, asked for a number, said
+"120 i think"
 (`sources/conversations/2026-10-07--org--ipi-rooms-and-fallback-money.md`).
-The June figure records what was seen on the visit; the October figure is a
-recollection, so the June message is the likelier of the two. Neither has
-been confirmed by IPI in writing, so the core-day plan uses about 120 seats
-until one of them is.
+The organiser is satisfied with IPI's verbal acceptance of the dates and
+rooms, and no written confirmation is sought (same source as the 120).
 
 Also from the visit notes (same source):
 
@@ -173,8 +173,6 @@ Arithmetic from the table above, not a cap on attendance:
   (`sources/web/tooling/sessionize-community-license.md`); GoatConf is
   organised by the organiser with IPI as host, so it may still qualify,
   but that is unverified.
-- **The largest hall's seats in writing:** 150 in the June message, "under 120"
-  on 2026-10-07.
 - **Speakers in the halls:** whether any room has a sound system.
 - **Wheelchair access** for the 34-seat room, computer centre 2, the top-floor
   room and the former student club, which the June message does not mention,

@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-14
 confidence: medium
 sources:
+  - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-13--org--no-reply-deadline.md
   - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
@@ -79,7 +80,7 @@ is cited to the sources above; nothing is inferred. Proposals live in the
   limit; each room is capped by its own seats, first come, first served at
   the door (source: sources/conversations/2026-10-12--org--first-come-luma-only.md,
   sources/conversations/2026-10-12--org--session-registration-later.md).
-- **Venue facts:** the hall has a projector, sound and Wi-Fi, no
+- **Venue facts:** the main hall on the ground floor has 120 seats (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md), a projector, sound and Wi-Fi, no
   microphone and no recording; several other rooms; step-free to the
   main hall and first floor; Saturday or weekday both possible.
 - **Recording:** GoatConf does not record the talks. People who come may
@@ -98,12 +99,12 @@ is cited to the sources above; nothing is inferred. Proposals live in the
 - **Talks:** the keynotes fill four one-hour slots in every room on both
   core days, from an open call the organiser judges, filled as proposals
   arrive ([The call](adrs/call-organiser-judges.md)). Everyone who proposes hears back, with no fixed reply time; the organiser builds the agenda at their own pace and may keep a proposal not picked straight away, in case someone drops out (source: sources/conversations/2026-10-13--org--no-reply-deadline.md).
-- **Code-of-conduct contacts:** the organiser and a staff member from IPI.
+- **Code-of-conduct contacts:** the organiser alone for now, until IPI names a member of staff (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md).
 - **The call for talks, proposed events and contact** are Google Forms,
   built by hand in the organiser's Drive folder; registration is on Luma
   (source: sources/conversations/2026-10-12--org--google-forms-built-and-published.md,
   sources/conversations/2026-10-12--org--registration-on-luma.md).
-- **Registration:** on Luma, with no limit; the organiser approves each registration (source: sources/conversations/2026-10-12--org--approval-back-on.md). The register page says the organiser confirms each registration, usually within a few days (source: sources/conversations/2026-10-13--org--outside-review-fixes.md). Luma also asks one optional question, why the person wants to come, to help confirm registrations (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md). Closer to June, ticket holders also register for the sessions they want; how is not decided yet, and seats nobody registered for go to whoever is at the door (source: sources/conversations/2026-10-12--org--session-registration-later.md).
+- **Registration:** on Luma, with no limit; the organiser approves each registration (source: sources/conversations/2026-10-12--org--approval-back-on.md). The register page says the organiser confirms each registration, usually within a few days (source: sources/conversations/2026-10-13--org--outside-review-fixes.md). Luma also asks one optional question, why the person wants to come, to help confirm registrations (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md). Closer to June, ticket holders also register for the sessions they want; how is not decided yet, and seats nobody registered for go to whoever is at the door (source: sources/conversations/2026-10-12--org--session-registration-later.md). The tool is picked in spring, once the program fills, and check-in at the door uses Luma's check-in app (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md).
 - **Contact:** info@muhamed.at, next to the contact form (source: sources/conversations/2026-10-12--org--contact-email.md).
 - **The website** is goatconf.com, written and designed in this
   repository and published on
@@ -121,6 +122,7 @@ is cited to the sources above; nothing is inferred. Proposals live in the
   costs. Others may pay a supplier directly or give in kind. This replaced
   "No money goes through the organiser" on 2026-10-13 (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **The budget is private** and not mentioned on the site (same source).
+- **Leftover money** pays more of this year's costs, speaker travel refunds included where the organiser decides, and anything still left carries to the next GoatConf (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md).
 - **Speakers pay their own travel.** If the budget allows, the organiser
   may refund some or all of it; never promised (same source). A speaker's company that covers their travel is listed on the site as a supporter, the same as online supporters (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).
 - Expo, booths and companies that hire attendees are open ideas, named as
@@ -155,7 +157,3 @@ written so others can reuse the kit later.
   June visit.
 - What IPI Academy provides (rooms, capacity, equipment, students,
   staff time) and what it asks in return.
-- Whether the surplus reading (leftover money pays more event costs,
-  then carries to the next edition) is what the organiser meant; it is
-  the agent's reading and waits for confirmation
-  (`sources/conversations/2026-10-13--org--online-supporters-through-the-business.md`).

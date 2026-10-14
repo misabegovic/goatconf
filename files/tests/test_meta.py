@@ -22,3 +22,15 @@ def test_tags_are_added_once_and_refreshed():
     assert meta.tag(once) == once  # idempotent
     changed = meta.tag(once.replace("Two core days.", "Three days."))
     assert changed.count("og:description") == 1 and 'content="Three days."' in changed
+
+
+def test_a_page_without_a_title_or_stylesheet_is_named_not_crashed():
+    meta = importlib.reload(importlib.import_module("meta"))
+    for broken, reason in ((PAGE.replace("<title>", "<x>").replace("</title>", "</x>"), "no <title>"),
+                           (PAGE.replace('<link rel="stylesheet" href="goatconf.css">', ""), "no goatconf.css")):
+        try:
+            meta.tag(broken)
+        except ValueError as err:
+            assert reason in str(err)
+        else:
+            raise AssertionError("expected a ValueError")

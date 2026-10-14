@@ -22,7 +22,7 @@ talks) and a volunteer turns your answers into the same file.
 | Field | What to write |
 |-------|---------------|
 | `name` | The name of your extension. Not "GoatConf presents"; it is yours. |
-| `kind` | One of `evening-event`, `trip`, `meetup`, `podcast`, `hike`, `hackathon`, `karaoke` (the kinds on the form), or `workshop`, `hub`, `activity`, `venue`, `support` (older kinds, still accepted). |
+| `kind` | One of `evening-event`, `trip`, `meetup`, `podcast`, `hike`, `hackathon`, `karaoke`, `other` (the kinds on the form; `other` is "Something else"), or `workshop`, `hub`, `activity`, `venue`, `support` (older kinds, still accepted). |
 | `host` | You, your group or your company. |
 | `location` | Where it happens, with an address. |
 | `start`, `end` | `YYYY-MM-DD HH:MM`, or just `YYYY-MM-DD` for a whole day. |

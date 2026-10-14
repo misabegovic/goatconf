@@ -6,6 +6,7 @@ day: 2027-06-03
 start: "10:00"
 room: hall-ground
 accepted: yes
+# profiles: [your-name] (the speaker file names in speakers/, once published)
 # signup: https://... (only if session sign-ups are introduced later)
 ---
 

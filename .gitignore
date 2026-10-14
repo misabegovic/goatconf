@@ -15,3 +15,7 @@ coverage/
 dist/
 *.tgz
 
+
+# Session hook journals (tabula): machine-local records of each session, not brain content.
+/wiki/_state/journal/
+/files/wiki/_state/journal/
