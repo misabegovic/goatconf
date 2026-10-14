@@ -2,11 +2,13 @@
 title: "Build the pages in plain HTML and CSS, with the goat everywhere and playful"
 kind: decision
 status: accepted
-updated: 2026-10-12
+updated: 2026-10-14
 confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
@@ -100,3 +102,4 @@ first thing to check before the first copy.
 
 - **2026-10-12, the mark is the seal with the EuRuKo 2024 goat.** The organiser chose a round seal as GoatConf's mark: the EuRuKo 2024 goat, unchanged, in a coin at the centre; a band of the site's hoof prints around it for the community; THE ONE THAT FEEDS THE COMMUNITY across the top of the ring and GOATCONF · 2027 along the bottom; blue and yellow. Below about 64 pixels the small form, the goat in a disc, stands in. Every brand file is built from one source by `files/tools/brand.py` into `site/brand/`, and the site's brand page offers them for download. The goat remains everywhere as the ADR asks; the sticker goat drawing stays on the site until the site rework (source: sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md).
 - **2026-10-12.** The site is published on goatconf.com from this repository, not copied into muhamed.at. See [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
+- **2026-10-13, no budget page.** The budget is private, so the site has no budget page and no ledger, and the mentions of the budget ledger above no longer hold. The rule that the goat never makes the code of conduct read as a joke stands (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).

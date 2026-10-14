@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -112,7 +112,7 @@
       "title": "The call for talks: the organiser judges every proposal, with no strict deadlines",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-13",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "depends_on": [
         "org/prds/cfp-and-speakers.md",
@@ -120,6 +120,7 @@
       ],
       "supersedes": "org/adrs/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--no-reply-deadline.md",
         "sources/conversations/2026-10-13--org--outside-review-fixes.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
@@ -130,7 +131,7 @@
         "sources/conversations/2026-10-07--org--adr-answers.md",
         "sources/conversations/2026-10-07--org--coc-ledger-registration-cfp.md"
       ],
-      "tokens": 789
+      "tokens": 883
     },
     {
       "path": "org/adrs/cfp-and-speakers.md",
@@ -163,7 +164,7 @@
       "title": "Core days: every available room in parallel, four one-hour slots each, on one shared timetable",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "depends_on": [
         "org/prds/dates-and-the-core-day.md",
@@ -171,6 +172,10 @@
         "org/adrs/two-core-days-first-week.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-12--org--approval-back-on.md",
+        "sources/conversations/2026-10-12--org--session-registration-later.md",
+        "sources/conversations/2026-10-12--org--first-come-luma-only.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-12--org--friday-dzuma-schedule.md",
         "sources/web/tuzla/vaktija-tuzla-2027-06-03-04.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -183,7 +188,7 @@
         "sources/conversations/2026-06--org--ipi-visit-notes.md",
         "sources/conversations/2026-10-07--org--ipi-rooms-and-fallback-money.md"
       ],
-      "tokens": 1125
+      "tokens": 1273
     },
     {
       "path": "org/adrs/dates-and-the-core-day.md",
@@ -213,12 +218,14 @@
       "title": "Build the pages in plain HTML and CSS, with the goat everywhere and playful",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "depends_on": [
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -228,7 +235,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 1187
+      "tokens": 1269
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -345,12 +352,14 @@
       "title": "Adopt RubyConf Austria's code of conduct and its reporting route, with an IPI contact added",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "depends_on": [
         "org/prds/operations-and-the-day.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-12--org--registration-on-luma.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--adr-answers.md",
@@ -364,7 +373,7 @@
         "sources/web/coc/confcodeofconduct-com.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 1194
+      "tokens": 1273
     },
     {
       "path": "org/adrs/road-to-june-2027.md",
@@ -415,13 +424,15 @@
       "title": "Speaker profiles and travel supporters: consented records, a speakers page and a supporters wall",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-13",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "depends_on": [
         "org/prds/cfp-and-speakers.md",
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--speaker-profile-required.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
@@ -430,7 +441,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 1028,
+      "tokens": 1247,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]
@@ -440,12 +451,16 @@
       "title": "Ask about open to work as an unticked Luma question, shared only for those who tick it",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-13",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "depends_on": [
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md",
+        "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
+        "sources/conversations/2026-10-12--org--registration-on-luma.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -458,7 +473,7 @@
         "sources/web/funding/writethedocs-portland-2026-prospectus.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 984,
+      "tokens": 1188,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]
@@ -530,10 +545,15 @@
       "title": "GoatConf 2027: a minimal core others extend",
       "kind": "epic",
       "status": "draft",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "supersedes": "org/pitches/one-goat-minimal-core-and-extensions.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
+        "sources/conversations/2026-10-12--org--approval-back-on.md",
+        "sources/conversations/2026-10-12--org--first-come-luma-only.md",
+        "sources/conversations/2026-10-12--org--registration-on-luma.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--prds-approved.md",
@@ -551,7 +571,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 2533,
+      "tokens": 2817,
       "consumed_by": [
         "org/adrs/two-core-days-first-week.md"
       ],
@@ -574,9 +594,10 @@
       "title": "GoatConf 2027: what is known",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-13",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--no-reply-deadline.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
@@ -584,6 +605,8 @@
         "sources/conversations/2026-10-12--org--approval-back-on.md",
         "sources/conversations/2026-10-12--org--session-registration-later.md",
         "sources/conversations/2026-10-12--org--first-come-luma-only.md",
+        "sources/conversations/2026-10-12--org--registration-on-luma.md",
+        "sources/conversations/2026-10-12--org--google-forms-built-and-published.md",
         "sources/conversations/2026-10-12--org--agenda-in-rails-world-app.md",
         "sources/conversations/2026-10-12--org--audience-list.md",
         "sources/conversations/2026-10-12--org--build-and-sell.md",
@@ -609,7 +632,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2022
+      "tokens": 2141
     },
     {
       "path": "org/index.md",
@@ -683,12 +706,18 @@
       "title": "The drumbeat: the weekly posts, drafted, from launch to June 2027",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
+        "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
+        "sources/conversations/2026-10-13--org--outside-review-fixes.md",
+        "sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md",
+        "sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md",
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -700,7 +729,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 2006
+      "tokens": 2114
     },
     {
       "path": "org/outreach/ipi-proposal.md",
@@ -1072,12 +1101,14 @@
       "title": "Activities: the salt lake, a goat hunt, and a cheap city as the gift",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-13",
+      "updated": "2026-10-14",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/activities-the-lake-and-the-town.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md",
         "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
@@ -1104,7 +1135,7 @@
         "sources/web/venue/tztz-peace-flame-house.md",
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md"
       ],
-      "tokens": 3340,
+      "tokens": 3437,
       "consumed_by": [
         "org/adrs/activities-lake-and-town.md"
       ]
@@ -1248,12 +1279,13 @@
       "title": "Design with impeccable: one look for the site, the shareables and the hosts",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/design-with-impeccable.md",
       "sources": [
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--bet-on-every-pitch.md",
@@ -1270,7 +1302,7 @@
         ".claude/skills/impeccable/SKILL.md",
         ".claude/skills/impeccable/reference/init.md"
       ],
-      "tokens": 2568,
+      "tokens": 2646,
       "consumed_by": [
         "org/adrs/design-with-impeccable.md"
       ]
@@ -1280,12 +1312,14 @@
       "title": "Extension slots and the record: how anyone adds to GoatConf",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-13",
+      "updated": "2026-10-14",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/one-goat-minimal-core-and-extensions.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -1306,7 +1340,7 @@
         "sources/web/hiring/strangeloop-privacy-policy.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 3655,
+      "tokens": 3751,
       "consumed_by": [
         "org/adrs/extension-slots-and-the-record.md",
         "org/adrs/goatconf-ba-and-google-forms.md",
@@ -1318,12 +1352,18 @@
       "title": "Operations: volunteers who own a domain, the rules, and the day",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/operations-people-rules-and-the-day.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
+        "sources/conversations/2026-10-12--org--session-registration-later.md",
+        "sources/conversations/2026-10-12--org--approval-back-on.md",
+        "sources/conversations/2026-10-12--org--first-come-luma-only.md",
+        "sources/conversations/2026-10-12--org--registration-on-luma.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--coc-ledger-registration-cfp.md",
@@ -1351,7 +1391,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/tooling/fosdem-video-equipment-overview.md"
       ],
-      "tokens": 3956,
+      "tokens": 4235,
       "consumed_by": [
         "org/adrs/operations-and-the-day.md"
       ]
@@ -1361,12 +1401,18 @@
       "title": "The road to June 2027: one calendar for every area",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/the-road-to-june-2027.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
+        "sources/conversations/2026-10-12--org--session-registration-later.md",
+        "sources/conversations/2026-10-12--org--approval-back-on.md",
+        "sources/conversations/2026-10-12--org--first-come-luma-only.md",
+        "sources/conversations/2026-10-12--org--registration-on-luma.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--coc-ledger-registration-cfp.md",
@@ -1381,7 +1427,7 @@
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3197,
+      "tokens": 3470,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/road-to-june-2027.md"
@@ -1427,12 +1473,15 @@
       "title": "Supporters who fund a named thing, and hiring that attendees opt into",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-13",
+      "updated": "2026-10-14",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/partners-sponsors-and-hiring.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
+        "sources/conversations/2026-10-12--org--registration-on-luma.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -1456,7 +1505,7 @@
         "sources/web/hiring/wbs-wearedevelopers-ben-ruschin.md",
         "sources/web/venue/ipi-akademija-about.md"
       ],
-      "tokens": 3249,
+      "tokens": 3456,
       "consumed_by": [
         "org/adrs/speakers-and-travel-supporters.md",
         "org/adrs/supporters-and-hiring.md"
@@ -1467,12 +1516,19 @@
       "title": "Website and registration: goatconf.com and a free pass per core day",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
+        "sources/conversations/2026-10-12--org--google-forms-built-and-published.md",
+        "sources/conversations/2026-10-12--org--session-registration-later.md",
+        "sources/conversations/2026-10-12--org--approval-back-on.md",
+        "sources/conversations/2026-10-12--org--first-come-luma-only.md",
+        "sources/conversations/2026-10-12--org--registration-on-luma.md",
+        "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--bet-on-every-pitch.md",
@@ -1493,7 +1549,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 2961,
+      "tokens": 3254,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/website-and-registration.md"

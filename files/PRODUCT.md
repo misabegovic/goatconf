@@ -5,7 +5,8 @@
 This file summarises what the brain holds, for impeccable. The brain stays
 the source of truth: [the facts page](wiki/org/goatconf-2027.md), [the
 epic](wiki/org/epics/goatconf-2027.md), the PRDs and ADRs under
-`wiki/org/`, and the personas under `.claude/personas/`.
+`wiki/org/` (read each with its amendments), and the personas under
+`.claude/personas/`. Brought up to date on 2026-10-14.
 
 ## Platform
 
@@ -13,93 +14,117 @@ web
 
 ## Stack
 
-Static HTML and CSS, no build step, kept in `site/` and copied as they are
-into muhamed.at/goatconf (ADR `wiki/org/adrs/design-with-impeccable.md`).
-The one generated part is the extension list, built from the records in
-`extensions/` before a copy; the budget page shows `site/ledger.csv`.
-Whether muhamed.at serves a plain HTML folder as it is is undecided.
+Static HTML and CSS, no build step, kept in `site/` and published at
+goatconf.com on GitHub Pages by one Actions workflow on every merge to
+`main` (ADR `wiki/org/adrs/goatconf-ba-and-google-forms.md`). Some parts
+are generated from records by the scripts in `tools/` and checked by the
+local CI: the program, the speakers and supporters pages, the extensions
+page, the places on the travel page, the top bar, the link previews and
+the files for agents.
 
 ## Users
 
 First: **the would-be attendee**, deciding whether to come to Tuzla in June
-2027 (organiser's answer, 2026-10-07). They are open and multi-discipline
-(engineers, designers, product people, founders), English-speaking, and
-need to know when, where, what the trip costs, and how to register.
-Second, each with a clear door: speakers (an open call plus one or two
-invited), extension hosts (anyone adding a workshop, meetup, hub or
-activity), supporters (companies or people funding a named item),
-volunteers.
+2027. They are open and multi-discipline (engineers, designers, product
+people, founders: people who build and sell software), not tied to any
+language or stack, English-speaking, and need to know when, where, what
+the trip costs, and how to register.
+Second, each with a clear door: speakers (an open call the organiser
+judges), event hosts (anyone proposing an evening event, meetup, trip,
+hike, hackathon or other event around the conference), supporters
+(companies supporting GoatConf online), volunteers.
 
 ## Product Purpose
 
-GoatConf is a free conference in Tuzla, Bosnia and Herzegovina, in the
-first or second week of June 2027, hosted by IPI Academy. The organiser's
-goal: "get great minds together in an affordable environment, hang out,
-spend time together, learn, share experiences". The website exists to make
-a stranger decide to come, register, and know how to get there; success is
-a full hall (about 120) and a waiting list.
+GoatConf is a free conference in Tuzla, Bosnia and Herzegovina, on 3 to 5
+June 2027, hosted by IPI Academy. The organiser's goal: "get great minds
+together in an affordable environment, hang out, spend time together,
+learn, share experiences". The website exists to make a stranger decide to
+come, register, and know how to get there. The first edition expects 120
+to 300 people.
 
 ## Positioning
 
-A minimal core others extend, "like the Pi agent": one core day of three to
-four talks in one room, with long breaks on Freedom Square, and everything
-else (workshops, fringe events, the lake day, a town-wide goat hunt) added
-by hosts. Named after Tuzla's goat: the man who hid his goat when
-Austria-Hungary banned them, and the saying "The whole of Tuzla milked one
-goat". No money passes through the organiser, and every euro is public.
+A minimal core others extend, "like the Pi agent". Two core days,
+Thursday 3 and Friday 4 June, run one-hour sessions in all seven IPI
+rooms at once, with an hour off after each session on Freedom Square.
+Saturday 5 June is the community day: the lake day and the goat hunt the
+organiser plans, and the events hosts add. Named after Tuzla's goat: the
+man who hid his goat when Austria-Hungary banned them, and the saying "The
+whole of Tuzla milked one goat".
 
 ## Operating Context
 
-Pages are written in this repository and copied into muhamed.at/goatconf
-by the organiser; each publish is the organiser's act. Registration and
-the email list are on Luma; talks and extension submissions arrive through
-Google Forms; extensions are also pull requests. Visitors arrive mostly on
-phones from social posts and newsletters.
+Pages are written in this repository; every merge to `main` publishes the
+site, and each merge is the organiser's act. Registration is on Luma.
+Talk proposals, proposed events and contact (including code-of-conduct
+reports) arrive through Google Forms; events can also come as pull
+requests. Visitors arrive mostly on phones from social posts and
+newsletters.
 
 ## Capabilities and Constraints
 
-- Free to attend; registration capped at the hall, about 120, with a
-  waiting list; opens when IPI confirms the date in writing.
-- Dates undecided: six options in 1 to 13 June 2027 are with IPI. Until
-  confirmed, the site says "June 2027" and must not announce a date.
+- Free to attend. Registration on Luma has no limit, and the organiser
+  approves each one, usually within a few days. Seats in each room are
+  first come, first served at the door; registering for single sessions
+  comes later, with the tool not decided.
+- Thursday runs 10:00 to 17:00. Friday runs 09:30 to 16:30, so the break
+  at 12:30 covers Friday prayer and lunch.
 - English only.
-- Food and drink are never paid by the organiser: people pay their own or
-  a supporter pays a café directly.
-- Speakers pay their own travel; a grant exists only if a supporter funds
-  it.
-- No microphone or recording in the hall.
-- Pages: home, program, travel and stay, accessibility, code of conduct,
-  extensions, supporters, budget, contact. v1 needs only when, where, who,
-  why, the code of conduct and the budget.
+- Food and drink are never paid by the organiser: people pay their own.
+- Speakers pay their own travel; the organiser may refund some or all of
+  it if the budget allows, never promised. Every accepted speaker's
+  profile is published and promoted; this is not optional.
+- Supporters are online only: one level, 500 EUR, invoiced by the
+  organiser's Austrian business, nothing at the venue, and they never buy
+  content. A speaker's company that covers their travel is listed the
+  same way.
+- The budget is private: no budget page, and the site never mentions it.
+- GoatConf does not record the talks; people who come may record or
+  podcast.
+- Pages: home, program, register, propose a talk, travel and stay,
+  speakers, propose an event, supporters, extensions, charter, code of
+  conduct, accessibility, contact, brand.
 
 ## Brand Commitments
 
-- Name: GoatConf.
-- The goat appears everywhere and is playful (organiser's choice,
-  2026-10-07): mark, favicon, illustrations, badges, signs, social cards,
-  slides. It never covers the facts, never replaces text a screen reader
-  needs, and never makes the code of conduct or the budget read as a joke.
-- Voice: plain language, one idea per sentence, common words; no em dashes.
-- The pages sit inside muhamed.at, so they must not fight that site.
+- Name: GoatConf. The mark is a seal with the EuRuKo 2024 goat: "the one
+  that feeds the community".
+- The design is the sticker album in `DESIGN.md`: a decided fact is a
+  sticker, anything undecided an empty printed slot.
+- The goat appears everywhere and is playful. It never covers the facts,
+  never replaces text a screen reader needs, and never makes the code of
+  conduct read as a joke.
+- Voice: plain language, one idea per sentence, common words; no em
+  dashes. Dates read "3–5 June 2027" and "Thursday 3rd June".
+- No photo credits on the site.
 
 ## Evidence on Hand
 
 - The goat story: `sources/web/funding/euruko-2024-why-the-goat.md`.
-- Tuzla facts and prices: `wiki/org/tuzla.md`; venue: `wiki/org/ipi-academy.md`.
+- Tuzla facts and prices: `wiki/org/tuzla.md`; places to eat and stay:
+  `places/places.yml`; venue: `wiki/org/ipi-academy.md`.
 - Code of conduct text: `sources/web/coc/rubyconf-austria-code-of-conduct.md`.
-- No speakers, supporters, photos, testimonials, logos or past editions
-  exist yet. None may be invented.
+- Photos of the city, the food, IPI's lecture hall and the organiser's past
+  conferences, under `site/img/`. The food photos are not freely licensed
+  and come down if an owner asks.
+- No speakers, supporters, sessions or extensions exist yet. None may be
+  invented.
 
 ## Product Principles
 
-- The trip is sold before the lineup: Tuzla, the lake, the low cost.
+- The trip is sold before the lineup: Tuzla, the lakes, the food, the low
+  cost.
 - Facts first: when, where, how to register, what it costs.
 - Honest about what is undecided; nothing announced before it is true.
-- Open doors: anyone can extend GoatConf, and the site shows how.
-- Every euro in the open.
+- Open doors: anyone can propose a talk or an event, and the site shows
+  how.
 
 ## Accessibility & Inclusion
 
-The main hall and first floor are step-free; an accessible toilet is
-unconfirmed. The site publishes what is known and says what is not. Pages
-should meet WCAG 2.2 AA and work on slow mobile connections.
+The ground floor and first floor are step-free, and computer centre 1 on
+the first floor is reached by the lift. Computer centre 2 and the rooms
+above the first floor are not step-free. Guide dogs cannot come in.
+Accessible toilets probably exist but are not verified. The site
+publishes what is known and says what is not. Pages should meet WCAG 2.2
+AA and work on slow mobile connections.

@@ -348,9 +348,9 @@ synthesising from it.
 `bash files/tools/ci-local.sh [--base REF]` (default base `origin/main`) runs,
 in order:
 
-1. **Preflight** (`files/tools/preflight.sh`): `brain.py validate`; citations
-   (`tabula check`, or `brain.py check --no-net`); views regenerated and
-   unchanged (`tabula index`, or `brain.py views`).
+1. **Preflight** (`files/tools/preflight.sh`): `brain.py validate`;
+   citations (`brain.py check --no-net`); views regenerated with
+   `brain.py views` and unchanged.
 2. **Notion writes deny-listed** in `.claude/settings.json`.
 3. **The rule checks** (`files/tools/ci_checks.py all`), each against the base:
    - `sources-additive`: nothing under `sources/` modified, deleted or
@@ -367,10 +367,30 @@ in order:
 4. **Extensions**: every record in `files/extensions/` passes
    `files/tools/extensions.py check`, and `files/site/extensions.html` is
    current (`files/tools/extensions.py build --check`).
-5. **Only the publish workflow**, exactly as `files/tools/pages.py` writes it.
-6. **Home and README freshness** against the base.
-7. **pytest** over `tests/`, which also tests the checks and the push
-   hook themselves.
+5. **Program**: every record in `files/program/` passes
+   `files/tools/program.py check`, and the program page is current.
+6. **Speakers and supporters**: the records in `files/speakers/` and
+   `files/supporters/` pass `files/tools/speakers.py check`, and their
+   pages are current.
+7. **Brand files current** (`files/tools/brand.py build --check`).
+8. **Link previews current** (`files/tools/meta.py check`), including
+   the version stamps on the stylesheet and script.
+9. **Top bar current** on every page (`files/tools/nav.py check`).
+10. **Home page current** (`files/tools/home.py build --check`).
+11. **Travel page places current** (`files/tools/places.py build --check`).
+12. **Agent files current** (`files/tools/agents.py build --check`):
+    `llms.txt`, `program.json`, the calendar file, the sitemap and the
+    event data on the home page.
+13. **Form links filled** (`files/tools/formlinks.py check --publish`),
+    since every merge to `main` publishes the site.
+14. **Site form links current** (`files/tools/formlinks.py check`).
+15. **Only the publish workflow**, exactly as `files/tools/pages.py` writes it.
+16. **Home page paired with `wiki/` edits** (`brain.py check-home-fresh`).
+17. **README paired with significant changes** (`brain.py check-readme-fresh`).
+18. **pytest** over `tests/`, which also tests the checks and the push
+    hook themselves.
+
+Every step runs, and the script exits non-zero if any failed.
 
 A failing step is fixed in the content, never silenced: no skipped
 check, no `--no-verify`, no exemption added to dodge a finding.
@@ -385,7 +405,7 @@ the CI once.
 ```bash
 python3 files/tools/brain.py validate            # frontmatter + section conformance
 python3 files/tools/brain.py check --no-net      # sources: citations resolve
-python3 files/tools/brain.py views               # regenerate wiki/_views/ (tabula index when installed)
+python3 files/tools/brain.py views               # regenerate wiki/_views/
 python3 files/tools/brain.py search '<query>'    # keyword search weighted by confidence
 python3 files/tools/brain.py stats | status      # corpus counts / health
 python3 files/tools/extensions.py check | build # extension records / the extensions page
@@ -401,11 +421,12 @@ Set up a fresh clone (venv, hooks, a first CI run) with one command:
 files/tools/setup-local.sh
 ```
 
-[tabula](https://github.com/misabegovic/tabula) is optional here. When a
-`tabula` binary is on `PATH` (or named by `TABULA` / `TABULA_BIN`), the
-hooks and preflight use `tabula index` and `tabula check`; without it
-they fall back to `brain.py views` and `brain.py check`, and say which
-one ran.
+[tabula](https://github.com/misabegovic/tabula) is optional here. The
+hooks and preflight are pinned to this repository's `brain.py` for
+validation, citations and views, even when a `tabula` binary is on
+`PATH`, because a `tabula` built elsewhere does not reproduce the
+committed views (see the note in `files/tools/preflight.sh`). Only
+`brain.py scope add` needs tabula, and refuses by name without it.
 
 ## Repository layout
 
@@ -420,6 +441,11 @@ files/                     # the goatconf brain home (pi-brain clone at the repo
 ├── log/             # operations log
 ├── site/            # the website (plain HTML and CSS)
 ├── extensions/      # one file per extension, listed on the site
+├── program/         # one file per accepted session, built into the program page
+├── speakers/        # one file per speaker with a published profile
+├── supporters/      # one file per supporter, built into the supporters page
+├── places/          # places.yml: where to eat and stay, drawn on the travel page
+├── forms.yml        # the Google Forms and the Luma event the site links to
 ├── tests/           # the shell's own tests
 └── tools/           # brain.py, hooks, templates, CI
 ```

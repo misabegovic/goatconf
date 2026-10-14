@@ -2,9 +2,10 @@
 title: "GoatConf 2027: what is known"
 kind: reference
 status: living
-updated: 2026-10-13
+updated: 2026-10-14
 confidence: medium
 sources:
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-13--org--no-reply-deadline.md
   - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
@@ -12,6 +13,8 @@ sources:
   - sources/conversations/2026-10-12--org--approval-back-on.md
   - sources/conversations/2026-10-12--org--session-registration-later.md
   - sources/conversations/2026-10-12--org--first-come-luma-only.md
+  - sources/conversations/2026-10-12--org--registration-on-luma.md
+  - sources/conversations/2026-10-12--org--google-forms-built-and-published.md
   - sources/conversations/2026-10-12--org--agenda-in-rails-world-app.md
   - sources/conversations/2026-10-12--org--audience-list.md
   - sources/conversations/2026-10-12--org--build-and-sell.md
@@ -40,9 +43,9 @@ sources:
 
 # GoatConf 2027: what is known
 
-The facts the rest of the brain builds on, as stated by the organiser on
-2026-10-07. Everything here is cited to the two conversation sources
-above; nothing is inferred. Proposals live in the
+The facts the rest of the brain builds on, first stated by the organiser
+on 2026-10-07 and kept current with every later decision. Everything here
+is cited to the sources above; nothing is inferred. Proposals live in the
 [pitches](pitches/index.md), not here.
 
 ## The event
@@ -72,17 +75,17 @@ above; nothing is inferred. Proposals live in the
   people, founders: people who build and sell software (sources: sources/conversations/2026-10-12--org--build-and-sell.md,
   sources/conversations/2026-10-12--org--audience-list.md).
   Not tied to any language or stack, Ruby included (source: sources/conversations/2026-10-12--org--what-goatconf-is.md).
-- **Size:** 120 to 300 people for the first edition, as the home page says (source: sources/conversations/2026-10-13--org--outside-review-fixes.md). Registration is one
-  free pass per core day; each room is capped by its own seats at the
-  door ([Website: goatconf.com and Google Forms](adrs/goatconf-ba-and-google-forms.md)).
+- **Size:** 120 to 300 people for the first edition, as the home page says (source: sources/conversations/2026-10-13--org--outside-review-fixes.md). Registration has no
+  limit; each room is capped by its own seats, first come, first served at
+  the door (source: sources/conversations/2026-10-12--org--first-come-luma-only.md,
+  sources/conversations/2026-10-12--org--session-registration-later.md).
 - **Venue facts:** the hall has a projector, sound and Wi-Fi, no
   microphone and no recording; several other rooms; step-free to the
   main hall and first floor; Saturday or weekday both possible.
 - **Recording:** GoatConf does not record the talks. People who come may
   bring a camera or a podcast and record, and a supporter may pay for a crew.
   Podcasts are welcome in some rooms, not yet named (`sources/conversations/2026-10-12--org--recording-and-podcasts.md`).
-- **Price:** free to attend. Registration is probably required ("if
-  permitted, something like that").
+- **Price:** free to attend, with registration on Luma (see below).
 - **Formats named:** talks and workshops, with time to hang out.
 - **The day's rhythm:** not a crammed schedule. IPI is used only for
   lectures; a one-hour break follows every slot, on Freedom Square,
@@ -96,12 +99,14 @@ above; nothing is inferred. Proposals live in the
   core days, from an open call the organiser judges, filled as proposals
   arrive ([The call](adrs/call-organiser-judges.md)). Everyone who proposes hears back, with no fixed reply time; the organiser builds the agenda at their own pace and may keep a proposal not picked straight away, in case someone drops out (source: sources/conversations/2026-10-13--org--no-reply-deadline.md).
 - **Code-of-conduct contacts:** the organiser and a staff member from IPI.
-- **Registration, the call for talks, additions and contact** are Google
-  Forms, created by a script kept in this repository.
+- **The call for talks, proposed events and contact** are Google Forms,
+  built by hand in the organiser's Drive folder; registration is on Luma
+  (source: sources/conversations/2026-10-12--org--google-forms-built-and-published.md,
+  sources/conversations/2026-10-12--org--registration-on-luma.md).
 - **Registration:** on Luma, with no limit; the organiser approves each registration (source: sources/conversations/2026-10-12--org--approval-back-on.md). The register page says the organiser confirms each registration, usually within a few days (source: sources/conversations/2026-10-13--org--outside-review-fixes.md). Luma also asks one optional question, why the person wants to come, to help confirm registrations (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md). Closer to June, ticket holders also register for the sessions they want; how is not decided yet, and seats nobody registered for go to whoever is at the door (source: sources/conversations/2026-10-12--org--session-registration-later.md).
 - **Contact:** info@muhamed.at, next to the contact form (source: sources/conversations/2026-10-12--org--contact-email.md).
-- **The website** is goatconf.com, with the public budget ledger as one of
-  its pages, written and designed in this repository and published on
+- **The website** is goatconf.com, written and designed in this
+  repository and published on
   GitHub Pages by one Actions workflow, from every merge to `main` ([Website: goatconf.com and Google Forms](adrs/goatconf-ba-and-google-forms.md);
   source: sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md).
 
@@ -150,4 +155,7 @@ written so others can reuse the kit later.
   June visit.
 - What IPI Academy provides (rooms, capacity, equipment, students,
   staff time) and what it asks in return.
-- Whether speakers get a contribution, and from whose money.
+- Whether the surplus reading (leftover money pays more event costs,
+  then carries to the next edition) is what the organiser meant; it is
+  the agent's reading and waits for confirmation
+  (`sources/conversations/2026-10-13--org--online-supporters-through-the-business.md`).

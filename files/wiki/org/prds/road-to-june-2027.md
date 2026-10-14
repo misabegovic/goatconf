@@ -2,12 +2,18 @@
 title: "The road to June 2027: one calendar for every area"
 kind: initiative
 status: living
-updated: 2026-10-12
+updated: 2026-10-14
 parent_epic: goatconf-2027
 appetite: small
 confidence: medium
 supersedes: org/pitches/the-road-to-june-2027.md
 sources:
+  - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
+  - sources/conversations/2026-10-12--org--session-registration-later.md
+  - sources/conversations/2026-10-12--org--approval-back-on.md
+  - sources/conversations/2026-10-12--org--first-come-luma-only.md
+  - sources/conversations/2026-10-12--org--registration-on-luma.md
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--coc-ledger-registration-cfp.md
@@ -235,3 +241,4 @@ and the CFP window it implies.
 
 - **2026-10-12.** The calendar's dates move with the decisions of 2026-10-12: the core days are Thursday 3 and Friday 4 June 2027 and Saturday 5 June is the community day; the call opens with the site on goatconf.com and has no strict deadline, so the call and schedule dates are targets; registration is a Google Form; the site is goatconf.com, not muhamed.at/goatconf. See [Dates: two core days](../adrs/two-core-days-first-week.md), [The call: the organiser judges](../adrs/call-organiser-judges.md), [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-12.** The first anchor is reached. IPI Academy has accepted the dates, Thursday 3 and Friday 4 June 2027 as core days and Saturday 5 June as the community day, and GoatConf has access to all seven rooms, as the organiser reported; no written copy is in the brain. The October and November steps that waited on IPI's confirmation are due now, and the metric "IPI confirms dates and rooms in writing by 30 November 2026" is met as reported, though no written snapshot is under `sources/` (`sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md`).
+- **2026-10-14, read with the later decisions.** The first amendment above no longer holds on registration: registration is on the organiser's Luma event, not a Google Form, with no limit; the organiser approves each registration, seats are first come, first served at each room's door, and ticket holders register for sessions later, with the tool not decided yet (sources: sources/conversations/2026-10-12--org--registration-on-luma.md, sources/conversations/2026-10-12--org--first-come-luma-only.md, sources/conversations/2026-10-12--org--approval-back-on.md, sources/conversations/2026-10-12--org--session-registration-later.md). The calendar's ledger steps (open the public ledger in October, publish a final account after the event) are dropped: the budget is private, with no budget page and no public ledger; online supporters pay the organiser's Austrian business 500 EUR for online perks only, and speakers' travel is refunded only if the budget allows, never promised (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md). The calendar page this plan names, `wiki/org/road-calendar.md`, does not exist yet.

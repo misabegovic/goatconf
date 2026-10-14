@@ -2,13 +2,14 @@
 title: "The call for talks: the organiser judges every proposal, with no strict deadlines"
 kind: decision
 status: accepted
-updated: 2026-10-13
+updated: 2026-10-14
 confidence: medium
 depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/road-to-june-2027.md
 supersedes: org/adrs/cfp-and-speakers.md
 sources:
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-13--org--no-reply-deadline.md
   - sources/conversations/2026-10-13--org--outside-review-fixes.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
@@ -88,3 +89,4 @@ closed.
 
 ## Amendments
 - **2026-10-13, a reply within three weeks.** Everyone who proposes a session hears back within three weeks, whatever the answer. No date is set for the first speaker announcement; speakers appear on the site as they are accepted (source: sources/conversations/2026-10-13--org--outside-review-fixes.md).
+- **2026-10-13, no fixed reply time.** This replaces the three-week reply in the amendment above. Everyone who proposes a session still hears back, with no fixed reply time. The organiser builds the agenda at their own pace and may keep a proposal not picked straight away, in case someone drops out and a slot needs filling (source: sources/conversations/2026-10-13--org--no-reply-deadline.md).

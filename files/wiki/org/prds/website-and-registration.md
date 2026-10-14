@@ -2,12 +2,19 @@
 title: "Website and registration: goatconf.com and a free pass per core day"
 kind: initiative
 status: living
-updated: 2026-10-12
+updated: 2026-10-14
 parent_epic: goatconf-2027
 appetite: small
 confidence: medium
 supersedes: org/pitches/website-and-registration.md
 sources:
+  - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
+  - sources/conversations/2026-10-12--org--google-forms-built-and-published.md
+  - sources/conversations/2026-10-12--org--session-registration-later.md
+  - sources/conversations/2026-10-12--org--approval-back-on.md
+  - sources/conversations/2026-10-12--org--first-come-luma-only.md
+  - sources/conversations/2026-10-12--org--registration-on-luma.md
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--bet-on-every-pitch.md
@@ -247,3 +254,4 @@ muhamed.at/goatconf and how the extension list is built before the copy.
 
 - **2026-10-12.** The site's home is goatconf.com, published on GitHub Pages from this repository; muhamed.at/goatconf is superseded. Registration is a Google Form, one free pass per core day, replacing Luma; the cap is per room at the door. Talk proposals, add-something submissions and contact (including code-of-conduct reports) are Google Forms too, created by the script in the repository. See [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md), [Dates: two core days](../adrs/two-core-days-first-week.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-12.** IPI Academy has accepted the dates, Thursday 3 and Friday 4 June 2027 as core days and Saturday 5 June as the community day, and GoatConf has access to all seven rooms, as the organiser reported; no written copy is in the brain. Nothing on the site or the registration form waits on IPI any longer (`sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md`).
+- **2026-10-14, read with the later decisions.** The first amendment above no longer holds on registration or the forms: registration is on the organiser's Luma event, not a Google Form, with no limit; the organiser approves each registration, seats are first come, first served at each room's door, and ticket holders register for sessions later, with the tool not decided yet (sources: sources/conversations/2026-10-12--org--registration-on-luma.md, sources/conversations/2026-10-12--org--first-come-luma-only.md, sources/conversations/2026-10-12--org--approval-back-on.md, sources/conversations/2026-10-12--org--session-registration-later.md). The talk, propose-an-event and contact forms are Google Forms built by hand in the organiser's Drive folder, not by a script (source: sources/conversations/2026-10-12--org--google-forms-built-and-published.md). The budget page in the body is gone: the budget is private, with no budget page and no public ledger; online supporters pay the organiser's Austrian business 500 EUR for online perks only, and speakers' travel is refunded only if the budget allows, never promised (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).

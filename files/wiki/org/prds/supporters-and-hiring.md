@@ -2,12 +2,15 @@
 title: "Supporters who fund a named thing, and hiring that attendees opt into"
 kind: initiative
 status: living
-updated: 2026-10-13
+updated: 2026-10-14
 parent_epic: goatconf-2027
 appetite: medium
 confidence: medium
 supersedes: org/pitches/partners-sponsors-and-hiring.md
 sources:
+  - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
+  - sources/conversations/2026-10-12--org--registration-on-luma.md
+  - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
@@ -280,3 +283,4 @@ on the supporters' page.
 
 - **2026-10-12.** Registration is a Google Form on goatconf.com, not Luma; the open-to-work question moves with it. See [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-13, superseded in part.** The no-gos on money through the organiser and the public budget no longer hold: online supporters pay the organiser's Austrian business, the budget is private, and speakers' travel is refunded only if the budget allows ([Online supporters pay the organiser's Austrian business](../adrs/online-supporters-through-the-business.md); source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
+- **2026-10-14, read with the later decisions.** The first amendment above no longer holds: registration is on the organiser's Luma event, not a Google Form (source: sources/conversations/2026-10-12--org--registration-on-luma.md). Luma asks one optional question, why the person wants to come, and not the open-to-work question (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md); whether and where that question returns is (unknown, needs source). The body's menu of named items on a public ledger is replaced by one online level of 500 EUR on the supporters page, and a speaker's company that covers their travel is listed there the same way (sources: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md, sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).

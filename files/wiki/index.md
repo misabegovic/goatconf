@@ -2,7 +2,7 @@
 title: "goatconf brain: home"
 kind: meta
 status: draft
-updated: 2026-10-12
+updated: 2026-10-14
 sources: []
 ---
 
@@ -10,14 +10,15 @@ sources: []
 
 The LLM-maintained knowledge base for goatconf, the conference: program,
 speakers, sponsors, venue, attendees, budget and the decisions behind
-them. It is an empty shell scaffolded on 2026-10-07 that inherits its
+them. It was scaffolded empty on 2026-10-07 and inherits its
 machinery from claude-brain (see [`AGENTS.md`](../AGENTS.md) § Lineage).
 What is known is on [GoatConf 2027: what is known](org/goatconf-2027.md);
 what is proposed is on the [pitches hub](org/pitches/index.md).
 
 ## What changed
 
-<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-13 -->
+<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-14 -->
+- **2026-10-14**: **Stale pages caught up.** The facts page, the epic, seven PRDs, six ADRs, the drumbeat drafts, `PRODUCT.md`, `README.md` and the Local CI section of `AGENTS.md` now match the decisions of 2026-10-12 and 2026-10-13: registration on Luma with no limit, a private budget with no ledger, no fixed reply time, and required speaker profiles. No new decision was made ([what is known](org/goatconf-2027.md)).
 - **2026-10-13**: **Speaker profiles are required.** Proposing a session means agreeing that, if accepted, GoatConf publishes the speaker's profile and promotes them on social media ([speaker profiles](org/adrs/speakers-and-travel-supporters.md)).
 - **2026-10-13**: **Mouth-watering food photos, picked one by one.** The organiser chose all twelve food photos from candidate sheets; they are not freely licensed and come down if an owner asks. The ćevapi card is now tuzlanski ćevapi, in lepinja dipped in broth, and tufahija says it has walnuts inside ([images of Tuzla](org/tuzla-images.md), [Tuzla for GoatConf](org/tuzla.md)).
 - **2026-10-13**: **Sarma instead of uštipci.** Cabbage rolls, priced from three Tuzla menus ([images of Tuzla](org/tuzla-images.md)).
@@ -84,7 +85,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-13 -->
 - **2026-10-13** (accepted): [Online supporters pay the organiser's Austrian business; the budget becomes private](org/adrs/online-supporters-through-the-business.md). It supersedes [a CSV ledger](org/adrs/budget-and-public-ledger.md).
-- **2026-10-12** (accepted): [goatconf.ba on GitHub Pages, every intake through Google Forms](org/adrs/goatconf-ba-and-google-forms.md); [two core days, 3 and 4 June 2027](org/adrs/two-core-days-first-week.md); [every room in parallel](org/adrs/core-day-parallel-tracks.md); [the organiser judges every proposal](org/adrs/call-organiser-judges.md); [every room open](org/adrs/open-program-every-room.md). These supersede the Luma, blind-panel and one-core-day decisions.
+- **2026-10-12** (accepted): [goatconf.com on GitHub Pages, with every intake through Google Forms](org/adrs/goatconf-ba-and-google-forms.md); [two core days, 3 and 4 June 2027](org/adrs/two-core-days-first-week.md); [every room in parallel](org/adrs/core-day-parallel-tracks.md); [the organiser judges every proposal](org/adrs/call-organiser-judges.md); [every room open](org/adrs/open-program-every-room.md). These supersede the Luma, blind-panel and one-core-day decisions.
 - **2026-10-07** (accepted): [Register on Luma, capped at the hall](org/adrs/website-and-registration.md); [Google Forms and a blind panel for talks](org/adrs/cfp-and-speakers.md); [extensions as Markdown files](org/adrs/extension-slots-and-the-record.md); [RubyConf Austria's code of conduct](org/adrs/operations-and-the-day.md); [a CSV ledger](org/adrs/budget-and-public-ledger.md); and six more in [the org hub](org/index.md).
 
 [See more in `wiki/_views/by-kind.md`](_views/by-kind.md)
