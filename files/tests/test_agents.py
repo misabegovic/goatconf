@@ -55,3 +55,20 @@ def test_public_addresses_have_no_html_extension():
     assert agents.url("talk.html") == "https://goatconf.com/talk"
     assert agents.url("program.json") == "https://goatconf.com/program.json"
     assert ".html" not in agents.sitemap()
+
+
+def test_a_speakers_role_reaches_llms_and_the_event_data(tmp_path, monkeypatch):
+    speakers = importlib.reload(importlib.import_module("speakers"))
+    for d in ("program", "speakers"):
+        (tmp_path / d).mkdir()
+    (tmp_path / "speakers" / "ana-example.md").write_text(
+        "---\nname: Ana Example\nrole: Engineer at Acme\npublish: yes\n---\n\nAna builds small systems.\n", encoding="utf-8")
+    (tmp_path / "program" / "s.md").write_text(
+        '---\ntitle: Salt\nspeakers: Ana Example\nprofiles: [ana-example]\nformat: talk\nday: 2027-06-03\nstart: "12:00"\n'
+        "room: hall-first\naccepted: yes\n---\n\nAbout salt.\n", encoding="utf-8")
+    monkeypatch.setattr(speakers, "SPEAKERS", tmp_path / "speakers")
+    monkeypatch.setattr(program, "RECORDS", tmp_path / "program")
+    monkeypatch.setattr(program, "SPEAKER_RECORDS", tmp_path / "speakers")
+    assert "- [Ana Example](https://goatconf.com/speaker-ana-example): Engineer at Acme" in agents.llms()
+    data = json.loads(re.search(r'ld\+json">(.*?)</script>', agents.json_ld(), re.S).group(1))
+    assert data["subEvent"][0]["performer"][0]["jobTitle"] == "Engineer at Acme"

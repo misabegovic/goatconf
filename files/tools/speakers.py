@@ -2,10 +2,10 @@
 """Speakers and supporters: check their records, and build the site's pages.
 
 A speaker is one Markdown file with YAML frontmatter under speakers/, written
-once their session is accepted and they agree to a public profile. A
-supporter is one file under supporters/: a company that pays a named thing,
-such as a speaker's travel, straight to the supplier. The body of each file is
-their own words. README.md and files whose names start with "_" are not
+once they are confirmed and agree to a public profile, with or without a
+session on the program yet. A supporter is one file under supporters/: a
+company that pays a named thing, such as a speaker's travel, straight to the
+supplier. The body of each file is their own words. README.md and files whose names start with "_" are not
 records.
 
   check              check every speaker and supporter record. Exit 1 if any fails.
@@ -36,6 +36,7 @@ PAGES = {"speakers": SITE / "speakers.html", "supporters": SITE / "supporters.ht
 URL = re.compile(r"^https?://\S+$")
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 BIO_WORDS = 120
+ROLE_CHARS = 80
 esc = program.esc
 
 
@@ -94,6 +95,8 @@ def check_speaker(path: Path, known_supporters):
         problems.append("no bio below the frontmatter")
     elif len(body.split()) > BIO_WORDS:
         problems.append(f"the bio is longer than {BIO_WORDS} words")
+    if "role" in meta and (not isinstance(meta["role"], str) or not meta["role"].strip() or "\n" in meta["role"] or len(meta["role"]) > ROLE_CHARS):
+        problems.append(f"role must be one line of at most {ROLE_CHARS} characters, for example: Staff Engineer at Vinted")
     if meta.get("photo"):
         p = image_problem(meta["photo"], "speakers", "photo")
         if p:
@@ -101,6 +104,8 @@ def check_speaker(path: Path, known_supporters):
     links = meta.get("links") or []
     if not isinstance(links, list) or any(not URL.match(str(u)) for u in links):
         problems.append("links must be a list of addresses starting with http:// or https://")
+    if "order" in meta and (type(meta["order"]) is not int or meta["order"] < 1):
+        problems.append("order must be a whole number from 1, where 1 is listed first")
     if "travel_funded_by" in meta:
         problems.append("travel_funded_by is retired: no supporter pays for a named speaker's travel; remove it")
     return problems, meta, body
@@ -114,6 +119,20 @@ def speakers():
         if not problems:
             out[path.stem] = (meta, body)
     return out
+
+
+def listed(people: dict) -> list:
+    """Speakers in the organiser's order: by `order` (1 first), then those without one, by name."""
+    return sorted(people.items(), key=lambda kv: (kv[1][0].get("order") or float("inf"), str(kv[1][0]["name"]).lower()))
+
+
+def order_problems():
+    """Two published speakers with the same order would leave the list's order to chance."""
+    seen = {}
+    for slug, (meta, _) in speakers().items():
+        if meta.get("order"):
+            seen.setdefault(meta["order"], []).append(slug)
+    return [f"order {n} is given to more than one speaker: {', '.join(slugs)}" for n, slugs in sorted(seen.items()) if len(slugs) > 1]
 
 
 def session_problems():
@@ -149,6 +168,10 @@ def cmd_check(_args) -> int:
     linked = session_problems()
     for p in linked:
         print(f"program/{p}")
+    clashes = order_problems()
+    for p in clashes:
+        print(f"speakers: {p}")
+        failed += 1
     print(f"speakers and supporters: {count} record(s), {failed} need a change, {len(linked)} broken profile link(s)")
     return 1 if failed or linked else 0
 
@@ -177,13 +200,14 @@ def goat_photo() -> str:
 
 def speaker_card(n: int, slug: str, meta, body, sessions, known) -> str:
     photo = f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo") else goat_photo()
+    role = f'<span class="speaker__role">{esc(meta["role"])}</span>' if meta.get("role") else ""
     first = f'<span class="speaker__first">{sessions[0]}</span>' if sessions else ""
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
     return f"""  <li class="sticker sticker--speaker" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <a class="speaker__link" href="{page_name(slug)}">
     <span class="num">{n}</span>
     <figure class="speaker__photo">{photo}<figcaption>{esc(meta['name'])}</figcaption></figure>
-    <span class="speaker__body">{first}{more}</span>
+    <span class="speaker__body">{role}{first}{more}</span>
     </a>
   </li>"""
 
@@ -203,6 +227,8 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     first = sessions[0] if sessions else None
     lede = (f'{esc(first["format"])} on {program.CORE_DAYS[first["day"]]} at {first["start"]}, {esc(first["room"])}.' if first
             else "Speaking at GoatConf 2027 in Tuzla.")
+    if meta.get("role"):
+        lede = f'<span class="lede__role">{esc(meta["role"])}</span>{lede}'
     main = f"""<section class="album-page wrap speaker-page" aria-labelledby="h-about">
   <h2 class="band" id="h-about">About {name.split()[0]}</h2>
   <div class="copy copy--wide">{bio}</div>
@@ -215,7 +241,8 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
   {share}
 </section>"""
     title = f"{meta['name']}: speaking at GoatConf 2027, Tuzla"
-    desc = f"{meta['name']} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: " + (esc(first["title"]) if first else "a session at IPI Academy") + "."
+    who = f"{meta['name']} ({meta['role']})" if meta.get("role") else meta["name"]
+    desc = f"{esc(who)} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: " + (esc(first["title"]) if first else "a session at IPI Academy") + "."
     return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main)
 
 
@@ -279,7 +306,7 @@ def speakers_page() -> str:
     known = supporters()
     people = speakers()
     talks = sessions_by_speaker()
-    order = sorted(people.items(), key=lambda kv: str(kv[1][0]["name"]).lower())
+    order = listed(people)
     if order:
         cards = '<ul class="slots slots--speakers">\n' + "\n".join(
             speaker_card(i + 1, slug, m, b, talks.get(slug, []), known) for i, (slug, (m, b)) in enumerate(order)) + "\n</ul>"
@@ -289,7 +316,7 @@ def speakers_page() -> str:
 </ul>"""
     main = f"""<section class="album-page wrap" aria-labelledby="h-speakers">
   <h2 class="band" id="h-speakers">Who is speaking</h2>
-  <p class="copy copy--wide">Each speaker here has a session on Thursday 3rd or Friday 4th June 2027. They wrote their profiles themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
+  <p class="copy copy--wide">Each speaker here has a session on Thursday 3rd or Friday 4th June 2027, or will have one soon: some are confirmed before their session has a time and room. They wrote their profiles themselves. Each session is on the <a href="program.html">program</a> with its day, time and room.</p>
   {cards}
 </section>
 <section class="album-page wrap" aria-labelledby="h-travel">
@@ -345,7 +372,7 @@ def all_pages() -> dict:
     detail = sessions_by_speaker(detail=True)
     for slug, (m, b) in speakers().items():
         name = page_name(slug)
-        out[SITE / name] = nav.place(meta.tag(speaker_page(slug, m, b, detail.get(slug, []), known)), "speakers.html")
+        out[SITE / name] = nav.place(meta.tag(speaker_page(slug, m, b, detail.get(slug, []), known)), nav.section(name))
     return out
 
 

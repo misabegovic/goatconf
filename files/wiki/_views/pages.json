@@ -435,6 +435,9 @@
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--speaker-order.md",
+        "sources/conversations/2026-10-14--org--speaker-role-and-employer.md",
+        "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--speaker-profile-required.md",
@@ -445,7 +448,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 1247,
+      "tokens": 1618,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]
@@ -603,6 +606,12 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--jan-grodowski.md",
+        "sources/conversations/2026-10-14--org--cristian-planas.md",
+        "sources/conversations/2026-10-14--org--carmine-paolino.md",
+        "sources/conversations/2026-10-14--org--paul-campbell.md",
+        "sources/conversations/2026-10-14--org--amar-mahmutbegovic.md",
+        "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
@@ -640,7 +649,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2300
+      "tokens": 2769
     },
     {
       "path": "org/index.md",
@@ -649,7 +658,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 1468,
+      "tokens": 1789,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1206,6 +1215,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-13--org--speaker-profile-required.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
@@ -1233,7 +1243,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 3726,
+      "tokens": 3846,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -1586,6 +1596,95 @@
         "sources/conversations/2026-10-07--org--first-answers.md"
       ],
       "tokens": 1891
+    },
+    {
+      "path": "org/speakers/amar-mahmutbegovic.md",
+      "title": "Speaker: Amar Mahmutbegovi\u0107",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--amar-mahmutbegovic.md",
+        "sources/web/speakers/eoc-amar-mahmutbegovic-2026-10-14.md",
+        "sources/web/speakers/cpp-in-embedded-systems-google-books-2026-10-14.md",
+        "sources/web/speakers/semblie-about-2026-10-14.md"
+      ],
+      "tokens": 797
+    },
+    {
+      "path": "org/speakers/carmine-paolino.md",
+      "title": "Speaker: Carmine Paolino",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--carmine-paolino.md",
+        "sources/web/speakers/paolino-me-2026-10-14.md",
+        "sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md",
+        "sources/web/organiser/muhamed-at-home.md"
+      ],
+      "tokens": 836
+    },
+    {
+      "path": "org/speakers/cristian-planas.md",
+      "title": "Speaker: Cristian Planas",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--cristian-planas.md",
+        "sources/web/speakers/kaigi-on-rails-2026-cristian-planas-2026-10-14.md",
+        "sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md"
+      ],
+      "tokens": 922
+    },
+    {
+      "path": "org/speakers/dejan-menges.md",
+      "title": "Speaker: Dejan Menges",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--speaker-role-and-employer.md",
+        "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
+        "sources/web/speakers/menges-dev-2026-10-14.md",
+        "sources/web/speakers/compass-summit-dejan-menges-2026-10-14.md",
+        "sources/web/organiser/muhamed-at-about.md"
+      ],
+      "tokens": 740
+    },
+    {
+      "path": "org/speakers/jan-grodowski.md",
+      "title": "Speaker: Jan Grodowski",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--jan-grodowski.md",
+        "sources/web/speakers/grodowski-com-2026-10-14.md"
+      ],
+      "tokens": 790
+    },
+    {
+      "path": "org/speakers/paul-campbell.md",
+      "title": "Speaker: Paul Campbell",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--paul-campbell.md",
+        "sources/web/speakers/paulca-com-2026-10-14.md",
+        "sources/web/speakers/confex-paul-campbell-2026-10-14.md",
+        "sources/web/speakers/team-tito-2026-10-14.md",
+        "sources/web/organiser/muhamed-at-about.md"
+      ],
+      "tokens": 969
     },
     {
       "path": "org/tuzla/history-and-old-town.md",

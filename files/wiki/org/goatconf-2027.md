@@ -5,6 +5,12 @@ status: living
 updated: 2026-10-14
 confidence: medium
 sources:
+  - sources/conversations/2026-10-14--org--jan-grodowski.md
+  - sources/conversations/2026-10-14--org--cristian-planas.md
+  - sources/conversations/2026-10-14--org--carmine-paolino.md
+  - sources/conversations/2026-10-14--org--paul-campbell.md
+  - sources/conversations/2026-10-14--org--amar-mahmutbegovic.md
+  - sources/conversations/2026-10-14--org--speakers-before-sessions.md
   - sources/conversations/2026-10-14--org--speakers-dinner.md
   - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
@@ -100,6 +106,7 @@ is cited to the sources above; nothing is inferred. Proposals live in the
 - **Talks:** the keynotes fill four one-hour slots in every room on both
   core days, from an open call the organiser judges, filled as proposals
   arrive ([The call](adrs/call-organiser-judges.md)). Everyone who proposes hears back, with no fixed reply time; the organiser builds the agenda at their own pace and may keep a proposal not picked straight away, in case someone drops out (source: sources/conversations/2026-10-13--org--no-reply-deadline.md).
+- **Speakers so far:** [Dejan Menges](speakers/dejan-menges.md), confirmed on 2026-10-14 with his profile published before his session has a slot or a topic (source: sources/conversations/2026-10-14--org--speakers-before-sessions.md); and [Amar Mahmutbegović](speakers/amar-mahmutbegovic.md), co-founder of Semblie in Tuzla, confirmed the same day, session also to come (source: sources/conversations/2026-10-14--org--amar-mahmutbegovic.md); [Paul Campbell](speakers/paul-campbell.md), co-founder and CEO of Tito in Dublin, confirmed the same day, session to come (source: sources/conversations/2026-10-14--org--paul-campbell.md); [Carmine Paolino](speakers/carmine-paolino.md), creator of RubyLLM, confirmed the same day, session to come (source: sources/conversations/2026-10-14--org--carmine-paolino.md); [Cristian Planas](speakers/cristian-planas.md), author of Rails Scales!, confirmed the same day, session to come (source: sources/conversations/2026-10-14--org--cristian-planas.md); and [Jan Grodowski](speakers/jan-grodowski.md), Staff Software Engineer at Shopify and author of undercover, confirmed the same day, session to come (source: sources/conversations/2026-10-14--org--jan-grodowski.md). The organiser lists them Paul Campbell, Carmine Paolino, Dejan Menges, Jan Grodowski, Amar Mahmutbegović, Cristian Planas (sources: sources/conversations/2026-10-14--org--speaker-order.md, sources/conversations/2026-10-14--org--carmine-paolino.md, sources/conversations/2026-10-14--org--cristian-planas.md, sources/conversations/2026-10-14--org--jan-grodowski.md).
 - **Speakers dinner:** every accepted speaker is invited, with the date still to come; it is paid from online supporters' money if the budget allows, and otherwise everyone pays for their own meal (source: sources/conversations/2026-10-14--org--speakers-dinner.md).
 - **Code-of-conduct contacts:** the organiser alone for now, until IPI names a member of staff (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md).
 - **The call for talks, proposed events and contact** are Google Forms,

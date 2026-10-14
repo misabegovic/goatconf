@@ -58,14 +58,15 @@ def days() -> str:
 
 
 def speaker_sticker(i: int, slug: str, meta) -> str:
+    role = f'<small class="sticker__role">{esc(meta["role"])}</small>' if meta.get("role") else ""
     photo = (f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo")
              else '<span class="speaker__goat" aria-hidden="true"><svg viewBox="0 0 124 100"><use href="#goat"/></svg></span>')
     return (f'    <li><a class="sticker sticker--photo sticker--mini" href="speaker-{esc(slug)}.html" data-peel style="--tilt:{TILTS[i % 6]}deg">'
-            f'<span class="num">0</span>{photo}<span class="sticker__name">{esc(meta["name"])}</span></a></li>')
+            f'<span class="num">0</span>{photo}<span class="sticker__name">{esc(meta["name"])}{role}</span></a></li>')
 
 
 def speakers_block() -> str:
-    people = sorted(speakers.speakers().items(), key=lambda kv: str(kv[1][0]["name"]).lower())
+    people = speakers.listed(speakers.speakers())
     if people:
         cards = "\n".join(speaker_sticker(i, s, m) for i, (s, (m, _)) in enumerate(people[:SHOWN]))
         more = f'<a class="go go--ink" href="speakers.html">All {len(people)} speakers</a>' if len(people) > SHOWN else '<a class="go go--ink" href="speakers.html">Meet the speakers</a>'
