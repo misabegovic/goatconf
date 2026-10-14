@@ -120,14 +120,17 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool) -> str:
              f'<img src="{(SITE / "brand" / "coin-yellow.svg").as_uri()}" style="width:70%;height:70%;margin:15%">')
     talk = talks[0] if talks else "Tuzla · 3–5 June 2027"
     size, w, h = (380, 1080, 1080) if square else (330, 1200, 675)
+    # A long name on the square card shrinks to stay on one line, so the role
+    # and the session keep their room above the address.
+    name_px = (120 if len(str(meta["name"])) <= 14 else 88) if square else 92
     frame = (f'<div style="position:absolute; left:84px; top:96px; width:{size}px; height:{size}px; border-radius:50%; overflow:hidden; '
              f'background:{YELLOW}; box-shadow:0 0 0 10px #fff">{photo}</div>')
     return page(w, h, f"""
 {frame if square else frame.replace('left:84px; top:96px', 'left:72px; top:50%; transform:translateY(-50%)')}
 <div style="position:absolute; {'left:84px; top:540px; right:84px' if square else 'left:450px; top:84px; right:300px'}">
   <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">I'm speaking at GoatConf 2027</div>
-  <div class="word" style="font-size:{120 if square else 92}px; margin-top:18px">{name}</div>
-  {f'<div style="font-size:{34 if square else 28}px; font-weight:700; line-height:1.2; margin-top:22px">{esc(str(meta["role"]))}</div>' if meta.get("role") else ""}
+  <div class="word" style="font-size:{name_px}px; margin-top:18px">{name}</div>
+  {f'<div style="font-size:{34 if square else 28}px; font-weight:700; line-height:1.2; margin-top:22px; max-width:{680 if square else 450}px; text-wrap:balance">{esc(str(meta["role"]))}</div>' if meta.get("role") else ""}
   <div class="sub" style="font-size:{34 if square else 28}px; line-height:1.2; margin-top:28px; max-width:20ch">{talk}</div>
 </div>
 <div class="url" style="position:absolute; left:{84 if square else 450}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/speakers.html</div>

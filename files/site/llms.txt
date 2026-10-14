@@ -18,6 +18,7 @@ Contact: info@muhamed.at, or the form at https://goatconf.com/contact
 
 ## Speakers
 
+- [Amar Mahmutbegović](https://goatconf.com/speaker-amar-mahmutbegovic): Co-founder and Head of Engineering at Semblie
 - [Dejan Menges](https://goatconf.com/speaker-dejan-menges): Staff Engineer at Vinted
 
 ## Pages

@@ -605,6 +605,7 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--amar-mahmutbegovic.md",
         "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
@@ -643,7 +644,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2367
+      "tokens": 2432
     },
     {
       "path": "org/index.md",
@@ -652,7 +653,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 1521,
+      "tokens": 1579,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1590,6 +1591,21 @@
         "sources/conversations/2026-10-07--org--first-answers.md"
       ],
       "tokens": 1891
+    },
+    {
+      "path": "org/speakers/amar-mahmutbegovic.md",
+      "title": "Speaker: Amar Mahmutbegovi\u0107",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-14",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-14--org--amar-mahmutbegovic.md",
+        "sources/web/speakers/eoc-amar-mahmutbegovic-2026-10-14.md",
+        "sources/web/speakers/cpp-in-embedded-systems-google-books-2026-10-14.md",
+        "sources/web/speakers/semblie-about-2026-10-14.md"
+      ],
+      "tokens": 797
     },
     {
       "path": "org/speakers/dejan-menges.md",
