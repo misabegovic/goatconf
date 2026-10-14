@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-14--org--speakers-dinner.md
   - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
@@ -69,7 +70,7 @@ The story in week 5 follows the EuRuKo 2024 account of the goat (source: sources
   >
   > Every slot is one hour, in one of seven rooms at IPI Academy in Tuzla, on Thursday 3 or Friday 4 June 2027: a talk with time for questions, a panel or a workshop. Engineering, design, product, founding a company: all welcome, and first-time speakers too.
   >
-  > The organiser reads every proposal, the session first and the name after. There is no strict deadline: slots fill as good proposals come in. You hear back, whatever the answer.
+  > The organiser reads every proposal, the session first and the name after. There is no strict deadline: slots fill as good proposals come in. You hear back, whatever the answer, and every accepted speaker is invited to the speakers dinner.
   >
   > Propose a session in about fifteen minutes: goatconf.com/talk
 

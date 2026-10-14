@@ -9,6 +9,7 @@ depends_on:
   - org/adrs/speakers-and-travel-supporters.md
   - org/adrs/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-10-14--org--speakers-dinner.md
   - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
@@ -103,6 +104,7 @@ A single level treats every supporter alike.
 
 - **2026-10-13, a speaker's company that covers their travel.** A company that pays its own speaker's travel is listed on the site as a supporter, the same as online supporters, with its logo and link. No money goes through the organiser for it, so there is nothing to invoice. This is the speaker's own employer paying for its own person; a supporter still never pays for another company's or a named outside speaker's travel (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).
 - **2026-10-14, the surplus, confirmed.** Leftover money pays more of this year's event costs, speaker travel refunds included where the organiser decides, and anything still left carries to the next GoatConf. The organiser confirmed this reading of their earlier answer (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md).
+- **2026-10-14, the speakers dinner is an event cost.** The money may pay for the speakers dinner for accepted speakers, if the budget allows (source: sources/conversations/2026-10-14--org--speakers-dinner.md).
 
 ## Related
 

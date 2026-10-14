@@ -309,13 +309,14 @@
         "org/adrs/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md"
       ],
-      "tokens": 1313
+      "tokens": 1369
     },
     {
       "path": "org/adrs/open-program-every-room.md",
@@ -602,6 +603,7 @@
       "updated": "2026-10-14",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--no-reply-deadline.md",
@@ -638,7 +640,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2238
+      "tokens": 2300
     },
     {
       "path": "org/index.md",
@@ -719,6 +721,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
@@ -736,7 +739,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 2114
+      "tokens": 2125
     },
     {
       "path": "org/outreach/ipi-proposal.md",
@@ -1197,12 +1200,13 @@
       "title": "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-13",
+      "updated": "2026-10-14",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-13--org--speaker-profile-required.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
@@ -1229,7 +1233,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 3621,
+      "tokens": 3726,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
