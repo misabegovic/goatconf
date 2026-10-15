@@ -1249,7 +1249,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 3846,
+      "tokens": 3979,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -1646,9 +1646,12 @@
         "sources/conversations/2026-10-15--org--christoph-photo-in-colour.md",
         "sources/web/speakers/euruko-2024-team-2026-10-15.md",
         "sources/web/speakers/euruko-2024-team-photo-2026-10-15.md",
-        "sources/web/supporters/meister-logo-2026-10-15.md"
+        "sources/web/supporters/meister-logo-2026-10-15.md",
+        "sources/conversations/2026-10-15--org--christoph-talk-on-his-page.md",
+        "sources/web/speakers/christoph-lipautz-github-2026-10-15.md",
+        "sources/web/speakers/christoph-lipautz-bluesky-2026-10-15.md"
       ],
-      "tokens": 968
+      "tokens": 1158
     },
     {
       "path": "org/speakers/cristian-planas.md",

@@ -11,12 +11,18 @@ sources:
   - sources/web/speakers/euruko-2024-team-2026-10-15.md
   - sources/web/speakers/euruko-2024-team-photo-2026-10-15.md
   - sources/web/supporters/meister-logo-2026-10-15.md
+  - sources/conversations/2026-10-15--org--christoph-talk-on-his-page.md
+  - sources/web/speakers/christoph-lipautz-github-2026-10-15.md
+  - sources/web/speakers/christoph-lipautz-bluesky-2026-10-15.md
 ---
 
 # Speaker: Christoph Lipautz
 
 A confirmed GoatConf 2027 speaker, added on 2026-10-15 before his
-session has a slot or a topic, and listed last, after Cristian Planas.
+session has a slot, and listed last, after Cristian Planas. His page
+carries the talk he offers, with the day and time still to be announced
+(source:
+sources/conversations/2026-10-15--org--christoph-talk-on-his-page.md).
 He agreed on the talk form to a public profile and to promotion on
 social media (source:
 sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md). His
@@ -36,11 +42,18 @@ the sources say and what bears on GoatConf.
   practices and how essential they are for delivering fast,
   high-quality results" in the era of agent-based programming.
   Discipline Engineering; he prefers Thursday 3 June (source: the talk
-  form). No slot or topic is picked for GoatConf yet.
+  form). No slot is picked yet; the title and his words on the session
+  show on his page and card, day and time to be announced, and come off
+  the record once a program record carries the session (source:
+  sources/conversations/2026-10-15--org--christoph-talk-on-his-page.md).
 - **He has spoken before:** "Is this your first talk?" is answered No
   on the form (source: the talk form).
 - **Links:** https://x.com/lipdaguit, the link he gives (source: the
-  talk form).
+  talk form); https://github.com/unused and
+  https://bsky.app/profile/lipautz.org, his public GitHub and Bluesky,
+  added on 2026-10-15 (sources:
+  sources/web/speakers/christoph-lipautz-github-2026-10-15.md,
+  sources/web/speakers/christoph-lipautz-bluesky-2026-10-15.md).
 - **Meister:** his employer; it covers his travel and is listed on the
   supporters wall, the same as online supporters (sources: the talk
   form, sources/conversations/2026-10-15--org--christoph-lipautz.md).

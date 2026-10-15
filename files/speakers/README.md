@@ -23,16 +23,28 @@ is their bio in their own words, at most 120 words.
   speakers page, the home page, their "I'm speaking" cards and the files for
   agents. Text only: an employer's logo never appears, so it cannot read as
   a supporter.
+- `talk`: optional, the title of the session they proposed, one line of at
+  most 80 characters (for example `Back to the Future`). It shows on
+  their page and their card while the session has no slot.
+- `talk_about`: optional, their own words on what the session is about
+  and who it is for, at most 120 words; it needs `talk`. Separate
+  paragraphs stay separate paragraphs on the page.
 
-A confirmed speaker can be added before their session has a slot or a
-topic (since 2026-10-14): their page then says the session will be on the
-program soon. If they have not sent a photo or a bio, a public one from
-their own site or a conference they spoke at may be used, with where it
-came from recorded under `sources/web/speakers/`.
+A confirmed speaker can be added before their session has a slot (since
+2026-10-14): their page then says the session will be on the program
+soon, or, when the record carries `talk` and `talk_about`, shows the
+session's title and their words on it with the day and time to be
+announced (since 2026-10-15). Remove both once the session is on the
+program: the program record is its source then, and the check refuses a
+record that keeps a second copy of a session. If they have not sent a
+photo or a bio, a public one from their own site or a conference they
+spoke at may be used, with where it came from recorded under
+`sources/web/speakers/`.
 
 Link a session to its speakers with `profiles: [ada-lovelace]` in its
-record under `program/`. Then run `python3 tools/speakers.py build` and
-`python3 tools/program.py build`. The local CI checks both.
+record under `program/`, and drop the speaker record's `talk` and
+`talk_about` in the same change. Then run `python3 tools/speakers.py build`
+and `python3 tools/program.py build`. The local CI checks both.
 
 Each speaker has three cards made by `python3 tools/shareables.py render`
 (it needs Chrome): `speaker-<name>-square.png` and `-wide.png` to post, and
