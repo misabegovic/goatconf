@@ -742,6 +742,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-15--org--drafting-the-first-posts.md",
         "sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
@@ -763,7 +764,7 @@
         "sources/web/social/goatconf-linkedin-2026-10-15.md",
         "sources/web/social/goatconf-x-2026-10-15.md"
       ],
-      "tokens": 2636
+      "tokens": 2543
     },
     {
       "path": "org/outreach/ipi-proposal.md",
