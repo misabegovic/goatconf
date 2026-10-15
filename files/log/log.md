@@ -297,3 +297,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-14 merge — PR #63: site: renting a car at Sarajevo or Tuzla, on the travel page
    diff: 7 files, +223/-1
    restricted-paths: false
+2026-10-15 merge — PR #64: site: Christoph Lipautz is a confirmed speaker, and Meister a supporter
+   diff: 31 files, +400/-22
+   restricted-paths: false
