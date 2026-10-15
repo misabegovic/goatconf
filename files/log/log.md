@@ -312,3 +312,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-15 merge — PR #68: records: GoatConf's own LinkedIn and X accounts, and the posts go from them
    diff: 9 files, +126/-15
    restricted-paths: false
+2026-10-15 merge — PR #69: records: draft the first speakers beat, with its card
+   diff: 6 files, +30/-3
+   restricted-paths: true
