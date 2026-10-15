@@ -2,7 +2,7 @@
 title: Index — by epic
 kind: meta
 status: living
-updated: 2026-10-14
+updated: 2026-10-15
 confidence: high
 sources:
   - tools/brain.py

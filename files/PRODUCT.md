@@ -6,7 +6,7 @@ This file summarises what the brain holds, for impeccable. The brain stays
 the source of truth: [the facts page](wiki/org/goatconf-2027.md), [the
 epic](wiki/org/epics/goatconf-2027.md), the PRDs and ADRs under
 `wiki/org/` (read each with its amendments), and the personas under
-`.claude/personas/`. Brought up to date on 2026-10-14.
+`.claude/personas/`. Brought up to date on 2026-10-15.
 
 ## Platform
 
@@ -108,8 +108,10 @@ newsletters.
 - Photos of the city, the food, IPI's lecture hall and the organiser's past
   conferences, under `site/img/`. The food photos are not freely licensed
   and come down if an owner asks.
-- No speakers, supporters, sessions or extensions exist yet. None may be
-  invented.
+- Speakers and supporters exist: seven speakers are published (2026-10-14
+  and 2026-10-15), and the supporters wall leads with IPI Academy as host,
+  then Meister, a speaker's company that covers his travel. Sessions and
+  extensions do not exist yet. None may be invented.
 
 ## Product Principles
 

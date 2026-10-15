@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-14",
+  "generated": "2026-10-15",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -604,9 +604,11 @@
       "title": "GoatConf 2027: what is known",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-10-15",
       "confidence": "medium",
       "sources": [
+        "sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md",
+        "sources/conversations/2026-10-15--org--christoph-lipautz.md",
         "sources/conversations/2026-10-14--org--dinner-wording.md",
         "sources/conversations/2026-10-14--org--jan-grodowski.md",
         "sources/conversations/2026-10-14--org--cristian-planas.md",
@@ -651,16 +653,16 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2811
+      "tokens": 2941
     },
     {
       "path": "org/index.md",
       "title": "goatconf: the conference as a whole",
       "kind": "meta",
       "status": "draft",
-      "updated": "2026-10-07",
+      "updated": "2026-10-15",
       "sources": [],
-      "tokens": 1789,
+      "tokens": 1841,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1630,6 +1632,21 @@
         "sources/web/organiser/muhamed-at-home.md"
       ],
       "tokens": 836
+    },
+    {
+      "path": "org/speakers/christoph-lipautz.md",
+      "title": "Speaker: Christoph Lipautz",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-15",
+      "confidence": "medium",
+      "sources": [
+        "sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md",
+        "sources/conversations/2026-10-15--org--christoph-lipautz.md",
+        "sources/web/speakers/euruko-2024-team-2026-10-15.md",
+        "sources/web/supporters/meister-logo-2026-10-15.md"
+      ],
+      "tokens": 928
     },
     {
       "path": "org/speakers/cristian-planas.md",
