@@ -8,7 +8,7 @@ from site/brand/, rendered to PNG by headless Chrome into site/share/:
             X, Bluesky and Mastodon, the Luma event cover
   og.png    the link preview every page uses
   posts     save the date, the call for talks, registration, add something,
-            each square (1080) and wide (1200 x 675)
+            the first speakers, each square (1080) and wide (1200 x 675)
   records   an "I'm speaking" card per published speaker (square, wide, and a
             1200 x 630 preview that their page's link preview shows) and a
             "thank you" card per supporter, built from speakers/ and supporters/
@@ -111,6 +111,7 @@ POSTS = {
     "call-for-talks": ("The call<br>for talks<br>is open", "One hour, one room, an audience. No strict deadline."),
     "register": ("Get your<br>free ticket", "Thursday and Friday for the talks, Saturday for the community."),
     "add-something": ("Propose<br>an event", "A workshop, a meetup, a dinner, a hike: run it around GoatConf."),
+    "first-speakers": ("The first<br>speakers<br>are here", "Six speakers so far, each with an hour in one of the seven rooms."),
 }
 
 
