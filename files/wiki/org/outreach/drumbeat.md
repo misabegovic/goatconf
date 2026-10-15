@@ -131,6 +131,31 @@ The story in week 5 follows the EuRuKo 2024 account of the goat (source: sources
 
   > Why GoatConf? In Tuzla, one man hid his goat when goats were banned, and that one goat fed the whole town. Our seal says it: the one that feeds the community. goatconf.com
 
+## The first speakers are here
+
+Drafted on 2026-10-15, once six speakers were public and none had been announced. It can go before or after any week of the launch sequence. When it goes, send each speaker their own card (`speaker-<name>-square.png`) and ask them to share it.
+
+- **State:** drafted
+- **Image:** `post-first-speakers-square.png` (LinkedIn, Mastodon), `post-first-speakers-wide.png` (X, Bluesky)
+- **LinkedIn:**
+
+  > The first GoatConf 2027 speakers are here.
+  >
+  > Paul Campbell, Co-founder and CEO of Tito
+  > Carmine Paolino, Creator of RubyLLM, founder of Plenty
+  > Dejan Menges, Staff Engineer at Vinted
+  > Amar Mahmutbegović, Co-founder and Head of Engineering at Semblie
+  > Cristian Planas, Author of Rails Scales!, at Combinaut
+  > Christoph Lipautz, Senior Staff Engineer at Meister
+  >
+  > Six people so far, each with an hour in one of the seven rooms at IPI Academy on 3 or 4 June, and each with a profile on the site: goatconf.com/speakers
+  >
+  > More speakers are confirmed as proposals come in, so the call for talks stays open: goatconf.com/talk
+
+- **Short:**
+
+  > The first GoatConf 2027 speakers are here: Paul Campbell, Carmine Paolino, Dejan Menges, Amar Mahmutbegović, Cristian Planas and Christoph Lipautz, each with an hour in Tuzla on 3 or 4 June. Profiles: goatconf.com/speakers
+
 ## Later beats, to draft when their time comes
 
 Each later beat gets the same treatment: a LinkedIn text, a short text and an image.
@@ -138,7 +163,7 @@ Each later beat gets the same treatment: a LinkedIn text, a short text and an im
 - **Week 6, Tuzla on a budget.** What a week costs: a simple meal about 4.60 euro, a cappuccino about 1.66 euro, a lake ticket 3.60 to 4.60 euro (prices checked 2026-10-07, see [Tuzla](../tuzla.md)); link to the travel page.
 - **Week 7, support GoatConf online.** One level for everyone: 500 EUR, invoiced by the organiser's Austrian business, for online perks only, with nothing at the venue. The budget itself is not mentioned (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **Week 8, speak at GoatConf with your company behind you.** Speakers pay their own travel, refunded only if the budget allows, never promised; a speaker's company that covers their travel is listed on the supporters page, the same as online supporters (sources: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md, sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).
-- **When a speaker is accepted,** one post each, with their "I'm speaking" card (`speaker-<name>-square.png` and `-wide.png`), and a nudge for the speaker to share it.
+- **When a speaker is accepted,** one post each, with their "I'm speaking" card (`speaker-<name>-square.png` and `-wide.png`), and a nudge for the speaker to share it. The first six go out together in the beat above; every speaker confirmed later gets their own post.
 - **When a supporter joins,** a thank-you naming exactly what they fund, with their card (`supporter-<name>-square.png` and `-wide.png`).
 - **The program fills up.** The first full day; Friday starting at 09:30 (source: sources/conversations/2026-10-12--org--friday-dzuma-schedule.md).
 - **Saturday, the community day.** The lake day and the goat hunt the organiser plans, and the walks and meetups hosts add (source: sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md).
