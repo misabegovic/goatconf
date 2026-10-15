@@ -404,12 +404,13 @@
       "title": "Keep the email list in Luma, and the weekly beats as one calendar page here",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-15",
       "confidence": "medium",
       "depends_on": [
         "org/prds/social-drumbeat.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
@@ -419,9 +420,11 @@
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md",
         "sources/web/tooling/luma-pricing.md",
         "sources/web/tooling/luma-privacy-policy.md",
-        "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
+        "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md",
+        "sources/web/social/goatconf-linkedin-2026-10-15.md",
+        "sources/web/social/goatconf-x-2026-10-15.md"
       ],
-      "tokens": 1200
+      "tokens": 1338
     },
     {
       "path": "org/adrs/speakers-and-travel-supporters.md",
@@ -608,6 +611,7 @@
       "confidence": "medium",
       "sources": [
         "sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md",
+        "sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md",
         "sources/conversations/2026-10-15--org--christoph-lipautz.md",
         "sources/conversations/2026-10-14--org--dinner-wording.md",
         "sources/conversations/2026-10-14--org--jan-grodowski.md",
@@ -638,6 +642,8 @@
         "sources/conversations/2026-10-12--org--recording-and-podcasts.md",
         "sources/conversations/2026-10-12--org--friday-dzuma-schedule.md",
         "sources/web/tuzla/vaktija-tuzla-2027-06-03-04.md",
+        "sources/web/social/goatconf-linkedin-2026-10-15.md",
+        "sources/web/social/goatconf-x-2026-10-15.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-12--org--two-core-days-and-saturday.md",
         "sources/conversations/2026-10-07--org--coc-ledger-registration-cfp.md",
@@ -653,7 +659,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 3020
+      "tokens": 3151
     },
     {
       "path": "org/index.md",
@@ -730,12 +736,13 @@
       "title": "The drumbeat: the weekly posts, drafted, from launch to June 2027",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-14",
+      "updated": "2026-10-15",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
@@ -752,9 +759,11 @@
         "sources/conversations/2026-10-12--org--google-forms-built-and-published.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
-        "sources/web/funding/euruko-2024-why-the-goat.md"
+        "sources/web/funding/euruko-2024-why-the-goat.md",
+        "sources/web/social/goatconf-linkedin-2026-10-15.md",
+        "sources/web/social/goatconf-x-2026-10-15.md"
       ],
-      "tokens": 2125
+      "tokens": 2245
     },
     {
       "path": "org/outreach/ipi-proposal.md",
@@ -1470,12 +1479,13 @@
       "title": "A weekly drumbeat: an email list, three channels and things people can share",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-10-15",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/social-presence-and-drumbeat.md",
       "sources": [
+        "sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
@@ -1493,9 +1503,11 @@
         "sources/web/social/stackoverflow-survey-2025-community-platforms.md",
         "sources/web/social/buffer-pricing.md",
         "sources/web/funding/balkanruby-blog-2027-is-off.md",
-        "sources/web/organiser/muhamed-at-about.md"
+        "sources/web/organiser/muhamed-at-about.md",
+        "sources/web/social/goatconf-linkedin-2026-10-15.md",
+        "sources/web/social/goatconf-x-2026-10-15.md"
       ],
-      "tokens": 3390,
+      "tokens": 3553,
       "consumed_by": [
         "org/adrs/social-drumbeat.md"
       ]
