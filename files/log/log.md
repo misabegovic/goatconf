@@ -309,3 +309,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-15 merge — PR #67: site: Jan Grodowski held from the site while his employer clears the engagement
    diff: 16 files, +134/-118
    restricted-paths: true
+2026-10-15 merge — PR #68: records: GoatConf's own LinkedIn and X accounts, and the posts go from them
+   diff: 9 files, +126/-15
+   restricted-paths: false

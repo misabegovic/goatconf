@@ -6,6 +6,7 @@ updated: 2026-10-15
 confidence: medium
 sources:
   - sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md
+  - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
   - sources/conversations/2026-10-15--org--christoph-lipautz.md
   - sources/conversations/2026-10-14--org--dinner-wording.md
   - sources/conversations/2026-10-14--org--jan-grodowski.md
@@ -36,6 +37,8 @@ sources:
   - sources/conversations/2026-10-12--org--recording-and-podcasts.md
   - sources/conversations/2026-10-12--org--friday-dzuma-schedule.md
   - sources/web/tuzla/vaktija-tuzla-2027-06-03-04.md
+  - sources/web/social/goatconf-linkedin-2026-10-15.md
+  - sources/web/social/goatconf-x-2026-10-15.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-12--org--two-core-days-and-saturday.md
   - sources/conversations/2026-10-07--org--coc-ledger-registration-cfp.md
@@ -122,6 +125,13 @@ is cited to the sources above; nothing is inferred. Proposals live in the
   repository and published on
   GitHub Pages by one Actions workflow, from every merge to `main` ([Website: goatconf.com and Google Forms](adrs/goatconf-ba-and-google-forms.md);
   source: sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md).
+- **Social accounts:** GoatConf has its own LinkedIn page
+  (linkedin.com/company/goatconf) and X account (@goatconf), both live on
+  2026-10-15, and the drumbeat's posts go from them; the start is
+  LinkedIn and X, with Bluesky and Mastodon for later (sources:
+  sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md,
+  sources/web/social/goatconf-linkedin-2026-10-15.md,
+  sources/web/social/goatconf-x-2026-10-15.md).
 
 ## The money
 

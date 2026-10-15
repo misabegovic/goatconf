@@ -2,11 +2,12 @@
 title: "The drumbeat: the weekly posts, drafted, from launch to June 2027"
 kind: reference
 status: draft
-updated: 2026-10-14
+updated: 2026-10-15
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
   - sources/conversations/2026-10-14--org--speakers-dinner.md
   - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
@@ -24,6 +25,8 @@ sources:
   - sources/conversations/2026-10-07--org--goatconf-will-be-public.md
   - sources/conversations/2026-10-07--org--no-money-through-me.md
   - sources/web/funding/euruko-2024-why-the-goat.md
+  - sources/web/social/goatconf-linkedin-2026-10-15.md
+  - sources/web/social/goatconf-x-2026-10-15.md
 ---
 
 # The drumbeat: the weekly posts, drafted, from launch to June 2027
@@ -32,7 +35,7 @@ The calendar of beats that [the social drumbeat decision](../adrs/social-drumbea
 
 ## Channels and images
 
-The organiser chose the channels on 2026-10-12: LinkedIn; X, Bluesky and Mastodon; and Luma with link previews (source: sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md). Registration runs on the Luma event, so registered guests can get Luma updates (source: sources/conversations/2026-10-12--org--registration-on-luma.md).
+The organiser chose the channels on 2026-10-12: LinkedIn; X, Bluesky and Mastodon; and Luma with link previews (source: sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md). Registration runs on the Luma event, so registered guests can get Luma updates (source: sources/conversations/2026-10-12--org--registration-on-luma.md). GoatConf's own accounts exist: the LinkedIn page linkedin.com/company/goatconf and the X account @goatconf, both checked on 2026-10-15, so the posts go from GoatConf itself, starting with LinkedIn and X and with Bluesky and Mastodon for later (source: sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md; snapshots: sources/web/social/goatconf-linkedin-2026-10-15.md, sources/web/social/goatconf-x-2026-10-15.md).
 
 Each post has a LinkedIn text and a short text of at most 280 characters for X, Bluesky and Mastodon. Each names its image in `site/share/`, made by `tools/shareables.py`; square images suit LinkedIn and Mastodon, wide ones suit X and Bluesky. Links point at goatconf.com, so each post shows the link preview.
 

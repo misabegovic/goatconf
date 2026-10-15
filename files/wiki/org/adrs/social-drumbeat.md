@@ -2,11 +2,12 @@
 title: "Keep the email list in Luma, and the weekly beats as one calendar page here"
 kind: decision
 status: accepted
-updated: 2026-10-12
+updated: 2026-10-15
 confidence: medium
 depends_on:
   - org/prds/social-drumbeat.md
 sources:
+  - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md
   - sources/conversations/2026-10-12--org--registration-on-luma.md
@@ -17,6 +18,8 @@ sources:
   - sources/web/tooling/luma-pricing.md
   - sources/web/tooling/luma-privacy-policy.md
   - sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md
+  - sources/web/social/goatconf-linkedin-2026-10-15.md
+  - sources/web/social/goatconf-x-2026-10-15.md
 ---
 
 # Keep the email list in Luma, and the weekly beats as one calendar page here
@@ -96,3 +99,4 @@ the public is the organiser's call
 - **2026-10-12, registration is back on Luma, the channels are chosen, and the calendar exists.** Registration moved to the organiser's Luma event (source: sources/conversations/2026-10-12--org--registration-on-luma.md), so registered guests can again get Luma updates; the earlier amendment's "Luma is no longer used" no longer holds. People who tick the news question on the contact form are the other part of the list. The organiser chose the channels: LinkedIn; X, Bluesky and Mastodon; and Luma with link previews (source: sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md). The calendar is [The drumbeat](../outreach/drumbeat.md), with the launch sequence drafted and the images in `site/share/`.
 - **2026-10-12.** Luma is no longer used. The email list is the people who tick an optional, unticked question on the registration or contact Google Form asking to be sent news about GoatConf; news goes by email from the organiser's Google account. Subscriber data stays in the organiser's Google Sheets and never enters this public repository. The weekly beats calendar here is unchanged. See [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-12.** IPI Academy has accepted the dates, Thursday 3 and Friday 4 June 2027 as core days and Saturday 5 June as the community day, and GoatConf has access to all seven rooms, as the organiser reported; no written copy is in the brain. The posts can carry the dates now (`sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md`).
+- **2026-10-15, GoatConf's own accounts.** The LinkedIn page (linkedin.com/company/goatconf) and the X account (@goatconf) are live, checked on 2026-10-15, so the posts go from GoatConf itself; the start is LinkedIn and X, with Bluesky and Mastodon for later, and nothing has been posted yet (sources: sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md, sources/web/social/goatconf-linkedin-2026-10-15.md, sources/web/social/goatconf-x-2026-10-15.md).

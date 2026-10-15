@@ -2,12 +2,13 @@
 title: "A weekly drumbeat: an email list, three channels and things people can share"
 kind: initiative
 status: living
-updated: 2026-10-12
+updated: 2026-10-15
 parent_epic: goatconf-2027
 appetite: small
 confidence: medium
 supersedes: org/pitches/social-presence-and-drumbeat.md
 sources:
+  - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md
   - sources/conversations/2026-10-12--org--registration-on-luma.md
@@ -26,6 +27,8 @@ sources:
   - sources/web/social/buffer-pricing.md
   - sources/web/funding/balkanruby-blog-2027-is-off.md
   - sources/web/organiser/muhamed-at-about.md
+  - sources/web/social/goatconf-linkedin-2026-10-15.md
+  - sources/web/social/goatconf-x-2026-10-15.md
 ---
 
 # A weekly drumbeat: an email list, three channels and things people can share
@@ -254,7 +257,8 @@ or change.
 - Which regional communities (Sarajevo, Tuzla, Zagreb, Belgrade,
   Ljubljana, Vienna) does the organiser know personally?
 - Should the organiser's own LinkedIn and X presence carry the first
-  announcements, before GoatConf accounts have followers?
+  announcements, before GoatConf accounts have followers? Answered on
+  2026-10-15: GoatConf's own accounts carry the posts (see Amendments).
 - Bluesky or Mastodon as the open network?
 - Who besides the organiser may publish a beat, and does the organiser
   clear each beat or the calendar as a whole?
@@ -276,3 +280,4 @@ published state) and who is cleared to publish.
 - **2026-10-12, registration is back on Luma, the channels are chosen, and the calendar exists.** Registration moved to the organiser's Luma event (source: sources/conversations/2026-10-12--org--registration-on-luma.md), so registered guests can again get Luma updates; the earlier amendment's "Luma is no longer used" no longer holds. People who tick the news question on the contact form are the other part of the list. The organiser chose the channels: LinkedIn; X, Bluesky and Mastodon; and Luma with link previews (source: sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md). The calendar is [The drumbeat](../outreach/drumbeat.md), with the launch sequence drafted and the images in `site/share/`.
 - **2026-10-12.** The site is goatconf.com, and the email list no longer lives in Luma: it moves with registration to Google Forms (see the amendment on the social drumbeat decision). See [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-12.** IPI Academy has accepted the dates, Thursday 3 and Friday 4 June 2027 as core days and Saturday 5 June as the community day, and GoatConf has access to all seven rooms, as the organiser reported; no written copy is in the brain. The drumbeat can carry the dates now (`sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md`).
+- **2026-10-15, GoatConf's own accounts.** The LinkedIn page (linkedin.com/company/goatconf) and the X account (@goatconf) are live, checked on 2026-10-15, so the posts go from GoatConf itself; the start is LinkedIn and X, with Bluesky and Mastodon for later, and nothing has been posted yet (sources: sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md, sources/web/social/goatconf-linkedin-2026-10-15.md, sources/web/social/goatconf-x-2026-10-15.md).
