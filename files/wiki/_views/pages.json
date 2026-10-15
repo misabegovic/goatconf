@@ -653,7 +653,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2941
+      "tokens": 3020
     },
     {
       "path": "org/index.md",
@@ -662,7 +662,7 @@
       "status": "draft",
       "updated": "2026-10-15",
       "sources": [],
-      "tokens": 1841,
+      "tokens": 1860,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1249,7 +1249,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 3979,
+      "tokens": 4106,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -1688,13 +1688,14 @@
       "title": "Speaker: Jan Grodowski",
       "kind": "entity",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-10-15",
       "confidence": "medium",
       "sources": [
         "sources/conversations/2026-10-14--org--jan-grodowski.md",
+        "sources/conversations/2026-10-15--org--hold-jan-grodowski.md",
         "sources/web/speakers/grodowski-com-2026-10-14.md"
       ],
-      "tokens": 790
+      "tokens": 1014
     },
     {
       "path": "org/speakers/paul-campbell.md",

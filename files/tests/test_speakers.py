@@ -193,6 +193,47 @@ def test_two_speakers_cannot_share_an_order(tmp_path, monkeypatch):
     assert any("order must be" in p for p in problems)
 
 
+def test_a_held_speaker_leaves_the_site_and_comes_back_without_the_line(tmp_path, monkeypatch, capsys):
+    _, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("publish: yes\n", "hold: waiting for his employer's approval\npublish: yes\n"))
+    (tmp_path / "program" / "s.md").unlink()  # no session yet: the hold is the only thing keeping him off
+    monkeypatch.setattr(speakers, "PAGES", {"speakers": tmp_path / "site" / "speakers.html", "supporters": tmp_path / "site" / "supporters.html"})
+    assert speakers.cmd_check(Args()) == 0  # held, not a failure
+    assert "note: held from the site" in capsys.readouterr().out
+    assert "ana-example" not in speakers.speakers()
+    assert 'id="ana-example"' not in speakers.speakers_page()
+    home = importlib.reload(importlib.import_module("home"))
+    assert "Ana Example" not in home.speakers_block()
+    speakers.cmd_build(Args())
+    stale = tmp_path / "site" / "speaker-ana-example.html"
+    stale.write_text("old page", encoding="utf-8")
+    assert speakers.cmd_build(type("A", (), {"check": True})()) == 1  # the stale page is named, not served
+    speakers.cmd_build(Args())
+    assert not stale.exists()
+    (tmp_path / "speakers" / "ana-example.md").write_text(SPEAKER, encoding="utf-8")  # the hold line comes off
+    assert "ana-example" in speakers.speakers()
+    assert 'id="ana-example"' in speakers.speakers_page()
+
+
+def test_a_held_speaker_with_a_session_on_the_program_fails_the_check(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("publish: yes\n", "hold: waiting for his employer's approval\npublish: yes\n"))
+    assert speakers.cmd_check(Args()) == 1  # the program record still names the profile: the session must come off too
+    assert any("not a published speaker record" in p for p in speakers.session_problems())
+
+
+def test_a_held_speaker_keeps_their_order_in_the_clash_check(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("publish: yes\n", "order: 4\nhold: waiting for his employer's approval\npublish: yes\n"))
+    (tmp_path / "program" / "s.md").unlink()
+    (tmp_path / "speakers" / "bo-other.md").write_text("---\nname: Bo Other\norder: 4\npublish: yes\n---\n\nA bio.\n", encoding="utf-8")
+    assert speakers.cmd_check(Args()) == 1
+    assert any("order 4 is given to more than one speaker" in p for p in speakers.order_problems())
+
+
+def test_hold_must_be_one_short_line(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("publish: yes\n", "publish: yes\nhold: " + "x" * 81 + "\n"))
+    problems, _, _ = speakers.check_speaker(tmp_path / "speakers" / "ana-example.md", {})
+    assert any("hold must be" in p for p in problems)
+
+
 def test_travel_funded_by_is_refused(tmp_path, monkeypatch):
     program, speakers = setup(tmp_path, monkeypatch)
     record = tmp_path / "speakers" / "ana-example.md"

@@ -39,6 +39,7 @@ BIO_WORDS = 120
 ROLE_CHARS = 80
 TALK_CHARS = 80
 TALK_WORDS = 120
+HOLD_CHARS = 80
 esc = program.esc
 
 
@@ -118,6 +119,8 @@ def check_speaker(path: Path, known_supporters):
             problems.append("talk_about must be the speaker's own words on the session")
         elif len(about.split()) > TALK_WORDS:
             problems.append(f"talk_about is longer than {TALK_WORDS} words")
+    if "hold" in meta and (not isinstance(meta["hold"], str) or not meta["hold"].strip() or "\n" in meta["hold"] or len(meta["hold"]) > HOLD_CHARS):
+        problems.append(f"hold must be one line of at most {HOLD_CHARS} characters: why the speaker stays off the site for now")
     if meta.get("photo"):
         p = image_problem(meta["photo"], "speakers", "photo")
         if p:
@@ -132,13 +135,15 @@ def check_speaker(path: Path, known_supporters):
     return problems, meta, body
 
 
-def speakers():
+def speakers(include_held=False):
+    """Valid records; a held one (a `hold` line) only when asked for: it is kept, but not listed."""
     known = supporters()
     out = {}
     for path in records(SPEAKERS):
         problems, meta, body = check_speaker(path, known)
-        if not problems:
-            out[path.stem] = (meta, body)
+        if problems or (meta.get("hold") and not include_held):
+            continue
+        out[path.stem] = (meta, body)
     return out
 
 
@@ -148,9 +153,9 @@ def listed(people: dict) -> list:
 
 
 def order_problems():
-    """Two published speakers with the same order would leave the list's order to chance."""
+    """Two speakers with the same order would leave the list's order to chance; a held speaker keeps their number."""
     seen = {}
-    for slug, (meta, _) in speakers().items():
+    for slug, (meta, _) in speakers(include_held=True).items():
         if meta.get("order"):
             seen.setdefault(meta["order"], []).append(slug)
     return [f"order {n} is given to more than one speaker: {', '.join(slugs)}" for n, slugs in sorted(seen.items()) if len(slugs) > 1]
@@ -196,6 +201,8 @@ def cmd_check(_args) -> int:
         print(f"speakers/{path.name}: {(meta or {}).get('name') or path.stem}")
         for p in problems:
             print(f"  needs a change: {p}")
+        if not problems and (meta or {}).get("hold"):
+            print(f"  note: held from the site, so not listed: {meta['hold']}")
         failed += bool(problems)
     linked = session_problems()
     for p in linked:
