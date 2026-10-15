@@ -39,6 +39,21 @@ funds: Online supporter
 ---
 """
 
+TALKING = """---
+name: Ana Example
+links:
+  - https://example.com/ana
+publish: yes
+talk: Salt, goats and servers
+talk_about: |
+  How a small town runs its own infrastructure.
+
+  For everyone who likes goats.
+---
+
+Ana builds small systems for small towns.
+"""
+
 
 def setup(tmp_path, monkeypatch, speaker=SPEAKER):
     program = importlib.reload(importlib.import_module("program"))
@@ -110,6 +125,35 @@ def test_session_signup_link_must_be_https(tmp_path, monkeypatch):
     rec.write_text(rec.read_text().replace("accepted: yes", "accepted: yes\nsignup: http://example.com/x"), encoding="utf-8")
     problems, _, _ = program.check_record(rec)
     assert any("signup must be" in p for p in problems)
+
+
+def test_a_talk_shows_before_it_has_a_slot(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, TALKING)
+    (tmp_path / "program" / "s.md").unlink()  # no session on the program yet
+    assert speakers.cmd_check(Args()) == 0
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], [], speakers.supporters())
+    assert "<strong>Salt, goats and servers</strong>" in page
+    assert "<p>How a small town runs its own infrastructure.</p>" in page
+    assert "<p>For everyone who likes goats.</p>" in page  # a paragraph each, as written
+    assert "The session will be on the program soon." not in page
+    assert 'content="Ana Example speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: Salt, goats and servers."' in page
+    assert "Talk: Salt, goats and servers" in speakers.speakers_page()
+
+
+def test_the_talk_fields_come_off_once_the_session_is_on_the_program(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, TALKING)
+    assert speakers.cmd_check(Args()) == 1  # the session record now carries it: the talk fields are spent
+    assert any("remove talk and talk_about" in p for p in speakers.talk_problems())
+
+
+def test_talk_needs_a_title_and_talk_about_stays_short(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("publish: yes\n", "publish: yes\ntalk_about: A sentence.\n"))
+    record = tmp_path / "speakers" / "ana-example.md"
+    problems, _, _ = speakers.check_speaker(record, {})
+    assert any("talk_about needs talk" in p for p in problems)
+    record.write_text(SPEAKER.replace("publish: yes\n", "publish: yes\ntalk: " + "x" * 81 + "\ntalk_about: " + " ".join(["y"] * 121) + "\n"), encoding="utf-8")
+    problems, _, _ = speakers.check_speaker(record, {})
+    assert any("talk must be" in p for p in problems) and any("longer than 120 words" in p for p in problems)
 
 
 def test_role_shows_everywhere_the_name_does(tmp_path, monkeypatch):

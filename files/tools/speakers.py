@@ -37,6 +37,8 @@ URL = re.compile(r"^https?://\S+$")
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 BIO_WORDS = 120
 ROLE_CHARS = 80
+TALK_CHARS = 80
+TALK_WORDS = 120
 esc = program.esc
 
 
@@ -106,6 +108,16 @@ def check_speaker(path: Path, known_supporters):
         problems.append(f"the bio is longer than {BIO_WORDS} words")
     if "role" in meta and (not isinstance(meta["role"], str) or not meta["role"].strip() or "\n" in meta["role"] or len(meta["role"]) > ROLE_CHARS):
         problems.append(f"role must be one line of at most {ROLE_CHARS} characters, for example: Staff Engineer at Vinted")
+    if "talk" in meta and (not isinstance(meta["talk"], str) or not meta["talk"].strip() or "\n" in meta["talk"] or len(meta["talk"]) > TALK_CHARS):
+        problems.append(f"talk must be one line of at most {TALK_CHARS} characters: the proposed session's title")
+    about = meta.get("talk_about")
+    if about is not None:
+        if not meta.get("talk"):
+            problems.append("talk_about needs talk: the title of the session it describes")
+        if not isinstance(about, str) or not about.strip():
+            problems.append("talk_about must be the speaker's own words on the session")
+        elif len(about.split()) > TALK_WORDS:
+            problems.append(f"talk_about is longer than {TALK_WORDS} words")
     if meta.get("photo"):
         p = image_problem(meta["photo"], "speakers", "photo")
         if p:
@@ -156,6 +168,17 @@ def session_problems():
     return problems
 
 
+def talk_problems():
+    """A speaker whose session reached the program keeps no copy of the talk: the program record is the source."""
+    known = speakers()
+    on_program = set()
+    for path in program.records():
+        meta, _, _ = extensions.parse(path)
+        on_program.update((meta or {}).get("profiles") or [])
+    return [f"{slug}: the session is on the program now, so remove talk and talk_about from the speaker record"
+            for slug in sorted(known) if slug in on_program and known[slug][0].get("talk")]
+
+
 def cmd_check(_args) -> int:
     known = supporters()
     failed = 0
@@ -179,6 +202,10 @@ def cmd_check(_args) -> int:
         print(f"program/{p}")
     clashes = order_problems()
     for p in clashes:
+        print(f"speakers: {p}")
+        failed += 1
+    spent = talk_problems()
+    for p in spent:
         print(f"speakers: {p}")
         failed += 1
     print(f"speakers and supporters: {count} record(s), {failed} need a change, {len(linked)} broken profile link(s)")
@@ -215,7 +242,8 @@ def goat_photo() -> str:
 def speaker_card(n: int, slug: str, meta, body, sessions, known) -> str:
     photo = f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo") else goat_photo()
     role = f'<span class="speaker__role">{esc(meta["role"])}</span>' if meta.get("role") else ""
-    first = f'<span class="speaker__first">{sessions[0]}</span>' if sessions else ""
+    first = (f'<span class="speaker__first">{sessions[0]}</span>' if sessions
+             else f'<span class="speaker__first">Talk: {esc(meta["talk"])}</span>' if meta.get("talk") else "")
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
     return f"""  <li class="sticker sticker--speaker" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <a class="speaker__link" href="{page_name(slug)}">
@@ -229,10 +257,17 @@ def speaker_card(n: int, slug: str, meta, body, sessions, known) -> str:
 def speaker_page(slug: str, meta, body, sessions, known) -> str:
     name = esc(meta["name"])
     bio = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
-    talks = "\n".join(
-        f'<li class="talk"><span class="talk__when"><a href="program.html#{s["day"].isoformat()}">{program.CORE_DAYS[s["day"]]}, {s["start"]}</a>'
-        f'<span>{esc(s["format"])}, {esc(s["room"])}</span></span><strong>{esc(s["title"])}</strong><p>{esc(s["about"])}</p>'
-        + (f'<a class="session__register" href="{esc(s["signup"])}">Save a seat</a>' if s.get("signup") else "") + '</li>' for s in sessions)
+    if sessions:
+        talks = "\n".join(
+            f'<li class="talk"><span class="talk__when"><a href="program.html#{s["day"].isoformat()}">{program.CORE_DAYS[s["day"]]}, {s["start"]}</a>'
+            f'<span>{esc(s["format"])}, {esc(s["room"])}</span></span><strong>{esc(s["title"])}</strong><p>{esc(s["about"])}</p>'
+            + (f'<a class="session__register" href="{esc(s["signup"])}">Save a seat</a>' if s.get("signup") else "") + '</li>' for s in sessions)
+    elif meta.get("talk"):
+        about = "".join(f"<p>{esc(p.strip())}</p>" for p in str(meta.get("talk_about") or "").split("\n\n") if p.strip())
+        talks = (f'<li class="talk"><span class="talk__when"><span>Talk</span><span>Day and time to be announced</span></span>'
+                 f'<strong>{esc(meta["talk"])}</strong>{about}</li>')
+    else:
+        talks = ""
     links = "".join(f'<li><a href="{esc(u)}">{esc(re.sub(r"^https?://(www\.)?", "", str(u)).rstrip("/"))}</a></li>' for u in meta.get("links") or [])
     card = SITE / "share" / f"speaker-{slug}-square.png"
     share = (f'<p><a class="go go--ink" href="share/speaker-{esc(slug)}-square.png" download>Download the "I\'m speaking" card</a></p>'
@@ -256,7 +291,13 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
 </section>"""
     title = f"{meta['name']}: speaking at GoatConf 2027, Tuzla"
     who = f"{meta['name']} ({meta['role']})" if meta.get("role") else meta["name"]
-    desc = f"{esc(who)} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: " + (esc(first["title"]) if first else "a session at IPI Academy") + "."
+    if first:
+        subject = esc(first["title"])
+    elif meta.get("talk"):
+        subject = esc(meta["talk"])
+    else:
+        subject = "a session at IPI Academy"
+    desc = f"{esc(who)} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: {subject}."
     preview = preview_name(slug) if (SITE / "share" / preview_name(slug)).exists() else ""
     return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main, preview)
 
