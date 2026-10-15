@@ -1643,10 +1643,12 @@
       "sources": [
         "sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md",
         "sources/conversations/2026-10-15--org--christoph-lipautz.md",
+        "sources/conversations/2026-10-15--org--christoph-photo-in-colour.md",
         "sources/web/speakers/euruko-2024-team-2026-10-15.md",
+        "sources/web/speakers/euruko-2024-team-photo-2026-10-15.md",
         "sources/web/supporters/meister-logo-2026-10-15.md"
       ],
-      "tokens": 928
+      "tokens": 968
     },
     {
       "path": "org/speakers/cristian-planas.md",

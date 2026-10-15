@@ -300,3 +300,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-15 merge — PR #64: site: Christoph Lipautz is a confirmed speaker, and Meister a supporter
    diff: 31 files, +400/-22
    restricted-paths: false
+2026-10-15 merge — PR #65: site: Christoph Lipautz's photo, in colour from EuRuKo 2024
+   diff: 9 files, +66/-5
+   restricted-paths: false

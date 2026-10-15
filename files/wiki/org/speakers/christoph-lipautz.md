@@ -7,7 +7,9 @@ confidence: medium
 sources:
   - sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md
   - sources/conversations/2026-10-15--org--christoph-lipautz.md
+  - sources/conversations/2026-10-15--org--christoph-photo-in-colour.md
   - sources/web/speakers/euruko-2024-team-2026-10-15.md
+  - sources/web/speakers/euruko-2024-team-photo-2026-10-15.md
   - sources/web/supporters/meister-logo-2026-10-15.md
 ---
 
@@ -42,10 +44,12 @@ the sources say and what bears on GoatConf.
 - **Meister:** his employer; it covers his travel and is listed on the
   supporters wall, the same as online supporters (sources: the talk
   form, sources/conversations/2026-10-15--org--christoph-lipautz.md).
-- **Photo:** the file `christoph.png` from the organiser's Downloads;
-  used on the organiser's decision, resized to 800 pixels wide,
-  flattened on white and re-encoded as JPEG, no crop (source:
-  sources/conversations/2026-10-15--org--christoph-lipautz.md).
+- **Photo:** the colour EuRuKo 2024 team picture, which replaces the
+  first black-and-white file from the organiser's Downloads on the
+  organiser's decision: cropped to a square at the centre, resized to
+  800 by 800 and re-encoded as JPEG (sources:
+  sources/conversations/2026-10-15--org--christoph-photo-in-colour.md,
+  sources/web/speakers/euruko-2024-team-photo-2026-10-15.md).
 - **Role on the site and cards:** "Senior Staff Engineer at Meister",
   from his own bio (source: the talk form).
 - **Bio:** his line on the form, verbatim (source: the talk form).
