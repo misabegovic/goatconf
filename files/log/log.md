@@ -306,3 +306,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-15 merge — PR #66: site: Christoph Lipautz's talk shows on his page, and his public profiles join his links
    diff: 14 files, +233/-24
    restricted-paths: true
+2026-10-15 merge — PR #67: site: Jan Grodowski held from the site while his employer clears the engagement
+   diff: 16 files, +134/-118
+   restricted-paths: true
