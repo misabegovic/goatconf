@@ -303,3 +303,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-15 merge — PR #65: site: Christoph Lipautz's photo, in colour from EuRuKo 2024
    diff: 9 files, +66/-5
    restricted-paths: false
+2026-10-15 merge — PR #66: site: Christoph Lipautz's talk shows on his page, and his public profiles join his links
+   diff: 14 files, +233/-24
+   restricted-paths: true
