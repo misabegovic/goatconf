@@ -315,3 +315,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-15 merge — PR #69: records: draft the first speakers beat, with its card
    diff: 6 files, +30/-3
    restricted-paths: true
+2026-10-15 merge — PR #70: records: the first post opens warmer
+   diff: 4 files, +45/-9
+   restricted-paths: false
