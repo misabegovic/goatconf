@@ -9,6 +9,14 @@ is their bio in their own words, at most 120 words.
 - `name`: required.
 - `publish: yes`: required. The speaker agreed to this public profile on the
   talk form; the check refuses a record without it.
+- `hold`: optional, one line of at most 80 characters while a record
+  must stay off the site, for example `waiting for his employer's
+  approval`. The record is kept and checked, but the speaker comes off
+  the speakers page, the home page and the files for agents, and their
+  own page is removed from `site/` on the next build, until the line is
+  gone. Their `order` keeps its place in the no-two-share check, and a
+  session reaching the program while they are held still fails the
+  check.
 - `photo`: optional, a file the speaker sent, saved under
   `site/img/speakers/`. Without one the profile shows the goat.
 - `links`: optional, a list of web addresses.

@@ -9,6 +9,7 @@ links:
   - https://bsky.app/profile/grodowski.bsky.social
   - https://x.com/mrgrodo
 order: 4
+hold: waiting for his employer's approval before any announcement
 publish: yes
 ---
 
