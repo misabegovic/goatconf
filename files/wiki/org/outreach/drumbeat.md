@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-15--org--drafting-the-first-posts.md
   - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
   - sources/conversations/2026-10-14--org--speakers-dinner.md
   - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
@@ -45,23 +46,21 @@ Weeks count from the week goatconf.com goes live (week 1). The organiser fills i
 
 The story in week 5 follows the EuRuKo 2024 account of the goat (source: sources/web/funding/euruko-2024-why-the-goat.md).
 
-### Week 1: GoatConf exists. Save the date
+### Week 1: GoatConf is happening
 
 - **State:** drafted
 - **Image:** `post-save-the-date-square.png` (LinkedIn, Mastodon), `post-save-the-date-wide.png` (X, Bluesky)
 - **LinkedIn:**
 
-  > GoatConf is coming to Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027. It is free.
+  > Hey, GoatConf is happening.
   >
-  > Thursday and Friday are two days of one-hour talks, panels and workshops in all seven rooms of IPI Academy, with a full hour off after each session to talk with the people you just heard. Saturday belongs to the community: the salt lakes, a goat hunt through town, walks and meetups.
+  > It's a conference in Tuzla, Bosnia and Herzegovina, on 3 to 5 June 2027, and it's free to attend.
   >
-  > The goat is from a Tuzla story. When the town was ordered to get rid of its goats, one man hid his, and that one goat ended up feeding everyone. GoatConf works the same way: a small core, and everything else added by the people who come.
-  >
-  > Save the date: goatconf.com
+  > Two days of talks at IPI Academy, then a Saturday together at the salt lakes. Plan to join us in Tuzla: goatconf.com
 
 - **Short:**
 
-  > GoatConf is coming to Tuzla, Bosnia and Herzegovina: 3 to 5 June 2027, free. Two days of talks in every room of IPI Academy, then a day for the community at the salt lakes. Save the date: goatconf.com
+  > Hey, GoatConf 2027 is happening. A conference in Tuzla, Bosnia and Herzegovina: 3 to 5 June, free to attend. Two days of talks, then a Saturday together at the salt lakes. Plan to join us: goatconf.com
 
 ### Week 2: The call for talks is open
 
