@@ -336,3 +336,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-17 merge — PR #76: site: the home page's speaker stickers show the talk title
    diff: 28 files, +76/-26
    restricted-paths: true
+2026-10-17 merge — PR #77: site: the home page cover drops its line on the format
+   diff: 23 files, +45/-22
+   restricted-paths: false
