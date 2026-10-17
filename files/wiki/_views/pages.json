@@ -609,9 +609,10 @@
       "title": "GoatConf 2027: what is known",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-15",
+      "updated": "2026-10-17",
       "confidence": "medium",
       "sources": [
+        "sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md",
         "sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md",
         "sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md",
         "sources/conversations/2026-10-15--org--christoph-lipautz.md",
@@ -661,16 +662,16 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2924
+      "tokens": 2968
     },
     {
       "path": "org/index.md",
       "title": "goatconf: the conference as a whole",
       "kind": "meta",
       "status": "draft",
-      "updated": "2026-10-15",
+      "updated": "2026-10-17",
       "sources": [],
-      "tokens": 1688,
+      "tokens": 1702,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -1228,12 +1229,13 @@
       "title": "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-10-17",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-17--org--dejan-talk.md",
         "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-13--org--speaker-profile-required.md",
@@ -1262,7 +1264,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 4123,
+      "tokens": 4209,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -1691,6 +1693,8 @@
       "updated": "2026-10-17",
       "confidence": "medium",
       "sources": [
+        "sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md",
+        "sources/conversations/2026-10-17--org--dejan-talk.md",
         "sources/conversations/2026-10-17--org--dejan-photo-and-role.md",
         "sources/conversations/2026-10-14--org--speaker-role-and-employer.md",
         "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
@@ -1698,7 +1702,7 @@
         "sources/web/speakers/compass-summit-dejan-menges-2026-10-14.md",
         "sources/web/organiser/muhamed-at-about.md"
       ],
-      "tokens": 771
+      "tokens": 1043
     },
     {
       "path": "org/speakers/jan-grodowski.md",

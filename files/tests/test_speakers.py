@@ -151,9 +151,9 @@ def test_talk_needs_a_title_and_talk_about_stays_short(tmp_path, monkeypatch):
     record = tmp_path / "speakers" / "ana-example.md"
     problems, _, _ = speakers.check_speaker(record, {})
     assert any("talk_about needs talk" in p for p in problems)
-    record.write_text(SPEAKER.replace("publish: yes\n", "publish: yes\ntalk: " + "x" * 81 + "\ntalk_about: " + " ".join(["y"] * 121) + "\n"), encoding="utf-8")
+    record.write_text(SPEAKER.replace("publish: yes\n", "publish: yes\ntalk: " + "x" * 81 + "\ntalk_about: " + " ".join(["y"] * 301) + "\n"), encoding="utf-8")
     problems, _, _ = speakers.check_speaker(record, {})
-    assert any("talk must be" in p for p in problems) and any("longer than 120 words" in p for p in problems)
+    assert any("talk must be" in p for p in problems) and any("longer than 300 words" in p for p in problems)
 
 
 def test_role_shows_everywhere_the_name_does(tmp_path, monkeypatch):

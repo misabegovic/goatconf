@@ -2,7 +2,7 @@
 title: "goatconf: the conference as a whole"
 kind: meta
 status: draft
-updated: 2026-10-15
+updated: 2026-10-17
 sources: []
 ---
 
@@ -18,7 +18,7 @@ timeline, budget, and decisions that touch more than one area.
 - Speakers, one page each, from public sources, in the organiser's order:
   - [Paul Campbell](speakers/paul-campbell.md): co-founder and CEO of Tito in Dublin, organiser of Funconf; confirmed 2026-10-14, session to come.
   - [Carmine Paolino](speakers/carmine-paolino.md): creator of RubyLLM, founder of Plenty in Berlin; spoke at RubyConf Austria 2026; confirmed 2026-10-14, session to come.
-  - [Dejan Menges](speakers/dejan-menges.md): staff engineer at Vinted, author of Enola; confirmed 2026-10-14, session to come.
+  - [Dejan Menges](speakers/dejan-menges.md): staff engineer at Vinted, author of Enola; confirmed 2026-10-14; talk "Teaching Twenty Languages to Describe One System", slot to come.
   - [Jan Grodowski](speakers/jan-grodowski.md): Staff Software Engineer at Shopify in Salzburg, author of the undercover gem; ran a workshop at RubyConf Austria 2026; confirmed 2026-10-14, session to come; held from the site since 2026-10-15 while his employer clears the engagement.
   - [Amar Mahmutbegović](speakers/amar-mahmutbegovic.md): co-founder and Head of Engineering at Semblie in Tuzla, author of C++ in Embedded Systems; confirmed 2026-10-14, session to come.
   - [Cristian Planas](speakers/cristian-planas.md): author of Rails Scales!, long at Zendesk, now at Combinaut; confirmed 2026-10-14, session to come.

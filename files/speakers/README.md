@@ -35,7 +35,7 @@ is their bio in their own words, at most 120 words.
   most 80 characters (for example `Back to the Future`). It shows on
   their page and their card while the session has no slot.
 - `talk_about`: optional, their own words on what the session is about
-  and who it is for, at most 120 words; it needs `talk`. Separate
+  and who it is for, at most 300 words; it needs `talk`. Separate
   paragraphs stay separate paragraphs on the page.
 
 A confirmed speaker can be added before their session has a slot (since

@@ -2,12 +2,13 @@
 title: "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund"
 kind: initiative
 status: living
-updated: 2026-10-14
+updated: 2026-10-17
 parent_epic: goatconf-2027
 appetite: medium
 confidence: medium
 supersedes: org/pitches/cfp-and-speakers.md
 sources:
+  - sources/conversations/2026-10-17--org--dejan-talk.md
   - sources/conversations/2026-10-14--org--speakers-before-sessions.md
   - sources/conversations/2026-10-14--org--speakers-dinner.md
   - sources/conversations/2026-10-13--org--speaker-profile-required.md
@@ -295,4 +296,5 @@ submissions use the same tool, so the ADR's choice binds that PRD too.
 - **2026-10-14, the speakers dinner.** Every accepted speaker is invited to a speakers dinner, with the date still to come. It is paid from online supporters' money, as an event cost, if the budget allows; the organiser's own money never pays for it, and until it is funded everyone pays for their own meal. The talk page and the live talk form say so (source: sources/conversations/2026-10-14--org--speakers-dinner.md).
 - **2026-10-14, speakers before their sessions.** A confirmed speaker who has agreed to a public profile can be published before their session has a slot or a topic; their page says the session will be on the program soon. The first is [Dejan Menges](../speakers/dejan-menges.md), whose bio is the short bio on his own site and whose photo comes from his last conference's speaker page, on the organiser's choice (source: sources/conversations/2026-10-14--org--speakers-before-sessions.md).
 - **2026-10-15, the talk shows before its slot.** A record can carry the proposed session's title and the speaker's own words on it while it has no slot: the page and card show them with the day and time to be announced, in place of "The session will be on the program soon.", and the check asks for the fields to come off once the session is on the program. First used for [Christoph Lipautz](../speakers/christoph-lipautz.md) (source: sources/conversations/2026-10-15--org--christoph-talk-on-his-page.md).
+- **2026-10-17, room for a longer talk text.** A speaker's own words on a talk without a slot may run to 300 words, up from 120, so a proposal's full answer fits; the bio stays at 120. First used for [Dejan Menges](../speakers/dejan-menges.md), whose four paragraphs show in full (source: sources/conversations/2026-10-17--org--dejan-talk.md).
 - **2026-10-15, a record can be held from the site.** A speaker record can carry a `hold` line while the speaker must not show, for example while their employer clears the engagement: the record is kept and checked but listed nowhere, their page comes down on the next build, and their order keeps its place in the no-two-share check; removing the line publishes them again. First used for [Jan Grodowski](../speakers/jan-grodowski.md) (source: sources/conversations/2026-10-15--org--hold-jan-grodowski.md).
