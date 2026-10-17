@@ -22,6 +22,27 @@ def test_days_follow_the_day_plan():
     assert "Saturday 5th June" in html
 
 
+
+def test_days_link_to_the_program_open_the_evenings_and_list_what_people_add(monkeypatch):
+    import datetime as dt
+    home = importlib.reload(importlib.import_module("home"))
+    program = importlib.import_module("program")
+    thu, wed, sat, later = dt.date(2027, 6, 3), dt.date(2027, 6, 2), dt.date(2027, 6, 5), dt.date(2027, 6, 9)
+    ext = {thu: [(dt.datetime(2027, 6, 3, 19, 0), {"name": "Ruby & beer"}, "")],
+           wed: [(dt.datetime(2027, 6, 2, 18, 30), {"name": "The night before"}, "")],
+           sat: [(dt.datetime(2027, 6, 5), {"name": "Salt lake hike"}, "")],
+           later: [(dt.datetime(2027, 6, 9), {"name": "Too late"}, "")]}
+    monkeypatch.setattr(program, "extension_days", lambda: ext)
+    html = home.days()
+    for day in (*program.DAY_PLAN, sat):
+        assert f'href="program.html#{day.isoformat()}"' in html
+    assert html.count(home.EVENING) == len(program.DAY_PLAN)
+    assert "Hours off: coffee on Freedom Square and lunch in town." in html
+    assert '<small class="day__added">Added: Ruby &amp; beer, 19:00</small>' in html
+    assert '<small class="day__added">Added: Salt lake hike</small>' in html
+    assert html.index("The night before") > html.index('href="add.html"')
+    assert "Too late" not in html
+
 def test_top_bar_marks_the_current_page_and_replaces_itself():
     nav = importlib.reload(importlib.import_module("nav"))
     page = '<html><body>\n<svg width="0" height="0"><defs></defs></svg>\n<main id="main"></main></body></html>'
