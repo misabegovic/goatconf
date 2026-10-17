@@ -10,6 +10,7 @@ depends_on:
   - org/prds/extension-slots-and-the-record.md
 supersedes: org/adrs/website-and-registration.md
 sources:
+  - sources/conversations/2026-10-17--org--three-days-section.md
   - sources/conversations/2026-10-17--org--event-kinds-clickable.md
   - sources/conversations/2026-10-17--org--organiser-block-below-the-goat.md
   - sources/conversations/2026-10-13--org--forms-on-goatconf-com.md
@@ -132,6 +133,7 @@ builds are checked by the local CI.
 - **2026-10-12, approval back on.** The organiser chose to keep approving each registration on Luma after all, so "Require Approval" is on again; the guest list stays hidden, and the main registration has no limit (source: sources/conversations/2026-10-12--org--approval-back-on.md). This replaces the "no approval" part of the amendment above.
 - **2026-10-17, who's organising, below why a goat.** On the organiser's ask, the organiser block (the organiser, IPI Academy, the fact stickers and the conferences run before) moves from after the three days to after why a goat, so the home page runs: the cover with the seal, the three days, who is speaking, give a talk, Tuzla, food, propose an event, the supporters, why a goat, who's organising, and the code of conduct; the album's numbers follow the new order (source: sources/conversations/2026-10-17--org--organiser-block-below-the-goat.md).
 - **2026-10-17, the event kinds are links.** On the organiser's ask, every kind in the home page's "Propose an event" section links to the page for proposing one, as the "Your talk" slots link to the call for talks (source: sources/conversations/2026-10-17--org--event-kinds-clickable.md).
+- **2026-10-17, the three days invite events on any day.** On the organiser's ask, the home page's day stickers link to their day on the program, say what the hours off are, open the Thursday and Friday evenings to events people add, and list accepted events under their day; a "Yours?" slot after them invites an event on any day from 2 to 6 June (source: sources/conversations/2026-10-17--org--three-days-section.md).
 
 ## Related
 

@@ -357,6 +357,8 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .shiny__seal { filter: drop-shadow(0 1.2rem 1.4rem rgb(0 0 0 / 0.45)); transform: rotate(-4deg); }
 .back-cover__coin { width: 2.75rem; height: 2.75rem; display: block; }
 .slots--days { grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; }
+.sticker--day { height: 100%; justify-content: flex-start; text-decoration: none; }
+.day__added { font-weight: 700; color: var(--yellow) !important; }
 .sticker--day strong { font-size: clamp(1.7rem, 1.2rem + 1.6vw, 2.5rem); }
 .day__hours { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.35rem; color: var(--page); font-variant-numeric: tabular-nums; }
 .slots--mini { grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; margin-bottom: 1.4rem; }
