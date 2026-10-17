@@ -276,6 +276,7 @@
       ],
       "supersedes": "org/adrs/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-10-17--org--event-kinds-clickable.md",
         "sources/conversations/2026-10-17--org--organiser-block-below-the-goat.md",
         "sources/conversations/2026-10-13--org--forms-on-goatconf-com.md",
         "sources/conversations/2026-10-12--org--approval-back-on.md",
@@ -295,7 +296,7 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 2698
+      "tokens": 2771
     },
     {
       "path": "org/adrs/online-supporters-through-the-business.md",
