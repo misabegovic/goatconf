@@ -333,3 +333,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-17 merge — PR #75: site: Dejan Menges's talk shows on his page, in full
    diff: 14 files, +142/-23
    restricted-paths: true
+2026-10-17 merge — PR #76: site: the home page's speaker stickers show the talk title
+   diff: 28 files, +76/-26
+   restricted-paths: true
