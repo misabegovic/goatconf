@@ -2,7 +2,7 @@
 title: Index — by kind
 kind: meta
 status: living
-updated: 2026-10-15
+updated: 2026-10-17
 confidence: high
 sources:
   - tools/brain.py
