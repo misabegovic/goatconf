@@ -327,3 +327,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-17 merge — PR #73: site: every event kind on the home page is a link
    diff: 25 files, +56/-30
    restricted-paths: false
+2026-10-17 merge — PR #74: site: the goat story drops "Whoever runs it gets the slot."
+   diff: 3 files, +18/-1
+   restricted-paths: false
