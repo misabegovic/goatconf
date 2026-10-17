@@ -167,6 +167,18 @@ def test_role_shows_everywhere_the_name_does(tmp_path, monkeypatch):
     assert '<small class="sticker__role">Engineer at A&amp;B</small>' in home.speaker_sticker(0, "ana-example", speakers.speakers()["ana-example"][0])
 
 
+
+def test_home_sticker_shows_the_talk_title_like_the_speakers_page(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch)
+    home = importlib.reload(importlib.import_module("home"))
+    assert '<small class="sticker__talk">Talk: Salt, goats and servers</small>' in home.speakers_block()
+    (tmp_path / "program" / "s.md").unlink()
+    (tmp_path / "speakers" / "ana-example.md").write_text(SPEAKER.replace("publish: yes\n", "publish: yes\ntalk: Rails & Goats\n"), encoding="utf-8")
+    assert "Talk: Rails &amp; Goats" in speakers.speakers_page()
+    assert '<small class="sticker__talk">Talk: Rails &amp; Goats</small>' in home.speakers_block()
+    assert "sticker__talk" not in home.speaker_sticker(0, "ana-example", {"name": "Ana Example"})
+
+
 def test_role_must_be_one_short_line(tmp_path, monkeypatch):
     _, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("name: Ana Example\n", "name: Ana Example\nrole: " + "x" * 81 + "\n"))
     assert speakers.cmd_check(Args()) == 1
