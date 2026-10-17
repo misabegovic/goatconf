@@ -330,3 +330,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-17 merge — PR #74: site: the goat story drops "Whoever runs it gets the slot."
    diff: 3 files, +18/-1
    restricted-paths: false
+2026-10-17 merge — PR #75: site: Dejan Menges's talk shows on his page, in full
+   diff: 14 files, +142/-23
+   restricted-paths: true
