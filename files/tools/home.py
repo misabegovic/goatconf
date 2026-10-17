@@ -45,7 +45,7 @@ def block(name: str, html: str) -> tuple[re.Pattern, str]:
 # organiser accepts show under their day, the rest of the week under the slot
 # that invites more.
 WEEK = (dt.date(2027, 6, 2), dt.date(2027, 6, 6))
-EVENING = "Evening: open for the meetups, dinners and karaoke people add."
+EVENING = "Evening: open for whatever people add."
 
 
 def hours_off(plan) -> str:
@@ -83,7 +83,7 @@ def days() -> str:
     outside = [e for d, evs in ext.items() if d not in program.DAY_PLAN and d != sat and WEEK[0] <= d <= WEEK[1] for e in evs]
     items.append('    <li class="slots__wide"><a class="slot slot--link slot--open" href="add.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
                  '<span class="num num--printed">0</span><strong>Your event, any day from 2 to 6 June</strong>'
-                 '<small>A meetup, a dinner, a hike or karaoke: you run it, and once the organiser accepts it, it is on the program.</small>'
+                 '<small>Anything you would like to run for the people who come. You run it, and once the organiser accepts it, it is on the program.</small>'
                  + added(outside) + '<span class="stamp">Yours?</span></a></li>')
     return f"""<section class="album-page wrap" id="days" aria-labelledby="days-title">
   <h2 class="band" id="days-title">Three days in June</h2>
