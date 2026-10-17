@@ -360,7 +360,7 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .sticker--day { height: 100%; justify-content: flex-start; text-decoration: none; }
 .day__added { font-weight: 700; color: var(--yellow) !important; }
 .sticker--day strong { font-size: clamp(1.7rem, 1.2rem + 1.6vw, 2.5rem); }
-.day__hours { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.35rem; color: var(--page); font-variant-numeric: tabular-nums; }
+.day__hours { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.35rem; line-height: 1.1; color: var(--page); font-variant-numeric: tabular-nums; }
 .slots--mini { grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; margin-bottom: 1.4rem; }
 @media (max-width: 47.99rem) { .slots--mini { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .sticker--mini { display: block; text-decoration: none; }
@@ -376,6 +376,9 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .supporter-chip--dark img { box-sizing: border-box; padding: 0.6rem; border-radius: 0.35rem; background: var(--album-deep); }
 @media (max-width: 61.99rem) {
   .slots--days { grid-template-columns: minmax(0, 1fr); }
+  /* A full-width sticker swings far at its ends: keep the days nearly level. */
+  .slots--days > li:nth-child(odd) .sticker--day { --tilt: -0.5deg !important; }
+  .slots--days > li:nth-child(even) .sticker--day { --tilt: 0.5deg !important; }
   .page-head__photo { grid-row: auto; }
 }
 @media (max-width: 47.99rem) {
@@ -497,7 +500,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 /* The cover's second line: the feeling, a step quieter than the first */
 .cover-lede strong { color: var(--yellow); }
 .cover-lede--second { margin-top: 0.9rem; font-size: 1.2rem; line-height: 1.3; opacity: 0.92; }
-@media (max-width: 47.99rem) { .album-page .slots--days > :last-child:nth-child(odd) { grid-column: 1 / -1; } }
+@media (max-width: 47.99rem) { .album-page .slots--days { grid-template-columns: minmax(0, 1fr); } }
 .past-confs { margin-top: 2.4rem; }
 .past-confs__list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.4rem 1.6rem; margin: 0 0 2rem; padding: 0; }
 .past-conf { padding: 1.1rem; border-radius: 0.6rem; background: var(--page-print); }
