@@ -324,3 +324,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-17 merge — PR #72: site: who's organising moves below why a goat
    diff: 5 files, +111/-85
    restricted-paths: false
+2026-10-17 merge — PR #73: site: every event kind on the home page is a link
+   diff: 25 files, +56/-30
+   restricted-paths: false
