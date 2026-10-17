@@ -1235,6 +1235,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-17--org--talk-titles-on-home-stickers.md",
         "sources/conversations/2026-10-17--org--dejan-talk.md",
         "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
@@ -1264,7 +1265,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 4209,
+      "tokens": 4289,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
