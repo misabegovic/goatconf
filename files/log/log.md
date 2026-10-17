@@ -342,3 +342,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-17 merge — PR #78: site: the three days invite events on any day of the week
    diff: 27 files, +170/-68
    restricted-paths: true
+2026-10-17 merge — PR #79: site: the three days stack on phones and name no kinds of event
+   diff: 24 files, +56/-27
+   restricted-paths: true
