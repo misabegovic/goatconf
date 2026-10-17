@@ -38,7 +38,7 @@ SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 BIO_WORDS = 120
 ROLE_CHARS = 80
 TALK_CHARS = 80
-TALK_WORDS = 120
+TALK_WORDS = 300
 HOLD_CHARS = 80
 esc = program.esc
 
