@@ -2,11 +2,12 @@
 title: "The drumbeat: the weekly posts, drafted, from launch to June 2027"
 kind: reference
 status: draft
-updated: 2026-10-15
+updated: 2026-10-17
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-17--org--dejan-photo-and-role.md
   - sources/conversations/2026-10-15--org--drafting-the-first-posts.md
   - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
   - sources/conversations/2026-10-14--org--speakers-dinner.md
@@ -142,7 +143,7 @@ Drafted on 2026-10-15, once six speakers were public and none had been announced
   >
   > Paul Campbell, Co-founder and CEO of Tito
   > Carmine Paolino, Creator of RubyLLM, founder of Plenty
-  > Dejan Menges, Staff Engineer at Vinted
+  > Dejan Menges, Staff Engineer at Vinted, author of Enola
   > Amar Mahmutbegović, Co-founder and Head of Engineering at Semblie
   > Cristian Planas, Author of Rails Scales!, at Combinaut
   > Christoph Lipautz, Senior Staff Engineer at Meister

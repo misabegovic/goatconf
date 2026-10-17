@@ -2,9 +2,10 @@
 title: "Speaker: Dejan Menges"
 kind: entity
 status: living
-updated: 2026-10-14
+updated: 2026-10-17
 confidence: medium
 sources:
+  - sources/conversations/2026-10-17--org--dejan-photo-and-role.md
   - sources/conversations/2026-10-14--org--speaker-role-and-employer.md
   - sources/conversations/2026-10-14--org--speakers-before-sessions.md
   - sources/web/speakers/menges-dev-2026-10-14.md
@@ -28,8 +29,8 @@ and his last conference say, and what bears on GoatConf.
 - **Topics he offers organisers:** monolith to event-driven platform; multi-region architecture; deterministic tooling for AI-assisted development; architecture as something you can query (source: sources/web/speakers/menges-dev-2026-10-14.md). None is picked for GoatConf yet.
 - **Last talk:** "Beyond the Monolith: Designing an Event-Driven Platform Across Continents", Compass AI & Tech Summit 2026, Budapest, 2 October 2026, rated Intermediate+ (source: sources/web/speakers/compass-summit-dejan-menges-2026-10-14.md).
 - **What he builds:** Enola, an open-source architecture regression testing tool he authors and maintains, and augur, a tool that finds hidden content in files, aimed at the instruction files coding agents load; he co-founded FairwayHub, now being wound down (source: sources/web/speakers/menges-dev-2026-10-14.md).
-- **Photo:** the headshot from his Compass speaker page, not freely licensed, used on the organiser's decision; it is 400 by 400 pixels, so a larger one from him would be better (source: sources/web/speakers/compass-summit-dejan-menges-2026-10-14.md).
-- **Role on the site and cards:** "Staff Engineer at Vinted", as his own site puts it (sources: sources/web/speakers/menges-dev-2026-10-14.md, sources/conversations/2026-10-14--org--speaker-role-and-employer.md).
+- **Photo:** a colour stage shot from Compass 2026 the organiser sent on 2026-10-17, in place of the 400 by 400 headshot from his Compass speaker page; cropped to a square around him, resized to 800 by 800 and re-encoded as JPEG (sources: sources/conversations/2026-10-17--org--dejan-photo-and-role.md, sources/web/speakers/compass-summit-dejan-menges-2026-10-14.md).
+- **Role on the site and cards:** "Staff Engineer at Vinted, author of Enola", in the organiser's words of 2026-10-17; it was "Staff Engineer at Vinted", as his own site puts it (sources: sources/conversations/2026-10-17--org--dejan-photo-and-role.md, sources/web/speakers/menges-dev-2026-10-14.md, sources/conversations/2026-10-14--org--speaker-role-and-employer.md).
 - **Bio:** the short bio he gives organisers on his own site, verbatim (source: sources/web/speakers/menges-dev-2026-10-14.md).
 
 ## Adjacent

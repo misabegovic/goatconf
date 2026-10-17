@@ -1,6 +1,6 @@
 ---
 name: Dejan Menges
-role: Staff Engineer at Vinted
+role: Staff Engineer at Vinted, author of Enola
 photo: img/speakers/dejan-menges.jpg
 links:
   - https://menges.dev/
