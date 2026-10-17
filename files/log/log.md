@@ -339,3 +339,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-17 merge — PR #77: site: the home page cover drops its line on the format
    diff: 23 files, +45/-22
    restricted-paths: false
+2026-10-17 merge — PR #78: site: the three days invite events on any day of the week
+   diff: 27 files, +170/-68
+   restricted-paths: true
