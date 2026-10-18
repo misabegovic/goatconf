@@ -320,7 +320,7 @@
         "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md"
       ],
-      "tokens": 1543
+      "tokens": 1617
     },
     {
       "path": "org/adrs/open-program-every-room.md",
@@ -612,7 +612,7 @@
       "title": "GoatConf 2027: what is known",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-17",
+      "updated": "2026-10-18",
       "confidence": "medium",
       "sources": [
         "sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md",
@@ -665,7 +665,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 3205
+      "tokens": 3214
     },
     {
       "path": "org/index.md",
@@ -1421,7 +1421,7 @@
       "title": "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-17",
+      "updated": "2026-10-18",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
@@ -1457,7 +1457,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 4293,
+      "tokens": 4454,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -1716,12 +1716,13 @@
       "title": "Supporters who fund a named thing, and hiring that attendees opt into",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-10-18",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/partners-sponsors-and-hiring.md",
       "sources": [
+        "sources/conversations/2026-10-18--org--organiser-pays-speakers-dinner.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md",
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
@@ -1749,7 +1750,7 @@
         "sources/web/hiring/wbs-wearedevelopers-ben-ruschin.md",
         "sources/web/venue/ipi-akademija-about.md"
       ],
-      "tokens": 3535,
+      "tokens": 3596,
       "consumed_by": [
         "org/adrs/speakers-and-travel-supporters.md",
         "org/adrs/supporters-and-hiring.md"

@@ -2,7 +2,7 @@
 title: "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund"
 kind: initiative
 status: living
-updated: 2026-10-17
+updated: 2026-10-18
 parent_epic: goatconf-2027
 appetite: medium
 confidence: medium
@@ -181,8 +181,9 @@ grant, and the call says so.
 - No parallel talks on the main day and no more than four talks there.
 - No proposals, names, bios or reviewer scores in this repository, which
   will be public; they stay in the form tool and the shared sheet.
-- No speaker dinner or other food and drink from the organiser's money; a
-  dinner happens only if a supporter funds it.
+- No food and drink from the organiser's money, except the speakers
+  dinner, which the organiser pays for (amended 2026-10-18, see
+  Amendments).
 
 ## Rabbit holes
 
@@ -230,7 +231,8 @@ part that grows with the number of proposals.
 - [Website and registration](website-and-registration.md): the call is
   published on muhamed.at/goatconf; speakers get a free registration.
 - [Supporters and hiring](supporters-and-hiring.md): the speaker grant pool
-  and speaker dinner exist only as funded menu items.
+  exists only as a funded menu item; the speaker dinner left the menu on
+  2026-10-18, when the organiser took it on.
 - [Budget and the public ledger](budget-and-public-ledger.md): a funded
   grant appears on the ledger as a line.
 - [Extension slots and the record](extension-slots-and-the-record.md): uses
@@ -295,6 +297,7 @@ submissions use the same tool, so the ADR's choice binds that PRD too.
 - **2026-10-12.** The call is a Google Form on goatconf.com, open now with no strict deadline, and the organiser judges every proposal, reading it first without the name. The blind panel of two or three and the fixed window are superseded. Slots are the four one-hour slots in every room on both core days, filled as proposals are accepted; the talks are the keynotes. Accepted talks become program records built into the program page. See [The call: the organiser judges](../adrs/call-organiser-judges.md), [Core days: parallel rooms](../adrs/core-day-parallel-tracks.md), [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-13, superseded in part.** The no-gos on money through the organiser and the public budget no longer hold: online supporters pay the organiser's Austrian business, the budget is private, and speakers' travel is refunded only if the budget allows ([Online supporters pay the organiser's Austrian business](../adrs/online-supporters-through-the-business.md); source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **2026-10-14, the speakers dinner.** Every accepted speaker is invited to a speakers dinner, with the date still to come. It is paid from online supporters' money, as an event cost, if the budget allows; the organiser's own money never pays for it, and until it is funded everyone pays for their own meal. The talk page and the live talk form say so (source: sources/conversations/2026-10-14--org--speakers-dinner.md).
+- **2026-10-18, the organiser pays for the speakers dinner.** The dinner for accepted speakers is promised, paid by the organiser whatever the budget, in place of online supporters' money if the budget allows. The 2026-10-14 rule that the organiser's own money never pays for it no longer holds. The talk page reads "The organiser pays for it."; the live talk form only says accepted speakers are invited, so it is unchanged (source: sources/conversations/2026-10-18--org--organiser-pays-speakers-dinner.md).
 - **2026-10-14, speakers before their sessions.** A confirmed speaker who has agreed to a public profile can be published before their session has a slot or a topic; their page says the session will be on the program soon. The first is [Dejan Menges](../speakers/dejan-menges.md), whose bio is the short bio on his own site and whose photo comes from his last conference's speaker page, on the organiser's choice (source: sources/conversations/2026-10-14--org--speakers-before-sessions.md).
 - **2026-10-15, the talk shows before its slot.** A record can carry the proposed session's title and the speaker's own words on it while it has no slot: the page and card show them with the day and time to be announced, in place of "The session will be on the program soon.", and the check asks for the fields to come off once the session is on the program. First used for [Christoph Lipautz](../speakers/christoph-lipautz.md) (source: sources/conversations/2026-10-15--org--christoph-talk-on-his-page.md).
 - **2026-10-17, room for a longer talk text.** A speaker's own words on a talk without a slot may run to 300 words, up from 120, so a proposal's full answer fits; the bio stays at 120. First used for [Dejan Menges](../speakers/dejan-menges.md), whose four paragraphs show in full (source: sources/conversations/2026-10-17--org--dejan-talk.md).
