@@ -669,6 +669,24 @@
       "tokens": 3501
     },
     {
+      "path": "org/ideas/lightning-talks.md",
+      "title": "An hour of lightning talks",
+      "kind": "idea",
+      "status": "draft",
+      "updated": "2026-10-18",
+      "confidence": "low",
+      "affects": [
+        "org"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-18--org--lightning-talks-not-now.md",
+        "sources/conversations/2026-10-18--org--thirty-minute-sessions.md",
+        "sources/web/funding/euruko-2024-home.md",
+        "sources/web/speakers/grodowski-com-2026-10-14.md"
+      ],
+      "tokens": 459
+    },
+    {
       "path": "org/index.md",
       "title": "goatconf: the conference as a whole",
       "kind": "meta",
@@ -677,6 +695,7 @@
       "sources": [],
       "tokens": 1871,
       "affected_by": [
+        "org/ideas/lightning-talks.md",
         "org/outreach/drumbeat-2026.md",
         "org/outreach/drumbeat-2027-apr-jun.md",
         "org/outreach/drumbeat-2027-jan-mar.md",
