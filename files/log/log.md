@@ -393,3 +393,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #95: site: more ways to support Dejan Menges
    diff: 7 files, +68/-4
    restricted-paths: false
+2026-10-18 merge — PR #96: site: tighter "What is decided" stickers on phones
+   diff: 26 files, +63/-24
+   restricted-paths: false
