@@ -2,7 +2,7 @@
 title: "goatconf brain: home"
 kind: meta
 status: draft
-updated: 2026-10-15
+updated: 2026-10-18
 sources: []
 ---
 
@@ -17,7 +17,8 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 
 ## What changed
 
-<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-17 -->
+<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-18 -->
+- **2026-10-18**: **The first accepted event, and its host on the supporters wall.** The organiser accepted the BH Professionals Meetup, run and paid for by the Bosnia & Herzegovina Futures Foundation on Saturday 5 June 2027, 18:00 to 21:00, venue to be announced; it shows on the extensions page, the program's Saturday and the home page. A host that funds and organises an accepted event, whether a person, a group or a company, is now listed as a supporter if it agrees, and the foundation is the first, for "Funding and organising the BH Professionals Meetup on Saturday 5 June"; the charter, the supporters page and the propose an event page say so. Thank-you cards no longer lowercase a name, so Meister's reads "Christoph Lipautz's travel" ([Online supporters](org/adrs/online-supporters-through-the-business.md); sources: sources/events/2026-10-18--bh-futures-foundation--bh-professionals-meetup.md, sources/conversations/2026-10-18--org--bh-professionals-meetup-accepted.md, sources/conversations/2026-10-18--org--event-hosts-as-supporters.md).
 - **2026-10-17**: **The three days, fixed on phones and open to anything.** The day stickers stack in one column on phones and sit nearly level, and their wording no longer names kinds of event: the evenings are "open for whatever people add" (source: sources/conversations/2026-10-17--org--three-days-mobile-and-open-wording.md).
 - **2026-10-17**: **The three days invite events on any day.** On the home page, Thursday and Friday now say their evenings are open for events people add and what the hours off are, every day links to the program, accepted events will show under their day, and a new "Yours?" slot invites an event on any day from 2 to 6 June ([Website](org/adrs/goatconf-ba-and-google-forms.md); source: sources/conversations/2026-10-17--org--three-days-section.md).
 - **2026-10-17**: **A shorter cover.** The home page cover no longer carries the line "Two days of one-hour sessions in every room, with a full hour off after each. Then a day at the lakes. The people who come add the rest."; the days section just below says the same (source: sources/conversations/2026-10-17--org--cover-line-removed.md).

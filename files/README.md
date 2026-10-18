@@ -6,7 +6,8 @@ behind them.
 
 Two rules hold for supporters: **they are online only** (one level, 500
 EUR, invoiced by the organiser's Austrian business, nothing at the venue;
-or they pay a supplier directly), and **they never buy content**. The
+or they pay a supplier directly, or they fund and organise an accepted
+event), and **they never buy content**. The
 budget is private.
 
 This repository is meant to be public. Anyone can add a side event,
