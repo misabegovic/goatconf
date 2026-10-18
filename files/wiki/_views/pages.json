@@ -822,9 +822,12 @@
         "sources/web/speakers/semblie-services-and-manufacturing-2026-10-18.md",
         "sources/conversations/2026-10-18--org--amar-semblie.md",
         "sources/web/speakers/carmine-paolino-support-2026-10-18.md",
-        "sources/conversations/2026-10-18--org--carmine-support.md"
+        "sources/conversations/2026-10-18--org--carmine-support.md",
+        "sources/web/speakers/paul-campbell-support-2026-10-18.md",
+        "sources/web/supporters/meister-about-and-jobs-2026-10-18.md",
+        "sources/conversations/2026-10-18--org--expand-paul-christoph-cristian.md"
       ],
-      "tokens": 1077
+      "tokens": 1410
     },
     {
       "path": "org/outreach/supporter-profiles.md",
