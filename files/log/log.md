@@ -435,3 +435,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #109: site: no microphones needed, and half an hour is fine too
    diff: 11 files, +81/-9
    restricted-paths: true
+2026-10-18 merge — PR #110: org: lightning talks, kept as an idea
+   diff: 5 files, +101/-0
+   restricted-paths: false
