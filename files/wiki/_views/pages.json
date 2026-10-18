@@ -818,9 +818,11 @@
         "sources/web/speakers/christoph-lipautz-github-2026-10-15.md",
         "sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md",
         "sources/web/speakers/menges-dev-2026-10-14.md",
-        "sources/web/speakers/team-tito-2026-10-14.md"
+        "sources/web/speakers/team-tito-2026-10-14.md",
+        "sources/web/speakers/semblie-services-and-manufacturing-2026-10-18.md",
+        "sources/conversations/2026-10-18--org--amar-semblie.md"
       ],
-      "tokens": 781
+      "tokens": 896
     },
     {
       "path": "org/outreach/supporter-profiles.md",
