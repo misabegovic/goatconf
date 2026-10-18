@@ -599,3 +599,13 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .slots--supporters-home .supporter-chip img { aspect-ratio: 5 / 2; box-sizing: border-box; padding: 0.8rem 1.6rem; }
   .slots--supporters-home .supporter-chip small { font-size: 0.92rem; }
 }
+
+/* Tuzla and the food on a phone: one photo after another, a big photo on top */
+@media (max-width: 47.99rem) {
+  .album-page .slots--city, .album-page .slots--food { grid-template-columns: minmax(0, 26rem); justify-content: center; gap: 1.4rem; }
+  .album-page .slots--city .sticker--photo img { aspect-ratio: 1; }
+  .album-page .slots--food .sticker--photo img { aspect-ratio: 4 / 3; }
+  .slots--city .sticker--photo figcaption, .slots--food .sticker--photo figcaption { font-size: 1.35rem; padding: 0.55rem 0.7rem 0.6rem; }
+  .slots--food .tag { font-size: 0.9rem; margin: 0.6rem 0.35rem 0.1rem; }
+  .slots--food .sticker--photo .price { font-size: 1.3rem; margin: 0.3rem 0.6rem 0.4rem; }
+}
