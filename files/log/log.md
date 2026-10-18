@@ -378,3 +378,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #90: site: GoatConf is not only about Ruby or any one stack
    diff: 2 files, +16/-2
    restricted-paths: false
+2026-10-18 merge — PR #91: site: event card names no longer break mid-word on phones
+   diff: 26 files, +45/-26
+   restricted-paths: false
