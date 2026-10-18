@@ -408,3 +408,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #100: site: Tuzla and food photos one by one on phones
    diff: 26 files, +62/-24
    restricted-paths: false
+2026-10-18 merge — PR #101: org: draft every social post to June 2027
+   diff: 62 files, +1269/-183
+   restricted-paths: true
