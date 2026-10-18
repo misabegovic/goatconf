@@ -189,3 +189,17 @@ def test_an_accepted_event_needs_its_cards_and_its_page_offers_them(ext, capsys)
     assert '<link rel="image_src" href="https://goatconf.com/share/event-rust-preview.png">' in event
     assert 'href="share/event-rust-square.png" download' in event and 'href="share/event-rust-wide.png" download' in event
     assert mod.main(["build", "--check"]) == 0
+
+
+def test_the_event_page_links_its_host_supporters_profile(ext):
+    mod, root = ext
+    write(root, "rust.md", GOOD)
+    assert mod.main(["build"]) == 0
+    assert "supporter-" not in (root / "site" / "event-rust.html").read_text(encoding="utf-8")
+    (root / "supporters").mkdir()
+    (root / "supporters" / "rustaceans.md").write_text("---\nname: Tuzla Rustaceans\nevents: [rust]\n---\n", encoding="utf-8")
+    assert mod.main(["build", "--check"]) == 1  # the supporter record changes the event page
+    assert mod.main(["build"]) == 0
+    event = (root / "site" / "event-rust.html").read_text(encoding="utf-8")
+    assert '<dt>Run by</dt><dd><a href="supporter-rustaceans.html">Tuzla Rustaceans</a></dd>' in event
+    assert 'is a supporter of GoatConf 2027. <a href="supporter-rustaceans.html">See their profile</a>' in event

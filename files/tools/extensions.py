@@ -253,8 +253,26 @@ def shell(name: str, title: str, description: str, photo, h1: str, lede: str, ma
 """
 
 
+def host_profile(slug: str):
+    """The supporter whose record lists this event under `events:`, as (profile page, name), or None.
+    tools/speakers.py checks supporter records in full and builds the profile, supporter-<record>.html."""
+    folder = ROOT / "supporters"
+    for path in sorted(folder.glob("*.md")) if folder.is_dir() else []:
+        if path.name == "README.md" or path.name.startswith("_"):
+            continue
+        rec, _, problems = parse(path)
+        if rec and not problems and slug in (rec.get("events") or []):
+            return f"supporter-{path.stem}.html", str(rec.get("name") or path.stem)
+    return None
+
+
 def event_page(slug: str, meta, body) -> str:
     e = lambda k: html.escape(str(meta[k]))
+    profile = host_profile(slug)
+    run_by = f'<a href="{profile[0]}">{e("host")}</a>' if profile else e("host")
+    supporter = (f'\n      <p>{html.escape(profile[1])} is a supporter of GoatConf 2027. <a href="{profile[0]}">See their profile</a>: who they are and how to support them.</p>'
+                 if profile else "")
+    to_profile = f' <a class="go go--ink" href="{profile[0]}">{html.escape(profile[1])}</a>' if profile else ""
     start = as_datetime(meta["start"])
     # The program has a section per day from Thursday to Saturday; other days sit under "Around the talks".
     day = start.date().isoformat() if dt.date(2027, 6, 3) <= start.date() <= dt.date(2027, 6, 5) else "h-around"
@@ -271,20 +289,20 @@ def event_page(slug: str, meta, body) -> str:
       <dt>Where</dt><dd>{e('location')}</dd>
       <dt>Cost</dt><dd>{e('cost')}</dd>
       <dt>Register</dt><dd>{link(meta['registration'])}</dd>
-      <dt>Run by</dt><dd>{e('host')}</dd>
+      <dt>Run by</dt><dd>{run_by}</dd>
       <dt>Paid by</dt><dd>{e('paid_by')}</dd>
       <dt>Contact</dt><dd>{link(meta['contact'])}</dd>
     </dl>
     <div class="copy">
       {cta}
-      <p>The organiser accepted it as part of GoatConf 2027. {e('host')} runs it and pays for it, so questions about it go to the host. It follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>.</p>
+      <p>The organiser accepted it as part of GoatConf 2027. {e('host')} runs it and pays for it, so questions about it go to the host. It follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>.</p>{supporter}
     </div>
   </div>
 </section>
 <section class="album-page wrap" aria-labelledby="h-about">
   <h2 class="band" id="h-about">In the host's words</h2>
   <div class="copy copy--wide">{about}</div>
-  <p class="copy"><a class="go go--ink" href="extensions.html">All events people add</a> <a class="go go--ink" href="program.html#{day}">The program for that day</a></p>
+  <p class="copy"><a class="go go--ink" href="extensions.html">All events people add</a> <a class="go go--ink" href="program.html#{day}">The program for that day</a>{to_profile}</p>
 </section>{share_section(cards(slug), f"The card for {e('name')}", "For the host and anyone going: post it wherever you like. It links back to this page.")}"""
     names = cards(slug)
     preview = names["preview"] if (PAGE.parent / "share" / names["preview"]).exists() else ""
