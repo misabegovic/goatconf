@@ -15,6 +15,8 @@ sources:
   - sources/web/speakers/team-tito-2026-10-14.md
   - sources/web/speakers/semblie-services-and-manufacturing-2026-10-18.md
   - sources/conversations/2026-10-18--org--amar-semblie.md
+  - sources/web/speakers/carmine-paolino-support-2026-10-18.md
+  - sources/conversations/2026-10-18--org--carmine-support.md
 ---
 
 # How to support each speaker, on their pages
@@ -32,7 +34,7 @@ Jan Grodowski is held from the site, so his waits.
 ## The links
 
 - **Paul Campbell:** "Sell your event's tickets with Tito": https://ti.to/ (Tito, which he co-founded, has processed over $1 billion worth of tickets for thousands of organisers; source: sources/web/speakers/team-tito-2026-10-14.md)
-- **Carmine Paolino:** "Use RubyLLM, his open-source Ruby gem": https://github.com/crmne/ruby_llm (RubyLLM is maintained by him and developed in the open on GitHub; source: sources/web/speakers/paolino-me-2026-10-14.md)
+- **Carmine Paolino:** "Use RubyLLM, his open-source Ruby gem": https://github.com/crmne/ruby_llm (RubyLLM is maintained by him and developed in the open on GitHub; source: sources/web/speakers/paolino-me-2026-10-14.md); and, on the organiser's word to expand his: "Sponsor RubyLLM on GitHub": https://github.com/sponsors/crmne (linked from rubyllm.com as "Support RubyLLM on GitHub Sponsors"), "Work with him: RubyLLM and AI consulting, workshops, founder coaching": https://paolino.me/work-with-me/, "Try Chat with Work, his AI agent for work, hosted in the EU": https://chatwithwork.com, "Come to Berlin.rb, the Ruby meetup he helps organise": https://berlinrb.org, and "Listen to his house and disco as Crimson Lake": https://crimsonlake.live (sources: sources/web/speakers/carmine-paolino-support-2026-10-18.md, sources/conversations/2026-10-18--org--carmine-support.md)
 - **Dejan Menges:** "Try Enola, his open-source architecture tool": https://github.com/enola-labs/enola (source: sources/web/speakers/menges-dev-2026-10-14.md)
 - **Amar Mahmutbegović:** "Read his book, C++ in Embedded Systems (Packt, 2025)": https://books.google.com/books/about/C++_in_Embedded_Systems.html?id=5pVkEQAAQBAJ (the publisher's own page refused the fetch, so the Google Books listing stands in; source: sources/web/speakers/cpp-in-embedded-systems-google-books-2026-10-14.md); and, on the organiser's word that supporting Semblie, the company he co-founded, supports him: "Build your hardware product with Semblie, his company": https://semblie.com/services/, and "Have your boards assembled at Semblie in Tuzla, in small batches": https://semblie.com/manufacturing/ (sources: sources/web/speakers/semblie-services-and-manufacturing-2026-10-18.md, sources/conversations/2026-10-18--org--amar-semblie.md)
 - **Cristian Planas:** "Read his book, Rails Scales! (Pragmatic Bookshelf, 2025)": https://pragprog.com/titles/cprpo/rails-scales/ (source: sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md)

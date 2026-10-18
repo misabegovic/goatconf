@@ -820,9 +820,11 @@
         "sources/web/speakers/menges-dev-2026-10-14.md",
         "sources/web/speakers/team-tito-2026-10-14.md",
         "sources/web/speakers/semblie-services-and-manufacturing-2026-10-18.md",
-        "sources/conversations/2026-10-18--org--amar-semblie.md"
+        "sources/conversations/2026-10-18--org--amar-semblie.md",
+        "sources/web/speakers/carmine-paolino-support-2026-10-18.md",
+        "sources/conversations/2026-10-18--org--carmine-support.md"
       ],
-      "tokens": 896
+      "tokens": 1077
     },
     {
       "path": "org/outreach/supporter-profiles.md",
