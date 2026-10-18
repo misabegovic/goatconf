@@ -296,6 +296,22 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .day .slots--kinds { margin-top: 1.5rem; }
 .sticker--ext strong { font-size: 1.6rem; }
 .ext-list { list-style: none; }
+.sticker--example { height: 100%; min-height: 10rem; justify-content: flex-start; text-decoration: none; }
+.sticker--example strong { font-size: 1.6rem; hyphens: auto; overflow-wrap: break-word; }
+.sticker--fact .sticker__kind { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--page); }
+
+/* Events people add: one listing per accepted event */
+.prose .listings { list-style: none; padding: 0; margin: 1.6rem 0 0; }
+.listing + .listing { margin-top: 2.4rem; padding-top: 2.4rem; border-top: 2px solid var(--page-print); }
+.prose .listing h2 { margin: 0 0 0.3rem; }
+.listing__kind { margin: 0 0 1rem; color: var(--ink-soft); font-weight: 700; }
+.facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.4rem 1.2rem; margin: 0 0 1.4rem; padding: 1rem 1.2rem; border-radius: 0.6rem; background: var(--page-print); }
+.facts dt { font-weight: 700; color: var(--album); }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 47.99rem) {
+  .slots > .sticker--ext { grid-column: 1 / -1; }
+  .sticker--example strong { font-size: 1.1rem; }
+}
 @media (max-width: 47.99rem) {
   .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem 0.7rem; }
   .slot--session small { display: none; }
@@ -402,8 +418,8 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .day { scroll-margin-top: 7rem; }
 .timeslot__open { display: none; }
 @media (max-width: 47.99rem) {
-  .daynav { top: 0.5rem; gap: 0.2rem; padding: 0.35rem; }
-  .daynav a { padding: 0.4rem 0.6rem; font-size: 0.85rem; }
+  .daynav { top: 0.5rem; gap: 0.2rem; padding: 0.35rem; max-width: 100%; }
+  .daynav a { padding: 0.4rem 0.6rem; font-size: 0.85rem; white-space: normal; text-align: center; line-height: 1.1; display: grid; place-items: center; }
   .day { scroll-margin-top: 4.5rem; }
   .page-head__photo { order: 3; max-width: 15rem; justify-self: start; aspect-ratio: 16 / 10; }
   .rooms { grid-template-columns: minmax(0, 1fr); gap: 0.6rem; }

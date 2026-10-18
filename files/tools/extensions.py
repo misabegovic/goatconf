@@ -171,10 +171,10 @@ def link(value):
     return f'<a href="{v}">{v}</a>' if re.match(r"^https?://", str(value)) else v
 
 
-def listing(meta, body):
+def listing(slug, meta, body):
     e = lambda k: html.escape(str(meta[k]))
     para = "".join(f"<p>{html.escape(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
-    return f"""  <li class="listing">
+    return f"""  <li class="listing" id="{html.escape(slug)}">
     <h2>{e('name')}</h2>
     <p class="listing__kind">{KINDS[meta['kind']]}, part of GoatConf 2027, run by {e('host')}</p>
     <dl class="facts">
@@ -195,10 +195,10 @@ def page() -> str:
         problems, _, meta = check_record(path)
         if not problems and listed(meta):
             _, body, _ = parse(path)
-            good.append((as_datetime(meta["start"]), meta, body))
-    good.sort(key=lambda g: (g[0], str(g[1]["name"])))
+            good.append((as_datetime(meta["start"]), path.stem, meta, body))
+    good.sort(key=lambda g: (g[0], str(g[2]["name"])))
     if good:
-        main = '<ol class="listings">\n' + "\n".join(listing(m, b) for _, m, b in good) + "\n</ol>"
+        main = '<ol class="listings">\n' + "\n".join(listing(s, m, b) for _, s, m, b in good) + "\n</ol>"
     else:
         main = """<div class="ledger-empty">
   <p><strong>No events yet.</strong> The first one could be yours: a workshop, a meetup, a dinner, a city walk, a hike, a corner for your community.</p>
