@@ -345,6 +345,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-17 merge — PR #79: site: the three days stack on phones and name no kinds of event
    diff: 24 files, +56/-27
    restricted-paths: true
-2026-10-18 merge — PR #80: site: the BH Professionals Meetup is accepted, on Saturday 5 June
-   diff: 14 files, +245/-74
+2026-10-18 merge — PR #80: site: the BH Professionals Meetup is accepted, and its host joins the supporters
+   diff: 21 files, +320/-75
    restricted-paths: false
