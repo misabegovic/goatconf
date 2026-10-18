@@ -825,9 +825,11 @@
         "sources/conversations/2026-10-18--org--carmine-support.md",
         "sources/web/speakers/paul-campbell-support-2026-10-18.md",
         "sources/web/supporters/meister-about-and-jobs-2026-10-18.md",
-        "sources/conversations/2026-10-18--org--expand-paul-christoph-cristian.md"
+        "sources/conversations/2026-10-18--org--expand-paul-christoph-cristian.md",
+        "sources/web/speakers/dejan-menges-support-2026-10-18.md",
+        "sources/conversations/2026-10-18--org--dejan-support.md"
       ],
-      "tokens": 1410
+      "tokens": 1549
     },
     {
       "path": "org/outreach/supporter-profiles.md",
