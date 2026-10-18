@@ -33,8 +33,26 @@ def test_session_record_lands_in_its_slot(tmp_path, monkeypatch):
     page = program.page()
     assert "Salt, goats and servers" in page
     assert "Talk, First-floor hall" in page
-    assert page.count('class="slot slot--session"') == 2 * 4 * len(program.ROOMS) - 1
+    held = len(program.reserved_cells(program.sessions()[0]))
+    assert page.count('class="slot slot--session"') == 2 * 4 * len(program.ROOMS) - 1 - held
+    assert page.count('class="slot slot--session slot--reserved"') == held
     assert "Džuma" not in page and "prayer" not in page
+
+
+def test_cells_are_held_for_speakers_without_a_slot(tmp_path, monkeypatch):
+    program = load("program")
+    records, people = tmp_path / "program", tmp_path / "speakers"
+    records.mkdir()
+    people.mkdir()
+    monkeypatch.setattr(program, "RECORDS", records)
+    monkeypatch.setattr(program, "SPEAKER_RECORDS", people)
+    for name, extra in (("ana", ""), ("ben", ""), ("cleo", "hold: not yet\n")):
+        (people / f"{name}.md").write_text(f"---\nname: {name}\npublish: yes\n{extra}---\n", encoding="utf-8")
+    page = program.page()
+    assert page.count('slot--reserved"') == 2
+    assert "1 of 7 rooms taken" in page
+    (records / "s.md").write_text(SESSION.replace("format: talk", "profiles: [ana]\nformat: talk"), encoding="utf-8")
+    assert program.page().count('slot--reserved"') == 1
 
 
 def test_bad_and_clashing_records_fail(tmp_path, monkeypatch):

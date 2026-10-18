@@ -8,6 +8,7 @@ appetite: medium
 confidence: medium
 supersedes: org/pitches/cfp-and-speakers.md
 sources:
+  - sources/conversations/2026-10-18--org--slots-reserved-for-confirmed-speakers.md
   - sources/conversations/2026-10-18--org--thirty-minute-sessions.md
   - sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md
   - sources/conversations/2026-10-17--org--talk-titles-on-home-stickers.md
@@ -307,5 +308,6 @@ submissions use the same tool, so the ADR's choice binds that PRD too.
 - **2026-10-15, a record can be held from the site.** A speaker record can carry a `hold` line while the speaker must not show, for example while their employer clears the engagement: the record is kept and checked but listed nowhere, their page comes down on the next build, and their order keeps its place in the no-two-share check; removing the line publishes them again. First used for [Jan Grodowski](../speakers/jan-grodowski.md) (source: sources/conversations/2026-10-15--org--hold-jan-grodowski.md).
 - **2026-10-18, spare supporter money goes first to speakers' travel, and recording in the two big halls.** Online supporters' money that the event's costs do not need goes first to refunding speakers who pay their own way, some or all of it, after the event; it is not promised and never affects whether a session is picked. GoatConf aims to record the sessions in the main hall and the first-floor hall, not promised yet. The talk page says both (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md).
 - **2026-10-18, 30-minute proposals.** A proposal may fit 30 minutes; the organiser may pair two short sessions into one hour-long slot. It is meant for first-time speakers and anyone who would rather not fill an hour alone. The talk page, the home page and llms.txt say so; the live talk form is unchanged (source: sources/conversations/2026-10-18--org--thirty-minute-sessions.md).
+- **2026-10-18, main-hall slots reserved for confirmed speakers.** The program page holds a main-hall cell for each published speaker whose session has no slot yet, in the order Thursday 10:00, 12:00, 14:00, then Friday 09:30, 11:30, 13:30, so six are held now; a held speaker is not counted, and a cell frees itself once the speaker's session has a program record. The held cells read "Reserved" and link to the speakers page (source: sources/conversations/2026-10-18--org--slots-reserved-for-confirmed-speakers.md).
 
 

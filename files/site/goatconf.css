@@ -439,6 +439,9 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
   .page-head__photo { order: 3; max-width: 15rem; justify-self: start; aspect-ratio: 16 / 10; }
   .rooms { grid-template-columns: minmax(0, 1fr); gap: 0.6rem; }
   .rooms .slot--session { display: none; }
+  .rooms .slot--reserved { display: flex; min-height: 0; padding: 0.7rem 0.8rem 0.75rem; }
+  .rooms .slot--reserved small { display: block; }
+  .rooms .slot--reserved .stamp { display: none; }
   .timeslot__open { display: block; margin: -0.3rem 0 0.8rem; padding: 0.6rem 0.9rem; border-radius: 0.6rem; border: 2px dashed var(--slot-line); background: var(--page-print); font-size: 0.95rem; }
   .timeslot__open a { color: var(--album); font-weight: 700; }
   .sticker--session { transform: none; min-height: 0; padding: 0.7rem 0.8rem 0.75rem 3rem; box-shadow: 0 0.3rem 0.8rem -0.4rem rgb(0 0 0 / 0.35); }
@@ -559,6 +562,8 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .ledger-stickers--quad .sticker--fact { justify-content: flex-start; }
 .ledger-stickers--quad .sticker--fact strong { font-size: clamp(2rem, 1.5rem + 1.4vw, 2.8rem); }
 .stamp--planned { color: var(--album); }
+.slot--reserved { border-style: solid; }
+.slot--reserved small a { color: var(--album); font-weight: 700; }
 .slots--city { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .slots--city .sticker--photo img { aspect-ratio: 4 / 3.4; }
 .slots > .slots__wide { grid-column: 1 / -1; list-style: none; }
