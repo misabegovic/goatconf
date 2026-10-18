@@ -411,3 +411,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #101: org: draft every social post to June 2027
    diff: 62 files, +1269/-183
    restricted-paths: true
+2026-10-18 merge — PR #102: site: "Propose a session" on the home page opens the talk page
+   diff: 2 files, +25/-1
+   restricted-paths: false
