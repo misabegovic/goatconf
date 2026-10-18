@@ -143,7 +143,7 @@ def speakers_block() -> str:
 
 def supporters_block() -> str:
     known = speakers.listed_supporters(speakers.supporters())
-    chips = [f'    <li><a class="supporter-chip{' supporter-chip--dark' if m.get('logo_on') == 'dark' else ''}" href="supporters.html#{esc(s)}"><img src="{esc(m["logo"])}" alt="{esc(m["name"])}" loading="lazy">'
+    chips = [f'    <li><a class="supporter-chip{' supporter-chip--dark' if m.get('logo_on') == 'dark' else ''}" href="{speakers.supporter_page_name(s)}"><img src="{esc(m["logo"])}" alt="{esc(m["name"])}" loading="lazy">'
              f'<small>{esc(m["funds"])}</small></a></li>' for s, (m, _) in known]
     # Until a company supports GoatConf (the host does not count), keep a place inviting one.
     if not any(m.get("host") is not True for _, (m, _b) in known):

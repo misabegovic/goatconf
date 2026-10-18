@@ -303,3 +303,56 @@ def test_host_and_logo_background_are_checked(tmp_path, monkeypatch):
     (tmp_path / "site" / "img" / "supporters" / "zeta.png").write_bytes(b"png")
     problems, _, _ = speakers.check_supporter(rec)
     assert any("host must be yes" in p for p in problems) and any("logo_on must be" in p for p in problems)
+
+
+def test_each_supporter_has_a_profile_with_their_cards(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch)
+    monkeypatch.setattr(speakers, "PAGES", {"speakers": tmp_path / "site" / "speakers.html", "supporters": tmp_path / "site" / "supporters.html"})
+    wall = speakers.supporters_page()
+    assert '<strong><a href="supporter-acme.html">Acme</a></strong>' in wall and 'href="https://acme.example"' not in wall
+    home = importlib.reload(importlib.import_module("home"))
+    assert 'href="supporter-acme.html"' in home.supporters_block()
+    page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
+    assert '<h1 class="sign">Acme</h1>' in page and 'href="https://acme.example">acme.example</a>' in page
+    assert "The thank-you card" not in page and "image_src" not in page  # no cards rendered yet
+    assert speakers.cmd_build(type("A", (), {"check": False})()) == 0
+    assert (tmp_path / "site" / "supporter-acme.html").exists()
+    (tmp_path / "site" / "share").mkdir()
+    for size in ("square", "wide"):
+        (tmp_path / "site" / "share" / f"supporter-acme-{size}.png").write_bytes(b"png")
+    page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
+    assert 'href="share/supporter-acme-square.png" download' in page and 'href="share/supporter-acme-wide.png" download' in page
+    assert '<link rel="image_src" href="https://goatconf.com/share/supporter-acme-wide.png">' in page
+    (tmp_path / "supporters" / "acme.md").unlink()
+    assert speakers.cmd_build(type("A", (), {"check": False})()) == 0
+    assert not (tmp_path / "site" / "supporter-acme.html").exists()
+
+
+def test_a_supporter_lists_only_accepted_events_and_shows_them(tmp_path, monkeypatch):
+    import datetime as dt
+    _, speakers = setup(tmp_path, monkeypatch)
+    extensions = importlib.import_module("extensions")
+    meetup = {"name": "Lake meetup", "kind": "meetup", "host": "Acme", "start": "2027-06-05 18:00", "end": "2027-06-05 21:00"}
+    monkeypatch.setattr(extensions, "accepted", lambda: [(dt.datetime(2027, 6, 5, 18), "lake-meetup", meetup, "")])
+    rec = tmp_path / "supporters" / "acme.md"
+    rec.write_text(SUPPORTER.replace("funds: Online supporter", "funds: Funding and organising the Lake meetup\nevents: [nope]"), encoding="utf-8")
+    problems, _, _ = speakers.check_supporter(rec)
+    assert any("events must list accepted events" in p and "lake-meetup" in p for p in problems)
+    rec.write_text(SUPPORTER.replace("funds: Online supporter", "funds: Funding and organising the Lake meetup\nevents: [lake-meetup]"), encoding="utf-8")
+    assert speakers.check_supporter(rec)[0] == []
+    page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
+    assert "Their event" in page and 'href="event-lake-meetup.html"' in page
+
+
+def test_who_they_are_and_how_to_support_them_show_on_the_profile_only(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch)
+    rec = tmp_path / "supporters" / "acme.md"
+    rec.write_text(SUPPORTER.replace("funds: Online supporter", "funds: Online supporter\nsupport_them:\n  - {text: Work with Acme, url: https://acme.example/jobs}")
+                   + "\nAcme makes anvils for coyotes.\n", encoding="utf-8")
+    assert speakers.check_supporter(rec)[0] == []
+    page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
+    assert "Who they are" in page and "Acme makes anvils for coyotes." in page
+    assert '<li><a href="https://acme.example/jobs">Work with Acme</a></li>' in page
+    assert "Acme makes anvils" not in speakers.supporters_page()
+    rec.write_text(SUPPORTER.replace("funds: Online supporter", "funds: Online supporter\nsupport_them:\n  - {text: Jobs, url: http://acme.example/jobs}"), encoding="utf-8")
+    assert any("support_them must list" in p for p in speakers.check_supporter(rec)[0])

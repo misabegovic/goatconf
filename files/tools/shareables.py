@@ -10,8 +10,10 @@ from site/brand/, rendered to PNG by headless Chrome into site/share/:
   posts     save the date, the call for talks, registration, add something,
             the first speakers, each square (1080) and wide (1200 x 675)
   records   an "I'm speaking" card per published speaker (square, wide, and a
-            1200 x 630 preview that their page's link preview shows) and a
-            "thank you" card per supporter, built from speakers/ and supporters/
+            1200 x 630 preview that their page's link preview shows), a
+            "thank you" card per supporter, and a card per accepted event
+            (square, wide, and a 1200 x 630 preview for the event's page),
+            built from speakers/, supporters/ and extensions/
 
   render [--only NAME]   write the PNG files (needs Chrome and Pillow)
   list                   print what would be rendered
@@ -30,6 +32,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import brand  # noqa: E402
+import extensions  # noqa: E402
 import speakers  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -169,7 +172,26 @@ def supporter_card(slug: str, meta, square: bool) -> str:
 </div>
 <div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:{NIGHT if meta.get('logo_on') == 'dark' else '#fff'}; border-radius:18px; display:grid; place-items:center; padding:28px">
   <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
-<div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/supporters.html</div>
+<div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/{speakers.supporter_page_name(slug)[:-5]}</div>
+{seal(240 if square else 220, "right:72px; bottom:72px")}""")
+
+
+def event_card(meta, slug: str, square: bool, height: int = 675) -> str:
+    """For the host and anyone going: the event, who organises it, that it is part of GoatConf 2027, and when and where."""
+    w, h = (1080, 1080) if square else (1200, height)
+    name = str(meta["name"])
+    # The square card has room for the name on two or three lines; the wide one keeps it to one or two.
+    name_px = (132 if len(name) <= 30 else 104) if square else (92 if len(name) <= 22 else 72)
+    start = extensions.as_datetime(meta["start"])
+    when = f'{start.strftime("%A")} {extensions.when(meta)}'
+    return page(w, h, f"""
+<div style="position:absolute; left:{84 if square else 72}px; top:{120 if square else 72}px; right:{84 if square else 320}px">
+  <div class="sub" style="font-size:{46 if square else 30}px; color:#fff">Part of GoatConf 2027</div>
+  <div class="word" style="font-size:{name_px}px; margin-top:{24 if square else 16}px">{esc(name)}</div>
+  <div style="font-size:{40 if square else 28}px; font-weight:700; line-height:1.2; margin-top:{36 if square else 24}px; text-wrap:balance">Organised by {esc(str(meta["host"]))}</div>
+  <div class="sub" style="font-size:{40 if square else 28}px; line-height:1.2; margin-top:{28 if square else 20}px">{esc(when)}<br>{esc(str(meta["location"]))}</div>
+</div>
+<div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/{extensions.page_name(slug)[:-5]}</div>
 {seal(240 if square else 220, "right:72px; bottom:72px")}""")
 
 
@@ -197,6 +219,11 @@ def jobs() -> dict[str, tuple[int, int, str]]:
     for slug, (meta, _) in speakers.supporters().items():
         out[f"supporter-{slug}-square.png"] = (1080, 1080, supporter_card(slug, meta, True))
         out[f"supporter-{slug}-wide.png"] = (1200, 675, supporter_card(slug, meta, False))
+    for _, slug, meta, _ in extensions.accepted():
+        names = extensions.cards(slug)
+        out[names["square"]] = (1080, 1080, event_card(meta, slug, True))
+        out[names["wide"]] = (1200, 675, event_card(meta, slug, False))
+        out[names["preview"]] = (1200, 630, event_card(meta, slug, False, 630))
     return out
 
 

@@ -41,9 +41,14 @@ def ext(tmp_path, monkeypatch):
     return mod, tmp_path
 
 
-def write(root, name, text):
+def write(root, name, text, cards=True):
+    """A record, and (unless told not to) the cards tools/shareables.py would render for it."""
     path = root / "extensions" / name
     path.write_text(text, encoding="utf-8")
+    if cards:
+        (root / "site" / "share").mkdir(exist_ok=True)
+        for size in ("square", "wide", "preview"):
+            (root / "site" / "share" / f"event-{path.stem}-{size}.png").write_bytes(b"png")
     return path
 
 
@@ -168,3 +173,19 @@ def test_the_file_name_becomes_an_address(ext, capsys):
     write(root, "Rust Night.md", GOOD)
     assert mod.main(["check"]) == 1
     assert "lowercase words joined by hyphens" in capsys.readouterr().out
+
+
+def test_an_accepted_event_needs_its_cards_and_its_page_offers_them(ext, capsys):
+    mod, root = ext
+    write(root, "rust.md", GOOD, cards=False)
+    assert mod.main(["build"]) == 0
+    event = (root / "site" / "event-rust.html").read_text(encoding="utf-8")
+    assert "Cards to share" not in event and "image_src" not in event
+    assert mod.main(["build", "--check"]) == 1
+    assert "event-rust-preview.png is missing" in capsys.readouterr().out
+    write(root, "rust.md", GOOD)
+    assert mod.main(["build"]) == 0
+    event = (root / "site" / "event-rust.html").read_text(encoding="utf-8")
+    assert '<link rel="image_src" href="https://goatconf.com/share/event-rust-preview.png">' in event
+    assert 'href="share/event-rust-square.png" download' in event and 'href="share/event-rust-wide.png" download' in event
+    assert mod.main(["build", "--check"]) == 0
