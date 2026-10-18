@@ -19,6 +19,10 @@ one.
   "thank you" card reads "for funding" and this line; a line that starts
   with what they do, such as "Funding and organising the meetup", is used
   as it stands ("for funding and organising the meetup").
+- `thanks`: optional, the last line of their "thank you" card exactly as
+  written, in place of the one made from `funds`, for example "for
+  funding and organising the meetup, as part of the official program of
+  GoatConf 2027 in Tuzla." Only the card shows it.
 - `host: yes`: optional, for the host and partner, IPI Academy. It is listed
   first, before every other supporter, and its "thank you" card thanks it for
   hosting.

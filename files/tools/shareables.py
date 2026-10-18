@@ -140,9 +140,12 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
 
 
 def thanks(meta) -> str:
-    """The card's last line. A funds line that starts with what the supporter
-    does ("Funding and organising ...") is used as it stands; any other line
+    """The card's last line: the record's own `thanks` line if it has one.
+    Otherwise a funds line that starts with what the supporter does
+    ("Funding and organising ...") is used as it stands; any other line
     names what they fund."""
+    if meta.get("thanks"):
+        return esc(str(meta["thanks"]))
     if meta.get("host") is True:
         return "for hosting GoatConf 2027."
     funds = str(meta["funds"])
