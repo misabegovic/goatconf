@@ -420,3 +420,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #104: site: the organiser pays for the speakers dinner
    diff: 8 files, +57/-18
    restricted-paths: false
+2026-10-18 merge — PR #105: site: registration without the approval step
+   diff: 7 files, +45/-8
+   restricted-paths: false

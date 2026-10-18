@@ -98,7 +98,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   >
   > Talks on Thursday 3 and Friday 4 June at IPI Academy in Tuzla, then Saturday 5 June for the community: the salt lakes, a goat hunt through town, and whatever people add.
   >
-  > Register on Luma in a minute. The organiser confirms each registration, usually within a few days, and Luma emails you that you're in. Closer to June, you'll also pick the sessions you want, because each room has only so many seats.
+  > Register on Luma in a minute, and Luma emails you when you're in. Closer to June, you'll also pick the sessions you want, because each room has only so many seats.
   >
   > goatconf.com/register
 
@@ -106,7 +106,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   > Registration for GoatConf 2027 is open, and tickets are free. Talks on 3 and 4 June at IPI Academy, Tuzla, then a community day at the salt lakes. Register in a minute: goatconf.com/register
 
-  Sources: sources/conversations/2026-10-12--org--registration-on-luma.md, sources/conversations/2026-10-12--org--approval-back-on.md, sources/conversations/2026-10-13--org--outside-review-fixes.md, sources/conversations/2026-10-12--org--session-registration-later.md, sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md.
+  Sources: sources/conversations/2026-10-12--org--registration-on-luma.md, sources/conversations/2026-10-12--org--approval-back-on.md, sources/conversations/2026-10-18--org--registration-approval-not-on-the-site.md, sources/conversations/2026-10-13--org--outside-review-fixes.md, sources/conversations/2026-10-12--org--session-registration-later.md, sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md.
 
 ### Tue 3 Nov 2026, week 4: The first speakers are here
 
