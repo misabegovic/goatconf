@@ -342,6 +342,13 @@ def test_a_supporter_lists_only_accepted_events_and_shows_them(tmp_path, monkeyp
     assert speakers.check_supporter(rec)[0] == []
     page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
     assert "Their event" in page and 'href="event-lake-meetup.html"' in page
+    (tmp_path / "site" / "share").mkdir()
+    (tmp_path / "site" / "share" / "supporter-acme-wide.png").write_bytes(b"png")
+    page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
+    assert 'image_src" href="https://goatconf.com/share/supporter-acme-wide.png"' in page  # no event card yet
+    (tmp_path / "site" / "share" / "event-lake-meetup-preview.png").write_bytes(b"png")
+    page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
+    assert 'image_src" href="https://goatconf.com/share/event-lake-meetup-preview.png"' in page  # their event's card
 
 
 def test_who_they_are_and_how_to_support_them_show_on_the_profile_only(tmp_path, monkeypatch):
