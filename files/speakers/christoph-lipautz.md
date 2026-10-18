@@ -13,6 +13,9 @@ talk_about: |
   Every engineer, the talk will be kept inclusive so it speaks to all levels of experience.
 order: 7
 publish: yes
+support_them:
+  - text: "Try airstream, his open-source tool for streaming to AirPlay devices"
+    url: "https://github.com/unused/airstream"
 ---
 
 Senior Staff Engineer at Meister, Open-Source Enthusiast, and Linux User (he/him)

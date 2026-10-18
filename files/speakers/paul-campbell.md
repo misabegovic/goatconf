@@ -10,6 +10,9 @@ links:
   - https://mastodon.social/@paulca
 order: 1
 publish: yes
+support_them:
+  - text: "Sell your event's tickets with Tito"
+    url: "https://ti.to/"
 ---
 
 Paul is the co-founder and CEO of Team Tito. Tito is simple, fast registration software. They have recently introduced IO for high-end, invitation-only events. Paul has run a number of experiential events such as Funconf, a conference series that happened on moving busses, in a castle, and on an island. Paul's most recent event, This Next Thing, brought 150 tech leaders together in the Swiss Alps.

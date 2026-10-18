@@ -20,6 +20,9 @@ talk_about: |
   Anyone working with real life codebases
 order: 3
 publish: yes
+support_them:
+  - text: "Try Enola, his open-source architecture tool"
+    url: "https://github.com/enola-labs/enola"
 ---
 
 Dejan Menges is a staff engineer with more than twenty-five years spent designing distributed systems. He works on moving organisations from monoliths to scalable, event-driven architectures, and builds Enola, an open-source architecture intelligence tool for developers and coding agents.
