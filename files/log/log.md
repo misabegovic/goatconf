@@ -357,3 +357,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #83: site: supporter profiles with their cards and who they are, and a card for every event
    diff: 55 files, +842/-56
    restricted-paths: true
+2026-10-18 merge — PR #84: site: speaker pages say who they are and how to support them
+   diff: 15 files, +150/-19
+   restricted-paths: true
