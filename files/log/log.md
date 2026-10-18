@@ -429,3 +429,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #107: site: no camera line on the talk page
    diff: 3 files, +21/-1
    restricted-paths: false
+2026-10-18 merge — PR #108: site: recording depends on the available budget
+   diff: 10 files, +33/-8
+   restricted-paths: true
