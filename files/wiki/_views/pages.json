@@ -804,13 +804,33 @@
       "tokens": 2723
     },
     {
-      "path": "org/outreach/supporter-profiles.md",
-      "title": "Draft: who each supporter is and how to support them, for their profiles",
+      "path": "org/outreach/speaker-support-links.md",
+      "title": "How to support each speaker, on their pages",
       "kind": "reference",
-      "status": "draft",
+      "status": "living",
       "updated": "2026-10-18",
       "confidence": "low",
       "sources": [
+        "sources/conversations/2026-10-18--org--show-support-parts.md",
+        "sources/conversations/2026-10-18--org--speaker-support-links.md",
+        "sources/web/speakers/cpp-in-embedded-systems-google-books-2026-10-14.md",
+        "sources/web/speakers/paolino-me-2026-10-14.md",
+        "sources/web/speakers/christoph-lipautz-github-2026-10-15.md",
+        "sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md",
+        "sources/web/speakers/menges-dev-2026-10-14.md",
+        "sources/web/speakers/team-tito-2026-10-14.md"
+      ],
+      "tokens": 781
+    },
+    {
+      "path": "org/outreach/supporter-profiles.md",
+      "title": "Who each supporter is and how to support them, on their profiles",
+      "kind": "reference",
+      "status": "living",
+      "updated": "2026-10-18",
+      "confidence": "low",
+      "sources": [
+        "sources/conversations/2026-10-18--org--show-support-parts.md",
         "sources/conversations/2026-10-18--org--supporter-descriptions.md",
         "sources/web/supporters/bhff-get-involved-2026-10-18.md",
         "sources/web/funding/bhff-devfest-sarajevo-2025.md",
@@ -819,7 +839,7 @@
         "sources/web/venue/ipi-akademija-kontakt.md",
         "sources/web/supporters/meister-about-and-jobs-2026-10-18.md"
       ],
-      "tokens": 1031
+      "tokens": 1066
     },
     {
       "path": "org/pitches/activities-the-lake-and-the-town.md",

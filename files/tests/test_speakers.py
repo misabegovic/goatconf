@@ -356,3 +356,15 @@ def test_who_they_are_and_how_to_support_them_show_on_the_profile_only(tmp_path,
     assert "Acme makes anvils" not in speakers.supporters_page()
     rec.write_text(SUPPORTER.replace("funds: Online supporter", "funds: Online supporter\nsupport_them:\n  - {text: Jobs, url: http://acme.example/jobs}"), encoding="utf-8")
     assert any("support_them must list" in p for p in speakers.check_supporter(rec)[0])
+
+
+def test_a_speaker_page_says_who_they_are_and_how_to_support_them(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("publish: yes", "publish: yes\nsupport_them:\n  - {text: Read her book, url: https://example.com/book}"))
+    detail = speakers.sessions_by_speaker(detail=True)["ana-example"]
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], detail, speakers.supporters())
+    assert '<h2 class="band" id="h-about">Who they are</h2>' in page
+    assert '<h2 class="band" id="h-support-them">How to support them</h2>' in page
+    assert '<li><a href="https://example.com/book">Read her book</a></li>' in page
+    _, speakers = setup(tmp_path / "bad", monkeypatch, SPEAKER.replace("publish: yes", "publish: yes\nsupport_them: buy the book"))
+    problems, _, _ = speakers.check_speaker(tmp_path / "bad" / "speakers" / "ana-example.md", speakers.supporters())
+    assert any("support_them must list" in p for p in problems)

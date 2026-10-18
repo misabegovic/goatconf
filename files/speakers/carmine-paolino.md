@@ -10,6 +10,9 @@ links:
   - https://www.linkedin.com/in/carminepaolino/
 order: 2
 publish: yes
+support_them:
+  - text: "Use RubyLLM, his open-source Ruby gem"
+    url: "https://github.com/crmne/ruby_llm"
 ---
 
 I'm Carmine Paolino, a software engineer, founder, and musician in Berlin. I build products, frameworks, and open-source tools across AI, Ruby, and native desktop software. I run Plenty, the company behind this work.
