@@ -301,7 +301,7 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .sticker--ext strong { font-size: 1.6rem; }
 .ext-list { list-style: none; }
 .sticker--example { height: 100%; min-height: 10rem; justify-content: flex-start; text-decoration: none; }
-.sticker--example strong { font-size: 1.6rem; hyphens: auto; overflow-wrap: break-word; }
+.sticker--example strong { font-size: 1.6rem; overflow-wrap: normal; word-break: normal; hyphens: manual; }
 .sticker--fact .sticker__kind { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--page); }
 
 /* Events and sessions: stickers that open their own page, and the facts on it */
@@ -316,7 +316,9 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
 @media (max-width: 47.99rem) {
   .slots > .sticker--ext { grid-column: 1 / -1; }
-  .sticker--example strong { font-size: 1.1rem; }
+  .album-page .slots.slots--events { grid-template-columns: minmax(0, 1fr); }
+  .sticker--example { min-height: 0; }
+  .sticker--example strong { font-size: 1.5rem; }
 }
 @media (max-width: 47.99rem) {
   .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem 0.7rem; }
