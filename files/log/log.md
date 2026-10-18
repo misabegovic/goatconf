@@ -426,3 +426,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #106: site: speakers' travel first, recording in the two big halls, a 150-seat main hall
    diff: 17 files, +94/-27
    restricted-paths: true
+2026-10-18 merge — PR #107: site: no camera line on the talk page
+   diff: 3 files, +21/-1
+   restricted-paths: false
