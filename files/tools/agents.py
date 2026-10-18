@@ -26,6 +26,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extensions  # noqa: E402
+import nav  # noqa: E402
 import program  # noqa: E402
 import speakers  # noqa: E402
 
@@ -171,6 +172,7 @@ def json_ld() -> str:
         "location": place,
         "organizer": {"@type": "Person", "name": EVENT["organiser"][0], "url": EVENT["organiser"][1], "email": EVENT["email"]},
         "offers": {"@type": "Offer", "price": 0, "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": LUMA},
+        "sameAs": [url for _, url, _ in nav.SOCIAL],
     }
     subs = [{"@type": "Event", "name": s["title"], "startDate": f'{s["day"]}T{s["start"]}:00{OFFSET}',
              "endDate": f'{s["day"]}T{s["end"]}:00{OFFSET}', "location": {"@type": "Place", "name": f'{s["room"]}, {EVENT["venue"]}'},
@@ -228,7 +230,8 @@ def calendar() -> str:
 def llms() -> str:
     lines = [f"# {EVENT['name']}", "", f"> {EVENT['summary']} One-hour sessions in every room of IPI Academy, long breaks in town, and a day for the community.", ""]
     lines += [f"- {f}" for f in FACTS]
-    lines += ["", f"Register: {LUMA}", f"Propose a session: {url('talk.html')}", f"Contact: {EVENT['email']}, or the form at {url('contact.html')}", ""]
+    lines += ["", f"Register: {LUMA}", f"Propose a session: {url('talk.html')}", f"Contact: {EVENT['email']}, or the form at {url('contact.html')}",
+              "Follow GoatConf: " + ", ".join(f"{name} {link}" for name, link, _ in nav.SOCIAL), ""]
     people = speakers.listed(speakers.speakers())
     if people:
         lines += ["## Speakers", ""]
