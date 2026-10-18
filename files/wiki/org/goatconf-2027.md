@@ -95,7 +95,7 @@ is cited to the sources above; nothing is inferred. Proposals live in the
   the door (source: sources/conversations/2026-10-12--org--first-come-luma-only.md,
   sources/conversations/2026-10-12--org--session-registration-later.md).
 - **Venue facts:** the main hall on the ground floor has 150 seats, as the organiser set on 2026-10-18 for the site, in place of the 120 of 2026-10-14 (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md), a projector, sound and Wi-Fi, no
-  microphone and no recording; several other rooms; step-free to the
+  microphone, which the rooms do not need since their acoustics are good for their size (source: sources/conversations/2026-10-18--org--no-microphones-needed.md), and no recording; several other rooms; step-free to the
   main hall and first floor; Saturday or weekday both possible.
 - **Recording:** from 2026-10-18 GoatConf aims to record the sessions in IPI Academy's two big halls, the main hall and the first-floor hall; it is not promised yet, as it depends on the available budget (source: sources/conversations/2026-10-18--org--recording-depends-on-budget.md), and how is (unknown, needs source) (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md). People who come may
   bring a camera or a podcast and record, and a supporter may pay for a crew.
