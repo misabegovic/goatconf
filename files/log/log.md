@@ -360,3 +360,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #84: site: speakers and supporters say who they are and how to support them
    diff: 29 files, +282/-42
    restricted-paths: true
+2026-10-18 merge — PR #85: site: an event's page links its host's supporter profile
+   diff: 4 files, +56/-5
+   restricted-paths: true
