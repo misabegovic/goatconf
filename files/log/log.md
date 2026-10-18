@@ -387,3 +387,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #93: site: more ways to support Carmine Paolino
    diff: 7 files, +74/-4
    restricted-paths: false
+2026-10-18 merge — PR #94: site: more ways to support Paul, Christoph and Cristian
+   diff: 11 files, +95/-8
+   restricted-paths: false
