@@ -11,6 +11,10 @@ publish: yes
 support_them:
   - text: "Read his book, C++ in Embedded Systems (Packt, 2025)"
     url: "https://books.google.com/books/about/C++_in_Embedded_Systems.html?id=5pVkEQAAQBAJ"
+  - text: "Build your hardware product with Semblie, his company"
+    url: "https://semblie.com/services/"
+  - text: "Have your boards assembled at Semblie in Tuzla, in small batches"
+    url: "https://semblie.com/manufacturing/"
 ---
 
 Amar Mahmutbegovic is the co-founder and Head of Engineering at Semblie, where he leads the utilization of modern C++ for firmware development. He is passionate about demonstrating the advantages of C++ to the embedded community through his blog posts and LinkedIn activity. He is the author of C++ in Embedded Systems (Packt, 2025).
