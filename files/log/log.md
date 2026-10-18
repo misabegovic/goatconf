@@ -348,3 +348,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #80: site: the BH Professionals Meetup is accepted, and hosts who fund events become supporters
    diff: 36 files, +457/-87
    restricted-paths: true
+2026-10-18 merge — PR #81: site: accepted events break nicely on phones and show as home examples
+   diff: 24 files, +110/-31
+   restricted-paths: true
