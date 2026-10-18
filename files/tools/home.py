@@ -112,7 +112,7 @@ def speaker_sticker(i: int, slug: str, meta, sessions=()) -> str:
 
 def open_place() -> str:
     return ('    <li><a class="slot slot--link slot--open" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
-            '<span class="num num--printed">0</span><strong>Your talk here?</strong><small>The call for proposals is open.</small>'
+            '<span class="num num--printed">0</span><strong>Your session here?</strong><small>A talk, a panel, a workshop or something else. The call is open.</small>'
             '<span class="stamp">Yours?</span></a></li>')
 
 
