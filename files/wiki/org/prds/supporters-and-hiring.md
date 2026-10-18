@@ -2,12 +2,13 @@
 title: "Supporters who fund a named thing, and hiring that attendees opt into"
 kind: initiative
 status: living
-updated: 2026-10-14
+updated: 2026-10-18
 parent_epic: goatconf-2027
 appetite: medium
 confidence: medium
 supersedes: org/pitches/partners-sponsors-and-hiring.md
 sources:
+  - sources/conversations/2026-10-18--org--organiser-pays-speakers-dinner.md
   - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md
   - sources/conversations/2026-10-12--org--registration-on-luma.md
@@ -124,7 +125,7 @@ Secondary:
 
 Support is an extension slot. A supporter funds one named thing from a
 menu of stretch goals (coffee for a day, lunch, a volunteers' lunch, the
-speaker grant pool, a speaker dinner, video recording, the after-party, the
+speaker grant pool, video recording, the after-party, the
 activity day, badges and lanyards), pays that item's supplier directly or
 gives it in kind, and is thanked for exactly that, by name or as "an
 anonymous supporter". The prices on the menu come from
@@ -225,8 +226,8 @@ setup is small.
 - [Extension slots and the record](extension-slots-and-the-record.md):
   support as one of the extension slot kinds, and the charter supporters
   agree to.
-- [CFP and speakers](cfp-and-speakers.md): the speaker grant pool and
-  speaker dinner as menu items.
+- [CFP and speakers](cfp-and-speakers.md): the speaker grant pool as a
+  menu item.
 - [Activities: the lake and the town](activities-lake-and-town.md): the
   activity day as a menu item.
 - [Social drumbeat](social-drumbeat.md): thanks each supporter when they
@@ -286,3 +287,4 @@ on the supporters' page.
 - **2026-10-13, superseded in part.** The no-gos on money through the organiser and the public budget no longer hold: online supporters pay the organiser's Austrian business, the budget is private, and speakers' travel is refunded only if the budget allows ([Online supporters pay the organiser's Austrian business](../adrs/online-supporters-through-the-business.md); source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **2026-10-14, read with the later decisions.** The first amendment above no longer holds: registration is on the organiser's Luma event, not a Google Form (source: sources/conversations/2026-10-12--org--registration-on-luma.md). Luma asks one optional question, why the person wants to come, and not the open-to-work question (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md); whether and where that question returns is (unknown, needs source). The body's menu of named items on a public ledger is replaced by one online level of 500 EUR on the supporters page, and a speaker's company that covers their travel is listed there the same way (sources: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md, sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).
 - **2026-10-14, no hiring-partner sharing in 2027.** The open-to-work question is dropped for 2027, and the hiring part of this plan is retired with it ([the decision](../adrs/supporters-and-hiring.md); source: sources/conversations/2026-10-14--org--decisions-one-by-one.md).
+- **2026-10-18, the speaker dinner leaves the menu.** The organiser pays for the speakers dinner, whatever the budget, so it is no longer a stretch goal a supporter funds (source: sources/conversations/2026-10-18--org--organiser-pays-speakers-dinner.md).

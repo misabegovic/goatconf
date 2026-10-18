@@ -417,3 +417,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #103: site: the home page's session button reads "How to propose a session"
    diff: 2 files, +25/-2
    restricted-paths: false
+2026-10-18 merge — PR #104: site: the organiser pays for the speakers dinner
+   diff: 8 files, +57/-18
+   restricted-paths: false
