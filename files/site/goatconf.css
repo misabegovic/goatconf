@@ -237,6 +237,7 @@ main.prose { width: min(100% - 2 * var(--pad), 58rem); margin: clamp(1.5rem, 3vw
   .spread__cover { border-radius: 0.8rem 0.8rem 0 0; box-shadow: inset 0 -1.4rem 1.6rem -1.2rem rgb(0 0 0 / 0.55); }
   .spread__page { border-radius: 0 0 0.8rem 0.8rem; box-shadow: none; }
   .page-grid, .shiny { grid-template-columns: 1fr; }
+  .page-grid--photos-first > .slots { order: -1; }
   .page-head { grid-template-columns: 1fr; }
   .page-head__photo { grid-column: 1; grid-row: auto; }
   .page-head__photo { max-width: 24rem; }
