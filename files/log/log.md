@@ -372,3 +372,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #88: site: on phones the Tuzla section shows its photos first
    diff: 26 files, +42/-25
    restricted-paths: false
+2026-10-18 merge — PR #89: site: "Run a session": the call is for more than talks
+   diff: 32 files, +181/-127
+   restricted-paths: true

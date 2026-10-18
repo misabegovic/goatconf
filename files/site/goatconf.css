@@ -182,7 +182,10 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .steps li { margin-bottom: 0.5rem; }
 .steps li::marker { color: var(--album); font-family: var(--display); font-weight: 800; }
 .steps strong { color: var(--album); }
-.slot--talk { min-height: 9rem; }
+.slots--formats { grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; gap: 1.2rem 0.9rem; }
+.slots--formats > li { list-style: none; }
+.slots--formats .slot { min-height: 9rem; justify-content: flex-start; height: 100%; }
+.slots--formats .slot strong { padding-right: 3rem; }
 
 .ledger-stickers { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr)); gap: 1.4rem; }
 

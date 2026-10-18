@@ -437,7 +437,7 @@ def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: st
 
 
 FOOTER_LINKS = ('<a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> '
-                '<a href="talk.html">Give a talk</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> '
+                '<a href="talk.html">Run a session</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> '
                 '<a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> '
                 '<a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a>')
 
