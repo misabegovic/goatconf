@@ -13,6 +13,14 @@ publish: yes
 support_them:
   - text: "Sell your event's tickets with Tito"
     url: "https://ti.to/"
+  - text: "Build an online community with Vito, from his team at Tito"
+    url: "https://vi.to/"
+  - text: "Run fully branded event registration with Tito Pro"
+    url: "https://pro.tito.io/"
+  - text: "Join This Next Thing, the non-profit community he co-leads"
+    url: "https://thisnextthing.com/"
+  - text: "Read his writing at paulca.com"
+    url: "https://paulca.com/"
 ---
 
 Paul is the co-founder and CEO of Team Tito. Tito is simple, fast registration software. They have recently introduced IO for high-end, invitation-only events. Paul has run a number of experiential events such as Funconf, a conference series that happened on moving busses, in a castle, and on an island. Paul's most recent event, This Next Thing, brought 150 tech leaders together in the Swiss Alps.

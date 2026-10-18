@@ -16,6 +16,10 @@ publish: yes
 support_them:
   - text: "Try airstream, his open-source tool for streaming to AirPlay devices"
     url: "https://github.com/unused/airstream"
+  - text: "Try MeisterTask, made by his team at Meister"
+    url: "https://www.meistertask.com"
+  - text: "Work with him at Meister: open positions"
+    url: "https://www.meistertask.com/pages/jobs"
 ---
 
 Senior Staff Engineer at Meister, Open-Source Enthusiast, and Linux User (he/him)
