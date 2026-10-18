@@ -148,7 +148,11 @@ def thanks(meta) -> str:
     funds = str(meta["funds"])
     if funds.split()[0].lower().endswith("ing"):
         return f"for {esc(funds[0].lower() + funds[1:])}."
-    return "for funding " + esc(funds[0].lower() + funds[1:]) + "."
+    # Lowercase only a leading article, never a name ("Christoph Lipautz's travel").
+    first = funds.split()[0]
+    if first in ("The", "A", "An"):
+        funds = first.lower() + funds[len(first):]
+    return f"for funding {esc(funds)}."
 
 
 def supporter_card(slug: str, meta, square: bool) -> str:

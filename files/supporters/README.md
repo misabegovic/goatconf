@@ -3,7 +3,10 @@
 One Markdown file per company that supports GoatConf. Most are online
 supporters: one level, 500 EUR plus VAT where it applies, invoiced by the
 organiser's Austrian business, with nothing at the venue. A company may
-instead pay a supplier directly for one named thing, or give in kind. No
+instead pay a supplier directly for one named thing, or give in kind. A
+host (a person, group or company) that funds and organises an event the
+organiser accepted is listed too, if it agrees, with a line naming the
+event. No
 supporter pays for a named speaker's travel. Name the file after the
 company in lowercase words joined by hyphens. Copy `_template.md` to start
 one.

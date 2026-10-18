@@ -59,7 +59,7 @@ FACTS = [
     "Friday starts half an hour earlier, at 09:30, and ends at 16:30.",
     "Saturday has no talks: it is for events people add, such as the Pannonian salt lakes, the goat hunt, walks and meetups.",
     "Talks: an open call; anyone may propose a session, first-time speakers welcome. The organiser reads every proposal.",
-    "Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), invoiced by the organiser's Austrian business, or pay a supplier directly. Speakers pay their own travel; a refund only if the budget allows, never promised.",
+    "Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), invoiced by the organiser's Austrian business, or pay a supplier directly. A host who funds and organises an accepted event is listed as a supporter too, if they agree. Speakers pay their own travel; a refund only if the budget allows, never promised.",
     "Recording: GoatConf does not record the talks. People may bring a camera or a podcast, and a supporter may pay for a crew.",
 ]
 # The pages an agent most likely needs first, in this order; the rest follow.
