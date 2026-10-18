@@ -88,6 +88,7 @@
   "events": [
     {
       "name": "BH Professionals Meetup",
+      "page": "https://goatconf.com/event-bh-professionals-meetup",
       "kind": "meetup",
       "host": "Bosnia & Herzegovina Futures Foundation",
       "where": "Venue to be announced, Tuzla",

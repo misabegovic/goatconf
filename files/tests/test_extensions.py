@@ -129,6 +129,42 @@ def test_only_accepted_events_are_listed(ext):
     assert mod.main(["build"]) == 0
     page = (root / "site" / "extensions.html").read_text(encoding="utf-8")
     assert "Lake hackathon" in page and "Rust by the lake" not in page
-    assert "part of GoatConf 2027, run by Tuzla Rustaceans" in page
+    assert 'href="event-hack.html"' in page and "event-rust.html" not in page
+    assert not (root / "site" / "event-rust.html").exists()
+    event = (root / "site" / "event-hack.html").read_text(encoding="utf-8")
+    assert "Hackathon, part of GoatConf 2027, run by Tuzla Rustaceans" in event
     problems, notes, _ = mod.check_record(root / "extensions" / "rust.md")
     assert not problems and any("not yet accepted" in n for n in notes)
+
+
+def test_each_accepted_event_gets_its_own_page_that_links_out(ext):
+    mod, root = ext
+    write(root, "rust.md", GOOD.replace("contact: https://example.org/contact", "contact: hello@example.org"))
+    assert mod.main(["build"]) == 0
+    event = (root / "site" / "event-rust.html").read_text(encoding="utf-8")
+    assert "<h1 class=\"sign\">Rust by the lake</h1>" in event
+    assert '<a class="button" href="https://example.org/rust">Register with the host</a>' in event
+    assert '<a href="mailto:hello@example.org">hello@example.org</a>' in event
+    assert "A morning of pairing on small Rust programs, for beginners." in event
+    assert '<link rel="canonical" href="https://goatconf.com/event-rust">' in event
+    assert 'href="program.html#h-around"' in event  # 11 June is outside the three days
+    assert 'aria-current="page"' in event and 'href="program.html" aria-current="page"' in event
+
+
+def test_a_page_whose_event_is_gone_is_removed_and_caught(ext, capsys):
+    mod, root = ext
+    write(root, "rust.md", GOOD)
+    assert mod.main(["build"]) == 0
+    (root / "extensions" / "rust.md").unlink()
+    assert mod.main(["build", "--check"]) == 1
+    assert "belongs to no accepted event" in capsys.readouterr().out
+    assert mod.main(["build"]) == 0
+    assert not (root / "site" / "event-rust.html").exists()
+    assert mod.main(["build", "--check"]) == 0
+
+
+def test_the_file_name_becomes_an_address(ext, capsys):
+    mod, root = ext
+    write(root, "Rust Night.md", GOOD)
+    assert mod.main(["check"]) == 1
+    assert "lowercase words joined by hyphens" in capsys.readouterr().out

@@ -300,11 +300,13 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .sticker--example strong { font-size: 1.6rem; hyphens: auto; overflow-wrap: break-word; }
 .sticker--fact .sticker__kind { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--page); }
 
-/* Events people add: one listing per accepted event */
-.prose .listings { list-style: none; padding: 0; margin: 1.6rem 0 0; }
-.listing + .listing { margin-top: 2.4rem; padding-top: 2.4rem; border-top: 2px solid var(--page-print); }
-.prose .listing h2 { margin: 0 0 0.3rem; }
-.listing__kind { margin: 0 0 1rem; color: var(--ink-soft); font-weight: 700; }
+/* Events and sessions: stickers that open their own page, and the facts on it */
+.slots--events { list-style: none; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); margin-bottom: 1.8rem; }
+.sticker__open { display: flex; flex-direction: column; gap: 0.35rem; color: inherit; text-decoration: none; }
+.sticker--example:hover strong, .sticker__open:hover strong, .sticker__open--stretch:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+.sticker__open--stretch { display: inline; }
+.sticker__open::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.sticker--session small a, .sticker--session .session__register { position: relative; z-index: 2; }
 .facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.4rem 1.2rem; margin: 0 0 1.4rem; padding: 1rem 1.2rem; border-radius: 0.6rem; background: var(--page-print); }
 .facts dt { font-weight: 700; color: var(--album); }
 .facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
