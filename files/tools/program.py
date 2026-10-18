@@ -329,7 +329,7 @@ def page() -> str:
       <p>Every slot is one hour: a talk with time for questions, a panel, or a workshop. After each slot comes a full hour off, in the cafés on Freedom Square under five minutes away. That is when you talk to the person you just heard.</p>
       <p>Thursday runs from 10:00 to 17:00. Friday runs from 09:30 to 16:30.</p>
       <p>GoatConf aims to record the sessions in the two big halls, the main hall and the first-floor hall. This is not promised yet, as it depends on the available budget. You may also bring a camera or a podcast and record, and podcasts are welcome in some of the rooms.</p>
-      <p>The slots fill as proposals come in and are accepted. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>
+      <p>The slots fill as proposals come in and are accepted. Days, times and rooms are final only once the program is finalised, closer to the event. Until then a session's place on this page can still move. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>
     </div>
     <div>
       <h3 class="list-title">The rooms</h3>
