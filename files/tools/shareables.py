@@ -139,14 +139,26 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
 {seal(240 if square else 230, "right:72px; bottom:72px")}""")
 
 
+def thanks(meta) -> str:
+    """The card's last line. A funds line that starts with what the supporter
+    does ("Funding and organising ...") is used as it stands; any other line
+    names what they fund."""
+    if meta.get("host") is True:
+        return "for hosting GoatConf 2027."
+    funds = str(meta["funds"])
+    if funds.split()[0].lower().endswith("ing"):
+        return f"for {esc(funds[0].lower() + funds[1:])}."
+    return "for funding " + esc(funds[0].lower() + funds[1:]) + "."
+
+
 def supporter_card(slug: str, meta, square: bool) -> str:
     w, h = (1080, 1080) if square else (1200, 675)
     logo = (SITE / meta["logo"]).as_uri()
     return page(w, h, f"""
 <div style="position:absolute; left:{84 if square else 72}px; top:{96 if square else 72}px; right:{84 if square else 460}px">
   <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">Thank you,</div>
-  <div class="word" style="font-size:{120 if square else 92}px; margin-top:16px">{esc(str(meta['name']))}</div>
-  <div class="sub" style="font-size:{36 if square else 28}px; line-height:1.2; margin-top:28px">{'for hosting GoatConf 2027.' if meta.get('host') is True else 'for funding ' + esc(str(meta['funds'])[0].lower() + str(meta['funds'])[1:]) + '.'}</div>
+  <div class="word" style="font-size:{(120 if len(str(meta['name'])) <= 24 else 88) if square else 92}px; margin-top:16px">{esc(str(meta['name']))}</div>
+  <div class="sub" style="font-size:{36 if square else 28}px; line-height:1.2; margin-top:28px">{thanks(meta)}</div>
 </div>
 <div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:{NIGHT if meta.get('logo_on') == 'dark' else '#fff'}; border-radius:18px; display:grid; place-items:center; padding:28px">
   <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>

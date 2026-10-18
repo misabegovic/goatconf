@@ -12,7 +12,10 @@ one.
 - `logo`: required, the supporter's logo saved under
   `site/img/supporters/` (SVG or PNG on a transparent or white background).
 - `funds`: required, how they support, in plain words, for example
-  "Online supporter" or "The printing, paid to the printer".
+  "Online supporter" or "The printing, paid to the printer". Their
+  "thank you" card reads "for funding" and this line; a line that starts
+  with what they do, such as "Funding and organising the meetup", is used
+  as it stands ("for funding and organising the meetup").
 - `host: yes`: optional, for the host and partner, IPI Academy. It is listed
   first, before every other supporter, and its "thank you" card thanks it for
   hosting.
