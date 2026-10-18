@@ -7,8 +7,9 @@ from site/brand/, rendered to PNG by headless Chrome into site/share/:
   banners   LinkedIn profile banner, LinkedIn page cover, a 3:1 header for
             X, Bluesky and Mastodon, the Luma event cover
   og.png    the link preview every page uses
-  posts     save the date, the call for talks, registration, add something,
-            the first speakers, each square (1080) and wide (1200 x 675)
+  posts     save the date, run a session, registration, add something,
+            the first speakers and the drumbeat's posts to June 2027, some
+            with a credited photo of Tuzla, each square (1080) and wide (1200 x 675)
   records   an "I'm speaking" card per published speaker (square, wide, and a
             1200 x 630 preview that their page's link preview shows), a
             "thank you" card per supporter, and a card per accepted event
@@ -111,11 +112,75 @@ def post(w: int, h: int, title: str, line: str, square: bool) -> str:
 
 POSTS = {
     "save-the-date": ("Save<br>the date", "Two days of talks in every room of IPI Academy, then a day for the community."),
-    "call-for-talks": ("The call<br>for talks<br>is open", "One hour, one room, an audience. No strict deadline."),
+    "run-a-session": ("Run a<br>session", "A talk, a panel, a workshop or something else. One hour, one room."),
     "register": ("Get your<br>free ticket", "Thursday and Friday for the talks, Saturday for the community."),
     "add-something": ("Propose<br>an event", "A workshop, a meetup, a dinner, a hike: run it around GoatConf."),
     "first-speakers": ("The first<br>speakers<br>are here", "Six speakers so far, each with an hour in one of the seven rooms."),
+    # The drumbeat to June 2027 (wiki/org/outreach/drumbeat.md)
+    "why-a-goat": ("Why<br>a goat?", "The whole of Tuzla milked one goat."),
+    "your-first-talk": ("Your<br>first talk?", "First-time speakers are welcome. A strong idea counts for more than a famous name."),
+    "see-you-in-june": ("See you<br>in June", "Two days of talks in Tuzla, then a day for the community."),
+    "whos-organising": ("Who's<br>organising", "The organiser of EuRuKo 2024 and RubyConf Austria."),
+    "not-only-engineers": ("Not only<br>engineers", "Design, product, founding a company: for people who build and sell software."),
+    "support-goatconf": ("Support<br>GoatConf", "One level, 500 euro, online only. Nothing at the venue."),
+    "panels-and-workshops": ("Panels and<br>workshops", "Two computer centres, with 20 and 26 seats, for hands-on sessions."),
+    "with-or-without-meat": ("With or<br>without<br>meat", "Ask for posno: made without meat."),
+    "access": ("Coming with<br>a disability?", "Step-free main hall and first floor. Tell us what you need."),
+    "what-we-wont-do": ("What we<br>won't do", "No paid talks, no attendee list for sale, no supporters at the venue."),
+    "last-call": ("Last call<br>for sessions", "The rooms are filling up. Propose yours now."),
+    "before-you-travel": ("Before<br>you travel", "Papers, phone, health, money: a short checklist."),
+    "pick-your-sessions": ("Pick your<br>sessions", "Each room has only so many seats."),
+    "see-you-thursday": ("See you<br>Thursday", "Welcome at 09:45, IPI Academy, Kulina bana 2, Tuzla."),
+    "day-one": ("Day<br>one", "Seven rooms, four sessions each, an hour off after every one."),
+    "day-two": ("Day<br>two", "Starting at 09:30, welcome at 09:15."),
+    "community-day": ("The<br>community's<br>day", "The salt lakes, the goat hunt, and the evening meetup."),
+    "thank-you": ("Thank<br>you", "To everyone who spoke, supported, hosted, volunteered and came."),
 }
+
+# Posts with a photo given for GoatConf, each with the credit line its giver asked for
+# (wiki/org/tuzla-images.md). The food photos are not freely licensed, so none is here.
+PHOTO_POSTS = {
+    "tuzla-on-a-budget": ("Tuzla on<br>a budget", "A meal about 4.60 €, a cappuccino 1.66 €, a day at the lakes 3.60 €.", "img/city-aerial-summer.jpg", "Photo: Grad Tuzla"),
+    "getting-to-tuzla": ("Getting<br>to Tuzla", "Fly to Tuzla or Sarajevo, or come by bus.", "img/city-square-mosque-summer.jpg", "Photo: Grad Tuzla"),
+    "an-hour-off": ("An hour<br>off", "After every session: Freedom Square, five minutes away.", "img/city-square-fountain-summer.jpg", "Photo: Grad Tuzla"),
+    "where-to-stay": ("Where<br>to stay", "Hotels and guest houses a short walk from IPI Academy.", "img/city-korzo-clock.jpg", "Photo: Grad Tuzla"),
+    "saturday": ("Saturday<br>at the lakes", "The salt lakes, the goat hunt, and what people add.", "img/city-lakes-aerial-summer.jpg", "Photo: Grad Tuzla"),
+    "next-week": ("Next week<br>in Tuzla", "The salt lakes open for the season on 1 June.", "img/city-old-town-aerial-paving.jpg", "Photo: Grad Tuzla"),
+}
+
+
+def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, square: bool) -> str:
+    """A post with a photo: the photo on top (square) or on the left (wide), its credit on it, the words beside."""
+    src = (SITE / img).as_uri()
+    cred = (f'<div style="position:absolute; left:18px; bottom:14px; font-size:20px; font-weight:700; '
+            f'text-shadow:0 1px 4px rgb(0 0 0 / .8)">{esc(credit)}</div>')
+    if square:
+        return page(w, h, f"""
+<div style="position:absolute; left:0; top:0; width:{w}px; height:540px; overflow:hidden">
+  <img src="{src}" style="width:100%; height:100%; object-fit:cover">{cred}</div>
+<div class="rule" style="position:absolute; left:0; top:540px; width:{w}px; border-radius:0"></div>
+<div style="position:absolute; left:84px; top:600px; right:330px">
+  <div class="word" style="font-size:112px">{title}</div>
+  <div class="sub" style="font-size:38px; line-height:1.15; margin-top:30px">{line}</div>
+</div>
+<div style="position:absolute; left:84px; bottom:64px">
+  <div class="sub" style="font-size:30px; color:#fff">{FACTS}</div>
+  <div class="url" style="font-size:28px; margin-top:10px">{URL}</div>
+</div>
+{seal(230, "right:64px; bottom:64px")}""")
+    return page(w, h, f"""
+<div style="position:absolute; left:0; top:0; width:560px; height:{h}px; overflow:hidden">
+  <img src="{src}" style="width:100%; height:100%; object-fit:cover">{cred}</div>
+<div class="rule" style="position:absolute; left:560px; top:0; width:6px; height:{h}px; border-radius:0"></div>
+<div style="position:absolute; left:620px; top:64px; right:56px">
+  <div class="word" style="font-size:88px">{title}</div>
+  <div class="sub" style="font-size:30px; line-height:1.15; margin-top:24px">{line}</div>
+</div>
+<div style="position:absolute; left:620px; bottom:56px; right:200px">
+  <div class="sub" style="font-size:22px; color:#fff">{FACTS}</div>
+  <div class="url" style="font-size:22px; margin-top:8px">{URL}</div>
+</div>
+{seal(140, "right:48px; bottom:48px")}""")
 
 
 def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 675) -> str:
@@ -211,6 +276,9 @@ def jobs() -> dict[str, tuple[int, int, str]]:
     for key, (title, line) in POSTS.items():
         out[f"post-{key}-square.png"] = (1080, 1080, post(1080, 1080, title, line, True))
         out[f"post-{key}-wide.png"] = (1200, 675, post(1200, 675, title.replace("<br>", " "), line, False))
+    for key, (title, line, img, credit) in PHOTO_POSTS.items():
+        out[f"post-{key}-square.png"] = (1080, 1080, photo_post(1080, 1080, title, line, img, credit, True))
+        out[f"post-{key}-wide.png"] = (1200, 675, photo_post(1200, 675, title, line, img, credit, False))
     talks = speakers.sessions_by_speaker()
     for slug, (meta, _) in speakers.speakers().items():
         out[f"speaker-{slug}-square.png"] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True))

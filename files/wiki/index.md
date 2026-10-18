@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-18 -->
+- **2026-10-18**: **Every post to June 2027, drafted.** On the organiser's ask, the drumbeat is now a dated calendar: one post every Tuesday from 20 October 2026 to 1 June 2027, then the three event days and a thank-you on 8 June, each with a LinkedIn text, a short text and an image. Week 1 is out. New cards, some with the City of Tuzla's credited photos, are in `site/share/`, and none uses the food photos, which are not freely licensed ([The drumbeat](org/outreach/drumbeat.md); source: sources/conversations/2026-10-18--org--social-plan-to-june.md).
 - **2026-10-18**: **More ways to support Dejan Menges.** Besides Enola: augur, his tool for hidden prompts and characters in files; his architecture consulting and workshops; his writing; and Vinted's open positions ([speaker links](org/outreach/speaker-support-links.md); sources: sources/conversations/2026-10-18--org--dejan-support.md, sources/web/speakers/dejan-menges-support-2026-10-18.md).
 - **2026-10-18**: **More ways to support Paul, Christoph and Cristian.** Paul Campbell: Vito, Tito Pro, This Next Thing and his writing; Christoph Lipautz: MeisterTask and Meister's open positions; Cristian Planas: his talks on RubyEvents. Cristian's job title at Combinaut is (unknown, needs source) ([speaker links](org/outreach/speaker-support-links.md); sources: sources/conversations/2026-10-18--org--expand-paul-christoph-cristian.md, sources/web/speakers/paul-campbell-support-2026-10-18.md).
 - **2026-10-18**: **More ways to support Carmine Paolino.** Besides using RubyLLM: sponsoring it on GitHub, working with him on RubyLLM and AI consulting, workshops or founder coaching, trying Chat with Work, coming to Berlin.rb, and listening to his music as Crimson Lake ([speaker links](org/outreach/speaker-support-links.md); sources: sources/conversations/2026-10-18--org--carmine-support.md, sources/web/speakers/carmine-paolino-support-2026-10-18.md).
@@ -166,6 +167,9 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 - [GoatConf 2027: what is known](org/goatconf-2027.md): Tuzla, June
   2027, IPI Academy, free, 120 to 300 people, a 1,000 EUR ceiling.
 - [The drumbeat](org/outreach/drumbeat.md): the weekly posts, drafted for
-  the organiser to publish, from launch to June 2027.
+  the organiser to publish, from launch to June 2027, with the texts for
+  [October to December 2026](org/outreach/drumbeat-2026.md),
+  [January to March 2027](org/outreach/drumbeat-2027-jan-mar.md) and
+  [April to June 2027](org/outreach/drumbeat-2027-apr-jun.md).
 - Area shelves (program, speakers, sponsors, venue, …) arrive as
   content earns them: `wiki/<area>/index.md`.
