@@ -25,6 +25,12 @@ Contact: info@muhamed.at, or the form at https://goatconf.com/contact
 - [Cristian Planas](https://goatconf.com/speaker-cristian-planas): Author of Rails Scales!, at Combinaut
 - [Christoph Lipautz](https://goatconf.com/speaker-christoph-lipautz): Senior Staff Engineer at Meister
 
+## Supporters
+
+- [IPI Academy](https://goatconf.com/supporter-ipi-academy): Host and partner: the rooms at IPI Academy
+- [Bosnia & Herzegovina Futures Foundation](https://goatconf.com/supporter-bh-futures-foundation): Funding and organising the BH Professionals Meetup on Saturday 5 June
+- [Meister](https://goatconf.com/supporter-meister): Christoph Lipautz's travel
+
 ## Events people add
 
 - [BH Professionals Meetup](https://goatconf.com/event-bh-professionals-meetup): Meetup, 5 June 2027, 18:00 to 21:00, run by Bosnia & Herzegovina Futures Foundation

@@ -234,6 +234,11 @@ def llms() -> str:
         lines += ["## Speakers", ""]
         lines += [f"- [{m['name']}]({url(speakers.page_name(s))})" + (f": {m['role']}" if m.get("role") else "") for s, (m, _) in people]
         lines.append("")
+    backers = speakers.listed_supporters(speakers.supporters())
+    if backers:
+        lines += ["## Supporters", ""]
+        lines += [f"- [{m['name']}]({url(speakers.supporter_page_name(s))}): {m['funds']}" for s, (m, _) in backers]
+        lines.append("")
     table, _ = program.sessions()
     if table:
         lines += ["## Sessions", ""]
@@ -247,7 +252,7 @@ def llms() -> str:
         lines.append("")
     lines += ["## Pages", ""]
     for page in pages():
-        if page.name.startswith(("speaker-", "event-", "session-")):
+        if page.name.startswith(("speaker-", "supporter-", "event-", "session-")):
             continue
         title, desc = head_text(page)
         lines.append(f"- [{title}]({url(page.name)})" + (f": {desc}" if desc else ""))

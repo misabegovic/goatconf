@@ -9,8 +9,11 @@ supplier. The body of each file is their own words. README.md and files whose na
 records.
 
   check              check every speaker and supporter record. Exit 1 if any fails.
-  build [--check]    write site/speakers.html and site/supporters.html; with
-                     --check, fail if a committed page is not current.
+  build [--check]    write site/speakers.html, site/supporters.html, each
+                     speaker's page (site/speaker-<record>.html) and each
+                     supporter's profile (site/supporter-<record>.html), where
+                     they download their cards; with --check, fail if a
+                     committed page is not current or a card is missing.
 
 Usage: python3 tools/speakers.py <check|build> [...]
 """
@@ -76,6 +79,11 @@ def check_supporter(path: Path):
         problems.append("host must be yes, or left out")
     if meta.get("logo_on", "light") not in ("light", "dark"):
         problems.append("logo_on must be light or dark: the background the logo is made for")
+    events = meta.get("events")
+    if events is not None:
+        known = {slug for _, slug, _, _ in extensions.accepted()}
+        if not isinstance(events, list) or any(str(e) not in known for e in events):
+            problems.append(f"events must list accepted events it hosts by their record names, from: {', '.join(sorted(known)) or 'none yet'}")
     return problems, meta, body
 
 
@@ -310,21 +318,63 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main, preview)
 
 
+def supporter_page_name(slug: str) -> str:
+    """Each supporter's own profile, where they download their cards."""
+    return f"supporter-{slug}.html"
+
+
+def supporter_cards(slug: str) -> dict:
+    """The supporter's thank-you cards in site/share/, made by tools/shareables.py."""
+    return {"square": f"supporter-{slug}-square.png", "wide": f"supporter-{slug}-wide.png"}
+
+
+def supporter_page(slug: str, meta, body) -> str:
+    name = esc(meta["name"])
+    words = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
+    site = esc(re.sub(r"^https?://(www\.)?", "", str(meta["url"])).rstrip("/"))
+    hosted = {s: (m, b) for _, s, m, b in extensions.accepted() if s in (meta.get("events") or [])}
+    events = ""
+    if hosted:
+        cards = "\n".join("  " + extensions.card(i + 1, s, m) for i, (s, (m, _)) in enumerate(hosted.items()))
+        events = f"""
+<section class="album-page wrap" aria-labelledby="h-events">
+  <h2 class="band" id="h-events">{"Their events" if len(hosted) > 1 else "Their event"}</h2>
+  <p class="copy copy--wide">Part of GoatConf 2027: accepted by the organiser, and organised and paid for by {name}.</p>
+  <ul class="slots slots--events">
+{cards}
+  </ul>
+</section>"""
+    thanks = extensions.share_section(supporter_cards(slug), f"Thank you, {name}", "A thank-you from GoatConf 2027 to post wherever you like. It links back to this page.",
+                                      "The thank-you card", SITE)
+    event_cards = "".join(extensions.share_section(extensions.cards(s), f"The card for {esc(m['name'])}",
+                                                   f"{esc(m['name'])}, organised by {name}, part of GoatConf 2027: for you and anyone going to post. It links to the event's page.",
+                                                   f"The card for {esc(m['name'])}", SITE) for s, (m, _) in hosted.items())
+    main = f"""<section class="album-page wrap" aria-labelledby="h-support">
+  <h2 class="band" id="h-support">{"Host and partner" if meta.get("host") is True else "Their support"}</h2>
+  {f'<div class="copy copy--wide">{words}</div>' if words else ""}
+  <p class="copy"><a class="go go--ink" href="{esc(meta["url"])}">{site}</a> <a class="go go--ink" href="supporters.html">All supporters</a></p>
+</section>{events}{thanks}{event_cards}"""
+    preview = supporter_cards(slug)["wide"] if (SITE / "share" / supporter_cards(slug)["wide"]).exists() else ""
+    dark = " page-head__photo--logo page-head__photo--logo-dark" if meta.get("logo_on") == "dark" else " page-head__photo--logo"
+    return shell(supporter_page_name(slug)[:-5], f"{name}: supporting GoatConf 2027, Tuzla", f"{name} supports GoatConf 2027 in Tuzla: {esc(meta['funds'])}.",
+                 (esc(meta["logo"]), 600, 300, name), name, esc(meta["funds"]), main, preview, dark)
+
+
 def supporter_card(n: int, slug: str, meta, body) -> str:
     words = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
     return f"""  <li class="sticker sticker--supporter" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <span class="num">{n}</span>
-    <a class="supporter__logo{' supporter__logo--dark' if meta.get('logo_on') == 'dark' else ''}" href="{esc(meta['url'])}"><img src="{esc(meta['logo'])}" alt="{esc(meta['name'])}" loading="lazy"></a>
-    <strong>{esc(meta['name'])}</strong>
+    <a class="supporter__logo{' supporter__logo--dark' if meta.get('logo_on') == 'dark' else ''}" href="{supporter_page_name(slug)}"><img src="{esc(meta['logo'])}" alt="{esc(meta['name'])}" loading="lazy"></a>
+    <strong><a href="{supporter_page_name(slug)}">{esc(meta['name'])}</a></strong>
     <p class="supporter__funds">{esc(meta['funds'])}</p>{words}
   </li>"""
 
 
-def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: str, main: str, preview: str = "") -> str:
+def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: str, main: str, preview: str = "", photo_class: str = "") -> str:
     sprite = extensions.SHELL.read_text(encoding="utf-8")
     sprite = sprite[sprite.index('<svg width="0"'):sprite.index("</svg>", sprite.index('<svg width="0"')) + 6]
     src, width, height, alt = photo
-    mark = " page-head__photo--mark" if src.startswith("brand/") else (" page-head__photo--portrait" if src.startswith("img/speakers/") else "")
+    mark = photo_class or (" page-head__photo--mark" if src.startswith("brand/") else (" page-head__photo--portrait" if src.startswith("img/speakers/") else ""))
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -433,16 +483,19 @@ def all_pages() -> dict:
     for slug, (m, b) in speakers().items():
         name = page_name(slug)
         out[SITE / name] = nav.place(meta.tag(speaker_page(slug, m, b, detail.get(slug, []), known)), nav.section(name))
+    for slug, (m, b) in known.items():
+        name = supporter_page_name(slug)
+        out[SITE / name] = nav.place(meta.tag(supporter_page(slug, m, b)), nav.section(name))
     return out
 
 
 def cmd_build(args) -> int:
     pages = all_pages()
     stale = 0
-    for old in SITE.glob("speaker-*.html"):
+    for old in [*SITE.glob("speaker-*.html"), *SITE.glob("supporter-*.html")]:
         if old not in pages:
             if args.check:
-                print(f"site/{old.name} belongs to no speaker record: run python3 tools/speakers.py build")
+                print(f"site/{old.name} belongs to no record: run python3 tools/speakers.py build")
                 stale += 1
             else:
                 old.unlink()
@@ -453,6 +506,12 @@ def cmd_build(args) -> int:
                 print(f"site/share/{preview_name(slug)} is missing, so the page would share the generic banner: "
                       f"run python3 tools/shareables.py render --only {preview_name(slug)}")
                 stale += 1
+        for slug in supporters():
+            for card in supporter_cards(slug).values():
+                if not (SITE / "share" / card).exists():
+                    print(f"site/share/{card} is missing, so the supporter's profile has no card to download: "
+                          f"run python3 tools/shareables.py render --only supporter-{slug}")
+                    stale += 1
     for path, want in pages.items():
         if args.check:
             have = path.read_text(encoding="utf-8") if path.exists() else ""

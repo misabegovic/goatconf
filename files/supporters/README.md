@@ -26,7 +26,17 @@ one.
 - `host: yes`: optional, for the host and partner, IPI Academy. It is listed
   first, before every other supporter, and its "thank you" card thanks it for
   hosting.
+- `events`: optional, for a host that funds and organises accepted events:
+  their record names in `extensions/`, for example `[bh-professionals-meetup]`.
+  The supporter's profile then shows those events and offers each event's
+  card next to the thank-you card.
 - `logo_on: dark`: optional, for a logo made for a dark background (white
   lettering); it is shown on the site's dark blue. The default is `light`.
 
-Run `python3 tools/speakers.py build`; the local CI checks it.
+Each supporter gets a profile, `site/supporter-<file name>.html`, where they
+download their thank-you card (square and wide), rendered with
+`python3 tools/shareables.py render --only supporter-<file name>`. The
+supporters page and the home page link to it.
+
+Run `python3 tools/speakers.py build`; the local CI checks it, and fails while
+a supporter's cards are missing.
