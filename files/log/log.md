@@ -399,3 +399,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #97: site: "What is decided" stickers one by one on phones
    diff: 26 files, +53/-36
    restricted-paths: false
+2026-10-18 merge — PR #98: site: speakers one by one on phones
+   diff: 26 files, +66/-24
+   restricted-paths: false
