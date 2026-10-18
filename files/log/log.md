@@ -438,3 +438,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #110: org: lightning talks, kept as an idea
    diff: 5 files, +101/-0
    restricted-paths: false
+2026-10-18 merge — PR #111: site: reserved slots for confirmed speakers, final slots closer to the event
+   diff: 32 files, +170/-51
+   restricted-paths: true

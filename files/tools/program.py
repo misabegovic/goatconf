@@ -70,6 +70,15 @@ ROOMS = {
     "top-floor": ("Top-floor room", "24 seats"),
     "club": ("The old student club", "13 seats"),
 }
+# Cells held for confirmed speakers whose session has no slot yet, in the
+# order they are held: as many as there are such speakers (published, not
+# held, named in no program record), skipping a cell a session already takes.
+# The organiser chose the main hall, three a day, on 2026-10-18.
+RESERVED = (
+    (dt.date(2027, 6, 3), "10:00", "hall-ground"), (dt.date(2027, 6, 3), "12:00", "hall-ground"),
+    (dt.date(2027, 6, 3), "14:00", "hall-ground"), (dt.date(2027, 6, 4), "09:30", "hall-ground"),
+    (dt.date(2027, 6, 4), "11:30", "hall-ground"), (dt.date(2027, 6, 4), "13:30", "hall-ground"),
+)
 FORMATS = {"talk": "Talk", "panel": "Panel", "workshop": "Workshop", "other": "Session"}
 FIELDS = ("title", "speakers", "format", "day", "start", "room", "accepted")
 
@@ -141,9 +150,13 @@ def cmd_check(args) -> int:
         for p in problems:
             print(f"  needs a change: {p}")
         failed += bool(problems)
-    _, clashes = sessions()
+    table, clashes = sessions()
     for c in clashes:
         print(f"clash: {c}")
+    waiting, free = len(waiting_speakers(table)), len([k for k in RESERVED if k not in table])
+    if waiting > free:
+        clashes.append(f"{waiting} confirmed speakers wait for a slot but RESERVED holds only {free} free cell(s): add one")
+        print(f"clash: {clashes[-1]}")
     print(f"program: {len(paths)} record(s), {failed} need a change, {len(clashes)} clash(es)")
     return 1 if failed or clashes else 0
 
@@ -175,6 +188,24 @@ def speaker_names() -> dict:
     return out
 
 
+def waiting_speakers(table) -> list:
+    """Published speakers, not held, that no program record names yet."""
+    named = {s for m, _ in table.values() for s in m.get("profiles") or []}
+    out = []
+    for path in sorted(SPEAKER_RECORDS.glob("*.md")) if SPEAKER_RECORDS.is_dir() else []:
+        if path.name == "README.md" or path.name.startswith("_"):
+            continue
+        meta, _, problems = extensions.parse(path)
+        if meta and not problems and meta.get("publish") is True and not meta.get("hold") and path.stem not in named:
+            out.append(path.stem)
+    return out
+
+
+def reserved_cells(table) -> set:
+    free = [key for key in RESERVED if key not in table]
+    return set(free[:len(waiting_speakers(table))])
+
+
 def who(meta) -> str:
     names = speaker_names()
     linked = [f'<a href="speaker-{esc(s)}.html">{esc(names[s])}</a>' for s in meta.get("profiles") or [] if s in names]
@@ -188,8 +219,10 @@ def register(meta) -> str:
     return f'<a class="session__register" href="{esc(meta["signup"])}">Save a seat</a>'
 
 
-def cell(n: int, found, room: str) -> str:
+def cell(n: int, found, room: str, reserved=False) -> str:
     where = f'<span class="room-name">{ROOMS[room][0]}</span>'
+    if reserved and not found:
+        return f"""<li class="slot slot--session slot--reserved"><span class="num num--printed">{n}</span>{where}<strong>Reserved</strong><small>For a <a href="speakers.html">confirmed speaker</a>, session to come.</small><span class="stamp stamp--planned">Reserved</span></li>"""
     if found:
         meta, body = found
         first = body.split("\n\n")[0].strip()
@@ -201,12 +234,13 @@ def day_block(day, label, table, start_n) -> tuple[str, int]:
     n = start_n
     rows = []
     plan = DAY_PLAN[day]
+    held = reserved_cells(table)
     for t in plan["slots"]:
         cells = []
         for room in ROOMS:
-            cells.append(cell(n, table.get((day, t, room)), room))
+            cells.append(cell(n, table.get((day, t, room)), room, (day, t, room) in held))
             n += 1
-        filled = sum(1 for room in ROOMS if (day, t, room) in table)
+        filled = sum(1 for room in ROOMS if (day, t, room) in table or (day, t, room) in held)
         open_rooms = len(ROOMS) - filled
         open_line = (f'\n    <p class="timeslot__open">{open_rooms} of {len(ROOMS)} rooms still open. <a href="talk.html">Propose a session</a></p>'
                      if open_rooms else "")
@@ -295,7 +329,7 @@ def page() -> str:
       <p>Every slot is one hour: a talk with time for questions, a panel, or a workshop. After each slot comes a full hour off, in the cafés on Freedom Square under five minutes away. That is when you talk to the person you just heard.</p>
       <p>Thursday runs from 10:00 to 17:00. Friday runs from 09:30 to 16:30.</p>
       <p>GoatConf aims to record the sessions in the two big halls, the main hall and the first-floor hall. This is not promised yet, as it depends on the available budget. You may also bring a camera or a podcast and record, and podcasts are welcome in some of the rooms.</p>
-      <p>The slots fill as proposals come in and are accepted. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>
+      <p>The slots fill as proposals come in and are accepted. Days, times and rooms are final only once the program is finalised, closer to the event. Until then a session's place on this page can still move. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>
     </div>
     <div>
       <h3 class="list-title">The rooms</h3>
