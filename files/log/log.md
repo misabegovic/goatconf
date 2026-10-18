@@ -354,6 +354,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #82: site: every event and session opens its own page; more than one of each
    diff: 37 files, +588/-187
    restricted-paths: true
-2026-10-18 merge — PR #83: site: supporter profiles with their cards, and a card for every event
-   diff: 47 files, +572/-53
+2026-10-18 merge — PR #83: site: supporter profiles with their cards and who they are, and a card for every event
+   diff: 55 files, +842/-56
    restricted-paths: true
