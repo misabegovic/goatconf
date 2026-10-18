@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-18 -->
+- **2026-10-18**: **Half an hour is fine too.** The call now welcomes 30-minute proposals, which the organiser may pair into one hour, for first-time speakers and anyone who would rather not fill an hour alone; the talk page, the home page and llms.txt say so ([CFP and speakers](org/prds/cfp-and-speakers.md); source: sources/conversations/2026-10-18--org--thirty-minute-sessions.md).
 - **2026-10-18**: **No microphones needed.** The talk and accessibility pages now say the rooms have no microphones and do not need them, since the acoustics are good for their size; the talk page no longer gives speakers slide tips there ([what is known](org/goatconf-2027.md); source: sources/conversations/2026-10-18--org--no-microphones-needed.md).
 - **2026-10-18**: **Recording depends on the budget.** Wherever the site says recording in the main hall and the first-floor hall is not promised yet, it now adds "as it depends on the available budget" ([what is known](org/goatconf-2027.md); source: sources/conversations/2026-10-18--org--recording-depends-on-budget.md).
 - **2026-10-18**: **No camera line on the talk page.** The talk page's "Recording" item no longer says people who come may bring a camera or a podcast and record; the program page and llms.txt still say it (source: sources/conversations/2026-10-18--org--no-camera-line-on-talk-page.md).

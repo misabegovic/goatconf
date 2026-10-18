@@ -1428,6 +1428,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-18--org--thirty-minute-sessions.md",
         "sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md",
         "sources/conversations/2026-10-17--org--talk-titles-on-home-stickers.md",
         "sources/conversations/2026-10-17--org--dejan-talk.md",
@@ -1459,7 +1460,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 4584,
+      "tokens": 4682,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
