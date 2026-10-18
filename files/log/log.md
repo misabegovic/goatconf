@@ -375,3 +375,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #89: site: "Run a session": the call is for more than talks
    diff: 32 files, +181/-127
    restricted-paths: true
+2026-10-18 merge — PR #90: site: GoatConf is not only about Ruby or any one stack
+   diff: 2 files, +16/-2
+   restricted-paths: false
