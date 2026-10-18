@@ -582,3 +582,20 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   /* Two identical open slots in one column read as a repeat: keep the first */
   .slots--mini > li:has(.slot--open) ~ li:has(.slot--open) { display: none; }
 }
+
+/* Run a session: the form button after the steps */
+.howto .cta { margin: -0.4rem 0 1.6rem; }
+
+/* Run a session and the supporters on a phone: one after another */
+@media (max-width: 47.99rem) {
+  .album-page .slots--formats { grid-template-columns: minmax(0, 1fr); gap: 0.9rem; }
+  .slots--formats .slot { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 0.75rem; align-content: center; min-height: 0; height: auto; padding: 0.85rem 0.9rem 0.9rem; }
+  .slots--formats .slot .num { grid-row: 1 / span 2; margin: 0; }
+  .slots--formats .slot strong { padding-right: 0; }
+  .slots--formats .slot small { margin-top: 0.2rem; }
+  .slots--formats .slot .ghost { display: none; }
+  .slots--formats .slot .stamp { position: static; grid-column: 2; justify-self: end; margin-top: 0.15rem; }
+  .album-page .slots--supporters-home { grid-template-columns: minmax(0, 26rem); justify-content: center; gap: 1rem; }
+  .slots--supporters-home .supporter-chip img { aspect-ratio: 5 / 2; box-sizing: border-box; padding: 0.8rem 1.6rem; }
+  .slots--supporters-home .supporter-chip small { font-size: 0.92rem; }
+}
