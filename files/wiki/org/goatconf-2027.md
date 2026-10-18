@@ -94,10 +94,10 @@ is cited to the sources above; nothing is inferred. Proposals live in the
   limit; each room is capped by its own seats, first come, first served at
   the door (source: sources/conversations/2026-10-12--org--first-come-luma-only.md,
   sources/conversations/2026-10-12--org--session-registration-later.md).
-- **Venue facts:** the main hall on the ground floor has 120 seats (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md), a projector, sound and Wi-Fi, no
+- **Venue facts:** the main hall on the ground floor has 150 seats, as the organiser set on 2026-10-18 for the site, in place of the 120 of 2026-10-14 (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md), a projector, sound and Wi-Fi, no
   microphone and no recording; several other rooms; step-free to the
   main hall and first floor; Saturday or weekday both possible.
-- **Recording:** GoatConf does not record the talks. People who come may
+- **Recording:** from 2026-10-18 GoatConf aims to record the sessions in IPI Academy's two big halls, the main hall and the first-floor hall; it is not promised yet, and how is (unknown, needs source) (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md). People who come may
   bring a camera or a podcast and record, and a supporter may pay for a crew.
   Podcasts are welcome in some rooms, not yet named (`sources/conversations/2026-10-12--org--recording-and-podcasts.md`).
 - **Price:** free to attend, with registration on Luma (see below).
@@ -145,7 +145,7 @@ is cited to the sources above; nothing is inferred. Proposals live in the
   costs. Others may pay a supplier directly or give in kind. This replaced
   "No money goes through the organiser" on 2026-10-13 (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **The budget is private** and not mentioned on the site (same source).
-- **Leftover money** pays more of this year's costs, speaker travel refunds included where the organiser decides, and anything still left carries to the next GoatConf (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md).
+- **Leftover money** pays more of this year's costs, speaker travel refunds included where the organiser decides, and anything still left carries to the next GoatConf (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md). From 2026-10-18, online supporters' money the event's costs do not need goes first to refunding speakers who pay their own way, some or all of it; still never promised (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md).
 - **Speakers pay their own travel.** If the budget allows, the organiser
   may refund some or all of it; never promised (same source). A speaker's company that covers their travel is listed on the site as a supporter, the same as online supporters (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).
 - Expo, booths and companies that hire attendees are open ideas, named as

@@ -2,12 +2,13 @@
 title: "Operations: volunteers who own a domain, the rules, and the day"
 kind: initiative
 status: living
-updated: 2026-10-14
+updated: 2026-10-18
 parent_epic: goatconf-2027
 appetite: medium
 confidence: medium
 supersedes: org/pitches/operations-people-rules-and-the-day.md
 sources:
+  - sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md
   - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-12--org--session-registration-later.md
@@ -321,3 +322,4 @@ domains, one owner each, and the path a problem travels on the day.
 - **2026-10-12.** IPI Academy has accepted the dates, Thursday 3 and Friday 4 June 2027 as core days and Saturday 5 June as the community day, and GoatConf has access to all seven rooms, as the organiser reported; no written copy is in the brain. Registration and the run sheet no longer wait on IPI (`sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md`).
 - **2026-10-14, read with the later decisions.** "Luma is no longer used" in the first amendment above no longer holds: registration is on the organiser's Luma event, not a Google Form, with no limit; the organiser approves each registration, seats are first come, first served at each room's door, and ticket holders register for sessions later, with the tool not decided yet (sources: sources/conversations/2026-10-12--org--registration-on-luma.md, sources/conversations/2026-10-12--org--first-come-luma-only.md, sources/conversations/2026-10-12--org--approval-back-on.md, sources/conversations/2026-10-12--org--session-registration-later.md). How check-in works is (unknown, needs source), and so is who controls registrants' data on Luma and where Luma keeps it. The body's final account on the public ledger no longer holds: the budget is private, with no budget page and no public ledger; online supporters pay the organiser's Austrian business 500 EUR for online perks only, and speakers' travel is refunded only if the budget allows, never promised (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **2026-10-14, check-in and the code-of-conduct team.** Check-in uses Luma's free check-in app, scanning each guest's QR code at the door. The organiser is the only code-of-conduct contact until IPI names a member of staff (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md). Who controls registrants' data on Luma, and where Luma keeps it, is still (unknown, needs source).
+- **2026-10-18, recording in the two big halls.** The no-go on recording in the core no longer holds as written: GoatConf aims to record the sessions in the main hall and the first-floor hall, not promised yet, and how it is paid for and done is (unknown, needs source). The main hall is given as 150 seats on the site (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md).
