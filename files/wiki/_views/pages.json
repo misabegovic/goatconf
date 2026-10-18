@@ -804,6 +804,24 @@
       "tokens": 2723
     },
     {
+      "path": "org/outreach/supporter-profiles.md",
+      "title": "Draft: who each supporter is and how to support them, for their profiles",
+      "kind": "reference",
+      "status": "draft",
+      "updated": "2026-10-18",
+      "confidence": "low",
+      "sources": [
+        "sources/conversations/2026-10-18--org--supporter-descriptions.md",
+        "sources/web/supporters/bhff-get-involved-2026-10-18.md",
+        "sources/web/funding/bhff-devfest-sarajevo-2025.md",
+        "sources/web/venue/ipi-akademija-about.md",
+        "sources/web/venue/ipi-akademija-home.md",
+        "sources/web/venue/ipi-akademija-kontakt.md",
+        "sources/web/supporters/meister-about-and-jobs-2026-10-18.md"
+      ],
+      "tokens": 1031
+    },
+    {
       "path": "org/pitches/activities-the-lake-and-the-town.md",
       "title": "Activities: the salt lake, a town-wide hunt, and a cheap city as the gift",
       "kind": "pitch",

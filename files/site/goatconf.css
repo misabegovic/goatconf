@@ -500,6 +500,10 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .page-head__photo--logo { aspect-ratio: 2 / 1; max-width: 22rem; justify-self: center; object-fit: contain; padding: 1.4rem 1.8rem; }
 .page-head__photo--logo-dark { background: var(--album-night); box-shadow: var(--lift), 0 0 0 0.42rem var(--page) inset; }
 @media (max-width: 47.99rem) { .page-head__photo--logo { aspect-ratio: 2 / 1; max-width: 15rem; } }
+.support-them { padding-left: 1.3rem; }
+.support-them li { margin-bottom: 0.55rem; }
+.support-them li::marker { color: var(--album); font-weight: 700; }
+.support-them a { color: var(--album); font-weight: 700; }
 .share-card { display: block; width: 100%; max-width: 40rem; height: auto; margin: 0.4rem 0 1.4rem; border-radius: 0.8rem; box-shadow: var(--lift); }
 
 /* Rows of links get room to tap: each a full-height target, clearly apart,

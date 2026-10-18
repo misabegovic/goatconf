@@ -342,3 +342,17 @@ def test_a_supporter_lists_only_accepted_events_and_shows_them(tmp_path, monkeyp
     assert speakers.check_supporter(rec)[0] == []
     page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
     assert "Their event" in page and 'href="event-lake-meetup.html"' in page
+
+
+def test_who_they_are_and_how_to_support_them_show_on_the_profile_only(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch)
+    rec = tmp_path / "supporters" / "acme.md"
+    rec.write_text(SUPPORTER.replace("funds: Online supporter", "funds: Online supporter\nsupport_them:\n  - {text: Work with Acme, url: https://acme.example/jobs}")
+                   + "\nAcme makes anvils for coyotes.\n", encoding="utf-8")
+    assert speakers.check_supporter(rec)[0] == []
+    page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
+    assert "Who they are" in page and "Acme makes anvils for coyotes." in page
+    assert '<li><a href="https://acme.example/jobs">Work with Acme</a></li>' in page
+    assert "Acme makes anvils" not in speakers.supporters_page()
+    rec.write_text(SUPPORTER.replace("funds: Online supporter", "funds: Online supporter\nsupport_them:\n  - {text: Jobs, url: http://acme.example/jobs}"), encoding="utf-8")
+    assert any("support_them must list" in p for p in speakers.check_supporter(rec)[0])

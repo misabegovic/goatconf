@@ -26,6 +26,10 @@ one.
 - `host: yes`: optional, for the host and partner, IPI Academy. It is listed
   first, before every other supporter, and its "thank you" card thanks it for
   hosting.
+- `support_them`: optional, ways people can support the supporter, each a
+  short `text` and a `url` starting `https://`, shown on their profile under
+  "How to support them", for example
+  `- {text: "Become a monthly donor", url: "https://example.org/donate"}`.
 - `events`: optional, for a host that funds and organises accepted events:
   their record names in `extensions/`, for example `[bh-professionals-meetup]`.
   The supporter's profile then shows those events and offers each event's

@@ -79,6 +79,11 @@ def check_supporter(path: Path):
         problems.append("host must be yes, or left out")
     if meta.get("logo_on", "light") not in ("light", "dark"):
         problems.append("logo_on must be light or dark: the background the logo is made for")
+    ways = meta.get("support_them")
+    if ways is not None and (not isinstance(ways, list) or not ways or any(
+            not isinstance(w, dict) or not str(w.get("text") or "").strip() or "\n" in str(w.get("text")) or len(str(w.get("text"))) > 90
+            or not str(w.get("url") or "").startswith("https://") for w in ways)):
+        problems.append("support_them must list ways to support them, each a text of one short line and a url starting https://")
     events = meta.get("events")
     if events is not None:
         known = {slug for _, slug, _, _ in extensions.accepted()}
@@ -349,11 +354,17 @@ def supporter_page(slug: str, meta, body) -> str:
     event_cards = "".join(extensions.share_section(extensions.cards(s), f"The card for {esc(m['name'])}",
                                                    f"{esc(m['name'])}, organised by {name}, part of GoatConf 2027: for you and anyone going to post. It links to the event's page.",
                                                    f"The card for {esc(m['name'])}", SITE) for s, (m, _) in hosted.items())
+    ways = "".join(f'<li><a href="{esc(w["url"])}">{esc(w["text"])}</a></li>' for w in meta.get("support_them") or [])
+    support = (f"""
+<section class="album-page wrap" aria-labelledby="h-support-them">
+  <h2 class="band" id="h-support-them">How to support them</h2>
+  <ul class="copy copy--wide support-them">{ways}</ul>
+</section>""" if ways else "")
     main = f"""<section class="album-page wrap" aria-labelledby="h-support">
-  <h2 class="band" id="h-support">{"Host and partner" if meta.get("host") is True else "Their support"}</h2>
+  <h2 class="band" id="h-support">{"Who they are" if words else "Host and partner" if meta.get("host") is True else "Their support"}</h2>
   {f'<div class="copy copy--wide">{words}</div>' if words else ""}
   <p class="copy"><a class="go go--ink" href="{esc(meta["url"])}">{site}</a> <a class="go go--ink" href="supporters.html">All supporters</a></p>
-</section>{events}{thanks}{event_cards}"""
+</section>{support}{events}{thanks}{event_cards}"""
     preview = supporter_cards(slug)["wide"] if (SITE / "share" / supporter_cards(slug)["wide"]).exists() else ""
     dark = " page-head__photo--logo page-head__photo--logo-dark" if meta.get("logo_on") == "dark" else " page-head__photo--logo"
     return shell(supporter_page_name(slug)[:-5], f"{name}: supporting GoatConf 2027, Tuzla", f"{name} supports GoatConf 2027 in Tuzla: {esc(meta['funds'])}.",
@@ -361,12 +372,12 @@ def supporter_page(slug: str, meta, body) -> str:
 
 
 def supporter_card(n: int, slug: str, meta, body) -> str:
-    words = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
+    """The supporter on the wall: logo, name and their line; who they are is on their profile."""
     return f"""  <li class="sticker sticker--supporter" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <span class="num">{n}</span>
     <a class="supporter__logo{' supporter__logo--dark' if meta.get('logo_on') == 'dark' else ''}" href="{supporter_page_name(slug)}"><img src="{esc(meta['logo'])}" alt="{esc(meta['name'])}" loading="lazy"></a>
     <strong><a href="{supporter_page_name(slug)}">{esc(meta['name'])}</a></strong>
-    <p class="supporter__funds">{esc(meta['funds'])}</p>{words}
+    <p class="supporter__funds">{esc(meta['funds'])}</p>
   </li>"""
 
 
