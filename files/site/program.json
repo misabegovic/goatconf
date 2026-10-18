@@ -85,5 +85,18 @@
     }
   ],
   "sessions": [],
-  "events": []
+  "events": [
+    {
+      "name": "BH Professionals Meetup",
+      "kind": "meetup",
+      "host": "Bosnia & Herzegovina Futures Foundation",
+      "where": "Venue to be announced, Tuzla",
+      "start": "2027-06-05T18:00:00+02:00",
+      "end": "2027-06-05T21:00:00+02:00",
+      "cost": "free, registration required",
+      "registration": "https://forms.gle/fGYsykm3EBt1ugbo9",
+      "about": "Bosnia and Herzegovina Futures Foundation has a pleasure of inviting you to our Professionals Meetup in Tuzla, part of GoatConf 2027.",
+      "note": "Part of GoatConf 2027, accepted by the organiser and run by its host."
+    }
+  ]
 }

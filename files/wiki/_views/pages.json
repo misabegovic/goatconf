@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-17",
+  "generated": "2026-10-18",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -58,7 +58,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 97
+      "tokens": 106
     },
     {
       "path": "org/adrs/activities-lake-and-town.md",
@@ -81,7 +81,7 @@
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md",
         "sources/web/tuzla/tuzla-wikipedia.md"
       ],
-      "tokens": 958
+      "tokens": 1004
     },
     {
       "path": "org/adrs/budget-and-public-ledger.md",
@@ -105,7 +105,7 @@
         "sources/conversations/2026-10-07--org--ipi-rooms-and-fallback-money.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 955
+      "tokens": 974
     },
     {
       "path": "org/adrs/call-organiser-judges.md",
@@ -131,7 +131,7 @@
         "sources/conversations/2026-10-07--org--adr-answers.md",
         "sources/conversations/2026-10-07--org--coc-ledger-registration-cfp.md"
       ],
-      "tokens": 881
+      "tokens": 883
     },
     {
       "path": "org/adrs/cfp-and-speakers.md",
@@ -157,7 +157,7 @@
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
       "superseded_by": "org/adrs/call-organiser-judges.md",
-      "tokens": 1118
+      "tokens": 1077
     },
     {
       "path": "org/adrs/core-day-parallel-tracks.md",
@@ -188,7 +188,7 @@
         "sources/conversations/2026-06--org--ipi-visit-notes.md",
         "sources/conversations/2026-10-07--org--ipi-rooms-and-fallback-money.md"
       ],
-      "tokens": 1148
+      "tokens": 1273
     },
     {
       "path": "org/adrs/dates-and-the-core-day.md",
@@ -211,7 +211,7 @@
         "sources/conversations/2026-10-07--org--weekday-lecture-days.md"
       ],
       "superseded_by": "org/adrs/two-core-days-first-week.md",
-      "tokens": 852
+      "tokens": 882
     },
     {
       "path": "org/adrs/design-with-impeccable.md",
@@ -235,7 +235,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 1237
+      "tokens": 1269
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -260,7 +260,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/tooling/google-forms-response-destination.md"
       ],
-      "tokens": 1742
+      "tokens": 1716
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
@@ -297,7 +297,7 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 2876
+      "tokens": 2848
     },
     {
       "path": "org/adrs/online-supporters-through-the-business.md",
@@ -319,7 +319,7 @@
         "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md"
       ],
-      "tokens": 1435
+      "tokens": 1369
     },
     {
       "path": "org/adrs/open-program-every-room.md",
@@ -351,7 +351,7 @@
         "sources/conversations/2026-10-12--org--extension-listings-judged.md",
         "sources/conversations/2026-10-07--org--ipi-rooms-and-fallback-money.md"
       ],
-      "tokens": 1538
+      "tokens": 1535
     },
     {
       "path": "org/adrs/operations-and-the-day.md",
@@ -380,7 +380,7 @@
         "sources/web/coc/confcodeofconduct-com.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 1365
+      "tokens": 1390
     },
     {
       "path": "org/adrs/road-to-june-2027.md",
@@ -400,7 +400,7 @@
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 1033
+      "tokens": 1044
     },
     {
       "path": "org/adrs/social-drumbeat.md",
@@ -427,7 +427,7 @@
         "sources/web/social/goatconf-linkedin-2026-10-15.md",
         "sources/web/social/goatconf-x-2026-10-15.md"
       ],
-      "tokens": 1310
+      "tokens": 1338
     },
     {
       "path": "org/adrs/speakers-and-travel-supporters.md",
@@ -455,7 +455,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 1765,
+      "tokens": 1705,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]
@@ -488,7 +488,7 @@
         "sources/web/funding/writethedocs-portland-2026-prospectus.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 1282,
+      "tokens": 1269,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]
@@ -521,7 +521,7 @@
         "sources/web/tuzla/panonika-n1-2019.md",
         "sources/web/tuzla/slana-jezera-sezona-kurir-2026-04.md"
       ],
-      "tokens": 1166,
+      "tokens": 1355,
       "consumed_by": [
         "org/adrs/core-day-parallel-tracks.md"
       ]
@@ -553,7 +553,7 @@
         "sources/web/funding/fosdem-charter.md"
       ],
       "superseded_by": "org/adrs/goatconf-ba-and-google-forms.md",
-      "tokens": 1197
+      "tokens": 1207
     },
     {
       "path": "org/epics/goatconf-2027.md",
@@ -587,7 +587,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 2751,
+      "tokens": 2918,
       "consumed_by": [
         "org/adrs/two-core-days-first-week.md"
       ],
@@ -663,7 +663,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 2968
+      "tokens": 3205
     },
     {
       "path": "org/index.md",
@@ -672,7 +672,7 @@
       "status": "draft",
       "updated": "2026-10-17",
       "sources": [],
-      "tokens": 1702,
+      "tokens": 1871,
       "affected_by": [
         "org/outreach/drumbeat.md"
       ]
@@ -704,7 +704,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/tooling/sessionize-community-license.md"
       ],
-      "tokens": 2293
+      "tokens": 2386
     },
     {
       "path": "org/organiser.md",
@@ -720,7 +720,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/organiser/muhamed-at-home.md"
       ],
-      "tokens": 569
+      "tokens": 607
     },
     {
       "path": "org/outreach/cafe-message-draft.md",
@@ -733,7 +733,7 @@
         "sources/web/tuzla/vegetarian-places-search-2026-10-12.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 368
+      "tokens": 473
     },
     {
       "path": "org/outreach/drumbeat.md",
@@ -769,7 +769,7 @@
         "sources/web/social/goatconf-linkedin-2026-10-15.md",
         "sources/web/social/goatconf-x-2026-10-15.md"
       ],
-      "tokens": 2360
+      "tokens": 2548
     },
     {
       "path": "org/outreach/ipi-proposal.md",
@@ -800,7 +800,7 @@
         "sources/web/venue/ipi-akademija-app-challenge.md",
         "sources/web/venue/ipi-akademija-kontakt.md"
       ],
-      "tokens": 2114
+      "tokens": 2723
     },
     {
       "path": "org/pitches/activities-the-lake-and-the-town.md",
@@ -828,7 +828,7 @@
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md"
       ],
       "superseded_by": "org/prds/activities-lake-and-town.md",
-      "tokens": 1495
+      "tokens": 1561
     },
     {
       "path": "org/pitches/budget-a-goat-and-a-menu.md",
@@ -866,7 +866,7 @@
         "sources/web/funding/fosdem-charter.md"
       ],
       "superseded_by": "org/prds/budget-and-public-ledger.md",
-      "tokens": 2609
+      "tokens": 2754
     },
     {
       "path": "org/pitches/cfp-and-speakers.md",
@@ -899,7 +899,7 @@
         "sources/web/organiser/muhamed-at-about.md"
       ],
       "superseded_by": "org/prds/cfp-and-speakers.md",
-      "tokens": 1941
+      "tokens": 1935
     },
     {
       "path": "org/pitches/dates-format-and-schedule.md",
@@ -934,7 +934,7 @@
         "sources/web/funding/balkanruby-blog-2027-is-off.md"
       ],
       "superseded_by": "org/prds/dates-and-the-core-day.md",
-      "tokens": 3327
+      "tokens": 3569
     },
     {
       "path": "org/pitches/design-with-impeccable.md",
@@ -954,7 +954,7 @@
         ".claude/skills/impeccable/reference/init.md"
       ],
       "superseded_by": "org/prds/design-with-impeccable.md",
-      "tokens": 1296
+      "tokens": 1309
     },
     {
       "path": "org/pitches/index.md",
@@ -963,7 +963,7 @@
       "status": "draft",
       "updated": "2026-10-07",
       "sources": [],
-      "tokens": 756
+      "tokens": 736
     },
     {
       "path": "org/pitches/one-goat-minimal-core-and-extensions.md",
@@ -995,7 +995,7 @@
         "https://github.com/misabegovic/claude-brain/blob/main/wiki/pi/permanent/purpose.md"
       ],
       "superseded_by": "org/epics/goatconf-2027.md",
-      "tokens": 3437
+      "tokens": 3431
     },
     {
       "path": "org/pitches/operations-people-rules-and-the-day.md",
@@ -1030,7 +1030,7 @@
         "sources/web/tooling/fosdem-video-equipment-overview.md"
       ],
       "superseded_by": "org/prds/operations-and-the-day.md",
-      "tokens": 2164
+      "tokens": 2208
     },
     {
       "path": "org/pitches/partners-sponsors-and-hiring.md",
@@ -1059,7 +1059,7 @@
         "sources/web/venue/ipi-akademija-about.md"
       ],
       "superseded_by": "org/prds/supporters-and-hiring.md",
-      "tokens": 1718
+      "tokens": 1750
     },
     {
       "path": "org/pitches/social-presence-and-drumbeat.md",
@@ -1081,7 +1081,7 @@
         "sources/web/organiser/muhamed-at-about.md"
       ],
       "superseded_by": "org/prds/social-drumbeat.md",
-      "tokens": 1472
+      "tokens": 1450
     },
     {
       "path": "org/pitches/the-road-to-june-2027.md",
@@ -1101,7 +1101,7 @@
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
       "superseded_by": "org/prds/road-to-june-2027.md",
-      "tokens": 1267
+      "tokens": 1309
     },
     {
       "path": "org/pitches/website-and-registration.md",
@@ -1137,7 +1137,7 @@
         "sources/web/funding/fosdem-charter.md"
       ],
       "superseded_by": "org/prds/website-and-registration.md",
-      "tokens": 1978
+      "tokens": 2002
     },
     {
       "path": "org/prds/activities-lake-and-town.md",
@@ -1178,7 +1178,7 @@
         "sources/web/venue/tztz-peace-flame-house.md",
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md"
       ],
-      "tokens": 3255,
+      "tokens": 3437,
       "consumed_by": [
         "org/adrs/activities-lake-and-town.md"
       ]
@@ -1220,7 +1220,7 @@
         "sources/web/funding/euruko-2024-sponsoring.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 3493,
+      "tokens": 3632,
       "consumed_by": [
         "org/adrs/budget-and-public-ledger.md"
       ]
@@ -1266,7 +1266,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 4289,
+      "tokens": 4293,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -1313,7 +1313,7 @@
         "sources/web/venue/ipi-akademija-app-challenge.md",
         "sources/web/venue/tztz-hotel-tuzla.md"
       ],
-      "tokens": 3400,
+      "tokens": 3643,
       "consumed_by": [
         "org/adrs/core-day-parallel-tracks.md",
         "org/adrs/dates-and-the-core-day.md",
@@ -1349,7 +1349,7 @@
         ".claude/skills/impeccable/SKILL.md",
         ".claude/skills/impeccable/reference/init.md"
       ],
-      "tokens": 2568,
+      "tokens": 2646,
       "consumed_by": [
         "org/adrs/design-with-impeccable.md"
       ]
@@ -1387,7 +1387,7 @@
         "sources/web/hiring/strangeloop-privacy-policy.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 3783,
+      "tokens": 3751,
       "consumed_by": [
         "org/adrs/extension-slots-and-the-record.md",
         "org/adrs/goatconf-ba-and-google-forms.md",
@@ -1439,7 +1439,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/tooling/fosdem-video-equipment-overview.md"
       ],
-      "tokens": 4274,
+      "tokens": 4343,
       "consumed_by": [
         "org/adrs/operations-and-the-day.md"
       ]
@@ -1476,7 +1476,7 @@
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3481,
+      "tokens": 3540,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/road-to-june-2027.md"
@@ -1515,7 +1515,7 @@
         "sources/web/social/goatconf-linkedin-2026-10-15.md",
         "sources/web/social/goatconf-x-2026-10-15.md"
       ],
-      "tokens": 3542,
+      "tokens": 3553,
       "consumed_by": [
         "org/adrs/social-drumbeat.md"
       ]
@@ -1558,7 +1558,7 @@
         "sources/web/hiring/wbs-wearedevelopers-ben-ruschin.md",
         "sources/web/venue/ipi-akademija-about.md"
       ],
-      "tokens": 3545,
+      "tokens": 3535,
       "consumed_by": [
         "org/adrs/speakers-and-travel-supporters.md",
         "org/adrs/supporters-and-hiring.md"
@@ -1602,7 +1602,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 3194,
+      "tokens": 3254,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/website-and-registration.md"
@@ -1621,7 +1621,7 @@
         "sources/conversations/2026-10-07--org--conference-vision.md",
         "sources/conversations/2026-10-07--org--first-answers.md"
       ],
-      "tokens": 1901
+      "tokens": 1891
     },
     {
       "path": "org/speakers/amar-mahmutbegovic.md",
@@ -1636,7 +1636,7 @@
         "sources/web/speakers/cpp-in-embedded-systems-google-books-2026-10-14.md",
         "sources/web/speakers/semblie-about-2026-10-14.md"
       ],
-      "tokens": 737
+      "tokens": 797
     },
     {
       "path": "org/speakers/carmine-paolino.md",
@@ -1651,7 +1651,7 @@
         "sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md",
         "sources/web/organiser/muhamed-at-home.md"
       ],
-      "tokens": 733
+      "tokens": 836
     },
     {
       "path": "org/speakers/christoph-lipautz.md",
@@ -1671,7 +1671,7 @@
         "sources/web/speakers/christoph-lipautz-github-2026-10-15.md",
         "sources/web/speakers/christoph-lipautz-bluesky-2026-10-15.md"
       ],
-      "tokens": 1031
+      "tokens": 1158
     },
     {
       "path": "org/speakers/cristian-planas.md",
@@ -1685,7 +1685,7 @@
         "sources/web/speakers/kaigi-on-rails-2026-cristian-planas-2026-10-14.md",
         "sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md"
       ],
-      "tokens": 818
+      "tokens": 922
     },
     {
       "path": "org/speakers/dejan-menges.md",
@@ -1704,7 +1704,7 @@
         "sources/web/speakers/compass-summit-dejan-menges-2026-10-14.md",
         "sources/web/organiser/muhamed-at-about.md"
       ],
-      "tokens": 1043
+      "tokens": 1143
     },
     {
       "path": "org/speakers/jan-grodowski.md",
@@ -1718,7 +1718,7 @@
         "sources/conversations/2026-10-15--org--hold-jan-grodowski.md",
         "sources/web/speakers/grodowski-com-2026-10-14.md"
       ],
-      "tokens": 941
+      "tokens": 1014
     },
     {
       "path": "org/speakers/paul-campbell.md",
@@ -1734,7 +1734,7 @@
         "sources/web/speakers/team-tito-2026-10-14.md",
         "sources/web/organiser/muhamed-at-about.md"
       ],
-      "tokens": 874
+      "tokens": 969
     },
     {
       "path": "org/tuzla/history-and-old-town.md",
@@ -1777,7 +1777,7 @@
         "sources/web/tuzla/inyourpocket-franciscan-church-tuzla.md",
         "sources/web/tuzla/pivara-tuzla-wikipedia-bs.md"
       ],
-      "tokens": 3481
+      "tokens": 4152
     },
     {
       "path": "org/tuzla-images.md",
@@ -1852,7 +1852,7 @@
         "sources/web/images/burek-nisici.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 7076
+      "tokens": 8120
     },
     {
       "path": "org/tuzla.md",
@@ -1969,7 +1969,7 @@
         "sources/web/tuzla/cvent-hotel-tuzla-address.md",
         "sources/web/tuzla/tztz-atelier-ismet-mujezinovic.md"
       ],
-      "tokens": 6571,
+      "tokens": 7785,
       "consumed_by": [
         "org/tuzla-images.md",
         "org/tuzla/history-and-old-town.md"
