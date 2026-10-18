@@ -23,6 +23,14 @@ publish: yes
 support_them:
   - text: "Try Enola, his open-source architecture tool"
     url: "https://github.com/enola-labs/enola"
+  - text: "Check your files with augur, his open-source tool for hidden prompts and characters"
+    url: "https://checkwithaugur.com/"
+  - text: "Work with him: software architecture consulting and workshops"
+    url: "https://menges.dev/services/"
+  - text: "Read his writing on distributed systems and architecture"
+    url: "https://menges.dev/writing/"
+  - text: "Work with him at Vinted: open positions"
+    url: "https://careers.vinted.com/"
 ---
 
 Dejan Menges is a staff engineer with more than twenty-five years spent designing distributed systems. He works on moving organisations from monoliths to scalable, event-driven architectures, and builds Enola, an open-source architecture intelligence tool for developers and coding agents.
