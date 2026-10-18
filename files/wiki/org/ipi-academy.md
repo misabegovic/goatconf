@@ -2,7 +2,7 @@
 title: "IPI Academy (IPI Akademija Tuzla): host and venue"
 kind: entity
 status: living
-updated: 2026-10-14
+updated: 2026-10-18
 confidence: medium
 sources:
   - sources/conversations/2026-10-14--org--ipi-academy-logo.md
@@ -82,7 +82,7 @@ same day (`sources/conversations/2026-06--org--ipi-visit-notes.md`):
 
 | Room | Seats | Floor | Wheelchair access (June message) | Notes |
 |------|-------|-------|------|-------|
-| Main hall, ground floor | 120 (organiser, 2026-10-14; see below) | ground | yes | |
+| Main hall, ground floor | 150 (organiser, 2026-10-18; see below) | ground | yes | |
 | Main hall, first floor | 100 | 1 | yes, through the hotel | |
 | Main hall, second floor | 34 | 2 | not stated | smaller lecture, panel or special workshop |
 | Computer centre 1 | 20 | - | yes, through the hotel | |
@@ -90,7 +90,9 @@ same day (`sources/conversations/2026-06--org--ipi-visit-notes.md`):
 | Top-floor room | 24 | top | not stated | |
 | Former student club | 13-14 | top | not stated | probably no slides |
 
-The largest hall has 120 seats, as the organiser decided on 2026-10-14
+The largest hall has 150 seats, as the organiser set on 2026-10-18 so the site
+is correct (`sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md`).
+Before that it was 120, as the organiser decided on 2026-10-14
 (`sources/conversations/2026-10-14--org--decisions-one-by-one.md`). The June message, written on the visit day, said 150; on
 2026-10-07 the organiser picked "under 120" and, asked for a number, said
 "120 i think"

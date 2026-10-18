@@ -9,6 +9,7 @@ depends_on:
   - org/adrs/speakers-and-travel-supporters.md
   - org/adrs/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md
   - sources/conversations/2026-10-18--org--event-hosts-as-supporters.md
   - sources/conversations/2026-10-14--org--speakers-dinner.md
   - sources/conversations/2026-10-14--org--decisions-one-by-one.md
@@ -108,6 +109,8 @@ A single level treats every supporter alike.
 - **2026-10-14, the speakers dinner is an event cost.** The money may pay for the speakers dinner for accepted speakers, if the budget allows (source: sources/conversations/2026-10-14--org--speakers-dinner.md).
 - **2026-10-18, the speakers dinner is no longer paid from this money.** The organiser pays for the speakers dinner, whatever the budget, so the 2026-10-14 amendment above no longer holds (source: sources/conversations/2026-10-18--org--organiser-pays-speakers-dinner.md).
 - **2026-10-18, a host that funds and organises an accepted event.** A host, whether a person, a group or a company, that funds and organises an event the organiser accepted as part of GoatConf 2027 is listed on the site as a supporter, the same as online supporters, with its logo and link, if it agrees. No money goes through the organiser, so there is nothing to invoice. Its line names the event. Being listed buys nothing: no talk, no stage time, no say over the program and nothing at GoatConf's venue. The first is the Bosnia & Herzegovina Futures Foundation, for the BH Professionals Meetup on Saturday 5 June 2027 (source: sources/conversations/2026-10-18--org--event-hosts-as-supporters.md).
+- **2026-10-18, self-funded speakers' travel comes first.** Of the surplus, refunds to speakers who pay their own travel come first, before other costs it may pay; still never promised (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md).
+
 
 ## Related
 

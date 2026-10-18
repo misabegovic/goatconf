@@ -423,3 +423,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #105: site: registration without the approval step
    diff: 7 files, +45/-8
    restricted-paths: false
+2026-10-18 merge — PR #106: site: speakers' travel first, recording in the two big halls, a 150-seat main hall
+   diff: 17 files, +94/-27
+   restricted-paths: true

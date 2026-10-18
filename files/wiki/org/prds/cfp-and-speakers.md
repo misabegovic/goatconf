@@ -8,6 +8,7 @@ appetite: medium
 confidence: medium
 supersedes: org/pitches/cfp-and-speakers.md
 sources:
+  - sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md
   - sources/conversations/2026-10-17--org--talk-titles-on-home-stickers.md
   - sources/conversations/2026-10-17--org--dejan-talk.md
   - sources/conversations/2026-10-14--org--speakers-before-sessions.md
@@ -303,3 +304,4 @@ submissions use the same tool, so the ADR's choice binds that PRD too.
 - **2026-10-17, room for a longer talk text.** A speaker's own words on a talk without a slot may run to 300 words, up from 120, so a proposal's full answer fits; the bio stays at 120. First used for [Dejan Menges](../speakers/dejan-menges.md), whose four paragraphs show in full (source: sources/conversations/2026-10-17--org--dejan-talk.md).
 - **2026-10-17, the talk title on the home page too.** The home page's speaker stickers show the talk's title under the role, in the same words as the speakers page; the "I'm speaking" cards stay as they are, on the organiser's choice (source: sources/conversations/2026-10-17--org--talk-titles-on-home-stickers.md).
 - **2026-10-15, a record can be held from the site.** A speaker record can carry a `hold` line while the speaker must not show, for example while their employer clears the engagement: the record is kept and checked but listed nowhere, their page comes down on the next build, and their order keeps its place in the no-two-share check; removing the line publishes them again. First used for [Jan Grodowski](../speakers/jan-grodowski.md) (source: sources/conversations/2026-10-15--org--hold-jan-grodowski.md).
+- **2026-10-18, spare supporter money goes first to speakers' travel, and recording in the two big halls.** Online supporters' money that the event's costs do not need goes first to refunding speakers who pay their own way, some or all of it, after the event; it is not promised and never affects whether a session is picked. GoatConf aims to record the sessions in the main hall and the first-floor hall, not promised yet. The talk page says both (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md).

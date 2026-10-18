@@ -62,7 +62,7 @@ DAY_PLAN = {
     },
 }
 ROOMS = {
-    "hall-ground": ("Main hall", "ground floor, about 120 seats"),
+    "hall-ground": ("Main hall", "ground floor, 150 seats"),
     "hall-first": ("First-floor hall", "100 seats"),
     "hall-second": ("Second-floor room", "34 seats"),
     "lab-1": ("Computer centre 1", "20 seats"),
@@ -294,7 +294,7 @@ def page() -> str:
       <p>Thursday 3rd and Friday 4th June 2027 are the core days, at IPI Academy, Kulina bana 2, Tuzla. Each day runs on one timetable for every room, so you can change rooms at every break.</p>
       <p>Every slot is one hour: a talk with time for questions, a panel, or a workshop. After each slot comes a full hour off, in the cafés on Freedom Square under five minutes away. That is when you talk to the person you just heard.</p>
       <p>Thursday runs from 10:00 to 17:00. Friday runs from 09:30 to 16:30.</p>
-      <p>GoatConf does not record the talks. You may bring a camera or a podcast and record, and podcasts are welcome in some of the rooms.</p>
+      <p>GoatConf aims to record the sessions in the two big halls, the main hall and the first-floor hall. This is not promised yet. You may also bring a camera or a podcast and record, and podcasts are welcome in some of the rooms.</p>
       <p>The slots fill as proposals come in and are accepted. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>
     </div>
     <div>

@@ -312,6 +312,7 @@
         "org/adrs/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md",
         "sources/conversations/2026-10-18--org--event-hosts-as-supporters.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
@@ -320,7 +321,7 @@
         "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md"
       ],
-      "tokens": 1617
+      "tokens": 1689
     },
     {
       "path": "org/adrs/open-program-every-room.md",
@@ -665,7 +666,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 3252
+      "tokens": 3429
     },
     {
       "path": "org/index.md",
@@ -687,7 +688,7 @@
       "title": "IPI Academy (IPI Akademija Tuzla): host and venue",
       "kind": "entity",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-10-18",
       "confidence": "medium",
       "sources": [
         "sources/conversations/2026-10-14--org--ipi-academy-logo.md",
@@ -709,7 +710,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/tooling/sessionize-community-license.md"
       ],
-      "tokens": 2386
+      "tokens": 2440
     },
     {
       "path": "org/organiser.md",
@@ -1427,6 +1428,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md",
         "sources/conversations/2026-10-17--org--talk-titles-on-home-stickers.md",
         "sources/conversations/2026-10-17--org--dejan-talk.md",
         "sources/conversations/2026-10-14--org--speakers-before-sessions.md",
@@ -1457,7 +1459,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 4454,
+      "tokens": 4584,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -1590,12 +1592,13 @@
       "title": "Operations: volunteers who own a domain, the rules, and the day",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-10-18",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/operations-people-rules-and-the-day.md",
       "sources": [
+        "sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--session-registration-later.md",
@@ -1630,7 +1633,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/tooling/fosdem-video-equipment-overview.md"
       ],
-      "tokens": 4343,
+      "tokens": 4451,
       "consumed_by": [
         "org/adrs/operations-and-the-day.md"
       ]
