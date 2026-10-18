@@ -33,7 +33,8 @@ one.
 - `events`: optional, for a host that funds and organises accepted events:
   their record names in `extensions/`, for example `[bh-professionals-meetup]`.
   The supporter's profile then shows those events and offers each event's
-  card next to the thank-you card.
+  card next to the thank-you card, and a link to the profile shows the
+  first event's card as its preview.
 - `logo_on: dark`: optional, for a logo made for a dark background (white
   lettering); it is shown on the site's dark blue. The default is `light`.
 

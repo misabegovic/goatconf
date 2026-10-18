@@ -377,7 +377,9 @@ def supporter_page(slug: str, meta, body) -> str:
   {f'<div class="copy copy--wide">{words}</div>' if words else ""}
   <p class="copy"><a class="go go--ink" href="{esc(meta["url"])}">{site}</a> <a class="go go--ink" href="supporters.html">All supporters</a></p>
 </section>{support}{events}{thanks}{event_cards}"""
-    preview = supporter_cards(slug)["wide"] if (SITE / "share" / supporter_cards(slug)["wide"]).exists() else ""
+    # A link to the profile shows the card of the first event they host, else their thank-you card.
+    previews = [extensions.cards(s)["preview"] for s in hosted] + [supporter_cards(slug)["wide"]]
+    preview = next((name for name in previews if (SITE / "share" / name).exists()), "")
     dark = " page-head__photo--logo page-head__photo--logo-dark" if meta.get("logo_on") == "dark" else " page-head__photo--logo"
     return shell(supporter_page_name(slug)[:-5], f"{name}: supporting GoatConf 2027, Tuzla", f"{name} supports GoatConf 2027 in Tuzla: {esc(meta['funds'])}.",
                  (esc(meta["logo"]), 600, 300, name), name, esc(meta["funds"]), main, preview, dark)
