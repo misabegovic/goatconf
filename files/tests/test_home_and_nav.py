@@ -107,3 +107,15 @@ def test_accepted_events_sit_above_kinds_that_all_stay_open(monkeypatch):
     assert "More than one of each is welcome" in html
     monkeypatch.setattr(extensions, "accepted", lambda: [])
     assert "Accepted so far" not in home.kinds_block()
+
+
+def test_the_follow_links_sit_in_every_footer_and_in_marked_spots_once():
+    nav = importlib.reload(importlib.import_module("nav"))
+    page = ('<html><body>\n<main id="main"><!-- follow --><!-- /follow --></main>\n'
+            '<footer class="footer">\n  <p class="footer__links"><a href="index.html">Home</a></p>\n</footer></body></html>')
+    once = nav.place(page, "contact.html")
+    assert once.count('<p class="follow">') == 2  # the marked spot and the footer
+    assert '<a class="follow__link" href="https://www.linkedin.com/company/goatconf/">' in once
+    assert '<a class="follow__link" href="https://x.com/goatconf">' in once and 'aria-hidden="true"' in once
+    assert once.index('class="footer__links"') < once.rindex('<p class="follow">') < once.index("</footer>")
+    assert nav.place(once, "contact.html") == once

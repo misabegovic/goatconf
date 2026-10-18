@@ -366,3 +366,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #86: site: a host's profile link shows their event's card
    diff: 5 files, +29/-4
    restricted-paths: true
+2026-10-18 merge — PR #87: site: GoatConf's LinkedIn and X in every footer and on the contact page
+   diff: 30 files, +126/-29
+   restricted-paths: true
