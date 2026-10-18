@@ -8,7 +8,9 @@ extensions page is built from these files.
 ## Add yours
 
 1. Copy `_template.md` to a new file named after your extension, in
-   lowercase with dashes, for example `rust-meetup-at-the-lake.md`.
+   lowercase with dashes, for example `rust-meetup-at-the-lake.md`. Once
+   accepted, it gets its own page named after the file:
+   `goatconf.com/event-rust-meetup-at-the-lake`.
 2. Fill in every field and write a few sentences below the second `---`
    about what it is and who it is for.
 3. Open a pull request. An agent checks the file and comments what, if
@@ -46,7 +48,7 @@ risks.
 
 ```
 python3 tools/extensions.py check      # what the agent checks
-python3 tools/extensions.py build      # rebuild site/extensions.html
+python3 tools/extensions.py build      # rebuild site/extensions.html and each event's page
 ```
 
 The local CI runs both, so a record that fails the check, or a page that

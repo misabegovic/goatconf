@@ -25,6 +25,10 @@ Contact: info@muhamed.at, or the form at https://goatconf.com/contact
 - [Cristian Planas](https://goatconf.com/speaker-cristian-planas): Author of Rails Scales!, at Combinaut
 - [Christoph Lipautz](https://goatconf.com/speaker-christoph-lipautz): Senior Staff Engineer at Meister
 
+## Events people add
+
+- [BH Professionals Meetup](https://goatconf.com/event-bh-professionals-meetup): Meetup, 5 June 2027, 18:00 to 21:00, run by Bosnia & Herzegovina Futures Foundation
+
 ## Pages
 
 - [GoatConf 2027: a free conference in Tuzla](https://goatconf.com/): GoatConf is a free conference for people who build and sell software: engineers, designers, product people, founders, and the incurably curious dreamers and visionaries. Any programming language, any stack. An excuse to hang out with like-minded people and learn from folks sharing their current best. In Tuzla, Bosnia and Herzegovina, on 3–5 June 2027.

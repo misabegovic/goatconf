@@ -6,8 +6,8 @@ The home page is hand-written, with four parts filled from the records:
   <!-- home:days -->        the three days, from DAY_PLAN in tools/program.py
   <!-- home:speakers -->    the first speakers, from speakers/, in eight places
   <!-- home:supporters -->  the supporters' logos, from supporters/
-  <!-- home:kinds -->       the kinds of event to propose, each with an accepted
-                            event of that kind as its example, from extensions/
+  <!-- home:kinds -->       every accepted event, from extensions/, then the
+                            kinds of event to propose, all still open
 
 Then every sticker and slot number on the page is renumbered in order, so
 the album keeps one sequence however the sections move.
@@ -64,7 +64,7 @@ def hours_off(plan) -> str:
 def added(events) -> str:
     return "".join(f'<small class="day__added">Added: {esc(m["name"])}'
                    + (f', {start.strftime("%H:%M")}' if start.time() != dt.time() else "") + "</small>"
-                   for start, m, _ in sorted(events, key=lambda e: e[0]))
+                   for start, _, m, _ in sorted(events, key=lambda e: e[0]))
 
 
 def day_sticker(i: int, day, label: str, hours: str, lines: str) -> str:
@@ -157,33 +157,25 @@ def supporters_block() -> str:
     <p class="copy"><a class="go go--ink" href="supporters.html">The supporters</a></p>"""
 
 
-# The kinds of event the home page invites, in the form's order. A kind with an
-# accepted event shows that event as its example; the rest stay open.
+# The kinds of event the home page invites, in the form's order. They stay open
+# however many are accepted: more than one of each is welcome.
 HOME_KINDS = ("evening-event", "trip", "meetup", "podcast", "hike", "hackathon", "karaoke", "other")
 
 
 def kinds_block() -> str:
-    examples = {}
-    for path in extensions.records():
-        problems, _, meta = extensions.check_record(path)
-        if problems or not extensions.listed(meta):
-            continue
-        start = extensions.as_datetime(meta["start"])
-        if meta["kind"] not in examples or start < examples[meta["kind"]][0]:
-            examples[meta["kind"]] = (start, path.stem, meta)
-    items = []
-    for i, kind in enumerate(HOME_KINDS):
-        if kind in examples:
-            start, slug, meta = examples[kind]
-            when = start.strftime("%A %-d %B") + ("" if start.time() == dt.time() else start.strftime(", %H:%M"))
-            items.append(f'    <li><a class="sticker sticker--fact sticker--example" href="extensions.html#{esc(slug)}" data-peel style="--tilt:{TILTS[i % len(TILTS)]}deg">'
-                         f'<span class="num">0</span><small class="sticker__kind">{extensions.KINDS[kind]}</small><strong>{esc(meta["name"])}</strong>'
-                         f'<small>{when}, run by {esc(meta["host"])}.</small></a></li>')
-        else:
-            label = "Something else?" if kind == "other" else extensions.KINDS[kind]
-            items.append(f'    <li><a class="slot slot--kind slot--link" href="add.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
-                         f'<span class="num num--printed">0</span><strong>{label}</strong><span class="nameline" aria-hidden="true"></span><span class="stamp">Yours?</span></a></li>')
-    return '  <ul class="slots slots--kinds" aria-label="Kinds of events you can propose">\n' + "\n".join(items) + "\n  </ul>"
+    """Every accepted event, any kind, then the kinds to propose, all still open."""
+    good = extensions.accepted()
+    accepted = ""
+    if good:
+        cards = "\n".join("    " + extensions.card(i + 1, slug, m) for i, (_, slug, m, _b) in enumerate(good))
+        accepted = f'  <h3 class="list-title">Accepted so far</h3>\n  <ul class="slots slots--events">\n{cards}\n  </ul>\n'
+    kinds = []
+    for kind in HOME_KINDS:
+        label = "Something else?" if kind == "other" else extensions.KINDS[kind]
+        kinds.append(f'    <li><a class="slot slot--kind slot--link" href="add.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+                     f'<span class="num num--printed">0</span><strong>{label}</strong><span class="nameline" aria-hidden="true"></span><span class="stamp">Yours?</span></a></li>')
+    return (accepted + f'  <p class="copy">{extensions.MORE}</p>\n'
+            '  <ul class="slots slots--kinds" aria-label="Kinds of events you can propose">\n' + "\n".join(kinds) + "\n  </ul>")
 
 
 def renumber(text: str) -> str:

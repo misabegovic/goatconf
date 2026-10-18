@@ -111,7 +111,7 @@ def session_list() -> list[dict]:
             if name and name not in named:
                 people.append({"name": name})
         out.append({"day": day.isoformat(), "start": start, "end": plus_hour(start), "room": program.ROOMS[room][0],
-                    "format": program.FORMATS[meta["format"]], "title": meta["title"],
+                    "format": program.FORMATS[meta["format"]], "title": meta["title"], "page": url(program.page_name(meta)),
                     "about": body.split("\n\n")[0].strip(), "speakers": people,
                     **({"signup": meta["signup"]} if meta.get("signup") else {})})
     return out
@@ -119,13 +119,9 @@ def session_list() -> list[dict]:
 
 def event_list() -> list[dict]:
     out = []
-    for path in extensions.records():
-        problems, _, meta = extensions.check_record(path)
-        if problems or not extensions.listed(meta):
-            continue
-        _, body, _ = extensions.parse(path)
-        start, end = extensions.as_datetime(meta["start"]), extensions.as_datetime(meta["end"])
-        out.append({"name": meta["name"], "kind": meta["kind"], "host": meta["host"], "where": meta["location"],
+    for start, slug, meta, body in extensions.accepted():
+        end = extensions.as_datetime(meta["end"])
+        out.append({"name": meta["name"], "page": url(extensions.page_name(slug)), "kind": meta["kind"], "host": meta["host"], "where": meta["location"],
                     "start": start.strftime("%Y-%m-%dT%H:%M:00") + OFFSET, "end": end.strftime("%Y-%m-%dT%H:%M:00") + OFFSET,
                     "cost": meta["cost"], "registration": meta["registration"], "about": body.split("\n\n")[0].strip(),
                     "note": "Part of GoatConf 2027, accepted by the organiser and run by its host."})
@@ -238,9 +234,20 @@ def llms() -> str:
         lines += ["## Speakers", ""]
         lines += [f"- [{m['name']}]({url(speakers.page_name(s))})" + (f": {m['role']}" if m.get("role") else "") for s, (m, _) in people]
         lines.append("")
+    table, _ = program.sessions()
+    if table:
+        lines += ["## Sessions", ""]
+        lines += [f"- [{m['title']}]({url(program.page_name(m))}): {program.FORMATS[m['format']]} by {m['speakers']}, {program.CORE_DAYS[d]} at {t}, {program.ROOMS[r][0]}"
+                  for (d, t, r), (m, _) in sorted(table.items(), key=lambda kv: (kv[0][0], kv[0][1], list(program.ROOMS).index(kv[0][2])))]
+        lines.append("")
+    events = extensions.accepted()
+    if events:
+        lines += ["## Events people add", ""]
+        lines += [f"- [{m['name']}]({url(extensions.page_name(s))}): {extensions.KINDS[m['kind']]}, {extensions.when(m)}, run by {m['host']}" for _, s, m, _ in events]
+        lines.append("")
     lines += ["## Pages", ""]
     for page in pages():
-        if page.name.startswith("speaker-"):
+        if page.name.startswith(("speaker-", "event-", "session-")):
             continue
         title, desc = head_text(page)
         lines.append(f"- [{title}]({url(page.name)})" + (f": {desc}" if desc else ""))

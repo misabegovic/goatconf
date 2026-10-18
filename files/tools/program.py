@@ -10,7 +10,8 @@ holds each day's times. Saturday 5th June is
 for the community. Events added around the talks come from extensions/.
 
   check [files...]   check every record (or the named ones). Exit 1 if any fails.
-  build [--check]    write site/program.html; with --check, fail if the
+  build [--check]    write site/program.html and a page for each session
+                     (site/session-<title>.html); with --check, fail if a
                      committed page is not current.
 
 Usage: python3 tools/program.py <check|build> [...]
@@ -23,6 +24,7 @@ import datetime as dt
 import html
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -112,7 +114,7 @@ def check_record(path: Path):
 
 
 def sessions():
-    taken, out, clashes = {}, [], []
+    taken, pages, out, clashes = {}, {}, [], []
     for path in records():
         problems, meta, body = check_record(path)
         if problems:
@@ -121,7 +123,11 @@ def sessions():
         if key in taken:
             clashes.append(f"{path.name} and {taken[key]} share {meta['day']} {meta['start']} {meta['room']}")
             continue
-        taken[key] = path.name
+        name = page_name(meta)
+        if name in pages:
+            clashes.append(f"{path.name} and {pages[name]} would share the page site/{name}: give one a different title")
+            continue
+        taken[key] = pages[name] = path.name
         out.append((key, meta, body))
     return dict((k, (m, b)) for k, m, b in out), clashes
 
@@ -144,6 +150,17 @@ def cmd_check(args) -> int:
 
 def esc(v) -> str:
     return html.escape(str(v))
+
+
+def page_name(meta) -> str:
+    """Each session's own page, named after its title: "Salt, goats and servers" is session-salt-goats-and-servers.html."""
+    plain = unicodedata.normalize("NFKD", str(meta["title"])).encode("ascii", "ignore").decode()
+    return "session-" + (re.sub(r"[^a-z0-9]+", "-", plain.lower()).strip("-") or "untitled") + ".html"
+
+
+def ends(start: str) -> str:
+    h, m = map(int, str(start).split(":"))
+    return f"{h + 1:02d}:{m:02d}"
 
 
 def speaker_names() -> dict:
@@ -176,7 +193,7 @@ def cell(n: int, found, room: str) -> str:
     if found:
         meta, body = found
         first = body.split("\n\n")[0].strip()
-        return f"""<li class="sticker sticker--session" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg"><span class="num">{n}</span><span class="session__format">{FORMATS[meta['format']]}, {ROOMS[room][0]}</span><strong>{esc(meta['title'])}</strong><small>{who(meta)}</small><p>{esc(first)}</p>{register(meta)}</li>"""
+        return f"""<li class="sticker sticker--session" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg"><span class="num">{n}</span><span class="session__format">{FORMATS[meta['format']]}, {ROOMS[room][0]}</span><strong><a class="sticker__open sticker__open--stretch" href="{page_name(meta)}">{esc(meta['title'])}</a></strong><small>{who(meta)}</small><p>{esc(first)}</p>{register(meta)}</li>"""
     return f"""<li class="slot slot--session"><span class="num num--printed">{n}</span>{where}<strong>Open</strong><small>Waiting for a talk, a panel or a workshop.</small><span class="stamp">Yours?</span></li>"""
 
 
@@ -212,19 +229,15 @@ def day_block(day, label, table, start_n) -> tuple[str, int]:
 
 
 def extension_days():
+    """The accepted events by day, each (start, slug, meta, body), in order."""
     by_day = {}
-    for path in extensions.records():
-        problems, _, meta = extensions.check_record(path)
-        if problems or not extensions.listed(meta):
-            continue
-        _, body, _ = extensions.parse(path)
-        start = extensions.as_datetime(meta["start"])
-        by_day.setdefault(start.date(), []).append((start, meta, body))
+    for start, slug, meta, body in extensions.accepted():
+        by_day.setdefault(start.date(), []).append((start, slug, meta, body))
     return by_day
 
 
-def ext_item(meta) -> str:
-    return f"""<li class="sticker sticker--fact sticker--ext" data-peel style="--tilt:-1deg"><strong>{esc(meta['name'])}</strong><small>{extensions.KINDS[meta['kind']]}, part of GoatConf 2027, run by {esc(meta['host'])}. {extensions.when(meta)}, {esc(meta['location'])}.</small></li>"""
+def ext_item(slug, meta) -> str:
+    return f"""<li class="sticker sticker--fact sticker--ext" data-peel style="--tilt:-1deg"><a class="sticker__open" href="{extensions.page_name(slug)}"><strong>{esc(meta['name'])}</strong><small>{extensions.KINDS[meta['kind']]}, part of GoatConf 2027, run by {esc(meta['host'])}. {extensions.when(meta)}, {esc(meta['location'])}.</small></a></li>"""
 
 
 def page() -> str:
@@ -236,7 +249,7 @@ def page() -> str:
         block, n = day_block(day, label, table, n)
         days.append(block)
     sat, sat_label = COMMUNITY_DAY
-    sat_items = "\n".join(ext_item(m) for _, m, _ in sorted(ext.get(sat, []), key=lambda e: e[0]))
+    sat_items = "\n".join(ext_item(s, m) for _, s, m, _ in ext.get(sat, []))
     sat_open = "\n".join(f'<li class="slot"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp{" stamp--planned" if planned else ""}">{"Planned" if planned else "Yours?"}</span></li>'
                          for i, (name, what, planned) in enumerate([("A day at the lakes", "Swimming, the salt waterfalls and the beach at the Pannonian Lakes.", True),
                                                            ("The goat hunt", "Clues through town for teams of people who just met, ending at the goat statue.", True),
@@ -244,9 +257,9 @@ def page() -> str:
                                                            ("Something else?", "A meetup, a dinner, a corner for your community.", False)]))
     around = []
     for day in sorted(d for d in ext if d not in CORE_DAYS and d != sat):
-        around.extend(ext_item(m) for _, m, _ in sorted(ext[day], key=lambda e: e[0]))
+        around.extend(ext_item(s, m) for _, s, m, _ in ext[day])
     for day in CORE_DAYS:
-        around.extend(ext_item(m) for _, m, _ in sorted(ext.get(day, []), key=lambda e: e[0]))
+        around.extend(ext_item(s, m) for _, s, m, _ in ext.get(day, []))
     around_html = ('<ul class="slots ext-list">\n' + "\n".join(around) + "\n</ul>") if around else '<p class="ledger-empty">No evening events or meetups yet. Want to run a meetup the evening before, or a dinner after the talks? <a href="add.html">Propose yours</a>.</p>'
     sprite = extensions.SHELL.read_text(encoding="utf-8")
     sprite = sprite[sprite.index('<svg width="0"'):sprite.index("</svg>", sprite.index('<svg width="0"')) + 6]
@@ -322,18 +335,70 @@ def page() -> str:
 """
 
 
+def session_page(key, meta, body) -> str:
+    day, start, room = key
+    fmt = FORMATS[meta["format"]]
+    about = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
+    seat = (f'<p class="cta"><a class="button" href="{esc(meta["signup"])}">Save a seat</a></p>' if meta.get("signup") else
+            '<p>Free with a GoatConf ticket: <a href="register.html">register for free</a>. Closer to June, everyone with a ticket also registers for the sessions they want, because each room has only so many seats.</p>')
+    main = f"""<section class="album-page wrap" aria-labelledby="h-details">
+  <h2 class="band" id="h-details">The details</h2>
+  <div class="page-grid">
+    <dl class="facts">
+      <dt>When</dt><dd>{CORE_DAYS[day]} 2027, {start} to {ends(start)}</dd>
+      <dt>Where</dt><dd>{ROOMS[room][0]} ({ROOMS[room][1]}), IPI Academy, Kulina bana 2, Tuzla</dd>
+      <dt>Format</dt><dd>{fmt}</dd>
+      <dt>{"Speakers" if "," in str(meta["speakers"]) or " and " in str(meta["speakers"]) else "Speaker"}</dt><dd>{who(meta)}</dd>
+    </dl>
+    <div class="copy">
+      {seat}
+      <p>After the session comes a full hour off, in the cafés on Freedom Square: the time to talk to the people you just heard.</p>
+    </div>
+  </div>
+</section>
+<section class="album-page wrap" aria-labelledby="h-about">
+  <h2 class="band" id="h-about">About the session</h2>
+  <div class="copy copy--wide">{about}</div>
+  <p class="copy"><a class="go go--ink" href="program.html#{day.isoformat()}">The program for {CORE_DAYS[day]}</a> <a class="go go--ink" href="speakers.html">All speakers</a></p>
+</section>"""
+    return extensions.shell(page_name(meta), f"{esc(meta['title'])}: GoatConf 2027, Tuzla",
+                            f"{fmt} by {esc(meta['speakers'])} at GoatConf 2027 in Tuzla, {CORE_DAYS[day]} at {start}, {ROOMS[room][0]}.",
+                            ("img/ipi-lecture-hall.jpg", 1024, 768, "A talk in IPI Academy's lecture hall, students' faces blurred"),
+                            esc(meta["title"]), f"{fmt} by {who(meta)}. {CORE_DAYS[day]} at {start}, {ROOMS[room][0]}.", main,
+                            "files/tools/program.py build from files/program/*.md")
+
+
+def all_pages() -> dict:
+    out = {PAGE: nav.place(meta.tag(page()), "program.html")}
+    table, _ = sessions()
+    for key, (m, body) in table.items():
+        out[PAGE.parent / page_name(m)] = nav.place(meta.tag(session_page(key, m, body)), nav.section(page_name(m)))
+    return out
+
+
 def cmd_build(args) -> int:
-    want = nav.place(meta.tag(page()), "program.html")
-    if args.check:
-        have = PAGE.read_text(encoding="utf-8") if PAGE.exists() else ""
-        if have != want:
-            print("site/program.html is out of date: run python3 tools/program.py build")
-            return 1
-        print("site/program.html is current")
-        return 0
-    PAGE.write_text(want, encoding="utf-8")
-    print(f"wrote {PAGE.relative_to(ROOT)}")
-    return 0
+    pages = all_pages()
+    stale = 0
+    for old in PAGE.parent.glob("session-*.html"):
+        if old not in pages:
+            if args.check:
+                print(f"site/{old.name} belongs to no session on the program: run python3 tools/program.py build")
+                stale += 1
+            else:
+                old.unlink()
+                print(f"removed site/{old.name}")
+    for path, want in pages.items():
+        if args.check:
+            have = path.read_text(encoding="utf-8") if path.exists() else ""
+            if have != want:
+                print(f"site/{path.name} is out of date: run python3 tools/program.py build")
+                stale += 1
+            else:
+                print(f"site/{path.name} is current")
+        else:
+            path.write_text(want, encoding="utf-8")
+            print(f"wrote site/{path.name}")
+    return 1 if stale else 0
 
 
 def main(argv=None) -> int:

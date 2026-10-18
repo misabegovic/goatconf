@@ -59,8 +59,11 @@ def pages():
 
 
 def section(name: str) -> str:
-    """The link a page marks as current: a speaker's own page sits under Speakers."""
-    return "speakers.html" if name.startswith("speaker-") else name
+    """The link a page marks as current: a speaker's own page sits under Speakers,
+    an event's or a session's own page under Program."""
+    if name.startswith("speaker-"):
+        return "speakers.html"
+    return "program.html" if name.startswith(("event-", "session-")) else name
 
 
 def main(argv=None) -> int:

@@ -25,5 +25,9 @@ record; the body is the speaker's own short description. Copy
   the session, if session sign-ups are introduced later. Once set, the program,
   the speaker's page and the agent files show it as "Save a seat".
 
-Then run `python3 tools/program.py build` to rebuild `site/program.html`.
+Then run `python3 tools/program.py build` to rebuild `site/program.html` and
+each session's own page, `site/session-<title>.html` (for example
+`session-salt-goats-and-servers.html`), which the session's sticker on the
+program opens. Two sessions may not share a title, since the title names the
+page.
 `python3 tools/program.py check` checks the records; the local CI runs both.

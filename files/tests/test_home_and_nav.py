@@ -28,10 +28,10 @@ def test_days_link_to_the_program_open_the_evenings_and_list_what_people_add(mon
     home = importlib.reload(importlib.import_module("home"))
     program = importlib.import_module("program")
     thu, wed, sat, later = dt.date(2027, 6, 3), dt.date(2027, 6, 2), dt.date(2027, 6, 5), dt.date(2027, 6, 9)
-    ext = {thu: [(dt.datetime(2027, 6, 3, 19, 0), {"name": "Ruby & beer"}, "")],
-           wed: [(dt.datetime(2027, 6, 2, 18, 30), {"name": "The night before"}, "")],
-           sat: [(dt.datetime(2027, 6, 5), {"name": "Salt lake hike"}, "")],
-           later: [(dt.datetime(2027, 6, 9), {"name": "Too late"}, "")]}
+    ext = {thu: [(dt.datetime(2027, 6, 3, 19, 0), "ruby", {"name": "Ruby & beer"}, "")],
+           wed: [(dt.datetime(2027, 6, 2, 18, 30), "before", {"name": "The night before"}, "")],
+           sat: [(dt.datetime(2027, 6, 5), "hike", {"name": "Salt lake hike"}, "")],
+           later: [(dt.datetime(2027, 6, 9), "late", {"name": "Too late"}, "")]}
     monkeypatch.setattr(program, "extension_days", lambda: ext)
     html = home.days()
     for day in (*program.DAY_PLAN, sat):
@@ -56,6 +56,8 @@ def test_a_speaker_page_marks_speakers_and_nav_agrees(tmp_path, monkeypatch):
     nav = importlib.reload(importlib.import_module("nav"))
     assert nav.section("speaker-ana-example.html") == "speakers.html"
     assert nav.section("program.html") == "program.html"
+    assert nav.section("event-rust-night.html") == "program.html"
+    assert nav.section("session-salt-goats-and-servers.html") == "program.html"
     monkeypatch.setattr(nav, "SITE", tmp_path)
     page = '<html><body>\n<main id="main"></main></body></html>'
     (tmp_path / "speaker-ana-example.html").write_text(nav.place(page, "speakers.html"), encoding="utf-8")
@@ -88,3 +90,20 @@ def test_home_plans_eight_places_and_invites_proposals_for_the_open_ones(monkeyp
     assert html.count("sticker--mini") == 8 and "slot--open" not in html and "All 9 speakers" in html
     monkeypatch.setattr(speakers, "speakers", lambda: {})
     assert "The first speaker could be you" in home.speakers_block()
+
+
+def test_accepted_events_sit_above_kinds_that_all_stay_open(monkeypatch):
+    import datetime as dt
+    home = importlib.reload(importlib.import_module("home"))
+    extensions = importlib.import_module("extensions")
+    meetup = {"name": "BH Professionals Meetup", "kind": "meetup", "host": "BHFF", "start": "2027-06-05 18:00", "end": "2027-06-05 21:00"}
+    second = dict(meetup, name="Rust meetup", host="Rustaceans", start="2027-06-04 19:00", end="2027-06-04 21:00")
+    monkeypatch.setattr(extensions, "accepted", lambda: [(dt.datetime(2027, 6, 4, 19), "rust-meetup", second, ""),
+                                                         (dt.datetime(2027, 6, 5, 18), "bh-professionals-meetup", meetup, "")])
+    html = home.kinds_block()
+    assert html.index("Accepted so far") < html.index("Rust meetup") < html.index("BH Professionals Meetup") < html.index('class="slots slots--kinds"')
+    assert 'href="event-bh-professionals-meetup.html"' in html and 'href="event-rust-meetup.html"' in html
+    assert html.count('<span class="stamp">Yours?</span>') == len(home.HOME_KINDS)
+    assert "More than one of each is welcome" in html
+    monkeypatch.setattr(extensions, "accepted", lambda: [])
+    assert "Accepted so far" not in home.kinds_block()

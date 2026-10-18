@@ -74,3 +74,46 @@ def test_links_are_written_and_publish_needs_every_url(tmp_path, monkeypatch):
     assert site.cmd_check(A()) == 0
     page.write_text(page.read_text(encoding="utf-8") + '<a data-form="add" href="contact.html#forms-pending">x</a>', encoding="utf-8")
     assert site.cmd_check(A()) == 1
+
+
+def test_each_session_gets_its_own_page_and_its_sticker_opens_it(tmp_path, monkeypatch):
+    program = load("program")
+    records, site = tmp_path / "program", tmp_path / "site"
+    records.mkdir()
+    site.mkdir()
+    (records / "s.md").write_text(SESSION, encoding="utf-8")
+    monkeypatch.setattr(program, "RECORDS", records)
+    monkeypatch.setattr(program, "PAGE", site / "program.html")
+    assert program.page_name({"title": "Salt, goats & šervers!"}) == "session-salt-goats-servers.html"
+    assert program.cmd_build(type("A", (), {"check": False})()) == 0
+    grid = (site / "program.html").read_text(encoding="utf-8")
+    assert '<a class="sticker__open sticker__open--stretch" href="session-salt-goats-and-servers.html">Salt, goats and servers</a>' in grid
+    page = (site / "session-salt-goats-and-servers.html").read_text(encoding="utf-8")
+    assert '<h1 class="sign">Salt, goats and servers</h1>' in page
+    assert "Thursday 3rd June 2027, 12:00 to 13:00" in page and "First-floor hall (100 seats)" in page
+    assert "How a small town runs its own infrastructure." in page
+    assert 'href="program.html" aria-current="page"' in page
+    assert program.cmd_build(type("A", (), {"check": True})()) == 0
+    (records / "s.md").unlink()
+    assert program.cmd_build(type("A", (), {"check": True})()) == 1
+    assert program.cmd_build(type("A", (), {"check": False})()) == 0
+    assert not (site / "session-salt-goats-and-servers.html").exists()
+
+
+def test_two_sessions_with_one_title_clash(tmp_path, monkeypatch):
+    program = load("program")
+    (tmp_path / "a.md").write_text(SESSION, encoding="utf-8")
+    (tmp_path / "b.md").write_text(SESSION.replace('"12:00"', '"14:00"'), encoding="utf-8")
+    monkeypatch.setattr(program, "RECORDS", tmp_path)
+    _, clashes = program.sessions()
+    assert len(clashes) == 1 and "would share the page" in clashes[0]
+
+
+def test_an_accepted_event_on_the_program_opens_its_page(monkeypatch):
+    import datetime as dt
+    program = load("program")
+    sat = dt.date(2027, 6, 5)
+    meta = {"name": "Salt lake hike", "kind": "hike", "host": "Ana", "location": "Pannonica",
+            "start": "2027-06-05 10:00", "end": "2027-06-05 13:00"}
+    monkeypatch.setattr(program, "extension_days", lambda: {sat: [(dt.datetime(2027, 6, 5, 10), "salt-lake-hike", meta, "")]})
+    assert '<a class="sticker__open" href="event-salt-lake-hike.html"><strong>Salt lake hike</strong>' in program.page()

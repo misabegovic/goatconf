@@ -9,8 +9,9 @@ whose names start with "_" are not records.
   check [files...]   check every record (or the named ones) and print one
                      summary per record, the text the agent posts on an
                      extension pull request. Exit 1 if any record fails.
-  build [--check]    write site/extensions.html from the records; with
-                     --check, fail if the committed page is not current.
+  build [--check]    write site/extensions.html and a page for each accepted
+                     event (site/event-<record>.html) from the records; with
+                     --check, fail if a committed page is not current.
 
 Usage: python3 tools/extensions.py <check|build> [...]
 """
@@ -120,6 +121,8 @@ def check_record(path: Path):
         problems.append("a support record names the supplier the supporter pays (field: supplier)")
     if not body:
         problems.append("no description below the frontmatter")
+    if not re.match(r"^[a-z0-9]+(-[a-z0-9]+)*$", path.stem):
+        problems.append("file name must be lowercase words joined by hyphens: it becomes the event's own address")
     name = str(meta.get("name", ""))
     if NOT_OURS.search(name) or NOT_OURS.search(body) or name.lower().startswith("goatconf"):
         problems.append('the name reads as if the organiser runs it; name it as "<name>, part of GoatConf 2027"')
@@ -167,93 +170,178 @@ def when(meta):
 
 
 def link(value):
-    v = html.escape(str(value))
-    return f'<a href="{v}">{v}</a>' if re.match(r"^https?://", str(value)) else v
+    """A web address or an email as a link, shown without its scheme; anything else as text."""
+    v = str(value)
+    if re.match(r"^https?://", v):
+        return f'<a href="{html.escape(v)}">{html.escape(re.sub(r"^https?://(www\.)?", "", v).rstrip("/"))}</a>'
+    if re.match(r"^[^@\s]+@[^@\s]+\.[a-z]{2,}$", v, re.I):
+        return f'<a href="mailto:{html.escape(v)}">{html.escape(v)}</a>'
+    return html.escape(v)
 
 
-def listing(slug, meta, body):
-    e = lambda k: html.escape(str(meta[k]))
-    para = "".join(f"<p>{html.escape(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
-    return f"""  <li class="listing" id="{html.escape(slug)}">
-    <h2>{e('name')}</h2>
-    <p class="listing__kind">{KINDS[meta['kind']]}, part of GoatConf 2027, run by {e('host')}</p>
-    <dl class="facts">
-      <dt>When</dt><dd>{when(meta)}</dd>
-      <dt>Where</dt><dd>{e('location')}</dd>
-      <dt>Cost</dt><dd>{e('cost')}</dd>
-      <dt>Register</dt><dd>{link(meta['registration'])}</dd>
-      <dt>Paid by</dt><dd>{e('paid_by')}</dd>
-      <dt>Contact</dt><dd>{link(meta['contact'])}</dd>
-    </dl>
-    {para}
-  </li>"""
+def page_name(slug: str) -> str:
+    """Each accepted event's own page, next to the other pages so relative links keep working."""
+    return f"event-{slug}.html"
 
 
-def page() -> str:
+def accepted():
+    """The accepted events that pass the check, by start then name: (start, slug, meta, body)."""
     good = []
     for path in records():
         problems, _, meta = check_record(path)
         if not problems and listed(meta):
             _, body, _ = parse(path)
             good.append((as_datetime(meta["start"]), path.stem, meta, body))
-    good.sort(key=lambda g: (g[0], str(g[2]["name"])))
-    if good:
-        main = '<ol class="listings">\n' + "\n".join(listing(s, m, b) for _, s, m, b in good) + "\n</ol>"
-    else:
-        main = """<div class="ledger-empty">
-  <p><strong>No events yet.</strong> The first one could be yours: a workshop, a meetup, a dinner, a city walk, a hike, a corner for your community.</p>
-</div>"""
-    shell = SHELL.read_text(encoding="utf-8")
-    sprite = shell[shell.index('<svg width="0"'):shell.index("</svg>", shell.index('<svg width="0"')) + 6]
+    return sorted(good, key=lambda g: (g[0], str(g[2]["name"])))
+
+
+def card(n: int, slug: str, meta) -> str:
+    """An accepted event as a sticker that opens its page; the events page and the home page share it."""
+    return (f'<li><a class="sticker sticker--fact sticker--example" href="{page_name(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">'
+            f'<span class="num">{n}</span><small class="sticker__kind">{KINDS[meta["kind"]]}</small><strong>{html.escape(str(meta["name"]))}</strong>'
+            f'<small>{when(meta)}. Run by {html.escape(str(meta["host"]))}.</small></a></li>')
+
+
+FOOTER = """<footer class="footer">
+  <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
+  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Give a talk</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
+</footer>"""
+OLD_TOWN = ("img/city-old-town-aerial-paving.jpg", 1375, 696, "The old town from above: tiled roofs and a street paved in a red and blue mosaic")
+MORE = "More than one of each is welcome: a second meetup, another hike, a dinner every night."
+
+
+def shell(name: str, title: str, description: str, photo, h1: str, lede: str, main: str, made_by: str) -> str:
+    """A page of the site around its main part; the events page, each event's page and each session's page use it."""
+    sprite = SHELL.read_text(encoding="utf-8")
+    sprite = sprite[sprite.index('<svg width="0"'):sprite.index("</svg>", sprite.index('<svg width="0"')) + 6]
+    src, width, height, alt = photo
     return f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Events people add: GoatConf 2027</title>
-<meta name="description" content="Workshops, meetups, hackathons, walks and more that the organiser has accepted as part of GoatConf 2027 in Tuzla, each run by its host.">
+<title>{title}</title>
+<meta name="description" content="{description}">
 <meta name="theme-color" content="#0b3d91">
-<link rel="canonical" href="https://goatconf.com/extensions">
+<link rel="canonical" href="https://goatconf.com/{name[:-5]}">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="goatconf.css">
+<script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver"in window)document.documentElement.classList.add("js-peel")</script>
 </head>
 <body>
-<!-- Generated by files/tools/extensions.py build from files/extensions/*.md. Edit the records, not this page. -->
+<!-- Generated by {made_by}. Edit the records, not this page. -->
 {sprite}
 <header class="page-head">
-  <img class="page-head__photo" src="img/city-old-town-aerial-paving.jpg" width="1375" height="696" alt="The old town from above: tiled roofs and a street paved in a red and blue mosaic" decoding="async">
-  <h1 class="sign">Added by the people who come</h1>
-  <p class="lede">Workshops, meetups, hackathons and events around the talk days, accepted as part of GoatConf 2027 and run by their hosts.</p>
+  <img class="page-head__photo" src="{src}" width="{width}" height="{height}" alt="{alt}" decoding="async">
+  <h1 class="sign">{h1}</h1>
+  <p class="lede">{lede}</p>
 </header>
-<main id="main" class="prose">
-<p>Every event here is part of GoatConf 2027: the organiser accepted it, and it follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>. Each host runs their own event and pays for it directly. Not everything people propose is accepted, and events that are not accepted are not GoatConf's.</p>
+<main id="main">
 {main}
-<h2>Propose yours</h2>
-<p>Propose it through the short form. The organiser decides whether it becomes part of GoatConf. <a href="add.html">Propose yours</a></p>
 </main>
-<footer class="footer">
-  <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
-  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Give a talk</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
-</footer>
+{FOOTER}
 <script src="album.js" defer></script>
 </body>
 </html>
 """
 
 
+def event_page(slug: str, meta, body) -> str:
+    e = lambda k: html.escape(str(meta[k]))
+    start = as_datetime(meta["start"])
+    # The program has a section per day from Thursday to Saturday; other days sit under "Around the talks".
+    day = start.date().isoformat() if dt.date(2027, 6, 3) <= start.date() <= dt.date(2027, 6, 5) else "h-around"
+    reg = str(meta["registration"])
+    cta = (f'<p class="cta"><a class="button" href="{html.escape(reg)}">Register with the host</a></p>' if re.match(r"^https?://", reg)
+           else f"<p><strong>How to join:</strong> {html.escape(reg)}</p>")
+    about = "".join(f"<p>{html.escape(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
+    kind = f"{KINDS[meta['kind']]}, part of GoatConf 2027, run by {e('host')}"
+    main = f"""<section class="album-page wrap" aria-labelledby="h-details">
+  <h2 class="band" id="h-details">The details</h2>
+  <div class="page-grid">
+    <dl class="facts">
+      <dt>When</dt><dd>{when(meta)}</dd>
+      <dt>Where</dt><dd>{e('location')}</dd>
+      <dt>Cost</dt><dd>{e('cost')}</dd>
+      <dt>Register</dt><dd>{link(meta['registration'])}</dd>
+      <dt>Run by</dt><dd>{e('host')}</dd>
+      <dt>Paid by</dt><dd>{e('paid_by')}</dd>
+      <dt>Contact</dt><dd>{link(meta['contact'])}</dd>
+    </dl>
+    <div class="copy">
+      {cta}
+      <p>The organiser accepted it as part of GoatConf 2027. {e('host')} runs it and pays for it, so questions about it go to the host. It follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>.</p>
+    </div>
+  </div>
+</section>
+<section class="album-page wrap" aria-labelledby="h-about">
+  <h2 class="band" id="h-about">In the host's words</h2>
+  <div class="copy copy--wide">{about}</div>
+  <p class="copy"><a class="go go--ink" href="extensions.html">All events people add</a> <a class="go go--ink" href="program.html#{day}">The program for that day</a></p>
+</section>"""
+    return shell(page_name(slug), f"{e('name')}: part of GoatConf 2027, Tuzla", f"{kind}: {when(meta)}, {e('location')}.",
+                 OLD_TOWN, e("name"), f"{kind}. {when(meta)}.", main, "files/tools/extensions.py build from files/extensions/*.md")
+
+
+def page() -> str:
+    good = accepted()
+    if good:
+        cards = "\n".join("  " + card(i + 1, s, m) for i, (_, s, m, _b) in enumerate(good))
+        cards += (f'\n  <li><a class="slot slot--link slot--open" href="add.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+                  f'<span class="num num--printed">{len(good) + 1}</span><strong>Yours next?</strong><small>{MORE}</small><span class="stamp">Yours?</span></a></li>')
+        listings = f'<ul class="slots slots--events">\n{cards}\n</ul>'
+    else:
+        listings = """<div class="ledger-empty">
+  <p><strong>No events yet.</strong> The first one could be yours: a workshop, a meetup, a dinner, a city walk, a hike, a corner for your community.</p>
+</div>"""
+    main = f"""<section class="album-page wrap" aria-labelledby="h-events">
+  <h2 class="band" id="h-events">Accepted so far</h2>
+  <p class="copy copy--wide">Every event here is part of GoatConf 2027: the organiser accepted it, and it follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>. Each host runs their own event and pays for it directly. Open one to see when and where, and how to join. Not everything people propose is accepted, and events that are not accepted are not GoatConf's.</p>
+  {listings}
+</section>
+<section class="album-page wrap" aria-labelledby="h-yours">
+  <h2 class="band" id="h-yours">Propose yours</h2>
+  <p class="copy copy--wide">{MORE} Propose it through the short form, and the organiser decides whether it becomes part of GoatConf.</p>
+  <p class="copy"><a class="go go--ink" href="add.html">Propose an event</a></p>
+</section>"""
+    return shell("extensions.html", "Events people add: GoatConf 2027",
+                 "Workshops, meetups, hackathons, walks and more that the organiser has accepted as part of GoatConf 2027 in Tuzla, each run by its host.",
+                 OLD_TOWN, "Added by the people who come",
+                 "Workshops, meetups, hackathons and events around the talk days, accepted as part of GoatConf 2027 and run by their hosts.",
+                 main, "files/tools/extensions.py build from files/extensions/*.md")
+
+
+def all_pages() -> dict:
+    out = {PAGE: nav.place(meta.tag(page()), "extensions.html")}
+    for _, slug, m, body in accepted():
+        out[PAGE.parent / page_name(slug)] = nav.place(meta.tag(event_page(slug, m, body)), nav.section(page_name(slug)))
+    return out
+
+
 def cmd_build(args) -> int:
-    want = nav.place(meta.tag(page()), "extensions.html")
-    if args.check:
-        have = PAGE.read_text(encoding="utf-8") if PAGE.exists() else ""
-        if have != want:
-            print("site/extensions.html is out of date: run python3 tools/extensions.py build")
-            return 1
-        print("site/extensions.html is current")
-        return 0
-    PAGE.write_text(want, encoding="utf-8")
-    print(f"wrote {PAGE.relative_to(ROOT)}")
-    return 0
+    pages = all_pages()
+    stale = 0
+    for old in PAGE.parent.glob("event-*.html"):
+        if old not in pages:
+            if args.check:
+                print(f"site/{old.name} belongs to no accepted event: run python3 tools/extensions.py build")
+                stale += 1
+            else:
+                old.unlink()
+                print(f"removed site/{old.name}")
+    for path, want in pages.items():
+        if args.check:
+            have = path.read_text(encoding="utf-8") if path.exists() else ""
+            if have != want:
+                print(f"site/{path.name} is out of date: run python3 tools/extensions.py build")
+                stale += 1
+            else:
+                print(f"site/{path.name} is current")
+        else:
+            path.write_text(want, encoding="utf-8")
+            print(f"wrote site/{path.name}")
+    return 1 if stale else 0
 
 
 def main(argv=None) -> int:
