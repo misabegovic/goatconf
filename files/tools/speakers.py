@@ -79,11 +79,7 @@ def check_supporter(path: Path):
         problems.append("host must be yes, or left out")
     if meta.get("logo_on", "light") not in ("light", "dark"):
         problems.append("logo_on must be light or dark: the background the logo is made for")
-    ways = meta.get("support_them")
-    if ways is not None and (not isinstance(ways, list) or not ways or any(
-            not isinstance(w, dict) or not str(w.get("text") or "").strip() or "\n" in str(w.get("text")) or len(str(w.get("text"))) > 90
-            or not str(w.get("url") or "").startswith("https://") for w in ways)):
-        problems.append("support_them must list ways to support them, each a text of one short line and a url starting https://")
+    problems += support_problems(meta)
     events = meta.get("events")
     if events is not None:
         known = {slug for _, slug, _, _ in extensions.accepted()}
@@ -134,6 +130,7 @@ def check_speaker(path: Path, known_supporters):
             problems.append(f"talk_about is longer than {TALK_WORDS} words")
     if "hold" in meta and (not isinstance(meta["hold"], str) or not meta["hold"].strip() or "\n" in meta["hold"] or len(meta["hold"]) > HOLD_CHARS):
         problems.append(f"hold must be one line of at most {HOLD_CHARS} characters: why the speaker stays off the site for now")
+    problems += support_problems(meta)
     if meta.get("photo"):
         p = image_problem(meta["photo"], "speakers", "photo")
         if p:
@@ -300,10 +297,10 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     if meta.get("role"):
         lede = f'<span class="lede__role">{esc(meta["role"])}</span>{lede}'
     main = f"""<section class="album-page wrap speaker-page" aria-labelledby="h-about">
-  <h2 class="band" id="h-about">About {name.split()[0]}</h2>
+  <h2 class="band" id="h-about">Who they are</h2>
   <div class="copy copy--wide">{bio}</div>
   {f'<ul class="speaker-page__links">{links}</ul>' if links else ''}
-</section>
+</section>{support_section(meta)}
 <section class="album-page wrap" aria-labelledby="h-talks">
   <h2 class="band" id="h-talks">{"Sessions" if len(sessions) > 1 else "Session"}</h2>
   {f'<ul class="talks">{talks}</ul>' if talks else '<p class="copy">The session will be on the program soon.</p>'}
@@ -321,6 +318,26 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     desc = f"{esc(who)} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: {subject}."
     preview = preview_name(slug) if (SITE / "share" / preview_name(slug)).exists() else ""
     return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main, preview)
+
+
+def support_problems(meta) -> list:
+    """`support_them`, on a speaker or a supporter: each way a short line of text and an https link."""
+    ways = meta.get("support_them")
+    if ways is not None and (not isinstance(ways, list) or not ways or any(
+            not isinstance(w, dict) or not str(w.get("text") or "").strip() or "\n" in str(w.get("text")) or len(str(w.get("text"))) > 90
+            or not str(w.get("url") or "").startswith("https://") for w in ways)):
+        return ["support_them must list ways to support them, each a text of one short line and a url starting https://"]
+    return []
+
+
+def support_section(meta) -> str:
+    """How people can support a speaker or a supporter, from their record's `support_them`; nothing without it."""
+    ways = "".join(f'<li><a href="{esc(w["url"])}">{esc(w["text"])}</a></li>' for w in meta.get("support_them") or [])
+    return (f"""
+<section class="album-page wrap" aria-labelledby="h-support-them">
+  <h2 class="band" id="h-support-them">How to support them</h2>
+  <ul class="copy copy--wide support-them">{ways}</ul>
+</section>""" if ways else "")
 
 
 def supporter_page_name(slug: str) -> str:
@@ -354,12 +371,7 @@ def supporter_page(slug: str, meta, body) -> str:
     event_cards = "".join(extensions.share_section(extensions.cards(s), f"The card for {esc(m['name'])}",
                                                    f"{esc(m['name'])}, organised by {name}, part of GoatConf 2027: for you and anyone going to post. It links to the event's page.",
                                                    f"The card for {esc(m['name'])}", SITE) for s, (m, _) in hosted.items())
-    ways = "".join(f'<li><a href="{esc(w["url"])}">{esc(w["text"])}</a></li>' for w in meta.get("support_them") or [])
-    support = (f"""
-<section class="album-page wrap" aria-labelledby="h-support-them">
-  <h2 class="band" id="h-support-them">How to support them</h2>
-  <ul class="copy copy--wide support-them">{ways}</ul>
-</section>""" if ways else "")
+    support = support_section(meta)
     main = f"""<section class="album-page wrap" aria-labelledby="h-support">
   <h2 class="band" id="h-support">{"Who they are" if words else "Host and partner" if meta.get("host") is True else "Their support"}</h2>
   {f'<div class="copy copy--wide">{words}</div>' if words else ""}

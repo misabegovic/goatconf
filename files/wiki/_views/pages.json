@@ -804,6 +804,24 @@
       "tokens": 2723
     },
     {
+      "path": "org/outreach/speaker-support-links.md",
+      "title": "Draft: how to support each speaker, for their pages",
+      "kind": "reference",
+      "status": "draft",
+      "updated": "2026-10-18",
+      "confidence": "low",
+      "sources": [
+        "sources/conversations/2026-10-18--org--speaker-support-links.md",
+        "sources/web/speakers/cpp-in-embedded-systems-google-books-2026-10-14.md",
+        "sources/web/speakers/paolino-me-2026-10-14.md",
+        "sources/web/speakers/christoph-lipautz-github-2026-10-15.md",
+        "sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md",
+        "sources/web/speakers/menges-dev-2026-10-14.md",
+        "sources/web/speakers/team-tito-2026-10-14.md"
+      ],
+      "tokens": 727
+    },
+    {
       "path": "org/outreach/supporter-profiles.md",
       "title": "Draft: who each supporter is and how to support them, for their profiles",
       "kind": "reference",
