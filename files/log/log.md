@@ -504,3 +504,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #132: forms: the discipline choices match the talk page
    diff: 2 files, +19/-2
    restricted-paths: true
+2026-10-19 merge — PR #133: site: each session shows its area and who it is for
+   diff: 38 files, +213/-52
+   restricted-paths: true
