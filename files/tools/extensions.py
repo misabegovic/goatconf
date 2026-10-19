@@ -25,12 +25,12 @@ import re
 import sys
 from pathlib import Path
 
-import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import meta  # noqa: E402
 import nav  # noqa: E402
 import images  # noqa: E402
+import sitelib  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 RECORDS = ROOT / "extensions"
@@ -60,23 +60,10 @@ NOT_OURS = re.compile(r"goatconf\s+(presents|proudly)", re.I)
 
 
 def records(paths=None):
-    if paths:
-        return [Path(p) for p in paths]
-    if not RECORDS.is_dir():
-        return []
-    return sorted(p for p in RECORDS.glob("*.md") if p.name != "README.md" and not p.name.startswith("_"))
+    return sitelib.records(RECORDS, paths)
 
 
-def parse(path: Path):
-    text = path.read_text(encoding="utf-8")
-    m = re.match(r"^---\n(.*?)\n---\n?(.*)$", text, re.S)
-    if not m:
-        return None, text, ["no frontmatter block"]
-    try:
-        meta = yaml.safe_load(m.group(1)) or {}
-    except yaml.YAMLError as err:
-        return None, m.group(2), [f"frontmatter is not valid YAML ({err.__class__.__name__})"]
-    return meta, m.group(2).strip(), []
+parse = sitelib.parse
 
 
 def as_datetime(value):
@@ -368,26 +355,8 @@ def cmd_build(args) -> int:
                 if not (PAGE.parent / "share" / name).exists():
                     print(f"site/share/{name} is missing: run python3 tools/shareables.py render --only event-{slug}")
                     stale += 1
-    for old in PAGE.parent.glob("event-*.html"):
-        if old not in pages:
-            if args.check:
-                print(f"site/{old.name} belongs to no accepted event: run python3 tools/extensions.py build")
-                stale += 1
-            else:
-                old.unlink()
-                print(f"removed site/{old.name}")
-    for path, want in pages.items():
-        want = images.wrap(want)
-        if args.check:
-            have = path.read_text(encoding="utf-8") if path.exists() else ""
-            if have != want:
-                print(f"site/{path.name} is out of date: run python3 tools/extensions.py build")
-                stale += 1
-            else:
-                print(f"site/{path.name} is current")
-        else:
-            path.write_text(want, encoding="utf-8")
-            print(f"wrote site/{path.name}")
+    stale += sitelib.prune(PAGE.parent.glob("event-*.html"), pages, args.check, "tools/extensions.py build", "belongs to no accepted event")
+    stale += sitelib.write_or_check(pages, args.check, "tools/extensions.py build")
     return 1 if stale else 0
 
 

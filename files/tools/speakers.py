@@ -28,6 +28,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extensions  # noqa: E402
 import images  # noqa: E402
+import sitelib  # noqa: E402
 import program  # noqa: E402
 import meta  # noqa: E402
 import nav  # noqa: E402
@@ -48,9 +49,7 @@ esc = program.esc
 
 
 def records(folder: Path):
-    if not folder.is_dir():
-        return []
-    return sorted(p for p in folder.glob("*.md") if p.name != "README.md" and not p.name.startswith("_"))
+    return sitelib.records(folder)
 
 
 def image_problem(value, folder: str, what: str):
@@ -519,14 +518,7 @@ def all_pages() -> dict:
 def cmd_build(args) -> int:
     pages = all_pages()
     stale = 0
-    for old in [*SITE.glob("speaker-*.html"), *SITE.glob("supporter-*.html")]:
-        if old not in pages:
-            if args.check:
-                print(f"site/{old.name} belongs to no record: run python3 tools/speakers.py build")
-                stale += 1
-            else:
-                old.unlink()
-                print(f"removed site/{old.name}")
+    stale += sitelib.prune([*SITE.glob("speaker-*.html"), *SITE.glob("supporter-*.html")], pages, args.check, "tools/speakers.py build", "belongs to no record")
     if args.check:
         for slug in speakers():
             if not (SITE / "share" / preview_name(slug)).exists():
@@ -539,18 +531,7 @@ def cmd_build(args) -> int:
                     print(f"site/share/{card} is missing, so the supporter's profile has no card to download: "
                           f"run python3 tools/shareables.py render --only supporter-{slug}")
                     stale += 1
-    for path, want in pages.items():
-        want = images.wrap(want)
-        if args.check:
-            have = path.read_text(encoding="utf-8") if path.exists() else ""
-            if have != want:
-                print(f"site/{path.name} is out of date: run python3 tools/speakers.py build")
-                stale += 1
-            else:
-                print(f"site/{path.name} is current")
-        else:
-            path.write_text(want, encoding="utf-8")
-            print(f"wrote site/{path.name}")
+    stale += sitelib.write_or_check(pages, args.check, "tools/speakers.py build")
     return 1 if stale else 0
 
 
