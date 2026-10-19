@@ -444,3 +444,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #112: site: stale and contradictory lines fixed
    diff: 26 files, +206/-48
    restricted-paths: true
+2026-10-19 merge — PR #113: site: one voice, one name for each thing
+   diff: 39 files, +137/-127
+   restricted-paths: true
