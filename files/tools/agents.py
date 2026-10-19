@@ -78,7 +78,7 @@ def url(name: str) -> str:
 
 
 def pages() -> list[Path]:
-    found = {p.name: p for p in SITE.glob("*.html") if not p.name.startswith("_")}
+    found = {p.name: p for p in SITE.glob("*.html") if not p.name.startswith("_") and p.name != "404.html"}
     return [found[n] for n in FIRST if n in found] + sorted((p for n, p in found.items() if n not in FIRST), key=lambda p: p.name)
 
 

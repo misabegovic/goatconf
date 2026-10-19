@@ -38,7 +38,7 @@ Follow GoatConf: LinkedIn https://www.linkedin.com/company/goatconf/, X https://
 
 ## Pages
 
-- [GoatConf 2027: a free conference in Tuzla](https://goatconf.com/): GoatConf is a free conference for people who build and sell software: engineers, designers, product people, founders, and the incurably curious dreamers and visionaries. Any programming language, any stack. An excuse to hang out with like-minded people and learn from folks sharing their current best. In Tuzla, Bosnia and Herzegovina, on 3–5 June 2027.
+- [GoatConf 2027: a free conference in Tuzla](https://goatconf.com/): A free conference for people who build and sell software, in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Any language, any stack.
 - [Program: GoatConf 2027, 3–5 June, Tuzla](https://goatconf.com/program): The GoatConf 2027 program: two core days, Thursday 3rd and Friday 4th June, in every room of IPI Academy, Tuzla, and Saturday 5th June for the community.
 - [Register: GoatConf 2027](https://goatconf.com/register): Register for free for GoatConf 2027 in Tuzla: core days Thursday 3rd and Friday 4th June at IPI Academy, community day Saturday 5th June.
 - [Propose a session: GoatConf 2027](https://goatconf.com/talk): Propose a talk, a panel, a workshop or something else that fits an hour for GoatConf 2027 in Tuzla: one-hour slots on 3rd and 4th June, every proposal read by the organiser, no strict deadline.
