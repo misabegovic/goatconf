@@ -528,3 +528,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #140: site: raster favicons next to the SVG, for search results
    diff: 31 files, +79/-4
    restricted-paths: true
+2026-10-19 merge — PR #141: site: prose keeps the 62ch measure, roomier tags, and reasoned design ignores
+   diff: 28 files, +111/-25
+   restricted-paths: false
