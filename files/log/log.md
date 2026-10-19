@@ -468,3 +468,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #120: tools: bring a PR up to date with main before merging it
    diff: 3 files, +28/-0
    restricted-paths: true
+2026-10-19 merge — PR #121: org: propose one page frame, one marker style and one site build
+   diff: 5 files, +154/-0
+   restricted-paths: false
