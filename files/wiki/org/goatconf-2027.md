@@ -2,9 +2,10 @@
 title: "GoatConf 2027: what is known"
 kind: reference
 status: living
-updated: 2026-10-18
+updated: 2026-10-19
 confidence: medium
 sources:
+  - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md
   - sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md
   - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
@@ -95,7 +96,7 @@ is cited to the sources above; nothing is inferred. Proposals live in the
   the door (source: sources/conversations/2026-10-12--org--first-come-luma-only.md,
   sources/conversations/2026-10-12--org--session-registration-later.md).
 - **Venue facts:** the main hall on the ground floor has 150 seats, as the organiser set on 2026-10-18 for the site, in place of the 120 of 2026-10-14 (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md), a projector, sound and Wi-Fi, no
-  microphone, which the rooms do not need since their acoustics are good for their size (source: sources/conversations/2026-10-18--org--no-microphones-needed.md), and no recording; several other rooms; step-free to the
+  microphone, which the rooms do not need since their acoustics are good for their size (source: sources/conversations/2026-10-18--org--no-microphones-needed.md), and no recording equipment of its own (see Recording below); several other rooms; step-free to the
   main hall and first floor; Saturday or weekday both possible.
 - **Recording:** from 2026-10-18 GoatConf aims to record the sessions in IPI Academy's two big halls, the main hall and the first-floor hall; it is not promised yet, as it depends on the available budget (source: sources/conversations/2026-10-18--org--recording-depends-on-budget.md), and how is (unknown, needs source) (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md). People who come may
   bring a camera or a podcast and record, and a supporter may pay for a crew.
@@ -138,8 +139,12 @@ is cited to the sources above; nothing is inferred. Proposals live in the
 
 - The organiser's own money is capped at **1,000 EUR**, and it is a
   fallback only: "Just in case there are any expenses I need to cover.
-  Normally, I pay for nothing also." It is never spent on food or drink,
-  for anyone: others cover it, or people pay their own.
+  Normally, I pay for nothing also." It is never spent on food or drink
+  for attendees: others cover it, or people pay their own. The one
+  exception is the speakers dinner, which the organiser pays for from
+  2026-10-18 (source: sources/conversations/2026-10-18--org--organiser-pays-speakers-dinner.md).
+  The site says "No food or drink is provided" from 2026-10-19
+  (source: sources/conversations/2026-10-19--org--site-review-decisions.md).
 - **Online supporters** pay the organiser's Austrian business 500 EUR,
   plus VAT where it applies, for online perks only; the money pays event
   costs. Others may pay a supplier directly or give in kind. This replaced

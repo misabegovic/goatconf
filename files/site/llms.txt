@@ -7,9 +7,9 @@
 - Price: tickets are free. Registration asks only for a name and an email, on Luma.
 - Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot. Proposals for 30 minutes are welcome too, and may be paired into one hour. Closer to June, people with a ticket also register for the sessions they want, because each room has only so many seats; everyone with a ticket gets an email with how, and seats nobody registered for go to whoever is at the door.
 - Friday starts half an hour earlier, at 09:30, and ends at 16:30.
-- Saturday has no talks: it is for events people add, such as the Pannonian salt lakes, the goat hunt, walks and meetups.
+- Saturday has no talks: it is the community's day, with the organiser's day at the Pannonian salt lakes and the goat hunt, plus events people add, such as walks and meetups.
 - Talks: an open call; anyone may propose a session, first-time speakers welcome. The organiser reads every proposal.
-- Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), invoiced by the organiser's Austrian business, or pay a supplier directly. A host who funds and organises an accepted event is listed as a supporter too, if they agree. Speakers pay their own travel; a refund only if the budget allows, never promised.
+- Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), invoiced by the organiser's Austrian business, or pay a supplier directly. A host who funds and organises an accepted event is listed as a supporter too, if they agree. Speakers pay their own travel and stay; money from supporters that the event does not need goes first to refunding speakers who pay their own way, after the event, never promised.
 - Recording: GoatConf aims to record the sessions in the two big halls of IPI Academy, the main hall and the first-floor hall; this is not promised yet, as it depends on the available budget. People may also bring a camera or a podcast, and a supporter may pay for a crew.
 
 Register: https://luma.com/event/evt-dU4KbLhpIAm9Y9V
@@ -48,7 +48,7 @@ Follow GoatConf: LinkedIn https://www.linkedin.com/company/goatconf/, X https://
 - [Supporters: GoatConf 2027, 3–5 June, Tuzla](https://goatconf.com/supporters): The companies that make GoatConf 2027 possible, and how to support it online: one level, 500 euro, nothing at the venue.
 - [Events people add: GoatConf 2027](https://goatconf.com/extensions): Workshops, meetups, hackathons, walks and more that the organiser has accepted as part of GoatConf 2027 in Tuzla, each run by its host.
 - [The charter: GoatConf 2027](https://goatconf.com/charter): What GoatConf is and what it will not do: free, small on purpose, supporters online only, and four rules for everything people add.
-- [Code of conduct: GoatConf 2027](https://goatconf.com/code-of-conduct): The code of conduct for GoatConf 2027 in Tuzla, and how to reach the two people who enforce it.
+- [Code of conduct: GoatConf 2027](https://goatconf.com/code-of-conduct): The code of conduct for GoatConf 2027 in Tuzla, and how to make a confidential report.
 - [Accessibility: GoatConf 2027](https://goatconf.com/access): What to expect at GoatConf 2027 if you use a wheelchair, are deaf or hard of hearing, or are blind or have low vision: what we know, what we are still checking, and how to tell us what you need.
 - [Contact: GoatConf 2027](https://goatconf.com/contact): Contact the GoatConf 2027 organiser: questions, supporting the conference, press, data requests and confidential code of conduct reports.
 - [Brand: GoatConf 2027](https://goatconf.com/brand): The GoatConf seal, the goat, the wordmark, colours and type, with files to download for posts, slides, badges and T-shirts.

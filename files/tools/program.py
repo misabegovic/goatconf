@@ -294,7 +294,9 @@ def page() -> str:
         around.extend(ext_item(s, m) for _, s, m, _ in ext[day])
     for day in CORE_DAYS:
         around.extend(ext_item(s, m) for _, s, m, _ in ext.get(day, []))
-    around_html = ('<ul class="slots ext-list">\n' + "\n".join(around) + "\n</ul>") if around else '<p class="ledger-empty">No evening events or meetups yet. Want to run a meetup the evening before, or a dinner after the talks? <a href="add.html">Propose yours</a>.</p>'
+    around_html = ('<section class="album-page wrap" aria-labelledby="h-around">\n'
+                   '  <h2 class="band" id="h-around">Around the talks</h2>\n'
+                   '  <ul class="slots ext-list">\n' + "\n".join(around) + "\n</ul>\n</section>") if around else ""
     sprite = extensions.SHELL.read_text(encoding="utf-8")
     sprite = sprite[sprite.index('<svg width="0"'):sprite.index("</svg>", sprite.index('<svg width="0"')) + 6]
     room_list = "\n".join(f"    <li><strong>{name}</strong>, {seats}</li>" for name, seats in ROOMS.values())
@@ -326,7 +328,7 @@ def page() -> str:
   <div class="page-grid">
     <div class="copy">
       <p>Thursday 3rd and Friday 4th June 2027 are the core days, at IPI Academy, Kulina bana 2, Tuzla. Each day runs on one timetable for every room, so you can change rooms at every break.</p>
-      <p>Every slot is one hour: a talk with time for questions, a panel, or a workshop. After each slot comes a full hour off, in the cafés on Freedom Square under five minutes away. That is when you talk to the person you just heard.</p>
+      <p>Every slot is one hour: a talk with time for questions, a panel, a workshop or something else. Two half-hour sessions can share a slot. After each slot comes a full hour off, in the cafés on Freedom Square under five minutes away. That is when you talk to the person you just heard.</p>
       <p>Thursday runs from 10:00 to 17:00. Friday runs from 09:30 to 16:30.</p>
       <p>GoatConf aims to record the sessions in the two big halls, the main hall and the first-floor hall. This is not promised yet, as it depends on the available budget. You may also bring a camera or a podcast and record, and podcasts are welcome in some of the rooms.</p>
       <p>The slots fill as proposals come in and are accepted. Days, times and rooms are final only once the program is finalised, closer to the event. Until then a session's place on this page can still move. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>
@@ -354,10 +356,7 @@ def page() -> str:
   </ul>
   <p class="copy"><a class="go go--ink" href="add.html">Propose something for Saturday</a></p>
 </section>
-<section class="album-page wrap" aria-labelledby="h-around">
-  <h2 class="band" id="h-around">Around the talks</h2>
-  {around_html}
-</section>
+{around_html}
 </main>
 <footer class="footer">
   <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>

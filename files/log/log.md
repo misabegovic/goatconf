@@ -441,3 +441,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-18 merge — PR #111: site: reserved slots for confirmed speakers, final slots closer to the event
    diff: 32 files, +170/-51
    restricted-paths: true
+2026-10-19 merge — PR #112: site: stale and contradictory lines fixed
+   diff: 26 files, +206/-48
+   restricted-paths: true
