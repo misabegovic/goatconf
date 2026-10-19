@@ -471,7 +471,10 @@ main.prose .cta:last-child { margin: 2.4rem 0 0; }
 .places { list-style: none; padding: 0; margin: 0 0 0.8rem; display: grid; gap: 0.7rem; }
 .prose .places { padding-left: 0; }
 .place { display: grid; grid-template-columns: 2.1rem minmax(0, 1fr); gap: 0.7rem; padding: 0.75rem 0.9rem; border-radius: 0.6rem; background: var(--page-print); scroll-margin-top: 5rem; }
-.place:target { box-shadow: 0 0 0 3px var(--yellow); }
+.place:target { box-shadow: 0 0 0 3px var(--yellow); background: color-mix(in srgb, var(--yellow) 22%, var(--page-print)); }
+/* Map pins: bigger on phones, where the map is narrow; tapping one jumps to its place in the list */
+.map .pin { cursor: pointer; }
+@media (max-width: 47.99rem) { .map .pin__dot { transform: scale(1.6); } }
 .place__num { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 50%; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 80%; }
 #stay-1 .place__num, [id^="stay-"] .place__num { background: var(--album); color: var(--page); }
 .place strong { font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.15rem; color: var(--album); }
