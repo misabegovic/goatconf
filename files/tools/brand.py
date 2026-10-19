@@ -23,8 +23,11 @@ written once from the font by `lettering`; build lays them out from there.
                     font change)
   render            also export PNG and PDF files through headless Chrome
                     (not checked by CI: Chrome's raster output is not byte-stable)
+  icons             only the raster favicons: site/favicon-96.png and
+                    site/favicon.ico, for search engines and browsers that
+                    skip the SVG (render writes them too)
 
-Usage: python3 tools/brand.py <build|lettering|render> [--check]
+Usage: python3 tools/brand.py <build|lettering|render|icons> [--check]
 """
 
 from __future__ import annotations
@@ -328,8 +331,29 @@ def crop(src: Path, dst: Path, w: int, h: int) -> None:
         im.crop((0, 0, w, h)).save(dst, optimize=True)
 
 
+def cmd_icons(_args) -> int:
+    """The raster favicons: Google Search wants a square icon in a multiple of 48 pixels, and some crawlers ask for /favicon.ico."""
+    from PIL import Image  # only the raster exports need Pillow
+    exe = chrome()
+    with tempfile.TemporaryDirectory() as tmp:
+        page = Path(tmp) / "icon.html"
+        page.write_text(f'<html><body style="margin:0;background:transparent"><img src="{(OUT / "coin.svg").as_uri()}" '
+                        'style="width:192px;height:192px;display:block"></body></html>', encoding="utf-8")
+        shot = Path(tmp) / "icon.png"
+        subprocess.run([exe, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--default-background-color=00000000",
+                        "--window-size=192,392", f"--screenshot={shot}", page.as_uri()], check=True, capture_output=True, timeout=120)
+        with Image.open(shot) as im:
+            icon = im.crop((0, 0, 192, 192)).convert("RGBA")
+        icon.resize((96, 96), Image.LANCZOS).save(SITE / "favicon-96.png", optimize=True)
+        print("rendered site/favicon-96.png")
+        icon.save(SITE / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
+        print("rendered site/favicon.ico")
+    return 0
+
+
 def cmd_render(_args) -> int:
     cmd_build(argparse.Namespace(check=False))
+    cmd_icons(_args)
     exe = chrome()
     jobs = [  # (output, source svg, width, height)
         ("seal-1024.png", "seal.svg", 1024, 1024),
@@ -377,8 +401,9 @@ def main(argv=None) -> int:
     b.add_argument("--check", action="store_true")
     sub.add_parser("lettering")
     sub.add_parser("render")
+    sub.add_parser("icons")
     args = ap.parse_args(argv)
-    return {"build": cmd_build, "lettering": cmd_lettering, "render": cmd_render}[args.cmd](args)
+    return {"build": cmd_build, "lettering": cmd_lettering, "render": cmd_render, "icons": cmd_icons}[args.cmd](args)
 
 
 if __name__ == "__main__":
