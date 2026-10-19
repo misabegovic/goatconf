@@ -16,7 +16,7 @@ talk_about: |
   This talk is about the engineering lessons from that work, including the approaches that failed. We will look at how to decide what belongs in the common ontology and what must remain language-specific; how to establish identity across files and repositories; how to distinguish measured facts from inference; and why unresolved relationships and extraction coverage must be modeled explicitly rather than silently omitted.
 
   You will leave with a practical way to think about structural models of software - whether you are building developer tools, architecture checks, code intelligence for agents, or simply trying to understand a large polyglot system. No knowledge of ontologies, graph databases, or Enola is required.
-talk_area: engineering
+talk_area: [engineering, data]
 talk_for: anyone working with real-life codebases
 order: 3
 publish: yes

@@ -2,9 +2,10 @@
 title: "Speaker: Dejan Menges"
 kind: entity
 status: living
-updated: 2026-10-17
+updated: 2026-10-19
 confidence: medium
 sources:
+  - sources/conversations/2026-10-19--org--second-areas-for-dejan-and-christoph.md
   - sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md
   - sources/conversations/2026-10-17--org--dejan-talk.md
   - sources/conversations/2026-10-17--org--dejan-photo-and-role.md
@@ -32,7 +33,7 @@ and his last conference say, and what bears on GoatConf.
 - **Who:** a staff engineer at Vinted, based in Berlin, with "more than twenty-five years spent designing distributed systems" (source: sources/web/speakers/menges-dev-2026-10-14.md).
 - **Languages he speaks in:** English, German, Bosnian, Croatian and Serbian (source: sources/web/speakers/menges-dev-2026-10-14.md).
 - **Topics he offers organisers:** monolith to event-driven platform; multi-region architecture; deterministic tooling for AI-assisted development; architecture as something you can query (source: sources/web/speakers/menges-dev-2026-10-14.md).
-- **His GoatConf talk:** "Teaching Twenty Languages to Describe One System", a talk on the Engineering track: the lessons, failures included, from giving Go, TypeScript, Swift, Flutter, Terraform and API specifications one shared vocabulary in Enola; for "anyone working with real life codebases" (source: sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md). On his page in full, his four paragraphs and who it is for, verbatim (source: sources/conversations/2026-10-17--org--dejan-talk.md).
+- **His GoatConf talk:** "Teaching Twenty Languages to Describe One System", a talk on the Engineering track: the lessons, failures included, from giving Go, TypeScript, Swift, Flutter, Terraform and API specifications one shared vocabulary in Enola; for "anyone working with real life codebases" (source: sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md). On the site it shows Engineering and Data, the organiser's choice of 2026-10-19 (source: sources/conversations/2026-10-19--org--second-areas-for-dejan-and-christoph.md). On his page in full, his four paragraphs and who it is for, verbatim (source: sources/conversations/2026-10-17--org--dejan-talk.md).
 - **Slot:** none yet, on the organiser's word of 2026-10-17; he prefers Thursday 3 June (sources: sources/conversations/2026-10-17--org--dejan-talk.md, sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md).
 - **Travel:** he does not need travel support (source: sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md).
 - **Last talk:** "Beyond the Monolith: Designing an Event-Driven Platform Across Continents", Compass AI & Tech Summit 2026, Budapest, 2 October 2026, rated Intermediate+ (source: sources/web/speakers/compass-summit-dejan-menges-2026-10-14.md).

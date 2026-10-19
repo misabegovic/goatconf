@@ -2,9 +2,10 @@
 title: "Speaker: Christoph Lipautz"
 kind: entity
 status: living
-updated: 2026-10-15
+updated: 2026-10-19
 confidence: medium
 sources:
+  - sources/conversations/2026-10-19--org--second-areas-for-dejan-and-christoph.md
   - sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md
   - sources/conversations/2026-10-15--org--christoph-lipautz.md
   - sources/conversations/2026-10-15--org--christoph-photo-in-colour.md
@@ -41,7 +42,7 @@ the sources say and what bears on GoatConf.
   change" and on "well-established software development best
   practices and how essential they are for delivering fast,
   high-quality results" in the era of agent-based programming.
-  Discipline Engineering; he prefers Thursday 3 June (source: the talk
+  Discipline Engineering; on the site his talk shows Engineering and AI/ML, the organiser's choice of 2026-10-19 (source: sources/conversations/2026-10-19--org--second-areas-for-dejan-and-christoph.md); he prefers Thursday 3 June (source: the talk
   form). No slot is picked yet; the title and his words on the session
   show on his page and card, day and time to be announced, and come off
   the record once a program record carries the session (source:
