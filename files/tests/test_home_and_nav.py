@@ -83,11 +83,11 @@ def test_home_plans_eight_places_and_invites_proposals_for_the_open_ones(monkeyp
         return {f"s{i}": ({"name": f"Speaker {i}", "order": i + 1}, "Bio.") for i in range(n)}
     monkeypatch.setattr(speakers, "speakers", lambda: people(6))
     html = home.speakers_block()
-    assert html.count("sticker--mini") == 6 and html.count("slot--open") == 2
+    assert html.count("sticker--speaker") == 6 and html.count("slot--open") == 2
     assert html.count('href="talk.html"') == 2 and "Meet the speakers" in html
     monkeypatch.setattr(speakers, "speakers", lambda: people(9))
     html = home.speakers_block()
-    assert html.count("sticker--mini") == 8 and "slot--open" not in html and "All 9 speakers" in html
+    assert html.count("sticker--speaker") == 8 and "slot--open" not in html and "All 9 speakers" in html
     monkeypatch.setattr(speakers, "speakers", lambda: {})
     assert "The first speaker could be you" in home.speakers_block()
 

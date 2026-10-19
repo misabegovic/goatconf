@@ -164,19 +164,28 @@ def test_role_shows_everywhere_the_name_does(tmp_path, monkeypatch):
     assert '<span class="lede__role">Engineer at A&amp;B</span>' in page
     assert 'content="Ana Example (Engineer at A&amp;B) speaks at GoatConf 2027' in page
     home = importlib.reload(importlib.import_module("home"))
-    assert '<small class="sticker__role">Engineer at A&amp;B</small>' in home.speaker_sticker(0, "ana-example", speakers.speakers()["ana-example"][0])
+    assert '<span class="speaker__role">Engineer at A&amp;B</span>' in home.speakers_block()
 
 
 
-def test_home_sticker_shows_the_talk_title_like_the_speakers_page(tmp_path, monkeypatch):
+def card(html: str) -> str:
+    """A speaker's card, without what differs by page: its number, its tilt and the speakers page's anchor."""
+    import re
+    li = re.search(r'<li class="sticker sticker--speaker".*?</li>', html, re.S).group(0)
+    return re.sub(r' id="[^"]*"| style="[^"]*"|<span class="num">\d+</span>', "", li)
+
+
+def test_the_home_page_shows_the_same_speaker_card_as_the_speakers_page(tmp_path, monkeypatch):
     _, speakers = setup(tmp_path, monkeypatch)
     home = importlib.reload(importlib.import_module("home"))
-    assert '<small class="sticker__talk">Talk: Salt, goats and servers</small>' in home.speakers_block()
+    assert card(home.speakers_block()) == card(speakers.speakers_page())
+    assert "Talk, Thursday 3rd June at 12:00" in card(home.speakers_block())
+    assert 'id="ana-example"' in speakers.speakers_page() and 'id="ana-example"' not in home.speakers_block()
     (tmp_path / "program" / "s.md").unlink()
-    (tmp_path / "speakers" / "ana-example.md").write_text(SPEAKER.replace("publish: yes\n", "publish: yes\ntalk: Rails & Goats\n"), encoding="utf-8")
-    assert "Talk: Rails &amp; Goats" in speakers.speakers_page()
-    assert '<small class="sticker__talk">Talk: Rails &amp; Goats</small>' in home.speakers_block()
-    assert "sticker__talk" not in home.speaker_sticker(0, "ana-example", {"name": "Ana Example"})
+    (tmp_path / "speakers" / "ana-example.md").write_text(FLAVORED, encoding="utf-8")
+    assert card(home.speakers_block()) == card(speakers.speakers_page())
+    assert '<span class="tag tag--area">Business of software</span>' in home.speakers_block()
+    assert '<b>For:</b> founders before their first hire' in home.speakers_block()
 
 
 def test_role_must_be_one_short_line(tmp_path, monkeypatch):

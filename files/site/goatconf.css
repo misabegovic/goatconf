@@ -374,11 +374,6 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .day__hours { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.35rem; line-height: 1.1; color: var(--page); font-variant-numeric: tabular-nums; }
 .slots--mini { grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; margin-bottom: 1.4rem; }
 @media (max-width: 47.99rem) { .slots--mini { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.sticker--mini { display: block; text-decoration: none; }
-.sticker--mini img, .sticker--mini .speaker__goat { aspect-ratio: 1; width: 100%; object-fit: cover; border-radius: 0.35rem 0.35rem 0 0; }
-.sticker__name { display: block; padding: 0.45rem 0.6rem 0.5rem; border-radius: 0 0 0.35rem 0.35rem; background: var(--album); color: var(--page); font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.05rem; line-height: 1; }
-.sticker__role { display: block; margin-top: 0.3rem; font-family: var(--text); font-weight: 600; font-stretch: 100%; text-transform: none; font-size: 0.78rem; line-height: 1.25; opacity: 0.9; }
-.sticker__talk { display: block; margin-top: 0.25rem; font-family: var(--text); font-weight: 400; font-stretch: 100%; text-transform: none; font-size: 0.74rem; line-height: 1.25; opacity: 0.85; }
 .money-supporters { margin-top: 2.2rem; }
 .slots--supporters-home { grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr)); list-style: none; margin-bottom: 1.2rem; }
 .supporter-chip { display: grid; gap: 0.5rem; padding: 0.9rem; border-radius: 0.6rem; background: var(--page-print); text-decoration: none; color: var(--ink-soft); }
@@ -555,9 +550,6 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .sticker--speaker .speaker__photo figcaption { font-size: 1.35rem; padding: 0.55rem 0.7rem 0.6rem; }
   .sticker--speaker .speaker__body { padding: 0 0.6rem 0.5rem; font-size: 0.95rem; }
   .speaker__first { font-size: 0.9rem; }
-  .sticker--mini .sticker__name { font-size: 1.35rem; padding: 0.6rem 0.7rem 0.65rem; }
-  .sticker--mini .sticker__role { font-size: 0.92rem; }
-  .sticker--mini .sticker__talk { font-size: 0.88rem; }
   /* Two identical open slots in one column read as a repeat: keep the first */
   .slots--mini > li:has(.slot--open) ~ li:has(.slot--open) { display: none; }
 }
