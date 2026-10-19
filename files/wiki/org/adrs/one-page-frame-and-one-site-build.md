@@ -126,6 +126,33 @@ template engine and no build step for publishing. Within that:
 - Should the one build also render the share cards and the brand files? They
   need Chrome, so the proposal leaves them out, as their own commands.
 
+## Build notes
+
+Built on 2026-10-19 in five pull requests, each merged once the local CI
+passed (source: sources/conversations/2026-10-19--org--site-frame-adr-approved.md):
+
+- **#125, the HTML check:** `tools/site_lint.py`; the site passed it as it
+  stood.
+- **#126, shared helpers:** `tools/sitelib.py` reads records and
+  frontmatter, escapes, prunes and writes or checks pages for the program,
+  events and speakers generators; their pages were unchanged.
+- **#127, the page frame:** `tools/frame.py` writes every page's footer, the
+  home page's back cover links and the goat sprite, which now sits only on
+  the two pages that use it; full-page screenshots of every page at 360, 768
+  and 1280 pixels matched before and after.
+- **#128, one build and one marker style:** `tools/site.py build|check`, and
+  `tools/blocks.py` for the `<!-- gen:NAME tools/TOOL.py -->` markers every
+  tool now uses; the local CI runs `site.py check` in place of eleven
+  separate steps.
+- **#129, the day times:** they come only from the program's day plan,
+  including the register page's day list and the talk page's slot times,
+  with a test that a changed day reaches every place.
+
+On the open questions: the 404 page gets its footer from the frame but keeps
+its own head; the HTML check fails on what it finds and does not yet warn on
+missing image sizes; and the one build leaves the share cards and brand
+files out, as proposed.
+
 ## Related
 
 - [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md)
