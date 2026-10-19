@@ -459,3 +459,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #117: site: a lighter site
    diff: 152 files, +1130/-136
    restricted-paths: true
+2026-10-19 merge — PR #118: site: a tidier stylesheet
+   diff: 27 files, +33/-65
+   restricted-paths: false
