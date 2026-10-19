@@ -480,3 +480,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #124: org: accept the ADR for one page frame and one site build
    diff: 6 files, +36/-8
    restricted-paths: false
+2026-10-19 merge — PR #125: tools: the local CI checks the site's HTML
+   diff: 7 files, +221/-8
+   restricted-paths: true

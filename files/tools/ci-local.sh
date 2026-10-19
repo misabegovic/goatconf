@@ -40,6 +40,7 @@ run "top bar current" "$PY" tools/nav.py check
 run "home page current" "$PY" tools/home.py build --check
 run "travel page places current" "$PY" tools/places.py build --check
 run "photos have their WebP copies, and pages use them" "$PY" tools/images.py check
+run "site HTML (tags, ids, links, images, landmarks)" "$PY" tools/site_lint.py check
 run "agent files current (llms.txt, program.json, calendar, sitemap)" "$PY" tools/agents.py build --check
 run "form links filled (every merge to main publishes)" "$PY" tools/formlinks.py check --publish
 run "site form links current" "$PY" tools/formlinks.py check
