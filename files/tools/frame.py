@@ -94,6 +94,7 @@ def page(canonical: str, title: str, description: str, photo, h1: str, lede: str
 <meta name="theme-color" content="#0b3d91">
 <link rel="canonical" href="https://goatconf.com/{canonical}">{image}
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-96.png" sizes="96x96" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="goatconf.css">
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver"in window)document.documentElement.classList.add("js-peel")</script>
