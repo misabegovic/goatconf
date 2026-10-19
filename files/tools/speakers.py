@@ -27,6 +27,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extensions  # noqa: E402
+import images  # noqa: E402
 import program  # noqa: E402
 import meta  # noqa: E402
 import nav  # noqa: E402
@@ -539,6 +540,7 @@ def cmd_build(args) -> int:
                           f"run python3 tools/shareables.py render --only supporter-{slug}")
                     stale += 1
     for path, want in pages.items():
+        want = images.wrap(want)
         if args.check:
             have = path.read_text(encoding="utf-8") if path.exists() else ""
             if have != want:

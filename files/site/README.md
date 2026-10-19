@@ -33,6 +33,18 @@ three parts that `tools/home.py build` fills from the records: the days
 (from `DAY_PLAN` in `tools/program.py`), the speakers and the supporters;
 it also renumbers the album's stickers in order. The local CI checks both.
 
+## Photos and fonts
+
+`tools/images.py build` writes WebP copies of every photo a page shows from
+`img/`, at 480, 800 and 1200 pixels wide, and wraps each `<img>` in a
+`<picture>` that lists them; the generators wrap their own pages, and the
+local CI checks that every photo has its copies. Run it after adding a
+photo. `tools/fonts.py build` publishes the display face trimmed to the
+weights and widths the site uses, from the full files in `assets/fonts/`;
+`tools/brand.py lettering` writes the seal's lettering as outlines into
+`assets/brand/lettering.json`. Both need the asset tools in
+`requirements-dev.txt`.
+
 ## Places to eat and stay
 
 `tools/places.py build` draws the two maps on the travel page from

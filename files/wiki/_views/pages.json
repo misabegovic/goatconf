@@ -2005,12 +2005,13 @@
       "title": "Images of Tuzla for GoatConf: free to use, ask first, and gaps",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-13",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "depends_on": [
         "org/tuzla.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
         "sources/web/images/food-photos-chosen-2026-10-13.md",
         "sources/conversations/2026-10-13--org--sarma-instead-of-ustipci.md",
@@ -2073,7 +2074,7 @@
         "sources/web/images/burek-nisici.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 8120
+      "tokens": 8211
     },
     {
       "path": "org/tuzla.md",

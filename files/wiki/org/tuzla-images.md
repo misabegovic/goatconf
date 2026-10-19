@@ -2,11 +2,12 @@
 title: "Images of Tuzla for GoatConf: free to use, ask first, and gaps"
 kind: reference
 status: living
-updated: 2026-10-13
+updated: 2026-10-19
 confidence: medium
 depends_on:
   - org/tuzla.md
 sources:
+  - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
   - sources/web/images/food-photos-chosen-2026-10-13.md
   - sources/conversations/2026-10-13--org--sarma-instead-of-ustipci.md
@@ -327,3 +328,5 @@ Uštipci then gave way to `site/img/food-sarma.jpg` (sarma in a pot, by BiHVolim
 ## Food photos chosen one by one, 2026-10-13
 
 The organiser replaced all twelve food photos on the home page with ones picked from sheets of candidates, dish by dish (source: sources/conversations/2026-10-13--org--food-photos-one-by-one.md). They are **not freely licensed**: they come from recipe, news and blog sites, Pinterest and Tuzla restaurants' Korpa.ba menus, and are used on the organiser's decision, who takes one down if its owner asks. Every image and the page it came from is in `sources/web/images/food-photos-chosen-2026-10-13.md`. The earlier Commons photos for grah (pasulj) and burek (Nišići) are no longer on the site; the Commons licence records above stay as history.
+
+On 2026-10-19, on the organiser's call, the eleven photos no page showed came off the site: their copies under `site/img/` were removed, and the originals stay in `assets/images/` (source: sources/conversations/2026-10-19--org--site-review-decisions.md). The site now serves WebP copies of each photo it shows, written by `tools/images.py`.

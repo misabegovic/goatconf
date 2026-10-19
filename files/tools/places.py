@@ -28,6 +28,9 @@ from pathlib import Path
 
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import images  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "places" / "places.yml"
 OSM = ROOT / "sources" / "web" / "osm" / "tuzla-centre-ways-2026-10-12.json"
@@ -261,7 +264,7 @@ def main(argv=None) -> int:
     b.add_argument("--check", action="store_true")
     b.add_argument("--all", action="store_true")
     a = ap.parse_args(argv)
-    want = page(a.all)
+    want = images.wrap(page(a.all))
     if a.check:
         if PAGE.read_text(encoding="utf-8") != want:
             print("site/travel.html places are out of date: run python3 tools/places.py build")

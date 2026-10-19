@@ -29,6 +29,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extensions  # noqa: E402
+import images  # noqa: E402
 import meta  # noqa: E402
 import nav  # noqa: E402
 
@@ -421,6 +422,7 @@ def cmd_build(args) -> int:
                 old.unlink()
                 print(f"removed site/{old.name}")
     for path, want in pages.items():
+        want = images.wrap(want)
         if args.check:
             have = path.read_text(encoding="utf-8") if path.exists() else ""
             if have != want:

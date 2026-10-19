@@ -35,7 +35,7 @@ home described above.
 - `program/`, `speakers/`, `supporters/`: one file per accepted session, speaker and supporter, built into the site (each folder has a `README.md`).
 - `places/places.yml`: the places to eat and stay shown on the travel page.
 - `forms.yml`: the addresses of the Google Forms and the Luma event the site links to.
-- `tools/`: `brain.py` (validate, check, views, search, stats), the generators that build and check parts of the site (program, speakers, extensions, places, navigation, link previews, files for agents), hooks, templates, CI.
+- `tools/`: `brain.py` (validate, check, views, search, stats), the generators that build and check parts of the site (program, speakers, extensions, places, navigation, link previews, files for agents, WebP photos, the trimmed display face), hooks, templates, CI.
 - `.claude/`: skills, slash commands, agent personas, settings. Sessions start at the repository root, whose `.claude/settings.json` links to the settings here.
 
 ## Getting started

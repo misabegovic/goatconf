@@ -10,7 +10,7 @@ as each speaker's page does with their card.
   apply           add or refresh the tags in every site/*.html
   check           fail if a page's tags are missing or out of date
 
-It also stamps the stylesheet and scripts with a short hash of their
+It also preloads the display face, and stamps the stylesheet and scripts with a short hash of their
 contents (goatconf.css?v=1a2b3c4d), so phones fetch them again whenever they
 change instead of keeping an old copy for ten minutes.
 
@@ -63,6 +63,9 @@ def tags(text: str) -> str:
 
 
 ASSETS = ("goatconf.css", "album.js")
+# The display face every page's title is set in: fetched early, so the title
+# does not first show in a wider fallback and then jump.
+PRELOAD = '<link rel="preload" href="fonts/bricolage-wdth-latin.woff2" as="font" type="font/woff2" crossorigin>\n'
 
 
 def version(name: str) -> str:
@@ -80,12 +83,12 @@ def stamp(text: str) -> str:
 def tag(text: str) -> str:
     """Return the page with its link-preview block added or refreshed, just before the stylesheet,
     and its stylesheet and scripts stamped with their current version."""
-    text = BLOCK.sub("", text)
+    text = BLOCK.sub("", text).replace(PRELOAD, "")
     text = re.sub(r'<link rel="stylesheet" href="goatconf\.css(\?v=[0-9a-f]+)?">', '<link rel="stylesheet" href="goatconf.css">', text)
     anchor = '<link rel="stylesheet" href="goatconf.css">'
     if anchor not in text:
         raise ValueError("no goatconf.css stylesheet link to put the link-preview tags before")
-    return stamp(text.replace(anchor, tags(text) + anchor, 1))
+    return stamp(text.replace(anchor, tags(text) + PRELOAD + anchor, 1))
 
 
 def pages():

@@ -27,6 +27,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extensions  # noqa: E402
+import images  # noqa: E402
 import program  # noqa: E402
 import speakers  # noqa: E402
 
@@ -204,7 +205,7 @@ def main(argv=None) -> int:
     b = sub.add_parser("build")
     b.add_argument("--check", action="store_true")
     args = ap.parse_args(argv)
-    want = page()
+    want = images.wrap(page())
     have = PAGE.read_text(encoding="utf-8")
     if args.check:
         if want != have:
