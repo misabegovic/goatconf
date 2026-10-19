@@ -456,3 +456,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #116: site: a 404 page, and the page structure fixed
    diff: 33 files, +187/-111
    restricted-paths: true
+2026-10-19 merge — PR #117: site: a lighter site
+   diff: 152 files, +1130/-136
+   restricted-paths: true
