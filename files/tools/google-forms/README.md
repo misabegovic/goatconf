@@ -53,6 +53,16 @@ what the message is about (a question, a code of conduct report, supporting
 GoatConf, press, my data, or other), and then optionally a name and an email
 for an answer, the message (required), and a news opt-in.
 
+## Wording brought in line, 2026-10-19
+
+After the site review the three forms' descriptions, the talk form's travel
+question and the event form's start question were reworded to match the
+site: "we" for the organiser, something else and half-hour sessions, the
+speakers' travel refunds from supporters' spare money, the speakers dinner
+the organiser pays for, events from 2 to 6 June 2027, and code of conduct
+reports read by the organiser alone. The wording is in
+`sources/conversations/2026-10-19--org--forms-and-luma-match-the-site.md`.
+
 ## After a response
 
 - **A talk is accepted:** add a record to `files/program/` (see its
