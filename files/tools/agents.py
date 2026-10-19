@@ -58,7 +58,7 @@ FACTS = [
     "Place: IPI Academy, Kulina bana 2, 75000 Tuzla, Bosnia and Herzegovina, next to Freedom Square (Trg slobode).",
     "Price: tickets are free. Registration asks only for a name and an email, on Luma.",
     "Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot. Proposals for 30 minutes are welcome too, and may be paired into one hour. Closer to June, people with a ticket also register for the sessions they want, because each room has only so many seats; everyone with a ticket gets an email with how, and seats nobody registered for go to whoever is at the door.",
-    "Friday starts half an hour earlier, at 09:30, and ends at 16:30.",
+    "Friday starts half an hour earlier, at {fri[slots][0]}, and ends at {fri[end]}.".format(fri=program.DAY_PLAN[program.dt.date(2027, 6, 4)]),
     "Saturday has no talks: it is the community's day, with the organiser's day at the Pannonian salt lakes and the goat hunt, plus events people add, such as walks and meetups.",
     "Talks: an open call; anyone may propose a session, first-time speakers welcome. We read every proposal.",
     "Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), arranged with the organiser at info@muhamed.at, or pay a supplier directly. A host who funds and organises an accepted event is listed as a supporter too, if they agree. Speakers pay their own travel and stay; money from supporters that the event does not need goes first to refunding speakers who pay their own way, after the event, never promised.",
@@ -135,7 +135,7 @@ def days() -> list[dict]:
     for day, plan in program.DAY_PLAN.items():
         out.append({"date": day.isoformat(), "name": program.CORE_DAYS[day], "welcome": plan["welcome"], "end": plan["end"],
                     "slots": list(plan["slots"]), "after_each_slot": {s: plan["breaks"][s] for s in plan["slots"] if s in plan["breaks"]},
-                    "note": plan["note"]})
+                    "note": program.day_note(plan)})
     out.append({"date": program.COMMUNITY_DAY[0].isoformat(), "name": program.COMMUNITY_DAY[1],
                 "note": "No talks. The community's day: the organiser's lake day and goat hunt, plus events people add."})
     return out
@@ -217,7 +217,7 @@ def calendar() -> str:
                   f"DTSTART;TZID=Europe/Sarajevo:{stamp}T{plan['welcome'].replace(':', '')}00",
                   f"DTEND;TZID=Europe/Sarajevo:{stamp}T{plan['end'].replace(':', '')}00",
                   f"SUMMARY:GoatConf 2027: {program.CORE_DAYS[day]}", f"LOCATION:{where}",
-                  f"DESCRIPTION:{ics_text(plan['note'] + ' The program: ' + url('program.html'))}",
+                  f"DESCRIPTION:{ics_text(program.day_note(plan) + ' The program: ' + url('program.html'))}",
                   f"URL:{url('program.html')}", "END:VEVENT"]
     sat = program.COMMUNITY_DAY[0]
     lines += ["BEGIN:VEVENT", f"UID:{sat.isoformat()}@goatconf.com", f"DTSTAMP:{STAMP}",

@@ -34,7 +34,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import brand  # noqa: E402
 import extensions  # noqa: E402
+import program  # noqa: E402
 import speakers  # noqa: E402
+
+# the core days' times, from the program's day plan
+THURSDAY, FRIDAY = (program.DAY_PLAN[d] for d in program.CORE_DAYS)
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
@@ -130,9 +134,9 @@ POSTS = {
     "last-call": ("Last call<br>for sessions", "The rooms are filling up. Propose yours now."),
     "before-you-travel": ("Before<br>you travel", "Papers, phone, health, money: a short checklist."),
     "pick-your-sessions": ("Pick your<br>sessions", "Each room has only so many seats."),
-    "see-you-thursday": ("See you<br>Thursday", "Welcome at 09:45, IPI Academy, Kulina bana 2, Tuzla."),
+    "see-you-thursday": ("See you<br>Thursday", f"Welcome at {THURSDAY['welcome']}, IPI Academy, Kulina bana 2, Tuzla."),
     "day-one": ("Day<br>one", "Seven rooms, four sessions each, an hour off after every one."),
-    "day-two": ("Day<br>two", "Starting at 09:30, welcome at 09:15."),
+    "day-two": ("Day<br>two", f"Starting at {FRIDAY['slots'][0]}, welcome at {FRIDAY['welcome']}."),
     "community-day": ("The<br>community's<br>day", "The salt lakes, the goat hunt, and the evening meetup."),
     "thank-you": ("Thank<br>you", "To everyone who spoke, supported, hosted, volunteered and came."),
 }

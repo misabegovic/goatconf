@@ -4,10 +4,11 @@
 A session is one Markdown file with YAML frontmatter under program/. The two
 core days, Thursday 3rd and Friday 4th June 2027, run on one shared
 timetable in every room at IPI Academy at once: four one-hour slots, each of
-the first three followed by an hour off. Thursday runs 10:00 to 17:00; Friday
-runs 09:30 to 16:30 (the reason is in the comment on DAY_PLAN). DAY_PLAN
-holds each day's times. Saturday 5th June is
-for the community. Events added around the talks come from extensions/.
+the first three followed by an hour off. DAY_PLAN holds each day's times
+(why Friday starts earlier is in the comment on it), and every page that
+gives them takes them from there: the program page, the day list on the
+register page and the slot times on the talk page, which this script writes
+too. Saturday 5th June is for the community. Events added around the talks come from extensions/.
 
   check [files...]   check every record (or the named ones). Exit 1 if any fails.
   build [--check]    write site/program.html and a page for each session
@@ -31,6 +32,7 @@ import extensions  # noqa: E402
 import images  # noqa: E402
 import sitelib  # noqa: E402
 import frame  # noqa: E402
+import blocks  # noqa: E402
 import meta  # noqa: E402
 import nav  # noqa: E402
 
@@ -47,7 +49,7 @@ COMMUNITY_DAY = (dt.date(2027, 6, 5), "Saturday 5th June")
 DAY_PLAN = {
     dt.date(2027, 6, 3): {
         "welcome": "09:45", "end": "17:00",
-        "note": "Four one-hour slots in every room, an hour off after each. Welcome at 09:45.",
+        "note": "Four one-hour slots in every room, an hour off after each.",
         "slots": ("10:00", "12:00", "14:00", "16:00"),
         "breaks": {"10:00": "Hour off, in the cafés on Freedom Square", "12:00": "Lunch in town, one hour",
                    "14:00": "Hour off, in the cafés on Freedom Square"},
@@ -56,7 +58,7 @@ DAY_PLAN = {
     # (podne in Tuzla is at 12:44 on 4 June 2027, per the Vaktija).
     dt.date(2027, 6, 4): {
         "welcome": "09:15", "end": "16:30",
-        "note": "Four slots, starting half an hour earlier than Thursday. Welcome at 09:15.",
+        "note": "Four slots, starting half an hour earlier than Thursday.",
         "slots": ("09:30", "11:30", "13:30", "15:30"),
         "breaks": {"09:30": "Hour off, in the cafés on Freedom Square",
                    "11:30": "Lunch in town, one hour",
@@ -306,7 +308,7 @@ def page() -> str:
     <div class="copy">
       <p>Thursday 3rd and Friday 4th June 2027 are the core days, at IPI Academy, Kulina bana 2, Tuzla. Each day runs on one timetable for every room, so you can change rooms at every break.</p>
       <p>Every slot is one hour: a talk with time for questions, a panel, a workshop or something else. Two half-hour sessions can share a slot. After each slot comes a full hour off, in the cafés on Freedom Square under five minutes away. That is when you talk to the person you just heard.</p>
-      <p>Thursday runs from 10:00 to 17:00. Friday runs from 09:30 to 16:30.</p>
+      <p>{' '.join(f'{CORE_DAYS[d].split()[0]} runs from {day_hours(d)}.' for d in CORE_DAYS)}</p>
       <p>GoatConf aims to record the sessions in the two big halls, the main hall and the first-floor hall. This is not promised yet, as it depends on the available budget. You may also bring a camera or a podcast and record, and podcasts are welcome in some of the rooms.</p>
       <p>The slots fill as proposals come in and are accepted. Days, times and rooms are final only once the program is finalised, closer to the event. Until then a session's place on this page can still move. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>
     </div>
@@ -370,8 +372,44 @@ def session_page(key, meta, body) -> str:
                             "files/tools/program.py build from files/program/*.md")
 
 
+def day_hours(day) -> str:
+    """A core day's hours, from its first slot to its end: "10:00 to 17:00"."""
+    plan = DAY_PLAN[day]
+    return f"{plan['slots'][0]} to {plan['end']}"
+
+
+def day_note(plan) -> str:
+    return f"{plan['note']} Welcome at {plan['welcome']}."
+
+
+def register_days() -> str:
+    """The days on the register page."""
+    rows = []
+    for i, (day, label) in enumerate(CORE_DAYS.items()):
+        where = ", IPI Academy, Kulina bana 2, Tuzla" if i == 0 else ""
+        rows.append(f"<li><strong>{label} 2027:</strong> talks, {day_hours(day)}{where}. Welcome at {DAY_PLAN[day]['welcome']}.</li>")
+    rows.append(f'<li><strong>{COMMUNITY_DAY[1]} 2027:</strong> the community day. Each event there is run by its host, '
+                'who says how to join. See the <a href="program.html">program</a>.</li>')
+    return "\n".join(rows)
+
+
+def slot_times() -> str:
+    """Each core day's slot times, for the talk page."""
+    return "<br>".join(f"{label} 2027: {', '.join(DAY_PLAN[d]['slots'][:-1])} or {DAY_PLAN[d]['slots'][-1]}."
+                       for d, label in CORE_DAYS.items())
+
+
+# Hand-written pages that carry a part of the day plan, and the part.
+DAY_PARTS = {"register.html": ("register-days", register_days), "talk.html": ("slot-times", slot_times)}
+
+
 def all_pages() -> dict:
     out = {PAGE: nav.place(meta.tag(page()), "program.html")}
+    for name, (part, make) in DAY_PARTS.items():
+        path = PAGE.parent / name
+        if not path.exists():  # a scratch site in the tests has only the program
+            continue
+        out[path] = blocks.fill(path.read_text(encoding="utf-8"), part, "tools/program.py", make(), f"site/{name}")
     table, _ = sessions()
     for key, (m, body) in table.items():
         out[PAGE.parent / page_name(m)] = nav.place(meta.tag(session_page(key, m, body)), nav.section(page_name(m)))

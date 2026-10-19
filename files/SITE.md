@@ -37,6 +37,13 @@ The share cards and brand files stay their own commands (they need Chrome).
   view), `favicon.svg`, `fonts/` (self-hosted, SIL Open Font
   License, see `fonts/LICENSE.md`).
 
+## The day times
+
+The core days' times live only in `DAY_PLAN` in `tools/program.py`. The
+program page, the register page's day list, the talk page's slot times, the
+home page's days, llms.txt, the calendar file and the share cards all take
+them from there; change a time there and run `tools/site.py build`.
+
 ## Navigation and the home page
 
 The footer, the home page's back cover links and the goat sprite come from
