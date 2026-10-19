@@ -77,7 +77,7 @@ def days() -> str:
     ext = program.extension_days()
     items = []
     for i, (day, plan) in enumerate(program.DAY_PLAN.items()):
-        lines = (f'<small>{plan["note"]}</small><small class="day__off">{hours_off(plan)}</small>'
+        lines = (f'<small>{program.day_note(plan)}</small><small class="day__off">{hours_off(plan)}</small>'
                  f'<small class="day__evening">{EVENING}</small>{added(ext.get(day, []))}')
         items.append(day_sticker(i, day, program.CORE_DAYS[day], f'{plan["slots"][0]} to {plan["end"]}', lines))
     sat, label = program.COMMUNITY_DAY
