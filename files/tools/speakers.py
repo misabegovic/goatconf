@@ -48,7 +48,7 @@ TALK_WORDS = 300
 HOLD_CHARS = 80
 # The session's format, area and who it is for, while it has no slot; the
 # program record carries them as format, area and for once it has one.
-TALK_EXTRAS = ("talk_format", "talk_area", "talk_for")
+TALK_EXTRAS = ("talk_format", "talk_format_name", "talk_area", "talk_for")
 esc = program.esc
 
 
@@ -134,7 +134,7 @@ def check_speaker(path: Path, known_supporters):
             problems.append(f"talk_about is longer than {TALK_WORDS} words")
     if meta.get("talk_format") is not None and meta["talk_format"] not in program.FORMATS:
         problems.append(f"talk_format must be one of: {', '.join(program.FORMATS)}")
-    problems += program.flavor_problems(meta, "talk_area", "talk_for")
+    problems += program.flavor_problems(meta, "talk_area", "talk_for") + program.format_name_problems(meta, "talk_format", "talk_format_name")
     if not meta.get("talk") and any(meta.get(k) is not None for k in TALK_EXTRAS):
         problems.append(f"{', '.join(k for k in TALK_EXTRAS if meta.get(k) is not None)} need talk: the title of the session they describe")
     if "hold" in meta and (not isinstance(meta["hold"], str) or not meta["hold"].strip() or "\n" in meta["hold"] or len(meta["hold"]) > HOLD_CHARS):
@@ -254,18 +254,18 @@ def sessions_by_speaker(detail=False):
     for (day, start, room), (meta, body) in sorted(table.items(), key=lambda kv: (kv[0][0], kv[0][1], kv[0][2])):
         for slug in meta.get("profiles") or []:
             if detail:
-                out.setdefault(slug, []).append({"day": day, "start": start, "room": program.ROOMS[room][0], "format": program.FORMATS[meta["format"]],
+                out.setdefault(slug, []).append({"day": day, "start": start, "room": program.ROOMS[room][0], "format": program.format_label(meta),
                                                  "title": meta["title"], "about": body.split("\n\n")[0].strip(), "signup": meta.get("signup"),
                                                  "area": meta.get("area"), "for": meta.get("for"),
                                                  "page": program.page_name(meta)})
             else:
-                out.setdefault(slug, []).append(f"{program.FORMATS[meta['format']]}, {program.CORE_DAYS[day]} at {start}, {program.ROOMS[room][0]}: {esc(meta['title'])}")
+                out.setdefault(slug, []).append(f"{esc(program.format_label(meta))}, {program.CORE_DAYS[day]} at {start}, {program.ROOMS[room][0]}: {esc(meta['title'])}")
     return out
 
 
 def talk_format(meta) -> str:
-    """The proposed session's format, a talk unless the record says otherwise."""
-    return program.FORMATS[meta.get("talk_format") or "talk"]
+    """The proposed session's format, a talk unless the record says otherwise, ready for the page."""
+    return esc(program.format_label(meta, "talk_format", "talk_format_name"))
 
 
 def goat_photo() -> str:

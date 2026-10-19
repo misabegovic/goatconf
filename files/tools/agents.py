@@ -113,9 +113,9 @@ def session_list() -> list[dict]:
             if name and name not in named:
                 people.append({"name": name})
         out.append({"day": day.isoformat(), "start": start, "end": plus_hour(start), "room": program.ROOMS[room][0],
-                    "format": program.FORMATS[meta["format"]], "title": meta["title"], "page": url(program.page_name(meta)),
+                    "format": program.format_label(meta), "title": meta["title"], "page": url(program.page_name(meta)),
                     "about": body.split("\n\n")[0].strip(), "speakers": people,
-                    **({"area": program.AREAS[meta["area"]]} if meta.get("area") else {}),
+                    **({"areas": [program.AREAS[a] for a in program.areas(meta["area"])]} if meta.get("area") else {}),
                     **({"for": meta["for"]} if meta.get("for") else {}),
                     **({"signup": meta["signup"]} if meta.get("signup") else {})})
     return out
@@ -248,7 +248,7 @@ def llms() -> str:
     table, _ = program.sessions()
     if table:
         lines += ["## Sessions", ""]
-        lines += [f"- [{m['title']}]({url(program.page_name(m))}): {program.FORMATS[m['format']]} by {m['speakers']}, {program.CORE_DAYS[d]} at {t}, {program.ROOMS[r][0]}"
+        lines += [f"- [{m['title']}]({url(program.page_name(m))}): {program.format_label(m)} by {m['speakers']}, {program.CORE_DAYS[d]} at {t}, {program.ROOMS[r][0]}"
                   for (d, t, r), (m, _) in sorted(table.items(), key=lambda kv: (kv[0][0], kv[0][1], list(program.ROOMS).index(kv[0][2])))]
         lines.append("")
     events = extensions.accepted()

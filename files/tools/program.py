@@ -84,12 +84,13 @@ RESERVED = (
     (dt.date(2027, 6, 4), "11:30", "hall-ground"), (dt.date(2027, 6, 4), "13:30", "hall-ground"),
 )
 FORMATS = {"talk": "Talk", "panel": "Panel", "workshop": "Workshop", "other": "Session"}
-# The areas the talk page names, as the proposal form's discipline question
+# The areas the talk page names, as the proposal form's area question
 # offers them (sources/conversations/2026-10-19--org--more-areas.md). They are
 # meant to group into a few tracks later, if more venues join.
 AREAS = {"engineering": "Engineering", "ai-ml": "AI/ML", "data": "Data", "ux-ui": "UX/UI", "product": "Product",
          "research": "Research", "business": "Business of software", "leadership": "Leadership"}
 FOR_CHARS = 100
+FORMAT_NAME_CHARS = 30
 FIELDS = ("title", "speakers", "format", "day", "start", "room", "accepted")
 
 
@@ -97,21 +98,45 @@ def records(paths=None):
     return sitelib.records(RECORDS, paths)
 
 
+def areas(value) -> list:
+    """A session's areas: one key or a list of them, as the form's area question lets a speaker pick any number."""
+    return [] if value is None else value if isinstance(value, list) else [value]
+
+
 def flavor_problems(meta, area="area", audience="for") -> list:
-    """A session's area and who it is for: both optional; the area one of AREAS, who it is for one short line in the speaker's words."""
+    """A session's areas and who it is for: both optional; each area one of AREAS, who it is for one short line in the speaker's words."""
     problems = []
-    if meta.get(area) is not None and meta[area] not in AREAS:
-        problems.append(f"{area} must be one of: {', '.join(AREAS)}")
+    picked = areas(meta.get(area))
+    if meta.get(area) is not None and (not picked or any(a not in AREAS for a in picked) or len(set(picked)) < len(picked)):
+        problems.append(f"{area} must be one of, or a list of different ones of: {', '.join(AREAS)}")
     v = meta.get(audience)
     if v is not None and (not isinstance(v, str) or not v.strip() or "\n" in v.strip() or len(v) > FOR_CHARS):
         problems.append(f"{audience} must be one line of at most {FOR_CHARS} characters: who the session is for, in the speaker's words")
     return problems
 
 
+def format_name_problems(meta, fmt="format", name="format_name") -> list:
+    """Something else may say what it is, for example Live coding: one short line, only with the format other."""
+    v = meta.get(name)
+    if v is None:
+        return []
+    problems = [] if meta.get(fmt) == "other" else [f"{name} needs {fmt}: other"]
+    if not isinstance(v, str) or not v.strip() or "\n" in v.strip() or len(v) > FORMAT_NAME_CHARS:
+        problems.append(f"{name} must be one line of at most {FORMAT_NAME_CHARS} characters, for example Live coding")
+    return problems
+
+
+def format_label(meta, fmt="format", name="format_name") -> str:
+    """The session's format as people read it: what something else is called, if the record says; a talk if left out."""
+    if meta.get(fmt) == "other" and meta.get(name):
+        return str(meta[name]).strip()
+    return FORMATS[meta.get(fmt) or "talk"]
+
+
 def tags(fmt, area) -> str:
-    """The session's format and area, as small tags; either may be left out."""
+    """The session's format and areas, as small tags; either may be left out."""
     inner = ((f'<span class="tag">{esc(fmt)}</span>' if fmt else "")
-             + (f'<span class="tag tag--area">{AREAS[area]}</span>' if area in AREAS else ""))
+             + "".join(f'<span class="tag tag--area">{AREAS[a]}</span>' for a in areas(area) if a in AREAS))
     return f'<span class="tags">{inner}</span>' if inner else ""
 
 
@@ -144,7 +169,7 @@ def check_record(path: Path):
         problems.append(f"room must be one of: {', '.join(ROOMS)}")
     if meta.get("accepted") is not True:
         problems.append("accepted must be yes")
-    problems += flavor_problems(meta)
+    problems += flavor_problems(meta) + format_name_problems(meta)
     if meta.get("signup") and not str(meta["signup"]).startswith("https://"):
         problems.append("signup must be the session's own sign-up link, starting https://")
     if not body:
@@ -255,7 +280,7 @@ def cell(n: int, found, room: str, reserved=False) -> str:
     if found:
         meta, body = found
         first = body.split("\n\n")[0].strip()
-        return f"""<li class="sticker sticker--session" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg"><span class="num">{n}</span><span class="session__format">{FORMATS[meta['format']]}, {ROOMS[room][0]}</span>{tags(None, meta.get('area'))}<strong><a class="sticker__open sticker__open--stretch" href="{page_name(meta)}">{esc(meta['title'])}</a></strong><small>{who(meta)}</small>{for_line(meta.get('for'))}<p>{esc(first)}</p>{register(meta)}</li>"""
+        return f"""<li class="sticker sticker--session" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg"><span class="num">{n}</span><span class="session__format">{esc(format_label(meta))}, {ROOMS[room][0]}</span>{tags(None, meta.get('area'))}<strong><a class="sticker__open sticker__open--stretch" href="{page_name(meta)}">{esc(meta['title'])}</a></strong><small>{who(meta)}</small>{for_line(meta.get('for'))}<p>{esc(first)}</p>{register(meta)}</li>"""
     return f"""<li class="slot slot--session"><span class="num num--printed">{n}</span>{where}<strong>Open</strong><small>Waiting for a talk, a panel or a workshop.</small><span class="stamp">Yours?</span></li>"""
 
 
@@ -371,9 +396,10 @@ def page() -> str:
 
 def session_page(key, meta, body) -> str:
     day, start, room = key
-    fmt = FORMATS[meta["format"]]
+    fmt = esc(format_label(meta))
     about = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
-    flavor = ((f'<dt>Area</dt><dd>{AREAS[meta["area"]]}</dd>' if meta.get("area") else "")
+    picked = areas(meta.get("area"))
+    flavor = ((f'<dt>{"Areas" if len(picked) > 1 else "Area"}</dt><dd>{", ".join(AREAS[a] for a in picked)}</dd>' if picked else "")
               + (f'<dt>For</dt><dd>{esc(meta["for"])}</dd>' if meta.get("for") else ""))
     seat = (f'<p class="cta"><a class="button" href="{esc(meta["signup"])}">Save a seat</a></p>' if meta.get("signup") else
             '<p>Free with a GoatConf ticket: <a href="register.html">register for free</a>. Closer to June, everyone with a ticket also registers for the sessions they want, because each room has only so many seats.</p>')
