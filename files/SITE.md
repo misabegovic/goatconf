@@ -1,9 +1,11 @@
 # The GoatConf site
 
 Plain HTML and CSS for goatconf.com, the conference's own home (ADR
-`wiki/org/adrs/goatconf-ba-and-google-forms.md`). There is no build step for
-the hand-written pages; two pages are generated from records. Open
-`index.html` through any static server to preview it.
+`wiki/org/adrs/goatconf-ba-and-google-forms.md`), kept in `site/`. Page names
+below are inside `site/`. This guide sits beside the folder, not in it, so
+it is not published with the site. There is no build step for the
+hand-written pages; some pages and parts of pages are generated from
+records. Open `site/index.html` through any static server to preview it.
 
 ## Pages
 
