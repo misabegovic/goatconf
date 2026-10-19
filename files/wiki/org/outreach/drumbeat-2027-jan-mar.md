@@ -2,11 +2,12 @@
 title: "The drumbeat, January to March 2027"
 kind: reference
 status: draft
-updated: 2026-10-18
+updated: 2026-10-19
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-19--org--business-and-people-sessions.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
   - sources/conversations/2026-10-15--org--drafting-the-first-posts.md
   - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
@@ -144,7 +145,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   >
   > Designers, product people, founders and engineers in any language or stack: the sessions are for all of you, and so is the hour off after each one, on Freedom Square, where the conversations happen.
   >
-  > If you work on product, design or running a company, the call is open to you too: a talk, a panel, a workshop or something else, one hour, in Tuzla on 3 or 4 June.
+  > If you work on product, design, research, running a company or leading people, the call is open to you too, and you do not need to write code to speak: a talk, a panel, a workshop or something else, one hour, in Tuzla on 3 or 4 June. Bring something the technical people in the room can use or build on, from your own work.
   >
   > goatconf.com/talk
 
