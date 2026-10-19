@@ -477,3 +477,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #123: forms: the Google Forms and Luma match the site
    diff: 4 files, +67/-0
    restricted-paths: true
+2026-10-19 merge — PR #124: org: accept the ADR for one page frame and one site build
+   diff: 6 files, +36/-8
+   restricted-paths: false
