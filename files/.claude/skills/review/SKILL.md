@@ -199,6 +199,30 @@ Read the diff with judgement:
 If concerns arise that aren't blocking guardrails, post them as
 non-blocking review comments. Then proceed.
 
+### 6a. Up to date with `main`, and CI run on what will land
+
+Every merge to `main` publishes the site, and CI here is local only, so a
+PR that passed against an older `main` can still publish stale generated
+files once it lands: two PRs that each add a speaker, for instance, leave
+`llms.txt` or the home page one speaker behind. Before merging, bring the
+branch up to date and run the CI on the result (the organiser, 2026-10-19,
+`sources/conversations/2026-10-19--org--site-review-decisions.md`):
+
+```bash
+git fetch origin
+if ! git merge-base --is-ancestor origin/main HEAD; then
+  git merge --no-edit origin/main        # on the PR's branch; no force-push needed
+  bash files/tools/ci-local.sh           # a stale generated file: rebuild it, commit, run again
+  git push
+fi
+```
+
+Merging `main` in, rather than rebasing, keeps `/pr`'s no-force-push rule.
+If CI fails on the merged result, fix it on the branch and do not merge
+until it passes. A stacked PR (one whose base is another PR's branch) is
+merged only after its base has landed and GitHub has retargeted it to
+`main`.
+
 ### 7. Approve and merge
 
 If every gate passed:
