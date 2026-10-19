@@ -474,6 +474,15 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.45rem; }
 .tag { padding: 0.15em 0.55em; border-radius: 0.3rem; background: var(--album); color: var(--page); font-size: 0.74rem; font-weight: 700; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.05em; }
 .tag--area { background: var(--yellow); color: var(--album-night); }
+/* Each area its own soft tint, dark text in the same hue. */
+.tag--engineering { background: #dbe6fb; color: #0b3d91; }
+.tag--ai-ml { background: #e9e0fb; color: #4b1d95; }
+.tag--data { background: #d3f0ec; color: #0b5049; }
+.tag--ux-ui { background: #fbdcec; color: #8a1453; }
+.tag--product { background: #fde4cf; color: #7a3608; }
+.tag--research { background: #dcf1d8; color: #1f5a17; }
+.tag--business { background: #f4ecc0; color: #554500; }
+.tag--leadership { background: #fbdcdc; color: #8f1111; }
 .for-line { display: block; margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.35; color: var(--ink); }
 .talk .for-line { font-size: 0.95rem; color: var(--ink); }
 @media (max-width: 47.99rem) {
