@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md
   - sources/conversations/2026-10-19--org--more-areas.md
   - sources/conversations/2026-10-19--org--business-and-people-sessions.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
@@ -272,23 +273,23 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-12--org--day-chain-and-session-format.md, sources/conversations/2026-10-12--org--friday-dzuma-schedule.md.
 
-### Tue 23 Mar 2027, week 24: Panels and workshops
+### Tue 23 Mar 2027, week 24: Workshops
 
 - **State:** drafted
-- **Image:** `post-panels-and-workshops-square.png` (LinkedIn, Mastodon), `post-panels-and-workshops-wide.png` (X, Bluesky)
+- **Image:** `post-workshops-square.png` (LinkedIn, Mastodon), `post-workshops-wide.png` (X, Bluesky)
 - **LinkedIn:**
 
-  > A session at GoatConf doesn't have to be a talk.
+  > Run a workshop at GoatConf.
   >
-  > Run a panel: a few people on one question, with the room joining in. Run a workshop: people learn by doing, on their own laptops or in one of IPI Academy's two computer centres, with 20 and 26 seats. Or bring live coding, a hands-on lab, a fireside chat or a debate.
+  > People learn by doing. IPI Academy's two computer centres seat 20 and 26, and everyone, you included, works on the laptop they bring.
   >
-  > Every slot is one hour, on Thursday 3 or Friday 4 June. Propose yours: goatconf.com/talk
+  > A session is one hour, on Thursday 3 or Friday 4 June. A workshop that needs longer can run longer: say how long in your proposal, and we work out the hours with you. Propose yours: goatconf.com/talk
 
-- **Short** (183 characters):
+- **Short** (164 characters):
 
-  > A GoatConf session doesn't have to be a talk: run a panel, or a workshop in one of two computer centres (20 and 26 seats), or live coding, a lab, a debate. One hour. goatconf.com/talk
+  > Run a workshop at GoatConf: rooms for 20 and 26 people, everyone on the laptop they bring, longer than an hour if it needs it. Tuzla, 3 or 4 June. goatconf.com/talk
 
-  Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--all-available-rooms.md.
+  Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--all-available-rooms.md, sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md.
 
 ### Tue 30 Mar 2027, week 25: Where to stay
 
