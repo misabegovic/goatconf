@@ -184,7 +184,7 @@ def test_the_home_page_shows_the_same_speaker_card_as_the_speakers_page(tmp_path
     (tmp_path / "program" / "s.md").unlink()
     (tmp_path / "speakers" / "ana-example.md").write_text(FLAVORED, encoding="utf-8")
     assert card(home.speakers_block()) == card(speakers.speakers_page())
-    assert '<span class="tag tag--area">Business of software</span>' in home.speakers_block()
+    assert '<span class="tag tag--area tag--business">Business of software</span>' in home.speakers_block()
     assert '<b>For:</b> founders before their first hire' in home.speakers_block()
 
 
@@ -394,10 +394,10 @@ def test_a_talk_shows_its_area_and_who_it_is_for(tmp_path, monkeypatch):
     (tmp_path / "program" / "s.md").unlink()  # no session on the program yet
     assert speakers.cmd_check(Args()) == 0
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], [], speakers.supporters())
-    assert '<span class="tag tag--area">Business of software</span>' in page
+    assert '<span class="tag tag--area tag--business">Business of software</span>' in page
     assert '<p class="for-line"><b>For:</b> founders before their first hire</p>' in page
     listing = speakers.speakers_page()
-    assert '<span class="tag tag--area">Business of software</span>' in listing
+    assert '<span class="tag tag--area tag--business">Business of software</span>' in listing
     assert '<span class="for-line"><b>For:</b> founders before their first hire</span>' in listing
 
 
@@ -421,11 +421,11 @@ def test_a_scheduled_session_carries_its_area_and_who_it_is_for(tmp_path, monkey
     (key, (meta, body)), = table.items()
     session = program.session_page(key, meta, body)
     assert "<dt>Area</dt><dd>Leadership</dd>" in session and "<dt>For</dt><dd>anyone leading a team of five or more</dd>" in session
-    assert '<span class="tag tag--area">Leadership</span>' in program.cell(1, (meta, body), key[2])
+    assert '<span class="tag tag--area tag--leadership">Leadership</span>' in program.cell(1, (meta, body), key[2])
     detail = speakers.sessions_by_speaker(detail=True)["ana-example"]
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], detail, speakers.supporters())
     assert '<p class="for-line"><b>For:</b> anyone leading a team of five or more</p>' in page
-    assert '<span class="tag tag--area">Leadership</span>' in speakers.speakers_page()
+    assert '<span class="tag tag--area tag--leadership">Leadership</span>' in speakers.speakers_page()
     (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", "accepted: yes\narea: sales"), encoding="utf-8")
     problems, _, _ = program.check_record(tmp_path / "program" / "s.md")
     assert any("area must be one of" in p for p in problems)
@@ -462,7 +462,7 @@ def test_a_session_can_span_several_areas(tmp_path, monkeypatch):
     table, _ = program.sessions()
     (key, (meta, body)), = table.items()
     assert "<dt>Areas</dt><dd>AI/ML, Product</dd>" in program.session_page(key, meta, body)
-    assert '<span class="tag tag--area">AI/ML</span><span class="tag tag--area">Product</span>' in program.cell(1, (meta, body), key[2])
+    assert '<span class="tag tag--area tag--ai-ml">AI/ML</span><span class="tag tag--area tag--product">Product</span>' in program.cell(1, (meta, body), key[2])
     for bad in ("[ai-ml, ai-ml]", "[]", "[ai-ml, sales]"):
         (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", f"accepted: yes\narea: {bad}"), encoding="utf-8")
         problems, _, _ = program.check_record(tmp_path / "program" / "s.md")

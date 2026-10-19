@@ -136,7 +136,7 @@ def format_label(meta, fmt="format", name="format_name") -> str:
 def tags(fmt, area) -> str:
     """The session's format and areas, as small tags; either may be left out."""
     inner = ((f'<span class="tag">{esc(fmt)}</span>' if fmt else "")
-             + "".join(f'<span class="tag tag--area">{AREAS[a]}</span>' for a in areas(area) if a in AREAS))
+             + "".join(f'<span class="tag tag--area tag--{a}">{AREAS[a]}</span>' for a in areas(area) if a in AREAS))
     return f'<span class="tags">{inner}</span>' if inner else ""
 
 
