@@ -22,3 +22,14 @@ While the change was being made, the organiser added, verbatim:
 So IPI Academy's computers are not for GoatConf's use: at a workshop, the
 speaker and everyone taking part work on the devices they bring. The
 computer centres are rooms with 20 and 26 seats, nothing more.
+
+The drafted post for 23 March 2027 and its card were titled "Panels and
+workshops", a pairing the agent made when drafting the posts, with no
+source behind it. The organiser asked, verbatim:
+
+> Why are panels part of that at all?
+
+Offered workshops only, one "Not only talks" post for every format that
+is not a talk, or two posts, they picked "Workshops only": the post and
+its card are about workshops; panels stay in the "Run a session" post of
+20 October 2026.
