@@ -306,7 +306,7 @@
       "title": "Online supporters pay the organiser's Austrian business; the budget becomes private",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-18",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "supersedes": "org/adrs/budget-and-public-ledger.md",
       "depends_on": [
@@ -314,6 +314,7 @@
         "org/adrs/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md",
         "sources/conversations/2026-10-18--org--event-hosts-as-supporters.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
@@ -323,7 +324,7 @@
         "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md"
       ],
-      "tokens": 1689
+      "tokens": 1816
     },
     {
       "path": "org/adrs/open-program-every-room.md",

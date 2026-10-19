@@ -482,17 +482,18 @@ def supporters_page() -> str:
 </section>
 <section class="album-page wrap" aria-labelledby="h-become">
   <h2 class="band" id="h-become">Support GoatConf online</h2>
-  <p class="copy copy--wide">One level, the same for every supporter: 500 euro, plus VAT where it applies.</p>
+  <p class="copy copy--wide">Reach the 120 to 300 engineers, designers, product people and founders who come to Tuzla. One level, the same for every supporter: 500 euro, plus VAT where it applies.</p>
   <ul class="copy copy--wide">
     <li>Your logo and a link on this page and on the home page.</li>
     <li>One post about you on GoatConf's social channels.</li>
     <li>A mention in the emails to everyone registered.</li>
   </ul>
-  <p class="copy copy--wide">It is online only: no booth, no banner and nothing at the venue. The money pays the event's costs. The organiser's Austrian business sends the invoice, under a short written agreement.</p>
+  <p class="copy copy--wide">It is online only: no booth, no banner and nothing at the venue. The money pays the event's costs.</p>
   <p class="copy copy--wide">You can also pay a supplier directly for one named thing, such as the printing or a round of coffee, or give something in kind.</p>
   <p class="copy copy--wide">If you speak at GoatConf and your company covers your travel, your company is listed here as a supporter too, with its logo and link, the same as online supporters.</p>
   <p class="copy copy--wide">If you or your organisation fund and organise an event we accept as part of GoatConf 2027, you are listed here as a supporter too, if you agree, with your logo and link, the same as online supporters.</p>
-  <p class="copy copy--wide"><a class="go go--ink" href="contact.html">Write to the organiser</a> <a class="go go--ink" href="mailto:info@muhamed.at">info@muhamed.at</a></p>
+  <p class="copy copy--wide">To support GoatConf, reach Muhamed, the organiser, through the contact form or at <a href="mailto:info@muhamed.at">info@muhamed.at</a>.</p>
+  <p class="cta"><a class="button" href="contact.html">Become a supporter</a></p>
 </section>"""
     return shell("supporters", "Supporters: GoatConf 2027, 3–5 June, Tuzla",
                  "The companies that make GoatConf 2027 possible, and how to support it online: one level, 500 euro, nothing at the venue.",
