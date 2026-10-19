@@ -143,7 +143,7 @@ def test_a_talk_shows_before_it_has_a_slot(tmp_path, monkeypatch):
 def test_the_talk_fields_come_off_once_the_session_is_on_the_program(tmp_path, monkeypatch):
     _, speakers = setup(tmp_path, monkeypatch, TALKING)
     assert speakers.cmd_check(Args()) == 1  # the session record now carries it: the talk fields are spent
-    assert any("remove talk and talk_about" in p for p in speakers.talk_problems())
+    assert any("remove talk, talk_about" in p for p in speakers.talk_problems())
 
 
 def test_talk_needs_a_title_and_talk_about_stays_short(tmp_path, monkeypatch):
@@ -375,3 +375,48 @@ def test_a_speaker_page_says_who_they_are_and_how_to_support_them(tmp_path, monk
     _, speakers = setup(tmp_path / "bad", monkeypatch, SPEAKER.replace("publish: yes", "publish: yes\nsupport_them: buy the book"))
     problems, _, _ = speakers.check_speaker(tmp_path / "bad" / "speakers" / "ana-example.md", speakers.supporters())
     assert any("support_them must list" in p for p in problems)
+
+
+FLAVORED = TALKING.replace("talk_about: |", "talk_area: business\ntalk_for: founders before their first hire\ntalk_about: |")
+
+
+def test_a_talk_shows_its_area_and_who_it_is_for(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, FLAVORED)
+    (tmp_path / "program" / "s.md").unlink()  # no session on the program yet
+    assert speakers.cmd_check(Args()) == 0
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], [], speakers.supporters())
+    assert '<span class="tag tag--area">Business of software</span>' in page
+    assert '<p class="for-line"><b>For:</b> founders before their first hire</p>' in page
+    listing = speakers.speakers_page()
+    assert '<span class="tag tag--area">Business of software</span>' in listing
+    assert '<span class="for-line"><b>For:</b> founders before their first hire</span>' in listing
+
+
+def test_area_format_and_who_it_is_for_are_checked(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, FLAVORED.replace("business", "marketing").replace("talk_area:", "talk_format: keynote\ntalk_area:")
+                        .replace("founders before their first hire", "x" * 101))
+    problems, _, _ = speakers.check_speaker(tmp_path / "speakers" / "ana-example.md", {})
+    assert any("talk_area must be one of" in p for p in problems)
+    assert any("talk_format must be one of" in p for p in problems)
+    assert any("talk_for must be one line" in p for p in problems)
+    (tmp_path / "speakers" / "ana-example.md").write_text(SPEAKER.replace("publish: yes\n", "publish: yes\ntalk_area: research\n"), encoding="utf-8")
+    problems, _, _ = speakers.check_speaker(tmp_path / "speakers" / "ana-example.md", {})
+    assert any("need talk" in p for p in problems)
+
+
+def test_a_scheduled_session_carries_its_area_and_who_it_is_for(tmp_path, monkeypatch):
+    program, speakers = setup(tmp_path, monkeypatch)
+    (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", "accepted: yes\narea: people\nfor: anyone leading a team of five or more"), encoding="utf-8")
+    assert speakers.cmd_check(Args()) == 0
+    table, _ = program.sessions()
+    (key, (meta, body)), = table.items()
+    session = program.session_page(key, meta, body)
+    assert "<dt>Area</dt><dd>People side of the work</dd>" in session and "<dt>For</dt><dd>anyone leading a team of five or more</dd>" in session
+    assert '<span class="tag tag--area">People side of the work</span>' in program.cell(1, (meta, body), key[2])
+    detail = speakers.sessions_by_speaker(detail=True)["ana-example"]
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], detail, speakers.supporters())
+    assert '<p class="for-line"><b>For:</b> anyone leading a team of five or more</p>' in page
+    assert '<span class="tag tag--area">People side of the work</span>' in speakers.speakers_page()
+    (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", "accepted: yes\narea: sales"), encoding="utf-8")
+    problems, _, _ = program.check_record(tmp_path / "program" / "s.md")
+    assert any("area must be one of" in p for p in problems)

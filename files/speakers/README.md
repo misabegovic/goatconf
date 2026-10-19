@@ -40,9 +40,20 @@ is their bio in their own words, at most 120 words.
   most 80 characters (for example `Back to the Future`). It shows on
   their page, their card on the speakers page and their sticker on the
   home page while the session has no slot.
-- `talk_about`: optional, their own words on what the session is about
-  and who it is for, at most 300 words; it needs `talk`. Separate
-  paragraphs stay separate paragraphs on the page.
+- `talk_about`: optional, their own words on what the session is about,
+  at most 300 words; it needs `talk`. Separate paragraphs stay separate
+  paragraphs on the page.
+- `talk_format`: optional, `talk`, `panel`, `workshop` or `other`; a talk
+  if left out.
+- `talk_area`: optional, the session's area, as the proposal form's
+  discipline question gives it: `engineering`, `design-product`,
+  `research`, `business` (the business of software) or `people` (the
+  people side of the work). It shows as a tag on their page and their card
+  on the speakers page.
+- `talk_for`: optional, who the session is for: their answer to the form's
+  "Who is it for?", lightly trimmed to one line of at most 100 characters
+  without changing what it says (for example `anyone working with
+  real-life codebases`). It shows as a "For:" line next to the tag.
 
 A confirmed speaker can be added before their session has a slot (since
 2026-10-14): their page then says the session will be on the program
@@ -56,8 +67,9 @@ spoke at may be used, with where it came from recorded under
 `sources/web/speakers/`.
 
 Link a session to its speakers with `profiles: [ada-lovelace]` in its
-record under `program/`, and drop the speaker record's `talk` and
-`talk_about` in the same change. Then run `python3 tools/speakers.py build`
+record under `program/`, and drop the speaker record's `talk`,
+`talk_about` and other `talk_` fields in the same change, carrying the
+area and who it is for over as the program record's `area` and `for`. Then run `python3 tools/speakers.py build`
 and `python3 tools/program.py build`. The local CI checks both.
 
 Each speaker has three cards made by `python3 tools/shareables.py render`

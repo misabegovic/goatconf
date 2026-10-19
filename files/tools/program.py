@@ -84,11 +84,39 @@ RESERVED = (
     (dt.date(2027, 6, 4), "11:30", "hall-ground"), (dt.date(2027, 6, 4), "13:30", "hall-ground"),
 )
 FORMATS = {"talk": "Talk", "panel": "Panel", "workshop": "Workshop", "other": "Session"}
+# The areas the talk page names, as the proposal form's discipline question
+# offers them (sources/conversations/2026-10-19--org--business-and-people-sessions.md).
+AREAS = {"engineering": "Engineering", "design-product": "Design and product", "research": "Research",
+         "business": "Business of software", "people": "People side of the work"}
+FOR_CHARS = 100
 FIELDS = ("title", "speakers", "format", "day", "start", "room", "accepted")
 
 
 def records(paths=None):
     return sitelib.records(RECORDS, paths)
+
+
+def flavor_problems(meta, area="area", audience="for") -> list:
+    """A session's area and who it is for: both optional; the area one of AREAS, who it is for one short line in the speaker's words."""
+    problems = []
+    if meta.get(area) is not None and meta[area] not in AREAS:
+        problems.append(f"{area} must be one of: {', '.join(AREAS)}")
+    v = meta.get(audience)
+    if v is not None and (not isinstance(v, str) or not v.strip() or "\n" in v.strip() or len(v) > FOR_CHARS):
+        problems.append(f"{audience} must be one line of at most {FOR_CHARS} characters: who the session is for, in the speaker's words")
+    return problems
+
+
+def tags(fmt, area) -> str:
+    """The session's format and area, as small tags; either may be left out."""
+    inner = ((f'<span class="tag">{esc(fmt)}</span>' if fmt else "")
+             + (f'<span class="tag tag--area">{AREAS[area]}</span>' if area in AREAS else ""))
+    return f'<span class="tags">{inner}</span>' if inner else ""
+
+
+def for_line(text, tag="p") -> str:
+    """Who the session is for, in the speaker's words."""
+    return f'<{tag} class="for-line"><b>For:</b> {esc(str(text).strip())}</{tag}>' if text else ""
 
 
 def check_record(path: Path):
@@ -115,6 +143,7 @@ def check_record(path: Path):
         problems.append(f"room must be one of: {', '.join(ROOMS)}")
     if meta.get("accepted") is not True:
         problems.append("accepted must be yes")
+    problems += flavor_problems(meta)
     if meta.get("signup") and not str(meta["signup"]).startswith("https://"):
         problems.append("signup must be the session's own sign-up link, starting https://")
     if not body:
@@ -225,7 +254,7 @@ def cell(n: int, found, room: str, reserved=False) -> str:
     if found:
         meta, body = found
         first = body.split("\n\n")[0].strip()
-        return f"""<li class="sticker sticker--session" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg"><span class="num">{n}</span><span class="session__format">{FORMATS[meta['format']]}, {ROOMS[room][0]}</span><strong><a class="sticker__open sticker__open--stretch" href="{page_name(meta)}">{esc(meta['title'])}</a></strong><small>{who(meta)}</small><p>{esc(first)}</p>{register(meta)}</li>"""
+        return f"""<li class="sticker sticker--session" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg"><span class="num">{n}</span><span class="session__format">{FORMATS[meta['format']]}, {ROOMS[room][0]}</span>{tags(None, meta.get('area'))}<strong><a class="sticker__open sticker__open--stretch" href="{page_name(meta)}">{esc(meta['title'])}</a></strong><small>{who(meta)}</small>{for_line(meta.get('for'))}<p>{esc(first)}</p>{register(meta)}</li>"""
     return f"""<li class="slot slot--session"><span class="num num--printed">{n}</span>{where}<strong>Open</strong><small>Waiting for a talk, a panel or a workshop.</small><span class="stamp">Yours?</span></li>"""
 
 
@@ -343,6 +372,8 @@ def session_page(key, meta, body) -> str:
     day, start, room = key
     fmt = FORMATS[meta["format"]]
     about = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
+    flavor = ((f'<dt>Area</dt><dd>{AREAS[meta["area"]]}</dd>' if meta.get("area") else "")
+              + (f'<dt>For</dt><dd>{esc(meta["for"])}</dd>' if meta.get("for") else ""))
     seat = (f'<p class="cta"><a class="button" href="{esc(meta["signup"])}">Save a seat</a></p>' if meta.get("signup") else
             '<p>Free with a GoatConf ticket: <a href="register.html">register for free</a>. Closer to June, everyone with a ticket also registers for the sessions they want, because each room has only so many seats.</p>')
     main = f"""<section class="album-page wrap" aria-labelledby="h-details">
@@ -351,7 +382,7 @@ def session_page(key, meta, body) -> str:
     <dl class="facts">
       <dt>When</dt><dd>{CORE_DAYS[day]} 2027, {start} to {ends(start)}</dd>
       <dt>Where</dt><dd>{ROOMS[room][0]} ({ROOMS[room][1]}), IPI Academy, Kulina bana 2, Tuzla</dd>
-      <dt>Format</dt><dd>{fmt}</dd>
+      <dt>Format</dt><dd>{fmt}</dd>{flavor}
       <dt>{"Speakers" if "," in str(meta["speakers"]) or " and " in str(meta["speakers"]) else "Speaker"}</dt><dd>{who(meta)}</dd>
     </dl>
     <div class="copy">

@@ -46,6 +46,9 @@ ROLE_CHARS = 80
 TALK_CHARS = 80
 TALK_WORDS = 300
 HOLD_CHARS = 80
+# The session's format, area and who it is for, while it has no slot; the
+# program record carries them as format, area and for once it has one.
+TALK_EXTRAS = ("talk_format", "talk_area", "talk_for")
 esc = program.esc
 
 
@@ -129,6 +132,11 @@ def check_speaker(path: Path, known_supporters):
             problems.append("talk_about must be the speaker's own words on the session")
         elif len(about.split()) > TALK_WORDS:
             problems.append(f"talk_about is longer than {TALK_WORDS} words")
+    if meta.get("talk_format") is not None and meta["talk_format"] not in program.FORMATS:
+        problems.append(f"talk_format must be one of: {', '.join(program.FORMATS)}")
+    problems += program.flavor_problems(meta, "talk_area", "talk_for")
+    if not meta.get("talk") and any(meta.get(k) is not None for k in TALK_EXTRAS):
+        problems.append(f"{', '.join(k for k in TALK_EXTRAS if meta.get(k) is not None)} need talk: the title of the session they describe")
     if "hold" in meta and (not isinstance(meta["hold"], str) or not meta["hold"].strip() or "\n" in meta["hold"] or len(meta["hold"]) > HOLD_CHARS):
         problems.append(f"hold must be one line of at most {HOLD_CHARS} characters: why the speaker stays off the site for now")
     problems += support_problems(meta)
@@ -191,8 +199,8 @@ def talk_problems():
     for path in program.records():
         meta, _, _ = extensions.parse(path)
         on_program.update((meta or {}).get("profiles") or [])
-    return [f"{slug}: the session is on the program now, so remove talk and talk_about from the speaker record"
-            for slug in sorted(known) if slug in on_program and known[slug][0].get("talk")]
+    return [f"{slug}: the session is on the program now, so remove talk, talk_about and the other talk_ fields from the speaker record"
+            for slug in sorted(known) if slug in on_program and any(known[slug][0].get(k) for k in ("talk", "talk_about") + TALK_EXTRAS)]
 
 
 def cmd_check(_args) -> int:
@@ -248,21 +256,30 @@ def sessions_by_speaker(detail=False):
             if detail:
                 out.setdefault(slug, []).append({"day": day, "start": start, "room": program.ROOMS[room][0], "format": program.FORMATS[meta["format"]],
                                                  "title": meta["title"], "about": body.split("\n\n")[0].strip(), "signup": meta.get("signup"),
+                                                 "area": meta.get("area"), "for": meta.get("for"),
                                                  "page": program.page_name(meta)})
             else:
                 out.setdefault(slug, []).append(f"{program.FORMATS[meta['format']]}, {program.CORE_DAYS[day]} at {start}, {program.ROOMS[room][0]}: {esc(meta['title'])}")
     return out
 
 
+def talk_format(meta) -> str:
+    """The proposed session's format, a talk unless the record says otherwise."""
+    return program.FORMATS[meta.get("talk_format") or "talk"]
+
+
 def goat_photo() -> str:
     return '<span class="speaker__goat" aria-hidden="true"><svg viewBox="0 0 124 100"><use href="#goat"/></svg></span>'
 
 
-def speaker_card(n: int, slug: str, meta, body, sessions, known) -> str:
+def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None) -> str:
+    """`scheduled` is the first session on the program, with its area and who it is for."""
     photo = f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo") else goat_photo()
     role = f'<span class="speaker__role">{esc(meta["role"])}</span>' if meta.get("role") else ""
     first = (f'<span class="speaker__first">{sessions[0]}</span>' if sessions
-             else f'<span class="speaker__first">Talk: {esc(meta["talk"])}</span>' if meta.get("talk") else "")
+             else f'<span class="speaker__first">{talk_format(meta)}: {esc(meta["talk"])}</span>' if meta.get("talk") else "")
+    flavor = scheduled or ({"area": meta.get("talk_area"), "for": meta.get("talk_for")} if meta.get("talk") else {})
+    first += program.tags(None, flavor.get("area")) + program.for_line(flavor.get("for"), "span")
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
     return f"""  <li class="sticker sticker--speaker" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <a class="speaker__link" href="{page_name(slug)}">
@@ -279,12 +296,13 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     if sessions:
         talks = "\n".join(
             f'<li class="talk"><span class="talk__when"><a href="program.html#{s["day"].isoformat()}">{program.CORE_DAYS[s["day"]]}, {s["start"]}</a>'
-            f'<span>{esc(s["format"])}, {esc(s["room"])}</span></span><strong><a href="{esc(s["page"])}">{esc(s["title"])}</a></strong><p>{esc(s["about"])}</p>'
+            f'<span>{esc(s["format"])}, {esc(s["room"])}</span></span>{program.tags(None, s.get("area"))}<strong><a href="{esc(s["page"])}">{esc(s["title"])}</a></strong>'
+            f'{program.for_line(s.get("for"))}<p>{esc(s["about"])}</p>'
             + (f'<a class="session__register" href="{esc(s["signup"])}">Save a seat</a>' if s.get("signup") else "") + '</li>' for s in sessions)
     elif meta.get("talk"):
         about = "".join(f"<p>{esc(p.strip())}</p>" for p in str(meta.get("talk_about") or "").split("\n\n") if p.strip())
-        talks = (f'<li class="talk"><span class="talk__when"><span>Talk</span><span>Day and time to be announced</span></span>'
-                 f'<strong>{esc(meta["talk"])}</strong>{about}</li>')
+        talks = (f'<li class="talk"><span class="talk__when"><span>{talk_format(meta)}</span><span>Day and time to be announced</span></span>'
+                 f'{program.tags(None, meta.get("talk_area"))}<strong>{esc(meta["talk"])}</strong>{program.for_line(meta.get("talk_for"))}{about}</li>')
     else:
         talks = ""
     links = "".join(f'<li><a href="{esc(u)}">{esc(re.sub(r"^https?://(www\.)?", "", str(u)).rstrip("/"))}</a></li>' for u in meta.get("links") or [])
@@ -408,10 +426,11 @@ def speakers_page() -> str:
     known = supporters()
     people = speakers()
     talks = sessions_by_speaker()
+    detail = sessions_by_speaker(detail=True)
     order = listed(people)
     if order:
         cards = '<ul class="slots slots--speakers">\n' + "\n".join(
-            speaker_card(i + 1, slug, m, b, talks.get(slug, []), known) for i, (slug, (m, b)) in enumerate(order)) + "\n</ul>"
+            speaker_card(i + 1, slug, m, b, talks.get(slug, []), known, (detail.get(slug) or [None])[0]) for i, (slug, (m, b)) in enumerate(order)) + "\n</ul>"
     else:
         cards = """<ul class="slots slots--speakers">
   <li class="slots__wide"><a class="slot slot--link slot--wait" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg><span class="num num--printed">1</span><strong>The first speaker could be you</strong><small>No one is announced yet. Speakers appear here as their sessions are accepted, and the call for proposals is open now.</small><span class="stamp">Yours?</span></a></li>

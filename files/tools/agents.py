@@ -115,6 +115,8 @@ def session_list() -> list[dict]:
         out.append({"day": day.isoformat(), "start": start, "end": plus_hour(start), "room": program.ROOMS[room][0],
                     "format": program.FORMATS[meta["format"]], "title": meta["title"], "page": url(program.page_name(meta)),
                     "about": body.split("\n\n")[0].strip(), "speakers": people,
+                    **({"area": program.AREAS[meta["area"]]} if meta.get("area") else {}),
+                    **({"for": meta["for"]} if meta.get("for") else {}),
                     **({"signup": meta["signup"]} if meta.get("signup") else {})})
     return out
 
