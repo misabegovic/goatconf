@@ -19,9 +19,9 @@ record; the body is the speaker's own short description. Copy
 - `profiles`: optional, a list of speaker file names from `speakers/`
   (for example `[ada-lovelace]`); the program then links the names to
   their profiles.
-- `area`: optional, the session's area: `engineering`, `design-product`,
-  `research`, `business` (the business of software) or `people` (the
-  people side of the work), as the proposal form's discipline question
+- `area`: optional, the session's area: `engineering`, `ai-ml`, `data`,
+  `ux-ui`, `product`, `research`, `business` (the business of software) or
+  `leadership`, as the proposal form's discipline question
   gives it. It shows as a tag on the program, the session's page and the
   speaker's page and card.
 - `for`: optional, who the session is for: the speaker's answer to the

@@ -21,8 +21,8 @@ Collects the respondent's email, sends them a copy of their answers, emails
 the organiser on every response, and writes to the spreadsheet "GoatConf 2027
 responses". It asks, in this order (required unless marked optional): title;
 format (talk, panel, workshop, something else); what it is about; who it is
-for (optional); discipline (engineering, design and product, research, the business
-of software, the people side of the work, or other; changed 2026-10-19); preferred day (Thursday 3 June, Friday 4 June, either); the name
+for (optional); discipline (engineering, AI/ML, data, UX/UI, product, research, the business
+of software, leadership, or other; changed 2026-10-19); preferred day (Thursday 3 June, Friday 4 June, either); the name
 or names of everyone speaking; a link about you (optional); whether it is
 their first talk; their travel (optional): they need no travel support, their company
 covers it and is then listed on the site as a supporter, or they pay their

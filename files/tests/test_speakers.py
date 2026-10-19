@@ -415,17 +415,17 @@ def test_area_format_and_who_it_is_for_are_checked(tmp_path, monkeypatch):
 
 def test_a_scheduled_session_carries_its_area_and_who_it_is_for(tmp_path, monkeypatch):
     program, speakers = setup(tmp_path, monkeypatch)
-    (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", "accepted: yes\narea: people\nfor: anyone leading a team of five or more"), encoding="utf-8")
+    (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", "accepted: yes\narea: leadership\nfor: anyone leading a team of five or more"), encoding="utf-8")
     assert speakers.cmd_check(Args()) == 0
     table, _ = program.sessions()
     (key, (meta, body)), = table.items()
     session = program.session_page(key, meta, body)
-    assert "<dt>Area</dt><dd>People side of the work</dd>" in session and "<dt>For</dt><dd>anyone leading a team of five or more</dd>" in session
-    assert '<span class="tag tag--area">People side of the work</span>' in program.cell(1, (meta, body), key[2])
+    assert "<dt>Area</dt><dd>Leadership</dd>" in session and "<dt>For</dt><dd>anyone leading a team of five or more</dd>" in session
+    assert '<span class="tag tag--area">Leadership</span>' in program.cell(1, (meta, body), key[2])
     detail = speakers.sessions_by_speaker(detail=True)["ana-example"]
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], detail, speakers.supporters())
     assert '<p class="for-line"><b>For:</b> anyone leading a team of five or more</p>' in page
-    assert '<span class="tag tag--area">People side of the work</span>' in speakers.speakers_page()
+    assert '<span class="tag tag--area">Leadership</span>' in speakers.speakers_page()
     (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", "accepted: yes\narea: sales"), encoding="utf-8")
     problems, _, _ = program.check_record(tmp_path / "program" / "s.md")
     assert any("area must be one of" in p for p in problems)
