@@ -48,7 +48,7 @@ def test_top_bar_marks_the_current_page_and_replaces_itself():
     page = '<html><body>\n<svg width="0" height="0"><defs></defs></svg>\n<main id="main"></main></body></html>'
     once = nav.place(page, "speakers.html")
     assert '<a href="speakers.html" aria-current="page">Speakers</a>' in once
-    assert once.count("<!-- topbar -->") == 1
+    assert once.count("<!-- gen:topbar tools/nav.py -->") == 1
     assert nav.place(once, "speakers.html") == once
 
 
@@ -67,7 +67,7 @@ def test_a_speaker_page_marks_speakers_and_nav_agrees(tmp_path, monkeypatch):
 def test_top_bar_fits_a_body_with_attributes_and_names_a_page_without_one():
     nav = importlib.reload(importlib.import_module("nav"))
     page = '<html><body class="album">\n<main id="main"></main></body></html>'
-    assert nav.place(page, "index.html").count("<!-- topbar -->") == 1
+    assert nav.place(page, "index.html").count("<!-- gen:topbar tools/nav.py -->") == 1
     try:
         nav.place("<html><main></main></html>", "index.html")
     except ValueError as err:
@@ -111,7 +111,7 @@ def test_accepted_events_sit_above_kinds_that_all_stay_open(monkeypatch):
 
 def test_the_follow_links_sit_in_every_footer_and_in_marked_spots_once():
     nav = importlib.reload(importlib.import_module("nav"))
-    page = ('<html><body>\n<main id="main"><!-- follow --><!-- /follow --></main>\n'
+    page = ('<html><body>\n<main id="main"><!-- gen:follow tools/nav.py --><!-- /gen:follow --></main>\n'
             '<footer class="footer">\n  <p class="footer__links"><a href="index.html">Home</a></p>\n</footer></body></html>')
     once = nav.place(page, "contact.html")
     assert once.count('<p class="follow">') == 2  # the marked spot and the footer

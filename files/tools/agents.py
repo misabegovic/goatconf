@@ -6,7 +6,7 @@
   site/goatconf-2027.ics    the three days, for any calendar
   site/sitemap.xml          every page, for crawlers
   site/robots.txt           everyone may read; where the sitemap is
-  site/index.html           schema.org Event data between <!-- event data --> markers
+  site/index.html           schema.org Event data between <!-- gen:event-data --> markers
 
 Nothing people see on the pages changes. Change a fact in the records,
 tools/program.py or the constants below, then run build.
@@ -25,6 +25,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import blocks  # noqa: E402
 import extensions  # noqa: E402
 import nav  # noqa: E402
 import program  # noqa: E402
@@ -67,7 +68,7 @@ FACTS = [
 FIRST = ["index.html", "program.html", "register.html", "talk.html", "travel.html", "speakers.html",
          "add.html", "supporters.html", "extensions.html", "charter.html",
          "code-of-conduct.html", "access.html", "contact.html", "brand.html"]
-START, END = "<!-- event data -->", "<!-- /event data -->"
+START, END = blocks.marks("event-data", "tools/agents.py")
 
 
 def url(name: str) -> str:
@@ -279,7 +280,7 @@ def robots() -> str:
 
 def with_json_ld(text: str) -> str:
     block = json_ld()
-    pattern = re.compile(re.escape(START) + r".*?" + re.escape(END) + r"\n?", re.S)
+    pattern = blocks.pattern("event-data", trailing_newline=True)
     if pattern.search(text):
         return pattern.sub(lambda _: block, text, count=1)
     return text.replace("</head>", block + "</head>", 1)

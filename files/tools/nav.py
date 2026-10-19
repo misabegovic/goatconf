@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """The top bar: one navigation for every page of the site.
 
-The bar sits between <!-- topbar --> and <!-- /topbar --> in each page and
+The bar sits between <!-- gen:topbar tools/nav.py --> and its end in each page and
 marks the page you are on. The same pass writes GoatConf's social accounts
-(SOCIAL) into each footer, after its links, and into any <!-- follow -->
+(SOCIAL) into each footer, after its links, and into any <!-- gen:follow -->
 spot, such as the one on the contact page. The generators (program, extensions, speakers)
 call bar() for their own pages.
 
@@ -19,10 +19,13 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import blocks  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
-START, END = "<!-- topbar -->", "<!-- /topbar -->"
-BLOCK = re.compile(re.escape(START) + r".*?" + re.escape(END) + r"\n?", re.S)
+START, END = blocks.marks("topbar", "tools/nav.py")
+BLOCK = blocks.pattern("topbar", trailing_newline=True)
 # GoatConf's own accounts, live on 2026-10-15 (sources/web/social/goatconf-linkedin-2026-10-15.md,
 # sources/web/social/goatconf-x-2026-10-15.md). Icons: Simple Icons, CC0.
 SOCIAL = (
@@ -31,7 +34,7 @@ SOCIAL = (
     ("X", "https://x.com/goatconf",
      "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"),
 )
-FOLLOW = re.compile(r"<!-- follow -->.*?<!-- /follow -->", re.S)
+FOLLOW = blocks.pattern("follow")
 FOOTER_LINKS = re.compile(r'(<footer\b.*?<p class="(?:footer|back-cover)__links">.*?</p>)', re.S)
 LINKS = [("program.html", "Program"), ("speakers.html", "Speakers"), ("travel.html", "Travel"), ("supporters.html", "Supporters")]
 ACTIONS = [("talk.html", "Propose a session", "topbar__cta"), ("register.html", "Register", "topbar__cta topbar__cta--main")]
@@ -58,15 +61,15 @@ def bar(current: str) -> str:
 
 
 def follow() -> str:
-    """GoatConf's accounts as small labelled icons, for every footer and any <!-- follow --> spot."""
+    """GoatConf's accounts as small labelled icons, for every footer and any <!-- gen:follow --> spot."""
     links = " ".join(f'<a class="follow__link" href="{url}"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="{path}"/></svg>{name}</a>'
                      for name, url, path in SOCIAL)
-    return f'<!-- follow --><p class="follow"><span class="follow__label">Follow GoatConf</span> {links}</p><!-- /follow -->'
+    return blocks.wrap("follow", "tools/nav.py", f'<p class="follow"><span class="follow__label">Follow GoatConf</span> {links}</p>', sep="")
 
 
 def place(text: str, current: str) -> str:
     """Put the bar right after the sprite (or <body>), replacing an old one, and the follow links
-    in the footer, after its links, and in any <!-- follow --> spot."""
+    in the footer, after its links, and in any <!-- gen:follow --> spot."""
     text = BLOCK.sub("", text)
     m = re.search(r"<body[^>]*>\n(<svg width=\"0\".*?</svg>\n)?", text, re.S)
     if not m:
@@ -74,7 +77,7 @@ def place(text: str, current: str) -> str:
     text = text[:m.end()] + bar(current) + text[m.end():]
     text = FOLLOW.sub(lambda _m: follow(), text)
     footer = FOOTER_LINKS.search(text)
-    if footer and "<!-- follow -->" not in text[footer.start():text.find("</footer>", footer.start())]:
+    if footer and "<!-- gen:follow " not in text[footer.start():text.find("</footer>", footer.start())]:
         text = text[:footer.end()] + "\n  " + follow() + text[footer.end():]
     return text
 

@@ -3,10 +3,10 @@
 
 The home page is hand-written, with four parts filled from the records:
 
-  <!-- home:days -->        the three days, from DAY_PLAN in tools/program.py
-  <!-- home:speakers -->    the first speakers, from speakers/, in eight places
-  <!-- home:supporters -->  the supporters' logos, from supporters/
-  <!-- home:kinds -->       every accepted event, from extensions/, then the
+  <!-- gen:home-days -->        the three days, from DAY_PLAN in tools/program.py
+  <!-- gen:home-speakers -->    the first speakers, from speakers/, in eight places
+  <!-- gen:home-supporters -->  the supporters' logos, from supporters/
+  <!-- gen:home-kinds -->       every accepted event, from extensions/, then the
                             kinds of event to propose, all still open
 
 Then every sticker and slot number on the page is renumbered in order, so
@@ -26,6 +26,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import blocks  # noqa: E402
 import extensions  # noqa: E402
 import images  # noqa: E402
 import program  # noqa: E402
@@ -41,8 +42,7 @@ TILTS = (-1.5, 1, -1, 1.5, -0.5, 0.5)
 
 
 def block(name: str, html: str) -> tuple[re.Pattern, str]:
-    start, end = f"<!-- home:{name} -->", f"<!-- /home:{name} -->"
-    return re.compile(re.escape(start) + r".*?" + re.escape(end), re.S), f"{start}\n{html}\n{end}"
+    return blocks.pattern(f"home-{name}"), blocks.wrap(f"home-{name}", "tools/home.py", html)
 
 
 # Events people add may run on any day of the GoatConf week; the ones the
@@ -194,7 +194,7 @@ def page() -> str:
     for name, html in (("days", days()), ("speakers", speakers_block()), ("supporters", supporters_block()), ("kinds", kinds_block())):
         pattern, filled = block(name, html)
         if not pattern.search(text):
-            raise SystemExit(f"site/index.html has no <!-- home:{name} --> block")
+            raise SystemExit(f"site/index.html has no {blocks.marks(f'home-{name}', 'tools/home.py')[0]} block")
         text = pattern.sub(lambda _m: filled, text, count=1)
     return renumber(text)
 

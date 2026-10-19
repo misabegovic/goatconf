@@ -7,8 +7,8 @@ sources/web/osm/. The maps are drawn as inline SVG in the site's colours, with
 numbered pins that match the lists below them; pins that crowd together are
 nudged apart, with a thin line back to the true spot.
 
-  build [--check] [--all]   write the blocks between <!-- places:eat --> and
-                            <!-- places:stay --> in site/travel.html; --all
+  build [--check] [--all]   write the blocks <!-- gen:places-eat --> and
+                            <!-- gen:places-stay --> in site/travel.html; --all
                             also shows unapproved places (for a preview only);
                             --check fails if the page is not current
 
@@ -29,6 +29,7 @@ from pathlib import Path
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import blocks  # noqa: E402
 import images  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -248,12 +249,7 @@ def page(show_all=False) -> str:
     data, ways = load()
     text = PAGE.read_text(encoding="utf-8")
     for section in ("eat", "stay"):
-        start, end = f"<!-- places:{section} -->", f"<!-- /places:{section} -->"
-        pat = re.compile(re.escape(start) + r".*?" + re.escape(end), re.S)
-        if not pat.search(text):
-            raise SystemExit(f"site/travel.html has no {start} block")
-        filled = f"{start}\n{block(data, ways, section, show_all)}\n{end}"
-        text = pat.sub(lambda _m: filled, text, count=1)
+        text = blocks.fill(text, f"places-{section}", "tools/places.py", block(data, ways, section, show_all), "site/travel.html")
     return text
 
 

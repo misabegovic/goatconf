@@ -489,3 +489,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #127: tools: one page frame for every page
    diff: 37 files, +279/-488
    restricted-paths: true
+2026-10-19 merge — PR #128: tools: one build for the site, and one marker style
+   diff: 40 files, +318/-216
+   restricted-paths: true

@@ -23,6 +23,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import blocks  # noqa: E402
 import nav  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -58,7 +59,7 @@ SPRITE = """<svg width="0" height="0" style="position:absolute" aria-hidden="tru
 
 
 def block(name: str, body: str) -> str:
-    return f"<!-- gen:{name} tools/frame.py -->\n{body}\n<!-- /gen:{name} -->"
+    return blocks.wrap(name, "tools/frame.py", body)
 
 
 def links(back_cover: bool = False) -> str:
@@ -127,8 +128,7 @@ def frame(text: str) -> str:
             raise ValueError("no <body> tag on its own line to put the sprite after")
         text = text[:m.end()] + SPRITE + "\n" + text[m.end():]
     for name, make in (("footer", footer), ("back-cover-links", back_cover_links)):
-        pat = re.compile(r"<!-- gen:" + name + r" tools/frame\.py -->\n.*?\n<!-- /gen:" + name + r" -->", re.S)
-        text = pat.sub(lambda _m: make(), text)
+        text = blocks.pattern(name).sub(lambda _m: make(), text)
     return text
 
 

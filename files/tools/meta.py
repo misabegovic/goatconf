@@ -28,11 +28,14 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import blocks  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 IMAGE = "https://goatconf.com/share/og.png"
-START, END = "<!-- link preview -->", "<!-- /link preview -->"
-BLOCK = re.compile(re.escape(START) + r".*?" + re.escape(END) + r"\n?", re.S)
+START, END = blocks.marks("link-preview", "tools/meta.py")
+BLOCK = blocks.pattern("link-preview", trailing_newline=True)
 
 
 def tags(text: str) -> str:
