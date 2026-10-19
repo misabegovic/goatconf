@@ -59,8 +59,8 @@ FACTS = [
     "Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot. Proposals for 30 minutes are welcome too, and may be paired into one hour. Closer to June, people with a ticket also register for the sessions they want, because each room has only so many seats; everyone with a ticket gets an email with how, and seats nobody registered for go to whoever is at the door.",
     "Friday starts half an hour earlier, at 09:30, and ends at 16:30.",
     "Saturday has no talks: it is the community's day, with the organiser's day at the Pannonian salt lakes and the goat hunt, plus events people add, such as walks and meetups.",
-    "Talks: an open call; anyone may propose a session, first-time speakers welcome. The organiser reads every proposal.",
-    "Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), invoiced by the organiser's Austrian business, or pay a supplier directly. A host who funds and organises an accepted event is listed as a supporter too, if they agree. Speakers pay their own travel and stay; money from supporters that the event does not need goes first to refunding speakers who pay their own way, after the event, never promised.",
+    "Talks: an open call; anyone may propose a session, first-time speakers welcome. We read every proposal.",
+    "Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), arranged with the organiser at info@muhamed.at, or pay a supplier directly. A host who funds and organises an accepted event is listed as a supporter too, if they agree. Speakers pay their own travel and stay; money from supporters that the event does not need goes first to refunding speakers who pay their own way, after the event, never promised.",
     "Recording: GoatConf aims to record the sessions in the two big halls of IPI Academy, the main hall and the first-floor hall; this is not promised yet, as it depends on the available budget. People may also bring a camera or a podcast, and a supporter may pay for a crew.",
 ]
 # The pages an agent most likely needs first, in this order; the rest follow.
@@ -78,7 +78,7 @@ def url(name: str) -> str:
 
 
 def pages() -> list[Path]:
-    found = {p.name: p for p in SITE.glob("*.html") if not p.name.startswith("_")}
+    found = {p.name: p for p in SITE.glob("*.html") if not p.name.startswith("_") and p.name != "404.html"}
     return [found[n] for n in FIRST if n in found] + sorted((p for n, p in found.items() if n not in FIRST), key=lambda p: p.name)
 
 

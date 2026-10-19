@@ -444,3 +444,33 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #112: site: stale and contradictory lines fixed
    diff: 26 files, +206/-48
    restricted-paths: true
+2026-10-19 merge — PR #113: site: one voice, one name for each thing
+   diff: 39 files, +137/-127
+   restricted-paths: true
+2026-10-19 merge — PR #114: site: the supporters page makes the pitch
+   diff: 9 files, +21/-12
+   restricted-paths: true
+2026-10-19 merge — PR #115: site: the travel page, written for visitors
+   diff: 29 files, +75/-55
+   restricted-paths: true
+2026-10-19 merge — PR #116: site: a 404 page, and the page structure fixed
+   diff: 33 files, +187/-111
+   restricted-paths: true
+2026-10-19 merge — PR #117: site: a lighter site
+   diff: 152 files, +1130/-136
+   restricted-paths: true
+2026-10-19 merge — PR #118: site: a tidier stylesheet
+   diff: 27 files, +33/-65
+   restricted-paths: false
+2026-10-19 merge — PR #119: site: the site's guide moves out of the published folder
+   diff: 4 files, +10/-4
+   restricted-paths: false
+2026-10-19 merge — PR #120: tools: bring a PR up to date with main before merging it
+   diff: 3 files, +28/-0
+   restricted-paths: true
+2026-10-19 merge — PR #121: org: propose one page frame, one marker style and one site build
+   diff: 5 files, +154/-0
+   restricted-paths: false
+2026-10-19 merge — PR #122: site: land the review's PRs #113 to #121 on main
+   diff: 166 files, +1706/-438
+   restricted-paths: true

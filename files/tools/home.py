@@ -27,6 +27,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extensions  # noqa: E402
+import images  # noqa: E402
 import program  # noqa: E402
 import speakers  # noqa: E402
 
@@ -54,7 +55,7 @@ EVENING = "Evening: open for whatever people add."
 def hours_off(plan) -> str:
     kinds = []
     for what in plan["breaks"].values():
-        what = what.split(",")[0]
+        what = what.removeprefix("Hour off, in ").split(",")[0]
         what = what[0].lower() + what[1:]
         if what not in kinds:
             kinds.append(what)
@@ -81,12 +82,12 @@ def days() -> str:
         items.append(day_sticker(i, day, program.CORE_DAYS[day], f'{plan["slots"][0]} to {plan["end"]}', lines))
     sat, label = program.COMMUNITY_DAY
     items.append(day_sticker(len(items), sat, label, "The community\'s day",
-                             '<small>A day at the lakes and the goat hunt, planned by the organiser, plus what people add.</small>'
+                             '<small>A day at the lakes and the goat hunt, planned by us, plus what people add.</small>'
                              + added(ext.get(sat, []))))
     outside = [e for d, evs in ext.items() if d not in program.DAY_PLAN and d != sat and WEEK[0] <= d <= WEEK[1] for e in evs]
     items.append('    <li class="slots__wide"><a class="slot slot--link slot--open" href="add.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
                  '<span class="num num--printed">0</span><strong>Your event, any day from 2 to 6 June</strong>'
-                 '<small>Anything you would like to run for the people who come. You run it, and once the organiser accepts it, it is on the program.</small>'
+                 '<small>Anything you would like to run for the people who come. You run it, and once we accept it, it is on the program.</small>'
                  + added(outside) + '<span class="stamp">Yours?</span></a></li>')
     return f"""<section class="album-page wrap" id="days" aria-labelledby="days-title">
   <h2 class="band" id="days-title">Three days in June</h2>
@@ -204,7 +205,7 @@ def main(argv=None) -> int:
     b = sub.add_parser("build")
     b.add_argument("--check", action="store_true")
     args = ap.parse_args(argv)
-    want = page()
+    want = images.wrap(page())
     have = PAGE.read_text(encoding="utf-8")
     if args.check:
         if want != have:

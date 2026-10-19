@@ -24,9 +24,9 @@
         "16:00"
       ],
       "after_each_slot": {
-        "10:00": "Coffee on Freedom Square, one hour",
+        "10:00": "Hour off, in the cafés on Freedom Square",
         "12:00": "Lunch in town, one hour",
-        "14:00": "Coffee on Freedom Square, one hour"
+        "14:00": "Hour off, in the cafés on Freedom Square"
       },
       "note": "Four one-hour slots in every room, an hour off after each. Welcome at 09:45."
     },
@@ -42,9 +42,9 @@
         "15:30"
       ],
       "after_each_slot": {
-        "09:30": "Coffee on Freedom Square, one hour",
+        "09:30": "Hour off, in the cafés on Freedom Square",
         "11:30": "Lunch in town, one hour",
-        "13:30": "Coffee on Freedom Square, one hour"
+        "13:30": "Hour off, in the cafés on Freedom Square"
       },
       "note": "Four slots, starting half an hour earlier than Thursday. Welcome at 09:15."
     },

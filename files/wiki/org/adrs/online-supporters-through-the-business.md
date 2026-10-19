@@ -2,13 +2,14 @@
 title: "Online supporters pay the organiser's Austrian business; the budget becomes private"
 kind: decision
 status: accepted
-updated: 2026-10-18
+updated: 2026-10-19
 confidence: medium
 supersedes: org/adrs/budget-and-public-ledger.md
 depends_on:
   - org/adrs/speakers-and-travel-supporters.md
   - org/adrs/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md
   - sources/conversations/2026-10-18--org--event-hosts-as-supporters.md
   - sources/conversations/2026-10-14--org--speakers-dinner.md
@@ -110,6 +111,7 @@ A single level treats every supporter alike.
 - **2026-10-18, the speakers dinner is no longer paid from this money.** The organiser pays for the speakers dinner, whatever the budget, so the 2026-10-14 amendment above no longer holds (source: sources/conversations/2026-10-18--org--organiser-pays-speakers-dinner.md).
 - **2026-10-18, a host that funds and organises an accepted event.** A host, whether a person, a group or a company, that funds and organises an event the organiser accepted as part of GoatConf 2027 is listed on the site as a supporter, the same as online supporters, with its logo and link, if it agrees. No money goes through the organiser, so there is nothing to invoice. Its line names the event. Being listed buys nothing: no talk, no stage time, no say over the program and nothing at GoatConf's venue. The first is the Bosnia & Herzegovina Futures Foundation, for the BH Professionals Meetup on Saturday 5 June 2027 (source: sources/conversations/2026-10-18--org--event-hosts-as-supporters.md).
 - **2026-10-18, self-funded speakers' travel comes first.** Of the surplus, refunds to speakers who pay their own travel come first, before other costs it may pay; still never promised (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md).
+- **2026-10-19, the site no longer names the Austrian business.** Online supporters still pay the organiser's Austrian business, but the supporters page, the charter and llms.txt no longer say so: the supporters page says whom a supporter reaches (the 120 to 300 engineers, designers, product people and founders who come), that supporters reach Muhamed, the organiser, through the contact form or by email, and carries a "Become a supporter" button to the contact form (source: sources/conversations/2026-10-19--org--site-review-decisions.md).
 
 
 ## Related

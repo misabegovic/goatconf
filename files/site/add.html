@@ -21,7 +21,8 @@
 <meta property="og:image:alt" content="GoatConf 2027, Tuzla, 3–5 June 2027, free. The GoatConf seal: the one that feeds the community.">
 <meta name="twitter:card" content="summary_large_image">
 <!-- /link preview -->
-<link rel="stylesheet" href="goatconf.css?v=24aaa4a2">
+<link rel="preload" href="fonts/bricolage-wdth-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="goatconf.css?v=ec263a35">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="goat" viewBox="0 0 124 100">
@@ -48,17 +49,18 @@
     <a href="speakers.html">Speakers</a>
     <a href="travel.html">Travel</a>
     <a href="supporters.html">Supporters</a>
-    <a class="topbar__cta" href="talk.html">Run a session</a>
+    <a class="topbar__cta" href="talk.html">Propose a session</a>
     <a class="topbar__cta topbar__cta--main" href="register.html">Register</a>
   </nav>
 </header>
 <!-- /topbar -->
-<header class="page-head">
-  <img class="page-head__photo" src="img/city-old-town-aerial-paving.jpg" width="1375" height="696" alt="The old town from above: tiled roofs and a street paved in a red and blue mosaic" decoding="async">
+<main id="main">
+<div class="page-head">
+  <picture><source type="image/webp" srcset="img/city-old-town-aerial-paving-480.webp 480w, img/city-old-town-aerial-paving-800.webp 800w, img/city-old-town-aerial-paving-1200.webp 1200w" sizes="(max-width: 47.99rem) 92vw, 34rem"><img class="page-head__photo" src="img/city-old-town-aerial-paving.jpg" width="1375" height="696" alt="The old town from above: tiled roofs and a street paved in a red and blue mosaic" decoding="async"></picture>
   <h1 class="sign">Propose an event</h1>
-  <p class="lede">A workshop, a meetup, a hackathon, a dinner, a walk, or support for one named thing. You run it and pay for it; if the organiser accepts it, it becomes part of GoatConf 2027.</p>
-</header>
-<main id="main" class="prose">
+  <p class="lede">A workshop, a meetup, a hackathon, a dinner, a walk, or support for one named thing. You run it and pay for it; if we accept it, it becomes part of GoatConf 2027.</p>
+</div>
+<div class="prose">
 <p class="cta"><a class="button" data-form="add" href="https://docs.google.com/forms/d/e/1FAIpQLScZK2BJcsBY2W5lpSljaflGsPdimruLAfmK9MizR0EIcgWfXg/viewform">Propose your event</a><span>Open now. It takes about ten minutes.</span></p>
 <h2>What you can add</h2>
 <ul>
@@ -74,18 +76,19 @@
 <p>If you or your organisation fund and run it, you can also be listed as a <a href="supporters.html">supporter</a>.</p>
 <p>Want to support GoatConf with money or something in kind instead? See the <a href="supporters.html">supporters page</a>.</p>
 <h2>The rules</h2>
-<p>Not everything people propose becomes part of GoatConf. The organiser accepts what follows the <a href="code-of-conduct.html">code of conduct</a> and the <a href="charter.html">charter</a> and fits the program: its time, its place, who it is for and how it sits next to the talks. Only accepted events are part of GoatConf 2027, listed on the site and shared with the people who come. You run it and you pay for it, and its name says who runs it, for example "Rust night, part of GoatConf 2027". It takes place between about 25 May and 20 June 2027; if not, say why in the description. Anything not accepted may still happen, but not under GoatConf's name.</p>
+<p>Not everything people propose becomes part of GoatConf. We accept what follows the <a href="code-of-conduct.html">code of conduct</a> and the <a href="charter.html">charter</a> and fits the program: its time, its place, who it is for and how it sits next to the talks. Only accepted events are part of GoatConf 2027, listed on the site and shared with the people who come. You run it and you pay for it, and its name says who runs it, for example "Rust night, part of GoatConf 2027". It takes place between 2 and 6 June 2027. Anything not accepted may still happen, but not under GoatConf's name.</p>
 <h2>What happens next</h2>
 <ol>
 <li><strong>You fill in the form:</strong> the name, the kind, the host, where, when, the cost, how people join, who pays, a public contact and a short description.</li>
-<li><strong>The organiser decides</strong> whether it becomes part of GoatConf, may ask for changes, and writes back either way.</li>
-<li><strong>If accepted, it goes on the site,</strong> on the page <a href="extensions.html">Added by the people who come</a>. If it is between 2 and 6 June, it also goes on the <a href="program.html">program</a>.</li>
+<li><strong>We decide</strong> whether it becomes part of GoatConf, may ask for changes, and write back either way.</li>
+<li><strong>If accepted, it goes on the site,</strong> on the page <a href="extensions.html">Events people add</a>. It also goes on the <a href="program.html">program</a>.</li>
 </ol>
 <p class="cta"><a class="button" data-form="add" href="https://docs.google.com/forms/d/e/1FAIpQLScZK2BJcsBY2W5lpSljaflGsPdimruLAfmK9MizR0EIcgWfXg/viewform">Add your event</a></p>
+</div>
 </main>
 <footer class="footer">
   <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
-  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Run a session</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
+  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Propose a session</a> <a href="add.html">Propose an event</a> <a href="extensions.html">Events people add</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
   <!-- follow --><p class="follow"><span class="follow__label">Follow GoatConf</span> <a class="follow__link" href="https://www.linkedin.com/company/goatconf/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a> <a class="follow__link" href="https://x.com/goatconf"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>X</a></p><!-- /follow -->
 </footer>
 <script src="album.js?v=21b3b31a" defer></script>

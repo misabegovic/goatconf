@@ -3,3 +3,11 @@
 # Test-only. tests/ is run by tools/ci-local.sh, in the venv
 # tools/setup-local.sh creates.
 pytest
+
+# Asset tools, not needed by CI: tools/brand.py lettering (fontTools reads
+# the display face to write the seal's lettering as outlines),
+# tools/fonts.py (fontTools and brotli trim the display face to what the
+# site uses) and tools/images.py build (Pillow writes the WebP copies).
+fonttools
+brotli
+pillow

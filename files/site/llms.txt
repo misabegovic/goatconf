@@ -8,8 +8,8 @@
 - Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot. Proposals for 30 minutes are welcome too, and may be paired into one hour. Closer to June, people with a ticket also register for the sessions they want, because each room has only so many seats; everyone with a ticket gets an email with how, and seats nobody registered for go to whoever is at the door.
 - Friday starts half an hour earlier, at 09:30, and ends at 16:30.
 - Saturday has no talks: it is the community's day, with the organiser's day at the Pannonian salt lakes and the goat hunt, plus events people add, such as walks and meetups.
-- Talks: an open call; anyone may propose a session, first-time speakers welcome. The organiser reads every proposal.
-- Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), invoiced by the organiser's Austrian business, or pay a supplier directly. A host who funds and organises an accepted event is listed as a supporter too, if they agree. Speakers pay their own travel and stay; money from supporters that the event does not need goes first to refunding speakers who pay their own way, after the event, never promised.
+- Talks: an open call; anyone may propose a session, first-time speakers welcome. We read every proposal.
+- Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), arranged with the organiser at info@muhamed.at, or pay a supplier directly. A host who funds and organises an accepted event is listed as a supporter too, if they agree. Speakers pay their own travel and stay; money from supporters that the event does not need goes first to refunding speakers who pay their own way, after the event, never promised.
 - Recording: GoatConf aims to record the sessions in the two big halls of IPI Academy, the main hall and the first-floor hall; this is not promised yet, as it depends on the available budget. People may also bring a camera or a podcast, and a supporter may pay for a crew.
 
 Register: https://luma.com/event/evt-dU4KbLhpIAm9Y9V
@@ -38,10 +38,10 @@ Follow GoatConf: LinkedIn https://www.linkedin.com/company/goatconf/, X https://
 
 ## Pages
 
-- [GoatConf 2027: a free conference in Tuzla](https://goatconf.com/): GoatConf is a free conference for people who build and sell software: engineers, designers, product people, founders, and the incurably curious dreamers and visionaries. Any programming language, any stack. An excuse to hang out with like-minded people and learn from folks sharing their current best. In Tuzla, Bosnia and Herzegovina, on 3–5 June 2027.
+- [GoatConf 2027: a free conference in Tuzla](https://goatconf.com/): A free conference for people who build and sell software, in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Any language, any stack.
 - [Program: GoatConf 2027, 3–5 June, Tuzla](https://goatconf.com/program): The GoatConf 2027 program: two core days, Thursday 3rd and Friday 4th June, in every room of IPI Academy, Tuzla, and Saturday 5th June for the community.
 - [Register: GoatConf 2027](https://goatconf.com/register): Register for free for GoatConf 2027 in Tuzla: core days Thursday 3rd and Friday 4th June at IPI Academy, community day Saturday 5th June.
-- [Run a session: GoatConf 2027](https://goatconf.com/talk): Propose a talk, a panel, a workshop or something else that fits an hour for GoatConf 2027 in Tuzla: one-hour slots on 3rd and 4th June, every proposal read by the organiser, no strict deadline.
+- [Propose a session: GoatConf 2027](https://goatconf.com/talk): Propose a talk, a panel, a workshop or something else that fits an hour for GoatConf 2027 in Tuzla: one-hour slots on 3rd and 4th June, every proposal read by the organiser, no strict deadline.
 - [Getting here, staying and money: GoatConf 2027](https://goatconf.com/travel): How to reach Tuzla, where to stay, what things cost and what to plan for: flights, buses, hotels, money, phones and visas, with the date each price was checked.
 - [Speakers: GoatConf 2027, 3–5 June, Tuzla](https://goatconf.com/speakers): The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words.
 - [Propose an event: GoatConf 2027](https://goatconf.com/add): Add a workshop, a meetup, a dinner, a walk or support around GoatConf 2027 in Tuzla, 3–5 June. You run it, GoatConf lists it.

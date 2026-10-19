@@ -20,12 +20,16 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import datetime as dt
 import math
 import re
 import sys
 from pathlib import Path
 
 import yaml
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import images  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "places" / "places.yml"
@@ -165,8 +169,8 @@ def map_svg(view, ways, data, items, prefix, color, ink, title) -> str:
     for i, ((x0, y0), (x, y)) in enumerate(zip(pins, placed), start=1):
         if math.hypot(x - x0, y - y0) > 3:
             lines.append(f'<line x1="{x0:.1f}" y1="{y0:.1f}" x2="{x:.1f}" y2="{y:.1f}"/><circle cx="{x0:.1f}" cy="{y0:.1f}" r="4"/>')
-        dots.append(f'<a href="#{prefix}-{i}"><g class="pin" transform="translate({x:.1f} {y:.1f})"><circle r="{r}" fill="{color}" stroke="#ffffff" stroke-width="4"/>'
-                    f'<text y="11" text-anchor="middle" fill="{ink}">{i}</text></g></a>')
+        dots.append(f'<a href="#{prefix}-{i}" tabindex="-1"><g class="pin" transform="translate({x:.1f} {y:.1f})"><g class="pin__dot"><circle r="{r}" fill="{color}" stroke="#ffffff" stroke-width="4"/>'
+                    f'<text y="11" text-anchor="middle" fill="{ink}">{i}</text></g></g></a>')
     lm = [landmark(view, data["trg_slobode"]["lat"], data["trg_slobode"]["lon"] - 0.0004, "Freedom Square", "label")]
     lakes = [w for w in ways if w["tags"].get("name", "").startswith("Panonsko jezero")]
     pts = [(a, b) for w in lakes for a, b in w["geometry"] if view.inside(a, b, margin=0)]
@@ -233,7 +237,8 @@ def block(data, ways, section, show_all) -> str:
         m = metres(ipi, (p["lat"], p["lon"]))
         return f"{round(m / 50) * 50} m {direction(ipi, (p['lat'], p['lon']))}"
     lis = "\n".join(item(p, i, section, off(p)) for i, p in enumerate(items, start=1))
-    checked = data.get(f"{section}_checked", data["checked"])
+    checked = dt.date.fromisoformat(data.get(f"{section}_checked", data["checked"]))
+    checked = f"{checked.day} {checked:%B %Y}"
     note = ("Ask each place which dishes are vegetarian or vegan. " if eat else "Prices change: check the date, then the place itself. ")
     return (f'<figure class="map-frame">{svg}<figcaption>Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</figcaption></figure>\n'
             f'<ol class="places">\n{lis}\n</ol>\n<p class="checked">{note}Checked on {checked}.</p>')
@@ -259,7 +264,7 @@ def main(argv=None) -> int:
     b.add_argument("--check", action="store_true")
     b.add_argument("--all", action="store_true")
     a = ap.parse_args(argv)
-    want = page(a.all)
+    want = images.wrap(page(a.all))
     if a.check:
         if PAGE.read_text(encoding="utf-8") != want:
             print("site/travel.html places are out of date: run python3 tools/places.py build")

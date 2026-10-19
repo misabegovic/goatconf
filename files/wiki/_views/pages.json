@@ -242,12 +242,13 @@
       "title": "Write each extension as one Markdown file with frontmatter, checked by an agent and merged by the organiser",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "depends_on": [
         "org/prds/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-12--org--accepted-events-and-hackathons.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -260,14 +261,14 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/tooling/google-forms-response-destination.md"
       ],
-      "tokens": 1716
+      "tokens": 1862
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
       "title": "Website: goatconf.com on GitHub Pages, with every intake through Google Forms",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-17",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "depends_on": [
         "org/prds/website-and-registration.md",
@@ -276,6 +277,7 @@
       ],
       "supersedes": "org/adrs/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-17--org--three-days-section.md",
         "sources/conversations/2026-10-17--org--event-kinds-clickable.md",
         "sources/conversations/2026-10-17--org--organiser-block-below-the-goat.md",
@@ -297,14 +299,31 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 2848
+      "tokens": 3040
+    },
+    {
+      "path": "org/adrs/one-page-frame-and-one-site-build.md",
+      "title": "Give every page one shared frame, one marker style and one build, and lint the HTML",
+      "kind": "decision",
+      "status": "proposed",
+      "updated": "2026-10-19",
+      "confidence": "low",
+      "depends_on": [
+        "org/prds/website-and-registration.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
+        "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
+        "sources/conversations/2026-10-07--brain--local-ci-only.md"
+      ],
+      "tokens": 1607
     },
     {
       "path": "org/adrs/online-supporters-through-the-business.md",
       "title": "Online supporters pay the organiser's Austrian business; the budget becomes private",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-18",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "supersedes": "org/adrs/budget-and-public-ledger.md",
       "depends_on": [
@@ -312,6 +331,7 @@
         "org/adrs/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md",
         "sources/conversations/2026-10-18--org--event-hosts-as-supporters.md",
         "sources/conversations/2026-10-14--org--speakers-dinner.md",
@@ -321,7 +341,7 @@
         "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md"
       ],
-      "tokens": 1689
+      "tokens": 1816
     },
     {
       "path": "org/adrs/open-program-every-room.md",
@@ -1823,6 +1843,7 @@
       "tokens": 3254,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
+        "org/adrs/one-page-frame-and-one-site-build.md",
         "org/adrs/website-and-registration.md"
       ]
     },
@@ -2002,12 +2023,13 @@
       "title": "Images of Tuzla for GoatConf: free to use, ask first, and gaps",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-13",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "depends_on": [
         "org/tuzla.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
         "sources/web/images/food-photos-chosen-2026-10-13.md",
         "sources/conversations/2026-10-13--org--sarma-instead-of-ustipci.md",
@@ -2070,7 +2092,7 @@
         "sources/web/images/burek-nisici.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 8120
+      "tokens": 8211
     },
     {
       "path": "org/tuzla.md",

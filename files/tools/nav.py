@@ -34,7 +34,7 @@ SOCIAL = (
 FOLLOW = re.compile(r"<!-- follow -->.*?<!-- /follow -->", re.S)
 FOOTER_LINKS = re.compile(r'(<footer\b.*?<p class="(?:footer|back-cover)__links">.*?</p>)', re.S)
 LINKS = [("program.html", "Program"), ("speakers.html", "Speakers"), ("travel.html", "Travel"), ("supporters.html", "Supporters")]
-ACTIONS = [("talk.html", "Run a session", "topbar__cta"), ("register.html", "Register", "topbar__cta topbar__cta--main")]
+ACTIONS = [("talk.html", "Propose a session", "topbar__cta"), ("register.html", "Register", "topbar__cta topbar__cta--main")]
 
 
 def bar(current: str) -> str:
