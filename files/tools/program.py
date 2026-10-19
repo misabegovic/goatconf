@@ -21,7 +21,6 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
-import html
 import re
 import sys
 import unicodedata
@@ -30,6 +29,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extensions  # noqa: E402
 import images  # noqa: E402
+import sitelib  # noqa: E402
 import meta  # noqa: E402
 import nav  # noqa: E402
 
@@ -85,11 +85,7 @@ FIELDS = ("title", "speakers", "format", "day", "start", "room", "accepted")
 
 
 def records(paths=None):
-    if paths:
-        return [Path(p) for p in paths]
-    if not RECORDS.is_dir():
-        return []
-    return sorted(p for p in RECORDS.glob("*.md") if p.name != "README.md" and not p.name.startswith("_"))
+    return sitelib.records(RECORDS, paths)
 
 
 def check_record(path: Path):
@@ -162,8 +158,7 @@ def cmd_check(args) -> int:
     return 1 if failed or clashes else 0
 
 
-def esc(v) -> str:
-    return html.escape(str(v))
+esc = sitelib.esc
 
 
 def page_name(meta) -> str:
@@ -413,26 +408,8 @@ def all_pages() -> dict:
 def cmd_build(args) -> int:
     pages = all_pages()
     stale = 0
-    for old in PAGE.parent.glob("session-*.html"):
-        if old not in pages:
-            if args.check:
-                print(f"site/{old.name} belongs to no session on the program: run python3 tools/program.py build")
-                stale += 1
-            else:
-                old.unlink()
-                print(f"removed site/{old.name}")
-    for path, want in pages.items():
-        want = images.wrap(want)
-        if args.check:
-            have = path.read_text(encoding="utf-8") if path.exists() else ""
-            if have != want:
-                print(f"site/{path.name} is out of date: run python3 tools/program.py build")
-                stale += 1
-            else:
-                print(f"site/{path.name} is current")
-        else:
-            path.write_text(want, encoding="utf-8")
-            print(f"wrote site/{path.name}")
+    stale += sitelib.prune(PAGE.parent.glob("session-*.html"), pages, args.check, "tools/program.py build", "belongs to no session on the program")
+    stale += sitelib.write_or_check(pages, args.check, "tools/program.py build")
     return 1 if stale else 0
 
 
