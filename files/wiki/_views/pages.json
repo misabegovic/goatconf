@@ -787,12 +787,13 @@
       "title": "The drumbeat, October to December 2026",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-18",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--business-and-people-sessions.md",
         "sources/conversations/2026-10-18--org--social-plan-to-june.md",
         "sources/conversations/2026-10-15--org--drafting-the-first-posts.md",
         "sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md",
@@ -830,7 +831,7 @@
         "sources/conversations/2026-10-12--org--day-chain-and-session-format.md",
         "sources/conversations/2026-10-12--org--two-core-days-and-saturday.md"
       ],
-      "tokens": 4041
+      "tokens": 4075
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -882,12 +883,13 @@
       "title": "The drumbeat, January to March 2027",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-18",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--business-and-people-sessions.md",
         "sources/conversations/2026-10-18--org--social-plan-to-june.md",
         "sources/conversations/2026-10-15--org--drafting-the-first-posts.md",
         "sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md",
@@ -930,7 +932,7 @@
         "sources/web/tuzla/fcdo-bih-entry-requirements.md",
         "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md"
       ],
-      "tokens": 4190
+      "tokens": 4225
     },
     {
       "path": "org/outreach/drumbeat.md",

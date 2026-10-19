@@ -2,11 +2,12 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-10-18
+updated: 2026-10-19
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-19--org--business-and-people-sessions.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
   - sources/conversations/2026-10-15--org--drafting-the-first-posts.md
   - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
@@ -78,7 +79,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   >
   > Every slot is one hour, in one of the seven rooms at IPI Academy in Tuzla, on Thursday 3 or Friday 4 June 2027. You choose what happens in it: a talk, a panel, a workshop, or something else, like live coding, a hands-on lab, a fireside chat or a debate.
   >
-  > Engineering in any language or stack, design, product, founding a company: all welcome, and first-time speakers too. The organiser reads every proposal, the session first and your name after, and you hear back whatever the answer.
+  > Engineering in any language or stack, design, product, research, the business of software and the people side of the work: all welcome, and first-time speakers too. You do not need to write code to speak; bring something the technical people in the room can use or build on. The organiser reads every proposal, the session first and your name after, and you hear back whatever the answer.
   >
   > Propose a session in about fifteen minutes: goatconf.com/talk
 

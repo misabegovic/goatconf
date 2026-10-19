@@ -125,7 +125,7 @@ POSTS = {
     "your-first-talk": ("Your<br>first talk?", "First-time speakers are welcome. A strong idea counts for more than a famous name."),
     "see-you-in-june": ("See you<br>in June", "Two days of talks in Tuzla, then a day for the community."),
     "whos-organising": ("Who's<br>organising", "The organiser of EuRuKo 2024 and RubyConf Austria."),
-    "not-only-engineers": ("Not only<br>engineers", "Design, product, founding a company: for people who build and sell software."),
+    "not-only-engineers": ("Not only<br>engineers", "Business, leadership, research, design, product: for people who build and sell software."),
     "support-goatconf": ("Support<br>GoatConf", "One level, 500 euro, online only. Nothing at the venue."),
     "panels-and-workshops": ("Panels and<br>workshops", "Two computer centres, with 20 and 26 seats, for hands-on sessions."),
     "with-or-without-meat": ("With or<br>without<br>meat", "Ask for posno: made without meat."),
