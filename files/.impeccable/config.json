@@ -29,6 +29,51 @@
         ],
         "createdAt": "2026-10-12T12:00:38.126Z",
         "reason": "The album band runs edge to edge across the top of each album page by design and carries its own padding; the detector reads the page as flush"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "site/index.html"
+        ],
+        "createdAt": "2026-10-19T21:13:55.842Z",
+        "reason": "Display lettering per DESIGN.md: the lede at 1.2, the sayings and buttons at 1.1, on purpose; body text stays at 1.6 (agent triage 2026-10-19)"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "site/index.html"
+        ],
+        "createdAt": "2026-10-19T21:13:55.857Z",
+        "reason": "Condensed uppercase display lettering is the album's hierarchy per DESIGN.md; the hits are short labels and headings of 32 to 43 characters, not body text (agent triage 2026-10-19)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "site/index.html"
+        ],
+        "createdAt": "2026-10-19T21:13:55.869Z",
+        "reason": "Album wrappers (spread, album pages, shiny page) inset their text through inner blocks; renders at 390 and 1280 show no flush text, and the tag padding the rendered scan flagged was raised (agent triage 2026-10-19)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "site/talk.html"
+        ],
+        "createdAt": "2026-10-19T21:13:55.881Z",
+        "reason": "The page head and the prose card inset their text through their own padding; the static scan reads them as flush, renders at 390 and 1280 do not (agent triage 2026-10-19)"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "site/index.html"
+        ],
+        "createdAt": "2026-10-19T21:13:55.893Z",
+        "reason": "The sticker's printed bottom edge on rounded stickers is part of DESIGN.md's sticker grammar (agent triage 2026-10-19)"
       }
     ]
   }
