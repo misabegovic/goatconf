@@ -98,19 +98,6 @@ def days() -> str:
 </section>"""
 
 
-def speaker_sticker(i: int, slug: str, meta, sessions=()) -> str:
-    role = f'<small class="sticker__role">{esc(meta["role"])}</small>' if meta.get("role") else ""
-    # The session's title, as the speakers page shows it: the scheduled one
-    # first, else the talk the record proposes while it has no slot.
-    talk = (f'{sessions[0]["format"]}: {sessions[0]["title"]}' if sessions
-            else f'{program.FORMATS[meta.get("talk_format") or "talk"]}: {meta["talk"]}' if meta.get("talk") else "")
-    role += f'<small class="sticker__talk">{esc(talk)}</small>' if talk else ""
-    photo = (f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo")
-             else '<span class="speaker__goat" aria-hidden="true"><svg viewBox="0 0 124 100"><use href="#goat"/></svg></span>')
-    return (f'    <li><a class="sticker sticker--photo sticker--mini" href="speaker-{esc(slug)}.html" data-peel style="--tilt:{TILTS[i % 6]}deg">'
-            f'<span class="num">0</span>{photo}<span class="sticker__name">{esc(meta["name"])}{role}</span></a></li>')
-
-
 def open_place() -> str:
     return ('    <li><a class="slot slot--link slot--open" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
             '<span class="num num--printed">0</span><strong>Your session here?</strong><small>A talk, a panel, a workshop or something else. The call is open.</small>'
@@ -120,8 +107,10 @@ def open_place() -> str:
 def speakers_block() -> str:
     people = speakers.listed(speakers.speakers())
     if people:
-        sessions = speakers.sessions_by_speaker(detail=True)
-        cards = "\n".join([speaker_sticker(i, s, m, sessions.get(s, ())) for i, (s, (m, _)) in enumerate(people[:SHOWN])]
+        # The speakers page's own card, so a speaker looks the same wherever they appear.
+        talks, detail, known = speakers.sessions_by_speaker(), speakers.sessions_by_speaker(detail=True), speakers.supporters()
+        cards = "\n".join([speakers.speaker_card(i, s, m, b, talks.get(s, []), known, (detail.get(s) or [None])[0], anchor=False)
+                           for i, (s, (m, b)) in enumerate(people[:SHOWN])]
                           + [open_place() for _ in range(SHOWN - len(people[:SHOWN]))])
         more = f'<a class="go go--ink" href="speakers.html">All {len(people)} speakers</a>' if len(people) > SHOWN else '<a class="go go--ink" href="speakers.html">Meet the speakers</a>'
         intro = "The people giving the talks, panels and workshops so far. More are added as proposals are accepted."

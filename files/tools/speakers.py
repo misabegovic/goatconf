@@ -272,8 +272,9 @@ def goat_photo() -> str:
     return '<span class="speaker__goat" aria-hidden="true"><svg viewBox="0 0 124 100"><use href="#goat"/></svg></span>'
 
 
-def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None) -> str:
-    """`scheduled` is the first session on the program, with its area and who it is for."""
+def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None, anchor=True) -> str:
+    """One speaker's card, the same on the speakers page and the home page. `scheduled` is the first
+    session on the program, with its area and who it is for; `anchor` gives the card the id the speakers page links to."""
     photo = f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo") else goat_photo()
     role = f'<span class="speaker__role">{esc(meta["role"])}</span>' if meta.get("role") else ""
     first = (f'<span class="speaker__first">{sessions[0]}</span>' if sessions
@@ -281,7 +282,7 @@ def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None)
     flavor = scheduled or ({"area": meta.get("talk_area"), "for": meta.get("talk_for")} if meta.get("talk") else {})
     first += program.tags(None, flavor.get("area")) + program.for_line(flavor.get("for"), "span")
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
-    return f"""  <li class="sticker sticker--speaker" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
+    return f"""  <li class="sticker sticker--speaker"{f' id="{esc(slug)}"' if anchor else ''} data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <a class="speaker__link" href="{page_name(slug)}">
     <span class="num">{n}</span>
     <figure class="speaker__photo">{photo}<figcaption>{esc(meta['name'])}</figcaption></figure>
