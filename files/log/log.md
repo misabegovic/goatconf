@@ -525,3 +525,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #139: site: each area's tag in its own colour
    diff: 29 files, +63/-37
    restricted-paths: true
+2026-10-19 merge — PR #140: site: raster favicons next to the SVG, for search results
+   diff: 31 files, +79/-4
+   restricted-paths: true
