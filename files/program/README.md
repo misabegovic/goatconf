@@ -10,6 +10,10 @@ record; the body is the speaker's own short description. Copy
 - `speakers`: the speakers' names as they should appear, for example
   `Ada Lovelace and Grace Hopper`.
 - `format`: `talk`, `panel`, `workshop` or `other`.
+- `format_name`: optional, only with `format: other`: what the session is
+  called, one line of at most 30 characters (for example `Live coding` or
+  `Fireside chat`). It shows in place of "Session" on the program, the
+  session's page, the speaker's page and `program.json`.
 - `day`: `2027-06-03` or `2027-06-04`, the two core days.
 - `start`: `"10:00"`, `"12:00"`, `"14:00"` or `"16:00"` on Thursday;
   `"09:30"`, `"11:30"`, `"13:30"` or `"15:30"` on Friday, which starts half an
@@ -19,15 +23,16 @@ record; the body is the speaker's own short description. Copy
 - `profiles`: optional, a list of speaker file names from `speakers/`
   (for example `[ada-lovelace]`); the program then links the names to
   their profiles.
-- `area`: optional, the session's area: `engineering`, `ai-ml`, `data`,
+- `area`: optional, the session's area, or a list of areas (for example
+  `[ai-ml, product]`), as the proposal form's area question gives them,
+  where speakers pick all that apply: `engineering`, `ai-ml`, `data`,
   `ux-ui`, `product`, `research`, `business` (the business of software) or
-  `leadership`, as the proposal form's discipline question
-  gives it. It shows as a tag on the program, the session's page and the
-  speaker's page and card.
+  `leadership`. Each shows as a tag on the program, the session's page and
+  the speaker's page and card, and `program.json` lists them as `areas`.
 - `for`: optional, who the session is for: the speaker's answer to the
   form's "Who is it for?", lightly trimmed to one line of at most 100
   characters without changing what it says. It shows as a "For:" line
-  beside the tag, and both go into `program.json`.
+  beside the tags, and both go into `program.json`.
 - `accepted: yes` once the organiser has accepted the proposal and the
   speaker has confirmed.
 - `signup`: optional and unused for now: a link where people save a seat in

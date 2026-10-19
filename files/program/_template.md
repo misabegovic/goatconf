@@ -2,11 +2,12 @@
 title: The talk's title
 speakers: Your name
 format: talk
+# format_name: Live coding   (optional, only with format: other; at most 30 characters)
 day: 2027-06-03
 start: "10:00"
 room: hall-ground
 accepted: yes
-# area: engineering   (optional: engineering, ai-ml, data, ux-ui, product, research, business or leadership)
+# area: engineering   (optional: engineering, ai-ml, data, ux-ui, product, research, business or leadership, or a list such as [ai-ml, product])
 # for: who the session is for, one short line in the speaker's words
 # profiles: [your-name] (the speaker file names in speakers/, once published)
 # signup: https://... (only if session sign-ups are introduced later)

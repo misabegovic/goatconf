@@ -429,3 +429,41 @@ def test_a_scheduled_session_carries_its_area_and_who_it_is_for(tmp_path, monkey
     (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", "accepted: yes\narea: sales"), encoding="utf-8")
     problems, _, _ = program.check_record(tmp_path / "program" / "s.md")
     assert any("area must be one of" in p for p in problems)
+
+
+def test_something_else_shows_under_its_own_name(tmp_path, monkeypatch):
+    program, speakers = setup(tmp_path, monkeypatch)
+    (tmp_path / "program" / "s.md").write_text(SESSION.replace("format: talk", "format: other\nformat_name: Live coding"), encoding="utf-8")
+    assert speakers.cmd_check(Args()) == 0
+    table, _ = program.sessions()
+    (key, (meta, body)), = table.items()
+    assert "<dt>Format</dt><dd>Live coding</dd>" in program.session_page(key, meta, body)
+    assert ">Live coding, First-floor hall<" in program.cell(1, (meta, body), key[2])
+    assert speakers.sessions_by_speaker(detail=True)["ana-example"][0]["format"] == "Live coding"
+    (tmp_path / "program" / "s.md").write_text(SESSION.replace("format: talk", "format: talk\nformat_name: " + "x" * 31), encoding="utf-8")
+    problems, _, _ = program.check_record(tmp_path / "program" / "s.md")
+    assert any("format_name needs format: other" in p for p in problems)
+    assert any("format_name must be one line" in p for p in problems)
+
+
+def test_a_proposed_something_else_shows_its_name(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch, FLAVORED.replace("talk_area:", "talk_format: other\ntalk_format_name: Fireside chat\ntalk_area:"))
+    (tmp_path / "program" / "s.md").unlink()  # no session on the program yet
+    assert speakers.cmd_check(Args()) == 0
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], [], speakers.supporters())
+    assert "<span>Fireside chat</span>" in page
+    assert "Fireside chat: " in speakers.speakers_page()
+
+
+def test_a_session_can_span_several_areas(tmp_path, monkeypatch):
+    program, speakers = setup(tmp_path, monkeypatch)
+    (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", "accepted: yes\narea: [ai-ml, product]"), encoding="utf-8")
+    assert speakers.cmd_check(Args()) == 0
+    table, _ = program.sessions()
+    (key, (meta, body)), = table.items()
+    assert "<dt>Areas</dt><dd>AI/ML, Product</dd>" in program.session_page(key, meta, body)
+    assert '<span class="tag tag--area">AI/ML</span><span class="tag tag--area">Product</span>' in program.cell(1, (meta, body), key[2])
+    for bad in ("[ai-ml, ai-ml]", "[]", "[ai-ml, sales]"):
+        (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", f"accepted: yes\narea: {bad}"), encoding="utf-8")
+        problems, _, _ = program.check_record(tmp_path / "program" / "s.md")
+        assert any("area must be one of" in p for p in problems), bad

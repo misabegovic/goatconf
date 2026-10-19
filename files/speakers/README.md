@@ -45,15 +45,18 @@ is their bio in their own words, at most 120 words.
   paragraphs on the page.
 - `talk_format`: optional, `talk`, `panel`, `workshop` or `other`; a talk
   if left out.
-- `talk_area`: optional, the session's area, as the proposal form's
-  discipline question gives it: `engineering`, `ai-ml`, `data`, `ux-ui`,
-  `product`, `research`, `business` (the business of software) or
-  `leadership`. It shows as a tag on their page and their card
-  on the speakers page.
+- `talk_format_name`: optional, only with `talk_format: other`: what the
+  session is called, one line of at most 30 characters (for example
+  `Live coding`). It shows in place of "Session"; it needs `talk`.
+- `talk_area`: optional, the session's area, or a list of areas (for
+  example `[ai-ml, product]`), as the proposal form's area question gives
+  them: `engineering`, `ai-ml`, `data`, `ux-ui`, `product`, `research`,
+  `business` (the business of software) or `leadership`. Each shows as a
+  tag on their page and their card on the speakers page.
 - `talk_for`: optional, who the session is for: their answer to the form's
   "Who is it for?", lightly trimmed to one line of at most 100 characters
   without changing what it says (for example `anyone working with
-  real-life codebases`). It shows as a "For:" line next to the tag.
+  real-life codebases`). It shows as a "For:" line next to the tags.
 
 A confirmed speaker can be added before their session has a slot (since
 2026-10-14): their page then says the session will be on the program
