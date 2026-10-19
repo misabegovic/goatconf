@@ -61,7 +61,7 @@ The texts are on three pages: [October to December 2026](drumbeat-2026.md), [Jan
 | Tue 2 Mar 2027 | week 21 | [Thank you, Meister](drumbeat-2027-jan-mar.md) | `supporter-meister` | drafted |
 | Tue 9 Mar 2027 | week 22 | [Speaker: Christoph Lipautz](drumbeat-2027-jan-mar.md) | `speaker-christoph-lipautz` | drafted |
 | Tue 16 Mar 2027 | week 23 | [An hour off after every session](drumbeat-2027-jan-mar.md) | `post-an-hour-off` | drafted |
-| Tue 23 Mar 2027 | week 24 | [Panels and workshops](drumbeat-2027-jan-mar.md) | `post-panels-and-workshops` | drafted |
+| Tue 23 Mar 2027 | week 24 | [Workshops](drumbeat-2027-jan-mar.md) | `post-workshops` | drafted |
 | Tue 30 Mar 2027 | week 25 | [Where to stay](drumbeat-2027-jan-mar.md) | `post-where-to-stay` | drafted |
 | Tue 6 Apr 2027 | week 26 | [Eat and drink, with or without meat](drumbeat-2027-apr-jun.md) | `post-with-or-without-meat` | drafted |
 | Tue 13 Apr 2027 | week 27 | [Coming with a disability](drumbeat-2027-apr-jun.md) | `post-access` | drafted |

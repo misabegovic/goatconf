@@ -519,3 +519,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #137: speakers: Data and AI/ML next to Engineering for Dejan's and Christoph's talks
    diff: 11 files, +44/-16
    restricted-paths: false
+2026-10-19 merge — PR #138: site: workshops can run longer, on the laptops people bring
+   diff: 14 files, +58/-17
+   restricted-paths: true
