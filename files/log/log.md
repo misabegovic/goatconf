@@ -522,3 +522,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #138: site: workshops can run longer, on the laptops people bring
    diff: 14 files, +58/-17
    restricted-paths: true
+2026-10-19 merge — PR #139: site: each area's tag in its own colour
+   diff: 29 files, +63/-37
+   restricted-paths: true
