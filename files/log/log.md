@@ -501,3 +501,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #131: site: business, people and research sessions are welcome, for a technical room
    diff: 10 files, +71/-11
    restricted-paths: true
+2026-10-19 merge — PR #132: forms: the discipline choices match the talk page
+   diff: 2 files, +19/-2
+   restricted-paths: true
