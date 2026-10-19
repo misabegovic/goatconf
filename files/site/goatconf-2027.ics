@@ -51,8 +51,9 @@ DTSTART;VALUE=DATE:20270605
 DTEND;VALUE=DATE:20270606
 SUMMARY:GoatConf 2027: the community day
 LOCATION:Tuzla\, Bosnia and Herzegovina
-DESCRIPTION:No talks. Events people add: the lakes\, the goat hunt\, walks 
- and meetups. https://goatconf.com/program#2027-06-05
+DESCRIPTION:No talks. The organiser's lake day and goat hunt\, plus events 
+ people add\, such as walks and meetups. https://goatconf.com/program#2027-
+ 06-05
 URL:https://goatconf.com/program
 END:VEVENT
 END:VCALENDAR

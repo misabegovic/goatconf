@@ -2,7 +2,7 @@
 title: "goatconf brain: home"
 kind: meta
 status: draft
-updated: 2026-10-18
+updated: 2026-10-19
 sources: []
 ---
 
@@ -17,7 +17,8 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 
 ## What changed
 
-<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-18 -->
+<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-19 -->
+- **2026-10-19**: **A full review of the site, and the stale lines fixed.** The organiser went through 44 findings one by one. The first batch fixes lines that had gone stale or contradicted each other: the register page no longer mentions approval, the code of conduct's preview text no longer speaks of two people, the home page says no food or drink is provided (the speakers dinner aside), the contact page sends supporters to the supporters page, the speakers page says slots come later, the program's slot line names something else and half-hour sessions, the empty "Around the talks" section is gone, the airport is about 15 km, and llms.txt, program.json and the calendar file match the pages on Saturday and speakers' travel ([what is known](org/goatconf-2027.md); source: sources/conversations/2026-10-19--org--site-review-decisions.md).
 - **2026-10-18**: **Final slots, closer to the event.** The program page and the talk page now say that days, times and rooms are set when the program is finalised, closer to the event ([CFP and speakers](org/prds/cfp-and-speakers.md); source: sources/conversations/2026-10-18--org--final-slots-closer-to-the-event.md).
 - **2026-10-18**: **Six slots reserved for confirmed speakers.** The program page holds the main hall's first three slots on each core day for the six published speakers whose sessions have no slot yet; each reads "Reserved" and links to the speakers page, and a cell frees itself once a speaker's session is on the program ([CFP and speakers](org/prds/cfp-and-speakers.md); source: sources/conversations/2026-10-18--org--slots-reserved-for-confirmed-speakers.md).
 - **2026-10-18**: **Lightning talks, kept as an idea.** The organiser chose not to plan an hour of lightning talks for now; the idea, with 5-minute talks proposed ahead through the talk form if it happens, is kept on [An hour of lightning talks](org/ideas/lightning-talks.md), and the site does not mention it (source: sources/conversations/2026-10-18--org--lightning-talks-not-now.md).
