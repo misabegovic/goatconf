@@ -450,3 +450,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #114: site: the supporters page makes the pitch
    diff: 9 files, +21/-12
    restricted-paths: true
+2026-10-19 merge — PR #115: site: the travel page, written for visitors
+   diff: 29 files, +75/-55
+   restricted-paths: true
