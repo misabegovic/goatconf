@@ -1,0 +1,166 @@
+#!/usr/bin/env python3
+"""The frame every page of the site shares: the goat sprite, the footer, and
+the page around a generated page's main part.
+
+The generators build their pages with page(). The hand-written pages carry
+the footer between <!-- gen:footer tools/frame.py --> and
+<!-- /gen:footer --> (the home page carries its back cover's links between
+<!-- gen:back-cover-links tools/frame.py --> and its end), which `apply`
+writes and `check` checks, as tools/nav.py does for the top bar. The goat
+sprite sits right after <body> on every page that uses it (href="#goat"),
+and on no other.
+
+  apply     write the footer, the back cover's links and the sprite on every page
+  check     fail if a page's footer, links or sprite are not current
+
+Usage: python3 tools/frame.py <apply|check>
+(ADR wiki/org/adrs/one-page-frame-and-one-site-build.md)
+"""
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import nav  # noqa: E402
+
+ROOT = Path(__file__).resolve().parent.parent
+SITE = ROOT / "site"
+
+# Every page's footer links, in order. The home page's back cover leaves out
+# Home and names two of them in full.
+LINKS = [("index.html", "Home"), ("program.html", "Program"), ("speakers.html", "Speakers"),
+         ("talk.html", "Propose a session"), ("add.html", "Propose an event"),
+         ("extensions.html", "Events people add"), ("register.html", "Register"),
+         ("travel.html", "Travel"), ("supporters.html", "Supporters"), ("charter.html", "Charter"),
+         ("code-of-conduct.html", "Code of conduct"), ("brand.html", "Brand"),
+         ("access.html", "Accessibility"), ("contact.html", "Contact")]
+BACK_COVER = {"charter.html": "The charter", "code-of-conduct.html": "The code of conduct"}
+LINE = ("GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. "
+        'Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.')
+
+SPRITE = """<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="goat" viewBox="0 0 124 100">
+      <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M27 49c-1-11 9-17 24-17.5 14-.5 25 .5 31 5.5 4 3.5 5.5 10 3.5 16.5-2.5 8-11 11.5-24 11.5-15 0-27-2-31.5-6.5C27.5 56.5 27 53 27 49z" fill="var(--goat-fill, #f2f6f1)"/>
+        <path d="M80 39c2-7 5.5-13 10-16.5 4.5-3.5 11-3 14.5 1 3 3.5 5 8 4.5 11-.5 2.5-3 3.5-6 3-3-.5-5 1-6.5 4.5-1.5 3.5-3 6.5-5.5 7.5" fill="var(--goat-fill, #f2f6f1)"/>
+        <path d="M93 21c-3-6-8.5-11-15-11.5-3.5-.3-6 1-7 3.5 5-.5 9.5 2.5 13 7.5"/>
+        <path d="M97 22.5c-.5-6-4-11-9-13.5"/>
+        <path d="M92.5 28c-3.5 1-7 3.5-9.5 3"/>
+        <path d="M107 38.5c.5 4-1 9-4 12"/>
+        <path d="M35 63l-2.5 22.5M45 64.5l.5 21M69 64.5l2 21M78.5 61.5l3.5 23.5"/>
+        <path d="M29.5 45c-5-2-8-6-7-11"/>
+      </g>
+      <circle cx="99.5" cy="27.5" r="2" fill="currentColor"/>
+      <path d="M31 85.5h4M44 85.5h4M69.5 85.5h4M80.5 85h4" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+    </symbol>
+    </defs></svg>"""
+
+
+def block(name: str, body: str) -> str:
+    return f"<!-- gen:{name} tools/frame.py -->\n{body}\n<!-- /gen:{name} -->"
+
+
+def links(back_cover: bool = False) -> str:
+    return " ".join(f'<a href="{href}">{BACK_COVER.get(href, label) if back_cover else label}</a>'
+                    for href, label in LINKS if not (back_cover and href == "index.html"))
+
+
+def footer() -> str:
+    return block("footer", f"""<footer class="footer">
+  <p>{LINE}</p>
+  <p class="footer__links">{links()}</p>
+  {nav.follow()}
+</footer>""")
+
+
+def back_cover_links() -> str:
+    return block("back-cover-links", f'    <p class="back-cover__links">{links(back_cover=True)}</p>')
+
+
+def page(canonical: str, title: str, description: str, photo, h1: str, lede: str, main: str, made_by: str,
+         preview: str = "", photo_class: str = "") -> str:
+    """A generated page around its main part: head, sprite, page head, main, footer."""
+    src, width, height, alt = photo
+    image = f'\n<link rel="image_src" href="https://goatconf.com/share/{preview}">' if preview else ""
+    return frame(f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content="{description}">
+<meta name="theme-color" content="#0b3d91">
+<link rel="canonical" href="https://goatconf.com/{canonical}">{image}
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="goatconf.css">
+<script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver"in window)document.documentElement.classList.add("js-peel")</script>
+</head>
+<body>
+<!-- Generated by {made_by}. Edit the records, not this page. -->
+<main id="main">
+<div class="page-head">
+  <img class="page-head__photo{photo_class}" src="{src}" width="{width}" height="{height}" alt="{alt}" decoding="async">
+  <h1 class="sign">{h1}</h1>
+  <p class="lede">{lede}</p>
+</div>
+{main}
+</main>
+{footer()}
+<script src="album.js" defer></script>
+</body>
+</html>
+""")
+
+
+SPRITE_RE = re.compile(r'<svg width="0" height="0" style="position:absolute".*?</svg>\n', re.S)
+BODY = re.compile(r"<body[^>]*>\n")
+
+
+def frame(text: str) -> str:
+    """The page with its sprite (only where it is used), footer and back cover's links current."""
+    text = SPRITE_RE.sub("", text)
+    if 'href="#goat"' in text:
+        m = BODY.search(text)
+        if not m:
+            raise ValueError("no <body> tag on its own line to put the sprite after")
+        text = text[:m.end()] + SPRITE + "\n" + text[m.end():]
+    for name, make in (("footer", footer), ("back-cover-links", back_cover_links)):
+        pat = re.compile(r"<!-- gen:" + name + r" tools/frame\.py -->\n.*?\n<!-- /gen:" + name + r" -->", re.S)
+        text = pat.sub(lambda _m: make(), text)
+    return text
+
+
+def pages():
+    return sorted(SITE.glob("*.html"))
+
+
+def main(argv=None) -> int:
+    cmd = (argv or sys.argv[1:] or ["check"])[0]
+    stale = 0
+    for p in pages():
+        old = p.read_text(encoding="utf-8")
+        try:
+            new = frame(old)
+        except ValueError as err:
+            print(f"site/{p.name}: {err}")
+            stale += 1
+            continue
+        missing = "gen:back-cover-links" if p.name == "index.html" else "gen:footer"
+        if missing not in new:
+            print(f"site/{p.name} has no <!-- {missing} tools/frame.py --> block")
+            stale += 1
+        if cmd == "apply" and new != old:
+            p.write_text(new, encoding="utf-8")
+            print(f"wrote the frame into site/{p.name}")
+        elif cmd != "apply" and new != old:
+            print(f"site/{p.name}: the frame is out of date: run python3 tools/frame.py apply")
+            stale += 1
+    if cmd != "apply" and not stale:
+        print("the frame is current on every page")
+    return 1 if stale else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

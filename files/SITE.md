@@ -29,6 +29,13 @@ records. Open `site/index.html` through any static server to preview it.
 
 ## Navigation and the home page
 
+The footer, the home page's back cover links and the goat sprite come from
+`tools/frame.py`: hand-written pages carry the footer between
+`<!-- gen:footer tools/frame.py -->` and its end, `frame.py apply` writes it
+and the local CI checks it, and the generators build their pages with
+`frame.page()`. Change a footer link in `LINKS` there, never by hand.
+
+
 Every page carries the same top bar, written by `tools/nav.py apply` (the
 generators add it to their own pages). The home page is hand-written except
 three parts that `tools/home.py build` fills from the records: the days
