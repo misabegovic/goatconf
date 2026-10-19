@@ -447,3 +447,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #113: site: one voice, one name for each thing
    diff: 39 files, +137/-127
    restricted-paths: true
+2026-10-19 merge — PR #114: site: the supporters page makes the pitch
+   diff: 9 files, +21/-12
+   restricted-paths: true
