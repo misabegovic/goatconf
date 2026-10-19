@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-19--org--more-areas.md
   - sources/conversations/2026-10-19--org--business-and-people-sessions.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
   - sources/conversations/2026-10-15--org--drafting-the-first-posts.md
@@ -145,7 +146,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   >
   > Designers, product people, founders and engineers in any language or stack: the sessions are for all of you, and so is the hour off after each one, on Freedom Square, where the conversations happen.
   >
-  > If you work on product, design, research, running a company or leading people, the call is open to you too, and you do not need to write code to speak: a talk, a panel, a workshop or something else, one hour, in Tuzla on 3 or 4 June. Bring something the technical people in the room can use or build on, from your own work.
+  > If you work in AI/ML, data, UX/UI, product, research, running a company or leading teams, the call is open to you too, and you do not need to write code to speak: a talk, a panel, a workshop or something else, one hour, in Tuzla on 3 or 4 June. Bring something the technical people in the room can use or build on, from your own work.
   >
   > goatconf.com/talk
 
@@ -153,7 +154,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   > GoatConf is for people who build and sell software: designers, product people, founders and engineers in any stack. The call is open to all of you. Tuzla, 3 to 5 June. goatconf.com/talk
 
-  Sources: sources/conversations/2026-10-12--org--build-and-sell.md, sources/conversations/2026-10-12--org--audience-list.md, sources/conversations/2026-10-12--org--what-goatconf-is.md.
+  Sources: sources/conversations/2026-10-12--org--build-and-sell.md, sources/conversations/2026-10-12--org--audience-list.md, sources/conversations/2026-10-12--org--what-goatconf-is.md, sources/conversations/2026-10-19--org--more-areas.md.
 
 ### Tue 9 Feb 2027, week 18: Getting to Tuzla
 

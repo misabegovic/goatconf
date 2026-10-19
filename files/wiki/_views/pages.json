@@ -637,6 +637,7 @@
       "updated": "2026-10-19",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-19--org--more-areas.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md",
         "sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md",
@@ -688,7 +689,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 3606
+      "tokens": 3689
     },
     {
       "path": "org/ideas/lightning-talks.md",
@@ -793,6 +794,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--more-areas.md",
         "sources/conversations/2026-10-19--org--business-and-people-sessions.md",
         "sources/conversations/2026-10-18--org--social-plan-to-june.md",
         "sources/conversations/2026-10-15--org--drafting-the-first-posts.md",
@@ -831,7 +833,7 @@
         "sources/conversations/2026-10-12--org--day-chain-and-session-format.md",
         "sources/conversations/2026-10-12--org--two-core-days-and-saturday.md"
       ],
-      "tokens": 4075
+      "tokens": 4095
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -889,6 +891,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--more-areas.md",
         "sources/conversations/2026-10-19--org--business-and-people-sessions.md",
         "sources/conversations/2026-10-18--org--social-plan-to-june.md",
         "sources/conversations/2026-10-15--org--drafting-the-first-posts.md",
@@ -932,7 +935,7 @@
         "sources/web/tuzla/fcdo-bih-entry-requirements.md",
         "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md"
       ],
-      "tokens": 4225
+      "tokens": 4250
     },
     {
       "path": "org/outreach/drumbeat.md",

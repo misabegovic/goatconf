@@ -85,9 +85,10 @@ RESERVED = (
 )
 FORMATS = {"talk": "Talk", "panel": "Panel", "workshop": "Workshop", "other": "Session"}
 # The areas the talk page names, as the proposal form's discipline question
-# offers them (sources/conversations/2026-10-19--org--business-and-people-sessions.md).
-AREAS = {"engineering": "Engineering", "design-product": "Design and product", "research": "Research",
-         "business": "Business of software", "people": "People side of the work"}
+# offers them (sources/conversations/2026-10-19--org--more-areas.md). They are
+# meant to group into a few tracks later, if more venues join.
+AREAS = {"engineering": "Engineering", "ai-ml": "AI/ML", "data": "Data", "ux-ui": "UX/UI", "product": "Product",
+         "research": "Research", "business": "Business of software", "leadership": "Leadership"}
 FOR_CHARS = 100
 FIELDS = ("title", "speakers", "format", "day", "start", "room", "accepted")
 

@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-19
 confidence: medium
 sources:
+  - sources/conversations/2026-10-19--org--more-areas.md
   - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md
   - sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md
@@ -73,6 +74,11 @@ is cited to the sources above; nothing is inferred. Proposals live in the
 - **Place:** Tuzla, Bosnia and Herzegovina.
 - **Host and partner:** [IPI Academy](ipi-academy.md), which has agreed;
   it is the venue "for now". Further venues are possible and undecided.
+  The organiser may explore two single-track venues, neither secured:
+  Tuzla Public Theatre (Pozorišna 4) and the Croatian Cultural Centre
+  "Sveti Franjo" in the old town, so the program could split its
+  sessions by area across them
+  (`sources/conversations/2026-10-19--org--more-areas.md`).
 - **When:** Thursday 3 and Friday 4 June 2027 are the two core days, and
   Saturday 5 June is free for the community and the lakes
   (`sources/conversations/2026-10-12--org--two-core-days-and-saturday.md`,

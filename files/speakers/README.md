@@ -46,9 +46,9 @@ is their bio in their own words, at most 120 words.
 - `talk_format`: optional, `talk`, `panel`, `workshop` or `other`; a talk
   if left out.
 - `talk_area`: optional, the session's area, as the proposal form's
-  discipline question gives it: `engineering`, `design-product`,
-  `research`, `business` (the business of software) or `people` (the
-  people side of the work). It shows as a tag on their page and their card
+  discipline question gives it: `engineering`, `ai-ml`, `data`, `ux-ui`,
+  `product`, `research`, `business` (the business of software) or
+  `leadership`. It shows as a tag on their page and their card
   on the speakers page.
 - `talk_for`: optional, who the session is for: their answer to the form's
   "Who is it for?", lightly trimmed to one line of at most 100 characters

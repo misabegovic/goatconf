@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-19--org--more-areas.md
   - sources/conversations/2026-10-19--org--business-and-people-sessions.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
   - sources/conversations/2026-10-15--org--drafting-the-first-posts.md
@@ -79,7 +80,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   >
   > Every slot is one hour, in one of the seven rooms at IPI Academy in Tuzla, on Thursday 3 or Friday 4 June 2027. You choose what happens in it: a talk, a panel, a workshop, or something else, like live coding, a hands-on lab, a fireside chat or a debate.
   >
-  > Engineering in any language or stack, design, product, research, the business of software and the people side of the work: all welcome, and first-time speakers too. You do not need to write code to speak; bring something the technical people in the room can use or build on. The organiser reads every proposal, the session first and your name after, and you hear back whatever the answer.
+  > Engineering in any language or stack, AI/ML, data, UX/UI, product, research, the business of software and leadership: all welcome, and first-time speakers too. You do not need to write code to speak; bring something the technical people in the room can use or build on. The organiser reads every proposal, the session first and your name after, and you hear back whatever the answer.
   >
   > Propose a session in about fifteen minutes: goatconf.com/talk
 
@@ -87,7 +88,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   > The GoatConf 2027 call is open, and it's for more than talks: a talk, a panel, a workshop or something else. One hour, one room, Tuzla, 3 or 4 June. First-time speakers welcome. goatconf.com/talk
 
-  Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--organiser-judges-no-strict-deadlines.md, sources/conversations/2026-10-12--org--all-available-rooms.md.
+  Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--organiser-judges-no-strict-deadlines.md, sources/conversations/2026-10-12--org--all-available-rooms.md, sources/conversations/2026-10-19--org--more-areas.md.
 
 ### Tue 27 Oct 2026, week 3: Registration is open, and free
 
