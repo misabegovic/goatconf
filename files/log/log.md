@@ -471,3 +471,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #121: org: propose one page frame, one marker style and one site build
    diff: 5 files, +154/-0
    restricted-paths: false
+2026-10-19 merge — PR #122: site: land the review's PRs #113 to #121 on main
+   diff: 166 files, +1706/-438
+   restricted-paths: true
