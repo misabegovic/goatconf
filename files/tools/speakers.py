@@ -361,7 +361,7 @@ def supporter_page(slug: str, meta, body) -> str:
         events = f"""
 <section class="album-page wrap" aria-labelledby="h-events">
   <h2 class="band" id="h-events">{"Their events" if len(hosted) > 1 else "Their event"}</h2>
-  <p class="copy copy--wide">Part of GoatConf 2027: accepted by the organiser, and organised and paid for by {name}.</p>
+  <p class="copy copy--wide">Part of GoatConf 2027: accepted by us, and organised and paid for by {name}.</p>
   <ul class="slots slots--events">
 {cards}
   </ul>
@@ -437,7 +437,7 @@ def shell(slug: str, title: str, description: str, photo: str, h1: str, lede: st
 
 
 FOOTER_LINKS = ('<a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> '
-                '<a href="talk.html">Run a session</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> '
+                '<a href="talk.html">Propose a session</a> <a href="add.html">Propose an event</a> <a href="extensions.html">Events people add</a> <a href="register.html">Register</a> '
                 '<a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> '
                 '<a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a>')
 
@@ -491,7 +491,7 @@ def supporters_page() -> str:
   <p class="copy copy--wide">It is online only: no booth, no banner and nothing at the venue. The money pays the event's costs. The organiser's Austrian business sends the invoice, under a short written agreement.</p>
   <p class="copy copy--wide">You can also pay a supplier directly for one named thing, such as the printing or a round of coffee, or give something in kind.</p>
   <p class="copy copy--wide">If you speak at GoatConf and your company covers your travel, your company is listed here as a supporter too, with its logo and link, the same as online supporters.</p>
-  <p class="copy copy--wide">If you or your organisation fund and organise an event the organiser accepts as part of GoatConf 2027, you are listed here as a supporter too, if you agree, with your logo and link, the same as online supporters.</p>
+  <p class="copy copy--wide">If you or your organisation fund and organise an event we accept as part of GoatConf 2027, you are listed here as a supporter too, if you agree, with your logo and link, the same as online supporters.</p>
   <p class="copy copy--wide"><a class="go go--ink" href="contact.html">Write to the organiser</a> <a class="go go--ink" href="mailto:info@muhamed.at">info@muhamed.at</a></p>
 </section>"""
     return shell("supporters", "Supporters: GoatConf 2027, 3–5 June, Tuzla",

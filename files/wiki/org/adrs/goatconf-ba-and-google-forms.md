@@ -2,7 +2,7 @@
 title: "Website: goatconf.com on GitHub Pages, with every intake through Google Forms"
 kind: decision
 status: accepted
-updated: 2026-10-17
+updated: 2026-10-19
 confidence: medium
 depends_on:
   - org/prds/website-and-registration.md
@@ -10,6 +10,7 @@ depends_on:
   - org/prds/extension-slots-and-the-record.md
 supersedes: org/adrs/website-and-registration.md
 sources:
+  - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/conversations/2026-10-17--org--three-days-section.md
   - sources/conversations/2026-10-17--org--event-kinds-clickable.md
   - sources/conversations/2026-10-17--org--organiser-block-below-the-goat.md
@@ -143,3 +144,4 @@ builds are checked by the local CI.
 - [Program: every room open](open-program-every-room.md)
 - [Extension slots and the record](../prds/extension-slots-and-the-record.md)
 - **2026-10-13, the forms point to goatconf.com.** The propose-a-session and add-something forms still linked to goatconf.ba, which no longer resolves; both now link to goatconf.com, and the add-something form is titled "GoatConf 2027: propose an event" like the site. The data notes keep "organising team", because the Drive folder has another editor (source: sources/conversations/2026-10-13--org--forms-on-goatconf-com.md).
+- **2026-10-19, "Propose a session" everywhere, and "we" on the site.** The top bar, every footer, the talk page's title and the home page's section and button all say "Propose a session", in place of "Run a session" and the home button's "How to propose a session" (2026-10-18); the home section's heading "How to propose a session" stays. Visitor text says "we" where it said "the organiser", and names Muhamed where a person matters (contact, code of conduct, privacy, who is organising). Breaks read "Hour off, in the cafés on Freedom Square", and the Tuzla section points to "Why a goat" instead of telling the goat story a second way (source: sources/conversations/2026-10-19--org--site-review-decisions.md).

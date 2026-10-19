@@ -11,8 +11,8 @@ name: Rust by the lake
 kind: workshop
 host: Tuzla Rustaceans
 location: Slana banja park, Tuzla
-start: 2027-06-11 10:00
-end: 2027-06-11 13:00
+start: 2027-06-02 10:00
+end: 2027-06-02 13:00
 cost: free
 registration: https://example.org/rust
 paid_by: The host
@@ -69,8 +69,8 @@ def test_good_record_passes(ext, capsys):
     (("kind: workshop", "kind: party"), "is not one of"),
     (("accepts: yes", "accepts: no"), "accepts must be yes"),
     (("host: Tuzla Rustaceans\n", ""), "missing field: host"),
-    (("end: 2027-06-11 13:00", "end: 2027-06-11 09:00"), "end comes before start"),
-    (("2027-06-11 10:00", "2027-09-01 10:00"), "outside the GoatConf week"),
+    (("end: 2027-06-02 13:00", "end: 2027-06-02 09:00"), "end comes before start"),
+    (("2027-06-02 10:00", "2027-09-01 10:00"), "outside the GoatConf week"),
     (("name: Rust by the lake", "name: GoatConf presents Rust"), "reads as if the organiser runs it"),
     (("A morning of pairing on small Rust programs, for beginners.", ""), "no description"),
 ])
@@ -99,7 +99,7 @@ def test_support_needs_a_supplier(ext, capsys):
 
 def test_outside_week_with_reason_passes(ext, capsys):
     mod, root = ext
-    text = GOOD.replace("2027-06-11 10:00", "2027-07-01 10:00").replace("2027-06-11 13:00", "2027-07-01 13:00")
+    text = GOOD.replace("2027-06-02 10:00", "2027-07-01 10:00").replace("2027-06-02 13:00", "2027-07-01 13:00")
     write(root, "late.md", text.replace("accepts: yes", "accepts: yes\noutside_week_reason: a follow-up session"))
     assert mod.main(["check"]) == 0
     assert "with a reason" in capsys.readouterr().out
@@ -123,7 +123,7 @@ def test_build_lists_good_records_and_check_detects_staleness(ext):
     assert mod.main(["build"]) == 0
     page = (root / "site" / "extensions.html").read_text(encoding="utf-8")
     assert "Rust by the lake" in page and "Broken" not in page
-    assert "11 June 2027, 10:00 to 13:00" in page
+    assert "2 June 2027, 10:00 to 13:00" in page
     assert mod.main(["build", "--check"]) == 0
 
 
@@ -152,7 +152,7 @@ def test_each_accepted_event_gets_its_own_page_that_links_out(ext):
     assert '<a href="mailto:hello@example.org">hello@example.org</a>' in event
     assert "A morning of pairing on small Rust programs, for beginners." in event
     assert '<link rel="canonical" href="https://goatconf.com/event-rust">' in event
-    assert 'href="program.html#h-around"' in event  # 11 June is outside the three days
+    assert 'href="program.html#h-around"' in event  # 2 June is outside the three days
     assert 'aria-current="page"' in event and 'href="program.html" aria-current="page"' in event
 
 

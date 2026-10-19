@@ -47,8 +47,8 @@ DAY_PLAN = {
         "welcome": "09:45", "end": "17:00",
         "note": "Four one-hour slots in every room, an hour off after each. Welcome at 09:45.",
         "slots": ("10:00", "12:00", "14:00", "16:00"),
-        "breaks": {"10:00": "Coffee on Freedom Square, one hour", "12:00": "Lunch in town, one hour",
-                   "14:00": "Coffee on Freedom Square, one hour"},
+        "breaks": {"10:00": "Hour off, in the cafés on Freedom Square", "12:00": "Lunch in town, one hour",
+                   "14:00": "Hour off, in the cafés on Freedom Square"},
     },
     # Friday starts half an hour earlier so the midday hour off covers Džuma
     # (podne in Tuzla is at 12:44 on 4 June 2027, per the Vaktija).
@@ -56,9 +56,9 @@ DAY_PLAN = {
         "welcome": "09:15", "end": "16:30",
         "note": "Four slots, starting half an hour earlier than Thursday. Welcome at 09:15.",
         "slots": ("09:30", "11:30", "13:30", "15:30"),
-        "breaks": {"09:30": "Coffee on Freedom Square, one hour",
+        "breaks": {"09:30": "Hour off, in the cafés on Freedom Square",
                    "11:30": "Lunch in town, one hour",
-                   "13:30": "Coffee on Freedom Square, one hour"},
+                   "13:30": "Hour off, in the cafés on Freedom Square"},
     },
 }
 ROOMS = {
@@ -349,7 +349,7 @@ def page() -> str:
 {chr(10).join(days)}
 <section class="album-page wrap day" id="{sat.isoformat()}" aria-labelledby="h-sat">
   <h2 class="band" id="h-sat">{sat_label}<span class="band__sub">The community's day</span></h2>
-  <p class="copy copy--wide">No talks on Saturday. The organiser plans a day at the lakes and runs the goat hunt. Walks, meetups and anything else are events people add; each host runs their own and says how to join.</p>
+  <p class="copy copy--wide">No talks on Saturday. We plan a day at the lakes and run the goat hunt. Walks, meetups and anything else are events people add; each host runs their own and says how to join.</p>
   <ul class="slots slots--kinds">
 {sat_items}
 {sat_open}
@@ -360,7 +360,7 @@ def page() -> str:
 </main>
 <footer class="footer">
   <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
-  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Run a session</a> <a href="add.html">Propose an event</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
+  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Propose a session</a> <a href="add.html">Propose an event</a> <a href="extensions.html">Events people add</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
 </footer>
 <script src="album.js" defer></script>
 </body>

@@ -242,12 +242,13 @@
       "title": "Write each extension as one Markdown file with frontmatter, checked by an agent and merged by the organiser",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-12",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "depends_on": [
         "org/prds/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-12--org--accepted-events-and-hackathons.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
@@ -260,14 +261,14 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/tooling/google-forms-response-destination.md"
       ],
-      "tokens": 1716
+      "tokens": 1862
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
       "title": "Website: goatconf.com on GitHub Pages, with every intake through Google Forms",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-17",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "depends_on": [
         "org/prds/website-and-registration.md",
@@ -276,6 +277,7 @@
       ],
       "supersedes": "org/adrs/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-17--org--three-days-section.md",
         "sources/conversations/2026-10-17--org--event-kinds-clickable.md",
         "sources/conversations/2026-10-17--org--organiser-block-below-the-goat.md",
@@ -297,7 +299,7 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 2848
+      "tokens": 3040
     },
     {
       "path": "org/adrs/online-supporters-through-the-business.md",
