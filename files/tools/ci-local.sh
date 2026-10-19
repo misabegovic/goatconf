@@ -31,18 +31,8 @@ git fetch -q origin 2>/dev/null || true
 run "preflight (validate, citations, views)" bash tools/preflight.sh
 run "Notion writes deny-listed" "$PY" tools/brain.py check-no-notion-writes
 run "rules against $BASE (sources additive, confidence floor, no em dashes, no AI attribution)" "$PY" tools/ci_checks.py all --base "$BASE"
-run "extensions (records valid, page current)" sh -c "\"$PY\" tools/extensions.py check && \"$PY\" tools/extensions.py build --check"
-run "program (records valid, page current)" sh -c "\"$PY\" tools/program.py check && \"$PY\" tools/program.py build --check"
-run "speakers and supporters (records valid, pages current)" sh -c "\"$PY\" tools/speakers.py check && \"$PY\" tools/speakers.py build --check"
+run "site (records valid, every generated page and part current, HTML sound)" "$PY" tools/site.py check
 run "brand files current" "$PY" tools/brand.py build --check
-run "link previews current" "$PY" tools/meta.py check
-run "top bar current" "$PY" tools/nav.py check
-run "page frame current (footer, back cover links, sprite)" "$PY" tools/frame.py check
-run "home page current" "$PY" tools/home.py build --check
-run "travel page places current" "$PY" tools/places.py build --check
-run "photos have their WebP copies, and pages use them" "$PY" tools/images.py check
-run "site HTML (tags, ids, links, images, landmarks)" "$PY" tools/site_lint.py check
-run "agent files current (llms.txt, program.json, calendar, sitemap)" "$PY" tools/agents.py build --check
 run "form links filled (every merge to main publishes)" "$PY" tools/formlinks.py check --publish
 run "site form links current" "$PY" tools/formlinks.py check
 run "only the publish workflow, unchanged" "$PY" tools/pages.py build --check

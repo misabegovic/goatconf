@@ -43,6 +43,7 @@ home described above.
 ```bash
 tools/setup-local.sh      # prerequisites, venv, git hooks, and a first CI run
 bash tools/ci-local.sh    # the full CI, any time
+python3 tools/site.py build   # rebuild every generated page and part of the site
 ```
 
 CI is local only. The one GitHub Actions workflow publishes `site/` to

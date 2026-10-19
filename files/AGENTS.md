@@ -365,39 +365,36 @@ in order:
      separator;
    - `no-ai-attribution`: no generation credit, session link or assistant
      co-author in any commit since the base.
-4. **Extensions**: every record in `files/extensions/` passes
-   `files/tools/extensions.py check`, and `files/site/extensions.html` is
-   current (`files/tools/extensions.py build --check`).
-5. **Program**: every record in `files/program/` passes
-   `files/tools/program.py check`, and the program page is current.
-6. **Speakers and supporters**: the records in `files/speakers/` and
-   `files/supporters/` pass `files/tools/speakers.py check`, and their
-   pages are current.
-7. **Brand files current** (`files/tools/brand.py build --check`).
-8. **Link previews current** (`files/tools/meta.py check`), including
-   the version stamps on the stylesheet and script.
-9. **Top bar current** on every page (`files/tools/nav.py check`).
-10. **Page frame current** on every page (`files/tools/frame.py check`):
-    the footer, the home page's back cover links, and the goat sprite
-    where a page uses it.
-11. **Home page current** (`files/tools/home.py build --check`).
-12. **Travel page places current** (`files/tools/places.py build --check`).
-13. **Photos have their WebP copies** (`files/tools/images.py check`): every
-    JPG a page shows has WebP copies, and every page lists them.
-14. **Site HTML sound** (`files/tools/site_lint.py check`): tags close in
-    order, ids are unique, links, images and #fragments inside the site
-    resolve, every image has alt text, and each page has one `h1`, one
-    `main` and at most one banner.
-15. **Agent files current** (`files/tools/agents.py build --check`):
-    `llms.txt`, `program.json`, the calendar file, the sitemap and the
-    event data on the home page.
-16. **Form links filled** (`files/tools/formlinks.py check --publish`),
+4. **The site** (`files/tools/site.py check`), which runs, in order:
+   - the records in `files/extensions/`, `files/program/`,
+     `files/speakers/` and `files/supporters/` pass their checks
+     (`extensions.py`, `program.py`, `speakers.py check`);
+   - every generated page and part is current: the program, the events
+     people add, the speakers and supporters, the travel page's places,
+     the home page's parts, and the files for agents (`llms.txt`,
+     `program.json`, the calendar file, the sitemap, the home page's
+     event data);
+   - every photo a page shows has its WebP copies and every page lists
+     them (`images.py check`);
+   - the page frame (footer, back cover links, goat sprite), the top bar
+     and the link previews with their version stamps are current on every
+     page (`frame.py`, `nav.py`, `meta.py check`);
+   - the HTML is sound (`site_lint.py check`): tags close in order, ids
+     are unique, links, images and #fragments inside the site resolve,
+     every image has alt text, and each page has one `h1`, one `main` and
+     at most one banner.
+
+   `files/tools/site.py build` writes all of it, in the same order. Every
+   generated part of a page sits between `<!-- gen:NAME tools/TOOL.py -->`
+   and `<!-- /gen:NAME -->`, naming the tool that writes it.
+5. **Brand files current** (`files/tools/brand.py build --check`).
+6. **Form links filled** (`files/tools/formlinks.py check --publish`),
     since every merge to `main` publishes the site.
-17. **Site form links current** (`files/tools/formlinks.py check`).
-18. **Only the publish workflow**, exactly as `files/tools/pages.py` writes it.
-19. **Home page paired with `wiki/` edits** (`brain.py check-home-fresh`).
-20. **README paired with significant changes** (`brain.py check-readme-fresh`).
-21. **pytest** over `tests/`, which also tests the checks and the push
+7. **Site form links current** (`files/tools/formlinks.py check`).
+8. **Only the publish workflow**, exactly as `files/tools/pages.py` writes it.
+9. **Home page paired with `wiki/` edits** (`brain.py check-home-fresh`).
+10. **README paired with significant changes** (`brain.py check-readme-fresh`).
+11. **pytest** over `tests/`, which also tests the checks and the push
     hook themselves.
 
 Every step runs, and the script exits non-zero if any failed.

@@ -7,6 +7,16 @@ it is not published with the site. There is no build step for the
 hand-written pages; some pages and parts of pages are generated from
 records. Open `site/index.html` through any static server to preview it.
 
+## One command
+
+`python3 tools/site.py build` checks the records and writes every generated
+page and part, in the order they depend on each other; `tools/site.py check`
+writes nothing and fails if anything is out of date or a page's HTML is
+broken, and it is what the local CI runs. Every generated part of a page sits
+between `<!-- gen:NAME tools/TOOL.py -->` and `<!-- /gen:NAME -->`, which
+names the tool that writes it: edit the records or the tool, never the part.
+The share cards and brand files stay their own commands (they need Chrome).
+
 ## Pages
 
 - `index.html`: the home page, a sticker album (`DESIGN.md`).
