@@ -465,3 +465,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #119: site: the site's guide moves out of the published folder
    diff: 4 files, +10/-4
    restricted-paths: false
+2026-10-19 merge — PR #120: tools: bring a PR up to date with main before merging it
+   diff: 3 files, +28/-0
+   restricted-paths: true
