@@ -1903,9 +1903,10 @@
       "title": "Speaker: Christoph Lipautz",
       "kind": "entity",
       "status": "living",
-      "updated": "2026-10-15",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-19--org--second-areas-for-dejan-and-christoph.md",
         "sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md",
         "sources/conversations/2026-10-15--org--christoph-lipautz.md",
         "sources/conversations/2026-10-15--org--christoph-photo-in-colour.md",
@@ -1916,7 +1917,7 @@
         "sources/web/speakers/christoph-lipautz-github-2026-10-15.md",
         "sources/web/speakers/christoph-lipautz-bluesky-2026-10-15.md"
       ],
-      "tokens": 1158
+      "tokens": 1211
     },
     {
       "path": "org/speakers/cristian-planas.md",
@@ -1937,9 +1938,10 @@
       "title": "Speaker: Dejan Menges",
       "kind": "entity",
       "status": "living",
-      "updated": "2026-10-17",
+      "updated": "2026-10-19",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-19--org--second-areas-for-dejan-and-christoph.md",
         "sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md",
         "sources/conversations/2026-10-17--org--dejan-talk.md",
         "sources/conversations/2026-10-17--org--dejan-photo-and-role.md",
@@ -1949,7 +1951,7 @@
         "sources/web/speakers/compass-summit-dejan-menges-2026-10-14.md",
         "sources/web/organiser/muhamed-at-about.md"
       ],
-      "tokens": 1143
+      "tokens": 1193
     },
     {
       "path": "org/speakers/jan-grodowski.md",
