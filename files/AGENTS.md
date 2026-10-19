@@ -377,24 +377,27 @@ in order:
 8. **Link previews current** (`files/tools/meta.py check`), including
    the version stamps on the stylesheet and script.
 9. **Top bar current** on every page (`files/tools/nav.py check`).
-10. **Home page current** (`files/tools/home.py build --check`).
-11. **Travel page places current** (`files/tools/places.py build --check`).
-12. **Photos have their WebP copies** (`files/tools/images.py check`): every
+10. **Page frame current** on every page (`files/tools/frame.py check`):
+    the footer, the home page's back cover links, and the goat sprite
+    where a page uses it.
+11. **Home page current** (`files/tools/home.py build --check`).
+12. **Travel page places current** (`files/tools/places.py build --check`).
+13. **Photos have their WebP copies** (`files/tools/images.py check`): every
     JPG a page shows has WebP copies, and every page lists them.
-13. **Site HTML sound** (`files/tools/site_lint.py check`): tags close in
+14. **Site HTML sound** (`files/tools/site_lint.py check`): tags close in
     order, ids are unique, links, images and #fragments inside the site
     resolve, every image has alt text, and each page has one `h1`, one
     `main` and at most one banner.
-14. **Agent files current** (`files/tools/agents.py build --check`):
+15. **Agent files current** (`files/tools/agents.py build --check`):
     `llms.txt`, `program.json`, the calendar file, the sitemap and the
     event data on the home page.
-15. **Form links filled** (`files/tools/formlinks.py check --publish`),
+16. **Form links filled** (`files/tools/formlinks.py check --publish`),
     since every merge to `main` publishes the site.
-16. **Site form links current** (`files/tools/formlinks.py check`).
-17. **Only the publish workflow**, exactly as `files/tools/pages.py` writes it.
-18. **Home page paired with `wiki/` edits** (`brain.py check-home-fresh`).
-19. **README paired with significant changes** (`brain.py check-readme-fresh`).
-20. **pytest** over `tests/`, which also tests the checks and the push
+17. **Site form links current** (`files/tools/formlinks.py check`).
+18. **Only the publish workflow**, exactly as `files/tools/pages.py` writes it.
+19. **Home page paired with `wiki/` edits** (`brain.py check-home-fresh`).
+20. **README paired with significant changes** (`brain.py check-readme-fresh`).
+21. **pytest** over `tests/`, which also tests the checks and the push
     hook themselves.
 
 Every step runs, and the script exits non-zero if any failed.

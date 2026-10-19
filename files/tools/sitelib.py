@@ -11,6 +11,7 @@ from pathlib import Path
 
 import yaml
 
+import frame
 import images
 
 
@@ -56,10 +57,10 @@ def prune(found, pages: dict, check: bool, tool: str, why: str) -> int:
 
 
 def write_or_check(pages: dict, check: bool, tool: str) -> int:
-    """Write each page, its photos wrapped for WebP; when checking, count the pages that differ."""
+    """Write each page in the shared frame, its photos wrapped for WebP; when checking, count the pages that differ."""
     stale = 0
     for path, want in pages.items():
-        want = images.wrap(want)
+        want = images.wrap(frame.frame(want))
         if check:
             have = path.read_text(encoding="utf-8") if path.exists() else ""
             if have != want:

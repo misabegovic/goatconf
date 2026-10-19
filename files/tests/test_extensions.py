@@ -32,12 +32,9 @@ def ext(tmp_path, monkeypatch):
     spec.loader.exec_module(mod)
     (tmp_path / "extensions").mkdir()
     (tmp_path / "site").mkdir()
-    shell = SCRIPT.parent.parent / "site" / "contact.html"
-    (tmp_path / "site" / "contact.html").write_text(shell.read_text(encoding="utf-8"), encoding="utf-8")
     monkeypatch.setattr(mod, "ROOT", tmp_path)
     monkeypatch.setattr(mod, "RECORDS", tmp_path / "extensions")
     monkeypatch.setattr(mod, "PAGE", tmp_path / "site" / "extensions.html")
-    monkeypatch.setattr(mod, "SHELL", tmp_path / "site" / "contact.html")
     return mod, tmp_path
 
 

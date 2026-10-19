@@ -37,6 +37,7 @@ run "speakers and supporters (records valid, pages current)" sh -c "\"$PY\" tool
 run "brand files current" "$PY" tools/brand.py build --check
 run "link previews current" "$PY" tools/meta.py check
 run "top bar current" "$PY" tools/nav.py check
+run "page frame current (footer, back cover links, sprite)" "$PY" tools/frame.py check
 run "home page current" "$PY" tools/home.py build --check
 run "travel page places current" "$PY" tools/places.py build --check
 run "photos have their WebP copies, and pages use them" "$PY" tools/images.py check
