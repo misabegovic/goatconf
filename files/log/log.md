@@ -495,3 +495,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #129: tools: the day times are typed once
    diff: 10 files, +91/-14
    restricted-paths: true
+2026-10-19 merge — PR #130: org: the page frame ADR is built
+   diff: 4 files, +32/-1
+   restricted-paths: false
