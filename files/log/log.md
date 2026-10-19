@@ -474,3 +474,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #122: site: land the review's PRs #113 to #121 on main
    diff: 166 files, +1706/-438
    restricted-paths: true
+2026-10-19 merge — PR #123: forms: the Google Forms and Luma match the site
+   diff: 4 files, +67/-0
+   restricted-paths: true
