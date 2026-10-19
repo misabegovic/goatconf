@@ -733,6 +733,7 @@
       "updated": "2026-10-18",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md",
         "sources/conversations/2026-10-14--org--ipi-academy-logo.md",
         "sources/web/venue/ipi-akademija-logo-2026-10-14.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
@@ -752,7 +753,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/tooling/sessionize-community-license.md"
       ],
-      "tokens": 2440
+      "tokens": 2513
     },
     {
       "path": "org/organiser.md",
@@ -891,6 +892,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md",
         "sources/conversations/2026-10-19--org--more-areas.md",
         "sources/conversations/2026-10-19--org--business-and-people-sessions.md",
         "sources/conversations/2026-10-18--org--social-plan-to-june.md",
@@ -935,7 +937,7 @@
         "sources/web/tuzla/fcdo-bih-entry-requirements.md",
         "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md"
       ],
-      "tokens": 4250
+      "tokens": 4282
     },
     {
       "path": "org/outreach/drumbeat.md",

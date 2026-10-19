@@ -362,7 +362,7 @@ def page() -> str:
   <div class="page-grid">
     <div class="copy">
       <p>Thursday 3rd and Friday 4th June 2027 are the core days, at IPI Academy, Kulina bana 2, Tuzla. Each day runs on one timetable for every room, so you can change rooms at every break.</p>
-      <p>Every slot is one hour: a talk with time for questions, a panel, a workshop or something else. Two half-hour sessions can share a slot, and a workshop in a computer centre can run longer. After each slot comes a full hour off, in the cafés on Freedom Square under five minutes away. That is when you talk to the person you just heard.</p>
+      <p>Every slot is one hour: a talk with time for questions, a panel, a workshop or something else. Two half-hour sessions can share a slot, and a workshop in a computer centre can run longer. At a workshop, everyone works on the laptop they bring. After each slot comes a full hour off, in the cafés on Freedom Square under five minutes away. That is when you talk to the person you just heard.</p>
       <p>{' '.join(f'{CORE_DAYS[d].split()[0]} runs from {day_hours(d)}.' for d in CORE_DAYS)}</p>
       <p>GoatConf aims to record the sessions in the two big halls, the main hall and the first-floor hall. This is not promised yet, as it depends on the available budget. You may also bring a camera or a podcast and record, and podcasts are welcome in some of the rooms.</p>
       <p>The slots fill as proposals come in and are accepted. Days, times and rooms are final only once the program is finalised, closer to the event. Until then a session's place on this page can still move. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>

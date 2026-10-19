@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-18
 confidence: medium
 sources:
+  - sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md
   - sources/conversations/2026-10-14--org--ipi-academy-logo.md
   - sources/web/venue/ipi-akademija-logo-2026-10-14.md
   - sources/conversations/2026-10-14--org--decisions-one-by-one.md
@@ -156,6 +157,7 @@ Arithmetic from the table above, not a cap on attendance:
 - **Talk tracks at once:** the three largest rooms, 150, 100 and 34 seats, or
   254 seats if the hall holds 120. That matches the two to three talk tracks
   in the June message.
+- **Its computers are not GoatConf's to use:** at a workshop, the speaker and everyone taking part work on the devices they bring; a workshop in a computer centre may run longer than an hour if it needs it (source: sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md).
 - **Workshop rooms** if those three are talk tracks: computer centre 1 and 2,
   the top-floor room and the former student club, 13 to 26 seats each. Four
   parallel workshops fit in those four rooms. Five or six need the 34-seat

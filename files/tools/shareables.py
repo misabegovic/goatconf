@@ -127,7 +127,7 @@ POSTS = {
     "whos-organising": ("Who's<br>organising", "The organiser of EuRuKo 2024 and RubyConf Austria."),
     "not-only-engineers": ("Not only<br>engineers", "AI/ML, data, UX/UI, product, research, business, leadership: for people who build and sell software."),
     "support-goatconf": ("Support<br>GoatConf", "One level, 500 euro, online only. Nothing at the venue."),
-    "panels-and-workshops": ("Panels and<br>workshops", "Two computer centres, with 20 and 26 seats, for hands-on sessions."),
+    "panels-and-workshops": ("Panels and<br>workshops", "Rooms with 20 and 26 seats for hands-on sessions. Bring your own laptop."),
     "with-or-without-meat": ("With or<br>without<br>meat", "Ask for posno: made without meat."),
     "access": ("Coming with<br>a disability?", "Step-free main hall and first floor. Tell us what you need."),
     "what-we-wont-do": ("What we<br>won't do", "No paid talks, no attendee list for sale, no supporters at the venue."),

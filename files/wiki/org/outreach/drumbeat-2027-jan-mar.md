@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md
   - sources/conversations/2026-10-19--org--more-areas.md
   - sources/conversations/2026-10-19--org--business-and-people-sessions.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
@@ -280,15 +281,15 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   > A session at GoatConf doesn't have to be a talk.
   >
-  > Run a panel: a few people on one question, with the room joining in. Run a workshop: people learn by doing, on their own laptops or in one of IPI Academy's two computer centres, with 20 and 26 seats. Or bring live coding, a hands-on lab, a fireside chat or a debate.
+  > Run a panel: a few people on one question, with the room joining in. Run a workshop: people learn by doing, on the laptops they bring, in one of IPI Academy's two computer centres, with 20 and 26 seats, for longer than an hour if it needs it. Or bring live coding, a hands-on lab, a fireside chat or a debate.
   >
   > Every slot is one hour, on Thursday 3 or Friday 4 June. Propose yours: goatconf.com/talk
 
-- **Short** (183 characters):
+- **Short** (185 characters):
 
-  > A GoatConf session doesn't have to be a talk: run a panel, or a workshop in one of two computer centres (20 and 26 seats), or live coding, a lab, a debate. One hour. goatconf.com/talk
+  > A GoatConf session doesn't have to be a talk: run a panel, a workshop where everyone brings a laptop, live coding, a lab or a debate. An hour, or longer for workshops. goatconf.com/talk
 
-  Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--all-available-rooms.md.
+  Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--all-available-rooms.md, sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md.
 
 ### Tue 30 Mar 2027, week 25: Where to stay
 
