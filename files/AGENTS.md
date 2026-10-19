@@ -381,16 +381,20 @@ in order:
 11. **Travel page places current** (`files/tools/places.py build --check`).
 12. **Photos have their WebP copies** (`files/tools/images.py check`): every
     JPG a page shows has WebP copies, and every page lists them.
-13. **Agent files current** (`files/tools/agents.py build --check`):
+13. **Site HTML sound** (`files/tools/site_lint.py check`): tags close in
+    order, ids are unique, links, images and #fragments inside the site
+    resolve, every image has alt text, and each page has one `h1`, one
+    `main` and at most one banner.
+14. **Agent files current** (`files/tools/agents.py build --check`):
     `llms.txt`, `program.json`, the calendar file, the sitemap and the
     event data on the home page.
-14. **Form links filled** (`files/tools/formlinks.py check --publish`),
+15. **Form links filled** (`files/tools/formlinks.py check --publish`),
     since every merge to `main` publishes the site.
-15. **Site form links current** (`files/tools/formlinks.py check`).
-16. **Only the publish workflow**, exactly as `files/tools/pages.py` writes it.
-17. **Home page paired with `wiki/` edits** (`brain.py check-home-fresh`).
-18. **README paired with significant changes** (`brain.py check-readme-fresh`).
-19. **pytest** over `tests/`, which also tests the checks and the push
+16. **Site form links current** (`files/tools/formlinks.py check`).
+17. **Only the publish workflow**, exactly as `files/tools/pages.py` writes it.
+18. **Home page paired with `wiki/` edits** (`brain.py check-home-fresh`).
+19. **README paired with significant changes** (`brain.py check-readme-fresh`).
+20. **pytest** over `tests/`, which also tests the checks and the push
     hook themselves.
 
 Every step runs, and the script exits non-zero if any failed.
