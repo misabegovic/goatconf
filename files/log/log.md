@@ -483,3 +483,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #125: tools: the local CI checks the site's HTML
    diff: 7 files, +221/-8
    restricted-paths: true
+2026-10-19 merge — PR #126: tools: the generators share their helpers
+   diff: 6 files, +91/-87
+   restricted-paths: true
