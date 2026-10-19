@@ -302,6 +302,23 @@
       "tokens": 3040
     },
     {
+      "path": "org/adrs/one-page-frame-and-one-site-build.md",
+      "title": "Give every page one shared frame, one marker style and one build, and lint the HTML",
+      "kind": "decision",
+      "status": "proposed",
+      "updated": "2026-10-19",
+      "confidence": "low",
+      "depends_on": [
+        "org/prds/website-and-registration.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
+        "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
+        "sources/conversations/2026-10-07--brain--local-ci-only.md"
+      ],
+      "tokens": 1607
+    },
+    {
       "path": "org/adrs/online-supporters-through-the-business.md",
       "title": "Online supporters pay the organiser's Austrian business; the budget becomes private",
       "kind": "decision",
@@ -1826,6 +1843,7 @@
       "tokens": 3254,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
+        "org/adrs/one-page-frame-and-one-site-build.md",
         "org/adrs/website-and-registration.md"
       ]
     },
