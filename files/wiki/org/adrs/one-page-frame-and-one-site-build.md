@@ -1,12 +1,13 @@
 ---
 title: "Give every page one shared frame, one marker style and one build, and lint the HTML"
 kind: decision
-status: proposed
+status: accepted
 updated: 2026-10-19
-confidence: low
+confidence: medium
 depends_on:
   - org/prds/website-and-registration.md
 sources:
+  - sources/conversations/2026-10-19--org--site-frame-adr-approved.md
   - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
   - sources/conversations/2026-10-07--brain--local-ci-only.md
@@ -18,8 +19,10 @@ Proposed on 2026-10-19 from the organiser's review of the whole site, where
 they answered "ADR, then refactor" for the page frame, "Add it, in the same
 ADR" for an HTML check, and "Yes, in the ADR" for taking the day hours from
 the program's day plan (source:
-sources/conversations/2026-10-19--org--site-review-decisions.md). Nothing in
-this ADR is built until the organiser approves it.
+sources/conversations/2026-10-19--org--site-review-decisions.md). Accepted
+the same day: the organiser approved it with the HTML check to land first,
+each step in its own pull request with before and after screenshots
+(source: sources/conversations/2026-10-19--org--site-frame-adr-approved.md).
 
 ## Context
 
