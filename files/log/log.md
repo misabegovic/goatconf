@@ -510,3 +510,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #134: site: one speaker card on the home page and the speakers page
    diff: 31 files, +114/-65
    restricted-paths: true
+2026-10-19 merge — PR #135: site: eight session areas, with AI/ML, Data, UX/UI, Product and Leadership
+   diff: 18 files, +89/-29
+   restricted-paths: true
