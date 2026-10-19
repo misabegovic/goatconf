@@ -6,7 +6,10 @@ links:
   - https://example.com
 talk: Your session's title, while it has no slot yet
 talk_about: |
-  Your words on what the session is about and who it is for.
+  Your words on what the session is about.
+# talk_format: talk   (optional: talk, panel, workshop or other; a talk if left out)
+# talk_area: engineering   (optional: engineering, design-product, research, business or people)
+# talk_for: who the session is for, one short line in your words
 # support_them:   (optional: how people can support you, shown on your page)
 #   - {text: "Read my book", url: "https://example.com/book"}
 order: 1

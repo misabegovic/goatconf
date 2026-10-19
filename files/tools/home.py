@@ -103,7 +103,7 @@ def speaker_sticker(i: int, slug: str, meta, sessions=()) -> str:
     # The session's title, as the speakers page shows it: the scheduled one
     # first, else the talk the record proposes while it has no slot.
     talk = (f'{sessions[0]["format"]}: {sessions[0]["title"]}' if sessions
-            else f'Talk: {meta["talk"]}' if meta.get("talk") else "")
+            else f'{program.FORMATS[meta.get("talk_format") or "talk"]}: {meta["talk"]}' if meta.get("talk") else "")
     role += f'<small class="sticker__talk">{esc(talk)}</small>' if talk else ""
     photo = (f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo")
              else '<span class="speaker__goat" aria-hidden="true"><svg viewBox="0 0 124 100"><use href="#goat"/></svg></span>')

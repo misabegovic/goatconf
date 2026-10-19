@@ -19,6 +19,15 @@ record; the body is the speaker's own short description. Copy
 - `profiles`: optional, a list of speaker file names from `speakers/`
   (for example `[ada-lovelace]`); the program then links the names to
   their profiles.
+- `area`: optional, the session's area: `engineering`, `design-product`,
+  `research`, `business` (the business of software) or `people` (the
+  people side of the work), as the proposal form's discipline question
+  gives it. It shows as a tag on the program, the session's page and the
+  speaker's page and card.
+- `for`: optional, who the session is for: the speaker's answer to the
+  form's "Who is it for?", lightly trimmed to one line of at most 100
+  characters without changing what it says. It shows as a "For:" line
+  beside the tag, and both go into `program.json`.
 - `accepted: yes` once the organiser has accepted the proposal and the
   speaker has confirmed.
 - `signup`: optional and unused for now: a link where people save a seat in
