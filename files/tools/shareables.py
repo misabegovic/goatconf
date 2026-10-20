@@ -119,7 +119,7 @@ POSTS = {
     "run-a-session": ("Run a<br>session", "A talk, a panel, a workshop or something else. One hour, one room."),
     "register": ("Get your<br>free ticket", "Thursday and Friday for the talks, Saturday for the community."),
     "add-something": ("Propose<br>an event", "A workshop, a meetup, a dinner, a hike: run it around GoatConf."),
-    "first-speakers": ("The first<br>speakers<br>are here", "Six speakers so far, each with an hour in one of the seven rooms."),
+    "first-speakers": ("The first<br>speakers<br>are here", "Seven speakers so far, each with an hour in one of the seven rooms."),
     # The drumbeat to June 2027 (wiki/org/outreach/drumbeat.md)
     "why-a-goat": ("Why<br>a goat?", "The whole of Tuzla milked one goat."),
     "your-first-talk": ("Your<br>first talk?", "First-time speakers are welcome. A strong idea counts for more than a famous name."),
@@ -144,7 +144,6 @@ POSTS = {
 # Posts with a photo given for GoatConf, each with the credit line its giver asked for
 # (wiki/org/tuzla-images.md). The food photos are not freely licensed, so none is here.
 PHOTO_POSTS = {
-    "tuzla-on-a-budget": ("Tuzla on<br>a budget", "A meal about 4.60 €, a cappuccino 1.66 €, a day at the lakes 3.60 €.", "img/city-aerial-summer.jpg", "Photo: Grad Tuzla"),
     "getting-to-tuzla": ("Getting<br>to Tuzla", "Fly to Tuzla or Sarajevo, or come by bus.", "img/city-square-mosque-summer.jpg", "Photo: Grad Tuzla"),
     "an-hour-off": ("An hour<br>off", "After every session: Freedom Square, five minutes away.", "img/city-square-fountain-summer.jpg", "Photo: Grad Tuzla"),
     "where-to-stay": ("Where<br>to stay", "Hotels and guest houses a short walk from IPI Academy.", "img/city-korzo-clock.jpg", "Photo: Grad Tuzla"),
