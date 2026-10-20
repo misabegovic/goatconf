@@ -6,7 +6,7 @@ links:
   - https://www.linkedin.com/in/amar-mahmutbegovic/
   - https://semblie.com/modern-cpp/
   - https://www.embeddedrelated.com/blogs-1/nf/Amar_Mahmutbegovic.php
-order: 5
+order: 6
 publish: yes
 support_them:
   - text: "Read his book, C++ in Embedded Systems (Packt, 2025)"

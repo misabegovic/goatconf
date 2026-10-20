@@ -20,6 +20,7 @@ Follow GoatConf: LinkedIn https://www.linkedin.com/company/goatconf/, X https://
 ## Speakers
 
 - [Paul Campbell](https://goatconf.com/speaker-paul-campbell): Co-founder and CEO of Tito
+- [Roy Tomeij](https://goatconf.com/speaker-roy-tomeij): Co-founder of AppSignal
 - [Carmine Paolino](https://goatconf.com/speaker-carmine-paolino): Creator of RubyLLM, founder of Plenty
 - [Dejan Menges](https://goatconf.com/speaker-dejan-menges): Staff Engineer at Vinted, author of Enola
 - [Amar Mahmutbegović](https://goatconf.com/speaker-amar-mahmutbegovic): Co-founder and Head of Engineering at Semblie

@@ -637,6 +637,7 @@
       "updated": "2026-10-20",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-20--org--roy-tomeij.md",
         "sources/conversations/2026-10-20--org--contact-form-description-volunteering.md",
         "sources/conversations/2026-10-20--org--contact-form-volunteering.md",
         "sources/conversations/2026-10-20--org--contact-page-students-and-volunteers.md",
@@ -693,7 +694,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 4023
+      "tokens": 4106
     },
     {
       "path": "org/ideas/lightning-talks.md",
@@ -718,9 +719,9 @@
       "title": "goatconf: the conference as a whole",
       "kind": "meta",
       "status": "draft",
-      "updated": "2026-10-17",
+      "updated": "2026-10-20",
       "sources": [],
-      "tokens": 1871,
+      "tokens": 1917,
       "affected_by": [
         "org/ideas/lightning-talks.md",
         "org/outreach/drumbeat-2026.md",
@@ -1988,6 +1989,21 @@
         "sources/web/organiser/muhamed-at-about.md"
       ],
       "tokens": 969
+    },
+    {
+      "path": "org/speakers/roy-tomeij.md",
+      "title": "Speaker: Roy Tomeij",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-20",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-20--org--roy-tomeij.md",
+        "sources/web/speakers/roytomeij-com-2026-10-20.md",
+        "sources/web/speakers/appsignal-roy-tomeij-2026-10-20.md",
+        "sources/web/speakers/rubyevents-roy-tomeij-2026-10-20.md"
+      ],
+      "tokens": 763
     },
     {
       "path": "org/tuzla/history-and-old-town.md",

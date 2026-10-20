@@ -2,7 +2,7 @@
 title: "goatconf: the conference as a whole"
 kind: meta
 status: draft
-updated: 2026-10-17
+updated: 2026-10-20
 sources: []
 ---
 
@@ -17,6 +17,7 @@ timeline, budget, and decisions that touch more than one area.
 - [The organiser](organiser.md): Muhamed Isabegovic, organiser of EuRuKo 2024 and RubyConf Austria, IPI Akademija alumnus.
 - Speakers, one page each, from public sources, in the organiser's order:
   - [Paul Campbell](speakers/paul-campbell.md): co-founder and CEO of Tito in Dublin, organiser of Funconf; confirmed 2026-10-14, session to come.
+  - [Roy Tomeij](speakers/roy-tomeij.md): co-founder of AppSignal, Rails community since 2005, RailsConf speaker; confirmed 2026-10-20, session to come.
   - [Carmine Paolino](speakers/carmine-paolino.md): creator of RubyLLM, founder of Plenty in Berlin; spoke at RubyConf Austria 2026; confirmed 2026-10-14, session to come.
   - [Dejan Menges](speakers/dejan-menges.md): staff engineer at Vinted, author of Enola; confirmed 2026-10-14; talk "Teaching Twenty Languages to Describe One System", slot to come.
   - [Jan Grodowski](speakers/jan-grodowski.md): Staff Software Engineer at Shopify in Salzburg, author of the undercover gem; ran a workshop at RubyConf Austria 2026; confirmed 2026-10-14, session to come; held from the site since 2026-10-15 while his employer clears the engagement.
