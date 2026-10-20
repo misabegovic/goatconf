@@ -2,11 +2,13 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-10-19
+updated: 2026-10-20
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md
+  - sources/conversations/2026-10-20--org--roy-tomeij.md
   - sources/conversations/2026-10-19--org--more-areas.md
   - sources/conversations/2026-10-19--org--business-and-people-sessions.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
@@ -114,13 +116,14 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 - **State:** drafted
 - **Image:** `post-first-speakers-square.png` (LinkedIn, Mastodon), `post-first-speakers-wide.png` (X, Bluesky)
-- **Tag:** each of the six speakers
+- **Tag:** each of the seven speakers
 - **Before posting:** When it goes, send each speaker their own card (speaker-<name>-square.png) and ask them to share it. Jan Grodowski stays out while his hold is on.
 - **LinkedIn:**
 
   > The first GoatConf 2027 speakers are here.
   >
   > Paul Campbell, Co-founder and CEO of Tito
+  > Roy Tomeij, Co-founder of AppSignal
   > Carmine Paolino, Creator of RubyLLM, founder of Plenty
   > Dejan Menges, Staff Engineer at Vinted, author of Enola
   > Amar Mahmutbegović, Co-founder and Head of Engineering at Semblie
@@ -131,11 +134,11 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   >
   > More speakers are confirmed as proposals come in, so the call stays open: goatconf.com/talk
 
-- **Short** (203 characters):
+- **Short** (215 characters):
 
-  > The first GoatConf 2027 speakers: Paul Campbell, Carmine Paolino, Dejan Menges, Amar Mahmutbegović, Cristian Planas and Christoph Lipautz, each with an hour in Tuzla on 3 or 4 June. goatconf.com/speakers
+  > The first GoatConf 2027 speakers: Paul Campbell, Roy Tomeij, Carmine Paolino, Dejan Menges, Amar Mahmutbegović, Cristian Planas and Christoph Lipautz, each with an hour in Tuzla on 3 or 4 June. goatconf.com/speakers
 
-  Sources: sources/conversations/2026-10-14--org--speaker-order.md, sources/conversations/2026-10-15--org--hold-jan-grodowski.md, sources/conversations/2026-10-15--org--christoph-lipautz.md.
+  Sources: sources/conversations/2026-10-14--org--speaker-order.md, sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md, sources/conversations/2026-10-15--org--hold-jan-grodowski.md, sources/conversations/2026-10-15--org--christoph-lipautz.md.
 
 ### Tue 10 Nov 2026, week 5: Propose an event
 
@@ -234,24 +237,24 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-14--org--carmine-paolino.md.
 
-### Tue 15 Dec 2026, week 10: Tuzla on a budget
+### Tue 15 Dec 2026, week 10: Speaker: Roy Tomeij
 
 - **State:** drafted
-- **Image:** `post-tuzla-on-a-budget-square.png` (LinkedIn, Mastodon), `post-tuzla-on-a-budget-wide.png` (X, Bluesky)
-- **Before posting:** Prices were checked in October 2026; recheck the travel page the week it goes out.
+- **Image:** `speaker-roy-tomeij-square.png` (LinkedIn, Mastodon), `speaker-roy-tomeij-wide.png` (X, Bluesky)
+- **Tag:** Roy Tomeij and AppSignal
 - **LinkedIn:**
 
-  > GoatConf is free, and Tuzla is kind to your wallet too.
+  > Meet a GoatConf 2027 speaker: Roy Tomeij.
   >
-  > A simple meal costs about 4.60 euro, a cappuccino about 1.66 euro, and a day at the salt lakes 3.60 euro on weekdays (summer 2026 prices). Central hotels started at about 73 euro a night on a hotel search site in October, and guest houses near IPI Academy for less.
+  > Roy co-founded AppSignal, monitoring and logging for Ruby on Rails, which raised a $22M Series A in 2025. AppSignal's founders have been part of the Rails community since 2005, and Roy has spoken at RailsConf and EuRuKo. Now he works with founders and leadership teams on customer experience, operations and growth.
   >
-  > The travel page has the prices, the places to stay near the venue and how to get here: goatconf.com/travel
+  > He's speaking in Tuzla on 3 or 4 June 2027. His profile: goatconf.com/speaker-roy-tomeij
 
-- **Short** (181 characters):
+- **Short** (201 characters):
 
-  > Tuzla is kind to your wallet: a meal about 4.60 €, a cappuccino about 1.66 €, a day at the salt lakes 3.60 €. GoatConf itself is free. Prices and places to stay: goatconf.com/travel
+  > Meet a GoatConf 2027 speaker: Roy Tomeij, co-founder of AppSignal, monitoring and logging for Ruby on Rails, and a RailsConf and EuRuKo speaker. In Tuzla on 3 or 4 June. goatconf.com/speaker-roy-tomeij
 
-  Sources: sources/web/tuzla/numbeo-cost-of-living-tuzla.md, sources/web/tuzla/slana-jezera-cijene-kurir-2026-08.md, sources/web/tuzla/hotelscombined-tuzla.md, sources/web/tuzla/places-research-2026-10-12.md.
+  Sources: sources/conversations/2026-10-20--org--roy-tomeij.md, sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md, sources/web/speakers/appsignal-roy-tomeij-2026-10-20.md, sources/web/speakers/rubyevents-roy-tomeij-2026-10-20.md.
 
 ### Tue 22 Dec 2026, week 11: Your first talk?
 

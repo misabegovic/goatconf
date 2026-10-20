@@ -18,7 +18,7 @@ talk_about: |
   You will leave with a practical way to think about structural models of software - whether you are building developer tools, architecture checks, code intelligence for agents, or simply trying to understand a large polyglot system. No knowledge of ontologies, graph databases, or Enola is required.
 talk_area: [engineering, data]
 talk_for: anyone working with real-life codebases
-order: 3
+order: 4
 publish: yes
 support_them:
   - text: "Try Enola, his open-source architecture tool"

@@ -7,7 +7,7 @@ links:
   - https://github.com/Gawyn
   - https://x.com/crplanas
   - https://bsky.app/profile/cplanas.bsky.social
-order: 6
+order: 7
 publish: yes
 support_them:
   - text: "Read his book, Rails Scales! (Pragmatic Bookshelf, 2025)"

@@ -2,11 +2,12 @@
 title: "The drumbeat: the weekly posts, from launch to June 2027"
 kind: reference
 status: draft
-updated: 2026-10-18
+updated: 2026-10-20
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
   - sources/conversations/2026-10-15--org--drafting-the-first-posts.md
   - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
@@ -47,7 +48,7 @@ The texts are on three pages: [October to December 2026](drumbeat-2026.md), [Jan
 | Tue 24 Nov 2026 | week 7 | [Speaker: Paul Campbell](drumbeat-2026.md) | `speaker-paul-campbell` | drafted |
 | Tue 1 Dec 2026 | week 8 | [Thank you, IPI Academy](drumbeat-2026.md) | `supporter-ipi-academy` | drafted |
 | Tue 8 Dec 2026 | week 9 | [Speaker: Carmine Paolino](drumbeat-2026.md) | `speaker-carmine-paolino` | drafted |
-| Tue 15 Dec 2026 | week 10 | [Tuzla on a budget](drumbeat-2026.md) | `post-tuzla-on-a-budget` | drafted |
+| Tue 15 Dec 2026 | week 10 | [Speaker: Roy Tomeij](drumbeat-2026.md) | `speaker-roy-tomeij` | drafted |
 | Tue 22 Dec 2026 | week 11 | [Your first talk?](drumbeat-2026.md) | `post-your-first-talk` | drafted |
 | Tue 29 Dec 2026 | week 12 | [See you in June](drumbeat-2026.md) | `post-see-you-in-june` | drafted |
 | Tue 5 Jan 2027 | week 13 | [Speaker: Dejan Menges](drumbeat-2027-jan-mar.md) | `speaker-dejan-menges` | drafted |

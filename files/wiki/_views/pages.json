@@ -637,6 +637,7 @@
       "updated": "2026-10-20",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-20--org--roy-tomeij.md",
         "sources/conversations/2026-10-20--org--contact-form-description-volunteering.md",
         "sources/conversations/2026-10-20--org--contact-form-volunteering.md",
         "sources/conversations/2026-10-20--org--contact-page-students-and-volunteers.md",
@@ -693,7 +694,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 4023
+      "tokens": 4106
     },
     {
       "path": "org/ideas/lightning-talks.md",
@@ -718,9 +719,9 @@
       "title": "goatconf: the conference as a whole",
       "kind": "meta",
       "status": "draft",
-      "updated": "2026-10-17",
+      "updated": "2026-10-20",
       "sources": [],
-      "tokens": 1871,
+      "tokens": 1917,
       "affected_by": [
         "org/ideas/lightning-talks.md",
         "org/outreach/drumbeat-2026.md",
@@ -793,12 +794,14 @@
       "title": "The drumbeat, October to December 2026",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-19",
+      "updated": "2026-10-20",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md",
+        "sources/conversations/2026-10-20--org--roy-tomeij.md",
         "sources/conversations/2026-10-19--org--more-areas.md",
         "sources/conversations/2026-10-19--org--business-and-people-sessions.md",
         "sources/conversations/2026-10-18--org--social-plan-to-june.md",
@@ -838,7 +841,7 @@
         "sources/conversations/2026-10-12--org--day-chain-and-session-format.md",
         "sources/conversations/2026-10-12--org--two-core-days-and-saturday.md"
       ],
-      "tokens": 4095
+      "tokens": 4128
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -948,12 +951,13 @@
       "title": "The drumbeat: the weekly posts, from launch to June 2027",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-18",
+      "updated": "2026-10-20",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md",
         "sources/conversations/2026-10-18--org--social-plan-to-june.md",
         "sources/conversations/2026-10-15--org--drafting-the-first-posts.md",
         "sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md",
@@ -966,7 +970,7 @@
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
         "sources/web/images/food-photos-chosen-2026-10-13.md"
       ],
-      "tokens": 2528
+      "tokens": 2526
     },
     {
       "path": "org/outreach/ipi-proposal.md",
@@ -1988,6 +1992,21 @@
         "sources/web/organiser/muhamed-at-about.md"
       ],
       "tokens": 969
+    },
+    {
+      "path": "org/speakers/roy-tomeij.md",
+      "title": "Speaker: Roy Tomeij",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-20",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-20--org--roy-tomeij.md",
+        "sources/web/speakers/roytomeij-com-2026-10-20.md",
+        "sources/web/speakers/appsignal-roy-tomeij-2026-10-20.md",
+        "sources/web/speakers/rubyevents-roy-tomeij-2026-10-20.md"
+      ],
+      "tokens": 763
     },
     {
       "path": "org/tuzla/history-and-old-town.md",

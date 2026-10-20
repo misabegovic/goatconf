@@ -8,7 +8,7 @@ links:
   - https://github.com/crmne
   - https://x.com/paolino
   - https://www.linkedin.com/in/carminepaolino/
-order: 2
+order: 3
 publish: yes
 support_them:
   - text: "Use RubyLLM, his open-source Ruby gem"
