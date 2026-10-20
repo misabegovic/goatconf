@@ -28,7 +28,7 @@
           "site/program.html"
         ],
         "createdAt": "2026-10-12T12:00:38.126Z",
-        "reason": "The album band runs edge to edge across the top of each album page by design and carries its own padding; the detector reads the page as flush"
+        "reason": "The album band runs across the top of each album page, inside a thin white edge, by design and carries its own padding; the detector reads the page as flush"
       },
       {
         "rule": "tight-leading",
