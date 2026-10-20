@@ -546,3 +546,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-20 merge — PR #146: site: make the home page hero a photo column
    diff: 29 files, +120/-52
    restricted-paths: false
+2026-10-20 merge — PR #147: site: hero sticker 6 says Extendable, a minimal core you make your own
+   diff: 3 files, +21/-1
+   restricted-paths: false
