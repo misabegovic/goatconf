@@ -552,3 +552,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-20 merge — PR #148: site: on phones the hero lists its stickers one after another
    diff: 29 files, +54/-32
    restricted-paths: false
+2026-10-20 merge — PR #149: site: frame the album-page band inside a white edge
+   diff: 31 files, +60/-35
+   restricted-paths: false
