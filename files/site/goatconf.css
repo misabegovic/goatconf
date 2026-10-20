@@ -177,8 +177,8 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 }
 
 /* Album pages */
-.album-page { margin-block: var(--space); padding: 0 clamp(1.25rem, 3.5vw, 3rem) clamp(1.75rem, 3.5vw, 3rem); background: var(--page); color: var(--ink); border-radius: 0.8rem; box-shadow: 0 2rem 3rem -2rem rgb(0 0 0 / 0.55); overflow: clip; }
-.band { margin: 0 calc(-1 * clamp(1.25rem, 3.5vw, 3rem)) clamp(1.75rem, 3vw, 2.5rem); padding: 1.1rem clamp(1.25rem, 3.5vw, 3rem) 1rem; border-radius: 0.8rem 0.8rem 0 0; background: var(--album); color: var(--page); font-size: var(--step-2); border-bottom: 0.45rem solid var(--yellow); }
+.album-page { margin-block: var(--space); padding: 0.42rem clamp(1.25rem, 3.5vw, 3rem) clamp(1.75rem, 3.5vw, 3rem); background: var(--page); color: var(--ink); border-radius: 0.8rem; box-shadow: 0 2rem 3rem -2rem rgb(0 0 0 / 0.55); overflow: clip; }
+.band { margin: 0 calc(0.42rem - clamp(1.25rem, 3.5vw, 3rem)) clamp(1.75rem, 3vw, 2.5rem); padding: 1.1rem calc(clamp(1.25rem, 3.5vw, 3rem) - 0.42rem) 1rem; border-radius: 0.4rem 0.4rem 0 0; background: var(--album); color: var(--page); font-size: var(--step-2); border-bottom: 0.45rem solid var(--yellow); }
 .page-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(1.75rem, 4vw, 3.5rem); align-items: start; }
 .copy { max-width: 62ch; }
 .copy--wide { max-width: 74ch; margin-bottom: 2rem; }

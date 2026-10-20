@@ -144,7 +144,7 @@ components:
     backgroundColor: "{colors.album}"
     textColor: "{colors.page}"
     typography: "{typography.headline}"
-    padding: "1.1rem clamp(1.25rem, 3.5vw, 3rem) 1rem"
+    padding: "1.1rem calc(clamp(1.25rem, 3.5vw, 3rem) - 0.42rem) 1rem"
   album-page:
     backgroundColor: "{colors.page}"
     textColor: "{colors.ink}"
@@ -201,7 +201,7 @@ components:
 
 **Creative North Star: "The Sticker Album"**
 
-GoatConf is a sticker album opened flat on an album-blue ground. The organiser sticks in the core facts as glossy die-cut stickers; every other numbered slot is printed empty on the white page and waits for whoever brings a talk, a workshop or a walk. The album is the whole site: a blue ground printed with faint cloven-hoof marks, white album pages with rounded corners, a blue band across the top of each page, a numbered sequence that runs through the whole album, a night-blue "shiny" page for the goat story, and a night-blue back cover.
+GoatConf is a sticker album opened flat on an album-blue ground. The organiser sticks in the core facts as glossy die-cut stickers; every other numbered slot is printed empty on the white page and waits for whoever brings a talk, a workshop or a walk. The album is the whole site: a blue ground printed with faint cloven-hoof marks, white album pages with rounded corners, a blue band across the top of each page inside a thin white edge, a numbered sequence that runs through the whole album, a night-blue "shiny" page for the goat story, and a night-blue back cover.
 
 The material is printed paper and vinyl, not screen chrome. Stickers have a white die-cut border, a soft lift off the page and a diagonal gloss; empty slots are flat, dashed and printed in the album's own blue at low strength, each with a faint goat silhouette and a printed number. Hierarchy comes from scale contrast in condensed uppercase lettering, not from weight changes or colour noise. The goat itself appears once per spread as a die-cut yellow sticker with a white edge.
 
@@ -299,7 +299,7 @@ Depth is physical: paper pages cast a long soft drop onto the blue, stickers lif
 
 Corners are soft and consistent: pages and the spread at 0.8rem, stickers and slots at 0.6rem, the photo inside a sticker at 0.35rem so the white die-cut border keeps an even width (0.42rem) all round. Numbers are pill-shaped stickers (1.05rem radius); the crest and the status dot are circles. The stamp is a 3px rectangle with 0.35rem corners, rotated -9 degrees.
 
-Stickers are set at small individual tilts between -2 and 2 degrees, set per sticker; the inner-page photo sticker sits at 2 degrees and the goat at -6. Album pages clip to their rounded corners so the blue band runs edge to edge without a seam. Borders exist only as print: the dashed slot outline, the dotted price leader, the solid name line and the yellow rule under each band.
+Stickers are set at small individual tilts between -2 and 2 degrees, set per sticker; the inner-page photo sticker sits at 2 degrees and the goat at -6. Album pages clip to their rounded corners; the blue band sits inside a 0.42rem white edge at the top and sides, like the white border of a fact sticker, so the page reads whole against the album-blue ground. Borders exist only as print: the dashed slot outline, the dotted price leader, the solid name line and the yellow rule under each band.
 
 ## Components
 
@@ -317,7 +317,7 @@ The empty place in the album: page-print fill, a 2px dashed slot-line outline, 0
 One run of numbers through the whole album, so a reader can see the gaps. On a stuck sticker the number is a yellow pill sticker overlapping the top-left corner with its own lift; on an empty slot the same number is printed in place: no fill, album-blue figure, a 2px slot-line ring.
 
 ### Album Page and Band
-A white page with 0.8rem corners and the page drop. Its heading is the band: album blue, white headline lettering, a 0.45rem yellow rule beneath, running edge to edge across the top of the page.
+A white page with 0.8rem corners and the page drop. Its heading is the band: album blue, white headline lettering, a 0.45rem yellow rule beneath, running across the top of the page inside a 0.42rem white edge with 0.4rem corners. The edge keeps the page's silhouette whole, since the band and the ground are the same blue.
 
 ### Spread
 The opening: one rounded frame holding the cover-blue left page (the seal beside the cover title, the lede, the Register button and three links) and the white right page ("What is decided": two big photo stickers, three fact stickers with large yellow lettering, and one slot), joined by the spine shadow.
