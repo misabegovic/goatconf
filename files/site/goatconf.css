@@ -132,19 +132,49 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .ghost { position: absolute; top: 0.7rem; right: 0.8rem; width: 3.4rem; color: var(--slot-line); --goat-fill: transparent; opacity: 0.7; pointer-events: none; }
 
 /* The opening spread */
-.spread { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); margin-block: clamp(1.25rem, 3vw, 2.5rem) var(--space); border-radius: 0.8rem; overflow: visible; box-shadow: 0 2.5rem 4rem -2rem rgb(0 0 0 / 0.6); }
+.spread { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); margin-block: clamp(1.25rem, 3vw, 2.5rem) var(--space); border-radius: 0.8rem; overflow: visible; box-shadow: 0 2.5rem 4rem -2rem rgb(0 0 0 / 0.6); }
 .spread__cover { position: relative; padding: clamp(1.5rem, 3.5vw, 3.25rem); background: var(--album-deep); border-radius: 0.8rem 0 0 0.8rem; box-shadow: inset -1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.55); }
-.cover-title { font-size: var(--step-3); line-height: 0.86; font-stretch: 75%; }
+.cover-head { display: flex; align-items: center; gap: clamp(0.9rem, 2vw, 1.4rem); }
+.cover-title { font-size: clamp(2.8rem, 0.8rem + 4.4vw, 5rem); line-height: 0.86; font-stretch: 75%; }
 .cover-title span { display: block; color: var(--yellow); }
 .cover-lede { margin-top: 1.1rem; font-family: var(--display); font-weight: 700; font-stretch: 88%; font-size: var(--step-1); line-height: 1.2; }
 .cover-actions { margin-top: 1.6rem; display: grid; gap: 1rem; }
 .cover-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; margin: 0; }
 .go { font-family: var(--display); font-weight: 750; font-stretch: 85%; font-size: 1.25rem; text-decoration-thickness: 3px; }
 .go--ink { color: var(--album); }
-.spread__page { padding: clamp(1.5rem, 3.5vw, 3rem); background: var(--page); color: var(--ink); border-radius: 0 0.8rem 0.8rem 0; box-shadow: inset 1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.25); }
-.page-title { color: var(--album); font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.4rem); margin-bottom: 1.6rem; }
+.spread__page { padding: clamp(1.25rem, 2.5vw, 2rem); background: var(--page); color: var(--ink); border-radius: 0 0.8rem 0.8rem 0; box-shadow: inset 1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.25); }
+.page-title { color: var(--album); font-size: clamp(1.4rem, 1.1rem + 0.9vw, 1.9rem); margin-bottom: 1.2rem; }
 .slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr)); gap: 1.6rem 1.3rem; margin: 0; padding: 0; }
-.slots--hero { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
+/* What is decided: two big photos, the facts beside them, read 1 to 6 */
+.slots--hero { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: "free tuzla tuzla" "june tuzla tuzla" "ipi ipi stack" "ipi ipi slot"; gap: 1.2rem 1rem; }
+.hero-free { grid-area: free; }
+.hero-tuzla { grid-area: tuzla; }
+.hero-june { grid-area: june; }
+.hero-ipi { grid-area: ipi; }
+.hero-stack { grid-area: stack; }
+.hero-slot { grid-area: slot; }
+.slots--hero .sticker--fact { padding: 0.95rem 0.85rem; }
+.slots--hero .sticker--fact strong { font-size: clamp(1.9rem, 1.2rem + 1.5vw, 2.6rem); }
+.slots--hero .sticker--fact strong.sticker__long { font-size: clamp(1.7rem, 1.1rem + 1.2vw, 2.3rem); }
+.slots--hero .sticker--fact small { font-size: 0.85rem; }
+.slots--hero .sticker--photo { display: flex; flex-direction: column; }
+.slots--hero .sticker--photo img { flex: 1 1 0; height: 100%; min-height: 15rem; aspect-ratio: auto; }
+.slots--hero .sticker--place figcaption { font-size: clamp(1.8rem, 1.3rem + 1.4vw, 2.6rem); }
+.slots--hero .slot { min-height: 0; padding: 0.9rem 0.85rem 2.8rem; justify-content: flex-start; }
+.slots--hero .slot strong { font-size: 1.15rem; }
+.slots--hero .slot small { font-size: 0.85rem; }
+.slots--hero .ghost { width: 2.4rem; }
+/* On wide screens the spread holds 53rem and the photos take up the room */
+@media (min-width: 62rem) {
+  .spread { min-height: 53rem; }
+  .spread__cover, .spread__page { display: flex; flex-direction: column; }
+  .cover-actions { margin-top: auto; padding-top: 1.6rem; }
+  .slots--hero { flex: 1 1 auto; grid-template-rows: repeat(4, auto); align-content: stretch; }
+  .slots--hero .sticker--photo img { min-height: 0; }
+}
+@media (min-width: 48rem) and (max-width: 61.99rem) {
+  .slots--hero .sticker--photo img { min-height: 21.5rem; }
+}
 
 /* Album pages */
 .album-page { margin-block: var(--space); padding: 0 clamp(1.25rem, 3.5vw, 3rem) clamp(1.75rem, 3.5vw, 3rem); background: var(--page); color: var(--ink); border-radius: 0.8rem; box-shadow: 0 2rem 3rem -2rem rgb(0 0 0 / 0.55); overflow: clip; }
@@ -237,14 +267,16 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 @media (max-width: 47.99rem) {
   .topbar nav { width: 100%; flex-wrap: wrap; gap: 0.5rem 0.9rem; padding-bottom: 0.15rem; }
   .slots--kinds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cover-title { font-size: 3.4rem; }
+  .cover-title { font-size: 3rem; }
   .sticker--fact strong { font-size: 2.2rem; }
-  /* What is decided, on a phone: one sticker after another, 1 to 6, each only as tall as it needs */
-  .slots--hero { grid-template-columns: minmax(0, 26rem); justify-content: center; gap: 1.4rem; }
-  .slots--hero .sticker--fact { padding: 1.1rem 1.1rem 1.15rem; }
-  .slots--hero .sticker--fact strong.sticker__long { font-size: 2.2rem; }
-  .slots--hero .sticker--photo img { aspect-ratio: 1; }
-  .slots--hero .slot { min-height: 0; }
+  /* What is decided, on a phone: two across, each photo two stickers tall, still read 1 to 6 */
+  .slots--hero { grid-template-areas: "free tuzla" "june tuzla" "ipi stack" "ipi slot"; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 0.9rem; }
+  .slots--hero .sticker--fact strong { font-size: 1.9rem; }
+  .slots--hero .sticker--fact strong.sticker__long { font-size: 1.7rem; }
+  .slots--hero .sticker--photo img { min-height: 11rem; }
+  .slots--hero .sticker--place figcaption { font-size: 1.8rem; }
+  .spread .cover-actions p.cover-links { flex-direction: row; gap: 0.1rem 1.2rem; }
+  .cover-actions .go { font-size: 1.1rem; }
 }
 .slot:has(.stamp) { padding-bottom: 2.9rem; }
 @media (max-width: 47.99rem) {
@@ -366,7 +398,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .topbar nav a.topbar__cta--main { background: var(--yellow); color: var(--album-night); }
 .topbar nav a.topbar__cta--main:hover { background: #ffe25a; color: var(--album-night); }
 .topbar nav a.topbar__cta[aria-current="page"] { text-decoration: none; box-shadow: inset 0 0 0 2px var(--page); }
-.cover-seal { display: block; width: min(13rem, 48%); margin: 0.2rem 0 1.4rem; transform: rotate(-6deg); filter: drop-shadow(0 0.9rem 1rem rgb(0 0 0 / 0.4)); }
+.cover-seal { display: block; flex: none; width: clamp(5.5rem, 2rem + 6vw, 8.5rem); margin: 0; transform: rotate(-6deg); filter: drop-shadow(0 0.9rem 1rem rgb(0 0 0 / 0.4)); }
 .shiny__seal { filter: drop-shadow(0 1.2rem 1.4rem rgb(0 0 0 / 0.45)); transform: rotate(-4deg); }
 .back-cover__coin { width: 2.75rem; height: 2.75rem; display: block; }
 .slots--days { grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; }
@@ -389,7 +421,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   .slots--days > li:nth-child(even) .sticker--day { --tilt: 0.5deg !important; }
 }
 @media (max-width: 47.99rem) {
-  .cover-seal { width: min(15rem, 72%); margin: 0.4rem auto 1.4rem; transform: rotate(-4deg); }
+  .cover-seal { width: 5rem; }
   .topbar nav a.topbar__cta { padding: 0.35rem 0.6rem; }
 }
 .slots--mini > li { list-style: none; display: grid; }
