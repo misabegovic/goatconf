@@ -18,3 +18,12 @@ def test_a_changed_day_reaches_every_place(monkeypatch):
     assert "Thursday 3rd June 2027: 09:00, 11:00, 13:00 or 15:00." in program.slot_times()
     assert program.day_note(plan[thursday]).endswith("Welcome at 08:45.")
     assert "Thursday runs from 09:00 to 18:30." in program.page()
+
+
+def test_the_talk_page_lists_every_room_with_its_seats():
+    program = importlib.reload(importlib.import_module("program"))
+    sizes = program.room_sizes()
+    for name, seats in program.ROOMS.values():
+        assert f"{name} ({seats})" in sizes
+    talk = (Path(__file__).resolve().parent.parent / "site" / "talk.html").read_text(encoding="utf-8")
+    assert sizes in talk

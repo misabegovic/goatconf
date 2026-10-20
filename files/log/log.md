@@ -531,3 +531,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-19 merge — PR #141: site: prose keeps the 62ch measure, roomier tags, and reasoned design ignores
    diff: 28 files, +111/-25
    restricted-paths: false
+2026-10-20 merge — PR #142: site: room sizes in the call, help for first-time speakers, a hotel pick, and students and volunteers
+   diff: 15 files, +95/-15
+   restricted-paths: true

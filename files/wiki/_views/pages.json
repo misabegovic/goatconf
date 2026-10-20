@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19",
+  "generated": "2026-10-20",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -634,9 +634,10 @@
       "title": "GoatConf 2027: what is known",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-19",
+      "updated": "2026-10-20",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-20--org--outside-site-review-followups.md",
         "sources/conversations/2026-10-19--org--more-areas.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md",
@@ -689,7 +690,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 3689
+      "tokens": 3919
     },
     {
       "path": "org/ideas/lightning-talks.md",
