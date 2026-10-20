@@ -549,3 +549,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-20 merge — PR #147: site: hero sticker 6 says Extendable, a minimal core you make your own
    diff: 3 files, +21/-1
    restricted-paths: false
+2026-10-20 merge — PR #148: site: on phones the hero lists its stickers one after another
+   diff: 29 files, +54/-32
+   restricted-paths: false
