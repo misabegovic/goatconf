@@ -537,3 +537,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-20 merge — PR #143: site: students and volunteering on the contact page, and no free ticket in what speakers get
    diff: 7 files, +37/-5
    restricted-paths: false
+2026-10-20 merge — PR #144: org: record the contact form's Volunteering choice and description
+   diff: 5 files, +42/-2
+   restricted-paths: false
