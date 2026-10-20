@@ -457,17 +457,24 @@ def slot_times() -> str:
                        for d, label in CORE_DAYS.items())
 
 
+def room_sizes() -> str:
+    """The rooms and their seats, for the talk page."""
+    return "; ".join(f"{name} ({seats})" for name, seats in ROOMS.values()) + "."
+
+
 # Hand-written pages that carry a part of the day plan, and the part.
-DAY_PARTS = {"register.html": ("register-days", register_days), "talk.html": ("slot-times", slot_times)}
+DAY_PARTS = [("register.html", "register-days", register_days), ("talk.html", "slot-times", slot_times),
+             ("talk.html", "room-sizes", room_sizes)]
 
 
 def all_pages() -> dict:
     out = {PAGE: nav.place(meta.tag(page()), "program.html")}
-    for name, (part, make) in DAY_PARTS.items():
+    for name, part, make in DAY_PARTS:
         path = PAGE.parent / name
         if not path.exists():  # a scratch site in the tests has only the program
             continue
-        out[path] = blocks.fill(path.read_text(encoding="utf-8"), part, "tools/program.py", make(), f"site/{name}")
+        text = out[path] if path in out else path.read_text(encoding="utf-8")
+        out[path] = blocks.fill(text, part, "tools/program.py", make(), f"site/{name}")
     table, _ = sessions()
     for key, (m, body) in table.items():
         out[PAGE.parent / page_name(m)] = nav.place(meta.tag(session_page(key, m, body)), nav.section(page_name(m)))
