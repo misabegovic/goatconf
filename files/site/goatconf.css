@@ -269,12 +269,17 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   .slots--kinds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cover-title { font-size: 3rem; }
   .sticker--fact strong { font-size: 2.2rem; }
-  /* What is decided, on a phone: two across, each photo two stickers tall, still read 1 to 6 */
-  .slots--hero { grid-template-areas: "free tuzla" "june tuzla" "ipi stack" "ipi slot"; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 0.9rem; }
-  .slots--hero .sticker--fact strong { font-size: 1.9rem; }
-  .slots--hero .sticker--fact strong.sticker__long { font-size: 1.7rem; }
-  .slots--hero .sticker--photo img { min-height: 11rem; }
-  .slots--hero .sticker--place figcaption { font-size: 1.8rem; }
+  /* What is decided, on a phone: one sticker after another, 1 to 6, each only as tall as it needs */
+  .slots--hero { grid-template-columns: minmax(0, 26rem); grid-template-areas: "free" "tuzla" "june" "ipi" "stack" "slot"; justify-content: center; gap: 1.4rem; }
+  .slots--hero .sticker--fact { padding: 1.1rem 1.1rem 1.15rem; }
+  .slots--hero .sticker--fact strong, .slots--hero .sticker--fact strong.sticker__long { font-size: 2.2rem; }
+  .slots--hero .sticker--fact small { font-size: 0.98rem; }
+  .slots--hero .sticker--photo img { flex: none; height: auto; min-height: 0; aspect-ratio: 1; }
+  .slots--hero .sticker--place figcaption { font-size: 2.2rem; }
+  .slots--hero .slot { padding: 1.1rem 1.1rem 2.9rem; }
+  .slots--hero .slot strong { font-size: 1.5rem; }
+  .slots--hero .slot small { font-size: 0.98rem; }
+  .slots--hero .ghost { width: 3.4rem; }
   .spread .cover-actions p.cover-links { flex-direction: row; gap: 0.1rem 1.2rem; }
   .cover-actions .go { font-size: 1.1rem; }
 }
