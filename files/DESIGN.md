@@ -18,7 +18,7 @@ colors:
 typography:
   display:
     fontFamily: "Bricolage Grotesque, Atkinson Hyperlegible Next, sans-serif"
-    fontSize: "clamp(3.6rem, 2rem + 7vw, 6rem)"
+    fontSize: "clamp(2.8rem, 0.8rem + 4.4vw, 5rem)"
     fontWeight: 800
     lineHeight: 0.86
     letterSpacing: "0.005em"
@@ -255,7 +255,7 @@ A saturated album blue in three depths, white and a pale printed blue for the pa
 **Character:** The lettering is the album's printed type: Bricolage at weight 800, condensed (width 75% to 85%), always uppercase, set tight. Atkinson Hyperlegible Next carries every sentence a visitor actually reads, at a generous size and 1.6 leading.
 
 ### Hierarchy
-- **Display** (800, width 75%, clamp(3.6rem, 2rem + 7vw, 6rem), 0.86; 3.4rem on phones): the cover title, GOATCONF over a yellow 2027. Once per site.
+- **Display** (800, width 75%, clamp(2.8rem, 0.8rem + 4.4vw, 5rem), 0.86; 3rem on phones): the cover title, GOATCONF over a yellow 2027, beside the seal. Once per site.
 - **Headline** (800, width 78%, clamp(2.1rem, 1.4rem + 3vw, 3.75rem), 0.95): the band across each album page, the shiny page title, the inner-page sign.
 - **Fact** (800, width 75%, clamp(2.2rem, 1.5rem + 2.5vw, 3.4rem), 0.9, tabular figures; 2.2rem on phones): the yellow figure on a fact sticker (FREE, JUNE 2027, 0.00 €). The place-sticker caption (TUZLA) is lettered in yellow at this same scale.
 - **Title** (800, width 78%, clamp(1.7rem, 1.3rem + 1.4vw, 2.4rem), 0.95): the spread's page title and prose-page headings (clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem)); section sub-heads on album pages are 1.5rem.
@@ -272,9 +272,9 @@ A saturated album blue in three depths, white and a pale printed blue for the pa
 
 ## Layout
 
-The site is a column of album pages on the blue ground, each at most 82rem wide with a side margin of clamp(1.1rem, 4vw, 3.5rem), separated by clamp(2.5rem, 1.8rem + 3vw, 5rem). The opening spread is two pages in one rounded frame (0.9fr cover, 1.1fr page) that stack on screens under 62rem with the spine shadow turning horizontal. Album pages run a two-column grid (1fr copy, 1.2fr stickers) that collapses to one column under 62rem.
+The site is a column of album pages on the blue ground, each at most 82rem wide with a side margin of clamp(1.1rem, 4vw, 3.5rem), separated by clamp(2.5rem, 1.8rem + 3vw, 5rem). The opening spread is two pages in one rounded frame (1fr cover, 1.2fr page), 53rem tall on wide screens, that stack on screens under 62rem with the spine shadow turning horizontal. Album pages run a two-column grid (1fr copy, 1.2fr stickers) that collapses to one column under 62rem.
 
-Slots and stickers sit in auto-filling grids (minimum 12.5rem per cell, gap 1.6rem by 1.3rem). The opening page is a fixed three-by-two grid; the food page three across; the add-your-own page four across. Under 48rem every slot grid becomes two across with a 1.2rem by 0.9rem gap, so stickers stay sticker-sized on phones rather than going full width. The top bar is sticky; under 48rem its links move to their own row and scroll sideways rather than wrap.
+Slots and stickers sit in auto-filling grids (minimum 12.5rem per cell, gap 1.6rem by 1.3rem). The opening page is a photo column: three across, the Tuzla and IPI Academy photos each two cells wide and two tall, the facts beside them, so the numbers still read 1 to 6 (two across on phones, each photo two stickers tall); the food page three across; the add-your-own page four across. Under 48rem every slot grid becomes two across with a 1.2rem by 0.9rem gap, so stickers stay sticker-sized on phones rather than going full width. The top bar is sticky; under 48rem its links move to their own row and scroll sideways rather than wrap.
 
 Inner pages share one shape: a cover-blue page-head (sign, lede, a tilted photo sticker on the right, stacked under 62rem) followed by one white prose page, 58rem at most, and a plain footer on the blue.
 
@@ -320,7 +320,7 @@ One run of numbers through the whole album, so a reader can see the gaps. On a s
 A white page with 0.8rem corners and the page drop. Its heading is the band: album blue, white headline lettering, a 0.45rem yellow rule beneath, running edge to edge across the top of the page.
 
 ### Spread
-The opening: one rounded frame holding the cover-blue left page (the goat sticker, the cover title, the lede, the yellow status sticker and two links) and the white right page ("Stuck in so far": four stickers and two slots), joined by the spine shadow.
+The opening: one rounded frame holding the cover-blue left page (the seal beside the cover title, the lede, the Register button and three links) and the white right page ("What is decided": two big photo stickers, three fact stickers with large yellow lettering, and one slot), joined by the spine shadow.
 
 ### Die-cut Goat
 The one goat mark as a sticker: night-blue line drawing with a yellow fill, a 3px white edge cut around the silhouette, the goat lift, set at -6 degrees. It appears on the cover and, larger, on the shiny page. The mini crest (a yellow disc with the goat) marks the top bar, the back cover and the inner-page home link.

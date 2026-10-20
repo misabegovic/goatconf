@@ -543,3 +543,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-20 merge — PR #145: speakers: add Roy Tomeij, co-founder of AppSignal, second after Paul, with his spotlight
    diff: 38 files, +371/-57
    restricted-paths: true
+2026-10-20 merge — PR #146: site: make the home page hero a photo column
+   diff: 29 files, +120/-52
+   restricted-paths: false
