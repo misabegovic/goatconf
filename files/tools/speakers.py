@@ -459,7 +459,7 @@ def supporters_page() -> str:
         [supporter_card(i + 1, slug, m, b) for i, (slug, (m, b)) in enumerate(order)] + ([invite] if invite else [])) + "\n</ul>"
     main = f"""<section class="album-page wrap" aria-labelledby="h-supporters">
   <h2 class="band" id="h-supporters">Who makes it possible</h2>
-  <p class="copy copy--wide">GoatConf is free to attend. Companies help keep it that way. Supporters cannot buy talks, stage time or the attendee list, and who speaks is never decided by who supports. See <a href="charter.html">the charter</a>.</p>
+  <p class="copy copy--wide">GoatConf is free to attend. Companies and communities help keep it that way. Supporters cannot buy talks, stage time or the attendee list, and who speaks is never decided by who supports. See <a href="charter.html">the charter</a>.</p>
   {cards}
 </section>
 <section class="album-page wrap" aria-labelledby="h-become">
@@ -478,9 +478,9 @@ def supporters_page() -> str:
   <p class="cta"><a class="button" href="contact.html">Become a supporter</a></p>
 </section>"""
     return shell("supporters", "Supporters: GoatConf 2027, 3–5 June, Tuzla",
-                 "The companies that make GoatConf 2027 possible, and how to support it online: one level, 500 euro, nothing at the venue.",
+                 "The companies and communities that make GoatConf 2027 possible, and how to support it online: one level, 500 euro, nothing at the venue.",
                  ("img/city-korzo-clock.jpg", 1160, 773, "The Korzo on a sunny day: the street clock, a pink corner house, café umbrellas and people walking"),
-                 "The supporters", "The companies that help keep GoatConf free, and how to join them.", main)
+                 "The supporters", "The companies and communities that help keep GoatConf free, and how to join them.", main)
 
 
 def all_pages() -> dict:

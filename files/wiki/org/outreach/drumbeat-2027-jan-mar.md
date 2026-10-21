@@ -2,11 +2,14 @@
 title: "The drumbeat, January to March 2027"
 kind: reference
 status: draft
-updated: 2026-10-19
+updated: 2026-10-21
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-21--org--wroclove-rb-extras.md
+  - sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md
+  - sources/web/supporters/wroclove-rb-about-2026-10-21.md
   - sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md
   - sources/conversations/2026-10-19--org--more-areas.md
   - sources/conversations/2026-10-19--org--business-and-people-sessions.md
@@ -20,10 +23,6 @@ sources:
   - sources/conversations/2026-10-14--org--speakers-before-sessions.md
   - sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md
   - sources/conversations/2026-10-17--org--dejan-photo-and-role.md
-  - sources/web/organiser/muhamed-at-about.md
-  - sources/web/organiser/past-conferences-2026-10-13.md
-  - sources/conversations/2026-10-17--org--organiser-block-below-the-goat.md
-  - sources/conversations/2026-10-18--org--not-only-about-ruby.md
   - sources/conversations/2026-10-18--org--bh-professionals-meetup-accepted.md
   - sources/conversations/2026-10-18--org--bhff-funding-and-organising.md
   - sources/conversations/2026-10-18--org--bhff-card-official-program.md
@@ -76,25 +75,26 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-14--org--speakers-before-sessions.md, sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md, sources/conversations/2026-10-17--org--dejan-photo-and-role.md.
 
-### Tue 12 Jan 2027, week 14: Who's organising
+### Tue 12 Jan 2027, week 14: Thank you, wroclove.rb
 
 - **State:** drafted
-- **Image:** `post-whos-organising-square.png` (LinkedIn, Mastodon), `post-whos-organising-wide.png` (X, Bluesky)
+- **Image:** `supporter-wroclove-rb-square.png` (LinkedIn, Mastodon), `supporter-wroclove-rb-wide.png` (X, Bluesky)
+- **Tag:** wroclove.rb
 - **LinkedIn:**
 
-  > Who's behind GoatConf?
+  > Thank you, wroclove.rb, for being a GoatConf 2027 community partner.
   >
-  > GoatConf is organised by Muhamed Isabegović, who founded and organised EuRuKo 2024 in Sarajevo, the first Ruby conference in Bosnia and Herzegovina, and RubyConf Austria in Vienna. Together they hosted 62 speakers.
+  > wroclove.rb is a relaxed, single-track and not-for-profit Ruby conference in Wrocław, run by the local Ruby community. They share GoatConf with their community on social media.
   >
-  > GoatConf is not only about Ruby or any one stack: Ruby is welcome, and so is every other language and framework, and design, product and founding a company too. IPI Academy in Tuzla is the host and partner.
+  > Their own conference is on 23 to 25 April 2027 in Wrocław. If you can, go.
   >
-  > goatconf.com
+  > goatconf.com/supporter-wroclove-rb
 
-- **Short** (199 characters):
+- **Short** (195 characters):
 
-  > GoatConf is organised by Muhamed Isabegović, who founded EuRuKo 2024, the first Ruby conference in Bosnia and Herzegovina, and RubyConf Austria. Not only about Ruby: every stack welcome. goatconf.com
+  > Thank you, wroclove.rb, for being a GoatConf 2027 community partner and sharing us on social media. Their own Ruby conference is 23 to 25 April 2027 in Wrocław. goatconf.com/supporter-wroclove-rb
 
-  Sources: sources/web/organiser/muhamed-at-about.md, sources/web/organiser/past-conferences-2026-10-13.md, sources/conversations/2026-10-17--org--organiser-block-below-the-goat.md, sources/conversations/2026-10-18--org--not-only-about-ruby.md.
+  Sources: sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md, sources/conversations/2026-10-21--org--wroclove-rb-extras.md, sources/web/supporters/wroclove-rb-about-2026-10-21.md.
 
 ### Tue 19 Jan 2027, week 15: BH Professionals Meetup, and thank you, BHFF
 

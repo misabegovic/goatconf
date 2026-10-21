@@ -2,11 +2,13 @@
 title: "The drumbeat: the weekly posts, from launch to June 2027"
 kind: reference
 status: draft
-updated: 2026-10-20
+updated: 2026-10-21
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-21--org--wroclove-rb-extras.md
+  - sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md
   - sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
   - sources/conversations/2026-10-15--org--drafting-the-first-posts.md
@@ -52,7 +54,7 @@ The texts are on three pages: [October to December 2026](drumbeat-2026.md), [Jan
 | Tue 22 Dec 2026 | week 11 | [Your first talk?](drumbeat-2026.md) | `post-your-first-talk` | drafted |
 | Tue 29 Dec 2026 | week 12 | [See you in June](drumbeat-2026.md) | `post-see-you-in-june` | drafted |
 | Tue 5 Jan 2027 | week 13 | [Speaker: Dejan Menges](drumbeat-2027-jan-mar.md) | `speaker-dejan-menges` | drafted |
-| Tue 12 Jan 2027 | week 14 | [Who's organising](drumbeat-2027-jan-mar.md) | `post-whos-organising` | drafted |
+| Tue 12 Jan 2027 | week 14 | [Thank you, wroclove.rb](drumbeat-2027-jan-mar.md) | `supporter-wroclove-rb` | drafted |
 | Tue 19 Jan 2027 | week 15 | [BH Professionals Meetup, and thank you, BHFF](drumbeat-2027-jan-mar.md) | `event-bh-professionals-meetup` | drafted |
 | Tue 26 Jan 2027 | week 16 | [Speaker: Amar Mahmutbegović](drumbeat-2027-jan-mar.md) | `speaker-amar-mahmutbegovic` | drafted |
 | Tue 2 Feb 2027 | week 17 | [Not only for engineers](drumbeat-2027-jan-mar.md) | `post-not-only-engineers` | drafted |
