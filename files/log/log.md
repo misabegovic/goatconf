@@ -555,3 +555,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-20 merge — PR #149: site: frame the album-page band inside a white edge
    diff: 31 files, +60/-35
    restricted-paths: false
+2026-10-21 merge — PR #150: supporters: add wroclove.rb as a community partner
+   diff: 24 files, +282/-20
+   restricted-paths: false
