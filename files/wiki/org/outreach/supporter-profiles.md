@@ -2,7 +2,7 @@
 title: "Who each supporter is and how to support them, on their profiles"
 kind: reference
 status: living
-updated: 2026-10-18
+updated: 2026-10-21
 confidence: low
 sources:
   - sources/conversations/2026-10-18--org--show-support-parts.md
@@ -13,6 +13,8 @@ sources:
   - sources/web/venue/ipi-akademija-home.md
   - sources/web/venue/ipi-akademija-kontakt.md
   - sources/web/supporters/meister-about-and-jobs-2026-10-18.md
+  - sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md
+  - sources/web/supporters/wroclove-rb-about-2026-10-21.md
 ---
 
 # Who each supporter is and how to support them, on their profiles
@@ -73,6 +75,28 @@ flagship programs, careers at home, the network of professionals and the
 - Work at Meister: https://www.meistertask.com/pages/jobs
 
 (source: sources/web/supporters/meister-about-and-jobs-2026-10-18.md)
+
+## wroclove.rb
+
+Drafted on 2026-10-21 from wroclove.rb's own site for the organiser to
+check, and on its profile once the organiser approves it (source:
+sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md).
+
+**Who they are:**
+
+> wroclove.rb is a relaxed, single-track and not-for-profit Ruby conference in Wrocław, Poland, run by the local Ruby community: a place for Ruby professionals to confront ideas in a friendly atmosphere and mutual respect, where deep topics meet a receptive audience. Its 2027 edition runs from 23 to 25 April at the University of Wrocław's Institute of Computer Science, with talks and workshops on Friday, talks on Saturday and social activities on Sunday.
+
+Every claim is on the conference's own pages: the description in its
+own words, the dates, the three days and the venue (source:
+sources/web/supporters/wroclove-rb-about-2026-10-21.md). "Poland" is added, as Wrocław is in Poland.
+
+**How to support them:**
+
+- Come to wroclove.rb, 23 to 25 April 2027 in Wrocław: https://wrocloverb.com/participants
+- Watch their past talks: https://www.youtube.com/user/wrocloverb
+- Join their newsletter: https://wrocloverb.kit.com/0430aa4d7d
+
+(source: sources/web/supporters/wroclove-rb-about-2026-10-21.md)
 
 ## A note to send each supporter (draft, English, to adapt now that it is live)
 

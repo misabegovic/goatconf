@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-20",
+  "generated": "2026-10-21",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -324,7 +324,7 @@
       "title": "Online supporters pay the organiser's Austrian business; the budget becomes private",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-19",
+      "updated": "2026-10-21",
       "confidence": "medium",
       "supersedes": "org/adrs/budget-and-public-ledger.md",
       "depends_on": [
@@ -332,6 +332,7 @@
         "org/adrs/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md",
         "sources/conversations/2026-10-18--org--event-hosts-as-supporters.md",
@@ -342,7 +343,7 @@
         "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md"
       ],
-      "tokens": 1816
+      "tokens": 1970
     },
     {
       "path": "org/adrs/open-program-every-room.md",
@@ -634,9 +635,10 @@
       "title": "GoatConf 2027: what is known",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-20",
+      "updated": "2026-10-21",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md",
         "sources/conversations/2026-10-20--org--roy-tomeij.md",
         "sources/conversations/2026-10-20--org--contact-form-description-volunteering.md",
         "sources/conversations/2026-10-20--org--contact-form-volunteering.md",
@@ -694,7 +696,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 4106
+      "tokens": 4183
     },
     {
       "path": "org/ideas/lightning-talks.md",
@@ -1036,7 +1038,7 @@
       "title": "Who each supporter is and how to support them, on their profiles",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-18",
+      "updated": "2026-10-21",
       "confidence": "low",
       "sources": [
         "sources/conversations/2026-10-18--org--show-support-parts.md",
@@ -1046,9 +1048,11 @@
         "sources/web/venue/ipi-akademija-about.md",
         "sources/web/venue/ipi-akademija-home.md",
         "sources/web/venue/ipi-akademija-kontakt.md",
-        "sources/web/supporters/meister-about-and-jobs-2026-10-18.md"
+        "sources/web/supporters/meister-about-and-jobs-2026-10-18.md",
+        "sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md",
+        "sources/web/supporters/wroclove-rb-about-2026-10-21.md"
       ],
-      "tokens": 1066
+      "tokens": 1401
     },
     {
       "path": "org/pitches/activities-the-lake-and-the-town.md",

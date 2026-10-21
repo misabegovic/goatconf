@@ -6,7 +6,10 @@ organiser's Austrian business, with nothing at the venue. A company may
 instead pay a supplier directly for one named thing, or give in kind. A
 host (a person, group or company) that funds and organises an event the
 organiser accepted is listed too, if it agrees, with a line naming the
-event. No
+event. A
+community partner that gives in kind, such as by sharing GoatConf on
+its social media, is listed the same way, with a line saying how it
+helps. No
 supporter pays for a named speaker's travel. Name the file after the
 company in lowercase words joined by hyphens. Copy `_template.md` to start
 one.

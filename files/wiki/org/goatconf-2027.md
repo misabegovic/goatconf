@@ -2,9 +2,10 @@
 title: "GoatConf 2027: what is known"
 kind: reference
 status: living
-updated: 2026-10-20
+updated: 2026-10-21
 confidence: medium
 sources:
+  - sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md
   - sources/conversations/2026-10-20--org--roy-tomeij.md
   - sources/conversations/2026-10-20--org--contact-form-description-volunteering.md
   - sources/conversations/2026-10-20--org--contact-form-volunteering.md
@@ -168,6 +169,7 @@ is cited to the sources above; nothing is inferred. Proposals live in the
 - **Leftover money** pays more of this year's costs, speaker travel refunds included where the organiser decides, and anything still left carries to the next GoatConf (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md). From 2026-10-18, online supporters' money the event's costs do not need goes first to refunding speakers who pay their own way, some or all of it; still never promised (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md).
 - **Speakers pay their own travel.** If the budget allows, the organiser
   may refund some or all of it; never promised (same source). A speaker's company that covers their travel is listed on the site as a supporter, the same as online supporters (source: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md).
+- **Community partners** that give in kind are listed as supporters too, the same way. From 2026-10-21 the first is wroclove.rb, the Ruby conference in Wrocław, which shares GoatConf on its social media (source: sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md).
 - Expo, booths and companies that hire attendees are open ideas, named as
   the likely extensible part and as a way companies could support the
   event.

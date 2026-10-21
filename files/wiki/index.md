@@ -2,7 +2,7 @@
 title: "goatconf brain: home"
 kind: meta
 status: draft
-updated: 2026-10-19
+updated: 2026-10-21
 sources: []
 ---
 
@@ -17,7 +17,8 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 
 ## What changed
 
-<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-20 -->
+<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-21 -->
+- **2026-10-21**: **wroclove.rb, a community partner, on the supporters wall.** The Ruby conference in Wrocław shares GoatConf on its social media and is listed by name with the other supporters, for "Community partner: social media", with its own logo, a profile drafted from its site and a thank-you card "for being a community partner and sharing GoatConf on social media." A community partner that gives in kind is now listed the same way ([Online supporters](org/adrs/online-supporters-through-the-business.md); [profiles](org/outreach/supporter-profiles.md); sources: sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md, sources/web/supporters/wroclove-rb-about-2026-10-21.md).
 - **2026-10-20**: **Album-page bands sit inside a white edge.** The blue band across the top of each album page no longer blends into the blue ground: the white page wraps round it in a thin edge, like the fact stickers on the home page ([the impeccable ADR](org/adrs/design-with-impeccable.md); source: sources/conversations/2026-10-20--org--band-framed.md).
 - **2026-10-20**: **On phones the hero lists its stickers one after another.** "What is decided" goes back to a single column, 1 to 6, on screens under 48rem; wider screens keep the photo column ([the impeccable ADR](org/adrs/design-with-impeccable.md); source: sources/conversations/2026-10-20--org--hero-phone-list.md).
 - **2026-10-20**: **Hero sticker 6 says Extendable.** The open slot in "What is decided" now reads "A minimal core: make it your own" and links to Propose an event, keeping its Yours? stamp ([what is known](org/goatconf-2027.md); source: sources/conversations/2026-10-20--org--hero-extendable.md).
