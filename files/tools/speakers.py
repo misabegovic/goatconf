@@ -370,6 +370,11 @@ def supporter_cards(slug: str) -> dict:
     return {"square": f"supporter-{slug}-square.png", "wide": f"supporter-{slug}-wide.png"}
 
 
+def proud_cards(slug: str) -> dict:
+    """The supporter's own "Proud supporter of GoatConf 2027" cards, for them to post."""
+    return {"square": f"supporter-{slug}-proud-square.png", "wide": f"supporter-{slug}-proud-wide.png"}
+
+
 def supporter_page(slug: str, meta, body) -> str:
     name = esc(meta["name"])
     words = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
@@ -386,6 +391,9 @@ def supporter_page(slug: str, meta, body) -> str:
 {cards}
   </ul>
 </section>"""
+    proud = extensions.share_section(proud_cards(slug), f"{name}, proud supporter of GoatConf 2027",
+                                     "Your card, to post as your own: proud supporter of GoatConf 2027. It links back to this page.",
+                                     "Your card: proud supporter", SITE)
     thanks = extensions.share_section(supporter_cards(slug), f"Thank you, {name}", "A thank-you from GoatConf 2027 to post wherever you like. It links back to this page.",
                                       "The thank-you card", SITE)
     event_cards = "".join(extensions.share_section(extensions.cards(s), f"The card for {esc(m['name'])}",
@@ -396,7 +404,7 @@ def supporter_page(slug: str, meta, body) -> str:
   <h2 class="band" id="h-support">{"Who they are" if words else "Host and partner" if meta.get("host") is True else "Their support"}</h2>
   {f'<div class="copy copy--wide">{words}</div>' if words else ""}
   <p class="copy"><a class="go go--ink" href="{esc(meta["url"])}">{site}</a> <a class="go go--ink" href="supporters.html">All supporters</a></p>
-</section>{support}{events}{thanks}{event_cards}"""
+</section>{support}{events}{proud}{thanks}{event_cards}"""
     # A link to the profile shows the card of the first event they host, else their thank-you card.
     previews = [extensions.cards(s)["preview"] for s in hosted] + [supporter_cards(slug)["wide"]]
     preview = next((name for name in previews if (SITE / "share" / name).exists()), "")
@@ -508,7 +516,7 @@ def cmd_build(args) -> int:
                       f"run python3 tools/shareables.py render --only {preview_name(slug)}")
                 stale += 1
         for slug in supporters():
-            for card in supporter_cards(slug).values():
+            for card in [*supporter_cards(slug).values(), *proud_cards(slug).values()]:
                 if not (SITE / "share" / card).exists():
                     print(f"site/share/{card} is missing, so the supporter's profile has no card to download: "
                           f"run python3 tools/shareables.py render --only supporter-{slug}")

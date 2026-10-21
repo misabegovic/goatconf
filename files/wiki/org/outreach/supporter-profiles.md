@@ -5,6 +5,7 @@ status: living
 updated: 2026-10-21
 confidence: low
 sources:
+  - sources/conversations/2026-10-21--org--proud-supporter-cards.md
   - sources/conversations/2026-10-18--org--show-support-parts.md
   - sources/conversations/2026-10-18--org--supporter-descriptions.md
   - sources/web/supporters/bhff-get-involved-2026-10-18.md
@@ -28,6 +29,13 @@ The organiser approved them, and they are on the profiles since
 sources/conversations/2026-10-18--org--show-support-parts.md). The note
 below still goes to each supporter, so they can correct or replace
 their part.
+
+Each profile also offers two pairs of cards, square and wide: from
+2026-10-21 a "Proud supporter of GoatConf 2027" card for the supporter to
+post as their own, with their logo, their supporter line, when and where,
+and their profile's address, the same headline for every supporter, the
+host included; then GoatConf's thank-you card to them. A link to a
+profile still previews with the thank-you card (source: sources/conversations/2026-10-21--org--proud-supporter-cards.md).
 
 ## Bosnia & Herzegovina Futures Foundation
 
@@ -102,7 +110,7 @@ sources/web/supporters/wroclove-rb-about-2026-10-21.md). "Poland" is added, as W
 
 > Hello,
 >
-> Thank you for supporting GoatConf 2027. You now have a profile on goatconf.com, where you can download your thank-you card to share: https://goatconf.com/supporter-SLUG
+> Thank you for supporting GoatConf 2027. You now have a profile on goatconf.com, where you can download your own "Proud supporter of GoatConf 2027" card and our thank-you card to share: https://goatconf.com/supporter-SLUG
 >
 > We would like it to say who you are and how people can support you. Here is a short draft, written from your own website:
 >
