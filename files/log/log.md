@@ -558,3 +558,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-21 merge — PR #150: supporters: add wroclove.rb as a community partner
    diff: 24 files, +282/-20
    restricted-paths: false
+2026-10-21 merge — PR #151: supporters: name communities, and thank wroclove.rb in week 14
+   diff: 11 files, +61/-33
+   restricted-paths: true
