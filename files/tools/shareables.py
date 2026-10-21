@@ -124,7 +124,6 @@ POSTS = {
     "why-a-goat": ("Why<br>a goat?", "The whole of Tuzla milked one goat."),
     "your-first-talk": ("Your<br>first talk?", "First-time speakers are welcome. A strong idea counts for more than a famous name."),
     "see-you-in-june": ("See you<br>in June", "Two days of talks in Tuzla, then a day for the community."),
-    "whos-organising": ("Who's<br>organising", "The organiser of EuRuKo 2024 and RubyConf Austria."),
     "not-only-engineers": ("Not only<br>engineers", "AI/ML, data, UX/UI, product, research, business, leadership: for people who build and sell software."),
     "support-goatconf": ("Support<br>GoatConf", "One level, 500 euro, online only. Nothing at the venue."),
     "workshops": ("Workshops", "Rooms for 20 and 26 people, each on their own laptop, longer than an hour if needed."),
