@@ -12,7 +12,7 @@ from site/brand/, rendered to PNG by headless Chrome into site/share/:
             with a credited photo of Tuzla, each square (1080) and wide (1200 x 675)
   records   an "I'm speaking" card per published speaker (square, wide, and a
             1200 x 630 preview that their page's link preview shows), a
-            "thank you" card per supporter, and a card per accepted event
+            "thank you" card and a "proud supporter" card per supporter, and a card per accepted event
             (square, wide, and a 1200 x 630 preview for the event's page),
             built from speakers/, supporters/ and extensions/
 
@@ -231,6 +231,9 @@ def thanks(meta) -> str:
 def supporter_card(slug: str, meta, square: bool) -> str:
     w, h = (1080, 1080) if square else (1200, 675)
     logo = (SITE / meta["logo"]).as_uri()
+    address = f"{URL}/{speakers.supporter_page_name(slug)[:-5]}"
+    # A long address shrinks on the square card so it stays clear of the seal.
+    url_px = (32 if len(address) <= 36 else 26) if square else 26
     return page(w, h, f"""
 <div style="position:absolute; left:{84 if square else 72}px; top:{96 if square else 72}px; right:{84 if square else 460}px">
   <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">Thank you,</div>
@@ -239,8 +242,30 @@ def supporter_card(slug: str, meta, square: bool) -> str:
 </div>
 <div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:{NIGHT if meta.get('logo_on') == 'dark' else '#fff'}; border-radius:18px; display:grid; place-items:center; padding:28px">
   <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
-<div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/{speakers.supporter_page_name(slug)[:-5]}</div>
+<div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{url_px}px">{address}</div>
 {seal(240 if square else 220, "right:72px; bottom:72px")}""")
+
+
+def proud_card(slug: str, meta, square: bool) -> str:
+    """For the supporter to post as their own: their logo, what they give, when and where, and their profile."""
+    w, h = (1080, 1080) if square else (1200, 675)
+    logo = (SITE / meta["logo"]).as_uri()
+    address = f"{URL}/{speakers.supporter_page_name(slug)[:-5]}"
+    # A long address shrinks on the square card so it stays clear of the seal.
+    url_px = (32 if len(address) <= 36 else 26) if square else 26
+    return page(w, h, f"""
+<div style="position:absolute; left:{84 if square else 72}px; top:{96 if square else 72}px; right:{84 if square else 72}px">
+  <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">Proud supporter of</div>
+  <div class="word" style="font-size:{120 if square else 92}px; margin-top:16px">GoatConf 2027</div>
+</div>
+<div style="position:absolute; left:{84 if square else 72}px; top:{400 if square else 290}px; width:{560 if square else 400}px; height:{280 if square else 200}px; background:{NIGHT if meta.get('logo_on') == 'dark' else '#fff'}; border-radius:18px; display:grid; place-items:center; padding:32px">
+  <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
+<div style="position:absolute; left:{84 if square else 520}px; top:{730 if square else 300}px; right:{360 if square else 72}px">
+  <div class="sub" style="font-size:{34 if square else 28}px; line-height:1.2">{esc(str(meta["funds"]))}</div>
+  <div style="font-size:{30 if square else 24}px; font-weight:700; line-height:1.2; margin-top:20px">{FACTS}</div>
+</div>
+<div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{url_px}px">{address}</div>
+{seal(240 if square else 160, "right:72px; bottom:72px" if square else "right:56px; bottom:48px")}""")
 
 
 def event_card(meta, slug: str, square: bool, height: int = 675) -> str:
@@ -289,6 +314,9 @@ def jobs() -> dict[str, tuple[int, int, str]]:
     for slug, (meta, _) in speakers.supporters().items():
         out[f"supporter-{slug}-square.png"] = (1080, 1080, supporter_card(slug, meta, True))
         out[f"supporter-{slug}-wide.png"] = (1200, 675, supporter_card(slug, meta, False))
+        proud = speakers.proud_cards(slug)
+        out[proud["square"]] = (1080, 1080, proud_card(slug, meta, True))
+        out[proud["wide"]] = (1200, 675, proud_card(slug, meta, False))
     for _, slug, meta, _ in extensions.accepted():
         names = extensions.cards(slug)
         out[names["square"]] = (1080, 1080, event_card(meta, slug, True))

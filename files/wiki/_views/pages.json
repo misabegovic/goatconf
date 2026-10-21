@@ -1042,6 +1042,7 @@
       "updated": "2026-10-21",
       "confidence": "low",
       "sources": [
+        "sources/conversations/2026-10-21--org--proud-supporter-cards.md",
         "sources/conversations/2026-10-18--org--show-support-parts.md",
         "sources/conversations/2026-10-18--org--supporter-descriptions.md",
         "sources/web/supporters/bhff-get-involved-2026-10-18.md",
@@ -1053,7 +1054,7 @@
         "sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md",
         "sources/web/supporters/wroclove-rb-about-2026-10-21.md"
       ],
-      "tokens": 1401
+      "tokens": 1537
     },
     {
       "path": "org/pitches/activities-the-lake-and-the-town.md",

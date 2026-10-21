@@ -42,7 +42,9 @@ one.
   lettering); it is shown on the site's dark blue. The default is `light`.
 
 Each supporter gets a profile, `site/supporter-<file name>.html`, where they
-download their thank-you card (square and wide), rendered with
+download their thank-you card and their own "Proud supporter of GoatConf
+2027" card (each square and wide), which shows their logo, their `funds`
+line, when and where, and their profile's address. Both are rendered with
 `python3 tools/shareables.py render --only supporter-<file name>`. The
 supporters page and the home page link to it.
 

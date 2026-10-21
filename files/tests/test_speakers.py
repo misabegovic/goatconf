@@ -314,7 +314,7 @@ def test_host_and_logo_background_are_checked(tmp_path, monkeypatch):
     assert any("host must be yes" in p for p in problems) and any("logo_on must be" in p for p in problems)
 
 
-def test_each_supporter_has_a_profile_with_their_cards(tmp_path, monkeypatch):
+def test_each_supporter_has_a_profile_with_their_cards(tmp_path, monkeypatch, capsys):
     _, speakers = setup(tmp_path, monkeypatch)
     monkeypatch.setattr(speakers, "PAGES", {"speakers": tmp_path / "site" / "speakers.html", "supporters": tmp_path / "site" / "supporters.html"})
     wall = speakers.supporters_page()
@@ -323,14 +323,22 @@ def test_each_supporter_has_a_profile_with_their_cards(tmp_path, monkeypatch):
     assert 'href="supporter-acme.html"' in home.supporters_block()
     page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
     assert '<h1 class="sign">Acme</h1>' in page and 'href="https://acme.example">acme.example</a>' in page
-    assert "The thank-you card" not in page and "image_src" not in page  # no cards rendered yet
+    assert "The thank-you card" not in page and "Your card: proud supporter" not in page and "image_src" not in page  # no cards rendered yet
     assert speakers.cmd_build(type("A", (), {"check": False})()) == 0
     assert (tmp_path / "site" / "supporter-acme.html").exists()
     (tmp_path / "site" / "share").mkdir()
     for size in ("square", "wide"):
         (tmp_path / "site" / "share" / f"supporter-acme-{size}.png").write_bytes(b"png")
+    capsys.readouterr()
+    assert speakers.cmd_build(type("A", (), {"check": True})()) == 1
+    missing = capsys.readouterr().out
+    assert "site/share/supporter-acme-proud-square.png is missing" in missing and "supporter-acme-square.png is missing" not in missing
+    for size in ("square", "wide"):
+        (tmp_path / "site" / "share" / f"supporter-acme-proud-{size}.png").write_bytes(b"png")
     page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
     assert 'href="share/supporter-acme-square.png" download' in page and 'href="share/supporter-acme-wide.png" download' in page
+    assert 'href="share/supporter-acme-proud-square.png" download' in page and 'href="share/supporter-acme-proud-wide.png" download' in page
+    assert page.index("Your card: proud supporter") < page.index("The thank-you card")
     assert '<link rel="image_src" href="https://goatconf.com/share/supporter-acme-wide.png">' in page
     (tmp_path / "supporters" / "acme.md").unlink()
     assert speakers.cmd_build(type("A", (), {"check": False})()) == 0
