@@ -561,3 +561,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-21 merge — PR #151: supporters: name communities, and thank wroclove.rb in week 14
    diff: 11 files, +61/-33
    restricted-paths: true
+2026-10-21 merge — PR #152: supporters: a "Proud supporter of GoatConf 2027" card for every supporter
+   diff: 21 files, +121/-9
+   restricted-paths: true
