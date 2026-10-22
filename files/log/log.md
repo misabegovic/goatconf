@@ -564,3 +564,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-21 merge — PR #152: supporters: a "Proud supporter of GoatConf 2027" card for every supporter
    diff: 21 files, +121/-9
    restricted-paths: true
+2026-10-22 merge — PR #153: shareables: a LinkedIn page cover that the logo does not cover
+   diff: 9 files, +94/-78
+   restricted-paths: true
