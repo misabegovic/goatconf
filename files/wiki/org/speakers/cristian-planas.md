@@ -12,6 +12,7 @@ sources:
   - sources/web/speakers/rubyconf-india-2026-cristian-planas-2026-10-22.md
   - sources/conversations/2026-10-22--org--cristian-planas-gondola-photo.md
   - sources/web/speakers/github-avatar-cristian-planas-2026-10-22.md
+  - sources/conversations/2026-10-22--org--cristian-planas-back-to-stage-photo.md
 ---
 
 # Speaker: Cristian Planas
@@ -33,7 +34,7 @@ sources say and what bears on GoatConf.
 - **Talks:** sixteen listed since 2022, among them RailsConf 2022, EuRuKo 2023, RubyKaigi 2025, Baltic Ruby 2025, Tropical on Rails 2025, RubyConf Taiwan with COSCUP 2025, RubyConf Africa 2026, RBQ Conf 2026 and Kaigi on Rails 2026. His themes are Rails performance and scale ("A Rails Performance Guidebook: from 0 to 1B requests/day", "The Three Villains of Rails Scalability"), the history of the Zendesk monolith, and, lately, safety nets for AI-written code ("The Revenge of the Cucumber") (source: sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md). None is picked for GoatConf yet. On 21 November 2026 he speaks at RubyConf India, at the Novotel Hyderabad Airport, on "Dead Cucumbers & Frozen Capybaras: Building the Safety Net for Agentic Development" (source: sources/web/speakers/rubyconf-india-2026-cristian-planas-2026-10-22.md).
 - **Bio on the site:** his Kaigi on Rails 2026 bio, word for word (source: sources/conversations/2026-10-14--org--cristian-planas.md).
 - **Role on the site and cards:** "Principal Engineer at Combinaut, author of Rails Scales!" since 2026-10-22, in place of "Author of Rails Scales!, at Combinaut" (sources: sources/conversations/2026-10-22--org--cristian-planas-principal-engineer.md, sources/conversations/2026-10-14--org--cristian-planas.md).
-- **Photo:** since 2026-10-22, his GitHub profile picture, a selfie on a gondola in Venice and the photo on his RubyConf India 2026 card, with the two people behind him blurred; it replaces his COSCUP 2025 stage photo. Not freely licensed, used on the organiser's decision (sources: sources/conversations/2026-10-22--org--cristian-planas-gondola-photo.md, sources/web/speakers/github-avatar-cristian-planas-2026-10-22.md, sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md).
+- **Photo:** his COSCUP 2025 speaker photo, on stage with a microphone; not freely licensed, used on the organiser's decision (source: sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md). On 2026-10-22 his gondola selfie, the photo on his GitHub profile and his RubyConf India 2026 card with the two people behind him blurred, replaced it for a few hours; the organiser then went back to the stage photo (sources: sources/conversations/2026-10-22--org--cristian-planas-gondola-photo.md, sources/web/speakers/github-avatar-cristian-planas-2026-10-22.md, sources/conversations/2026-10-22--org--cristian-planas-back-to-stage-photo.md).
 
 ## Adjacent
 
