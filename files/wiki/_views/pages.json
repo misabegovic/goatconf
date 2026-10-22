@@ -1950,9 +1950,10 @@
         "sources/conversations/2026-10-22--org--cristian-planas-principal-engineer.md",
         "sources/web/speakers/rubyconf-india-2026-cristian-planas-2026-10-22.md",
         "sources/conversations/2026-10-22--org--cristian-planas-gondola-photo.md",
-        "sources/web/speakers/github-avatar-cristian-planas-2026-10-22.md"
+        "sources/web/speakers/github-avatar-cristian-planas-2026-10-22.md",
+        "sources/conversations/2026-10-22--org--cristian-planas-back-to-stage-photo.md"
       ],
-      "tokens": 1044
+      "tokens": 1083
     },
     {
       "path": "org/speakers/dejan-menges.md",
