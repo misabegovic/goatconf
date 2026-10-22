@@ -4,7 +4,7 @@
 Every image is an HTML card in the site's own type and colours, with the seal
 from site/brand/, rendered to PNG by headless Chrome into site/share/:
 
-  banners   LinkedIn profile banner, LinkedIn page cover, a 3:1 header for
+  banners   LinkedIn profile banner, LinkedIn page cover (4200 x 700), a 3:1 header for
             X, Bluesky and Mastodon, the Luma event cover
   og.png    the link preview every page uses
   posts     save the date, run a session, registration, add something,
@@ -86,6 +86,22 @@ def banner(w: int, h: int, word: int, sub: int, url: int, seal_size: int, left: 
   <div class="url" style="font-size:{url}px; margin-top:{int(sub * .7)}px">{URL}</div>
 </div>
 {seal(seal_size, f"right:{right}px; top:50%; transform:translateY(-50%)")}""")
+
+
+def page_cover(w: int = 4200, h: int = 700) -> str:
+    """The LinkedIn company page cover, at LinkedIn's 4200 x 700.
+
+    LinkedIn lays the page's square logo over the bottom left of the cover and
+    the phone app trims both sides, so the text starts past the logo's quarter
+    and the seal sits well inside the right edge."""
+    return page(w, h, f"""
+<style>body {{ background-size: 600px 600px; }}</style>
+<div style="position:absolute; left:1240px; top:50%; transform:translateY(-50%)">
+  <div class="word" style="font-size:236px">GoatConf 2027</div>
+  <div class="sub" style="font-size:100px; margin-top:52px">{FACTS}</div>
+  <div style="font-size:70px; font-weight:700; margin-top:40px">Any programming language, any stack.<span class="url" style="margin-left:.9em">{URL}</span></div>
+</div>
+{seal(500, "right:360px; top:50%; transform:translateY(-50%)")}""")
 
 
 def post(w: int, h: int, title: str, line: str, square: bool) -> str:
@@ -290,7 +306,7 @@ def event_card(meta, slug: str, square: bool, height: int = 675) -> str:
 def jobs() -> dict[str, tuple[int, int, str]]:
     out = {
         "linkedin-banner.png": (1584, 396, banner(1584, 396, 104, 36, 26, 320, 560, 90)),
-        "linkedin-page-cover.png": (1128, 191, banner(1128, 191, 64, 24, 18, 160, 56, 48)),
+        "linkedin-page-cover.png": (4200, 700, page_cover()),
         "header-3x1.png": (1500, 500, banner(1500, 500, 128, 40, 28, 400, 90, 96)),
         "og.png": (1200, 630, banner(1200, 630, 104, 34, 26, 400, 64, 56)),
         "luma-cover.png": (1080, 1080, page(1080, 1080, f"""
