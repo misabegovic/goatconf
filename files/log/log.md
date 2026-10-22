@@ -570,3 +570,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-22 merge — PR #154: speakers: Cristian Planas's new role and gondola photo
    diff: 18 files, +135/-21
    restricted-paths: false
+2026-10-22 merge — PR #155: speakers: Cristian Planas's stage photo back
+   diff: 9 files, +25/-4
+   restricted-paths: false
