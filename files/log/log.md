@@ -567,3 +567,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-22 merge — PR #153: shareables: a LinkedIn page cover that the logo does not cover
    diff: 9 files, +94/-78
    restricted-paths: true
+2026-10-22 merge — PR #154: speakers: Cristian Planas's new role and gondola photo
+   diff: 18 files, +135/-21
+   restricted-paths: false

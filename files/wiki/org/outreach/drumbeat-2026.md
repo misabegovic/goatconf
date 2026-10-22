@@ -2,11 +2,12 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-10-20
+updated: 2026-10-22
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-22--org--cristian-planas-principal-engineer.md
   - sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md
   - sources/conversations/2026-10-20--org--roy-tomeij.md
   - sources/conversations/2026-10-19--org--more-areas.md
@@ -127,7 +128,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Carmine Paolino, Creator of RubyLLM, founder of Plenty
   > Dejan Menges, Staff Engineer at Vinted, author of Enola
   > Amar Mahmutbegović, Co-founder and Head of Engineering at Semblie
-  > Cristian Planas, Author of Rails Scales!, at Combinaut
+  > Cristian Planas, Principal Engineer at Combinaut, author of Rails Scales!
   > Christoph Lipautz, Senior Staff Engineer at Meister
   >
   > Each has an hour in one of the seven rooms at IPI Academy on 3 or 4 June, and a profile on the site: goatconf.com/speakers

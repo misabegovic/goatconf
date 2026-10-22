@@ -1,6 +1,6 @@
 ---
 name: Cristian Planas
-role: Author of Rails Scales!, at Combinaut
+role: Principal Engineer at Combinaut, author of Rails Scales!
 photo: img/speakers/cristian-planas.jpg
 links:
   - https://pragprog.com/titles/cprpo/rails-scales/

@@ -24,7 +24,7 @@ Follow GoatConf: LinkedIn https://www.linkedin.com/company/goatconf/, X https://
 - [Carmine Paolino](https://goatconf.com/speaker-carmine-paolino): Creator of RubyLLM, founder of Plenty
 - [Dejan Menges](https://goatconf.com/speaker-dejan-menges): Staff Engineer at Vinted, author of Enola
 - [Amar Mahmutbegović](https://goatconf.com/speaker-amar-mahmutbegovic): Co-founder and Head of Engineering at Semblie
-- [Cristian Planas](https://goatconf.com/speaker-cristian-planas): Author of Rails Scales!, at Combinaut
+- [Cristian Planas](https://goatconf.com/speaker-cristian-planas): Principal Engineer at Combinaut, author of Rails Scales!
 - [Christoph Lipautz](https://goatconf.com/speaker-christoph-lipautz): Senior Staff Engineer at Meister
 
 ## Supporters

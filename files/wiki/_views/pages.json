@@ -796,12 +796,13 @@
       "title": "The drumbeat, October to December 2026",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-20",
+      "updated": "2026-10-22",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-22--org--cristian-planas-principal-engineer.md",
         "sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md",
         "sources/conversations/2026-10-20--org--roy-tomeij.md",
         "sources/conversations/2026-10-19--org--more-areas.md",
@@ -843,7 +844,7 @@
         "sources/conversations/2026-10-12--org--day-chain-and-session-format.md",
         "sources/conversations/2026-10-12--org--two-core-days-and-saturday.md"
       ],
-      "tokens": 3595
+      "tokens": 3600
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -1940,14 +1941,18 @@
       "title": "Speaker: Cristian Planas",
       "kind": "entity",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-10-22",
       "confidence": "medium",
       "sources": [
         "sources/conversations/2026-10-14--org--cristian-planas.md",
         "sources/web/speakers/kaigi-on-rails-2026-cristian-planas-2026-10-14.md",
-        "sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md"
+        "sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md",
+        "sources/conversations/2026-10-22--org--cristian-planas-principal-engineer.md",
+        "sources/web/speakers/rubyconf-india-2026-cristian-planas-2026-10-22.md",
+        "sources/conversations/2026-10-22--org--cristian-planas-gondola-photo.md",
+        "sources/web/speakers/github-avatar-cristian-planas-2026-10-22.md"
       ],
-      "tokens": 818
+      "tokens": 1044
     },
     {
       "path": "org/speakers/dejan-menges.md",

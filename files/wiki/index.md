@@ -2,7 +2,7 @@
 title: "goatconf brain: home"
 kind: meta
 status: draft
-updated: 2026-10-21
+updated: 2026-10-22
 sources: []
 ---
 
@@ -17,7 +17,9 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 
 ## What changed
 
-<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-21 -->
+<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-22 -->
+- **2026-10-22**: **A new photo for Cristian Planas.** His profile and cards now show his gondola selfie, the photo on his GitHub profile and his RubyConf India 2026 card, with the two people behind him blurred, in place of his COSCUP 2025 stage photo ([Cristian Planas](org/speakers/cristian-planas.md); sources: sources/conversations/2026-10-22--org--cristian-planas-gondola-photo.md, sources/web/speakers/github-avatar-cristian-planas-2026-10-22.md).
+- **2026-10-22**: **Cristian Planas is a Principal Engineer at Combinaut.** His role on the site, his cards and the first speakers post now reads "Principal Engineer at Combinaut, author of Rails Scales!", from his RubyConf India 2026 speaker card ([Cristian Planas](org/speakers/cristian-planas.md); sources: sources/conversations/2026-10-22--org--cristian-planas-principal-engineer.md, sources/web/speakers/rubyconf-india-2026-cristian-planas-2026-10-22.md).
 - **2026-10-21**: **A "Proud supporter" card for every supporter.** Each supporter's profile now offers, above GoatConf's thank-you card, its own card to post: "Proud supporter of GoatConf 2027", its logo, its supporter line, Tuzla, 3 to 5 June 2027, and its profile's address, square and wide, the same for every supporter. A long address on a square card is set smaller to stay clear of the seal, which fixes the Bosnia & Herzegovina Futures Foundation's thank-you card ([profiles](org/outreach/supporter-profiles.md); source: sources/conversations/2026-10-21--org--proud-supporter-cards.md).
 - **2026-10-21**: **Companies and communities, and a thank-you for wroclove.rb.** The supporters page's lede, intro and description now say "companies and communities" where they said "companies". The drumbeat's "Thank you, wroclove.rb" post, with its card, takes Tuesday 12 January 2027, week 14, and that week's "Who's organising" post is dropped, with its image ([drumbeat](org/outreach/drumbeat.md); source: sources/conversations/2026-10-21--org--wroclove-rb-extras.md).
 - **2026-10-21**: **wroclove.rb, a community partner, on the supporters wall.** The Ruby conference in Wrocław shares GoatConf on its social media and is listed by name with the other supporters, for "Community partner: social media", with its own logo, a profile drafted from its site and a thank-you card "for being a community partner and sharing GoatConf on social media." A community partner that gives in kind is now listed the same way ([Online supporters](org/adrs/online-supporters-through-the-business.md); [profiles](org/outreach/supporter-profiles.md); sources: sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md, sources/web/supporters/wroclove-rb-about-2026-10-21.md).
