@@ -45,3 +45,11 @@ the mark keeps its year on every phone (the build had dropped "2027" under
 about 376 px so the two buttons fit). The phone bar is now the mark with
 its year and Menu; the menu lists Program, Speakers, Travel, Supporters,
 Make it yours, Propose a session, and Register last, as a yellow button.
+
+Then, verbatim:
+
+> Let's make "make it yours" and "propose a session" also actionable buttons
+
+The menu now ends with three full-width buttons: Make it yours and Propose
+a session outlined in yellow, as on the wide bar, and Register filled in
+yellow.
