@@ -156,7 +156,7 @@ files out, as proposed.
 
 ## Amendments
 
-- **2026-10-23, a phone menu.** On screens under 48rem the top bar is a pinned single row: the mark, a Register button and a Menu that opens a panel with Program, Speakers, Travel, Supporters, Make it yours and Propose a session. `tools/nav.py` writes both forms of the bar into every page, the wide one shown above 48rem and the phone one below; the menu is a `<details>`, so it opens without a script, and `album.js` closes it on Escape, a tap outside it, or a followed link. Measured before: the phone bar took 149 to 190 px of a 760 px screen and scrolled away; after: 49 px, pinned (source: sources/conversations/2026-10-23--org--phone-menu.md).
+- **2026-10-23, a phone menu.** On screens under 48rem the top bar is a pinned single row: the mark with its year and a Menu that opens a panel with Program, Speakers, Travel, Supporters, Make it yours, Propose a session, and Register last as a yellow button. A first build kept Register beside Menu and dropped the year on the narrowest phones; the organiser moved Register into the menu and kept the year. `tools/nav.py` writes both forms of the bar into every page, the wide one shown above 48rem and the phone one below; the menu is a `<details>`, so it opens without a script, and `album.js` closes it on Escape, a tap outside it, or a followed link. Measured before: the phone bar took 149 to 190 px of a 760 px screen and scrolled away; after: 49 px, pinned (source: sources/conversations/2026-10-23--org--phone-menu.md).
 
 ## Related
 

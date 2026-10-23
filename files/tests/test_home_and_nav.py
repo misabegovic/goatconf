@@ -123,15 +123,15 @@ def test_the_follow_links_sit_in_every_footer_and_in_marked_spots_once():
     assert nav.place(once, "contact.html") == once
 
 
-def test_the_phone_bar_has_register_and_a_menu_with_every_other_link():
+def test_the_phone_bar_is_the_mark_and_a_menu_with_every_link():
     nav = importlib.reload(importlib.import_module("nav"))
     bar = nav.bar("travel.html")
     phone = bar[bar.index('<div class="topbar__phone">'):]
-    assert '<a class="topbar__register" href="register.html">Register</a>' in phone
     assert "<details class=\"topbar__menu\">" in phone and "<summary>" in phone
+    assert "topbar__register" not in phone  # Register is in the menu, not beside it
     panel = phone[phone.index('<nav class="topbar__panel"'):phone.index("</nav>")]
-    for href, label in [*nav.LINKS, ("extend.html", "Make it yours"), ("talk.html", "Propose a session")]:
+    for href, label in [*nav.LINKS, ("extend.html", "Make it yours"), ("talk.html", "Propose a session"), ("register.html", "Register")]:
         assert f'href="{href}"' in panel and label in panel
-    assert "register.html" not in panel  # Register stays beside Menu, not in it
+    assert panel.rstrip().endswith('<a class="topbar__panel-main" href="register.html">Register</a>')
     assert '<a href="travel.html" aria-current="page">Travel</a>' in panel
-    assert nav.bar("register.html").count('class="topbar__register" href="register.html" aria-current="page"') == 1
+    assert 'class="topbar__year">2027<' in bar
