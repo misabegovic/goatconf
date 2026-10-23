@@ -2,11 +2,17 @@
 title: "The drumbeat, January to March 2027"
 kind: reference
 status: draft
-updated: 2026-10-21
+updated: 2026-10-23
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md
+  - sources/conversations/2026-10-23--org--predrag-radenkovic.md
+  - sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md
+  - sources/web/supporters/codeplain-logo-and-site-2026-10-23.md
+  - sources/web/speakers/thenewstack-codeplain-2026-10-23.md
+  - sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md
   - sources/conversations/2026-10-21--org--wroclove-rb-extras.md
   - sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md
   - sources/web/supporters/wroclove-rb-about-2026-10-21.md
@@ -273,23 +279,27 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-12--org--day-chain-and-session-format.md, sources/conversations/2026-10-12--org--friday-dzuma-schedule.md.
 
-### Tue 23 Mar 2027, week 24: Workshops
+### Tue 23 Mar 2027, week 24: Speaker: Predrag Radenkovic
 
 - **State:** drafted
-- **Image:** `post-workshops-square.png` (LinkedIn, Mastodon), `post-workshops-wide.png` (X, Bluesky)
+- **Image:** `speaker-predrag-radenkovic-square.png` (LinkedIn, Mastodon), `speaker-predrag-radenkovic-wide.png` (X, Bluesky)
+- **Tag:** Predrag Radenkovic and *codeplain
+- **Before posting:** if his talk or workshop on regenerative software is on the program by then, add its title and day.
 - **LinkedIn:**
 
-  > Run a workshop at GoatConf.
+  > Meet a GoatConf 2027 speaker: Predrag Radenkovic.
   >
-  > People learn by doing. IPI Academy's two computer centres seat 20 and 26, and everyone, you included, works on the laptop they bring.
+  > Predrag is the CTO of *codeplain, which turns specifications written in ***plain into production-ready software: when something needs to change, the spec is edited and the code regenerated. A two-time founding engineer, he has led technical teams at Silverfin, Toptal and FIS, and he teaches developers to make specifications the source of truth for the code AI writes.
   >
-  > A session is one hour, on Thursday 3 or Friday 4 June. A workshop that needs longer can run longer: say how long in your proposal, and we work out the hours with you. Propose yours: goatconf.com/talk
+  > Thank you, *codeplain, for covering his travel to Tuzla.
+  >
+  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-predrag-radenkovic
 
-- **Short** (164 characters):
+- **Short** (215 characters):
 
-  > Run a workshop at GoatConf: rooms for 20 and 26 people, everyone on the laptop they bring, longer than an hour if it needs it. Tuzla, 3 or 4 June. goatconf.com/talk
+  > Meet a GoatConf 2027 speaker: Predrag Radenkovic, CTO of *codeplain, where specs are the source of truth and code is regenerated from them. Thanks, *codeplain, for his travel. goatconf.com/speaker-predrag-radenkovic
 
-  Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--all-available-rooms.md, sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md.
+  Sources: sources/conversations/2026-10-23--org--predrag-radenkovic.md, sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md, sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md, sources/web/supporters/codeplain-logo-and-site-2026-10-23.md, sources/web/speakers/thenewstack-codeplain-2026-10-23.md, sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md.
 
 ### Tue 30 Mar 2027, week 25: Where to stay
 
