@@ -14,6 +14,11 @@ sources:
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
   - sources/conversations/2026-10-23--org--venues-approved.md
   - sources/conversations/2026-10-23--org--more-places-and-photos.md
+  - sources/conversations/2026-10-23--org--keep-looking.md
+  - sources/web/venue/bitcentar-rezervacija-sala-2026-10-23.md
+  - sources/web/venue/kvirhana-2024-tuzla-program-2026-10-23.md
+  - sources/web/venue/mejdan-kontakt-2026-10-23.md
+  - sources/web/images/venue-photos-last-2026-10-23.md
   - sources/web/images/venue-photos-more-2026-10-23.md
   - sources/web/venue/bonjour-tuzla-barovi-2026-10-23.md
   - sources/web/venue/tourismbih-caffe-bar-bluesberry-2026-10-23.md
@@ -439,6 +444,35 @@ research added sixteen places, each with its sources in
   tower of Gradačac.
 - **Not found:** a board-game café, an escape room, a climbing gym, or a
   hiking club with a public contact.
+
+## Added on 2026-10-23, the third round
+
+Asked to keep looking across the web
+(`sources/conversations/2026-10-23--org--keep-looking.md`), the search
+added nine places and filled the gaps of the second round:
+
+- **Near IPI:** Friendly Fire, a gaming café at the Kapija (about 350 m),
+  Caffe Baza, a rock bar with gigs, pub quizzes and stand-up (about 430 m),
+  and Lounge Bar Hugo's with live music (about 550 m). BIT Centar's 42-seat
+  event room, 216 m away, is now part of the Code Hub entry
+  (`sources/web/venue/bitcentar-rezervacija-sala-2026-10-23.md`).
+- **In town:** Restoran Sagittarius, which takes parties and business
+  meetings; Night Club Madeira in the basement of Hotel Tuzla; and Rock The
+  Lock, the canton's first escape room, whose website did not load, so a
+  host checks it is open.
+- **Further out:** BBCC, a music club for about 400 in Lukavac; the Javorje
+  lodge of PD Konjuh, Tuzla's hiking club, which guides visiting clubs; and
+  Hotel Muška voda near Kladanj, suited to organised groups.
+- **Karaoke:** the only dated night found is a festival karaoke party at
+  Bluesberry on 31 May 2024 (`sources/web/venue/kvirhana-2024-tuzla-program-2026-10-23.md`);
+  Club Viva's link to karaoke was a misattribution. Bluesberry still trades
+  under that name, on the site of the former Urban BeaTZ.
+- **Contacts and photos:** SKPC Mejdan's site works again over plain http,
+  with its switchboard and email (`sources/web/venue/mejdan-kontakt-2026-10-23.md`);
+  the last five places without a photo now have one
+  (`sources/web/images/venue-photos-last-2026-10-23.md`).
+- **Still not found:** a board-game café, a climbing wall or gym, and a
+  karaoke night with a date in 2025 or 2026.
 
 ## Rules a host should know
 

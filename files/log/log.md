@@ -588,3 +588,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-23 merge — PR #160: site: add 16 places to Make it yours and photos for the nine without one
    diff: 155 files, +2288/-76
    restricted-paths: false
+2026-10-23 merge — PR #161: site: add 9 places to Make it yours and photos for the last five
+   diff: 139 files, +2043/-110
+   restricted-paths: false
