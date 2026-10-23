@@ -1,0 +1,37 @@
+---
+url: https://ep2025.europython.eu/open-spaces/
+pulled: 2026-10-23
+fetched_via: curl, page HTML converted to plain text with pandoc; verbatim excerpt of the relevant sections
+source_kind: official-site
+title: "Open Spaces | EuroPython 2025"
+---
+
+At EuroPython 2025, Open Spaces offer a unique opportunity for attendees to shape their own experience. Instead of fixed schedules and talks, these sessions are run by participants like you who bring fresh ideas and create discussions in an open and friendly environment.
+During the main days of the conference, two rooms will be dedicated to Open Spaces, with enough space for everyone to delve into the topics that interest them most.
+What is an Open Space?
+Open Spaces are participant-driven gatherings where anyone can propose a topic, lead a discussion or presentation, and collaborate with others. Attendees can add their session idea to the Open Spaces registration calendar, which also serves to attract potential participants interested in joining.
+Check the Open Spaces schedule ↗️!
+How to Organise an Open Space
+To organise your own Open Space session, simply book a free time slot and room via our Open Spaces registration calendar — this allows you to easily secure a space to host your discussion or presentation.
+Both Room 221+222 and Room 223+224 will be reserved exclusively for Open Space sessions. You can book either space by using the links below:
+Room 221+222 | Room 223+224
+Please note that Room 221+222 has tables and chairs and a 65” monitor; while Room 223+224 has no tables (only chairs) and no monitor.
+If you want to make a reservation but do not have a Google account, please contact us at programme@europython.eu and we will reserve the slot for you.
+Who Can Participate?
+Anyone attending EuroPython 2025 can join or lead an Open Space session. It’s a perfect opportunity to share your ideas, ask questions, and connect with others around topics you’re passionate about!
+Possible Topics
+Open Space sessions can cover a wide range of topics, such as:
+-   New Python features
+-   Python in hardware, IoT, or automation
+-   Data science and AI
+-   Web frameworks and microservices
+-   Machine learning applications
+-   Improving code quality
+-   Community building and diversity in tech
+-   Open source contributions
+-   Mentoring
+-   Career growth and personal development
+-   Knitting and crafting
+-   Building ham radios
+-   Dancing or movement sessions
+… and anything else you want to explore together — non-coding stuff is very welcomed too!
