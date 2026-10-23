@@ -26,6 +26,7 @@ Follow GoatConf: LinkedIn https://www.linkedin.com/company/goatconf/, X https://
 - [Amar Mahmutbegović](https://goatconf.com/speaker-amar-mahmutbegovic): Co-founder and Head of Engineering at Semblie
 - [Cristian Planas](https://goatconf.com/speaker-cristian-planas): Principal Engineer at Combinaut, author of Rails Scales!
 - [Christoph Lipautz](https://goatconf.com/speaker-christoph-lipautz): Senior Staff Engineer at Meister
+- [Predrag Radenkovic](https://goatconf.com/speaker-predrag-radenkovic): CTO at *codeplain
 
 ## Supporters
 

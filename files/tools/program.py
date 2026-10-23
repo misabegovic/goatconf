@@ -78,12 +78,13 @@ ROOMS = {
 # order they are held: as many as there are such speakers (published, not
 # held, named in no program record), skipping a cell a session already takes.
 # The organiser chose the main hall, three a day, on 2026-10-18, and a
-# seventh at Thursday 16:00 on 2026-10-20 (sources/conversations/2026-10-20--org--roy-tomeij.md).
+# seventh at Thursday 16:00 on 2026-10-20 (sources/conversations/2026-10-20--org--roy-tomeij.md),
+# and an eighth at Friday 15:30 on 2026-10-23 (sources/conversations/2026-10-23--org--predrag-radenkovic.md).
 RESERVED = (
     (dt.date(2027, 6, 3), "10:00", "hall-ground"), (dt.date(2027, 6, 3), "12:00", "hall-ground"),
     (dt.date(2027, 6, 3), "14:00", "hall-ground"), (dt.date(2027, 6, 4), "09:30", "hall-ground"),
     (dt.date(2027, 6, 4), "11:30", "hall-ground"), (dt.date(2027, 6, 4), "13:30", "hall-ground"),
-    (dt.date(2027, 6, 3), "16:00", "hall-ground"),
+    (dt.date(2027, 6, 3), "16:00", "hall-ground"), (dt.date(2027, 6, 4), "15:30", "hall-ground"),
 )
 FORMATS = {"talk": "Talk", "panel": "Panel", "workshop": "Workshop", "other": "Session"}
 # The areas the talk page names, as the proposal form's area question

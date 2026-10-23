@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-22",
+  "generated": "2026-10-23",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -635,9 +635,10 @@
       "title": "GoatConf 2027: what is known",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-21",
+      "updated": "2026-10-23",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-23--org--predrag-radenkovic.md",
         "sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md",
         "sources/conversations/2026-10-20--org--roy-tomeij.md",
         "sources/conversations/2026-10-20--org--contact-form-description-volunteering.md",
@@ -696,7 +697,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 3861
+      "tokens": 3950
     },
     {
       "path": "org/ideas/lightning-talks.md",
@@ -721,9 +722,9 @@
       "title": "goatconf: the conference as a whole",
       "kind": "meta",
       "status": "draft",
-      "updated": "2026-10-20",
+      "updated": "2026-10-23",
       "sources": [],
-      "tokens": 1740,
+      "tokens": 1792,
       "affected_by": [
         "org/ideas/lightning-talks.md",
         "org/outreach/drumbeat-2026.md",
@@ -2004,6 +2005,24 @@
         "sources/web/organiser/muhamed-at-about.md"
       ],
       "tokens": 874
+    },
+    {
+      "path": "org/speakers/predrag-radenkovic.md",
+      "title": "Speaker: Predrag Radenkovic",
+      "kind": "entity",
+      "status": "living",
+      "updated": "2026-10-23",
+      "confidence": "medium",
+      "sources": [
+        "sources/conversations/2026-10-23--org--predrag-radenkovic.md",
+        "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
+        "sources/web/speakers/howtoweb-predrag-radenkovic-2026-10-23.md",
+        "sources/web/speakers/thenewstack-codeplain-2026-10-23.md",
+        "sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md",
+        "sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md",
+        "sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md"
+      ],
+      "tokens": 1216
     },
     {
       "path": "org/speakers/roy-tomeij.md",
