@@ -18,6 +18,8 @@ sources:
   - sources/conversations/2026-10-23--org--host-guides-and-venues.md
   - sources/conversations/2026-10-23--org--reserved-venues-and-explore.md
   - sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md
+  - sources/conversations/2026-10-23--org--hosts-hub-answers.md
+  - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
   - sources/conversations/2026-10-07--org--conference-vision.md
   - sources/conversations/2026-10-20--org--hero-extendable.md
   - sources/conversations/2026-10-19--org--site-review-decisions.md
@@ -90,6 +92,30 @@ plain that GoatConf's shape comes from the people who join.
   what to do in the evenings and the hours off, and learns early that
   they can add something themselves.
 
+## The organiser's answers (2026-10-23)
+
+The seven open questions were put to the organiser one at a time
+(`sources/conversations/2026-10-23--org--hosts-hub-answers.md`):
+
+1. **Hours off only.** Hosts may run short, free, open events near IPI
+   in the hours off on Thursday and Friday, never at the same time as a
+   session; Friday 12:30 stays free for Džuma and lunch.
+2. **The church in glass is HKC "Sveti Franjo",** and it is "check with
+   GoatConf first" with the National Theatre.
+3. **Each edition is its own.** "It only shapes the current edition,
+   every edition could be different based on who joins." The site says
+   that what people add shapes this year's GoatConf, and that the next
+   edition may look different because different people join; it promises
+   nothing carried over.
+4. **One hub,** with the old addresses redirected.
+5. **List only for now.** Every venue reads "a place you could ask"; the
+   agent may draft emails the organiser could send later.
+6. **Use all good photos,** licensed or not ("Use all photos that are
+   good, disregard that"), as with the food photos, which come down if an
+   owner asks (`sources/conversations/2026-10-13--org--food-photos-one-by-one.md`).
+7. **Karaoke in cafés nearby,** "like on the square"; the hub points a
+   karaoke host at the cafés on and around Freedom Square.
+
 ## Now / Perceived / Target (agent's read)
 
 - **Now.** The home page says "Extendable: a minimal core, make it your
@@ -106,16 +132,15 @@ plain that GoatConf's shape comes from the people who join.
 - **Target (hypothesis).** A visitor lands on one hub, sees what people
   are adding, filters places by what they want to run, reads a short
   guide, and proposes. Two venues say "check with GoatConf first". The
-  hub says, in one line, that each edition takes its shape from who joins,
-  worded as firmly as the organiser chooses.
+  hub says, in one line, that the people who join shape this edition and
+  that every edition can be different.
 
 ## Scope (suggested)
 
-- **One hub page** that joins today's two pages: what people are adding
-  (the accepted events, as now), then the guides, then the places, then
-  the proposal form. Whether it replaces `extensions.html` and `add.html`
-  or sits above them is a choice for the ADR; either way every existing
-  link keeps working.
+- **One hub page** that replaces today's two pages: what people are
+  adding (the accepted events, as now), then the guides, then the places,
+  then the proposal form. `extensions.html` and `add.html` redirect to it,
+  so every existing link keeps working.
 - **Guides, short and plain, in three parts**, built from the prior art
   (sources listed above):
   - **How:** the deal (you run it and pay for it; GoatConf accepts and
@@ -143,24 +168,29 @@ plain that GoatConf's shape comes from the people who join.
   text search over places and accepted events. The site is static with no
   build step (`PRODUCT.md`), so this is a small script over data already
   in the page, and the full list still reads without it.
-- **Photos.** Only freely licensed photos, or photos a venue gives
-  permission for, each with the licence record the site already keeps for
-  every photo. Where none exists, the record shows a printed empty slot,
-  as the sticker album does for anything undecided (`DESIGN.md`).
+- **Photos.** Every good photo of a place, freely licensed or the
+  venue's own, picked one by one like the food photos, each with a record
+  of where it came from; a photo comes down if its owner asks. Where no
+  good photo exists, the record shows a printed empty slot, as the sticker
+  album does for anything undecided (`DESIGN.md`).
 - **Check with GoatConf first** on the National Theatre and the church in
   glass (HKC "Sveti Franjo" if the organiser confirms the match), and on
   any IPI room, in the way SXSW and IETF mark spaces the organiser
   controls (`sources/web/models/sxsw-2027-affiliate-activity-inquiry-form-2026-10-23.md`,
   `sources/web/models/ietf-side-meetings-and-private-meetings-2026-10-23.md`).
-- **Events in the hours off,** if the organiser decides for them:
-  short, free, open events near IPI during the hours off, listed like any
-  other event. PyCon AU's birds-of-a-feather and PyCon US's open spaces
-  are the models; TechCrunch's "after 17:00 on the main day" is the
-  opposite choice (`sources/web/models/pycon-au-2024-birds-of-a-feather-2026-10-23.md`,
+- **Events in the hours off,** as the organiser decided: short, free,
+  open events near IPI during the hours off on Thursday and Friday, never
+  at the same time as a session, listed like any other event; Friday
+  12:30 stays free. The hub marks the places that fit an hour off.
+  PyCon AU's birds-of-a-feather and PyCon US's open spaces are the
+  models; TechCrunch's "after 17:00 on the main day" is the choice not
+  taken (`sources/web/models/pycon-au-2024-birds-of-a-feather-2026-10-23.md`,
   `sources/web/models/pycon-us-2025-open-spaces-2026-10-23.md`,
   `sources/web/models/techcrunch-early-stage-2024-host-your-side-event-2026-10-23.md`).
-- **The line about editions,** once the organiser words it, on the hub
-  and perhaps the home page.
+- **The line about editions,** on the hub and perhaps the home page, for
+  example: "GoatConf is what the people who come make it. This year's
+  shape comes from who joins, and every edition can be different." The
+  organiser approves the words.
 - **"Propose an event" in the top bar,** next to "Propose a session".
 
 ## No-gos (suggested)
@@ -168,22 +198,22 @@ plain that GoatConf's shape comes from the people who join.
 - No venue is listed as arranged, partnered or reserved for hosts unless
   the organiser has arranged it; the default wording is "a place you
   could ask".
-- No photo without a licence record or a venue's permission.
+- No photo without a record of where it came from.
 - No places of worship in the list, except the church in glass the
   organiser named.
 - GoatConf never pays for, books or guarantees a host's venue; the
   charter's four rules stay as they are.
-- No event in the hours off that competes with sessions for a room at
-  IPI, unless the organiser decides otherwise.
+- No added event at the same time as a session on Thursday or Friday,
+  and none in Friday's 12:30 hour.
 - No private persons' contact details; only what a venue publishes.
 
 ## Rabbit holes (suggested)
 
 - **Capacities.** Most cultural houses publish no seat counts. Ask the
   venues, or show "size unknown, ask the venue", rather than guess.
-- **Photo rights.** Commons has photos of only a few venues; asking each
-  venue for a photo is slow. Start with what is licensed and the empty
-  slot for the rest.
+- **Photo picking.** Commons has photos of only a few venues, and the
+  venues' own photos vary; picking a good one per place, as with the
+  food, takes time. Start with the places most hosts will want.
 - **The law.** The notice rules depend on whether an event aims at
   income and on draft laws whose fate is unknown. The guide should say
   "ask the venue, and when in doubt tell the police five to seven days
@@ -211,29 +241,24 @@ off, wording on editions, which venues to arrange) are the organiser's.
 
 ## Open questions for the human reviewer
 
-1. **Events in the hours off:** only short, free, open events near IPI,
-   or also events alongside sessions? Does Friday 12:30 stay for Džuma
-   and lunch?
-2. **Is HKC "Sveti Franjo" the church in glass?**
-3. **Editions:** how firmly should the site say that each edition takes
-   its shape from who joins: "might change", or a promise that what people
-   add this year shapes next year's?
-4. **One hub or two pages:** replace "Events people add" and "Propose an
-   event" with one page, or keep both and add the guides and places
-   between them?
-5. **Arrangements:** should the organiser approach some venues first
-   (for example BKC's no-fee protocol for non-profit programmes, Dom
-   mladih for a party night), so the hub can say "open to GoatConf
-   hosts"?
-6. **Photos:** ask venues for permission to use their own photos, or
-   start with only the licensed ones?
-7. **Karaoke:** does anyone local know a bar with a karaoke night?
+The seven questions of the first draft are answered above. Left for the
+ADR:
+
+1. **The words** of the line about editions, and whether it also goes on
+   the home page.
+2. **The hub's name and address,** for example "Make it yours" at
+   `goatconf.com/extend`, or keeping "Events people add" at
+   `goatconf.com/extensions`.
+3. **How hosts claim an hour off:** through the same form and record as
+   any event, or a lighter way closer to the day (PyCon US opens its
+   boards the day before).
 
 ## Suggested next step
 
-Iterate, then graduate: the organiser answers the open questions, the
-agent revises this PRD and writes the ADR through `/shape`, and only then
-builds the hub, the records and the guides.
+Graduate: with the answers above, the organiser approves this PRD, the
+agent moves it to `wiki/org/prds/`, writes the ADR through `/shape` with
+the three questions left, and only then builds the hub, the records and
+the guides.
 
 ## Sources
 

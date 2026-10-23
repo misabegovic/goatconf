@@ -11,6 +11,8 @@ sources:
   - sources/conversations/2026-10-23--org--host-guides-and-venues.md
   - sources/conversations/2026-10-23--org--reserved-venues-and-explore.md
   - sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md
+  - sources/conversations/2026-10-23--org--hosts-hub-answers.md
+  - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
   - sources/web/osm/tuzla-venues-2026-10-23.json
   - sources/web/osm/tuzla-venue-geocodes-2026-10-23.json
   - sources/web/venue/nptz-kontakt-2026-10-23.md
@@ -140,8 +142,13 @@ until the organiser arranges more.
   line.
 - **Photo** says whether a freely licensed photo was found (each source
   file lists the candidates under "Photo candidates", with author and
-  licence) or whether only the venue's own photos exist, which need the
-  venue's permission.
+  licence) or whether only the venue's own photos exist. On 2026-10-23 the
+  organiser chose to use every good photo either way ("Use all photos that
+  are good, disregard that",
+  `sources/conversations/2026-10-23--org--hosts-hub-answers.md`), as with
+  the food photos, which come down if an owner asks
+  (`sources/conversations/2026-10-13--org--food-photos-one-by-one.md`).
+  Each photo still keeps a record of where it came from.
 - **Confidence** of the page is low: the facts are cited, but capacities
   are mostly unpublished, several listings are undated, and no venue has
   been asked anything.
@@ -166,9 +173,10 @@ host asks the organiser before planning there
   building is under renovation in autumn 2026, with no closure dates
   (`sources/web/venue/nptz-arlekin-obnova-2026-10-23.md`). Photo: one
   exterior on Wikimedia Commons, by Sebleouf, CC BY-SA 4.0.
-- **The "church in glass": Hrvatski kulturni centar "Sveti Franjo"
-  (best candidate).** No source uses the phrase "crkva u staklu", so the
-  match is the agent's reading, for the organiser to confirm. HKC "Sveti
+- **The "church in glass": Hrvatski kulturni centar "Sveti Franjo".**
+  No source uses the phrase "crkva u staklu"; the organiser confirmed the
+  match on 2026-10-23 ("Yes, that's it",
+  `sources/conversations/2026-10-23--org--hosts-hub-answers.md`). HKC "Sveti
   Franjo" stands in the old town, "Stari grad bb, behind the Chamber of
   Commerce of Tuzla Canton", on the site of the old Catholic church taken
   down in 1987; its main hall is built as "the silhouette of the old
@@ -303,7 +311,11 @@ VIva" about 1.5 km away), and an Instagram profile, @zags_caffe, lists
 karaoke on Friday and Saturday with no address. Until a local confirms
 one, a karaoke host books a bar or a room that takes private events (the
 Pivnica Taverna, Nardi Pub) and brings the songs, which is what the
-propose an event page already says (`site/add.html`).
+propose an event page already says (`site/add.html`). The organiser's
+direction on 2026-10-23: "Imas kafica blizu, tipa na trgu" (there are
+cafés nearby, like on the square), so the cafés on and around Freedom
+Square, below, are the first places to ask for a karaoke evening
+(`sources/conversations/2026-10-23--org--hosts-hub-answers.md`).
 
 ## Cafés and restaurants near Freedom Square
 
@@ -409,13 +421,12 @@ event needs the city's rules, which are (unknown, needs source).
 - Seat counts for HKC "Sveti Franjo", Dom mladih, the Atelier, the Peace
   Flame House and the galleries.
 - A confirmed karaoke night.
-- Whether "crkva u staklu" is HKC "Sveti Franjo" (the organiser confirms).
 - Cinemas (the CineStar site did not load) and museum hire (the Museum of
   Eastern Bosnia, the Salt Museum).
 - The city's rules for events on Freedom Square and in parks.
-- Licensed photos: only the theatre, the Pivnica Taverna, Hotel Mellain,
-  the library, the squares and parks, Modrac and Konjuh have candidates;
-  every other venue needs its own permission.
+- Photos of the venues themselves: only the theatre, the Pivnica Taverna,
+  Hotel Mellain and the library have freely licensed ones; the rest are
+  the venues' own photos, still to be picked one by one.
 
 ## Related
 

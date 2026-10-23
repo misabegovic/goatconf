@@ -606,6 +606,8 @@
         "sources/conversations/2026-10-23--org--host-guides-and-venues.md",
         "sources/conversations/2026-10-23--org--reserved-venues-and-explore.md",
         "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
+        "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
         "sources/conversations/2026-10-07--org--conference-vision.md",
         "sources/conversations/2026-10-20--org--hero-extendable.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
@@ -626,7 +628,7 @@
         "sources/web/models/fosdem-2026-fringe.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 2801
+      "tokens": 3106
     },
     {
       "path": "org/epics/goatconf-2027.md",
@@ -2160,6 +2162,8 @@
         "sources/conversations/2026-10-23--org--host-guides-and-venues.md",
         "sources/conversations/2026-10-23--org--reserved-venues-and-explore.md",
         "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
+        "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
         "sources/web/osm/tuzla-venues-2026-10-23.json",
         "sources/web/osm/tuzla-venue-geocodes-2026-10-23.json",
         "sources/web/venue/nptz-kontakt-2026-10-23.md",
@@ -2253,7 +2257,7 @@
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-izmjene-11-15.md"
       ],
-      "tokens": 4752,
+      "tokens": 4905,
       "consumed_by": [
         "org/ai-suggestions/prds/hosts-hub-guides-and-venues.md"
       ]
