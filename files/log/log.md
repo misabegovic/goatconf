@@ -579,3 +579,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-23 merge — PR #157: drumbeat: Predrag Radenkovic's spotlight takes week 24, and he joins the first speakers
    diff: 11 files, +73/-25
    restricted-paths: true
+2026-10-23 merge — PR #158: site: add Make it yours, one hub for hosts with guides, places in Tuzla and the hours off
+   diff: 311 files, +8269/-212
+   restricted-paths: true
