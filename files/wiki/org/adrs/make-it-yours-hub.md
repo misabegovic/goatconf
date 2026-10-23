@@ -13,6 +13,7 @@ sources:
   - sources/conversations/2026-10-23--org--venues-approved.md
   - sources/conversations/2026-10-23--org--add-form-updated.md
   - sources/conversations/2026-10-23--org--more-places-and-photos.md
+  - sources/conversations/2026-10-23--org--keep-looking.md
   - sources/conversations/2026-10-23--org--hosts-hub-approved.md
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
   - sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md
@@ -247,3 +248,11 @@ in all, among them the first bar with published karaoke evenings, Caffe Bar
 Bluesberry, and CineStar's private screenings. The nine places without a
 photo got one, and eleven of the new places have one, so 44 show a photo;
 their records are in `sources/web/images/venue-photos-more-2026-10-23.md`.
+
+**2026-10-23, the third round.** Nine more places, approved by the
+organiser ("Approve all 9 and deliver",
+`sources/conversations/2026-10-23--org--keep-looking.md`), for 58 in all;
+57 have a photo, all but Caffe Baza. Among them are the canton's escape
+room, a gaming café and a rock bar with pub quizzes near IPI, and the Konjuh
+hiking club's lodge. SKPC Mejdan has a working contact again, and Code Hub
+gained BIT Centar's 42-seat event room.

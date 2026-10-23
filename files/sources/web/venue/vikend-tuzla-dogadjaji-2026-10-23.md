@@ -1,0 +1,47 @@
+---
+url: https://www.vikend.ba/tuzla/
+pulled: 2026-10-23
+fetched_via: curl with tags stripped; event list verbatim (city menu and footer dropped)
+source_kind: guide
+title: "Tuzla dešavanja (vikend.ba)"
+---
+
+An events listing for Tuzla, read on 2026-10-23. Verbatim:
+
+PETAK 23. OKTOBAR 2026. | 20:00 SATI
+KONCERT: ZABRANJENO PUŠENJE
+BOSANSKI KULTURNI CENTAR | TUZLA
+PETAK 23. OKTOBAR 2026. | 20:00 SATI
+DJ MUZIKA: DJ MC TOMMY
+NIGHT CLUB MADEIRA | TUZLA
+PETAK 23. OKTOBAR 2026. | 20:00 SATI
+MUZIKA UŽIVO: AMIL I NALA
+LOUNGE BAR HUGO’S | TUZLA
+SUBOTA 24. OKTOBAR 2026. | 19:30 SATI
+POZORIŠTE: PREDSTAVA KOJA JE KRENULA PO ZLU
+NARODNO POZORIŠTE TUZLA | TUZLA
+SUBOTA 24. OKTOBAR 2026. | 20:00 SATI
+MUZIKA UŽIVO: RADA MANOJLOVIĆ
+PIVNICA TAVERNA | TUZLA
+SUBOTA 24. OKTOBAR 2026. | 20:00 SATI
+KONCERT: VEČER POEZIJE I PJESME MARKA MILOŠEVIĆA
+BOSANSKI KULTURNI CENTAR | TUZLA
+SUBOTA 24. OKTOBAR 2026. | 20:00 SATI
+DJ MUZIKA: DJ ŠUŠKO
+NIGHT CLUB MADEIRA | TUZLA
+PETAK 30. OKTOBAR 2026. | 20:00 SATI
+KONCERT: JAKOV JOZINOVIĆ
+DVORANA MEJDAN | TUZLA
+SUBOTA 31. OKTOBAR 2026. | 20:00 SATI
+DJ MUZIKA: DJ MC TOMMY, DJ DENIRO
+NIGHT CLUB MADEIRA | TUZLA
+PETAK 13. NOVEMBAR 2026. | 21:00 SATI
+MUZIKA UŽIVO: UNTZ BRUCOŠIJADA
+NIGHT CLUB MADEIRA | TUZLA
+SUBOTA 26. DECEMBAR 2026. | 20:00 SATI
+KONCERT: SEKA ALEKSIĆ
+DVORANA MEJDAN | TUZLA
+
+Links on the page (from the HTML): https://www.instagram.com/madeiranightclub/ , https://www.instagram.com/lounge_bar_hugos/
+
+Translation (not verbatim): DJ nights at Night Club Madeira on 23, 24 and 31 October 2026 and the University of Tuzla freshers' party (brucošijada) there on 13 November 2026; live music at Lounge Bar Hugo's on 23 October 2026.

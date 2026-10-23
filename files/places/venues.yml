@@ -6,7 +6,7 @@
 #
 # Only places with approved: true appear on the site; the organiser approves
 # each one. The first 33 approved on 2026-10-23
-# (sources/conversations/2026-10-23--org--venues-approved.md), the next 16 the same day. Distances are computed from lat/lon to IPI Academy (places.yml);
+# (sources/conversations/2026-10-23--org--venues-approved.md), the next 16 and 9 more the same day. Distances are computed from lat/lon to IPI Academy (places.yml);
 # where only a street was found, the point is the street's (point: street).
 # people is the largest group a source says the place holds (seats, or a
 # crowd it has had), for the size filter; size says it in words. metres stands
@@ -505,15 +505,21 @@ venues:
   name: Code Hub Tuzla, BIT Centar
   english: The coworking space of the IT centre
   kind: study
-  address: BIT Centar Tuzla
-  size: Conference rooms and an event space; capacity is not published.
+  address: BIT Centar, Trg slobode 16
+  lat: 44.539193
+  lon: 18.67594
+  people: 42
+  size: 130 m² with a 42-seat events room, a 12-seat meeting room, a 12-place training room, 9 desks and a cafeteria.
   setting: indoor
   suits: [meetup, workshop, hackathon]
   about: A coworking space in BIT Centar, the hub of the city's IT companies, with conference rooms and an event space for rent.
-  contact: []
+  contact: [https://www.bitcentar.com, info@bit.ba, +387 35 304 650]
   sources:
   - sources/web/venue/tehnopolis-code-hub-tuzla-2025.md
   - sources/web/venue/vestbee-code-hub-tuzla-2022.md
+  - sources/web/venue/bitcentar-rezervacija-sala-2026-10-23.md
+  - sources/web/venue/bitcentar-english-2026-10-23.md
+  - sources/web/venue/bitcentar-kontakti-2026-10-23.md
   photo: code-hub-tuzla.jpg
   approved: true
 
@@ -616,7 +622,7 @@ venues:
   size: A bar in the City Park; capacity is not published. The article's photos show a garden terrace.
   setting: both
   suits: [karaoke, evening-event, meetup, other]
-  about: A bar in the City Park, on the site of the former Urban BeaTZ, known for a busy programme of gigs and parties, quizzes, karaoke evenings, thrift markets and board-game get-togethers. No karaoke schedule is published, so ask the bar for a night.
+  about: A bar in the City Park, on the site of the former Urban BeaTZ, known for a busy programme of gigs and parties, quizzes, karaoke evenings, thrift markets and board-game get-togethers. A festival karaoke party ran there on 31 May 2024; no current schedule is published, so ask the bar for a night.
   contact: [https://www.instagram.com/bluesberry.bar/]
   sources:
   - sources/web/venue/bonjour-tuzla-barovi-2026-10-23.md
@@ -626,6 +632,7 @@ venues:
   - sources/web/venue/balans-buvljak-bluesberry-2026-2026-10-23.md
   - sources/web/venue/iyp-urban-beatz-2026-10-23.md
   - sources/web/venue/karaoke-bluesberry-club-viva-search-extract-2026-10-23.md
+  - sources/web/venue/kvirhana-2024-tuzla-program-2026-10-23.md
   photo: caffe-bar-bluesberry.jpg
   approved: true
 
@@ -933,4 +940,187 @@ venues:
   - sources/web/venue/visitgradacac-kontakt-2026-10-23.md
   - sources/web/tuzla/gradacac-wikipedia.md
   photo: kula-gradacac.jpg
+  approved: true
+
+# Added on 2026-10-23, the third round, and approved the same day
+# (sources/conversations/2026-10-23--org--keep-looking.md).
+- id: caffe-baza
+  name: Caffe Baza
+  kind: bar
+  address: Hadžibakirbega Tuzlića 8a
+  lat: 44.537384
+  lon: 18.677207
+  point: street
+  size: Capacity is not published.
+  setting: indoor
+  suits: [evening-event, meetup, other]
+  about: A rock and metal café-bar with craft beer that hosts frequent gigs, mostly rock, as well as regular pub quizzes, stand-up comedy and exhibitions. The Tuzla Live association books concerts there, most recently on 19 March 2026.
+  contact: [https://www.instagram.com/baza.tuzla/, https://www.facebook.com/baza.tuzla/]
+  sources:
+  - sources/web/venue/gdjeizaci-caffe-baza-2026-10-23.md
+  - sources/web/venue/tuzlalive-koncerti-klub-baza-2026-10-23.md
+  approved: true
+
+- id: friendly-fire-tuzla
+  name: Friendly Fire Tuzla
+  english: A gaming café at the Kapija
+  kind: cafe
+  address: Turalibegova 1 (Kapija)
+  lat: 44.538339
+  lon: 18.677092
+  size: A gaming café with 25 PCs, according to a third-party listing; capacity is not published.
+  setting: indoor
+  suits: [evening-event, other]
+  about: A gaming café of the Friendly Fire chain where staff find visitors people to play with. It is open from noon to midnight, and to 02:00 on Fridays and Saturdays, and takes reservations and birthday parties by message.
+  contact: [https://friendlyfireesports.com/locations/tuzla, +387 61 689 424]
+  sources:
+  - sources/web/venue/friendlyfire-tuzla-2026-10-23.md
+  - sources/web/venue/langame-friendly-fire-tuzla-2026-10-23.md
+  photo: friendly-fire-tuzla.jpg
+  approved: true
+
+- id: lounge-bar-hugos
+  name: Lounge Bar Hugo's
+  kind: bar
+  address: Đorđa Mihajlovića bb
+  lat: 44.537306
+  lon: 18.679142
+  size: Capacity is not published.
+  setting: indoor
+  suits: [evening-event]
+  about: A lounge bar in the centre, opened in December 2021, with live folk, pop and rock music. A live set was listed for 23 October 2026.
+  contact: [https://www.instagram.com/lounge_bar_hugos/, +387 62 121 213]
+  sources:
+  - sources/web/venue/tuzlanski-lounge-bar-hugos-2026-10-23.md
+  - sources/web/venue/vikend-tuzla-dogadjaji-2026-10-23.md
+  - sources/web/venue/lovebih-gdje-izaci-u-tuzli-2026-10-23.md
+  photo: lounge-bar-hugos.jpg
+  approved: true
+
+- id: sagittarius
+  name: Restoran & caffe Sagittarius
+  kind: restaurant
+  address: Maršala Tita 2
+  lat: 44.534872
+  lon: 18.682101
+  point: street
+  size: No room size or capacity is published.
+  setting: indoor
+  suits: [meetup, evening-event]
+  about: A restaurant and café with a long aquarium that offers itself for graduation and birthday parties, business meetings and gatherings of friends, booked by phone. It is open Monday to Saturday, 07:00 to 23:00.
+  contact: [https://sagittarius.ba, info@sagittarius.ba, +387 35 299 069]
+  sources:
+  - sources/web/venue/sagittarius-home-2026-10-23.md
+  - sources/web/venue/iyp-sagittarius-2026-10-23.md
+  photo: sagittarius.jpg
+  approved: true
+
+- id: night-club-madeira
+  name: Night Club Madeira
+  english: The wine bar and club in the basement of Hotel Tuzla
+  kind: bar
+  address: ZAVNOBiH-a 13, basement of Hotel Tuzla
+  lat: 44.53146
+  lon: 18.688225
+  people: 50
+  size: The Tourist Board gives Vinoteka Madeira 50 seats; the club's own capacity is not published.
+  setting: indoor
+  suits: [evening-event]
+  about: A wine bar and night club in the basement of Hotel Tuzla, open Friday to Sunday from 18:00 to 03:00, with DJ nights in October 2026 and the University of Tuzla freshers' party on 13 November 2026.
+  contact: [https://www.instagram.com/madeiranightclub/, +387 62 944 445]
+  sources:
+  - sources/web/venue/gdjeizaci-night-club-madeira-2026-10-23.md
+  - sources/web/venue/vikend-tuzla-dogadjaji-2026-10-23.md
+  - sources/web/venue/tztz-vinoteka-madeira-2026-10-23.md
+  - sources/web/venue/lovebih-gdje-izaci-u-tuzli-2026-10-23.md
+  photo: night-club-madeira.jpg
+  approved: true
+
+- id: rock-the-lock
+  name: Rock The Lock, Escape Room Tuzla
+  english: The escape room
+  kind: culture
+  address: Mehmedalije Maka Dizdara 68, Stupine
+  lat: 44.529215
+  lon: 18.692713
+  people: 6
+  size: Three themed rooms for teams of 2 to 5, with a sixth player free, 60 minutes a game.
+  setting: indoor
+  suits: [other]
+  about: Tuzla Canton's first escape room, opened with three rooms (Pacijent 68, The Office, Bomb Squad). Search extracts give prices from 40 KM for two to 70 KM for five; its website did not load on 23 October 2026, so a host checks it is still open.
+  contact: [https://www.facebook.com/rockthelocktuzla/, +387 61 050 668]
+  sources:
+  - sources/web/venue/tuzlanski-rock-the-lock-escape-room-2026-10-23.md
+  - sources/web/venue/rock-the-lock-search-extract-2026-10-23.md
+  photo: rock-the-lock.jpg
+  approved: true
+
+- id: bbcc-lukavac
+  name: BBCC Beat Bar Cafe Club, Lukavac
+  english: A music club in Lukavac
+  kind: bar
+  address: Titova bb, in JU Centar za kulturu, Lukavac
+  lat: 44.531687
+  lon: 18.53367
+  people: 400
+  size: About 400 people (2012 listing), with a summer garden.
+  setting: both
+  suits: [evening-event, workshop]
+  about: A music club in Lukavac's culture centre, open since 2011, with stage sound and lighting and equipment for audio and video presentations. It has a tribute concert booked for 6 November 2026.
+  contact: [https://www.facebook.com/BBCC.Lukavac, https://www.instagram.com/bbcc.lukavac/, +387 61 606 334]
+  sources:
+  - sources/web/venue/gdjeizaci-bbcc-2026-10-23.md
+  - sources/web/venue/bosnian-metal-bbcc-2026-10-23.md
+  - sources/web/venue/sodalive-bbcc-otvoren-2026-10-23.md
+  - sources/web/venue/lukavacki-bbcc-poetska-noc-2026-10-23.md
+  - sources/web/venue/allevents-tuzla-concerts-2026-10-23.md
+  photo: bbcc-lukavac.jpg
+  approved: true
+
+- id: planinarski-dom-javorje
+  name: Planinarski dom Javorje, PD Konjuh Tuzla
+  english: The Tuzla hiking club and its lodge on Konjuh
+  kind: outdoors
+  address: Javorje, near Goletići, Konjuh (Kladanj); club office Patriotske lige 4, Tuzla
+  lat: 44.288229
+  lon: 18.643616
+  people: 150
+  size: Four rooms of four beds and a shared area with 22 beds; about 150 people came on one hike in October 2026.
+  setting: both
+  suits: [hike, trip]
+  about: The mountain lodge of PD Konjuh, Tuzla's hiking club of 75 years and the largest in the country, at 1,002 m on Konjuh. On 17 October 2026 it hosted a University of Tuzla hike of about 150 people, and it guides visiting clubs on walks of 2 to 4 hours from the lodge.
+  contact: [pdkonjuh1951@gmail.com, https://www.facebook.com/pdkonjuh.ba/]
+  sources:
+  - sources/web/venue/psbih-pd-konjuh-tuzla-2026-10-23.md
+  - sources/web/venue/psbih-planinarski-dom-javorje-2026-10-23.md
+  - sources/web/venue/untz-konjuh-hike-javorje-2026-10-23.md
+  - sources/web/venue/hpdzeljeznicar-konjuh-javorje-2026-10-23.md
+  - sources/web/venue/rtvslon-pd-konjuh-75-2026-10-23.md
+  - sources/web/venue/rtvslon-pd-konjuh-pjesacki-koridor-2024-2026-10-23.md
+  - sources/web/venue/psbih-adresar-tk-clubs-2026-10-23.md
+  - sources/web/venue/dojam-pd-konjuh-novi-clanovi-2025-2026-10-23.md
+  photo: planinarski-dom-javorje.jpg
+  approved: true
+
+- id: hotel-muska-voda
+  name: Hotel Muška voda
+  english: A forest hotel and sports complex near Kladanj
+  kind: hotel
+  address: Pauč bb, Kladanj
+  lat: 44.238487
+  lon: 18.591774
+  people: 400
+  size: A 400-seat restaurant and a 100-seat conference hall (2022); 75 rooms and apartments and 3 bungalows.
+  setting: both
+  suits: [trip, hike, meetup, workshop]
+  about: A hotel at about 700 m in the forest of the Konjuh protected landscape, with pools, sports courts, a pitch, bike hire and cycle paths, which a 2026 canton tourism guide calls suited to organised groups.
+  contact: [https://muska-voda.ba, recepcija@muska-voda.ba, +387 35 560 996]
+  sources:
+  - sources/web/venue/muska-voda-home-2026-10-23.md
+  - sources/web/venue/muska-voda-o-hotelu-2026-10-23.md
+  - sources/web/venue/muska-voda-aktivnosti-2026-10-23.md
+  - sources/web/venue/muska-voda-kontakt-2026-10-23.md
+  - sources/web/venue/faktor-muska-voda-2022-2026-10-23.md
+  - sources/web/venue/rtvslon-kladanj-muska-voda-2026-10-23.md
+  photo: hotel-muska-voda.jpg
   approved: true

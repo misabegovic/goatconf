@@ -15,3 +15,9 @@ karaoke evenings had no published dates; SKPC Mejdan had no working
 contact; and five places had no photo (the Museum of Eastern Bosnia, IPI
 Academy's Student HUB, SKPC Mejdan, Švedska kuća solidarnosti and
 Društveni dom Gornja Tuzla).
+
+The search filled those gaps where it could (photos for all five, SKPC
+Mejdan's working contact, a dated karaoke party at Bluesberry in 2024, PD
+Konjuh's club email) and found nine more places. The agent sent a preview
+of all 58 and asked which of the nine should go live. The organiser chose
+"Approve all 9 and deliver".
