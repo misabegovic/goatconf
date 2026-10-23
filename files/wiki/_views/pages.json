@@ -261,7 +261,11 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/tooling/google-forms-response-destination.md"
       ],
-      "tokens": 1880
+      "tokens": 1880,
+      "consumed_by": [
+        "org/adrs/make-it-yours-hub.md",
+        "org/prds/hosts-hub-guides-and-venues.md"
+      ]
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
@@ -300,6 +304,38 @@
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
       "tokens": 3055
+    },
+    {
+      "path": "org/adrs/make-it-yours-hub.md",
+      "title": "Make it yours: one hub at /extend, built from event and venue records, with guides, filters, photos and the hours off",
+      "kind": "decision",
+      "status": "accepted",
+      "updated": "2026-10-23",
+      "team": "organiser",
+      "confidence": "medium",
+      "depends_on": [
+        "org/prds/hosts-hub-guides-and-venues.md",
+        "org/adrs/extension-slots-and-the-record.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md",
+        "sources/conversations/2026-10-23--org--venues-approved.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
+        "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
+        "sources/conversations/2026-10-23--org--reserved-venues-and-explore.md",
+        "sources/conversations/2026-10-23--org--host-guides-and-venues.md",
+        "sources/conversations/2026-10-23--org--extendable-and-each-edition.md",
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
+        "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
+        "sources/conversations/2026-10-12--org--friday-dzuma-schedule.md",
+        "sources/web/models/pycon-au-2024-birds-of-a-feather-2026-10-23.md",
+        "sources/web/models/london-tech-week-2020-fringe-event-toolkit-2026-10-23.md",
+        "sources/web/models/edfringe-finding-a-venue-2026-10-23.md",
+        "sources/web/models/edfringe-how-to-start-making-your-show-accessible-2026-10-23.md",
+        "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
+      ],
+      "tokens": 2911
     },
     {
       "path": "org/adrs/one-page-frame-and-one-site-build.md",
@@ -589,6 +625,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/one-goat-minimal-core-and-extensions.md",
       "sources": [
+        "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--approval-back-on.md",
@@ -612,7 +649,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 2751,
+      "tokens": 2839,
       "consumed_by": [
         "org/adrs/two-core-days-first-week.md"
       ],
@@ -623,6 +660,7 @@
         "org/prds/dates-and-the-core-day.md",
         "org/prds/design-with-impeccable.md",
         "org/prds/extension-slots-and-the-record.md",
+        "org/prds/hosts-hub-guides-and-venues.md",
         "org/prds/operations-and-the-day.md",
         "org/prds/road-to-june-2027.md",
         "org/prds/social-drumbeat.md",
@@ -638,6 +676,9 @@
       "updated": "2026-10-23",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
         "sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md",
         "sources/conversations/2026-10-23--org--predrag-radenkovic.md",
         "sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md",
@@ -698,7 +739,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 4054
+      "tokens": 4253
     },
     {
       "path": "org/ideas/lightning-talks.md",
@@ -1668,6 +1709,56 @@
       ]
     },
     {
+      "path": "org/prds/hosts-hub-guides-and-venues.md",
+      "title": "Make it yours: one hub with guides on how, what and where, a searchable list of Tuzla venues, and events in the hours off",
+      "kind": "initiative",
+      "status": "living",
+      "parent_epic": "goatconf-2027",
+      "updated": "2026-10-23",
+      "team": "organiser",
+      "repos": [
+        "org"
+      ],
+      "appetite": "medium",
+      "confidence": "medium",
+      "depends_on": [
+        "org/tuzla/venues-for-hosts.md",
+        "org/adrs/extension-slots-and-the-record.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-23--org--extendable-and-each-edition.md",
+        "sources/conversations/2026-10-23--org--host-guides-and-venues.md",
+        "sources/conversations/2026-10-23--org--reserved-venues-and-explore.md",
+        "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
+        "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
+        "sources/conversations/2026-10-07--org--conference-vision.md",
+        "sources/conversations/2026-10-20--org--hero-extendable.md",
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
+        "sources/conversations/2026-10-12--org--accepted-events-and-hackathons.md",
+        "sources/web/models/pycon-au-2024-birds-of-a-feather-2026-10-23.md",
+        "sources/web/models/pycon-us-2025-open-spaces-2026-10-23.md",
+        "sources/web/models/europython-2025-open-spaces-2026-10-23.md",
+        "sources/web/models/europython-2025-sprints-2026-10-23.md",
+        "sources/web/models/ietf-side-meetings-and-private-meetings-2026-10-23.md",
+        "sources/web/models/sxsw-2027-affiliate-activity-inquiry-form-2026-10-23.md",
+        "sources/web/models/techcrunch-early-stage-2024-host-your-side-event-2026-10-23.md",
+        "sources/web/models/devconnect-istanbul-host-an-event-notion-2026-10-23.md",
+        "sources/web/models/devconnect-amsterdam-host-an-event-notion-2026-10-23.md",
+        "sources/web/models/london-tech-week-2020-fringe-event-toolkit-2026-10-23.md",
+        "sources/web/models/edfringe-finding-a-venue-2026-10-23.md",
+        "sources/web/models/edfringe-how-to-start-making-your-show-accessible-2026-10-23.md",
+        "sources/web/models/woocommerce-meetup-organizer-handbook-2026-10-23.md",
+        "sources/web/models/fosdem-2026-fringe.md",
+        "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
+      ],
+      "tokens": 3098,
+      "consumed_by": [
+        "org/adrs/make-it-yours-hub.md"
+      ]
+    },
+    {
       "path": "org/prds/operations-and-the-day.md",
       "title": "Operations: volunteers who own a domain, the rules, and the day",
       "kind": "initiative",
@@ -2098,6 +2189,122 @@
       "tokens": 3481
     },
     {
+      "path": "org/tuzla/venues-for-hosts.md",
+      "title": "Places in Tuzla where hosts could run an event",
+      "kind": "reference",
+      "status": "living",
+      "updated": "2026-10-23",
+      "confidence": "low",
+      "depends_on": [
+        "org/tuzla.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-23--org--extendable-and-each-edition.md",
+        "sources/conversations/2026-10-23--org--host-guides-and-venues.md",
+        "sources/conversations/2026-10-23--org--reserved-venues-and-explore.md",
+        "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
+        "sources/conversations/2026-10-23--org--venues-approved.md",
+        "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
+        "sources/web/osm/tuzla-venues-2026-10-23.json",
+        "sources/web/osm/tuzla-venue-geocodes-2026-10-23.json",
+        "sources/web/venue/nptz-kontakt-2026-10-23.md",
+        "sources/web/venue/nptz-pozoriste-sala-2026-10-23.md",
+        "sources/web/venue/nptz-zahtjev-za-koristenje-sale-2026-10-23.md",
+        "sources/web/venue/nptz-arlekin-obnova-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-fst-official-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-fst-news-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-go-bosnia-guide-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-tztz-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-klix-2016-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-klix-2018-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-rtvslon-koncert-violine-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-rtvslon-predstava-casa-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-rtvslon-sajam-djulistan-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-kultura-ba-sajam-knjige-2026-10-23.md",
+        "sources/web/venue/hkc-sveti-franjo-hrvatski-glasnik-konzulat-2023-2026-10-23.md",
+        "sources/web/venue/czk-o-domu-mladih-2026-10-23.md",
+        "sources/web/venue/czk-dom-mladih-2026-10-23.md",
+        "sources/web/venue/tztz-dom-mladih-tuzla-bs-2026-10-23.md",
+        "sources/web/venue/tuzlainfo-dom-mladih-kamerna-scena-2026-10-23.md",
+        "sources/web/venue/rtvslon-tuzla-string-exhibition-dom-mladih-2026-10-23.md",
+        "sources/web/venue/czk-procedura-prijema-stranaka-2026-10-23.md",
+        "sources/web/venue/czk-kontakt-2026-10-23.md",
+        "sources/web/venue/czk-kaleidoskop-sala-2026-10-23.md",
+        "sources/web/venue/czk-dom-knjizevnosti-2026-10-23.md",
+        "sources/web/venue/czk-atelje-ismet-mujezinovic-2026-10-23.md",
+        "sources/web/venue/tztz-atelje-ismet-mujezinovic-bs-2026-10-23.md",
+        "sources/web/venue/tuzlainfo-atelje-musica-bosnae-basta-2025-2026-10-23.md",
+        "sources/web/venue/rtv7-atelje-price-koje-pjevaju-2026-10-23.md",
+        "sources/web/venue/czk-medunarodna-galerija-portreta-2026-10-23.md",
+        "sources/web/venue/tztz-medunarodna-galerija-portreta-bs-2026-10-23.md",
+        "sources/web/venue/czk-koncert-galerija-portreta-2023-2026-10-23.md",
+        "sources/web/venue/kpm-home-2026-10-23.md",
+        "sources/web/venue/kpm-ethno-bih-2026-2026-10-23.md",
+        "sources/web/venue/kpm-koncert-umjetnicke-muzike-2026-2026-10-23.md",
+        "sources/web/venue/bkc-o-bkc-u-tuzla-2026-10-23.md",
+        "sources/web/venue/bkc-cjenovnik-usluga-2026-10-23.md",
+        "sources/web/venue/bkc-kontakt-2026-10-23.md",
+        "sources/web/venue/nardipub-com-home-2026-10-23.md",
+        "sources/web/venue/iyp-nardi-pub-2026-10-23.md",
+        "sources/web/venue/pivaratuzla-pivnica-taverna-2026-10-23.md",
+        "sources/web/venue/iyp-park-pub-2026-10-23.md",
+        "sources/web/venue/tztz-park-pub-2026-10-23.md",
+        "sources/web/venue/iyp-wine-whiskey-bar-2026-10-23.md",
+        "sources/web/venue/iyp-just-caffe-pub-2026-10-23.md",
+        "sources/web/venue/iyp-jazz-cafe-2026-10-23.md",
+        "sources/web/venue/iyp-cafe-sloboda-2026-10-23.md",
+        "sources/web/venue/tztz-wint-lounge-bar-2026-10-23.md",
+        "sources/web/venue/barista-ba-home-2026-10-23.md",
+        "sources/web/venue/tztz-the-loft-terrace-bar-2026-10-23.md",
+        "sources/web/venue/tztz-st-jamess-irish-pub-2026-10-23.md",
+        "sources/web/venue/tztz-old-story-pub-2026-10-23.md",
+        "sources/web/venue/guest-house-pasha-pubs-in-tuzla-2026-10-23.md",
+        "sources/web/venue/allevents-tuzla-karaoke-2026-10-23.md",
+        "sources/web/venue/karaoke-tuzla-search-extract-2026-10-23.md",
+        "sources/web/venue/iyp-caffe-bar-central-2026-10-23.md",
+        "sources/web/venue/iyp-barok-2026-10-23.md",
+        "sources/web/venue/iyp-coffee-zone-2026-10-23.md",
+        "sources/web/venue/tztz-restoran-zlatnik-2026-10-23.md",
+        "sources/web/venue/iyp-zlatnik-2026-10-23.md",
+        "sources/web/venue/tztz-restoran-heartland-2026-10-23.md",
+        "sources/web/venue/tztz-vinoteka-madeira-2026-10-23.md",
+        "sources/web/venue/tztz-restoran-panonski-lovac-2026-10-23.md",
+        "sources/web/venue/tztz-restaurant-kvin-2026-10-23.md",
+        "sources/web/venue/tztz-restoran-dm-2026-10-23.md",
+        "sources/web/venue/hotelsalis-konferencije-2026-10-23.md",
+        "sources/web/venue/tztz-hotel-miris-dunja-88-2026-10-23.md",
+        "sources/web/venue/tztz-hotel-mellain-2026-10-23.md",
+        "sources/web/venue/mellainhotel-com-home-2026-10-23.md",
+        "sources/web/venue/tztz-hotel-tehnograd-2026-10-23.md",
+        "sources/web/venue/hotel-tehnograd-home-2026-10-23.md",
+        "sources/web/venue/tztz-motel-royal-2026-10-23.md",
+        "sources/web/venue/tztz-hotel-president-2026-10-23.md",
+        "sources/web/venue/hotelvertigos-home-2026-10-23.md",
+        "sources/web/venue/tztz-hotel-dom-penzionera-2026-10-23.md",
+        "sources/web/venue/dompenzionera-iznajmljivanje-sala-2026-10-23.md",
+        "sources/web/venue/hotelsenadodbosne-home-2026-10-23.md",
+        "sources/web/venue/n1-ilincica-adventure-park-2026-10-23.md",
+        "sources/web/venue/nerda-ilincica-opening-2026-10-23.md",
+        "sources/web/venue/tztz-eko-golf-park-2026-10-23.md",
+        "sources/web/venue/tztz-local-tourist-guides-2026-10-23.md",
+        "sources/web/venue/komoot-pd-konjuh-social-space-2026-10-23.md",
+        "sources/web/venue/tf-untz-trust-hackathon-2026-10-23.md",
+        "sources/web/venue/nubt-library-about-2026-10-23.md",
+        "sources/web/venue/mzv-czech-culture-day-tuzla-2026-10-23.md",
+        "sources/web/venue/paragraf-tk-javno-okupljanje-nacrt-2026-10-23.md",
+        "sources/web/venue/tztz-hotel-tuzla.md",
+        "sources/web/venue/tehnopolis-code-hub-tuzla-2025.md",
+        "sources/web/venue/coworker-brdo-tuzla-search-extract.md",
+        "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md",
+        "sources/web/legal/tk-zakon-o-javnom-okupljanju-izmjene-11-15.md"
+      ],
+      "tokens": 4988,
+      "consumed_by": [
+        "org/prds/hosts-hub-guides-and-venues.md"
+      ]
+    },
+    {
       "path": "org/tuzla-images.md",
       "title": "Images of Tuzla for GoatConf: free to use, ask first, and gaps",
       "kind": "reference",
@@ -2291,7 +2498,8 @@
       "tokens": 6571,
       "consumed_by": [
         "org/tuzla-images.md",
-        "org/tuzla/history-and-old-town.md"
+        "org/tuzla/history-and-old-town.md",
+        "org/tuzla/venues-for-hosts.md"
       ]
     }
   ]

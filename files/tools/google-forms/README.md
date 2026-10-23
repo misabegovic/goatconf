@@ -63,6 +63,28 @@ the organiser pays for, events from 2 to 6 June 2027, and code of conduct
 reports read by the organiser alone. The wording is in
 `sources/conversations/2026-10-19--org--forms-and-luma-match-the-site.md`.
 
+## Wording to change for Make it yours, 2026-10-23
+
+The organiser makes this edit in the form, since the form is public. Hosts
+may now run a short, free event in an hour off on Thursday or Friday, and
+the page they read is Make it yours (ADR
+`wiki/org/adrs/make-it-yours-hub.md`). Suggested wording:
+
+- **Description:** "A meetup, a dinner, a community trip, a walk, a hike, a
+  live podcast, a karaoke night or a hackathon, any day from 2 to 6 June
+  2027: an evening, Saturday, or a short free event in an hour off between
+  sessions. You run it and cover its costs. If we accept it, it becomes
+  part of GoatConf 2027: it goes on https://goatconf.com and the program,
+  and we send people your way. We accept what follows the charter and the
+  code of conduct and fits the program. How to host, and places in Tuzla:
+  https://goatconf.com/extend"
+- **Start question:** "Starts: date and time (between 2 and 6 June 2027. On
+  Thursday 3 and Friday 4 June, only before or after the day's sessions, or
+  in an hour off: Thursday 11:00, 13:00 or 15:00, Friday 10:30 or 14:30)"
+
+The old address in the description, goatconf.com/add, still works: it sends
+people on to /extend.
+
 ## After a response
 
 - **A talk is accepted:** add a record to `files/program/` (see its

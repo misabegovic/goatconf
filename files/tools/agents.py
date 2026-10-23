@@ -66,7 +66,7 @@ FACTS = [
 ]
 # The pages an agent most likely needs first, in this order; the rest follow.
 FIRST = ["index.html", "program.html", "register.html", "talk.html", "travel.html", "speakers.html",
-         "add.html", "supporters.html", "extensions.html", "charter.html",
+         "extend.html", "supporters.html", "charter.html",
          "code-of-conduct.html", "access.html", "contact.html", "brand.html"]
 START, END = blocks.marks("event-data", "tools/agents.py")
 
@@ -79,7 +79,8 @@ def url(name: str) -> str:
 
 
 def pages() -> list[Path]:
-    found = {p.name: p for p in SITE.glob("*.html") if not p.name.startswith("_") and p.name != "404.html"}
+    found = {p.name: p for p in SITE.glob("*.html")
+             if not p.name.startswith("_") and p.name != "404.html" and p.name not in extensions.MOVED}
     return [found[n] for n in FIRST if n in found] + sorted((p for n, p in found.items() if n not in FIRST), key=lambda p: p.name)
 
 

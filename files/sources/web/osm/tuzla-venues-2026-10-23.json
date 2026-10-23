@@ -1,0 +1,827 @@
+{
+"source": "OpenStreetMap, via the Overpass API mirror https://overpass.kumi.systems/api/interpreter (overpass-api.de reset the connection), fetched 2026-10-23",
+"licence": "Open Database License (ODbL) 1.0, https://www.openstreetmap.org/copyright; attribution: © OpenStreetMap contributors",
+"query": "[out:json][timeout:60];(  nwr(44.515,18.640,44.560,18.720)[\"amenity\"~\"theatre|arts_centre|community_centre|cinema|events_venue|conference_centre|nightclub|library|place_of_worship|pub|bar|biergarten\"];  nwr(44.515,18.640,44.560,18.720)[\"tourism\"~\"museum|gallery|attraction\"];  nwr(44.515,18.640,44.560,18.720)[\"leisure\"~\"park\"][\"name\"];);out center tags;",
+"note": "Named elements only. For ways and relations the point is the centre Overpass computed. Only the element id, the point and a few tags are kept, rounded to six decimals.",
+"elements": [
+{
+"type": "node",
+"id": 440831780,
+"lat": 44.536572,
+"lon": 18.677301,
+"tags": {
+"amenity": "theatre",
+"name": "Narodno pozorište Tuzla",
+"wikidata": "Q60215275"
+}
+},
+{
+"type": "node",
+"id": 1343820577,
+"lat": 44.535937,
+"lon": 18.6871,
+"tags": {
+"addr:housenumber": "13",
+"addr:street": "II Tuzlanske brigade",
+"name": "Međunarodna galerija portreta",
+"tourism": "gallery"
+}
+},
+{
+"type": "node",
+"id": 1852608378,
+"lat": 44.534893,
+"lon": 18.689597,
+"tags": {
+"addr:housenumber": "165",
+"addr:street": "Maršala Tita",
+"amenity": "pub",
+"name": "Pivnica Taverna",
+"website": "http://www.pivaratuzla.ba"
+}
+},
+{
+"type": "node",
+"id": 2178226137,
+"lat": 44.531772,
+"lon": 18.688036,
+"tags": {
+"amenity": "bar",
+"name": "Club VIva",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 2258139848,
+"lat": 44.535938,
+"lon": 18.686841,
+"tags": {
+"addr:housenumber": "2",
+"amenity": "community_centre",
+"name": "JU Dom mladih Tuzla"
+}
+},
+{
+"type": "node",
+"id": 2258145581,
+"lat": 44.539938,
+"lon": 18.682553,
+"tags": {
+"name": "Slani bunar",
+"tourism": "attraction"
+}
+},
+{
+"type": "node",
+"id": 2617044103,
+"lat": 44.538641,
+"lon": 18.676332,
+"tags": {
+"amenity": "bar",
+"name": "CheckPoint"
+}
+},
+{
+"type": "node",
+"id": 2700666482,
+"lat": 44.536521,
+"lon": 18.677633,
+"tags": {
+"amenity": "cinema",
+"name": "Kino Kaleidoskop"
+}
+},
+{
+"type": "node",
+"id": 2793689638,
+"lat": 44.557034,
+"lon": 18.702969,
+"tags": {
+"amenity": "place_of_worship",
+"denomination": "roman_catholic",
+"name": "Franjevački samostan Gradovrh"
+}
+},
+{
+"type": "node",
+"id": 4099690384,
+"lat": 44.536064,
+"lon": 18.686725,
+"tags": {
+"addr:housenumber": "2",
+"addr:street": "Dragiše Trifkovića",
+"amenity": "nightclub",
+"name": "Club Palma"
+}
+},
+{
+"type": "node",
+"id": 4108225609,
+"lat": 44.537133,
+"lon": 18.681062,
+"tags": {
+"amenity": "arts_centre",
+"name": "Atelje Ismet Mujezinović"
+}
+},
+{
+"type": "node",
+"id": 4224960592,
+"lat": 44.52664,
+"lon": 18.652883,
+"tags": {
+"name": "Nura",
+"tourism": "attraction"
+}
+},
+{
+"type": "node",
+"id": 5302551721,
+"lat": 44.536312,
+"lon": 18.678945,
+"tags": {
+"amenity": "pub",
+"name": "Old Story Pub",
+"opening_hours": "Mo-Su 08:00-00:00"
+}
+},
+{
+"type": "node",
+"id": 5564226735,
+"lat": 44.532494,
+"lon": 18.65226,
+"tags": {
+"amenity": "cinema",
+"name": "CineStar"
+}
+},
+{
+"type": "node",
+"id": 10725818318,
+"lat": 44.537306,
+"lon": 18.679142,
+"tags": {
+"addr:housenumber": "bb",
+"addr:street": "Đorđa Mihajlovića",
+"amenity": "bar",
+"name": "Lounge Bar Hugo's",
+"opening_hours": "Mo-Su 07:00-23:00"
+}
+},
+{
+"type": "node",
+"id": 11208629156,
+"lat": 44.538246,
+"lon": 18.676468,
+"tags": {
+"name": "Dom Književnosti Tuzla",
+"opening_hours": "Mo-Fr 07:30-16:00",
+"tourism": "museum"
+}
+},
+{
+"type": "node",
+"id": 11357302083,
+"lat": 44.537278,
+"lon": 18.663369,
+"tags": {
+"name": "25-26",
+"tourism": "attraction"
+}
+},
+{
+"type": "node",
+"id": 11428785613,
+"lat": 44.539061,
+"lon": 18.680943,
+"tags": {
+"amenity": "bar",
+"name": "Beach Bar The Beach"
+}
+},
+{
+"type": "node",
+"id": 11428785624,
+"lat": 44.539086,
+"lon": 18.679482,
+"tags": {
+"amenity": "bar",
+"name": "Beach Bar Meduza"
+}
+},
+{
+"type": "node",
+"id": 11428814647,
+"lat": 44.537703,
+"lon": 18.676749,
+"tags": {
+"name": "Biološka zbirka",
+"opening_hours": "Mo-Fr 10:00-14:00",
+"tourism": "museum"
+}
+},
+{
+"type": "node",
+"id": 11447389080,
+"lat": 44.538738,
+"lon": 18.676535,
+"tags": {
+"name": "Kreativna radionica",
+"opening_hours": "Mo-Sa 11:00-18:00",
+"tourism": "gallery"
+}
+},
+{
+"type": "node",
+"id": 12732913102,
+"lat": 44.531865,
+"lon": 18.687704,
+"tags": {
+"name": "Tuzlanska Koza",
+"tourism": "attraction"
+}
+},
+{
+"type": "relation",
+"id": 9715368,
+"lat": 44.542139,
+"lon": 18.674064,
+"tags": {
+"addr:housenumber": "21",
+"addr:street": "Džindić Mahala",
+"name": "Museum of Eastern Bosnia",
+"opening_hours": "Mo-Fr 08:00-15:00",
+"tourism": "museum"
+}
+},
+{
+"type": "relation",
+"id": 12262433,
+"lat": 44.537805,
+"lon": 18.688923,
+"tags": {
+"leisure": "park",
+"name": "Park Slana Banja"
+}
+},
+{
+"type": "way",
+"id": 28176143,
+"lat": 44.538293,
+"lon": 18.678599,
+"tags": {
+"leisure": "park",
+"name": "Centralni park",
+"wikidata": "Q61792935"
+}
+},
+{
+"type": "way",
+"id": 28176266,
+"lat": 44.53949,
+"lon": 18.680806,
+"tags": {
+"leisure": "water_park",
+"name": "Panonska jezera",
+"website": "https://panonika.ba/",
+"wheelchair": "limited"
+}
+},
+{
+"type": "way",
+"id": 29292844,
+"lat": 44.535428,
+"lon": 18.68005,
+"tags": {
+"leisure": "park",
+"name": "Park Cipelići",
+"wikidata": "Q61927149"
+}
+},
+{
+"type": "way",
+"id": 29325876,
+"lat": 44.538127,
+"lon": 18.675707,
+"tags": {
+"name": "Muzej Soni trg",
+"tourism": "museum"
+}
+},
+{
+"type": "way",
+"id": 32647174,
+"lat": 44.533597,
+"lon": 18.654931,
+"tags": {
+"amenity": "community_centre",
+"name": "Bosanski kulturni centar"
+}
+},
+{
+"type": "way",
+"id": 35391622,
+"lat": 44.539558,
+"lon": 18.677211,
+"tags": {
+"leisure": "park",
+"name": "Park Delalića"
+}
+},
+{
+"type": "way",
+"id": 175741918,
+"lat": 44.540427,
+"lon": 18.681864,
+"tags": {
+"name": "Slani Vodopadi Panonskih Jezera",
+"tourism": "attraction"
+}
+},
+{
+"type": "way",
+"id": 192737579,
+"lat": 44.543846,
+"lon": 18.664517,
+"tags": {
+"amenity": "place_of_worship",
+"denomination": "sunni",
+"name": "Džamija i kulturno-obrazovni centar Amber-hatun",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 196706245,
+"lat": 44.534836,
+"lon": 18.686519,
+"tags": {
+"addr:housenumber": "149",
+"addr:street": "Maršala Tita",
+"amenity": "public_building",
+"name": "Obdanište"
+}
+},
+{
+"type": "way",
+"id": 198439977,
+"lat": 44.52813,
+"lon": 18.694726,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Džamija sluge dvaju harema Kralj Abdullah Bih Abdulah Aziz Ali Saud",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 198648733,
+"lat": 44.536371,
+"lon": 18.679373,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Gazi Turali-begova (Poljska) džamija",
+"religion": "muslim",
+"wikidata": "Q13081933"
+}
+},
+{
+"type": "way",
+"id": 198649455,
+"lat": 44.5375,
+"lon": 18.679373,
+"tags": {
+"addr:housenumber": "7",
+"addr:street": "Mihajla i Živka Crnogorčevića",
+"amenity": "library",
+"name": "Biblioteka „Derviš Sušić“ Tuzla",
+"website": "https://nubt.ba/"
+}
+},
+{
+"type": "way",
+"id": 217138362,
+"lat": 44.534473,
+"lon": 18.688687,
+"tags": {
+"amenity": "public_building",
+"name": "Gruntovnica"
+}
+},
+{
+"type": "way",
+"id": 217149831,
+"lat": 44.535778,
+"lon": 18.682159,
+"tags": {
+"amenity": "public_building",
+"name": "Zatvor"
+}
+},
+{
+"type": "way",
+"id": 220229331,
+"lat": 44.535725,
+"lon": 18.695225,
+"tags": {
+"amenity": "public_building",
+"name": "Institut za medicinsko vještačenje"
+}
+},
+{
+"type": "way",
+"id": 220229475,
+"lat": 44.535937,
+"lon": 18.69558,
+"tags": {
+"amenity": "public_building",
+"name": "Sekretarijat odbrane"
+}
+},
+{
+"type": "way",
+"id": 220841624,
+"lat": 44.539974,
+"lon": 18.67344,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Atik, Behram-begova džamija",
+"religion": "muslim",
+"wikidata": "Q13081290"
+}
+},
+{
+"type": "way",
+"id": 263100595,
+"lat": 44.538388,
+"lon": 18.6542,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Džamija Behram-begove medrese",
+"religion": "muslim",
+"wikidata": "Q18210063"
+}
+},
+{
+"type": "way",
+"id": 265637905,
+"lat": 44.519888,
+"lon": 18.684552,
+"tags": {
+"addr:street": "Orašje",
+"amenity": "place_of_worship",
+"denomination": "roman_catholic",
+"name": "Rimokatolička crkva svetog Ilije",
+"religion": "christian"
+}
+},
+{
+"type": "way",
+"id": 272039242,
+"lat": 44.539771,
+"lon": 18.682966,
+"tags": {
+"name": "Geološki muzej",
+"tourism": "museum"
+}
+},
+{
+"type": "way",
+"id": 366008959,
+"lat": 44.537232,
+"lon": 18.673377,
+"tags": {
+"addr:housenumber": "1",
+"addr:street": "Jalska",
+"amenity": "place_of_worship",
+"name": "Jalska (Mehmedagina) džamija",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 366009832,
+"lat": 44.538714,
+"lon": 18.675811,
+"tags": {
+"amenity": "place_of_worship",
+"denomination": "sunni",
+"name": "Čaršijska (Hadži Hasanova) džamija",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 366197055,
+"lat": 44.536115,
+"lon": 18.670972,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Brđanska džamija",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 373818203,
+"lat": 44.54504,
+"lon": 18.659574,
+"tags": {
+"leisure": "park",
+"name": "Dragodol"
+}
+},
+{
+"type": "way",
+"id": 390709470,
+"lat": 44.537938,
+"lon": 18.679931,
+"tags": {
+"amenity": "place_of_worship",
+"denomination": "orthodox",
+"name": "Hram Uspenja Presvete Bogorodice",
+"religion": "christian",
+"wikidata": "Q61363187"
+}
+},
+{
+"type": "way",
+"id": 407740271,
+"lat": 44.536751,
+"lon": 18.667997,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Mejdanska (Dželal vaiz Mehmed-Ali) džamija",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 407784442,
+"lat": 44.530607,
+"lon": 18.715363,
+"tags": {
+"addr:street": "Žarka Vukovića Pucara",
+"leisure": "park",
+"name": "Park Slavinovići"
+}
+},
+{
+"type": "way",
+"id": 407868684,
+"lat": 44.541164,
+"lon": 18.678262,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Džindijska (Huseina Čauša) džamija",
+"religion": "muslim",
+"wikidata": "Q13082082"
+}
+},
+{
+"type": "way",
+"id": 408287832,
+"lat": 44.537023,
+"lon": 18.672966,
+"tags": {
+"addr:housenumber": "2",
+"addr:street": "Akifa Šeremeta",
+"amenity": "place_of_worship",
+"denomination": "Krstjanska",
+"name": "Hiža",
+"religion": "christian"
+}
+},
+{
+"type": "way",
+"id": 408514838,
+"lat": 44.536902,
+"lon": 18.718758,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Džamija Sepetari",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 409435914,
+"lat": 44.522448,
+"lon": 18.712837,
+"tags": {
+"amenity": "place_of_worship",
+"denomination": "sunni",
+"name": "Svijetla džamija",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 409576465,
+"lat": 44.529468,
+"lon": 18.646261,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Džamija Mladije",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 410006002,
+"lat": 44.53831,
+"lon": 18.64099,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Džamija Moluhe",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 410758045,
+"lat": 44.524569,
+"lon": 18.71907,
+"tags": {
+"leisure": "park",
+"name": "Šumski park Slavinovići"
+}
+},
+{
+"type": "way",
+"id": 410798940,
+"lat": 44.550407,
+"lon": 18.666294,
+"tags": {
+"amenity": "place_of_worship",
+"denomination": "sunni",
+"name": "Džamija Tušanj",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 411691942,
+"lat": 44.55116,
+"lon": 18.692028,
+"tags": {
+"amenity": "place_of_worship",
+"name": "Hadžijska džamija",
+"religion": "muslim"
+}
+},
+{
+"type": "way",
+"id": 435770623,
+"lat": 44.532588,
+"lon": 18.705353,
+"tags": {
+"leisure": "park",
+"name": "Park Sjenjak"
+}
+},
+{
+"type": "way",
+"id": 438361049,
+"lat": 44.531965,
+"lon": 18.698588,
+"tags": {
+"leisure": "park",
+"name": "Park Sjenjak"
+}
+},
+{
+"type": "way",
+"id": 438490177,
+"lat": 44.53219,
+"lon": 18.70387,
+"tags": {
+"addr:street": "Ismeta Mujezinovića",
+"leisure": "park",
+"name": "Veliki park Sjenjak",
+"opening_hours": "24/7"
+}
+},
+{
+"type": "way",
+"id": 468713694,
+"lat": 44.535803,
+"lon": 18.695812,
+"tags": {
+"leisure": "park",
+"name": "Garnizonski park"
+}
+},
+{
+"type": "way",
+"id": 659271920,
+"lat": 44.529496,
+"lon": 18.717401,
+"tags": {
+"leisure": "park",
+"name": "Školski Park"
+}
+},
+{
+"type": "way",
+"id": 659271922,
+"lat": 44.53845,
+"lon": 18.681943,
+"tags": {
+"leisure": "park",
+"name": "Arheološki park"
+}
+},
+{
+"type": "way",
+"id": 659275084,
+"lat": 44.53818,
+"lon": 18.691543,
+"tags": {
+"leisure": "park",
+"name": "Park Gradina"
+}
+},
+{
+"type": "way",
+"id": 666774878,
+"lat": 44.538295,
+"lon": 18.67173,
+"tags": {
+"amenity": "place_of_worship",
+"denomination": "roman_catholic",
+"name": "crkva svetih Petra i Pavla",
+"religion": "christian"
+}
+},
+{
+"type": "way",
+"id": 981153400,
+"lat": 44.524646,
+"lon": 18.688672,
+"tags": {
+"leisure": "park",
+"name": "Joha"
+}
+},
+{
+"type": "way",
+"id": 1122761639,
+"lat": 44.53173,
+"lon": 18.699797,
+"tags": {
+"leisure": "dog_park",
+"name": "Park za pse",
+"website": "https://www.komunalac.com.ba/",
+"wheelchair": "no"
+}
+},
+{
+"type": "way",
+"id": 1209796235,
+"lat": 44.538162,
+"lon": 18.688972,
+"tags": {
+"amenity": "place_of_worship",
+"denomination": "orthodox",
+"name": "Saint George",
+"religion": "christian",
+"wikidata": "Q61363214"
+}
+},
+{
+"type": "way",
+"id": 1209849700,
+"lat": 44.538591,
+"lon": 18.675523,
+"tags": {
+"name": "Muzej bosanskog jezika",
+"tourism": "museum"
+}
+},
+{
+"type": "way",
+"id": 1236439852,
+"lat": 44.536206,
+"lon": 18.696786,
+"tags": {
+"leisure": "park",
+"name": "Spomen-park branilaca grada 15. maja",
+"opening_hours": "24/7"
+}
+},
+{
+"type": "way",
+"id": 1436142586,
+"lat": 44.532226,
+"lon": 18.670711,
+"tags": {
+"amenity": "place_of_worship",
+"denomination": "catholic",
+"name": "Rimokatolička Kapela Svetog Ilije - Brdo",
+"religion": "christian"
+}
+}
+]
+}

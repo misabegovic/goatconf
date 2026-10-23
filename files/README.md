@@ -31,7 +31,7 @@ home described above.
 - `wiki/`: the synthesis; `wiki/index.md` is the home.
 - `log/log.md`: the operations log.
 - `site/`: the website, plain HTML and CSS, published at goatconf.com on GitHub Pages (see `SITE.md`).
-- `extensions/`: one file per extension people add around the conference (see `extensions/README.md`).
+- `extensions/`: one file per extension people add around the conference (see `extensions/README.md`); they and `places/venues.yml`, the places in Tuzla a host could ask, build the Make it yours page.
 - `program/`, `speakers/`, `supporters/`: one file per accepted session, speaker and supporter, built into the site (each folder has a `README.md`).
 - `places/places.yml`: the places to eat and stay shown on the travel page.
 - `forms.yml`: the addresses of the Google Forms and the Luma event the site links to.

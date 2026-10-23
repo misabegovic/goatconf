@@ -391,7 +391,7 @@ def page() -> str:
 {sat_items}
 {sat_open}
   </ul>
-  <p class="copy"><a class="go go--ink" href="add.html">Propose something for Saturday</a></p>
+  <p class="copy"><a class="go go--ink" href="extend.html">Propose something for Saturday</a></p>
 </section>
 {around_html}""",
         "files/tools/program.py build from files/program/*.md and files/extensions/*.md")

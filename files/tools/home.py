@@ -87,7 +87,7 @@ def days() -> str:
                              '<small>A day at the lakes and the goat hunt, planned by us, plus what people add.</small>'
                              + added(ext.get(sat, []))))
     outside = [e for d, evs in ext.items() if d not in program.DAY_PLAN and d != sat and WEEK[0] <= d <= WEEK[1] for e in evs]
-    items.append('    <li class="slots__wide"><a class="slot slot--link slot--open" href="add.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+    items.append('    <li class="slots__wide"><a class="slot slot--link slot--open" href="extend.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
                  '<span class="num num--printed">0</span><strong>Your event, any day from 2 to 6 June</strong>'
                  '<small>Anything you would like to run for the people who come. You run it, and once we accept it, it is on the program.</small>'
                  + added(outside) + '<span class="stamp">Yours?</span></a></li>')
@@ -166,7 +166,7 @@ def kinds_block() -> str:
     kinds = []
     for kind in HOME_KINDS:
         label = "Something else?" if kind == "other" else extensions.KINDS[kind]
-        kinds.append(f'    <li><a class="slot slot--kind slot--link" href="add.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+        kinds.append(f'    <li><a class="slot slot--kind slot--link" href="extend.html?kind={kind}#where"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
                      f'<span class="num num--printed">0</span><strong>{label}</strong><span class="nameline" aria-hidden="true"></span><span class="stamp">Yours?</span></a></li>')
     return (accepted + f'  <p class="copy">{extensions.MORE}</p>\n'
             '  <ul class="slots slots--kinds" aria-label="Kinds of events you can propose">\n' + "\n".join(kinds) + "\n  </ul>")

@@ -1,0 +1,199 @@
+{
+ "source": "OpenStreetMap Nominatim search (https://nominatim.openstreetmap.org/search), one query per address, fetched 2026-10-23",
+ "licence": "Open Database License (ODbL) 1.0, https://www.openstreetmap.org/copyright; attribution: © OpenStreetMap contributors",
+ "note": "First match only, limited to Bosnia and Herzegovina. straight_line_m_from_ipi is computed by the agent from IPI Academy at 44.5404, 18.6738 (places/places.yml), straight line, not a walking route. A street-level match (no house number) gives the street's point, not the building. 'Soli 4' matched a place in Obod, Mezgraja, which may not be Hotel Salis. Queries with result null found nothing.",
+ "results": [
+  {
+   "query": "Privredna komora Tuzlanskog kantona, Tuzla",
+   "result": null
+  },
+  {
+   "query": "Hadžibakirbega Tuzlića 3, Tuzla",
+   "result": null
+  },
+  {
+   "query": "Klosterska 19, Tuzla",
+   "display_name": "19, Klosterska, Goli brijeg, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 408920229,
+   "lat": 44.537146,
+   "lon": 18.681045,
+   "straight_line_m_from_ipi": 679
+  },
+  {
+   "query": "Pozorišna 4, Tuzla",
+   "display_name": "JU Narodno pozorište Tuzla, 4, Pozorišna, Stari grad, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 365974810,
+   "lat": 44.53651,
+   "lon": 18.677225,
+   "straight_line_m_from_ipi": 511
+  },
+  {
+   "query": "Mije Keroševića Guje 3, Tuzla",
+   "display_name": "Mije Keroševića Guje, Irac, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 23892957,
+   "lat": 44.533176,
+   "lon": 18.654281,
+   "straight_line_m_from_ipi": 1743
+  },
+  {
+   "query": "Dragiše Trifkovića 2, Tuzla",
+   "display_name": "JU Dom mladih Tuzla, 2, Dragiše Trifkovića, Bulevar, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "node",
+   "osm_id": 2258139848,
+   "lat": 44.535938,
+   "lon": 18.686841,
+   "straight_line_m_from_ipi": 1147
+  },
+  {
+   "query": "Jevrejska, Tuzla",
+   "display_name": "Jevrejska, Stari grad, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 406984139,
+   "lat": 44.537824,
+   "lon": 18.676442,
+   "straight_line_m_from_ipi": 355
+  },
+  {
+   "query": "Maršala Tita 163, Tuzla",
+   "display_name": "163, Maršala Tita, Topolice, Bulevar, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "node",
+   "osm_id": 4097568557,
+   "lat": 44.534993,
+   "lon": 18.68907,
+   "straight_line_m_from_ipi": 1351
+  },
+  {
+   "query": "Đorđa Mihajlovića 4, Tuzla",
+   "display_name": "Zlatarna Korzo 2, 4, Đorđa Mihajlovića, Stari grad, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "node",
+   "osm_id": 13852960794,
+   "lat": 44.537158,
+   "lon": 18.678292,
+   "straight_line_m_from_ipi": 507
+  },
+  {
+   "query": "Solni trg, Tuzla",
+   "display_name": "Solni trg, Stari grad, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 29293113,
+   "lat": 44.53829,
+   "lon": 18.675813,
+   "straight_line_m_from_ipi": 284
+  },
+  {
+   "query": "Kazan mahala, Tuzla",
+   "display_name": "Kazan mahala, Goli brijeg, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 425098591,
+   "lat": 44.535997,
+   "lon": 18.678755,
+   "straight_line_m_from_ipi": 628
+  },
+  {
+   "query": "Goli brijeg, Tuzla",
+   "display_name": "Goli brijeg, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "node",
+   "osm_id": 3700169455,
+   "lat": 44.534329,
+   "lon": 18.678175,
+   "straight_line_m_from_ipi": 759
+  },
+  {
+   "query": "Šetalište Slana banja, Tuzla",
+   "display_name": "Šetalište Slana banja, Trnovac, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 723399394,
+   "lat": 44.53719,
+   "lon": 18.684234,
+   "straight_line_m_from_ipi": 901
+  },
+  {
+   "query": "Akifa Šeremeta 2, Tuzla",
+   "result": null
+  },
+  {
+   "query": "ZAVNOBiH-a 13, Tuzla",
+   "display_name": "13, ZAVNOBiH-a, Zlokovac, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "node",
+   "osm_id": 4096815993,
+   "lat": 44.531495,
+   "lon": 18.687797,
+   "straight_line_m_from_ipi": 1487
+  },
+  {
+   "query": "Aleja Alije Izetbegovića 3, Tuzla",
+   "display_name": "Aleja Alije Izetbegovića, Topolice, Bulevar, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 51003676,
+   "lat": 44.533191,
+   "lon": 18.692721,
+   "straight_line_m_from_ipi": 1700
+  },
+  {
+   "query": "Soli 4, Tuzla",
+   "display_name": "4, Obod, Mezgraja, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75213, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 1138958983,
+   "lat": 44.618374,
+   "lon": 18.620981,
+   "straight_line_m_from_ipi": 9627
+  },
+  {
+   "query": "Bosne srebrene 105, Tuzla",
+   "display_name": "105, Bosne Srebrene, Mejdan, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 410455921,
+   "lat": 44.534742,
+   "lon": 18.659221,
+   "straight_line_m_from_ipi": 1316
+  },
+  {
+   "query": "Fra Grge Martića 30, Tuzla",
+   "display_name": "Fra Grge Martića, Brdo, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 33491210,
+   "lat": 44.539149,
+   "lon": 18.671761,
+   "straight_line_m_from_ipi": 213
+  },
+  {
+   "query": "Turalibegova 34, Tuzla",
+   "display_name": "34, Turalibegova, Goli brijeg, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 390902352,
+   "lat": 44.536383,
+   "lon": 18.678908,
+   "straight_line_m_from_ipi": 603
+  },
+  {
+   "query": "Ilinčica, Tuzla",
+   "display_name": "Ilinčica, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "node",
+   "osm_id": 2715328675,
+   "lat": 44.524915,
+   "lon": 18.674544,
+   "straight_line_m_from_ipi": 1723
+  },
+  {
+   "query": "Univerzitetska 8, Tuzla",
+   "display_name": "Univerzitetska, Mejdan, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "way",
+   "osm_id": 1247313009,
+   "lat": 44.538375,
+   "lon": 18.665168,
+   "straight_line_m_from_ipi": 720
+  },
+  {
+   "query": "Franjevačka 26, Tuzla",
+   "display_name": "26, Franjevačka, Brdo, Tuzla, Grad Tuzla, Tuzlanski kanton, Federacija Bosne i Hercegovine, 75000, Bosna i Hercegovina / Босна и Херцеговина",
+   "osm_type": "node",
+   "osm_id": 6242868243,
+   "lat": 44.538054,
+   "lon": 18.671452,
+   "straight_line_m_from_ipi": 320
+  }
+ ]
+}

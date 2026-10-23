@@ -32,8 +32,7 @@ SITE = ROOT / "site"
 # Every page's footer links, in order. The home page's back cover leaves out
 # Home and names two of them in full.
 LINKS = [("index.html", "Home"), ("program.html", "Program"), ("speakers.html", "Speakers"),
-         ("talk.html", "Propose a session"), ("add.html", "Propose an event"),
-         ("extensions.html", "Events people add"), ("register.html", "Register"),
+         ("talk.html", "Propose a session"), ("extend.html", "Make it yours"), ("register.html", "Register"),
          ("travel.html", "Travel"), ("supporters.html", "Supporters"), ("charter.html", "Charter"),
          ("code-of-conduct.html", "Code of conduct"), ("brand.html", "Brand"),
          ("access.html", "Accessibility"), ("contact.html", "Contact")]

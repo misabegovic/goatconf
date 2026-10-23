@@ -40,7 +40,7 @@ def test_days_link_to_the_program_open_the_evenings_and_list_what_people_add(mon
     assert "Hours off: the cafés on Freedom Square and lunch in town." in html
     assert '<small class="day__added">Added: Ruby &amp; beer, 19:00</small>' in html
     assert '<small class="day__added">Added: Salt lake hike</small>' in html
-    assert html.index("The night before") > html.index('href="add.html"')
+    assert html.index("The night before") > html.index('href="extend.html"')
     assert "Too late" not in html
 
 def test_top_bar_marks_the_current_page_and_replaces_itself():
