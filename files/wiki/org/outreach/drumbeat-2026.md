@@ -2,11 +2,12 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-10-22
+updated: 2026-10-23
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md
   - sources/conversations/2026-10-22--org--cristian-planas-principal-engineer.md
   - sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md
   - sources/conversations/2026-10-20--org--roy-tomeij.md
@@ -117,7 +118,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 - **State:** drafted
 - **Image:** `post-first-speakers-square.png` (LinkedIn, Mastodon), `post-first-speakers-wide.png` (X, Bluesky)
-- **Tag:** each of the seven speakers
+- **Tag:** each of the eight speakers
 - **Before posting:** When it goes, send each speaker their own card (speaker-<name>-square.png) and ask them to share it. Jan Grodowski stays out while his hold is on.
 - **LinkedIn:**
 
@@ -130,16 +131,17 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Amar Mahmutbegović, Co-founder and Head of Engineering at Semblie
   > Cristian Planas, Principal Engineer at Combinaut, author of Rails Scales!
   > Christoph Lipautz, Senior Staff Engineer at Meister
+  > Predrag Radenkovic, CTO at *codeplain
   >
-  > Each has an hour in one of the seven rooms at IPI Academy on 3 or 4 June, and a profile on the site: goatconf.com/speakers
+  > Each has an hour at IPI Academy on 3 or 4 June, and a profile on the site: goatconf.com/speakers
   >
   > More speakers are confirmed as proposals come in, so the call stays open: goatconf.com/talk
 
-- **Short** (215 characters):
+- **Short** (235 characters):
 
-  > The first GoatConf 2027 speakers: Paul Campbell, Roy Tomeij, Carmine Paolino, Dejan Menges, Amar Mahmutbegović, Cristian Planas and Christoph Lipautz, each with an hour in Tuzla on 3 or 4 June. goatconf.com/speakers
+  > The first GoatConf 2027 speakers: Paul Campbell, Roy Tomeij, Carmine Paolino, Dejan Menges, Amar Mahmutbegović, Cristian Planas, Christoph Lipautz and Predrag Radenkovic, each with an hour in Tuzla on 3 or 4 June. goatconf.com/speakers
 
-  Sources: sources/conversations/2026-10-14--org--speaker-order.md, sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md, sources/conversations/2026-10-15--org--hold-jan-grodowski.md, sources/conversations/2026-10-15--org--christoph-lipautz.md.
+  Sources: sources/conversations/2026-10-14--org--speaker-order.md, sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md, sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md, sources/conversations/2026-10-15--org--hold-jan-grodowski.md, sources/conversations/2026-10-15--org--christoph-lipautz.md.
 
 ### Tue 10 Nov 2026, week 5: Propose an event
 

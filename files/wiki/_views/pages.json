@@ -798,12 +798,13 @@
       "title": "The drumbeat, October to December 2026",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-22",
+      "updated": "2026-10-23",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md",
         "sources/conversations/2026-10-22--org--cristian-planas-principal-engineer.md",
         "sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md",
         "sources/conversations/2026-10-20--org--roy-tomeij.md",
@@ -846,7 +847,7 @@
         "sources/conversations/2026-10-12--org--day-chain-and-session-format.md",
         "sources/conversations/2026-10-12--org--two-core-days-and-saturday.md"
       ],
-      "tokens": 3600
+      "tokens": 3627
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -898,12 +899,18 @@
       "title": "The drumbeat, January to March 2027",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-21",
+      "updated": "2026-10-23",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md",
+        "sources/conversations/2026-10-23--org--predrag-radenkovic.md",
+        "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
+        "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md",
+        "sources/web/speakers/thenewstack-codeplain-2026-10-23.md",
+        "sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md",
         "sources/conversations/2026-10-21--org--wroclove-rb-extras.md",
         "sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md",
         "sources/web/supporters/wroclove-rb-about-2026-10-21.md",
@@ -948,19 +955,20 @@
         "sources/web/tuzla/fcdo-bih-entry-requirements.md",
         "sources/conversations/2026-10-13--org--lake-season-opens-1-june.md"
       ],
-      "tokens": 3739
+      "tokens": 3903
     },
     {
       "path": "org/outreach/drumbeat.md",
       "title": "The drumbeat: the weekly posts, from launch to June 2027",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-21",
+      "updated": "2026-10-23",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md",
         "sources/conversations/2026-10-21--org--wroclove-rb-extras.md",
         "sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md",
         "sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md",
@@ -976,7 +984,7 @@
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
         "sources/web/images/food-photos-chosen-2026-10-13.md"
       ],
-      "tokens": 1981
+      "tokens": 1989
     },
     {
       "path": "org/outreach/ipi-proposal.md",
