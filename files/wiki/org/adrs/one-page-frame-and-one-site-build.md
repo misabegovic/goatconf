@@ -2,11 +2,12 @@
 title: "Give every page one shared frame, one marker style and one build, and lint the HTML"
 kind: decision
 status: accepted
-updated: 2026-10-19
+updated: 2026-10-23
 confidence: medium
 depends_on:
   - org/prds/website-and-registration.md
 sources:
+  - sources/conversations/2026-10-23--org--phone-menu.md
   - sources/conversations/2026-10-19--org--site-frame-adr-approved.md
   - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
@@ -152,6 +153,10 @@ On the open questions: the 404 page gets its footer from the frame but keeps
 its own head; the HTML check fails on what it finds and does not yet warn on
 missing image sizes; and the one build leaves the share cards and brand
 files out, as proposed.
+
+## Amendments
+
+- **2026-10-23, a phone menu.** On screens under 48rem the top bar is a pinned single row: the mark, a Register button and a Menu that opens a panel with Program, Speakers, Travel, Supporters, Make it yours and Propose a session. `tools/nav.py` writes both forms of the bar into every page, the wide one shown above 48rem and the phone one below; the menu is a `<details>`, so it opens without a script, and `album.js` closes it on Escape, a tap outside it, or a followed link. Measured before: the phone bar took 149 to 190 px of a 760 px screen and scrolled away; after: 49 px, pinned (source: sources/conversations/2026-10-23--org--phone-menu.md).
 
 ## Related
 

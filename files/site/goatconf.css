@@ -438,7 +438,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .slots--mini .slot--open { padding: 0.9rem 0.9rem 3.3rem; }
 .slot--open .stamp { font-size: 0.9rem; right: 0.6rem; bottom: 0.7rem; }
 .slots--days + .copy { margin-top: 1.6rem; }
-@media (max-width: 47.99rem) { .topbar { position: static; } }
+/* The phone bar is pinned too: the mark, Register and Menu (sources/conversations/2026-10-23--org--phone-menu.md) */
 
 /* Mobile first: the day links, a compact agenda, title-first page heads, compact speaker cards */
 .daynav { position: sticky; top: 3.4rem; z-index: 5; display: flex; gap: 0.5rem; justify-content: center; margin-top: var(--space); margin-bottom: calc(var(--space) * -0.5); padding: 0.5rem; border-radius: 2rem; background: var(--album-night); box-shadow: 0 0 0 100vmax var(--album); clip-path: inset(-0.6rem -100vmax); width: fit-content; }
@@ -672,8 +672,32 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .album-page .slots.slots--venues { grid-template-columns: minmax(0, 28rem); justify-content: center; gap: 1.6rem; }
   .finder { padding: 0.9rem; }
 }
+
+/* The top bar on phones: the mark, Register and a Menu that opens every other link */
+.topbar__phone { display: none; }
+.topbar__menu summary { list-style: none; cursor: pointer; }
+.topbar__menu summary::-webkit-details-marker { display: none; }
+.topbar__close { display: none; }
+.topbar__menu[open] .topbar__open { display: none; }
+.topbar__menu[open] .topbar__close { display: inline; }
 @media (max-width: 47.99rem) {
-  /* Three buttons on one row on a phone: Make it yours, Propose a session, Register */
-  .topbar nav { column-gap: 0.55rem; }
-  .topbar nav a.topbar__cta { padding: 0.35rem 0.45rem; font-size: 0.86rem; letter-spacing: 0.01em; }
+  .topbar { flex-wrap: nowrap; gap: 0.6rem; padding-block: 0.5rem; }
+  .topbar__home { font-size: 1.2rem; gap: 0.45rem; }
+  .topbar__home .topbar__coin { width: 2rem; height: 2rem; }
+  .topbar .topbar__wide { display: none; }
+  .topbar__phone { display: flex; align-items: center; gap: 0.5rem; font-family: var(--display); font-stretch: 85%; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; font-size: 0.95rem; }
+  .topbar__register, .topbar__menu summary { display: block; padding: 0.5rem 0.75rem; border-radius: 0.45rem; text-decoration: none; line-height: 1.1; white-space: nowrap; }
+  .topbar__register { background: var(--yellow); color: var(--album-night); }
+  .topbar__register[aria-current="page"] { box-shadow: inset 0 0 0 2px var(--page); }
+  .topbar__menu summary { box-shadow: inset 0 0 0 2px var(--yellow); color: var(--yellow); }
+  .topbar__menu[open] summary { background: rgb(255 212 0 / 0.14); }
+  .topbar__menu summary:focus-visible, .topbar__register:focus-visible, .topbar__panel a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+  .topbar .topbar__panel { position: absolute; width: auto; align-items: stretch; text-align: left; left: 0; right: 0; top: 100%; display: flex; flex-direction: column; gap: 0; padding: 0.4rem var(--pad) 1.2rem; background: var(--album-night); box-shadow: 0 1.4rem 1.6rem -1rem rgb(0 0 0 / 0.6); font-size: 1.35rem; }
+  .topbar .topbar__panel a { display: block; padding: 0.8rem 0; border-bottom: 1px solid rgb(255 255 255 / 0.12); white-space: normal; }
+  .topbar .topbar__panel a:last-child { border-bottom: 0; }
+}
+@media (max-width: 23.5rem) {
+  /* The narrowest phones: the mark without its year, so Register and Menu fit beside it */
+  .topbar .topbar__year { display: none; }
+  .topbar__register, .topbar__menu summary { padding-inline: 0.6rem; }
 }

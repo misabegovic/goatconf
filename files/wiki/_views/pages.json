@@ -343,18 +343,19 @@
       "title": "Give every page one shared frame, one marker style and one build, and lint the HTML",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-19",
+      "updated": "2026-10-23",
       "confidence": "medium",
       "depends_on": [
         "org/prds/website-and-registration.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-23--org--phone-menu.md",
         "sources/conversations/2026-10-19--org--site-frame-adr-approved.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-07--brain--local-ci-only.md"
       ],
-      "tokens": 2020
+      "tokens": 2187
     },
     {
       "path": "org/adrs/online-supporters-through-the-business.md",
