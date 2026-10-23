@@ -582,3 +582,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-23 merge — PR #158: site: add Make it yours, one hub for hosts with guides, places in Tuzla and the hours off
    diff: 311 files, +8269/-212
    restricted-paths: true
+2026-10-23 merge — PR #159: site: add a phone menu, one pinned row with the mark and a Menu
+   diff: 42 files, +751/-106
+   restricted-paths: true

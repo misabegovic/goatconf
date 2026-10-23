@@ -320,6 +320,7 @@
       "sources": [
         "sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md",
         "sources/conversations/2026-10-23--org--venues-approved.md",
+        "sources/conversations/2026-10-23--org--add-form-updated.md",
         "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
         "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
         "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
@@ -335,25 +336,26 @@
         "sources/web/models/edfringe-how-to-start-making-your-show-accessible-2026-10-23.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 2911
+      "tokens": 3001
     },
     {
       "path": "org/adrs/one-page-frame-and-one-site-build.md",
       "title": "Give every page one shared frame, one marker style and one build, and lint the HTML",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-19",
+      "updated": "2026-10-23",
       "confidence": "medium",
       "depends_on": [
         "org/prds/website-and-registration.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-23--org--phone-menu.md",
         "sources/conversations/2026-10-19--org--site-frame-adr-approved.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
         "sources/conversations/2026-10-07--brain--local-ci-only.md"
       ],
-      "tokens": 2020
+      "tokens": 2250
     },
     {
       "path": "org/adrs/online-supporters-through-the-business.md",

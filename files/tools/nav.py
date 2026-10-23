@@ -47,14 +47,30 @@ def bar(current: str) -> str:
         return f'<a{attrs} href="{href}"{here}>{label}</a>'
     links = "\n    ".join(a(h, l) for h, l in LINKS)
     actions = "\n    ".join(a(h, l, c) for h, l, c in ACTIONS)
+    # On phones the bar is the mark and a Menu that opens every link, the three actions as buttons at the end,
+    # Register filled (the organiser, 2026-10-23, sources/conversations/2026-10-23--org--phone-menu.md).
+    # A <details> opens it without a script.
+    panel = "\n        ".join(a(h, l) for h, l in LINKS)
+    panel_actions = "\n          ".join(a(h, l, "topbar__panel-main" if "topbar__cta--main" in c else "topbar__panel-cta") for h, l, c in ACTIONS)
     return f"""{START}
 <a class="skip" href="#main">Skip to the content</a>
 <header class="topbar">
   <a class="topbar__home" href="index.html" aria-label="GoatConf home"><img class="topbar__coin" src="brand/coin.svg" width="36" height="36" alt="">GoatConf <span class="topbar__year">2027</span></a>
-  <nav aria-label="Main">
+  <nav class="topbar__wide" aria-label="Main">
     {links}
     {actions}
   </nav>
+  <div class="topbar__phone">
+    <details class="topbar__menu">
+      <summary><span class="topbar__open">Menu</span><span class="topbar__close">Close</span></summary>
+      <nav class="topbar__panel" aria-label="Menu">
+        {panel}
+        <p class="topbar__panel-actions">
+          {panel_actions}
+        </p>
+      </nav>
+    </details>
+  </div>
 </header>
 {END}
 """

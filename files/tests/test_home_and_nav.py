@@ -121,3 +121,20 @@ def test_the_follow_links_sit_in_every_footer_and_in_marked_spots_once():
     assert '<a class="follow__link" href="https://x.com/goatconf">' in once and 'aria-hidden="true"' in once
     assert once.index('class="footer__links"') < once.rindex('<p class="follow">') < once.index("</footer>")
     assert nav.place(once, "contact.html") == once
+
+
+def test_the_phone_bar_is_the_mark_and_a_menu_with_every_link():
+    nav = importlib.reload(importlib.import_module("nav"))
+    bar = nav.bar("travel.html")
+    phone = bar[bar.index('<div class="topbar__phone">'):]
+    assert "<details class=\"topbar__menu\">" in phone and "<summary>" in phone
+    assert "topbar__register" not in phone  # Register is in the menu, not beside it
+    panel = phone[phone.index('<nav class="topbar__panel"'):phone.index("</nav>")]
+    for href, label in [*nav.LINKS, ("extend.html", "Make it yours"), ("talk.html", "Propose a session"), ("register.html", "Register")]:
+        assert f'href="{href}"' in panel and label in panel
+    actions = panel[panel.index('<p class="topbar__panel-actions">'):]
+    assert '<a class="topbar__panel-cta" href="extend.html">Make it yours</a>' in actions
+    assert '<a class="topbar__panel-cta" href="talk.html">Propose a session</a>' in actions
+    assert actions.rstrip().endswith('<a class="topbar__panel-main" href="register.html">Register</a>\n        </p>')
+    assert '<a href="travel.html" aria-current="page">Travel</a>' in panel
+    assert 'class="topbar__year">2027<' in bar
