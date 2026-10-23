@@ -11,6 +11,8 @@ sources:
   - sources/web/speakers/thenewstack-codeplain-2026-10-23.md
   - sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md
   - sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md
+  - sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md
+  - sources/web/supporters/codeplain-logo-and-site-2026-10-23.md
   - sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md
 ---
 
@@ -33,13 +35,14 @@ the sources say and what bears on GoatConf.
 - **Role on the site and cards:** "CTO at *codeplain", as the organiser wrote it (source: sources/conversations/2026-10-23--org--predrag-radenkovic.md).
 - **Photo:** his How to Web speaker portrait, 2380 by 2380, resized to 800 by 800; not freely licensed, used on the organiser's decision. His WeAreDevelopers photo carries the *codeplain mark, which the site cannot show (sources: sources/web/speakers/howtoweb-predrag-radenkovic-2026-10-23.md, sources/conversations/2026-10-23--org--predrag-radenkovic.md).
 - **How to support him:** the *codeplain blog and plain-forge (source: sources/web/speakers/thenewstack-codeplain-2026-10-23.md).
-- **Order:** ninth on the speakers list, after Christoph Lipautz; his arrival added an eighth reserved main-hall slot, Friday 15:30, so each day holds four (source: sources/conversations/2026-10-23--org--predrag-radenkovic.md).
+- **Order:** ninth on the speakers list, after Christoph Lipautz (source: sources/conversations/2026-10-23--org--predrag-radenkovic.md). His arrival added an eighth reserved main-hall cell, Friday 15:30, so each day holds four; the cells are general, for whichever confirmed speakers need them, and none is his (source: sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md).
+- **His travel:** *codeplain covers it and is listed as a supporter for "Predrag Radenkovic's travel", the same as Meister for Christoph Lipautz (sources: sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md, sources/web/supporters/codeplain-logo-and-site-2026-10-23.md).
 - **LinkedIn:** the organiser gave linkedin.com/in/pedja-radenkovic, as his WeAreDevelopers profile does; the company's team page links a different address, linkedin.com/in/predrag-radenkovic-07512116 (source: sources/web/speakers/thenewstack-codeplain-2026-10-23.md). The site follows the organiser.
 
 ## Adjacent
 
-- **The workshop:** a workshop in one of the two computer centres may run longer than an hour, on the laptops people bring, and how the program shows such a workshop is not decided yet (source: sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md). The program holds one reserved cell per waiting speaker, so his second session needs its own cell once it has a record (source: sources/conversations/2026-10-23--org--predrag-radenkovic.md).
-- *codeplain is not a GoatConf supporter, and no supporter buys a talk ([Speaker profiles and travel supporters](../adrs/speakers-and-travel-supporters.md)).
+- **The workshop:** a workshop in one of the two computer centres may run longer than an hour, on the laptops people bring, and how the program shows such a workshop is not decided yet (source: sources/conversations/2026-10-19--org--longer-workshops-in-the-computer-centres.md). The program holds one general reserved cell per waiting speaker, so a second session needs a cell of its own once it has a record (source: sources/conversations/2026-10-23--org--predrag-radenkovic.md).
+- Covering his travel buys *codeplain no talk; no supporter buys one ([Speaker profiles and travel supporters](../adrs/speakers-and-travel-supporters.md)).
 - **Nearest topics, for when his sessions have titles:** [Christoph Lipautz](christoph-lipautz.md)'s "Back to the Future", on established practices in the era of agent-based programming (source: sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md), and [Dejan Menges](dejan-menges.md)'s "Teaching Twenty Languages to Describe One System", on structural models of software, among them "code intelligence for agents" (source: sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md).
 
 ## Related

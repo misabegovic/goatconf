@@ -35,7 +35,9 @@ import speakers  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 PAGE = ROOT / "site" / "index.html"
 # The home page plans for eight speakers: two full rows of four on a wide screen,
-# four rows of two on a phone. Places not yet taken invite a proposal.
+# four rows of two on a phone. Places not yet taken invite a proposal, and one
+# "Your session here?" always follows, even when all eight are speakers
+# (sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md).
 SHOWN = 8
 esc = program.esc
 TILTS = (-1.5, 1, -1, 1.5, -0.5, 0.5)
@@ -111,8 +113,8 @@ def speakers_block() -> str:
         talks, detail, known = speakers.sessions_by_speaker(), speakers.sessions_by_speaker(detail=True), speakers.supporters()
         cards = "\n".join([speakers.speaker_card(i, s, m, b, talks.get(s, []), known, (detail.get(s) or [None])[0], anchor=False)
                            for i, (s, (m, b)) in enumerate(people[:SHOWN])]
-                          + [open_place() for _ in range(SHOWN - len(people[:SHOWN]))])
-        more = f'<a class="go go--ink" href="speakers.html">All {len(people)} speakers</a>' if len(people) > SHOWN else '<a class="go go--ink" href="speakers.html">Meet the speakers</a>'
+                          + [open_place() for _ in range(max(1, SHOWN - len(people[:SHOWN])))])
+        more = '<a class="go go--ink" href="speakers.html">View all speakers</a>'
         intro = "The people giving the talks, panels and workshops so far. More are added as proposals are accepted."
     else:
         cards = ('    <li class="slots__wide"><a class="slot slot--link slot--wait" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'

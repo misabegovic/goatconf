@@ -76,7 +76,7 @@ def test_top_bar_fits_a_body_with_attributes_and_names_a_page_without_one():
         raise AssertionError("expected a ValueError")
 
 
-def test_home_plans_eight_places_and_invites_proposals_for_the_open_ones(monkeypatch):
+def test_home_plans_eight_places_and_always_invites_a_proposal(monkeypatch):
     home = importlib.reload(importlib.import_module("home"))
     speakers = importlib.import_module("speakers")
     def people(n):
@@ -84,10 +84,10 @@ def test_home_plans_eight_places_and_invites_proposals_for_the_open_ones(monkeyp
     monkeypatch.setattr(speakers, "speakers", lambda: people(6))
     html = home.speakers_block()
     assert html.count("sticker--speaker") == 6 and html.count("slot--open") == 2
-    assert html.count('href="talk.html"') == 2 and "Meet the speakers" in html
+    assert html.count('href="talk.html"') == 2 and "View all speakers" in html
     monkeypatch.setattr(speakers, "speakers", lambda: people(9))
     html = home.speakers_block()
-    assert html.count("sticker--speaker") == 8 and "slot--open" not in html and "All 9 speakers" in html
+    assert html.count("sticker--speaker") == 8 and html.count("slot--open") == 1 and "View all speakers" in html
     monkeypatch.setattr(speakers, "speakers", lambda: {})
     assert "The first speaker could be you" in home.speakers_block()
 
