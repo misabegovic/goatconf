@@ -1,0 +1,30 @@
+---
+url: http://mellainhotel.com/
+pulled: 2026-10-23
+fetched_via: curl with tags stripped; excerpt verbatim (site navigation dropped) (server answered HTTP 503 but returned the full page)
+source_kind: official-site
+title: "Hotel Mellain — smještaj, wellness, kongres i proslave"
+---
+
+Bosnian-language page. No hall names or seat counts are published. Key lines (translation, not verbatim): business rooms for meetings, conferences and corporate events; enquiries via the contact form stating date, duration and approximate number of participants; the hotel complex has a nightclub "equipped with specialised sound and lighting".
+
+Poslovni prostori
+Kongres, sastanci i korporativni događaji
+Hotelski poslovni prostori namijenjeni su sastancima, konferencijama i korporativnim događajima različitih formata. Uz sam prostor, organizatori mogu planirati i smještaj sudionika unutar istog objekta.
+Zahtjev za ponudu šalje se putem kontakt obrasca; u poruci je korisno navesti datum, trajanje i približan broj sudionika kako bi se prostor mogao prilagoditi programu.
+Pošalji upit
+Okvirni pregled namjene prostora
+FormatNamjenaUz prostor
+SastanakManje radne grupeSmještaj
+KonferencijaPredavanja i paneliWellness
+Korporativni događajProslave i team buildinziDogađaji
+Hotel Mellain smješten je u srcu Tuzle i predstavlja jedinstven spoj luksuznog smještaja, prirodne elegancije i istinskog gostoprimstva. Od trenutka kada zakoračite u predvorje, obavija vas umirujući ugođaj pročišćenih linija, toplih tonova drva i pažljivo osmišljenih detalja koji odražavaju duh suvremenog boutique hotela. Svaki kutak osmišljen je kako bi gostima pružio osjećaj privatnosti i opuštanja, daleko od gradske vreve, a opet dovoljno blizu svim važnim sadržajima koje grad nudi.
+Sobe hotela Mellain uređene su s naglaskom na prostranost, prirodno svjetlo i nenametljivu raskoš. Bez obzira na to dolazite li na kraći gradski posjet, poslovni boravak ili obiteljski odmor, svaki tip smještaja osmišljen je tako da odgovori na različite potrebe gostiju. Meke tkanine, zemljani tonovi i pažljivo odabrani komadi namještaja stvaraju atmosferu profinjene udobnosti, dok veliki prozori otvaraju pogled prema zelenilu koje okružuje hotelski kompleks i doprinosi osjećaju povezanosti s prirodom.
+Wellness i spa zona hotela Mellain osmišljena je kao utočište za tijelo i um. Gosti mogu uživati u unutarnjem bazenu, sauni i prostranoj fitness sali opremljenoj za cjelovit trening. Ambijent odiše smirenošću zahvaljujući prigušenom osvjetljenju, prirodnim materijalima i suptilnim zelenim akcentima koji se provlače kroz cijeli prostor. Nakon napornog dana, uroniti u toplinu bazena ili se prepustiti tišini saune postaje mali ritual koji vraća ravnotežu i obnavlja energiju.
+Kongresni kapaciteti hotela Mellain nude fleksibilne i dobro opremljene prostore za poslovne susrete, seminare i svečane događaje. Dvorane su osmišljene tako da prate suvremene zahtjeve korporativnih klijenata, s kvalitetnom opremom i mogućnošću prilagodbe rasporeda sjedenja. Prirodno svjetlo, decentna zvučna izolacija i nenametljiv dizajn stvaraju ozračje u kojem se sudionici mogu usredotočiti na sadržaj, a istovremeno uživati u ugodnom okruženju koje potiče produktivnost i kreativnu razmjenu ideja.
+Noćni klub unutar hotelskog kompleksa donosi sasvim drugačiju dimenziju boravka i namijenjen je ljubiteljima dobrog provoda. Prostor je opremljen specijaliziranim ozvučenjem i efektnim osvjetljenjem koje stvara jedinstvenu atmosferu na ovim prostorima. Bilo da želite zaplesati do kasnih sati ili jednostavno uživati u glazbi uz piće, klub pruža mjesto gdje se energija grada susreće s profinjenim ugođajem koji Hotel Mellain dosljedno njeguje u svakom svom kutku.
+Vjenčanja u hotelu Mellain ostvaruju se kroz pomno osmišljenu uslugu koja spaja romantiku prirodnog okruženja s besprijekornom organizacijom. Svečane dvorane i vanjske terase pružaju okvir za intimna slavlja ili raskošne proslave, uvijek s naglaskom na individualne želje mladenaca. Zelene površine koje okružuju kompleks, meka svjetlost interijera i diskretna elegancija prostora stvaraju kulisu dostojnu najvažnijeg dana, onakvu kakva se dugo pamti i rado prepričava.
+Gastronomska ponuda hotela prati filozofiju svježih, sezonskih namirnica i brižljivo osmišljenih jelovnika. Restoran s pogledom na zelenilo nudi jela koja spajaju domaću tradiciju s modernim kulinarskim tehnikama, a svaki obrok postaje prilika za uživanje u okusima i mirisima regije. Doručak se poslužuje u opuštenom ritmu, uz dovoljno izbora za sve ukuse, dok večernji ugođaj donosi intimniju atmosferu uz svjetlost svijeća i pažljivo odabranu glazbenu podlogu.
+Posebne sezonske ponude i paketi darivanja osmišljeni su kako bi boravak u hotelu Mellain učinili još primamljivijim tijekom cijele godine. Zimski popusti, blagdanski aranžmani i ljetna iznenađenja donose priliku za opuštanje po izvanrednim uvjetima, uvijek uz onu razinu usluge koju gosti očekuju od hotela ovog ranga. Bez obzira na godišnje doba, svaki posjet može postati poseban događaj ispunjen toplinom, pažnjom i onim sitnim detaljima koji čine veliku razliku.
+Doček Nove godine u hotelu Mellain već je postao prepoznatljiv događaj za sve koji žele na poseban način zakoračiti u novi početak. Luksuzno uređeni prostori, svečana večera i pomno osmišljen glazbeni program stvaraju ugođaj koji nadmašuje očekivanja. Gosti mogu birati između nekoliko različitih aranžmana, a zajedničko svima je onaj osjećaj iščekivanja i radosti koji ispuni svaki kutak hotela dok se odbrojavaju posljednje sekunde stare godine.
+Rezervacija boravka u hotelu Mellain jednostavna je i prilagođena suvremenim navikama gostiju. Bez obzira na to planirate li poslovni put, romantični vikend ili obiteljsko okupljanje, postupak je osmišljen tako da u nekoliko koraka osigurate željeni termin i tip sobe. Svaki upit prima osobnu pažnju, a gosti mogu računati na brze odgovore i fleksibilnost u dogovoru. Jer u hotelu Mellain vjeruju da ljubaznost i efikasnost idu ruku pod ruku od prvog kontakta do trenutka odjave.
