@@ -1,7 +1,7 @@
 ---
 title: "Make it yours: one hub at /extend, built from event and venue records, with guides, filters, photos and the hours off"
 kind: decision
-status: proposed
+status: accepted
 updated: 2026-10-23
 team: organiser
 confidence: medium
@@ -9,6 +9,7 @@ depends_on:
   - org/prds/hosts-hub-guides-and-venues.md
   - org/adrs/extension-slots-and-the-record.md
 sources:
+  - sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md
   - sources/conversations/2026-10-23--org--hosts-hub-approved.md
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
   - sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md
@@ -29,8 +30,9 @@ sources:
 
 Answers [Make it yours: the hosts' hub](../prds/hosts-hub-guides-and-venues.md),
 approved by the organiser on 2026-10-23
-(`sources/conversations/2026-10-23--org--hosts-hub-approved.md`). Proposed;
-the organiser approves it before anything is built.
+(`sources/conversations/2026-10-23--org--hosts-hub-approved.md`). Accepted
+the same day: "Approved, build it"
+(`sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md`).
 
 ## What
 
@@ -176,3 +178,48 @@ point to /extend.
 ## Linked PRD
 
 [Make it yours: the hosts' hub](../prds/hosts-hub-guides-and-venues.md).
+
+## Build notes
+
+**2026-10-23.** Built as decided, on the branch for review before any
+merge, since every merge to `main` publishes the site.
+
+- **The hub** is `site/extend.html`, written by `tools/extensions.py build`
+  from `extensions/*.md` and `places/venues.yml`; `extensions.html` and
+  `add.html` are written by the same build as small pages with a refresh to
+  /extend, a canonical link to it and `noindex`, and `tools/agents.py`
+  leaves them out of llms.txt and the sitemap. Each event's page links back
+  to the hub.
+- **Venue records** are `places/venues.yml`: 33 places from
+  [the research](../tuzla/venues-for-hosts.md), each with its sources, a
+  map point or a sourced distance, the kinds of event it suits, its
+  public contact and an `approved` flag. All 33 start unapproved, since only
+  the organiser sets the flag; the hub says the list is being checked until
+  they do, and `build --all` previews every place. The check fails a record
+  with a missing field, an unknown kind, a missing source or a photo without
+  its record.
+- **Photos:** 24 places have one, in `site/img/venues/` with WebP copies;
+  the originals and their records are in `assets/images/venues/`, and
+  `sources/web/images/venue-photos-2026-10-23.md` lists each one's author,
+  licence or "not freely licensed", page and image address. Eight are
+  freely licensed, from Wikimedia Commons; one is the city's photo of the
+  lakes, given for GoatConf and already on the site; fifteen are venues' or
+  publishers' own. The other nine places show the printed empty slot.
+- **Filters** are `site/extend.js`, stamped like the other assets by
+  `tools/meta.py`. The text box searches the places, not the events, since
+  one event is listed today; filtering events can follow when there are
+  more.
+- **The hours off** come from `DAY_PLAN` in `tools/program.py`: the hour
+  after each slot with a break, less Friday's 12:30. The record check fails
+  an event on 3 or 4 June that overlaps the day's sessions unless it sits
+  inside one hour off and is free, and fails a whole-day record on a core
+  day; the guide says so in words built from the same plan.
+- **Links:** "Make it yours" is in the top bar beside "Propose a session"
+  and in every footer in place of "Propose an event" and "Events people
+  add"; the home page's section is now "Make it yours" and opens with the
+  editions line, its kind slots open the hub with that kind already picked,
+  and the program, charter, contact and talk pages point to /extend.
+- **The form's wording** is drafted in `tools/google-forms/README.md` for
+  the organiser to paste into the public form.
+- **Tests:** `tests/test_extensions.py` covers the hours off, whole core
+  days, venue records and their check, the preview, and the old addresses.

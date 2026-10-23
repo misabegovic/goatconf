@@ -5,6 +5,9 @@ status: living
 updated: 2026-10-23
 confidence: medium
 sources:
+  - sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md
+  - sources/conversations/2026-10-23--org--hosts-hub-approved.md
+  - sources/conversations/2026-10-23--org--hosts-hub-answers.md
   - sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md
   - sources/conversations/2026-10-23--org--predrag-radenkovic.md
   - sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md
@@ -132,6 +135,7 @@ is cited to the sources above; nothing is inferred. Proposals live in the
 - **Speakers dinner:** every accepted speaker is invited, with the date still to come (source: sources/conversations/2026-10-14--org--speakers-dinner.md). From 2026-10-18 the organiser pays for it, whatever the budget, and the talk page says "The organiser pays for it."; until then it was to come from online supporters' money if the budget allowed (source: sources/conversations/2026-10-18--org--organiser-pays-speakers-dinner.md).
 - **First-time speakers:** once their session is picked, a call with the organiser to go through it, and a rehearsal at IPI Academy the day before, Wednesday 2 June 2027, which the organiser confirmed on 2026-10-20 (source: sources/conversations/2026-10-20--org--outside-site-review-followups.md).
 - **Students and volunteers:** the register page welcomes students and asks would-be volunteers to write in through the contact form (source: sources/conversations/2026-10-20--org--outside-site-review-followups.md); the contact page says the same (source: sources/conversations/2026-10-20--org--contact-page-students-and-volunteers.md), and the contact form's "What is it about?" question offers "Volunteering" (source: sources/conversations/2026-10-20--org--contact-form-volunteering.md), and its description names volunteering (source: sources/conversations/2026-10-20--org--contact-form-description-volunteering.md).
+- **Make it yours:** one page, goatconf.com/extend, holds the events people add, guides on how to host and what to run, places in Tuzla a host could ask (each approved by the organiser, none arranged), and the form; the old addresses /extensions and /add send visitors on to it, and the home page and the hub say "Every GoatConf is shaped by who joins it." Hosts may run a short, free event in an hour off on Thursday or Friday, never beside a session and never in Friday's 12:30 hour; the National Theatre and HKC "Sveti Franjo" are "ask GoatConf first" ([the ADR](adrs/make-it-yours-hub.md); sources: sources/conversations/2026-10-23--org--hosts-hub-answers.md, sources/conversations/2026-10-23--org--hosts-hub-approved.md, sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md).
 - **A speaker hotel:** Hotel Vertigos, next door to IPI Academy, is named as one pick on the talk and travel pages, with no block or discount (source: sources/conversations/2026-10-20--org--outside-site-review-followups.md).
 - **Room sizes in the call:** the talk page lists the seven rooms and their seats, generated from the program's room list (source: sources/conversations/2026-10-20--org--outside-site-review-followups.md).
 - **Code-of-conduct contacts:** the organiser alone for now, until IPI names a member of staff (source: sources/conversations/2026-10-14--org--decisions-one-by-one.md).

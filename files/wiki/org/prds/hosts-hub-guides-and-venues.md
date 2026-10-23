@@ -236,7 +236,7 @@ off, wording on editions, which venues to arrange) are the organiser's.
 
 ## Decision needed
 
-Answered by [Make it yours: one hub at /extend](../adrs/make-it-yours-hub.md), proposed. The three questions this PRD left were answered on 2026-10-23
+Answered by [Make it yours: one hub at /extend](../adrs/make-it-yours-hub.md), accepted and built on 2026-10-23. The three questions this PRD left were answered on 2026-10-23
 (`sources/conversations/2026-10-23--org--hosts-hub-approved.md`):
 
 1. **The editions line** reads "Every GoatConf is shaped by who joins

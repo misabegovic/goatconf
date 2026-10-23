@@ -631,3 +631,49 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .slots--food .tag { font-size: 0.9rem; margin: 0.6rem 0.35rem 0.1rem; }
   .slots--food .sticker--photo .price { font-size: 1.3rem; margin: 0.3rem 0.6rem 0.4rem; }
 }
+
+/* Make it yours: what to run, the places in Tuzla, and the filters over them */
+.checklist { margin: 0 0 1.2rem; padding-left: 1.2rem; }
+.checklist li { margin-bottom: 0.35rem; }
+.checklist li::marker { color: var(--album); }
+.howto + .copy .list-title:not(:first-child), .copy .list-title:not(:first-child) { margin-top: 1.4rem; }
+.slots--what .slot small { margin-bottom: 0.4rem; }
+.finder { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 13.5rem), 1fr)); gap: 0.9rem 1.1rem; align-items: end; margin: 0 0 2rem; padding: 1.1rem 1.2rem 1rem; border-radius: 0.6rem; background: var(--page-print); }
+.finder[hidden] { display: none; }
+.finder__field { display: flex; flex-direction: column; gap: 0.3rem; margin: 0; }
+.finder__field--wide, .finder__count { grid-column: 1 / -1; }
+.finder label { font-weight: 700; font-size: 0.92rem; color: var(--album); }
+.finder input[type="search"], .finder select { width: 100%; min-width: 0; padding: 0.55rem 0.65rem; border: 2px solid var(--slot-line); border-radius: 0.45rem; background: var(--page); color: var(--ink); font: inherit; font-size: 1rem; }
+.finder input[type="search"]:focus-visible, .finder select:focus-visible, .finder input[type="checkbox"]:focus-visible { outline: 3px solid var(--album); outline-offset: 2px; }
+.finder__field--check { flex-direction: row; align-items: center; gap: 0.55rem; align-self: center; }
+.finder__field--check input { flex: none; width: 1.25rem; height: 1.25rem; margin: 0; accent-color: var(--album); }
+.finder__field--check label { color: var(--ink); font-weight: 400; }
+.finder__count { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+.slots--venues { list-style: none; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); gap: 2rem 1.5rem; margin-bottom: 1rem; }
+.sticker--venue { display: flex; flex-direction: column; gap: 0.55rem; scroll-margin-top: 5rem; }
+.sticker--venue[hidden] { display: none; }
+.venue__photo img, .venue__photo .venue__empty { aspect-ratio: 4 / 3; }
+.venue__empty { align-content: center; gap: 0.2rem; }
+.venue__empty svg { width: 38%; }
+.venue__empty small { font-size: 0.8rem; color: var(--ink-soft); }
+.venue__body { padding: 0 0.5rem 0.5rem; font-size: 0.92rem; line-height: 1.45; }
+.venue__body p { margin: 0 0 0.45rem; }
+.venue__english { display: block; margin-bottom: 0.15rem; font-weight: 700; color: var(--album); }
+.venue__where, .venue__size, .venue__suits { color: var(--ink-soft); font-size: 0.86rem; }
+.venue__tags { margin-bottom: 0.55rem; }
+.venue__tags .tag { margin: 0 0.25rem 0.3rem 0; background: var(--page-print); color: var(--ink); }
+.venue__tags .tag--near { background: var(--yellow); color: var(--album-night); }
+.venue__tags .tag--first { background: var(--album-night); color: var(--page); }
+.venue__first { padding: 0.5rem 0.65rem; border-radius: 0.35rem; background: var(--page-print); font-size: 0.86rem; }
+.venue__links { font-size: 0.86rem; color: var(--ink-soft); }
+.venue__links a { display: inline-block; margin-right: 0.65rem; color: var(--album); font-weight: 700; overflow-wrap: anywhere; }
+@media (max-width: 61.99rem) { .slots--what { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 47.99rem) {
+  .album-page .slots.slots--venues { grid-template-columns: minmax(0, 28rem); justify-content: center; gap: 1.6rem; }
+  .finder { padding: 0.9rem; }
+}
+@media (max-width: 47.99rem) {
+  /* Three buttons on one row on a phone: Make it yours, Propose a session, Register */
+  .topbar nav { column-gap: 0.55rem; }
+  .topbar nav a.topbar__cta { padding: 0.35rem 0.45rem; font-size: 0.86rem; letter-spacing: 0.01em; }
+}

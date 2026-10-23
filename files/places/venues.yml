@@ -1,0 +1,595 @@
+# Places in Tuzla where hosts could run an event, shown on the Make it yours page
+# (site/extend.html, built by tools/extensions.py). Researched 2026-10-23; the
+# research and every source is wiki/org/tuzla/venues-for-hosts.md (ADR
+# wiki/org/adrs/make-it-yours-hub.md). GoatConf has arranged nothing with any of
+# them: each is a place a host could ask.
+#
+# Only places with approved: true appear on the site; the organiser approves
+# each one. Distances are computed from lat/lon to IPI Academy (places.yml);
+# where only a street was found, the point is the street's (point: street).
+# people is the largest group a source says the place holds (seats, or a
+# crowd it has had), for the size filter; size says it in words. metres stands
+# in for lat/lon where a source gives only a distance. suits lists the kinds of event (tools/extensions.py KINDS) the
+# place fits. check_first marks places GoatConf may use for its own program.
+# photo is a file under site/img/venues/, with its record beside the original
+# in assets/images/venues/.
+checked: '2026-10-23'
+venues:
+
+- id: narodno-pozoriste
+  name: Narodno pozorište Tuzla
+  english: The National Theatre
+  kind: culture
+  address: Pozorišna 4
+  lat: 44.53651
+  lon: 18.677225
+  people: 290
+  size: One hall of 290 seats, 220 in the stalls and 70 on the balcony.
+  setting: indoor
+  suits: [evening-event, podcast]
+  about: Tuzla's theatre rents its hall for outside events through a booking request form, with stage, lighting and sound plans on its site.
+  contact: [https://nptz.ba, nptz@nptz.ba, produkcija@nptz.ba, +387 35 251 645]
+  check_first: true
+  sources:
+  - sources/web/venue/nptz-pozoriste-sala-2026-10-23.md
+  - sources/web/venue/nptz-zahtjev-za-koristenje-sale-2026-10-23.md
+  - sources/web/venue/nptz-kontakt-2026-10-23.md
+  photo: narodno-pozoriste.jpg
+  approved: false
+
+- id: hkc-sveti-franjo
+  name: HKC "Sveti Franjo"
+  english: The church in glass, a cultural centre
+  kind: culture
+  address: Stari grad bb, behind the Chamber of Commerce
+  people: 240
+  size: A multifunctional hall with a stage and loose chairs; a 2017 concert drew about 240 people. No seat count is published.
+  setting: both
+  suits: [evening-event, podcast, meetup]
+  about: A cultural centre on the site of the old Catholic church, its hall built in the church's outline with glass walls, plus a small lecture hall, a café and a lawn. It hosts concerts, plays, fairs and a book fair.
+  contact: [https://fst.ba/hkc-sveti-franjo-1, samostantuzla@fst.ba, +387 35 266 314]
+  check_first: true
+  sources:
+  - sources/web/venue/hkc-sveti-franjo-fst-official-2026-10-23.md
+  - sources/web/venue/hkc-sveti-franjo-fst-news-2026-10-23.md
+  - sources/web/venue/hkc-sveti-franjo-klix-2018-2026-10-23.md
+  - sources/web/venue/hkc-sveti-franjo-go-bosnia-guide-2026-10-23.md
+  - sources/conversations/2026-10-23--org--hosts-hub-answers.md
+  photo: hkc-sveti-franjo.jpg
+  approved: false
+
+- id: dom-mladih
+  name: Dom mladih Tuzla
+  english: The youth centre
+  kind: culture
+  address: Dragiše Trifkovića 2
+  lat: 44.535938
+  lon: 18.686841
+  size: A chamber stage and halls; no seat counts are published.
+  setting: indoor
+  suits: [evening-event, karaoke, meetup, workshop]
+  about: Any association or informal group of young people may use its rooms, for concerts of popular and classical music, festivals, conferences and cultural and entertainment events.
+  contact: [rukovodilacdommladih@centarzakulturutuzla.ba, +387 35 362 620]
+  sources:
+  - sources/web/venue/czk-o-domu-mladih-2026-10-23.md
+  - sources/web/venue/tuzlainfo-dom-mladih-kamerna-scena-2026-10-23.md
+  - sources/web/venue/czk-kontakt-2026-10-23.md
+  photo: dom-mladih.jpg
+  approved: false
+
+- id: kuca-plamena-mira
+  name: Kuća plamena mira
+  english: The Peace Flame House
+  kind: culture
+  address: Šetalište Slana banja bb, in Slana banja park
+  lat: 44.53781
+  lon: 18.68892
+  point: park
+  size: No room list or capacity is published.
+  setting: indoor
+  suits: [evening-event, workshop, meetup]
+  about: A house in the park above the lakes, run by a citizens' association, that organises concerts, plays, celebrations and workshops. The house has no right angles and good acoustics.
+  contact: [http://www.kpm.ba, kucaplamenamira@gmail.com, +387 35 276 330]
+  sources:
+  - sources/web/venue/kpm-home-2026-10-23.md
+  - sources/web/venue/kpm-koncert-umjetnicke-muzike-2026-2026-10-23.md
+  photo: kuca-plamena-mira.jpg
+  approved: false
+
+- id: atelje-ismet-mujezinovic
+  name: Atelje "Ismet Mujezinović"
+  english: The Atelier and its garden
+  kind: culture
+  address: Klosterska 19
+  lat: 44.537146
+  lon: 18.681045
+  size: A workshop space and a garden in the centre; capacity is not published.
+  setting: both
+  suits: [evening-event, meetup, workshop]
+  about: The painter's house and garden, which host concerts, exhibitions, book launches, conferences and workshops, with garden concerts every summer.
+  contact: [direktor@centarzakulturutuzla.ba, +387 35 252 002]
+  sources:
+  - sources/web/venue/czk-atelje-ismet-mujezinovic-2026-10-23.md
+  - sources/web/venue/tuzlainfo-atelje-musica-bosnae-basta-2025-2026-10-23.md
+  - sources/web/venue/czk-kontakt-2026-10-23.md
+  photo: atelje-ismet-mujezinovic.jpg
+  approved: false
+
+- id: dom-knjizevnosti
+  name: Dom književnosti
+  english: The House of Literature
+  kind: culture
+  address: Old town
+  lat: 44.53825
+  lon: 18.67647
+  size: Spaces and seats are not published.
+  setting: indoor
+  suits: [meetup, podcast]
+  about: A house for literature run by the city's culture centre, a short walk from IPI Academy.
+  contact: [protokol@centarzakulturutuzla.ba, +387 35 362 622]
+  sources:
+  - sources/web/venue/czk-dom-knjizevnosti-2026-10-23.md
+  - sources/web/venue/czk-kontakt-2026-10-23.md
+  - sources/web/osm/tuzla-venues-2026-10-23.json
+  approved: false
+
+- id: galerija-portreta
+  name: Međunarodna galerija portreta
+  english: The International Portrait Gallery
+  kind: culture
+  address: 2. tuzlanske brigade 13
+  lat: 44.53594
+  lon: 18.6871
+  size: Exhibition halls; seats are not published.
+  setting: indoor
+  suits: [meetup, evening-event]
+  about: A gallery that also hosts concerts and round tables. Two of its collections are a national monument, so expect limits on food, drink and noise.
+  contact: [rukovodilacgalerijaportreta@centarzakulturutuzla.ba, +387 35 276 150]
+  sources:
+  - sources/web/venue/czk-medunarodna-galerija-portreta-2026-10-23.md
+  - sources/web/venue/czk-koncert-galerija-portreta-2023-2026-10-23.md
+  - sources/web/venue/czk-kontakt-2026-10-23.md
+  approved: false
+
+- id: bkc
+  name: BKC Tuzla
+  english: The Bosnian Cultural Centre
+  kind: culture
+  address: Mije Keroševića Guje 3
+  lat: 44.5336
+  lon: 18.65493
+  people: 603
+  size: A 603-seat hall, the 127-seat Blue Hall with sound and a projector, a 30-seat room, two galleries and a 150-seat chamber stage.
+  setting: indoor
+  suits: [evening-event, workshop, meetup, podcast, hackathon]
+  about: The canton's big cultural centre, with published 2026 prices from 150 KM for the small room for three hours. Non-profit programmes under a signed cooperation agreement pay no fee.
+  contact: [https://bkctuzla.ba, info@bkctuzla.ba, +387 35 282 296]
+  sources:
+  - sources/web/venue/bkc-o-bkc-u-tuzla-2026-10-23.md
+  - sources/web/venue/bkc-cjenovnik-usluga-2026-10-23.md
+  - sources/web/venue/bkc-kontakt-2026-10-23.md
+  approved: false
+
+- id: pivnica-taverna
+  name: Pivnica Taverna
+  english: The brewery's beer hall
+  kind: bar
+  address: Maršala Tita 163
+  lat: 44.534993
+  lon: 18.68907
+  people: 132
+  size: 132 seats in the cellar and 50 more in the summer garden.
+  setting: both
+  suits: [evening-event, karaoke, meetup]
+  about: The cellar of the 1884 brewery, with live music on Fridays and Saturdays, open for private parties and events.
+  contact: [rkv.pivnice@pivaratuzla.ba, +387 35 300 110]
+  sources:
+  - sources/web/venue/pivaratuzla-pivnica-taverna-2026-10-23.md
+  photo: pivnica-taverna.jpg
+  approved: false
+
+- id: nardi-pub
+  name: Nardi Pub
+  kind: bar
+  address: Hadžibakirbega Tuzlića 3
+  lat: 44.537382
+  lon: 18.67721
+  point: street
+  size: A pub on two floors; capacity is not published.
+  setting: indoor
+  suits: [evening-event, karaoke]
+  about: Live gigs from Thursday to Saturday, and open for private parties, celebrations and promotions.
+  contact: [https://www.nardipub.com, nardipub@gmail.com, +387 61 787 673]
+  sources:
+  - sources/web/venue/nardipub-com-home-2026-10-23.md
+  - sources/web/venue/iyp-nardi-pub-2026-10-23.md
+  approved: false
+
+- id: park-pub
+  name: Park Pub
+  kind: bar
+  address: Đorđa Mihajlovića 4, by the City Park
+  lat: 44.5373
+  lon: 18.67864
+  size: Capacity is not published.
+  setting: indoor
+  suits: [evening-event, meetup]
+  about: A pub in the City Park with frequent live music.
+  contact: [+387 61 366 192]
+  sources:
+  - sources/web/venue/iyp-park-pub-2026-10-23.md
+  - sources/web/venue/tztz-park-pub-2026-10-23.md
+  photo: park-pub.jpg
+  approved: false
+
+- id: wine-whiskey-bar
+  name: Wine & Whiskey Bar
+  kind: bar
+  address: Đorđa Mihajlovića 4, by the City Park
+  lat: 44.537158
+  lon: 18.678292
+  point: street
+  size: A bar with a terrace; capacity is not published.
+  setting: both
+  suits: [evening-event, meetup]
+  about: Live music at weekends, next door to Park Pub.
+  contact: [+387 61 366 192]
+  sources:
+  - sources/web/venue/iyp-wine-whiskey-bar-2026-10-23.md
+  photo: wine-whiskey-bar.jpg
+  approved: false
+
+- id: just-caffe-pub
+  name: Just Caffe Pub
+  kind: bar
+  address: Jevrejska bb
+  lat: 44.53791
+  lon: 18.67691
+  size: Capacity is not published.
+  setting: indoor
+  suits: [meetup, evening-event]
+  about: A busy city-centre café and pub with a central bar and regular live music nights.
+  contact: [https://www.facebook.com/justcaffepub/, +387 62 233 761]
+  sources:
+  - sources/web/venue/iyp-just-caffe-pub-2026-10-23.md
+  photo: just-caffe-pub.jpg
+  approved: false
+
+- id: cafe-sloboda
+  name: Cafe Sloboda
+  kind: bar
+  address: Solni trg 10
+  lat: 44.537917
+  lon: 18.67617
+  size: A café-bar with a terrace; capacity is not published.
+  setting: both
+  suits: [meetup, evening-event, karaoke]
+  about: A café-bar on the Salt Square with DJ sets and bands.
+  contact: [http://www.caffesloboda.ba, https://www.instagram.com/cafesloboda/, +387 60 33 03 330]
+  sources:
+  - sources/web/venue/iyp-cafe-sloboda-2026-10-23.md
+  - sources/web/tuzla/tztz-sloboda-caffe-bar.md
+  photo: cafe-sloboda.jpg
+  approved: false
+
+- id: jazz-cafe
+  name: Jazz Cafe
+  kind: bar
+  address: VI bosanske brigade 39
+  metres: 300
+  point: street
+  size: Capacity is not published.
+  setting: indoor
+  suits: [evening-event, meetup]
+  about: A bar with frequent live music and concerts.
+  contact: [https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/jazz-cafe]
+  sources:
+  - sources/web/venue/iyp-jazz-cafe-2026-10-23.md
+  approved: false
+
+- id: wint-lounge-bar
+  name: WINT Lounge Bar
+  kind: bar
+  address: ZAVNOBiH-a 13, in the Hotel Tuzla building
+  lat: 44.531495
+  lon: 18.687797
+  size: A cocktail lounge; capacity is not published.
+  setting: indoor
+  suits: [evening-event]
+  about: A cocktail lounge run by Barista, which also organises events.
+  contact: [https://barista.ba, info@barista.ba, +387 62 001 110]
+  sources:
+  - sources/web/venue/tztz-wint-lounge-bar-2026-10-23.md
+  - sources/web/venue/barista-ba-home-2026-10-23.md
+  photo: wint-lounge-bar.jpg
+  approved: false
+
+- id: the-loft-terrace-bar
+  name: The Loft Terrace Bar
+  kind: bar
+  address: Hotel Tehnograd, ninth floor, Lazerević bb, Slavinovići
+  metres: 4000
+  people: 100
+  size: A terrace for 100 and an indoor space for 70.
+  setting: both
+  suits: [evening-event, meetup, workshop]
+  about: A rooftop venue built for private parties, promotions, seminars and trainings, a taxi ride from the centre.
+  contact: [https://barista.ba, info@barista.ba, +387 62 001 110]
+  sources:
+  - sources/web/venue/tztz-the-loft-terrace-bar-2026-10-23.md
+  - sources/web/venue/hotel-tehnograd-home-2026-10-23.md
+  - sources/web/venue/tztz-hotel-tehnograd-2026-10-23.md
+  photo: the-loft-terrace-bar.jpg
+  approved: false
+
+- id: caffe-bar-central
+  name: Caffe Bar Central
+  kind: cafe
+  address: Freedom Square, in the Barok building
+  lat: 44.538958
+  lon: 18.674859
+  size: A café with a terrace on the square; capacity is not published.
+  setting: both
+  suits: [meetup, karaoke]
+  about: A café on Freedom Square, a minute from IPI Academy. Tell it ahead about a group.
+  contact: [https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/caffe-bar-central]
+  sources:
+  - sources/web/venue/iyp-caffe-bar-central-2026-10-23.md
+  - sources/web/osm/tuzla-venue-lookups-2026-10-23.json
+  photo: caffe-bar-central.jpg
+  approved: false
+
+- id: barok
+  name: Barok
+  kind: cafe
+  address: Trg slobode 4
+  lat: 44.538973
+  lon: 18.674806
+  size: A pizzeria, café and bar; capacity is not published.
+  setting: both
+  suits: [meetup, karaoke]
+  about: A pizzeria and café-bar on Freedom Square.
+  contact: [https://www.pizzeriabarok.com/, +387 62 775 441]
+  sources:
+  - sources/web/venue/iyp-barok-2026-10-23.md
+  - sources/web/osm/tuzla-venue-lookups-2026-10-23.json
+  approved: false
+
+- id: coffee-zone
+  name: Coffee Zone
+  kind: cafe
+  address: Fra Grge Martića 30
+  lat: 44.539149
+  lon: 18.671761
+  point: street
+  size: A café with a summer garden; capacity is not published.
+  setting: both
+  suits: [meetup]
+  about: A café with a garden, a few minutes from IPI Academy.
+  contact: [+387 60 33 76 248]
+  sources:
+  - sources/web/venue/iyp-coffee-zone-2026-10-23.md
+  approved: false
+
+- id: restoran-zlatnik
+  name: Restoran Zlatnik
+  kind: restaurant
+  address: Šetalište Slana banja, by the lakes
+  lat: 44.538425
+  lon: 18.684882
+  people: 200
+  size: Up to 200 guests, with a large summer garden.
+  setting: both
+  suits: [evening-event, meetup]
+  about: A restaurant by the Pannonian Lake that hosts seminars and events.
+  contact: [https://www.restoranzlatnik.com, +387 35 261 225]
+  sources:
+  - sources/web/venue/tztz-restoran-zlatnik-2026-10-23.md
+  - sources/web/venue/iyp-zlatnik-2026-10-23.md
+  photo: restoran-zlatnik.jpg
+  approved: false
+
+- id: heartland
+  name: Heartland
+  kind: restaurant
+  address: Kazan mahala 10
+  lat: 44.535997
+  lon: 18.678755
+  point: street
+  people: 120
+  size: 120 seats.
+  setting: indoor
+  suits: [evening-event]
+  about: A hotel restaurant in the centre for a group dinner.
+  contact: [https://heartland.ba, info@heartland.ba, +387 35 255 111]
+  sources:
+  - sources/web/venue/tztz-restoran-heartland-2026-10-23.md
+  photo: heartland.jpg
+  approved: false
+
+- id: hotel-miris-dunja-88
+  name: Hotel Miris Dunja 88
+  kind: hotel
+  address: Goli brijeg 8
+  lat: 44.53635
+  lon: 18.67564
+  people: 100
+  size: A meeting and seminar hall for up to 100.
+  setting: indoor
+  suits: [workshop, meetup, hackathon]
+  about: A hotel in the pedestrian zone whose hall suits seminars, receptions and small celebrations.
+  contact: [info@mirisdunja88.ba, +387 35 296 453]
+  sources:
+  - sources/web/venue/tztz-hotel-miris-dunja-88-2026-10-23.md
+  photo: hotel-miris-dunja-88.jpg
+  approved: false
+
+- id: hotel-tuzla
+  name: Hotel Tuzla
+  kind: hotel
+  address: ZAVNOBiH-a 13
+  lat: 44.531495
+  lon: 18.687797
+  people: 300
+  size: The Crystal Hall for 300, a 120-seat congress hall and a 35-seat room.
+  setting: indoor
+  suits: [workshop, meetup, hackathon, evening-event]
+  about: The big hotel on the edge of the centre. The goat statue is said to stand in front of it.
+  contact: [https://tztz.ba/en/hotels/hotel-tuzla/]
+  sources:
+  - sources/web/venue/tztz-hotel-tuzla.md
+  photo: hotel-tuzla.jpg
+  approved: false
+
+- id: hotel-salis
+  name: Hotel Salis
+  kind: hotel
+  address: Soli 4
+  lat: 44.53301
+  lon: 18.64481
+  people: 200
+  size: A 200-seat conference hall of 255 m², with a projector, sound and microphones.
+  setting: indoor
+  suits: [workshop, hackathon, meetup]
+  about: A hotel west of the centre with a fitted conference hall.
+  contact: [https://hotelsalis.ba, reception@hotelsalis.ba, +387 35 560 000]
+  sources:
+  - sources/web/venue/hotelsalis-konferencije-2026-10-23.md
+  photo: hotel-salis.jpg
+  approved: false
+
+- id: hotel-mellain
+  name: Hotel Mellain
+  kind: hotel
+  address: Aleja Alije Izetbegovića 3
+  lat: 44.53398
+  lon: 18.68726
+  size: Several halls and a nightclub with its own sound and lights; seat counts are not published.
+  setting: indoor
+  suits: [workshop, evening-event]
+  about: A hotel with business rooms for meetings and corporate events, and a nightclub.
+  contact: [http://mellainhotel.com, info@mellainhotel.com, +387 35 365 500]
+  sources:
+  - sources/web/venue/tztz-hotel-mellain-2026-10-23.md
+  - sources/web/venue/mellainhotel-com-home-2026-10-23.md
+  photo: hotel-mellain.jpg
+  approved: false
+
+- id: motel-royal
+  name: Motel Royal
+  kind: hotel
+  address: Bosne srebrene 105/A
+  lat: 44.534742
+  lon: 18.659221
+  people: 100
+  size: A room for 30 and a restaurant for 100.
+  setting: indoor
+  suits: [workshop, meetup]
+  about: A motel west of the centre with a meeting room.
+  contact: [https://www.royalmotel.ba/, info@royalmotel.ba, +387 35 315 666]
+  sources:
+  - sources/web/venue/tztz-motel-royal-2026-10-23.md
+  photo: motel-royal.jpg
+  approved: false
+
+- id: code-hub-tuzla
+  name: Code Hub Tuzla, BIT Centar
+  english: The coworking space of the IT centre
+  kind: study
+  address: BIT Centar Tuzla
+  size: Conference rooms and an event space; capacity is not published.
+  setting: indoor
+  suits: [meetup, workshop, hackathon]
+  about: A coworking space in BIT Centar, the hub of the city's IT companies, with conference rooms and an event space for rent.
+  contact: []
+  sources:
+  - sources/web/venue/tehnopolis-code-hub-tuzla-2025.md
+  - sources/web/venue/vestbee-code-hub-tuzla-2022.md
+  approved: false
+
+- id: biblioteka-dervis-susic
+  name: Biblioteka "Derviš Sušić"
+  english: The public and university library
+  kind: study
+  address: Mihajla i Živka Crnogorčevića 7
+  lat: 44.53744
+  lon: 18.67935
+  size: Capacity is not published.
+  setting: indoor
+  suits: [meetup, workshop]
+  about: The city's library, which co-hosted lectures, a student workshop and a film screening in 2026.
+  contact: [https://nubt.ba]
+  sources:
+  - sources/web/venue/nubt-library-about-2026-10-23.md
+  - sources/web/venue/mzv-czech-culture-day-tuzla-2026-10-23.md
+  photo: biblioteka-dervis-susic.jpg
+  approved: false
+
+- id: tehnoloski-fakultet
+  name: Tehnološki fakultet
+  english: The University of Tuzla's Faculty of Technology
+  kind: study
+  address: University of Tuzla
+  people: 16
+  size: A computer lab that held a 16-student hackathon.
+  setting: indoor
+  suits: [hackathon, workshop]
+  about: The faculty ran a three-day hackathon in its computer lab in March 2026.
+  contact: [https://tf.untz.ba, +387 35 320 741]
+  sources:
+  - sources/web/venue/tf-untz-trust-hackathon-2026-10-23.md
+  approved: false
+
+- id: freedom-square
+  name: Trg slobode
+  english: Freedom Square
+  kind: outdoors
+  address: Trg slobode
+  lat: 44.5393
+  lon: 18.6746
+  size: The city's main square.
+  setting: outdoor
+  suits: [trip, hike, other]
+  about: The square outside IPI Academy, where the hours off are spent and the tourist train leaves for the lakes. A meeting point for walks and trips; an event on the square itself needs the city's rules.
+  contact: []
+  sources:
+  - sources/web/tuzla/tztz-square-of-freedom.md
+  - sources/web/tuzla/tuzla-city-guide-tztz-2025.md
+  photo: freedom-square.jpg
+  approved: false
+
+- id: pannonian-lakes
+  name: Panonska jezera and Slana banja
+  english: The salt lakes and the park
+  kind: outdoors
+  address: Šetalište Slana banja
+  lat: 44.53949
+  lon: 18.68081
+  size: Three lakes, a beach and a park.
+  setting: outdoor
+  suits: [meetup, other, hike]
+  about: The salt lakes in the middle of town, open from 1 June, and the park beside them with paths and views. No event-hire terms were found.
+  contact: []
+  sources:
+  - sources/web/tuzla/tztz-pannonian-lakes.md
+  - sources/conversations/2026-10-13--org--lake-season-opens-1-june.md
+  - sources/web/tuzla/tztz-salty-spa-park.md
+  photo: pannonian-lakes.jpg
+  approved: false
+
+- id: ilincica
+  name: Ilinčica
+  kind: outdoors
+  address: Ilinčica, south of the centre
+  lat: 44.524915
+  lon: 18.674544
+  point: street
+  size: A hill park with an adventure park, a zip-line and a climbing wall.
+  setting: outdoor
+  suits: [hike, trip, other]
+  about: The hill people from Tuzla walk to every day. The adventure park is used only with trained staff.
+  contact: []
+  sources:
+  - sources/web/venue/n1-ilincica-adventure-park-2026-10-23.md
+  photo: ilincica.jpg
+  approved: false

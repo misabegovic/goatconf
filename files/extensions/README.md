@@ -1,9 +1,10 @@
 # Extensions
 
-Everything around GoatConf's day of talks is added by the people who come:
-a workshop, a meetup, a dinner, a city walk, a community corner, a supporter
-paying for coffee. Each one is a short file in this folder, and the site's
-extensions page is built from these files.
+Everything around GoatConf's two days of sessions is added by the people
+who come: a workshop, a meetup, a dinner, a city walk, a community corner, a
+supporter paying for coffee. Each one is a short file in this folder, and
+the site's Make it yours page (`goatconf.com/extend`) lists the accepted
+ones, with how to host, what to run, and places in Tuzla to ask.
 
 ## Add yours
 
@@ -44,11 +45,29 @@ code of conduct and how they fit the program; each is named as part of
 GoatConf 2027 and run by its host; and each host carries its own costs and
 risks.
 
+## When it can happen
+
+Any day from 2 to 6 June 2027. On Thursday 3 and Friday 4 June the sessions
+run all day, so an event those days is before or after them, or fits inside
+one hour off: Thursday at 11:00, 13:00 or 15:00, Friday at 10:30 or 14:30.
+An event in an hour off is free, and Friday's 12:30 hour stays free for
+Džuma and lunch. The check enforces this, from the day times in
+`tools/program.py`.
+
+## Places to ask
+
+`places/venues.yml` lists places in Tuzla a host could ask, shown on the
+same page with filters. GoatConf has arranged nothing with them. Only places
+the organiser approves (`approved: yes`) appear; each has its sources, its
+distance from IPI Academy and, where one was found, a photo whose record sits
+in `assets/images/venues/`.
+
 ## Checking and building
 
 ```
-python3 tools/extensions.py check      # what the agent checks
-python3 tools/extensions.py build      # rebuild site/extensions.html and each event's page
+python3 tools/extensions.py check        # what the agent checks, events and venues
+python3 tools/extensions.py build        # rebuild site/extend.html and each event's page
+python3 tools/extensions.py build --all  # preview every venue, approved or not
 ```
 
 The local CI runs both, so a record that fails the check, or a page that

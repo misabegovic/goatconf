@@ -124,6 +124,11 @@ photo GoatConf may use exists. Nothing here is arranged with any venue;
 every listing is "a place you could ask", and the site may say only that
 until the organiser arranges more.
 
+The places now live as records in `places/venues.yml`, shown on the Make it
+yours page once the organiser approves each
+([the ADR](../adrs/make-it-yours-hub.md)); this page keeps the research
+behind them.
+
 ## How to read this page
 
 - **Distance** is a straight line from IPI Academy (44.5404, 18.6738),

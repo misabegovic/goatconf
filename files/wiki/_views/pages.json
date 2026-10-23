@@ -309,7 +309,7 @@
       "path": "org/adrs/make-it-yours-hub.md",
       "title": "Make it yours: one hub at /extend, built from event and venue records, with guides, filters, photos and the hours off",
       "kind": "decision",
-      "status": "proposed",
+      "status": "accepted",
       "updated": "2026-10-23",
       "team": "organiser",
       "confidence": "medium",
@@ -318,6 +318,7 @@
         "org/adrs/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md",
         "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
         "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
         "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
@@ -333,7 +334,7 @@
         "sources/web/models/edfringe-how-to-start-making-your-show-accessible-2026-10-23.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 2099
+      "tokens": 2806
     },
     {
       "path": "org/adrs/one-page-frame-and-one-site-build.md",
@@ -674,6 +675,9 @@
       "updated": "2026-10-23",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
         "sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md",
         "sources/conversations/2026-10-23--org--predrag-radenkovic.md",
         "sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md",
@@ -734,7 +738,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 4054
+      "tokens": 4253
     },
     {
       "path": "org/ideas/lightning-talks.md",
@@ -1748,7 +1752,7 @@
         "sources/web/models/fosdem-2026-fringe.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3092,
+      "tokens": 3098,
       "consumed_by": [
         "org/adrs/make-it-yours-hub.md"
       ]
@@ -2293,7 +2297,7 @@
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-izmjene-11-15.md"
       ],
-      "tokens": 4918,
+      "tokens": 4970,
       "consumed_by": [
         "org/prds/hosts-hub-guides-and-venues.md"
       ]

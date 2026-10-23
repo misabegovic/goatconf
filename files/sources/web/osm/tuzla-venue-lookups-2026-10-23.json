@@ -1,0 +1,150 @@
+{
+"source": "OpenStreetMap, via the Overpass API mirror https://overpass.private.coffee/api/interpreter, fetched 2026-10-23",
+"licence": "Open Database License (ODbL) 1.0, https://www.openstreetmap.org/copyright; attribution: © OpenStreetMap contributors",
+"query": "[out:json][timeout:50];( nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Privredna komora\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Franjo\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Nardi\"]; way(44.530,18.660,44.548,18.690)[\"name\"~\"Tuzlića\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"plamena\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Zlatnik\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Heartland\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Sloboda\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Coffee Zone\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Central\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Barok\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Jazz\"]; nwr(44.530,18.660,44.548,18.690)[\"name\"~\"Wine\"];);out center tags;",
+"note": "Name lookups for venues the first snapshot and the geocodes missed. For ways the point is the centre Overpass computed.",
+"elements": [
+{
+"type": "node",
+"id": 4078191301,
+"lat": 44.538958,
+"lon": 18.674859,
+"tags": {
+"amenity": "cafe",
+"name": "Central"
+}
+},
+{
+"type": "node",
+"id": 4088235144,
+"lat": 44.537917,
+"lon": 18.67617,
+"tags": {
+"addr:housenumber": "10",
+"addr:street": "Solni trg",
+"amenity": "cafe",
+"name": "Sloboda"
+}
+},
+{
+"type": "node",
+"id": 5538355521,
+"lat": 44.538999,
+"lon": 18.674779,
+"tags": {
+"amenity": "restaurant",
+"name": "Barok - caffe & restaurant"
+}
+},
+{
+"type": "node",
+"id": 10774100271,
+"lat": 44.541677,
+"lon": 18.660507,
+"tags": {
+"name": "FK Sloboda Tuzla"
+}
+},
+{
+"type": "way",
+"id": 28176143,
+"lat": 44.538293,
+"lon": 18.678599,
+"tags": {
+"name": "Centralni park"
+}
+},
+{
+"type": "way",
+"id": 28176382,
+"lat": 44.537215,
+"lon": 18.684699,
+"tags": {
+"name": "TK Sloboda Tuzla"
+}
+},
+{
+"type": "way",
+"id": 28176391,
+"lat": 44.537203,
+"lon": 18.685226,
+"tags": {
+"name": "Tenis klub Sloboda Tuzla"
+}
+},
+{
+"type": "way",
+"id": 29292940,
+"lat": 44.537382,
+"lon": 18.67721,
+"tags": {
+"highway": "pedestrian",
+"name": "Hadži Bakir-bega Tuzlića"
+}
+},
+{
+"type": "way",
+"id": 224023839,
+"lat": 44.538973,
+"lon": 18.674806,
+"tags": {
+"addr:housenumber": "4",
+"addr:street": "Trg Slobode",
+"name": "Barok"
+}
+},
+{
+"type": "way",
+"id": 390902340,
+"lat": 44.538425,
+"lon": 18.684882,
+"tags": {
+"name": "Restoran Zlatnik"
+}
+},
+{
+"type": "way",
+"id": 405660304,
+"lat": 44.538806,
+"lon": 18.675368,
+"tags": {
+"highway": "pedestrian",
+"name": "Barok"
+}
+},
+{
+"type": "way",
+"id": 406915940,
+"lat": 44.538052,
+"lon": 18.676213,
+"tags": {
+"addr:housenumber": "4",
+"addr:street": "Soni trg",
+"amenity": "cafe",
+"name": "Sloboda"
+}
+},
+{
+"type": "way",
+"id": 498016049,
+"lat": 44.536986,
+"lon": 18.676977,
+"tags": {
+"highway": "residential",
+"name": "Hadži Bakir-bega Tuzlića"
+}
+},
+{
+"type": "way",
+"id": 1410375794,
+"lat": 44.536393,
+"lon": 18.680724,
+"tags": {
+"addr:housenumber": "10",
+"addr:street": "Klosterska",
+"amenity": "school",
+"name": "Katolički školski centar \"Sv. Franjo\" Tuzla"
+}
+}
+]
+}

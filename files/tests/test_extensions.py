@@ -34,7 +34,8 @@ def ext(tmp_path, monkeypatch):
     (tmp_path / "site").mkdir()
     monkeypatch.setattr(mod, "ROOT", tmp_path)
     monkeypatch.setattr(mod, "RECORDS", tmp_path / "extensions")
-    monkeypatch.setattr(mod, "PAGE", tmp_path / "site" / "extensions.html")
+    monkeypatch.setattr(mod, "PAGE", tmp_path / "site" / "extend.html")
+    monkeypatch.setattr(mod, "VENUES", tmp_path / "places" / "venues.yml")
     return mod, tmp_path
 
 
@@ -84,7 +85,7 @@ def test_something_else_is_a_kind(ext, capsys):
     assert mod.main(["check"]) == 0
     assert "ok: something else" in capsys.readouterr().out
     mod.main(["build"])
-    assert "Something else" in (root / "site" / "extensions.html").read_text(encoding="utf-8")
+    assert "Something else" in (root / "site" / "extend.html").read_text(encoding="utf-8")
 
 
 def test_support_needs_a_supplier(ext, capsys):
@@ -112,13 +113,13 @@ def test_template_and_readme_are_not_records(ext):
 def test_build_lists_good_records_and_check_detects_staleness(ext):
     mod, root = ext
     assert mod.main(["build"]) == 0
-    page = (root / "site" / "extensions.html").read_text(encoding="utf-8")
+    page = (root / "site" / "extend.html").read_text(encoding="utf-8")
     assert "No events yet." in page
     write(root, "rust.md", GOOD)
     write(root, "bad.md", GOOD.replace("accepts: yes", "accepts: no").replace("Rust by the lake", "Broken"))
     assert mod.main(["build", "--check"]) == 1
     assert mod.main(["build"]) == 0
-    page = (root / "site" / "extensions.html").read_text(encoding="utf-8")
+    page = (root / "site" / "extend.html").read_text(encoding="utf-8")
     assert "Rust by the lake" in page and "Broken" not in page
     assert "2 June 2027, 10:00 to 13:00" in page
     assert mod.main(["build", "--check"]) == 0
@@ -129,7 +130,7 @@ def test_only_accepted_events_are_listed(ext):
     write(root, "rust.md", GOOD.replace("accepted: yes\n", ""))
     write(root, "hack.md", GOOD.replace("Rust by the lake", "Lake hackathon").replace("kind: workshop", "kind: hackathon"))
     assert mod.main(["build"]) == 0
-    page = (root / "site" / "extensions.html").read_text(encoding="utf-8")
+    page = (root / "site" / "extend.html").read_text(encoding="utf-8")
     assert "Lake hackathon" in page and "Rust by the lake" not in page
     assert 'href="event-hack.html"' in page and "event-rust.html" not in page
     assert not (root / "site" / "event-rust.html").exists()
@@ -200,3 +201,138 @@ def test_the_event_page_links_its_host_supporters_profile(ext):
     event = (root / "site" / "event-rust.html").read_text(encoding="utf-8")
     assert '<dt>Run by</dt><dd><a href="supporter-rustaceans.html">Tuzla Rustaceans</a></dd>' in event
     assert 'is a supporter of GoatConf 2027. <a href="supporter-rustaceans.html">See their profile</a>' in event
+
+
+def at(day, start, end, cost="free"):
+    """The good record moved to a day and hours."""
+    return (GOOD.replace("2027-06-02 10:00", f"{day} {start}").replace("2027-06-02 13:00", f"{day} {end}")
+            .replace("cost: free", f"cost: {cost}"))
+
+
+@pytest.mark.parametrize("day, start, end, cost", [
+    ("2027-06-03", "11:00", "12:00", "free"),          # Thursday's first hour off
+    ("2027-06-03", "13:05", "13:50", "free"),          # inside Thursday's lunch hour
+    ("2027-06-04", "14:30", "15:25", "free, registration required"),
+    ("2027-06-03", "18:00", "21:00", "10 KM"),         # after the day ends, any cost
+    ("2027-06-04", "08:00", "09:00", "free"),          # before Friday's welcome
+    ("2027-06-05", "10:00", "13:00", "10 KM"),         # Saturday is the community's day
+])
+def test_core_days_allow_the_hours_off_and_the_edges(ext, capsys, day, start, end, cost):
+    mod, root = ext
+    write(root, "circle.md", at(day, start, end, cost))
+    assert mod.main(["check"]) == 0, capsys.readouterr().out
+
+
+@pytest.mark.parametrize("day, start, end, cost, message", [
+    ("2027-06-03", "10:30", "11:30", "free", "overlaps the sessions"),
+    ("2027-06-03", "11:00", "12:30", "free", "overlaps the sessions"),
+    ("2027-06-04", "12:30", "13:30", "free", "overlaps the sessions"),   # Džuma and lunch stay free
+    ("2027-06-03", "11:00", "12:00", "5 KM", "an event in an hour off is free"),
+])
+def test_core_days_refuse_events_beside_sessions(ext, capsys, day, start, end, cost, message):
+    mod, root = ext
+    write(root, "clash.md", at(day, start, end, cost))
+    assert mod.main(["check"]) == 1
+    assert message in capsys.readouterr().out
+
+
+def test_a_whole_core_day_is_refused(ext, capsys):
+    mod, root = ext
+    write(root, "allday.md", GOOD.replace("2027-06-02 10:00", "2027-06-04").replace("2027-06-02 13:00", "2027-06-04"))
+    assert mod.main(["check"]) == 1
+    assert "runs through a core day's sessions" in capsys.readouterr().out
+
+
+def test_the_hours_off_come_from_the_day_plan(ext):
+    mod, _ = ext
+    import datetime as dt
+    assert mod.hours_off(dt.date(2027, 6, 3)) == ["11:00", "13:00", "15:00"]
+    assert mod.hours_off(dt.date(2027, 6, 4)) == ["10:30", "14:30"]
+    assert "Thursday at 11:00, 13:00 and 15:00, and Friday at 10:30 and 14:30" == mod.hours_text()
+
+
+VENUE = """checked: '2026-10-23'
+venues:
+- id: lake-cafe
+  name: Lake Cafe
+  kind: cafe
+  address: Lake street 1
+  lat: 44.5400
+  lon: 18.6750
+  people: 30
+  size: Thirty seats.
+  setting: both
+  suits: [meetup, karaoke]
+  about: A café by the lake.
+  contact: [https://example.org, hello@example.org, +387 35 000 000]
+  sources: [sources/x.md]
+  approved: yes
+- id: big-hall
+  name: Big Hall
+  kind: culture
+  address: Hall street 2
+  metres: 2000
+  people: 500
+  size: Five hundred seats.
+  setting: indoor
+  suits: [evening-event]
+  about: A big hall.
+  contact: []
+  check_first: yes
+  sources: [sources/x.md]
+  approved: no
+"""
+
+
+def venues_file(root, text=VENUE):
+    (root / "places").mkdir(exist_ok=True)
+    (root / "places" / "places.yml").write_text("ipi:\n  lat: 44.5404\n  lon: 18.6738\n", encoding="utf-8")
+    (root / "sources").mkdir(exist_ok=True)
+    (root / "sources" / "x.md").write_text("x", encoding="utf-8")
+    (root / "places" / "venues.yml").write_text(text, encoding="utf-8")
+
+
+def test_the_hub_lists_approved_venues_only_unless_previewing(ext, monkeypatch):
+    mod, root = ext
+    venues_file(root)
+    monkeypatch.setattr(mod, "PLACES", root / "places" / "places.yml")
+    assert mod.main(["build"]) == 0
+    page = (root / "site" / "extend.html").read_text(encoding="utf-8")
+    assert 'id="venue-lake-cafe"' in page and "Big Hall" not in page
+    assert 'data-kinds="meetup karaoke"' in page and 'data-near="1"' in page and 'data-size="small"' in page
+    assert '<a href="tel:+38735000000">+387 35 000 000</a>' in page and '<a href="mailto:hello@example.org">' in page
+    assert "Fits an hour off" in page and "Good for meetups and karaoke." in page
+    assert mod.main(["build", "--all"]) == 0
+    page = (root / "site" / "extend.html").read_text(encoding="utf-8")
+    assert 'id="venue-big-hall"' in page and "Ask GoatConf first" in page and "About 2 km from IPI Academy" in page
+    assert 'data-first="1"' in page and "One is marked" in page
+    assert page.index("Lake Cafe") < page.index("Big Hall")  # nearest first
+
+
+@pytest.mark.parametrize("change, message", [
+    (("  kind: cafe\n", "  kind: pub\n"), "kind 'pub' is not one of"),
+    (("suits: [meetup, karaoke]", "suits: [meetup, disco]"), "suits 'disco'"),
+    (("  about: A café by the lake.\n", ""), "missing field: about"),
+    (("sources: [sources/x.md]\n  approved: yes", "sources: [sources/missing.md]\n  approved: yes"), "source not found"),
+    (("id: lake-cafe", "id: Lake Cafe"), "lowercase words joined by hyphens"),
+    (("  approved: yes", "  approved: maybe"), "approved is yes or no"),
+    (("  approved: yes", "  photo: lake.jpg\n  approved: yes"), "photo not found"),
+])
+def test_bad_venues_fail_the_check(ext, capsys, change, message):
+    mod, root = ext
+    venues_file(root, VENUE.replace(*change))
+    assert mod.main(["check"]) == 1
+    assert message in capsys.readouterr().out
+
+
+def test_the_old_addresses_send_visitors_on(ext):
+    mod, root = ext
+    assert mod.main(["build"]) == 0
+    for name in ("extensions.html", "add.html"):
+        page = (root / "site" / name).read_text(encoding="utf-8")
+        assert '<meta http-equiv="refresh" content="0; url=extend.html">' in page
+        assert '<link rel="canonical" href="https://goatconf.com/extend">' in page and 'content="noindex"' in page
+        assert 'href="extend.html">Go to Make it yours</a>' in page
+    hub = (root / "site" / "extend.html").read_text(encoding="utf-8")
+    assert "Every GoatConf is shaped by who joins it." in hub and 'id="propose"' in hub and 'id="where"' in hub
+    assert 'src="extend.js' in hub

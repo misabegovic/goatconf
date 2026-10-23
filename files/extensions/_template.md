@@ -3,8 +3,8 @@ name: Your extension's name
 kind: evening-event
 host: Your name, group or company
 location: Place, street and number, Tuzla
-start: 2027-06-10 18:00
-end: 2027-06-10 21:00
+start: 2027-06-05 18:00
+end: 2027-06-05 21:00
 cost: free
 registration: no registration
 paid_by: The host
