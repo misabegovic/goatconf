@@ -585,3 +585,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-23 merge — PR #159: site: add a phone menu, one pinned row with the mark and a Menu
    diff: 42 files, +751/-106
    restricted-paths: true
+2026-10-23 merge — PR #160: site: add 16 places to Make it yours and photos for the nine without one
+   diff: 155 files, +2288/-76
+   restricted-paths: false

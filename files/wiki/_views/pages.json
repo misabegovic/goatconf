@@ -321,6 +321,7 @@
         "sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md",
         "sources/conversations/2026-10-23--org--venues-approved.md",
         "sources/conversations/2026-10-23--org--add-form-updated.md",
+        "sources/conversations/2026-10-23--org--more-places-and-photos.md",
         "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
         "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
         "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
@@ -336,7 +337,7 @@
         "sources/web/models/edfringe-how-to-start-making-your-show-accessible-2026-10-23.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3001
+      "tokens": 3128
     },
     {
       "path": "org/adrs/one-page-frame-and-one-site-build.md",
@@ -2207,6 +2208,11 @@
         "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
         "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
         "sources/conversations/2026-10-23--org--venues-approved.md",
+        "sources/conversations/2026-10-23--org--more-places-and-photos.md",
+        "sources/web/images/venue-photos-more-2026-10-23.md",
+        "sources/web/venue/bonjour-tuzla-barovi-2026-10-23.md",
+        "sources/web/venue/tourismbih-caffe-bar-bluesberry-2026-10-23.md",
+        "sources/web/venue/pubkviz-gdje-se-odrzava-liga-2026-10-23.md",
         "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
         "sources/web/osm/tuzla-venues-2026-10-23.json",
         "sources/web/osm/tuzla-venue-geocodes-2026-10-23.json",
@@ -2301,7 +2307,7 @@
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-izmjene-11-15.md"
       ],
-      "tokens": 4988,
+      "tokens": 5431,
       "consumed_by": [
         "org/prds/hosts-hub-guides-and-venues.md"
       ]

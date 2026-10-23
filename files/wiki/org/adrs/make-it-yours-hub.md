@@ -12,6 +12,7 @@ sources:
   - sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md
   - sources/conversations/2026-10-23--org--venues-approved.md
   - sources/conversations/2026-10-23--org--add-form-updated.md
+  - sources/conversations/2026-10-23--org--more-places-and-photos.md
   - sources/conversations/2026-10-23--org--hosts-hub-approved.md
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
   - sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md
@@ -238,3 +239,11 @@ filter, and /add forwards to /extend.
 answers, and /add forwards to it. The organiser updated the "add something"
 form with the new wording on the hours off and the link to /extend
 (`sources/conversations/2026-10-23--org--add-form-updated.md`).
+
+**2026-10-23, more places and photos.** Sixteen more places joined the list,
+approved by the organiser ("Approve all 16 and deliver",
+`sources/conversations/2026-10-23--org--more-places-and-photos.md`), for 49
+in all, among them the first bar with published karaoke evenings, Caffe Bar
+Bluesberry, and CineStar's private screenings. The nine places without a
+photo got one, and eleven of the new places have one, so 44 show a photo;
+their records are in `sources/web/images/venue-photos-more-2026-10-23.md`.
