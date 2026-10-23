@@ -53,3 +53,14 @@ Then, verbatim:
 The menu now ends with three full-width buttons: Make it yours and Propose
 a session outlined in yellow, as on the wide bar, and Register filled in
 yellow.
+
+Then, verbatim:
+
+> We can also center stuff on mobile
+> For the buttons, each should be separate
+> Nice
+> Deliver it
+
+The menu's links are now centred, and the three buttons sit centred, each
+on its own row at the same width with space between them, rather than as
+one full-width block. "Deliver it": merge and publish.

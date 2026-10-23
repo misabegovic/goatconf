@@ -690,10 +690,10 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .topbar__menu summary { box-shadow: inset 0 0 0 2px var(--yellow); color: var(--yellow); }
   .topbar__menu[open] summary { background: rgb(255 212 0 / 0.14); }
   .topbar__menu summary:focus-visible, .topbar__panel a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
-  .topbar .topbar__panel { position: absolute; width: auto; align-items: stretch; text-align: left; left: 0; right: 0; top: 100%; display: flex; flex-direction: column; gap: 0; padding: 0.4rem var(--pad) 1.2rem; background: var(--album-night); box-shadow: 0 1.4rem 1.6rem -1rem rgb(0 0 0 / 0.6); font-size: 1.35rem; }
+  .topbar .topbar__panel { position: absolute; width: auto; align-items: stretch; text-align: center; left: 0; right: 0; top: 100%; display: flex; flex-direction: column; gap: 0; padding: 0.4rem var(--pad) 1.2rem; background: var(--album-night); box-shadow: 0 1.4rem 1.6rem -1rem rgb(0 0 0 / 0.6); font-size: 1.35rem; }
   .topbar .topbar__panel a { display: block; padding: 0.8rem 0; border-bottom: 1px solid rgb(255 255 255 / 0.12); white-space: normal; }
-  .topbar__panel-actions { display: flex; flex-direction: column; gap: 0.6rem; margin: 1rem 0 0; }
-  .topbar .topbar__panel .topbar__panel-actions a { padding: 0.75rem 1rem; border: 0; border-radius: 0.45rem; font-size: 1.15rem; text-align: center; text-decoration: none; }
+  .topbar__panel-actions { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; margin: 1.2rem 0 0.2rem; }
+  .topbar .topbar__panel .topbar__panel-actions a { min-width: min(15rem, 100%); padding: 0.75rem 1.2rem; border: 0; border-radius: 0.45rem; font-size: 1.15rem; text-align: center; text-decoration: none; }
   .topbar .topbar__panel a.topbar__panel-cta { box-shadow: inset 0 0 0 2px var(--yellow); color: var(--yellow); }
   .topbar .topbar__panel a.topbar__panel-main { background: var(--yellow); color: var(--album-night); }
   .topbar .topbar__panel .topbar__panel-actions a[aria-current="page"] { box-shadow: inset 0 0 0 2px var(--page); }
