@@ -314,6 +314,21 @@ def test_host_and_logo_background_are_checked(tmp_path, monkeypatch):
     assert any("host must be yes" in p for p in problems) and any("logo_on must be" in p for p in problems)
 
 
+def test_a_supporters_own_colour_goes_behind_its_logo(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch)
+    rec = tmp_path / "supporters" / "zeta-academy.md"
+    (tmp_path / "site" / "img" / "supporters" / "zeta.png").write_bytes(b"png")
+    rec.write_text(HOST.replace("logo_on: dark", 'logo_bg: "lime"'), encoding="utf-8")
+    assert any("logo_bg must be a colour" in p for p in speakers.check_supporter(rec)[0])
+    rec.write_text(HOST.replace("logo_on: dark", 'logo_on: dark\nlogo_bg: "#E0FF6E"'), encoding="utf-8")
+    assert any("keep one" in p for p in speakers.check_supporter(rec)[0])
+    rec.write_text(HOST.replace("logo_on: dark", 'logo_bg: "#E0FF6E"'), encoding="utf-8")
+    problems, meta, body = speakers.check_supporter(rec)
+    assert not any("logo_bg" in p for p in problems)
+    card = speakers.supporter_card(1, "zeta-academy", meta, body)
+    assert 'supporter__logo--tinted" style="--logo-bg:#E0FF6E"' in card
+
+
 def test_each_supporter_has_a_profile_with_their_cards(tmp_path, monkeypatch, capsys):
     _, speakers = setup(tmp_path, monkeypatch)
     monkeypatch.setattr(speakers, "PAGES", {"speakers": tmp_path / "site" / "speakers.html", "supporters": tmp_path / "site" / "supporters.html"})

@@ -244,6 +244,11 @@ def thanks(meta) -> str:
     return f"for funding {esc(funds)}."
 
 
+def logo_ground(meta) -> str:
+    """What sits behind the logo on a card: night for a logo made for the dark, the supporter's own colour if given, else white."""
+    return NIGHT if meta.get("logo_on") == "dark" else str(meta.get("logo_bg") or "#fff")
+
+
 def supporter_card(slug: str, meta, square: bool) -> str:
     w, h = (1080, 1080) if square else (1200, 675)
     logo = (SITE / meta["logo"]).as_uri()
@@ -256,7 +261,7 @@ def supporter_card(slug: str, meta, square: bool) -> str:
   <div class="word" style="font-size:{(120 if len(str(meta['name'])) <= 24 else 88) if square else 92}px; margin-top:16px">{esc(str(meta['name']))}</div>
   <div class="sub" style="font-size:{36 if square else 28}px; line-height:1.2; margin-top:28px">{thanks(meta)}</div>
 </div>
-<div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:{NIGHT if meta.get('logo_on') == 'dark' else '#fff'}; border-radius:18px; display:grid; place-items:center; padding:28px">
+<div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:{logo_ground(meta)}; border-radius:18px; display:grid; place-items:center; padding:28px">
   <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
 <div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{url_px}px">{address}</div>
 {seal(240 if square else 220, "right:72px; bottom:72px")}""")
@@ -274,7 +279,7 @@ def proud_card(slug: str, meta, square: bool) -> str:
   <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">Proud supporter of</div>
   <div class="word" style="font-size:{120 if square else 92}px; margin-top:16px">GoatConf 2027</div>
 </div>
-<div style="position:absolute; left:{84 if square else 72}px; top:{400 if square else 290}px; width:{560 if square else 400}px; height:{280 if square else 200}px; background:{NIGHT if meta.get('logo_on') == 'dark' else '#fff'}; border-radius:18px; display:grid; place-items:center; padding:32px">
+<div style="position:absolute; left:{84 if square else 72}px; top:{400 if square else 290}px; width:{560 if square else 400}px; height:{280 if square else 200}px; background:{logo_ground(meta)}; border-radius:18px; display:grid; place-items:center; padding:32px">
   <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
 <div style="position:absolute; left:{84 if square else 520}px; top:{730 if square else 300}px; right:{360 if square else 72}px">
   <div class="sub" style="font-size:{34 if square else 28}px; line-height:1.2">{esc(str(meta["funds"]))}</div>

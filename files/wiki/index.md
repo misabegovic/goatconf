@@ -2,7 +2,7 @@
 title: "goatconf brain: home"
 kind: meta
 status: draft
-updated: 2026-10-22
+updated: 2026-10-23
 sources: []
 ---
 
@@ -17,7 +17,10 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 
 ## What changed
 
-<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-22 -->
+<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-23 -->
+- **2026-10-23**: **The home page shows eight speakers and says so; \*codeplain's logo sits on its lime.** The "Your session here?" sticker no longer follows a full set of eight speakers, since the Propose a session section is right below; the line under them reads "Showing all 8 speakers so far." (or "Showing 8 of N") before "View all speakers". Supporter records may give their own colour behind the logo (`logo_bg`), and \*codeplain's is #E0FF6E on the wall, the home page, its profile and its cards ([profiles](org/outreach/supporter-profiles.md); source: sources/conversations/2026-10-23--org--home-speakers-eight-shown.md).
+- **2026-10-23**: **Predrag Radenkovic's company covers his travel, and the home page always invites a session.** *codeplain is on the supporters wall for "Predrag Radenkovic's travel", with its logo, a profile from its own site and its cards ([profiles](org/outreach/supporter-profiles.md)). The home page's speakers section shows eight speakers and then always "Your session here?", with "View all speakers" under it. The program's reserved main-hall cells are general, for whichever confirmed speakers need them; the program is built closer to the event ([what is known](org/goatconf-2027.md); source: sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md).
+- **2026-10-23**: **Predrag Radenkovic, CTO at *codeplain, is a confirmed speaker.** Ninth on the speakers list, with his WeAreDevelopers bio, a photo from How to Web and share cards; his company is expected to give a talk and a workshop on regenerative software, sessions to come, and an eighth main-hall slot, Friday 15:30, is reserved ([his page](org/speakers/predrag-radenkovic.md); [source](../sources/conversations/2026-10-23--org--predrag-radenkovic.md)).
 - **2026-10-22**: **Cristian Planas keeps his stage photo.** His gondola selfie replaced his COSCUP 2025 stage photo for a few hours, then the organiser went back to the stage photo, on his profile and his cards ([Cristian Planas](org/speakers/cristian-planas.md); sources: sources/conversations/2026-10-22--org--cristian-planas-back-to-stage-photo.md, sources/conversations/2026-10-22--org--cristian-planas-gondola-photo.md).
 - **2026-10-22**: **Cristian Planas is a Principal Engineer at Combinaut.** His role on the site, his cards and the first speakers post now reads "Principal Engineer at Combinaut, author of Rails Scales!", from his RubyConf India 2026 speaker card ([Cristian Planas](org/speakers/cristian-planas.md); sources: sources/conversations/2026-10-22--org--cristian-planas-principal-engineer.md, sources/web/speakers/rubyconf-india-2026-cristian-planas-2026-10-22.md).
 - **2026-10-21**: **A "Proud supporter" card for every supporter.** Each supporter's profile now offers, above GoatConf's thank-you card, its own card to post: "Proud supporter of GoatConf 2027", its logo, its supporter line, Tuzla, 3 to 5 June 2027, and its profile's address, square and wide, the same for every supporter. A long address on a square card is set smaller to stay clear of the seal, which fixes the Bosnia & Herzegovina Futures Foundation's thank-you card ([profiles](org/outreach/supporter-profiles.md); source: sources/conversations/2026-10-21--org--proud-supporter-cards.md).

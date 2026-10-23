@@ -573,3 +573,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-22 merge — PR #155: speakers: Cristian Planas's stage photo back
    diff: 9 files, +25/-4
    restricted-paths: false
+2026-10-23 merge — PR #156: speakers: add Predrag Radenkovic, with *codeplain as his travel supporter
+   diff: 71 files, +731/-74
+   restricted-paths: true

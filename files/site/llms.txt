@@ -26,10 +26,12 @@ Follow GoatConf: LinkedIn https://www.linkedin.com/company/goatconf/, X https://
 - [Amar Mahmutbegović](https://goatconf.com/speaker-amar-mahmutbegovic): Co-founder and Head of Engineering at Semblie
 - [Cristian Planas](https://goatconf.com/speaker-cristian-planas): Principal Engineer at Combinaut, author of Rails Scales!
 - [Christoph Lipautz](https://goatconf.com/speaker-christoph-lipautz): Senior Staff Engineer at Meister
+- [Predrag Radenkovic](https://goatconf.com/speaker-predrag-radenkovic): CTO at *codeplain
 
 ## Supporters
 
 - [IPI Academy](https://goatconf.com/supporter-ipi-academy): Host and partner: the rooms at IPI Academy
+- [*codeplain](https://goatconf.com/supporter-codeplain): Predrag Radenkovic's travel
 - [Bosnia & Herzegovina Futures Foundation](https://goatconf.com/supporter-bh-futures-foundation): Funding and organising the BH Professionals Meetup on Saturday 5 June
 - [Meister](https://goatconf.com/supporter-meister): Christoph Lipautz's travel
 - [wroclove.rb](https://goatconf.com/supporter-wroclove-rb): Community partner: social media

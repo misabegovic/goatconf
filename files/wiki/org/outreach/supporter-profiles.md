@@ -2,7 +2,7 @@
 title: "Who each supporter is and how to support them, on their profiles"
 kind: reference
 status: living
-updated: 2026-10-21
+updated: 2026-10-23
 confidence: low
 sources:
   - sources/conversations/2026-10-21--org--proud-supporter-cards.md
@@ -16,6 +16,10 @@ sources:
   - sources/web/supporters/meister-about-and-jobs-2026-10-18.md
   - sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md
   - sources/web/supporters/wroclove-rb-about-2026-10-21.md
+  - sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md
+  - sources/web/supporters/codeplain-logo-and-site-2026-10-23.md
+  - sources/web/speakers/thenewstack-codeplain-2026-10-23.md
+  - sources/conversations/2026-10-23--org--home-speakers-eight-shown.md
 ---
 
 # Who each supporter is and how to support them, on their profiles
@@ -105,6 +109,31 @@ sources/web/supporters/wroclove-rb-about-2026-10-21.md). "Poland" is added, as W
 - Join their newsletter: https://wrocloverb.kit.com/0430aa4d7d
 
 (source: sources/web/supporters/wroclove-rb-about-2026-10-21.md)
+
+## *codeplain
+
+Drafted on 2026-10-23 from *codeplain's own site and The New Stack, when
+it was listed for Predrag Radenkovic's travel (source: sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md).
+
+**Who they are:**
+
+> *codeplain is an AI-powered code generation platform that turns specifications written in ***plain, an open-source specification language, into production-ready software. When something needs to change, the spec is edited and the code regenerated from it. Founded in early 2025 in Ljubljana, Slovenia, it works on spec-driven development for software written with AI.
+
+The first sentence follows the home page's own words, adding that ***plain
+is an open-source specification language (source:
+sources/web/supporters/codeplain-logo-and-site-2026-10-23.md); the rest,
+editing the spec and regenerating the code, and its founding in Ljubljana
+in early 2025, are from The New Stack (source:
+sources/web/speakers/thenewstack-codeplain-2026-10-23.md).
+
+**How to support them:**
+
+- Try *codeplain: https://www.codeplain.ai/
+- Read the *codeplain blog: https://blog.codeplain.ai/
+
+(source: sources/web/supporters/codeplain-logo-and-site-2026-10-23.md; its careers page has no open positions, so there is no jobs link)
+
+**Logo:** its wordmark on its own lime, #E0FF6E, everywhere the logo shows, on the organiser's choice of 2026-10-23 (source: sources/conversations/2026-10-23--org--home-speakers-eight-shown.md).
 
 ## A note to send each supporter (draft, English, to adapt now that it is live)
 
