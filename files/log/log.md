@@ -576,3 +576,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-23 merge — PR #156: speakers: add Predrag Radenkovic, with *codeplain as his travel supporter
    diff: 71 files, +731/-74
    restricted-paths: true
+2026-10-23 merge — PR #157: drumbeat: Predrag Radenkovic's spotlight takes week 24, and he joins the first speakers
+   diff: 11 files, +73/-25
+   restricted-paths: true
