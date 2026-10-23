@@ -616,13 +616,16 @@ venues:
   size: A bar in the City Park; capacity is not published. The article's photos show a garden terrace.
   setting: both
   suits: [karaoke, evening-event, meetup, other]
-  about: A bar in the City Park known for a busy programme of gigs and parties, quizzes, karaoke evenings, thrift markets and board-game get-togethers. No current karaoke schedule is published.
+  about: A bar in the City Park, on the site of the former Urban BeaTZ, known for a busy programme of gigs and parties, quizzes, karaoke evenings, thrift markets and board-game get-togethers. No karaoke schedule is published, so ask the bar for a night.
   contact: [https://www.instagram.com/bluesberry.bar/]
   sources:
   - sources/web/venue/bonjour-tuzla-barovi-2026-10-23.md
   - sources/web/venue/tourismbih-caffe-bar-bluesberry-2026-10-23.md
   - sources/web/venue/bluesberry-karaoke-search-extract-2026-10-23.md
   - sources/web/venue/viberate-tuzla-2026-10-23.md
+  - sources/web/venue/balans-buvljak-bluesberry-2026-2026-10-23.md
+  - sources/web/venue/iyp-urban-beatz-2026-10-23.md
+  - sources/web/venue/karaoke-bluesberry-club-viva-search-extract-2026-10-23.md
   photo: caffe-bar-bluesberry.jpg
   approved: true
 
@@ -643,6 +646,10 @@ venues:
   - sources/web/venue/muzejib-novosti-2026-10-23.md
   - sources/web/venue/tourismbih-museum-of-east-bosnia-2026-10-23.md
   - sources/web/tuzla/tztz-museum-of-eastern-bosnia.md
+  - sources/web/venue/tztz-muzej-istocne-bosne-bs-2026-10-23.md
+  - sources/web/venue/tztz-muzej-istocne-bosne-fena-2021-2026-10-23.md
+  - sources/web/venue/commons-museum-of-east-bosnia-tuzla-2026-10-23.md
+  photo: muzej-istocne-bosne.jpg
   approved: true
 
 - id: ipi-student-hub
@@ -656,11 +663,15 @@ venues:
   setting: indoor
   suits: [workshop, hackathon, meetup]
   about: A space in IPI Academy where students develop their ideas and business plans for free, with modern equipment and mentoring. The academy also has an active student club.
-  contact: [https://ipi-akademija.ba, info@ipi-akademija.ba, +387 35 258 454]
+  contact: [https://ipi-akademija.ba, studenthub@ipi-akademija.ba, info@ipi-akademija.ba, +387 35 258 454]
   check_first: true
   sources:
   - sources/web/venue/ipi-akademija-about.md
   - sources/web/venue/ipi-akademija-kontakt.md
+  - sources/web/venue/ipi-akademija-studij-ipia-2026-10-23.md
+  - sources/web/venue/ipi-akademija-studentski-hub-otvoren-2019-2026-10-23.md
+  - sources/web/venue/tuzlainfo-ipi-studentski-hub-2019-2026-10-23.md
+  photo: ipi-student-hub.jpg
   approved: true
 
 - id: mamamia-origins
@@ -702,18 +713,25 @@ venues:
   name: SKPC Mejdan
   english: The sports, cultural and business centre
   kind: culture
-  address: Mejdan, west of the centre
+  address: Bosne Srebrene bb, Mejdan, west of the centre
   lat: 44.536967
   lon: 18.665048
   size: A large university hall, a small sports hall, a bowling alley and exhibition and business rooms, 16,500 m² under cover; no seat counts are published.
   setting: indoor
   suits: [evening-event, other, meetup]
-  about: The city's big hall for sport, concerts and fairs, with a bowling alley and exhibition rooms. It hosted a team quiz for the Coffee and Chocolate Fair in May 2026 and has concerts booked for late 2026.
-  contact: []
+  about: The city-owned hall for sport, concerts and fairs, with a bowling alley, exhibition rooms and business rooms to let. It hosted a team quiz for the Coffee and Chocolate Fair in May 2026.
+  contact: [http://mejdan.ba, mejdan@mejdan.ba, +387 35 228 825, +387 35 228 826]
   sources:
   - sources/web/venue/tztz-skpc-mejdan.md
   - sources/web/venue/volimtuzlu-quiz-mejdan-2026-10-23.md
   - sources/web/venue/viberate-tuzla-2026-10-23.md
+  - sources/web/venue/mejdan-kontakt-2026-10-23.md
+  - sources/web/venue/mejdan-o-nama-2026-10-23.md
+  - sources/web/venue/mejdan-zakup-prostora-2026-10-23.md
+  - sources/web/venue/mejdan-home-2026-10-23.md
+  - sources/web/venue/companywall-jp-skpc-mejdan-2026-10-23.md
+  - sources/web/venue/mejdan-arhiva-slika-2026-10-23.md
+  photo: skpc-mejdan.jpg
   approved: true
 
 - id: cinestar-tuzla
@@ -794,6 +812,9 @@ venues:
   sources:
   - sources/web/venue/czk-svedska-kuca-solidarnosti-2026-10-23.md
   - sources/web/venue/czk-kontakt-2026-10-23.md
+  - sources/web/venue/czk-predavanje-kuca-solidarnosti-lipnica-2019-2026-10-23.md
+  - sources/web/venue/tuzlainfo-zbor-gradjana-lipnica-2022-2026-10-23.md
+  photo: svedska-kuca-solidarnosti.jpg
   approved: true
 
 - id: drustveni-dom-gornja-tuzla
@@ -805,7 +826,7 @@ venues:
   lon: 18.762281
   point: street
   people: 150
-  size: A hall with 150 seats for cultural events and a hall with 50 seats for parties, plus a library.
+  size: A two-storey house of 1,500 m² with a terrace, a hall with 150 seats for cultural events and a hall with 50 seats for parties, plus a library.
   setting: indoor
   suits: [evening-event, meetup, trip]
   about: The Centar za kulturu's community house in Gornja Tuzla, with a 150-seat hall for cultural events and celebrations and a 50-seat hall for parties and get-togethers, which it also lets to local associations.
@@ -813,6 +834,10 @@ venues:
   sources:
   - sources/web/venue/czk-drustveni-dom-gornja-tuzla-2026-10-23.md
   - sources/web/venue/czk-kontakt-2026-10-23.md
+  - sources/web/venue/fondacijatz-drustveni-dom-gornja-tuzla-2026-10-23.md
+  - sources/web/venue/czk-koncert-kud-drustveni-dom-gornja-tuzla-2019-2026-10-23.md
+  - sources/web/venue/czk-panonija-drustveni-dom-gornja-tuzla-2021-2026-10-23.md
+  photo: drustveni-dom-gornja-tuzla.jpg
   approved: true
 
 - id: paintball-area
