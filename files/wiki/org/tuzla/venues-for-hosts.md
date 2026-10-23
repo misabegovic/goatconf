@@ -12,6 +12,7 @@ sources:
   - sources/conversations/2026-10-23--org--reserved-venues-and-explore.md
   - sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
+  - sources/conversations/2026-10-23--org--venues-approved.md
   - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
   - sources/web/osm/tuzla-venues-2026-10-23.json
   - sources/web/osm/tuzla-venue-geocodes-2026-10-23.json
@@ -125,8 +126,9 @@ every listing is "a place you could ask", and the site may say only that
 until the organiser arranges more.
 
 The places now live as records in `places/venues.yml`, shown on the Make it
-yours page once the organiser approves each
-([the ADR](../adrs/make-it-yours-hub.md)); this page keeps the research
+yours page; the organiser approved all 33 on 2026-10-23
+(`sources/conversations/2026-10-23--org--venues-approved.md`,
+[the ADR](../adrs/make-it-yours-hub.md)). This page keeps the research
 behind them.
 
 ## How to read this page

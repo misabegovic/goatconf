@@ -319,6 +319,7 @@
       ],
       "sources": [
         "sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md",
+        "sources/conversations/2026-10-23--org--venues-approved.md",
         "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
         "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
         "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
@@ -334,7 +335,7 @@
         "sources/web/models/edfringe-how-to-start-making-your-show-accessible-2026-10-23.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 2806
+      "tokens": 2911
     },
     {
       "path": "org/adrs/one-page-frame-and-one-site-build.md",
@@ -2203,6 +2204,7 @@
         "sources/conversations/2026-10-23--org--reserved-venues-and-explore.md",
         "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
         "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
+        "sources/conversations/2026-10-23--org--venues-approved.md",
         "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
         "sources/web/osm/tuzla-venues-2026-10-23.json",
         "sources/web/osm/tuzla-venue-geocodes-2026-10-23.json",
@@ -2297,7 +2299,7 @@
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-izmjene-11-15.md"
       ],
-      "tokens": 4970,
+      "tokens": 4988,
       "consumed_by": [
         "org/prds/hosts-hub-guides-and-venues.md"
       ]

@@ -5,7 +5,8 @@
 # them: each is a place a host could ask.
 #
 # Only places with approved: true appear on the site; the organiser approves
-# each one. Distances are computed from lat/lon to IPI Academy (places.yml);
+# each one. All 33 approved on 2026-10-23
+# (sources/conversations/2026-10-23--org--venues-approved.md). Distances are computed from lat/lon to IPI Academy (places.yml);
 # where only a street was found, the point is the street's (point: street).
 # people is the largest group a source says the place holds (seats, or a
 # crowd it has had), for the size filter; size says it in words. metres stands
@@ -35,7 +36,7 @@ venues:
   - sources/web/venue/nptz-zahtjev-za-koristenje-sale-2026-10-23.md
   - sources/web/venue/nptz-kontakt-2026-10-23.md
   photo: narodno-pozoriste.jpg
-  approved: false
+  approved: true
 
 - id: hkc-sveti-franjo
   name: HKC "Sveti Franjo"
@@ -56,7 +57,7 @@ venues:
   - sources/web/venue/hkc-sveti-franjo-go-bosnia-guide-2026-10-23.md
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
   photo: hkc-sveti-franjo.jpg
-  approved: false
+  approved: true
 
 - id: dom-mladih
   name: Dom mladih Tuzla
@@ -75,7 +76,7 @@ venues:
   - sources/web/venue/tuzlainfo-dom-mladih-kamerna-scena-2026-10-23.md
   - sources/web/venue/czk-kontakt-2026-10-23.md
   photo: dom-mladih.jpg
-  approved: false
+  approved: true
 
 - id: kuca-plamena-mira
   name: Kuća plamena mira
@@ -94,7 +95,7 @@ venues:
   - sources/web/venue/kpm-home-2026-10-23.md
   - sources/web/venue/kpm-koncert-umjetnicke-muzike-2026-2026-10-23.md
   photo: kuca-plamena-mira.jpg
-  approved: false
+  approved: true
 
 - id: atelje-ismet-mujezinovic
   name: Atelje "Ismet Mujezinović"
@@ -113,7 +114,7 @@ venues:
   - sources/web/venue/tuzlainfo-atelje-musica-bosnae-basta-2025-2026-10-23.md
   - sources/web/venue/czk-kontakt-2026-10-23.md
   photo: atelje-ismet-mujezinovic.jpg
-  approved: false
+  approved: true
 
 - id: dom-knjizevnosti
   name: Dom književnosti
@@ -131,7 +132,7 @@ venues:
   - sources/web/venue/czk-dom-knjizevnosti-2026-10-23.md
   - sources/web/venue/czk-kontakt-2026-10-23.md
   - sources/web/osm/tuzla-venues-2026-10-23.json
-  approved: false
+  approved: true
 
 - id: galerija-portreta
   name: Međunarodna galerija portreta
@@ -149,7 +150,7 @@ venues:
   - sources/web/venue/czk-medunarodna-galerija-portreta-2026-10-23.md
   - sources/web/venue/czk-koncert-galerija-portreta-2023-2026-10-23.md
   - sources/web/venue/czk-kontakt-2026-10-23.md
-  approved: false
+  approved: true
 
 - id: bkc
   name: BKC Tuzla
@@ -168,7 +169,7 @@ venues:
   - sources/web/venue/bkc-o-bkc-u-tuzla-2026-10-23.md
   - sources/web/venue/bkc-cjenovnik-usluga-2026-10-23.md
   - sources/web/venue/bkc-kontakt-2026-10-23.md
-  approved: false
+  approved: true
 
 - id: pivnica-taverna
   name: Pivnica Taverna
@@ -186,7 +187,7 @@ venues:
   sources:
   - sources/web/venue/pivaratuzla-pivnica-taverna-2026-10-23.md
   photo: pivnica-taverna.jpg
-  approved: false
+  approved: true
 
 - id: nardi-pub
   name: Nardi Pub
@@ -203,7 +204,7 @@ venues:
   sources:
   - sources/web/venue/nardipub-com-home-2026-10-23.md
   - sources/web/venue/iyp-nardi-pub-2026-10-23.md
-  approved: false
+  approved: true
 
 - id: park-pub
   name: Park Pub
@@ -220,7 +221,7 @@ venues:
   - sources/web/venue/iyp-park-pub-2026-10-23.md
   - sources/web/venue/tztz-park-pub-2026-10-23.md
   photo: park-pub.jpg
-  approved: false
+  approved: true
 
 - id: wine-whiskey-bar
   name: Wine & Whiskey Bar
@@ -237,7 +238,7 @@ venues:
   sources:
   - sources/web/venue/iyp-wine-whiskey-bar-2026-10-23.md
   photo: wine-whiskey-bar.jpg
-  approved: false
+  approved: true
 
 - id: just-caffe-pub
   name: Just Caffe Pub
@@ -253,7 +254,7 @@ venues:
   sources:
   - sources/web/venue/iyp-just-caffe-pub-2026-10-23.md
   photo: just-caffe-pub.jpg
-  approved: false
+  approved: true
 
 - id: cafe-sloboda
   name: Cafe Sloboda
@@ -270,7 +271,7 @@ venues:
   - sources/web/venue/iyp-cafe-sloboda-2026-10-23.md
   - sources/web/tuzla/tztz-sloboda-caffe-bar.md
   photo: cafe-sloboda.jpg
-  approved: false
+  approved: true
 
 - id: jazz-cafe
   name: Jazz Cafe
@@ -285,7 +286,7 @@ venues:
   contact: [https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/jazz-cafe]
   sources:
   - sources/web/venue/iyp-jazz-cafe-2026-10-23.md
-  approved: false
+  approved: true
 
 - id: wint-lounge-bar
   name: WINT Lounge Bar
@@ -302,7 +303,7 @@ venues:
   - sources/web/venue/tztz-wint-lounge-bar-2026-10-23.md
   - sources/web/venue/barista-ba-home-2026-10-23.md
   photo: wint-lounge-bar.jpg
-  approved: false
+  approved: true
 
 - id: the-loft-terrace-bar
   name: The Loft Terrace Bar
@@ -320,7 +321,7 @@ venues:
   - sources/web/venue/hotel-tehnograd-home-2026-10-23.md
   - sources/web/venue/tztz-hotel-tehnograd-2026-10-23.md
   photo: the-loft-terrace-bar.jpg
-  approved: false
+  approved: true
 
 - id: caffe-bar-central
   name: Caffe Bar Central
@@ -337,7 +338,7 @@ venues:
   - sources/web/venue/iyp-caffe-bar-central-2026-10-23.md
   - sources/web/osm/tuzla-venue-lookups-2026-10-23.json
   photo: caffe-bar-central.jpg
-  approved: false
+  approved: true
 
 - id: barok
   name: Barok
@@ -353,7 +354,7 @@ venues:
   sources:
   - sources/web/venue/iyp-barok-2026-10-23.md
   - sources/web/osm/tuzla-venue-lookups-2026-10-23.json
-  approved: false
+  approved: true
 
 - id: coffee-zone
   name: Coffee Zone
@@ -369,7 +370,7 @@ venues:
   contact: [+387 60 33 76 248]
   sources:
   - sources/web/venue/iyp-coffee-zone-2026-10-23.md
-  approved: false
+  approved: true
 
 - id: restoran-zlatnik
   name: Restoran Zlatnik
@@ -387,7 +388,7 @@ venues:
   - sources/web/venue/tztz-restoran-zlatnik-2026-10-23.md
   - sources/web/venue/iyp-zlatnik-2026-10-23.md
   photo: restoran-zlatnik.jpg
-  approved: false
+  approved: true
 
 - id: heartland
   name: Heartland
@@ -405,7 +406,7 @@ venues:
   sources:
   - sources/web/venue/tztz-restoran-heartland-2026-10-23.md
   photo: heartland.jpg
-  approved: false
+  approved: true
 
 - id: hotel-miris-dunja-88
   name: Hotel Miris Dunja 88
@@ -422,7 +423,7 @@ venues:
   sources:
   - sources/web/venue/tztz-hotel-miris-dunja-88-2026-10-23.md
   photo: hotel-miris-dunja-88.jpg
-  approved: false
+  approved: true
 
 - id: hotel-tuzla
   name: Hotel Tuzla
@@ -439,7 +440,7 @@ venues:
   sources:
   - sources/web/venue/tztz-hotel-tuzla.md
   photo: hotel-tuzla.jpg
-  approved: false
+  approved: true
 
 - id: hotel-salis
   name: Hotel Salis
@@ -456,7 +457,7 @@ venues:
   sources:
   - sources/web/venue/hotelsalis-konferencije-2026-10-23.md
   photo: hotel-salis.jpg
-  approved: false
+  approved: true
 
 - id: hotel-mellain
   name: Hotel Mellain
@@ -473,7 +474,7 @@ venues:
   - sources/web/venue/tztz-hotel-mellain-2026-10-23.md
   - sources/web/venue/mellainhotel-com-home-2026-10-23.md
   photo: hotel-mellain.jpg
-  approved: false
+  approved: true
 
 - id: motel-royal
   name: Motel Royal
@@ -490,7 +491,7 @@ venues:
   sources:
   - sources/web/venue/tztz-motel-royal-2026-10-23.md
   photo: motel-royal.jpg
-  approved: false
+  approved: true
 
 - id: code-hub-tuzla
   name: Code Hub Tuzla, BIT Centar
@@ -505,7 +506,7 @@ venues:
   sources:
   - sources/web/venue/tehnopolis-code-hub-tuzla-2025.md
   - sources/web/venue/vestbee-code-hub-tuzla-2022.md
-  approved: false
+  approved: true
 
 - id: biblioteka-dervis-susic
   name: Biblioteka "Derviš Sušić"
@@ -523,7 +524,7 @@ venues:
   - sources/web/venue/nubt-library-about-2026-10-23.md
   - sources/web/venue/mzv-czech-culture-day-tuzla-2026-10-23.md
   photo: biblioteka-dervis-susic.jpg
-  approved: false
+  approved: true
 
 - id: tehnoloski-fakultet
   name: Tehnološki fakultet
@@ -538,7 +539,7 @@ venues:
   contact: [https://tf.untz.ba, +387 35 320 741]
   sources:
   - sources/web/venue/tf-untz-trust-hackathon-2026-10-23.md
-  approved: false
+  approved: true
 
 - id: freedom-square
   name: Trg slobode
@@ -556,7 +557,7 @@ venues:
   - sources/web/tuzla/tztz-square-of-freedom.md
   - sources/web/tuzla/tuzla-city-guide-tztz-2025.md
   photo: freedom-square.jpg
-  approved: false
+  approved: true
 
 - id: pannonian-lakes
   name: Panonska jezera and Slana banja
@@ -575,7 +576,7 @@ venues:
   - sources/conversations/2026-10-13--org--lake-season-opens-1-june.md
   - sources/web/tuzla/tztz-salty-spa-park.md
   photo: pannonian-lakes.jpg
-  approved: false
+  approved: true
 
 - id: ilincica
   name: Ilinčica
@@ -592,4 +593,4 @@ venues:
   sources:
   - sources/web/venue/n1-ilincica-adventure-park-2026-10-23.md
   photo: ilincica.jpg
-  approved: false
+  approved: true

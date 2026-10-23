@@ -10,6 +10,7 @@ depends_on:
   - org/adrs/extension-slots-and-the-record.md
 sources:
   - sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md
+  - sources/conversations/2026-10-23--org--venues-approved.md
   - sources/conversations/2026-10-23--org--hosts-hub-approved.md
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
   - sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md
@@ -223,3 +224,10 @@ merge, since every merge to `main` publishes the site.
   the organiser to paste into the public form.
 - **Tests:** `tests/test_extensions.py` covers the hours off, whole core
   days, venue records and their check, the preview, and the old addresses.
+
+**2026-10-23, the places approved.** The organiser approved all 33 places
+("Approve all 33", `sources/conversations/2026-10-23--org--venues-approved.md`),
+so every one shows on the hub. Checked in a browser: the filters narrow the
+list (karaoke to 6 places, "fits an hour off" to 8), the "no match" note
+shows when nothing fits, a kind in the address (`?kind=karaoke`) picks the
+filter, and /add forwards to /extend.
