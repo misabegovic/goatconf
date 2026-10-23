@@ -6,6 +6,7 @@ updated: 2026-10-14
 confidence: medium
 supersedes: org/pitches/one-goat-minimal-core-and-extensions.md
 sources:
+  - sources/conversations/2026-10-23--org--hosts-hub-approved.md
   - sources/conversations/2026-10-14--org--decisions-one-by-one.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-12--org--approval-back-on.md
@@ -161,6 +162,11 @@ and approved on 2026-10-07
   [the operations pitch](../pitches/operations-people-rules-and-the-day.md)).
 - [The road to June 2027](../prds/road-to-june-2027.md) (from
   [the road pitch](../pitches/the-road-to-june-2027.md)).
+- [Make it yours: the hosts' hub](../prds/hosts-hub-guides-and-venues.md):
+  one hub at /extend with guides on how, what and where, the places in
+  Tuzla, and events in the hours off; approved on 2026-10-23
+  (`sources/conversations/2026-10-23--org--hosts-hub-approved.md`), its
+  ADR proposed (from the organiser's asks of 2026-10-23, with no pitch).
 
 ## Success metrics
 

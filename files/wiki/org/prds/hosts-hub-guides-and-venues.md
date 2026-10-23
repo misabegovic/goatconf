@@ -1,15 +1,14 @@
 ---
-title: "A hosts' hub: guides on how, what and where, a searchable list of Tuzla venues, and events in the hours off"
+title: "Make it yours: one hub with guides on how, what and where, a searchable list of Tuzla venues, and events in the hours off"
 kind: initiative
-status: suggested
-ai_suggestion: true
+status: living
+parent_epic: goatconf-2027
 updated: 2026-10-23
-team: organiser (inferred)
-division: org (inferred)
+team: organiser
 repos:
   - org
 appetite: medium
-confidence: low
+confidence: medium
 depends_on:
   - org/tuzla/venues-for-hosts.md
   - org/adrs/extension-slots-and-the-record.md
@@ -19,6 +18,7 @@ sources:
   - sources/conversations/2026-10-23--org--reserved-venues-and-explore.md
   - sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
+  - sources/conversations/2026-10-23--org--hosts-hub-approved.md
   - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
   - sources/conversations/2026-10-07--org--conference-vision.md
   - sources/conversations/2026-10-20--org--hero-extendable.md
@@ -41,14 +41,11 @@ sources:
   - sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md
 ---
 
-# A hosts' hub: guides on how, what and where, a searchable list of Tuzla venues, and events in the hours off
+# Make it yours: one hub with guides on how, what and where, a searchable list of Tuzla venues, and events in the hours off
 
-> **AI-suggested PRD.** Does not reflect a human-approved decision
-> and does not record current state or upcoming changes. Agent-authored
-> synthesis from observed patterns; for a human to review, iterate on,
-> and decide whether to graduate.
+Approved by the organiser on 2026-10-23 (`sources/conversations/2026-10-23--org--hosts-hub-approved.md`), after seven answers (`sources/conversations/2026-10-23--org--hosts-hub-answers.md`). Agent-drafted from the organiser's asks and answers; the decision record is [Make it yours: one hub at /extend](../adrs/make-it-yours-hub.md).
 
-## Why the agent suggests this
+## Background
 
 On 2026-10-23 the organiser asked how obvious it is that people can
 extend GoatConf and make it their own, called that "one of the special
@@ -74,15 +71,15 @@ Today the framework is the record and the rules
 ([Extension slots and the record](../../adrs/extension-slots-and-the-record.md));
 what a would-be host lacks is the help to get from an idea to an event.
 
-## Inferred objective
+## Objective
 
-If GoatConf published one hosts' hub (how to host, what to run, where in
+If GoatConf publishes one hosts' hub (how to host, what to run, where in
 Tuzla, with photos and contacts, searchable and filterable, next to the
-events already accepted), it would turn "make it your own" from a sticker
-into something a stranger can act on in an evening, and it would make
+events already accepted), it turns "make it your own" from a sticker
+into something a stranger can act on in an evening, and it makes
 plain that GoatConf's shape comes from the people who join.
 
-## Affected personas (agent-inferred)
+## Affected personas
 
 - [The extension host](../../../../.claude/personas/users/extension-host.md):
   the persona's own hypothesis is "one page that says what they may add,
@@ -116,7 +113,7 @@ The seven open questions were put to the organiser one at a time
 7. **Karaoke in cafés nearby,** "like on the square"; the hub points a
    karaoke host at the cafés on and around Freedom Square.
 
-## Now / Perceived / Target (agent's read)
+## Now / Perceived / Target
 
 - **Now.** The home page says "Extendable: a minimal core, make it your
   own" (`sources/conversations/2026-10-20--org--hero-extendable.md`) and
@@ -129,15 +126,15 @@ The seven open questions were put to the organiser one at a time
   Nothing says one edition shapes the next.
 - **Perceived.** The organiser reads extendability as GoatConf's special
   aspect and wants it obvious (`sources/conversations/2026-10-23--org--extendable-and-each-edition.md`).
-- **Target (hypothesis).** A visitor lands on one hub, sees what people
+- **Target.** A visitor lands on one hub, sees what people
   are adding, filters places by what they want to run, reads a short
   guide, and proposes. Two venues say "check with GoatConf first". The
   hub says, in one line, that the people who join shape this edition and
   that every edition can be different.
 
-## Scope (suggested)
+## Scope
 
-- **One hub page** that replaces today's two pages: what people are
+- **One hub page, "Make it yours" at goatconf.com/extend,** that replaces today's two pages: what people are
   adding (the accepted events, as now), then the guides, then the places,
   then the proposal form. `extensions.html` and `add.html` redirect to it,
   so every existing link keeps working.
@@ -187,13 +184,11 @@ The seven open questions were put to the organiser one at a time
   taken (`sources/web/models/pycon-au-2024-birds-of-a-feather-2026-10-23.md`,
   `sources/web/models/pycon-us-2025-open-spaces-2026-10-23.md`,
   `sources/web/models/techcrunch-early-stage-2024-host-your-side-event-2026-10-23.md`).
-- **The line about editions,** on the hub and perhaps the home page, for
-  example: "GoatConf is what the people who come make it. This year's
-  shape comes from who joins, and every edition can be different." The
-  organiser approves the words.
+- **The line about editions,** "Every GoatConf is shaped by who joins
+  it.", on the hub and on the home page.
 - **"Propose an event" in the top bar,** next to "Propose a session".
 
-## No-gos (suggested)
+## No-gos
 
 - No venue is listed as arranged, partnered or reserved for hosts unless
   the organiser has arranged it; the default wording is "a place you
@@ -207,7 +202,7 @@ The seven open questions were put to the organiser one at a time
   and none in Friday's 12:30 hour.
 - No private persons' contact details; only what a venue publishes.
 
-## Rabbit holes (suggested)
+## Rabbit holes
 
 - **Capacities.** Most cultural houses publish no seat counts. Ask the
   venues, or show "size unknown, ask the venue", rather than guess.
@@ -225,13 +220,13 @@ The seven open questions were put to the organiser one at a time
   Pub's old site now shows gambling content). Each record needs a
   checked date, and the hub should say when it was last checked.
 
-## Appetite (estimated)
+## Appetite
 
 Medium: the records and the hub page build on tools that already exist
 for places and extensions; the guides are writing; the decisions (hours
 off, wording on editions, which venues to arrange) are the organiser's.
 
-## Suggested success metrics
+## Success metrics
 
 - The number of events people propose, and how many are accepted, by the
   end of April 2027, compared with today's one.
@@ -239,26 +234,24 @@ off, wording on editions, which venues to arrange) are the organiser's.
 - Whether people asked at the event say they knew they could add
   something (a question in the feedback survey).
 
-## Open questions for the human reviewer
+## Decision needed
 
-The seven questions of the first draft are answered above. Left for the
-ADR:
+Answered by [Make it yours: one hub at /extend](../adrs/make-it-yours-hub.md), proposed. The three questions this PRD left were answered on 2026-10-23
+(`sources/conversations/2026-10-23--org--hosts-hub-approved.md`):
 
-1. **The words** of the line about editions, and whether it also goes on
-   the home page.
-2. **The hub's name and address,** for example "Make it yours" at
-   `goatconf.com/extend`, or keeping "Events people add" at
-   `goatconf.com/extensions`.
-3. **How hosts claim an hour off:** through the same form and record as
-   any event, or a lighter way closer to the day (PyCon US opens its
-   boards the day before).
+1. **The editions line** reads "Every GoatConf is shaped by who joins
+   it.", on the hub and on the home page.
+2. **The hub** is "Make it yours" at goatconf.com/extend; /extensions and
+   /add redirect to it.
+3. **An hour off is claimed through the same form** as any event, with
+   the hour off as its time; the organiser accepts it like any other, and
+   it shows on the hub and the program.
 
-## Suggested next step
+## Next step
 
-Graduate: with the answers above, the organiser approves this PRD, the
-agent moves it to `wiki/org/prds/`, writes the ADR through `/shape` with
-the three questions left, and only then builds the hub, the records and
-the guides.
+The ADR, [Make it yours: one hub at /extend](../adrs/make-it-yours-hub.md),
+records how; once the organiser approves it, the agent builds the venue
+records, the hub, the guides, the redirects and the editions line.
 
 ## Sources
 

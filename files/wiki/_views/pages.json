@@ -263,7 +263,8 @@
       ],
       "tokens": 1880,
       "consumed_by": [
-        "org/ai-suggestions/prds/hosts-hub-guides-and-venues.md"
+        "org/adrs/make-it-yours-hub.md",
+        "org/prds/hosts-hub-guides-and-venues.md"
       ]
     },
     {
@@ -303,6 +304,36 @@
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
       "tokens": 3055
+    },
+    {
+      "path": "org/adrs/make-it-yours-hub.md",
+      "title": "Make it yours: one hub at /extend, built from event and venue records, with guides, filters, photos and the hours off",
+      "kind": "decision",
+      "status": "proposed",
+      "updated": "2026-10-23",
+      "team": "organiser",
+      "confidence": "medium",
+      "depends_on": [
+        "org/prds/hosts-hub-guides-and-venues.md",
+        "org/adrs/extension-slots-and-the-record.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
+        "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
+        "sources/conversations/2026-10-23--org--reserved-venues-and-explore.md",
+        "sources/conversations/2026-10-23--org--host-guides-and-venues.md",
+        "sources/conversations/2026-10-23--org--extendable-and-each-edition.md",
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
+        "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
+        "sources/conversations/2026-10-12--org--friday-dzuma-schedule.md",
+        "sources/web/models/pycon-au-2024-birds-of-a-feather-2026-10-23.md",
+        "sources/web/models/london-tech-week-2020-fringe-event-toolkit-2026-10-23.md",
+        "sources/web/models/edfringe-finding-a-venue-2026-10-23.md",
+        "sources/web/models/edfringe-how-to-start-making-your-show-accessible-2026-10-23.md",
+        "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
+      ],
+      "tokens": 2099
     },
     {
       "path": "org/adrs/one-page-frame-and-one-site-build.md",
@@ -584,53 +615,6 @@
       "tokens": 1197
     },
     {
-      "path": "org/ai-suggestions/prds/hosts-hub-guides-and-venues.md",
-      "title": "A hosts' hub: guides on how, what and where, a searchable list of Tuzla venues, and events in the hours off",
-      "kind": "initiative",
-      "status": "suggested",
-      "ai_suggestion": true,
-      "updated": "2026-10-23",
-      "team": "organiser (inferred)",
-      "division": "org (inferred)",
-      "repos": [
-        "org"
-      ],
-      "appetite": "medium",
-      "confidence": "low",
-      "depends_on": [
-        "org/tuzla/venues-for-hosts.md",
-        "org/adrs/extension-slots-and-the-record.md"
-      ],
-      "sources": [
-        "sources/conversations/2026-10-23--org--extendable-and-each-edition.md",
-        "sources/conversations/2026-10-23--org--host-guides-and-venues.md",
-        "sources/conversations/2026-10-23--org--reserved-venues-and-explore.md",
-        "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
-        "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
-        "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
-        "sources/conversations/2026-10-07--org--conference-vision.md",
-        "sources/conversations/2026-10-20--org--hero-extendable.md",
-        "sources/conversations/2026-10-19--org--site-review-decisions.md",
-        "sources/conversations/2026-10-12--org--accepted-events-and-hackathons.md",
-        "sources/web/models/pycon-au-2024-birds-of-a-feather-2026-10-23.md",
-        "sources/web/models/pycon-us-2025-open-spaces-2026-10-23.md",
-        "sources/web/models/europython-2025-open-spaces-2026-10-23.md",
-        "sources/web/models/europython-2025-sprints-2026-10-23.md",
-        "sources/web/models/ietf-side-meetings-and-private-meetings-2026-10-23.md",
-        "sources/web/models/sxsw-2027-affiliate-activity-inquiry-form-2026-10-23.md",
-        "sources/web/models/techcrunch-early-stage-2024-host-your-side-event-2026-10-23.md",
-        "sources/web/models/devconnect-istanbul-host-an-event-notion-2026-10-23.md",
-        "sources/web/models/devconnect-amsterdam-host-an-event-notion-2026-10-23.md",
-        "sources/web/models/london-tech-week-2020-fringe-event-toolkit-2026-10-23.md",
-        "sources/web/models/edfringe-finding-a-venue-2026-10-23.md",
-        "sources/web/models/edfringe-how-to-start-making-your-show-accessible-2026-10-23.md",
-        "sources/web/models/woocommerce-meetup-organizer-handbook-2026-10-23.md",
-        "sources/web/models/fosdem-2026-fringe.md",
-        "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
-      ],
-      "tokens": 3106
-    },
-    {
       "path": "org/epics/goatconf-2027.md",
       "title": "GoatConf 2027: a minimal core others extend",
       "kind": "epic",
@@ -639,6 +623,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/one-goat-minimal-core-and-extensions.md",
       "sources": [
+        "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
         "sources/conversations/2026-10-14--org--decisions-one-by-one.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--approval-back-on.md",
@@ -662,7 +647,7 @@
         "sources/web/funding/fosdem-charter.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 2751,
+      "tokens": 2839,
       "consumed_by": [
         "org/adrs/two-core-days-first-week.md"
       ],
@@ -673,6 +658,7 @@
         "org/prds/dates-and-the-core-day.md",
         "org/prds/design-with-impeccable.md",
         "org/prds/extension-slots-and-the-record.md",
+        "org/prds/hosts-hub-guides-and-venues.md",
         "org/prds/operations-and-the-day.md",
         "org/prds/road-to-june-2027.md",
         "org/prds/social-drumbeat.md",
@@ -1718,6 +1704,56 @@
       ]
     },
     {
+      "path": "org/prds/hosts-hub-guides-and-venues.md",
+      "title": "Make it yours: one hub with guides on how, what and where, a searchable list of Tuzla venues, and events in the hours off",
+      "kind": "initiative",
+      "status": "living",
+      "parent_epic": "goatconf-2027",
+      "updated": "2026-10-23",
+      "team": "organiser",
+      "repos": [
+        "org"
+      ],
+      "appetite": "medium",
+      "confidence": "medium",
+      "depends_on": [
+        "org/tuzla/venues-for-hosts.md",
+        "org/adrs/extension-slots-and-the-record.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-23--org--extendable-and-each-edition.md",
+        "sources/conversations/2026-10-23--org--host-guides-and-venues.md",
+        "sources/conversations/2026-10-23--org--reserved-venues-and-explore.md",
+        "sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
+        "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
+        "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
+        "sources/conversations/2026-10-07--org--conference-vision.md",
+        "sources/conversations/2026-10-20--org--hero-extendable.md",
+        "sources/conversations/2026-10-19--org--site-review-decisions.md",
+        "sources/conversations/2026-10-12--org--accepted-events-and-hackathons.md",
+        "sources/web/models/pycon-au-2024-birds-of-a-feather-2026-10-23.md",
+        "sources/web/models/pycon-us-2025-open-spaces-2026-10-23.md",
+        "sources/web/models/europython-2025-open-spaces-2026-10-23.md",
+        "sources/web/models/europython-2025-sprints-2026-10-23.md",
+        "sources/web/models/ietf-side-meetings-and-private-meetings-2026-10-23.md",
+        "sources/web/models/sxsw-2027-affiliate-activity-inquiry-form-2026-10-23.md",
+        "sources/web/models/techcrunch-early-stage-2024-host-your-side-event-2026-10-23.md",
+        "sources/web/models/devconnect-istanbul-host-an-event-notion-2026-10-23.md",
+        "sources/web/models/devconnect-amsterdam-host-an-event-notion-2026-10-23.md",
+        "sources/web/models/london-tech-week-2020-fringe-event-toolkit-2026-10-23.md",
+        "sources/web/models/edfringe-finding-a-venue-2026-10-23.md",
+        "sources/web/models/edfringe-how-to-start-making-your-show-accessible-2026-10-23.md",
+        "sources/web/models/woocommerce-meetup-organizer-handbook-2026-10-23.md",
+        "sources/web/models/fosdem-2026-fringe.md",
+        "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
+      ],
+      "tokens": 3092,
+      "consumed_by": [
+        "org/adrs/make-it-yours-hub.md"
+      ]
+    },
+    {
       "path": "org/prds/operations-and-the-day.md",
       "title": "Operations: volunteers who own a domain, the rules, and the day",
       "kind": "initiative",
@@ -2257,9 +2293,9 @@
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-izmjene-11-15.md"
       ],
-      "tokens": 4905,
+      "tokens": 4918,
       "consumed_by": [
-        "org/ai-suggestions/prds/hosts-hub-guides-and-venues.md"
+        "org/prds/hosts-hub-guides-and-venues.md"
       ]
     },
     {

@@ -26,6 +26,7 @@ Aggregates every `kind: epic` umbrella with its children (`parent_epic:` reverse
 - [Dates and the core days: Thursday 3 and Friday 4 June 2027, every room in parallel, breaks on Freedom Square](../org/prds/dates-and-the-core-day.md) — *living*
 - [Design with impeccable: one look for the site, the shareables and the hosts](../org/prds/design-with-impeccable.md) — *living*
 - [Extension slots and the record: how anyone adds to GoatConf](../org/prds/extension-slots-and-the-record.md) — *living*
+- [Make it yours: one hub with guides on how, what and where, a searchable list of Tuzla venues, and events in the hours off](../org/prds/hosts-hub-guides-and-venues.md) — *living*
 - [Operations: volunteers who own a domain, the rules, and the day](../org/prds/operations-and-the-day.md) — *living*
 - [The road to June 2027: one calendar for every area](../org/prds/road-to-june-2027.md) — *living*
 - [A weekly drumbeat: an email list, three channels and things people can share](../org/prds/social-drumbeat.md) — *living*

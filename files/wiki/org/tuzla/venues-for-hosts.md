@@ -434,5 +434,6 @@ event needs the city's rules, which are (unknown, needs source).
   this page extends.
 - [Extension slots and the record](../adrs/extension-slots-and-the-record.md),
   the record every added event fills in.
-- [AI-suggested PRD: a hosts' hub](../ai-suggestions/prds/hosts-hub-guides-and-venues.md),
-  which proposes how the site could use this page.
+- [Make it yours: the hosts' hub](../prds/hosts-hub-guides-and-venues.md)
+  and its ADR, [one hub at /extend](../adrs/make-it-yours-hub.md), which
+  turn this page into venue records on the site.
