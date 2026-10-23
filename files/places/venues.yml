@@ -5,8 +5,8 @@
 # them: each is a place a host could ask.
 #
 # Only places with approved: true appear on the site; the organiser approves
-# each one. All 33 approved on 2026-10-23
-# (sources/conversations/2026-10-23--org--venues-approved.md). Distances are computed from lat/lon to IPI Academy (places.yml);
+# each one. The first 33 approved on 2026-10-23
+# (sources/conversations/2026-10-23--org--venues-approved.md), the next 16 the same day. Distances are computed from lat/lon to IPI Academy (places.yml);
 # where only a street was found, the point is the street's (point: street).
 # people is the largest group a source says the place holds (seats, or a
 # crowd it has had), for the size filter; size says it in words. metres stands
@@ -132,6 +132,7 @@ venues:
   - sources/web/venue/czk-dom-knjizevnosti-2026-10-23.md
   - sources/web/venue/czk-kontakt-2026-10-23.md
   - sources/web/osm/tuzla-venues-2026-10-23.json
+  photo: dom-knjizevnosti.jpg
   approved: true
 
 - id: galerija-portreta
@@ -150,6 +151,7 @@ venues:
   - sources/web/venue/czk-medunarodna-galerija-portreta-2026-10-23.md
   - sources/web/venue/czk-koncert-galerija-portreta-2023-2026-10-23.md
   - sources/web/venue/czk-kontakt-2026-10-23.md
+  photo: galerija-portreta.jpg
   approved: true
 
 - id: bkc
@@ -169,6 +171,7 @@ venues:
   - sources/web/venue/bkc-o-bkc-u-tuzla-2026-10-23.md
   - sources/web/venue/bkc-cjenovnik-usluga-2026-10-23.md
   - sources/web/venue/bkc-kontakt-2026-10-23.md
+  photo: bkc.jpg
   approved: true
 
 - id: pivnica-taverna
@@ -204,6 +207,7 @@ venues:
   sources:
   - sources/web/venue/nardipub-com-home-2026-10-23.md
   - sources/web/venue/iyp-nardi-pub-2026-10-23.md
+  photo: nardi-pub.jpg
   approved: true
 
 - id: park-pub
@@ -214,12 +218,13 @@ venues:
   lon: 18.67864
   size: Capacity is not published.
   setting: indoor
-  suits: [evening-event, meetup]
-  about: A pub in the City Park with frequent live music.
+  suits: [evening-event, meetup, other]
+  about: A pub in the City Park with frequent live music, where the 2026 Staropramen pub quiz league holds its Tuzla rounds.
   contact: [+387 61 366 192]
   sources:
   - sources/web/venue/iyp-park-pub-2026-10-23.md
   - sources/web/venue/tztz-park-pub-2026-10-23.md
+  - sources/web/venue/pubkviz-gdje-se-odrzava-liga-2026-10-23.md
   photo: park-pub.jpg
   approved: true
 
@@ -286,6 +291,7 @@ venues:
   contact: [https://www.inyourpocket.com/bosnia-herzegovina/tuzla/venues/jazz-cafe]
   sources:
   - sources/web/venue/iyp-jazz-cafe-2026-10-23.md
+  photo: jazz-cafe.jpg
   approved: true
 
 - id: wint-lounge-bar
@@ -354,6 +360,7 @@ venues:
   sources:
   - sources/web/venue/iyp-barok-2026-10-23.md
   - sources/web/osm/tuzla-venue-lookups-2026-10-23.json
+  photo: barok.jpg
   approved: true
 
 - id: coffee-zone
@@ -370,6 +377,7 @@ venues:
   contact: [+387 60 33 76 248]
   sources:
   - sources/web/venue/iyp-coffee-zone-2026-10-23.md
+  photo: coffee-zone.jpg
   approved: true
 
 - id: restoran-zlatnik
@@ -506,6 +514,7 @@ venues:
   sources:
   - sources/web/venue/tehnopolis-code-hub-tuzla-2025.md
   - sources/web/venue/vestbee-code-hub-tuzla-2022.md
+  photo: code-hub-tuzla.jpg
   approved: true
 
 - id: biblioteka-dervis-susic
@@ -539,6 +548,7 @@ venues:
   contact: [https://tf.untz.ba, +387 35 320 741]
   sources:
   - sources/web/venue/tf-untz-trust-hackathon-2026-10-23.md
+  photo: tehnoloski-fakultet.jpg
   approved: true
 
 - id: freedom-square
@@ -593,4 +603,309 @@ venues:
   sources:
   - sources/web/venue/n1-ilincica-adventure-park-2026-10-23.md
   photo: ilincica.jpg
+  approved: true
+
+# Added on 2026-10-23 and approved by the organiser the same day
+# (sources/conversations/2026-10-23--org--more-places-and-photos.md).
+- id: caffe-bar-bluesberry
+  name: Caffe Bar Bluesberry
+  kind: bar
+  address: Turalibegova 13, in the City Park
+  lat: 44.537492
+  lon: 18.677749
+  size: A bar in the City Park; capacity is not published. The article's photos show a garden terrace.
+  setting: both
+  suits: [karaoke, evening-event, meetup, other]
+  about: A bar in the City Park known for a busy programme of gigs and parties, quizzes, karaoke evenings, thrift markets and board-game get-togethers. No current karaoke schedule is published.
+  contact: [https://www.instagram.com/bluesberry.bar/]
+  sources:
+  - sources/web/venue/bonjour-tuzla-barovi-2026-10-23.md
+  - sources/web/venue/tourismbih-caffe-bar-bluesberry-2026-10-23.md
+  - sources/web/venue/bluesberry-karaoke-search-extract-2026-10-23.md
+  - sources/web/venue/viberate-tuzla-2026-10-23.md
+  photo: caffe-bar-bluesberry.jpg
+  approved: true
+
+- id: muzej-istocne-bosne
+  name: Muzej istočne Bosne
+  english: The Museum of Eastern Bosnia
+  kind: culture
+  address: Džindić mahala 21
+  lat: 44.542136
+  lon: 18.674065
+  size: A ground-floor exhibition space for thematic exhibitions; no room size or seat count is published.
+  setting: indoor
+  suits: [meetup, other]
+  about: The canton's main museum, with about 30,000 objects in archaeology, ethnology, history, art and natural history. It shows thematic exhibitions in its own building and is open to visitors on weekdays from 10:00 to 15:00; no room hire is advertised.
+  contact: [https://muzejib.com, +387 35 318 321]
+  sources:
+  - sources/web/venue/muzejib-o-muzeju-2026-10-23.md
+  - sources/web/venue/muzejib-novosti-2026-10-23.md
+  - sources/web/venue/tourismbih-museum-of-east-bosnia-2026-10-23.md
+  - sources/web/tuzla/tztz-museum-of-eastern-bosnia.md
+  approved: true
+
+- id: ipi-student-hub
+  name: Student HUB @ipia
+  english: IPI Academy's student hub
+  kind: study
+  address: Kulina bana 2, inside IPI Academy
+  lat: 44.5404
+  lon: 18.6738
+  size: A designed space for students; capacity is not published.
+  setting: indoor
+  suits: [workshop, hackathon, meetup]
+  about: A space in IPI Academy where students develop their ideas and business plans for free, with modern equipment and mentoring. The academy also has an active student club.
+  contact: [https://ipi-akademija.ba, info@ipi-akademija.ba, +387 35 258 454]
+  check_first: true
+  sources:
+  - sources/web/venue/ipi-akademija-about.md
+  - sources/web/venue/ipi-akademija-kontakt.md
+  approved: true
+
+- id: mamamia-origins
+  name: MamaMia Origins
+  kind: restaurant
+  address: Trg slobode bb
+  lat: 44.53971
+  lon: 18.675082
+  size: A restaurant with a candlelit cellar; capacity is not published.
+  setting: indoor
+  suits: [evening-event, other]
+  about: A steak and wine restaurant on Freedom Square, to the left of the fountain, in an Austro-Hungarian building with a candlelit cellar. No group or event terms are published.
+  contact: [+387 61 188 333]
+  sources:
+  - sources/web/venue/iyp-mama-mia-origins-2026-10-23.md
+  - sources/web/venue/tztz-mama-mia-origins-2026-10-23.md
+  photo: mamamia-origins.jpg
+  approved: true
+
+- id: carsijska-cesma
+  name: Restoran Čaršijska česma
+  kind: restaurant
+  address: Trg žrtava genocida u Srebrenici 2, old town
+  lat: 44.538744
+  lon: 18.675538
+  point: street
+  size: Capacity is not published.
+  setting: indoor
+  suits: [other]
+  about: A traditional Bosnian restaurant styled as an old Bosnian house, often the first stop for tourists, with Bosnian food, coffee, boza and sevdalinka music. It serves no alcohol.
+  contact: [+387 35 258 408]
+  sources:
+  - sources/web/venue/iyp-carsijska-cesma-2026-10-23.md
+  - sources/web/venue/tztz-restoran-carsijska-cesma-2026-10-23.md
+  photo: carsijska-cesma.jpg
+  approved: true
+
+- id: skpc-mejdan
+  name: SKPC Mejdan
+  english: The sports, cultural and business centre
+  kind: culture
+  address: Mejdan, west of the centre
+  lat: 44.536967
+  lon: 18.665048
+  size: A large university hall, a small sports hall, a bowling alley and exhibition and business rooms, 16,500 m² under cover; no seat counts are published.
+  setting: indoor
+  suits: [evening-event, other, meetup]
+  about: The city's big hall for sport, concerts and fairs, with a bowling alley and exhibition rooms. It hosted a team quiz for the Coffee and Chocolate Fair in May 2026 and has concerts booked for late 2026.
+  contact: []
+  sources:
+  - sources/web/venue/tztz-skpc-mejdan.md
+  - sources/web/venue/volimtuzlu-quiz-mejdan-2026-10-23.md
+  - sources/web/venue/viberate-tuzla-2026-10-23.md
+  approved: true
+
+- id: cinestar-tuzla
+  name: CineStar and Brunswick bowling, Bingo City Center
+  english: The cinema and bowling alley in the mall
+  kind: culture
+  address: Bingo City Center, Mitra Trifunovića Uče 2
+  lat: 44.532494
+  lon: 18.65226
+  people: 45
+  size: Five cinema halls, with private screenings for up to 45 people at weekends and 20 on some weekdays; a bowling alley with 12 lanes.
+  setting: indoor
+  suits: [evening-event, other]
+  about: CineStar rents a whole hall for a private screening from 180 KM, booked online at least four days ahead, and runs company screenings priced by hall size. The same mall has a 12-lane bowling alley with pool tables and table football.
+  contact: [https://cinestarcinemas.ba/tuzla-bingo-city-center, info.bih@cinestarcinemas.eu, +387 36 333 340, https://tuzla.bingocitycenter.ba, +387 35 288 699]
+  sources:
+  - sources/web/venue/cinestar-tvoje-privatno-kino-2026-10-23.md
+  - sources/web/venue/cinestar-business-movies-2026-10-23.md
+  - sources/web/venue/cinestar-kontakti-2026-10-23.md
+  - sources/web/venue/tztz-bingo-city-centar-2026-10-23.md
+  - sources/web/venue/iyp-bingo-entertainment-centre-2026-10-23.md
+  - sources/web/venue/bingocitycenter-tuzla-home-2026-10-23.md
+  photo: cinestar-tuzla.jpg
+  approved: true
+
+- id: restoran-kvin
+  name: Restoran KVIN
+  kind: restaurant
+  address: Bingo City Center, Mitra Trifunovića Uče 2
+  lat: 44.532232
+  lon: 18.651961
+  size: A café, a bar, a restaurant area and a VIP hall; capacity is not published.
+  setting: indoor
+  suits: [evening-event, meetup, other]
+  about: A restaurant in Bingo City Center with four parts, including a VIP hall, made for friendly gatherings and corporate events, with a vegan menu. It is run by Barista, the company behind the WINT cocktail bar.
+  contact: [https://barista.ba, info@barista.ba, +387 61 659 759]
+  sources:
+  - sources/web/venue/tztz-restaurant-kvin-2026-10-23.md
+  - sources/web/venue/barista-ba-home-2026-10-23.md
+  - sources/web/venue/bingocitycenter-tuzla-home-2026-10-23.md
+  photo: restoran-kvin.jpg
+  approved: true
+
+- id: muzej-soli
+  name: Muzej soli
+  english: The Salt Museum
+  kind: culture
+  address: Solana d.d., Soli 3, Kreka
+  lat: 44.533095
+  lon: 18.647433
+  point: street
+  size: Capacity is not published.
+  setting: indoor
+  suits: [trip, other]
+  about: The museum of the old Kreka saltworks, a national monument, inside the working salt factory a few kilometres from the centre. Visits are by appointment only, and the exhibits have no English text.
+  contact: [https://solana.ba, +387 35 282 342, +387 35 287 211]
+  sources:
+  - sources/web/venue/iyp-museum-of-salt-2026-10-23.md
+  - sources/web/venue/solana-muzej-2026-10-23.md
+  - sources/web/venue/solana-kontakt-2026-10-23.md
+  - sources/web/tuzla/tztz-salt-museum.md
+  photo: muzej-soli.jpg
+  approved: true
+
+- id: svedska-kuca-solidarnosti
+  name: Švedska kuća solidarnosti
+  english: The Swedish House of Solidarity, Lipnica
+  kind: culture
+  address: Lipnica
+  lat: 44.564916
+  lon: 18.604598
+  point: street
+  size: A large hall, a multipurpose computer room and a workshop room; no seat counts are published.
+  setting: indoor
+  suits: [evening-event, workshop, hackathon, meetup]
+  about: A community house of the city's Centar za kulturu that offers its rooms for cultural events, celebrations, concerts, band rehearsals, lectures and courses.
+  contact: [https://centarzakulturutuzla.ba, rukovodilacdommladih@centarzakulturutuzla.ba, +387 35 362 620]
+  sources:
+  - sources/web/venue/czk-svedska-kuca-solidarnosti-2026-10-23.md
+  - sources/web/venue/czk-kontakt-2026-10-23.md
+  approved: true
+
+- id: drustveni-dom-gornja-tuzla
+  name: Društveni dom Gornja Tuzla
+  english: The community house in Gornja Tuzla
+  kind: culture
+  address: Gornja Tuzla
+  lat: 44.557477
+  lon: 18.762281
+  point: street
+  people: 150
+  size: A hall with 150 seats for cultural events and a hall with 50 seats for parties, plus a library.
+  setting: indoor
+  suits: [evening-event, meetup, trip]
+  about: The Centar za kulturu's community house in Gornja Tuzla, with a 150-seat hall for cultural events and celebrations and a 50-seat hall for parties and get-togethers, which it also lets to local associations.
+  contact: [https://centarzakulturutuzla.ba, rukovodilacdommladih@centarzakulturutuzla.ba, +387 35 362 620]
+  sources:
+  - sources/web/venue/czk-drustveni-dom-gornja-tuzla-2026-10-23.md
+  - sources/web/venue/czk-kontakt-2026-10-23.md
+  approved: true
+
+- id: paintball-area
+  name: Paintball klub AREA Tuzla
+  english: The paintball club
+  kind: outdoors
+  address: Vukovarska bb, Šići
+  lat: 44.518977
+  lon: 18.577623
+  point: street
+  size: An outdoor paintball field; capacity is not published.
+  setting: outdoor
+  suits: [other, trip]
+  about: A sports association that organises recreational paintball games for individuals and organised groups from Bosnia and abroad.
+  contact: [+387 61 854 886, paintball.klub.area.tuzla@gmail.com]
+  sources:
+  - sources/web/venue/tztz-paintball-area-2026-10-23.md
+  photo: paintball-area.jpg
+  approved: true
+
+- id: hotel-senad-od-bosne
+  name: Hotel Senad od Bosne
+  english: The lake hotel at Modrac
+  kind: hotel
+  address: Jezero Modrac, Prokosovići
+  lat: 44.505589
+  lon: 18.50535
+  size: A hotel with an open lake-view terrace; event directories give one meeting room for 100 people, not verified.
+  setting: both
+  suits: [trip, meetup, other]
+  about: A hotel on the shore of Lake Modrac with an open terrace over the water, which offers itself for team building, family trips and business meetings.
+  contact: [https://hotelsenadodbosne.com, +387 35 561 222, +387 35 561 333]
+  sources:
+  - sources/web/venue/hotelsenadodbosne-home-2026-10-23.md
+  - sources/web/tuzla/modrac-lake-wikipedia.md
+  photo: hotel-senad-od-bosne.jpg
+  approved: true
+
+- id: konjuh
+  name: Zaštićeni pejzaž Konjuh
+  english: The Konjuh protected landscape
+  kind: outdoors
+  address: Konjuh mountain, managed from Grab potok bb, Banovići
+  lat: 44.276016
+  lon: 18.580675
+  point: park
+  size: A mountain area with picnic shelters, outdoor tables, bungalows and mountain houses for hire; Bebrava cave takes groups of 5 to 30.
+  setting: outdoor
+  suits: [hike, trip]
+  about: A protected mountain landscape whose managers rent large and small picnic shelters, outdoor tables, bungalows and mountain houses by the day and lead guided walks for 15 KM an hour (2021 price list).
+  contact: [https://www.zpkonjuh.ba, kontakt@zpkonjuh.ba, +387 35 880 636]
+  sources:
+  - sources/web/venue/zpkonjuh-home-2026-10-23.md
+  - sources/web/venue/zpkonjuh-informacije-2026-10-23.md
+  - sources/web/venue/zpkonjuh-cjenovnik-2026-10-23.md
+  - sources/web/tuzla/konjuh-wikipedia.md
+  photo: konjuh.jpg
+  approved: true
+
+- id: stari-grad-srebrenik
+  name: Stari grad Srebrenik
+  english: Srebrenik fortress
+  kind: outdoors
+  address: Gornji Srebrenik, above Srebrenik
+  lat: 44.702348
+  lon: 18.539825
+  point: street
+  size: A medieval fortress on a rock; a day trip.
+  setting: outdoor
+  suits: [trip, hike]
+  about: A 14th-century fortress on a steep rock above the Tinja valley, first mentioned in 1333. The town's tourist board suggests a day trip of the fortress, the panorama, the town park and a local lunch.
+  contact: [https://tzsrebrenik.ba, turizam@srebrenik.ba, +387 35 369 162]
+  sources:
+  - sources/web/venue/tzsrebrenik-home-2026-10-23.md
+  - sources/web/tuzla/srebrenik-fortress-wikipedia.md
+  photo: stari-grad-srebrenik.jpg
+  approved: true
+
+- id: kula-gradacac
+  name: Bijela kula, Gradačac
+  english: The White Tower of Gradačac
+  kind: outdoors
+  address: Stari grad, Gradačac
+  lat: 44.877117
+  lon: 18.425688
+  size: A castle complex with a restaurant at the top of the tower; capacity is not published.
+  setting: both
+  suits: [trip]
+  about: The tower of Husein-kapetan Gradaščević in Gradačac's old-town castle, a national monument, restored in 2003 with a restaurant at the top serving Bosnian food over a view of the town.
+  contact: [https://visitgradacac.ba, info@visitgradacac.ba, +387 35 817 222]
+  sources:
+  - sources/web/venue/visitgradacac-kula-zmaja-od-bosne-2026-10-23.md
+  - sources/web/venue/visitgradacac-kontakt-2026-10-23.md
+  - sources/web/tuzla/gradacac-wikipedia.md
+  photo: kula-gradacac.jpg
   approved: true

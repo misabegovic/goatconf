@@ -17,3 +17,8 @@ freely licensed or not, and comes down if its owner asks
 of worship except the church in glass
 (`sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md`);
 every place is a place a host could ask, nothing arranged.
+
+The research found photos for all nine places, and sixteen new places with
+photos for eleven. The agent sent a preview of all 49 places and asked
+which of the sixteen should go live. The organiser chose "Approve all 16
+and deliver": all show, and the change is merged and published.

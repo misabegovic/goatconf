@@ -13,6 +13,11 @@ sources:
   - sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
   - sources/conversations/2026-10-23--org--venues-approved.md
+  - sources/conversations/2026-10-23--org--more-places-and-photos.md
+  - sources/web/images/venue-photos-more-2026-10-23.md
+  - sources/web/venue/bonjour-tuzla-barovi-2026-10-23.md
+  - sources/web/venue/tourismbih-caffe-bar-bluesberry-2026-10-23.md
+  - sources/web/venue/pubkviz-gdje-se-odrzava-liga-2026-10-23.md
   - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
   - sources/web/osm/tuzla-venues-2026-10-23.json
   - sources/web/osm/tuzla-venue-geocodes-2026-10-23.json
@@ -405,6 +410,36 @@ Square, below, are the first places to ask for a karaoke evening
   No hiking club with a public contact was found for Konjuh or Ilinčica
   (`sources/web/venue/komoot-pd-konjuh-social-space-2026-10-23.md`).
 
+## Added on 2026-10-23, the second round
+
+Asked to find more places and photos for the ones without
+(`sources/conversations/2026-10-23--org--more-places-and-photos.md`), the
+research added sixteen places, each with its sources in
+`places/venues.yml`, and photos for all but five
+(`sources/web/images/venue-photos-more-2026-10-23.md`):
+
+- **Karaoke, at last:** Caffe Bar Bluesberry, Turalibegova 13 in the City
+  Park, about 450 m from IPI, is "known for" gigs, parties, quizzes and
+  "karaoke večeri" (karaoke evenings), thrift markets and board-game
+  nights (`sources/web/venue/bonjour-tuzla-barovi-2026-10-23.md`,
+  `sources/web/venue/tourismbih-caffe-bar-bluesberry-2026-10-23.md`). No
+  current schedule is published, so a host confirms a night with the bar.
+- **A pub quiz:** the 2026 Staropramen pub quiz league holds its Tuzla
+  rounds at Park Pub (`sources/web/venue/pubkviz-gdje-se-odrzava-liga-2026-10-23.md`).
+- **On or by the square:** the Museum of Eastern Bosnia (about 190 m),
+  MamaMia Origins (about 130 m), Čaršijska česma (about 230 m), and IPI
+  Academy's own Student HUB, marked "Ask GoatConf first".
+- **Further in town:** SKPC Mejdan (no working contact found), CineStar's
+  private screenings from 180 KM for a whole hall and the bowling alley at
+  Bingo City Center, KVIN, the Salt Museum (visits by appointment), and the
+  Centar za kulturu's houses in Lipnica and Gornja Tuzla, the second with a
+  150-seat hall.
+- **Trips and outdoors:** the paintball club in Šići, Hotel Senad od Bosne
+  on Lake Modrac, the Konjuh protected landscape, Srebrenik fortress and the
+  tower of Gradačac.
+- **Not found:** a board-game café, an escape room, a climbing gym, or a
+  hiking club with a public contact.
+
 ## Rules a host should know
 
 The agent's reading of Tuzla Canton's law on public gathering, not legal
@@ -427,7 +462,7 @@ event needs the city's rules, which are (unknown, needs source).
 
 - Seat counts for HKC "Sveti Franjo", Dom mladih, the Atelier, the Peace
   Flame House and the galleries.
-- A confirmed karaoke night.
+- A confirmed karaoke night with a date (Bluesberry's are only described).
 - Cinemas (the CineStar site did not load) and museum hire (the Museum of
   Eastern Bosnia, the Salt Museum).
 - The city's rules for events on Freedom Square and in parks.
