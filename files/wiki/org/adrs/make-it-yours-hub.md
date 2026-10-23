@@ -11,6 +11,7 @@ depends_on:
 sources:
   - sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md
   - sources/conversations/2026-10-23--org--venues-approved.md
+  - sources/conversations/2026-10-23--org--add-form-updated.md
   - sources/conversations/2026-10-23--org--hosts-hub-approved.md
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
   - sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md
@@ -220,8 +221,9 @@ merge, since every merge to `main` publishes the site.
   add"; the home page's section is now "Make it yours" and opens with the
   editions line, its kind slots open the hub with that kind already picked,
   and the program, charter, contact and talk pages point to /extend.
-- **The form's wording** is drafted in `tools/google-forms/README.md` for
-  the organiser to paste into the public form.
+- **The form's wording** was drafted in `tools/google-forms/README.md`, and
+  the organiser put it into the public form the same day
+  (`sources/conversations/2026-10-23--org--add-form-updated.md`).
 - **Tests:** `tests/test_extensions.py` covers the hours off, whole core
   days, venue records and their check, the preview, and the old addresses.
 
@@ -231,3 +233,8 @@ so every one shows on the hub. Checked in a browser: the filters narrow the
 list (karaoke to 6 places, "fits an hour off" to 8), the "no match" note
 shows when nothing fits, a kind in the address (`?kind=karaoke`) picks the
 filter, and /add forwards to /extend.
+
+**2026-10-23, live.** Merged as PR #158 and published: goatconf.com/extend
+answers, and /add forwards to it. The organiser updated the "add something"
+form with the new wording on the hours off and the link to /extend
+(`sources/conversations/2026-10-23--org--add-form-updated.md`).
