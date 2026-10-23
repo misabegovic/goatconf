@@ -3,6 +3,7 @@ name: "*codeplain"
 logo: img/supporters/codeplain.png
 url: https://www.codeplain.ai/
 funds: Predrag Radenkovic's travel
+logo_bg: "#E0FF6E"
 support_them:
   - text: "Try *codeplain"
     url: "https://www.codeplain.ai/"

@@ -40,6 +40,7 @@ SPEAKERS = ROOT / "speakers"
 SUPPORTERS = ROOT / "supporters"
 PAGES = {"speakers": SITE / "speakers.html", "supporters": SITE / "supporters.html"}
 URL = re.compile(r"^https?://\S+$")
+HEX = re.compile(r"^#[0-9A-Fa-f]{6}$")
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 BIO_WORDS = 120
 ROLE_CHARS = 80
@@ -83,6 +84,10 @@ def check_supporter(path: Path):
         problems.append("host must be yes, or left out")
     if meta.get("logo_on", "light") not in ("light", "dark"):
         problems.append("logo_on must be light or dark: the background the logo is made for")
+    if "logo_bg" in meta and not (isinstance(meta["logo_bg"], str) and HEX.match(meta["logo_bg"])):
+        problems.append("logo_bg must be a colour written #RRGGBB, for example \"#E0FF6E\"")
+    if "logo_bg" in meta and meta.get("logo_on") == "dark":
+        problems.append("logo_bg and logo_on: dark both set the logo's background: keep one")
     problems += support_problems(meta)
     events = meta.get("events")
     if events is not None:
@@ -408,26 +413,37 @@ def supporter_page(slug: str, meta, body) -> str:
     # A link to the profile shows the card of the first event they host, else their thank-you card.
     previews = [extensions.cards(s)["preview"] for s in hosted] + [supporter_cards(slug)["wide"]]
     preview = next((name for name in previews if (SITE / "share" / name).exists()), "")
-    dark = " page-head__photo--logo page-head__photo--logo-dark" if meta.get("logo_on") == "dark" else " page-head__photo--logo"
+    dark = " page-head__photo--logo" + {"dark": " page-head__photo--logo-dark", "tinted": " page-head__photo--logo-tinted"}.get(logo_class(meta, "")[2:], "")
     return shell(supporter_page_name(slug)[:-5], f"{name}: supporting GoatConf 2027, Tuzla", f"{name} supports GoatConf 2027 in Tuzla: {esc(meta['funds'])}.",
-                 (esc(meta["logo"]), 600, 300, name), name, esc(meta["funds"]), main, preview, dark)
+                 (esc(meta["logo"]), 600, 300, name), name, esc(meta["funds"]), main, preview, dark, logo_style(meta))
 
 
 def supporter_card(n: int, slug: str, meta, body) -> str:
     """The supporter on the wall: logo, name and their line; who they are is on their profile."""
     return f"""  <li class="sticker sticker--supporter" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <span class="num">{n}</span>
-    <a class="supporter__logo{' supporter__logo--dark' if meta.get('logo_on') == 'dark' else ''}" href="{supporter_page_name(slug)}"><img src="{esc(meta['logo'])}" alt="{esc(meta['name'])}" loading="lazy"></a>
+    <a class="supporter__logo{logo_class(meta, ' supporter__logo')}"{logo_style(meta)} href="{supporter_page_name(slug)}"><img src="{esc(meta['logo'])}" alt="{esc(meta['name'])}" loading="lazy"></a>
     <strong><a href="{supporter_page_name(slug)}">{esc(meta['name'])}</a></strong>
     <p class="supporter__funds">{esc(meta['funds'])}</p>
   </li>"""
 
 
-def shell(slug: str, title: str, description: str, photo, h1: str, lede: str, main: str, preview: str = "", photo_class: str = "") -> str:
+def logo_class(meta, base: str) -> str:
+    """The modifier for a logo's background: dark for a logo made for one, tinted for one in the supporter's own colour."""
+    return f"{base}--dark" if meta.get("logo_on") == "dark" else f"{base}--tinted" if meta.get("logo_bg") else ""
+
+
+def logo_style(meta) -> str:
+    """The supporter's own colour behind their logo, if their record gives one (logo_bg)."""
+    return f' style="--logo-bg:{esc(meta["logo_bg"])}"' if meta.get("logo_bg") else ""
+
+
+def shell(slug: str, title: str, description: str, photo, h1: str, lede: str, main: str, preview: str = "", photo_class: str = "",
+          photo_style: str = "") -> str:
     src = photo[0]
     mark = photo_class or (" page-head__photo--mark" if src.startswith("brand/") else (" page-head__photo--portrait" if src.startswith("img/speakers/") else ""))
     return frame.page(slug, title, description, photo, h1, lede, main,
-                      "files/tools/speakers.py build from files/speakers/*.md and files/supporters/*.md", preview, mark)
+                      "files/tools/speakers.py build from files/speakers/*.md and files/supporters/*.md", preview, mark, photo_style)
 
 
 

@@ -40,6 +40,10 @@ one.
   first event's card as its preview.
 - `logo_on: dark`: optional, for a logo made for a dark background (white
   lettering); it is shown on the site's dark blue. The default is `light`.
+- `logo_bg`: optional, the supporter's own colour behind their logo,
+  written `#RRGGBB` (for example `"#E0FF6E"`, *codeplain's lime), on the
+  supporters page, the home page, their profile and their cards, in place
+  of white. Not with `logo_on: dark`, which sets the background itself.
 
 Each supporter gets a profile, `site/supporter-<file name>.html`, where they
 download their thank-you card and their own "Proud supporter of GoatConf

@@ -19,6 +19,7 @@ sources:
   - sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md
   - sources/web/supporters/codeplain-logo-and-site-2026-10-23.md
   - sources/web/speakers/thenewstack-codeplain-2026-10-23.md
+  - sources/conversations/2026-10-23--org--home-speakers-eight-shown.md
 ---
 
 # Who each supporter is and how to support them, on their profiles
@@ -131,6 +132,8 @@ sources/web/speakers/thenewstack-codeplain-2026-10-23.md).
 - Read the *codeplain blog: https://blog.codeplain.ai/
 
 (source: sources/web/supporters/codeplain-logo-and-site-2026-10-23.md; its careers page has no open positions, so there is no jobs link)
+
+**Logo:** its wordmark on its own lime, #E0FF6E, everywhere the logo shows, on the organiser's choice of 2026-10-23 (source: sources/conversations/2026-10-23--org--home-speakers-eight-shown.md).
 
 ## A note to send each supporter (draft, English, to adapt now that it is live)
 

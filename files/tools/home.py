@@ -35,9 +35,9 @@ import speakers  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 PAGE = ROOT / "site" / "index.html"
 # The home page plans for eight speakers: two full rows of four on a wide screen,
-# four rows of two on a phone. Places not yet taken invite a proposal, and one
-# "Your session here?" always follows, even when all eight are speakers
-# (sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md).
+# four rows of two on a phone. Places not yet taken invite a proposal; once all
+# eight are speakers, none does, and the line under them says how many are shown
+# (sources/conversations/2026-10-23--org--home-speakers-eight-shown.md).
 SHOWN = 8
 esc = program.esc
 TILTS = (-1.5, 1, -1, 1.5, -0.5, 0.5)
@@ -113,8 +113,10 @@ def speakers_block() -> str:
         talks, detail, known = speakers.sessions_by_speaker(), speakers.sessions_by_speaker(detail=True), speakers.supporters()
         cards = "\n".join([speakers.speaker_card(i, s, m, b, talks.get(s, []), known, (detail.get(s) or [None])[0], anchor=False)
                            for i, (s, (m, b)) in enumerate(people[:SHOWN])]
-                          + [open_place() for _ in range(max(1, SHOWN - len(people[:SHOWN])))])
-        more = '<a class="go go--ink" href="speakers.html">View all speakers</a>'
+                          + [open_place() for _ in range(SHOWN - len(people[:SHOWN]))])
+        count = (f"Showing {SHOWN} of {len(people)} speakers." if len(people) > SHOWN
+                 else f"Showing all {len(people)} speakers so far." if len(people) == SHOWN else "")
+        more = (f"{count} " if count else "") + '<a class="go go--ink" href="speakers.html">View all speakers</a>'
         intro = "The people giving the talks, panels and workshops so far. More are added as proposals are accepted."
     else:
         cards = ('    <li class="slots__wide"><a class="slot slot--link slot--wait" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
@@ -135,7 +137,7 @@ def speakers_block() -> str:
 
 def supporters_block() -> str:
     known = speakers.listed_supporters(speakers.supporters())
-    chips = [f'    <li><a class="supporter-chip{' supporter-chip--dark' if m.get('logo_on') == 'dark' else ''}" href="{speakers.supporter_page_name(s)}"><img src="{esc(m["logo"])}" alt="{esc(m["name"])}" loading="lazy">'
+    chips = [f'    <li><a class="supporter-chip{speakers.logo_class(m, ' supporter-chip')}"{speakers.logo_style(m)} href="{speakers.supporter_page_name(s)}"><img src="{esc(m["logo"])}" alt="{esc(m["name"])}" loading="lazy">'
              f'<small>{esc(m["funds"])}</small></a></li>' for s, (m, _) in known]
     # Until a company supports GoatConf (the host does not count), keep a place inviting one.
     if not any(m.get("host") is not True for _, (m, _b) in known):
