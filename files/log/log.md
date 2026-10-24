@@ -594,3 +594,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-24 merge — PR #162: drumbeat: post on Saturdays and Tuesdays, with five Tuzla posts
    diff: 25 files, +389/-171
    restricted-paths: true
+2026-10-24 merge — PR #163: charter: say GoatConf is built around FOSS values, open to anyone with something to share, under MIT
+   diff: 8 files, +99/-3
+   restricted-paths: false

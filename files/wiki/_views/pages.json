@@ -678,9 +678,11 @@
       "title": "GoatConf 2027: what is known",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-23",
+      "updated": "2026-10-24",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-24--org--anyone-with-something-to-share.md",
+        "sources/conversations/2026-10-24--org--foss-values-and-mit-licence.md",
         "sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md",
         "sources/conversations/2026-10-23--org--hosts-hub-approved.md",
         "sources/conversations/2026-10-23--org--hosts-hub-answers.md",
@@ -744,7 +746,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-07--org--venue-ipi.md"
       ],
-      "tokens": 4253
+      "tokens": 4456
     },
     {
       "path": "org/ideas/lightning-talks.md",
