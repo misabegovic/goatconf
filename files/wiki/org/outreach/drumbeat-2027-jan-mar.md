@@ -2,11 +2,14 @@
 title: "The drumbeat, January to March 2027"
 kind: reference
 status: draft
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-12--org--two-core-days-and-saturday.md
+  - sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md
+  - sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md
   - sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md
   - sources/conversations/2026-10-23--org--predrag-radenkovic.md
   - sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md
@@ -62,10 +65,28 @@ sources:
 
 The posts in the order they go out. The calendar, the rules and what to do when news comes are on [the drumbeat page](drumbeat.md). Nothing here is published unless its state says so.
 
-### Tue 5 Jan 2027, week 13: Speaker: Dejan Menges
+### Sat 2 Jan 2027, week 12: See you in June
 
 - **State:** drafted
-- **Image:** `speaker-dejan-menges-square.png` (LinkedIn, Mastodon), `speaker-dejan-menges-wide.png` (X, Bluesky)
+- **Image:** [`post-see-you-in-june-square.png`](https://goatconf.com/share/post-see-you-in-june-square.png) (LinkedIn, Mastodon), [`post-see-you-in-june-wide.png`](https://goatconf.com/share/post-see-you-in-june-wide.png) (X, Bluesky)
+- **LinkedIn:**
+
+  > A new year, and GoatConf is five months away.
+  >
+  > Thursday 3 and Friday 4 June 2027: talks, panels and workshops in seven rooms at IPI Academy in Tuzla, with an hour off after every session. Saturday 5 June: the community's day, at the salt lakes and around town.
+  >
+  > Free to attend. If 2027 is the year you visit Bosnia and Herzegovina, register now and we'll see you in June: goatconf.com/register
+
+- **Short** (153 characters):
+
+  > Happy new year from GoatConf. Five months to go: talks in Tuzla on 3 and 4 June 2027, then a day at the salt lakes. Free to attend. goatconf.com/register
+
+  Sources: sources/conversations/2026-10-12--org--two-core-days-and-saturday.md, sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md.
+
+### Sat 9 Jan 2027, week 13: Speaker: Dejan Menges
+
+- **State:** drafted
+- **Image:** [`speaker-dejan-menges-square.png`](https://goatconf.com/share/speaker-dejan-menges-square.png) (LinkedIn, Mastodon), [`speaker-dejan-menges-wide.png`](https://goatconf.com/share/speaker-dejan-menges-wide.png) (X, Bluesky)
 - **Tag:** Dejan Menges and Vinted
 - **LinkedIn:**
 
@@ -81,10 +102,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-14--org--speakers-before-sessions.md, sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md, sources/conversations/2026-10-17--org--dejan-photo-and-role.md.
 
-### Tue 12 Jan 2027, week 14: Thank you, wroclove.rb
+### Sat 16 Jan 2027, week 14: Thank you, wroclove.rb
 
 - **State:** drafted
-- **Image:** `supporter-wroclove-rb-square.png` (LinkedIn, Mastodon), `supporter-wroclove-rb-wide.png` (X, Bluesky)
+- **Image:** [`supporter-wroclove-rb-square.png`](https://goatconf.com/share/supporter-wroclove-rb-square.png) (LinkedIn, Mastodon), [`supporter-wroclove-rb-wide.png`](https://goatconf.com/share/supporter-wroclove-rb-wide.png) (X, Bluesky)
 - **Tag:** wroclove.rb
 - **LinkedIn:**
 
@@ -102,10 +123,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md, sources/conversations/2026-10-21--org--wroclove-rb-extras.md, sources/web/supporters/wroclove-rb-about-2026-10-21.md.
 
-### Tue 19 Jan 2027, week 15: BH Professionals Meetup, and thank you, BHFF
+### Sat 23 Jan 2027, week 15: BH Professionals Meetup, and thank you, BHFF
 
 - **State:** drafted
-- **Image:** `event-bh-professionals-meetup-square.png` (LinkedIn, Mastodon), `event-bh-professionals-meetup-wide.png` (X, Bluesky)
+- **Image:** [`event-bh-professionals-meetup-square.png`](https://goatconf.com/share/event-bh-professionals-meetup-square.png) (LinkedIn, Mastodon), [`event-bh-professionals-meetup-wide.png`](https://goatconf.com/share/event-bh-professionals-meetup-wide.png) (X, Bluesky)
 - **Tag:** Bosnia & Herzegovina Futures Foundation
 - **Before posting:** If the venue is known by then, add it to the event record first and to the text here.
 - **LinkedIn:**
@@ -124,10 +145,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-18--org--bh-professionals-meetup-accepted.md, sources/conversations/2026-10-18--org--bhff-funding-and-organising.md, sources/conversations/2026-10-18--org--bhff-card-official-program.md, sources/conversations/2026-10-18--org--bhff-listed-as-supporter.md.
 
-### Tue 26 Jan 2027, week 16: Speaker: Amar Mahmutbegović
+### Sat 30 Jan 2027, week 16: Speaker: Amar Mahmutbegović
 
 - **State:** drafted
-- **Image:** `speaker-amar-mahmutbegovic-square.png` (LinkedIn, Mastodon), `speaker-amar-mahmutbegovic-wide.png` (X, Bluesky)
+- **Image:** [`speaker-amar-mahmutbegovic-square.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-square.png) (LinkedIn, Mastodon), [`speaker-amar-mahmutbegovic-wide.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-wide.png) (X, Bluesky)
 - **Tag:** Amar Mahmutbegović and Semblie
 - **LinkedIn:**
 
@@ -143,10 +164,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-14--org--amar-mahmutbegovic.md.
 
-### Tue 2 Feb 2027, week 17: Not only for engineers
+### Sat 6 Feb 2027, week 17: Not only for engineers
 
 - **State:** drafted
-- **Image:** `post-not-only-engineers-square.png` (LinkedIn, Mastodon), `post-not-only-engineers-wide.png` (X, Bluesky)
+- **Image:** [`post-not-only-engineers-square.png`](https://goatconf.com/share/post-not-only-engineers-square.png) (LinkedIn, Mastodon), [`post-not-only-engineers-wide.png`](https://goatconf.com/share/post-not-only-engineers-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > GoatConf is for people who build and sell software, not only the ones who write it.
@@ -163,10 +184,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-12--org--build-and-sell.md, sources/conversations/2026-10-12--org--audience-list.md, sources/conversations/2026-10-12--org--what-goatconf-is.md, sources/conversations/2026-10-19--org--more-areas.md.
 
-### Tue 9 Feb 2027, week 18: Getting to Tuzla
+### Sat 13 Feb 2027, week 18: Getting to Tuzla
 
 - **State:** drafted
-- **Image:** `post-getting-to-tuzla-square.png` (LinkedIn, Mastodon), `post-getting-to-tuzla-wide.png` (X, Bluesky)
+- **Image:** [`post-getting-to-tuzla-square.png`](https://goatconf.com/share/post-getting-to-tuzla-square.png) (LinkedIn, Mastodon), [`post-getting-to-tuzla-wide.png`](https://goatconf.com/share/post-getting-to-tuzla-wide.png) (X, Bluesky)
 - **Before posting:** Check the airline's 2027 summer routes before posting and add them if they are announced.
 - **LinkedIn:**
 
@@ -182,10 +203,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/web/travel/tzl-flight-board-2026-10-07.md, sources/web/travel/rome2rio-sarajevo-tuzla.md, sources/web/travel/obilet-tuzla-sarajevo-bus.md, sources/web/travel/rome2rio-belgrade-tuzla.md, sources/web/travel/rome2rio-zagreb-tuzla.md, sources/web/travel/car-rental-2026-10-14.md.
 
-### Tue 16 Feb 2027, week 19: Speaker: Cristian Planas
+### Sat 20 Feb 2027, week 19: Speaker: Cristian Planas
 
 - **State:** drafted
-- **Image:** `speaker-cristian-planas-square.png` (LinkedIn, Mastodon), `speaker-cristian-planas-wide.png` (X, Bluesky)
+- **Image:** [`speaker-cristian-planas-square.png`](https://goatconf.com/share/speaker-cristian-planas-square.png) (LinkedIn, Mastodon), [`speaker-cristian-planas-wide.png`](https://goatconf.com/share/speaker-cristian-planas-wide.png) (X, Bluesky)
 - **Tag:** Cristian Planas
 - **LinkedIn:**
 
@@ -201,10 +222,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-14--org--cristian-planas.md.
 
-### Tue 23 Feb 2027, week 20: Support GoatConf online
+### Sat 27 Feb 2027, week 20: Support GoatConf online
 
 - **State:** drafted
-- **Image:** `post-support-goatconf-square.png` (LinkedIn, Mastodon), `post-support-goatconf-wide.png` (X, Bluesky)
+- **Image:** [`post-support-goatconf-square.png`](https://goatconf.com/share/post-support-goatconf-square.png) (LinkedIn, Mastodon), [`post-support-goatconf-wide.png`](https://goatconf.com/share/post-support-goatconf-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > GoatConf is free to attend. Companies help keep it that way.
@@ -219,10 +240,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md.
 
-### Tue 2 Mar 2027, week 21: Thank you, Meister
+### Sat 6 Mar 2027, week 21: Thank you, Meister
 
 - **State:** drafted
-- **Image:** `supporter-meister-square.png` (LinkedIn, Mastodon), `supporter-meister-wide.png` (X, Bluesky)
+- **Image:** [`supporter-meister-square.png`](https://goatconf.com/share/supporter-meister-square.png) (LinkedIn, Mastodon), [`supporter-meister-wide.png`](https://goatconf.com/share/supporter-meister-wide.png) (X, Bluesky)
 - **Tag:** Meister and Christoph Lipautz
 - **LinkedIn:**
 
@@ -240,10 +261,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md, sources/conversations/2026-10-15--org--christoph-lipautz.md.
 
-### Tue 9 Mar 2027, week 22: Speaker: Christoph Lipautz
+### Sat 13 Mar 2027, week 22: Speaker: Christoph Lipautz
 
 - **State:** drafted
-- **Image:** `speaker-christoph-lipautz-square.png` (LinkedIn, Mastodon), `speaker-christoph-lipautz-wide.png` (X, Bluesky)
+- **Image:** [`speaker-christoph-lipautz-square.png`](https://goatconf.com/share/speaker-christoph-lipautz-square.png) (LinkedIn, Mastodon), [`speaker-christoph-lipautz-wide.png`](https://goatconf.com/share/speaker-christoph-lipautz-wide.png) (X, Bluesky)
 - **Tag:** Christoph Lipautz and Meister
 - **LinkedIn:**
 
@@ -259,10 +280,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-15--org--christoph-lipautz.md, sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md.
 
-### Tue 16 Mar 2027, week 23: An hour off after every session
+### Sat 20 Mar 2027, week 23: An hour off after every session
 
 - **State:** drafted
-- **Image:** `post-an-hour-off-square.png` (LinkedIn, Mastodon), `post-an-hour-off-wide.png` (X, Bluesky)
+- **Image:** [`post-an-hour-off-square.png`](https://goatconf.com/share/post-an-hour-off-square.png) (LinkedIn, Mastodon), [`post-an-hour-off-wide.png`](https://goatconf.com/share/post-an-hour-off-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > GoatConf is not a crammed schedule.
@@ -279,10 +300,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-12--org--day-chain-and-session-format.md, sources/conversations/2026-10-12--org--friday-dzuma-schedule.md.
 
-### Tue 23 Mar 2027, week 24: Speaker: Predrag Radenkovic
+### Sat 27 Mar 2027, week 24: Speaker: Predrag Radenkovic
 
 - **State:** drafted
-- **Image:** `speaker-predrag-radenkovic-square.png` (LinkedIn, Mastodon), `speaker-predrag-radenkovic-wide.png` (X, Bluesky)
+- **Image:** [`speaker-predrag-radenkovic-square.png`](https://goatconf.com/share/speaker-predrag-radenkovic-square.png) (LinkedIn, Mastodon), [`speaker-predrag-radenkovic-wide.png`](https://goatconf.com/share/speaker-predrag-radenkovic-wide.png) (X, Bluesky)
 - **Tag:** Predrag Radenkovic and *codeplain
 - **Before posting:** if his talk or workshop on regenerative software is on the program by then, add its title and day.
 - **LinkedIn:**
@@ -300,27 +321,6 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Meet a GoatConf 2027 speaker: Predrag Radenkovic, CTO of *codeplain, where specs are the source of truth and code is regenerated from them. Thanks, *codeplain, for his travel. goatconf.com/speaker-predrag-radenkovic
 
   Sources: sources/conversations/2026-10-23--org--predrag-radenkovic.md, sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md, sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md, sources/web/supporters/codeplain-logo-and-site-2026-10-23.md, sources/web/speakers/thenewstack-codeplain-2026-10-23.md, sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md.
-
-### Tue 30 Mar 2027, week 25: Where to stay
-
-- **State:** drafted
-- **Image:** `post-where-to-stay-square.png` (LinkedIn, Mastodon), `post-where-to-stay-wide.png` (X, Bluesky)
-- **Before posting:** If IPI Academy offers a hotel block by then, lead with it.
-- **LinkedIn:**
-
-  > Booking your stay for GoatConf?
-  >
-  > Booking sites list hundreds of places to stay in Tuzla. The travel page maps thirteen near IPI Academy, from the hotel next door to guest houses in the old town and hotels by the salt lakes, with the prices we found.
-  >
-  > June is the start of the lake season, so book early. Foreign visitors register with the police within 72 hours, and hotels usually do this for their guests.
-  >
-  > goatconf.com/travel
-
-- **Short** (197 characters):
-
-  > Booking your stay for GoatConf? The travel page maps thirteen places near IPI Academy, from the hotel next door to guest houses in the old town. June is lake season: book early. goatconf.com/travel
-
-  Sources: sources/web/tuzla/places-research-2026-10-12.md, sources/web/tuzla/hotelscombined-tuzla.md, sources/web/tuzla/fcdo-bih-entry-requirements.md, sources/conversations/2026-10-13--org--lake-season-opens-1-june.md.
 
 ## Related
 

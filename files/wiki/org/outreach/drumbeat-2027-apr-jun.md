@@ -2,11 +2,15 @@
 title: "The drumbeat, April to June 2027"
 kind: reference
 status: draft
-updated: 2026-10-18
+updated: 2026-10-24
 confidence: medium
 affects:
   - org
 sources:
+  - sources/web/tuzla/places-research-2026-10-12.md
+  - sources/web/tuzla/hotelscombined-tuzla.md
+  - sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md
+  - sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
   - sources/conversations/2026-10-15--org--drafting-the-first-posts.md
   - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
@@ -44,10 +48,31 @@ sources:
 
 The posts in the order they go out. The calendar, the rules and what to do when news comes are on [the drumbeat page](drumbeat.md). Nothing here is published unless its state says so.
 
-### Tue 6 Apr 2027, week 26: Eat and drink, with or without meat
+### Sat 3 Apr 2027, week 25: Where to stay
 
 - **State:** drafted
-- **Image:** `post-with-or-without-meat-square.png` (LinkedIn, Mastodon), `post-with-or-without-meat-wide.png` (X, Bluesky)
+- **Image:** [`post-where-to-stay-square.png`](https://goatconf.com/share/post-where-to-stay-square.png) (LinkedIn, Mastodon), [`post-where-to-stay-wide.png`](https://goatconf.com/share/post-where-to-stay-wide.png) (X, Bluesky)
+- **Before posting:** If IPI Academy offers a hotel block by then, lead with it.
+- **LinkedIn:**
+
+  > Booking your stay for GoatConf?
+  >
+  > Booking sites list hundreds of places to stay in Tuzla. The travel page maps thirteen near IPI Academy, from the hotel next door to guest houses in the old town and hotels by the salt lakes, with the prices we found.
+  >
+  > June is the start of the lake season, so book early. Foreign visitors register with the police within 72 hours, and hotels usually do this for their guests.
+  >
+  > goatconf.com/travel
+
+- **Short** (197 characters):
+
+  > Booking your stay for GoatConf? The travel page maps thirteen places near IPI Academy, from the hotel next door to guest houses in the old town. June is lake season: book early. goatconf.com/travel
+
+  Sources: sources/web/tuzla/places-research-2026-10-12.md, sources/web/tuzla/hotelscombined-tuzla.md, sources/web/tuzla/fcdo-bih-entry-requirements.md, sources/conversations/2026-10-13--org--lake-season-opens-1-june.md.
+
+### Sat 10 Apr 2027, week 26: Eat and drink, with or without meat
+
+- **State:** drafted
+- **Image:** [`post-with-or-without-meat-square.png`](https://goatconf.com/share/post-with-or-without-meat-square.png) (LinkedIn, Mastodon), [`post-with-or-without-meat-wide.png`](https://goatconf.com/share/post-with-or-without-meat-wide.png) (X, Bluesky)
 - **Before posting:** No photo on this card: the food photos on the site are not freely licensed.
 - **LinkedIn:**
 
@@ -63,10 +88,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-13--org--more-vegetarian-and-vegan.md, sources/conversations/2026-10-13--org--food-prices.md, sources/conversations/2026-10-12--org--mobile-map-food-places.md.
 
-### Tue 13 Apr 2027, week 27: Coming with a disability
+### Sat 17 Apr 2027, week 27: Coming with a disability
 
 - **State:** drafted
-- **Image:** `post-access-square.png` (LinkedIn, Mastodon), `post-access-wide.png` (X, Bluesky)
+- **Image:** [`post-access-square.png`](https://goatconf.com/share/post-access-square.png) (LinkedIn, Mastodon), [`post-access-wide.png`](https://goatconf.com/share/post-access-wide.png) (X, Bluesky)
 - **Before posting:** If the accessible toilets are confirmed by then, add it.
 - **LinkedIn:**
 
@@ -82,10 +107,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-12--org--accessibility.md, sources/conversations/2026-10-12--org--computer-centre-1-lift.md, sources/conversations/2026-10-12--org--computer-centre-2-not-step-free.md.
 
-### Tue 20 Apr 2027, week 28: Saturday, the community's day
+### Sat 24 Apr 2027, week 28: Saturday, the community's day
 
 - **State:** drafted
-- **Image:** `post-saturday-square.png` (LinkedIn, Mastodon), `post-saturday-wide.png` (X, Bluesky)
+- **Image:** [`post-saturday-square.png`](https://goatconf.com/share/post-saturday-square.png) (LinkedIn, Mastodon), [`post-saturday-wide.png`](https://goatconf.com/share/post-saturday-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > Saturday 5 June is the community's day. No talks.
@@ -100,10 +125,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md, sources/web/tuzla/pannonian-lakes-wikipedia.md, sources/conversations/2026-10-18--org--bh-professionals-meetup-accepted.md.
 
-### Tue 27 Apr 2027, week 29: What GoatConf won't do
+### Sat 1 May 2027, week 29: What GoatConf won't do
 
 - **State:** drafted
-- **Image:** `post-what-we-wont-do-square.png` (LinkedIn, Mastodon), `post-what-we-wont-do-wide.png` (X, Bluesky)
+- **Image:** [`post-what-we-wont-do-square.png`](https://goatconf.com/share/post-what-we-wont-do-square.png) (LinkedIn, Mastodon), [`post-what-we-wont-do-wide.png`](https://goatconf.com/share/post-what-we-wont-do-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > A few things GoatConf won't do.
@@ -118,10 +143,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-10--org--charter-and-extensions-approved.md, sources/conversations/2026-10-13--org--online-supporters-through-the-business.md.
 
-### Tue 4 May 2027, week 30: Last call for sessions
+### Sat 8 May 2027, week 30: Last call for sessions
 
 - **State:** drafted
-- **Image:** `post-last-call-square.png` (LinkedIn, Mastodon), `post-last-call-wide.png` (X, Bluesky)
+- **Image:** [`post-last-call-square.png`](https://goatconf.com/share/post-last-call-square.png) (LinkedIn, Mastodon), [`post-last-call-wide.png`](https://goatconf.com/share/post-last-call-wide.png) (X, Bluesky)
 - **Before posting:** Post only if slots are still open; otherwise swap in a post about the full program.
 - **LinkedIn:**
 
@@ -137,10 +162,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-12--org--organiser-judges-no-strict-deadlines.md, sources/conversations/2026-10-12--org--all-available-rooms.md.
 
-### Tue 11 May 2027, week 31: Before you travel
+### Sat 15 May 2027, week 31: Before you travel
 
 - **State:** drafted
-- **Image:** `post-before-you-travel-square.png` (LinkedIn, Mastodon), `post-before-you-travel-wide.png` (X, Bluesky)
+- **Image:** [`post-before-you-travel-square.png`](https://goatconf.com/share/post-before-you-travel-square.png) (LinkedIn, Mastodon), [`post-before-you-travel-wide.png`](https://goatconf.com/share/post-before-you-travel-wide.png) (X, Bluesky)
 - **Before posting:** Recheck visa and roaming news the week it goes out.
 - **LinkedIn:**
 
@@ -159,29 +184,29 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/web/tuzla/fcdo-bih-entry-requirements.md, sources/web/tuzla/ewb-eu-wb-roaming-talks-2026-06.md, sources/web/tuzla/fcdo-bih-health.md, sources/web/tuzla/cbbh-exchange-rate-2026-10-07.md.
 
-### Tue 18 May 2027, week 32: Pick your sessions
+### Sat 22 May 2027, week 32: Pick your sessions
 
 - **State:** drafted
-- **Image:** `post-pick-your-sessions-square.png` (LinkedIn, Mastodon), `post-pick-your-sessions-wide.png` (X, Bluesky)
+- **Image:** [`post-pick-your-sessions-square.png`](https://goatconf.com/share/post-pick-your-sessions-square.png) (LinkedIn, Mastodon), [`post-pick-your-sessions-wide.png`](https://goatconf.com/share/post-pick-your-sessions-wide.png) (X, Bluesky)
 - **Before posting:** Post only once session registration is set up and the email has gone out; how it works is not decided yet.
 - **LinkedIn:**
 
   > Registered for GoatConf? Now pick your sessions.
   >
-  > Each room has only so many seats, from 13 to about 120, so everyone with a ticket now registers for the sessions they want. Check your email for how. Seats nobody registered for go to whoever is at the door when a session starts.
+  > Each room has only so many seats, from 13 to 150, so everyone with a ticket now registers for the sessions they want. Check your email for how. Seats nobody registered for go to whoever is at the door when a session starts.
   >
   > Not registered yet? It's free: goatconf.com/register
 
 - **Short** (177 characters):
 
-  > Registered for GoatConf? Pick your sessions now: rooms have 13 to about 120 seats. Check your email for how. Seats nobody took go to whoever is at the door. goatconf.com/program
+  > Registered for GoatConf? Pick your sessions now: rooms have 13 to 150 seats. Check your email for how. Seats nobody took go to whoever is at the door. goatconf.com/program
 
   Sources: sources/conversations/2026-10-12--org--session-registration-later.md, sources/conversations/2026-10-14--org--decisions-one-by-one.md.
 
-### Tue 25 May 2027, week 33: Next week in Tuzla
+### Sat 29 May 2027, week 33: Next week in Tuzla
 
 - **State:** drafted
-- **Image:** `post-next-week-square.png` (LinkedIn, Mastodon), `post-next-week-wide.png` (X, Bluesky)
+- **Image:** [`post-next-week-square.png`](https://goatconf.com/share/post-next-week-square.png) (LinkedIn, Mastodon), [`post-next-week-wide.png`](https://goatconf.com/share/post-next-week-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > GoatConf is next week.
@@ -199,7 +224,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Tue 1 Jun 2027, week 34: See you Thursday
 
 - **State:** drafted
-- **Image:** `post-see-you-thursday-square.png` (LinkedIn, Mastodon), `post-see-you-thursday-wide.png` (X, Bluesky)
+- **Image:** [`post-see-you-thursday-square.png`](https://goatconf.com/share/post-see-you-thursday-square.png) (LinkedIn, Mastodon), [`post-see-you-thursday-wide.png`](https://goatconf.com/share/post-see-you-thursday-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > See you on Thursday.
@@ -217,7 +242,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Thu 3 Jun 2027, event day 1: Day one
 
 - **State:** drafted
-- **Image:** `post-day-one-square.png` (LinkedIn, Mastodon), `post-day-one-wide.png` (X, Bluesky)
+- **Image:** [`post-day-one-square.png`](https://goatconf.com/share/post-day-one-square.png) (LinkedIn, Mastodon), [`post-day-one-wide.png`](https://goatconf.com/share/post-day-one-wide.png) (X, Bluesky)
 - **Before posting:** Swap the card for a photo from the day, with the people in it agreeing.
 - **LinkedIn:**
 
@@ -236,7 +261,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Fri 4 Jun 2027, event day 2: Day two
 
 - **State:** drafted
-- **Image:** `post-day-two-square.png` (LinkedIn, Mastodon), `post-day-two-wide.png` (X, Bluesky)
+- **Image:** [`post-day-two-square.png`](https://goatconf.com/share/post-day-two-square.png) (LinkedIn, Mastodon), [`post-day-two-wide.png`](https://goatconf.com/share/post-day-two-wide.png) (X, Bluesky)
 - **Before posting:** Swap the card for a photo from day one, with the people in it agreeing.
 - **LinkedIn:**
 
@@ -255,7 +280,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 5 Jun 2027, event day 3: The community's day
 
 - **State:** drafted
-- **Image:** `post-community-day-square.png` (LinkedIn, Mastodon), `post-community-day-wide.png` (X, Bluesky)
+- **Image:** [`post-community-day-square.png`](https://goatconf.com/share/post-community-day-square.png) (LinkedIn, Mastodon), [`post-community-day-wide.png`](https://goatconf.com/share/post-community-day-wide.png) (X, Bluesky)
 - **Before posting:** Add any events accepted after this was drafted.
 - **LinkedIn:**
 
@@ -274,7 +299,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Tue 8 Jun 2027, afterwards: Thank you
 
 - **State:** drafted
-- **Image:** `post-thank-you-square.png` (LinkedIn, Mastodon), `post-thank-you-wide.png` (X, Bluesky)
+- **Image:** [`post-thank-you-square.png`](https://goatconf.com/share/post-thank-you-square.png) (LinkedIn, Mastodon), [`post-thank-you-wide.png`](https://goatconf.com/share/post-thank-you-wide.png) (X, Bluesky)
 - **Before posting:** Name the speakers, supporters and hosts in a reply or the first comment. Post once the feedback survey has gone out.
 - **LinkedIn:**
 

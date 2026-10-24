@@ -2,7 +2,7 @@
 title: "goatconf brain: home"
 kind: meta
 status: draft
-updated: 2026-10-23
+updated: 2026-10-24
 sources: []
 ---
 
@@ -17,7 +17,8 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 
 ## What changed
 
-<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-23 -->
+<!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-24**: **Two posts a week: the plan on Saturdays, news and Tuzla on Tuesdays.** Week 2, "Run a session", went out on Saturday 24 October. The planned posts now go on Saturdays in their old order, to week 33 on 29 May 2027; "See you Thursday" stays on Tuesday 1 June. Tuesdays carry news first, else a short Tuzla post: five are drafted for 27 October to 24 November, with new cards. Every post links its images at goatconf.com/share/, and the drafts give the main hall 150 seats ([the calendar](org/outreach/drumbeat.md); [October to December 2026](org/outreach/drumbeat-2026.md); [the ADR](org/adrs/social-drumbeat.md); source: sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md).
 - **2026-10-23**: **58 places on Make it yours, 57 with a photo.** Nine more are approved and live: Caffe Baza (gigs, pub quizzes, stand-up), the Friendly Fire gaming café and Hugo's near IPI, Restoran Sagittarius, Night Club Madeira, the Rock The Lock escape room, BBCC in Lukavac, the Javorje lodge of PD Konjuh, and Hotel Muška voda; the five places that had no photo now have one, SKPC Mejdan has a working contact, and Code Hub lists BIT Centar's 42-seat event room ([places for hosts](org/tuzla/venues-for-hosts.md); source: sources/conversations/2026-10-23--org--keep-looking.md).
 - **2026-10-23**: **49 places on Make it yours, 44 with a photo.** Sixteen more places are approved and live, among them Caffe Bar Bluesberry, the first bar with published karaoke evenings, CineStar's private screenings, the Museum of Eastern Bosnia, two more cafés and restaurants on the square, community houses with halls, and day trips to Lake Modrac, Konjuh, Srebrenik and Gradačac; the nine places that had no photo now have one, and Park Pub is noted for the 2026 pub quiz league ([places for hosts](org/tuzla/venues-for-hosts.md); [the ADR](org/adrs/make-it-yours-hub.md); source: sources/conversations/2026-10-23--org--more-places-and-photos.md).
 - **2026-10-23**: **A phone menu.** On phones the top bar is now one pinned row, 49 px tall instead of 149 to 190 px: the GoatConf mark with its year and a Menu that opens Program, Speakers, Travel and Supporters, then Make it yours, Propose a session and Register as buttons; wider screens keep the full bar ([the frame ADR](org/adrs/one-page-frame-and-one-site-build.md); source: sources/conversations/2026-10-23--org--phone-menu.md).

@@ -591,3 +591,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-23 merge — PR #161: site: add 9 places to Make it yours and photos for the last five
    diff: 139 files, +2043/-110
    restricted-paths: false
+2026-10-24 merge — PR #162: drumbeat: post on Saturdays and Tuesdays, with five Tuzla posts
+   diff: 25 files, +389/-171
+   restricted-paths: true

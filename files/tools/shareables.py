@@ -153,6 +153,10 @@ POSTS = {
     "day-two": ("Day<br>two", f"Starting at {FRIDAY['slots'][0]}, welcome at {FRIDAY['welcome']}."),
     "community-day": ("The<br>community's<br>day", "The salt lakes, the goat hunt, and the evening meetup."),
     "thank-you": ("Thank<br>you", "To everyone who spoke, supported, hosted, volunteered and came."),
+    # The Tuesday Tuzla posts (wiki/org/outreach/drumbeat.md)
+    "mesa-and-ismet": ("Meet at<br>Meša and<br>Ismet", "The writer and the painter on the Korzo: Tuzla's meeting point."),
+    "where-to-run-it": ("58 places<br>to run<br>yours", "From cafés on Freedom Square to halls for a few hundred people."),
+    "salt-square": ("Salt<br>Square", "An Ottoman salt well from 1476, now an open-air museum."),
 }
 
 # Posts with a photo given for GoatConf, each with the credit line its giver asked for
@@ -163,6 +167,8 @@ PHOTO_POSTS = {
     "where-to-stay": ("Where<br>to stay", "Hotels and guest houses a short walk from IPI Academy.", "img/city-korzo-clock.jpg", "Photo: Grad Tuzla"),
     "saturday": ("Saturday<br>at the lakes", "The salt lakes, the goat hunt, and what people add.", "img/city-lakes-aerial-summer.jpg", "Photo: Grad Tuzla"),
     "next-week": ("Next week<br>in Tuzla", "The salt lakes open for the season on 1 June.", "img/city-old-town-aerial-paving.jpg", "Photo: Grad Tuzla"),
+    "city-of-salt": ("A city of<br>salt", "Tuzla takes its name from tuz, the Turkish for salt.", "img/city-aerial-summer.jpg", "Photo: Grad Tuzla"),
+    "seven-thousand-years": ("7,000<br>years", "Neolithic people boiled salt here, in houses on stilts.", "img/city-archaeological-park.jpg", "Photo: Grad Tuzla"),
 }
 
 

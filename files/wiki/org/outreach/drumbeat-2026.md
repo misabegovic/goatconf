@@ -2,11 +2,22 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: medium
 affects:
   - org
 sources:
+  - sources/web/tuzla/tuzla-wikipedia-bs.md
+  - sources/web/tuzla/tztz-history-of-tuzla.md
+  - sources/web/tuzla/tztz-archaeological-park.md
+  - sources/web/tuzla/tztz-mesa-and-ismet-monument.md
+  - sources/web/tuzla/mesa-selimovic-wikipedia.md
+  - sources/web/tuzla/tztz-wireless-city.md
+  - sources/web/tuzla/tztz-salt-square.md
+  - sources/conversations/2026-10-23--org--keep-looking.md
+  - sources/conversations/2026-10-23--org--venues-approved.md
+  - sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md
+  - sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md
   - sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md
   - sources/conversations/2026-10-22--org--cristian-planas-principal-engineer.md
   - sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md
@@ -58,7 +69,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Already out, week 1: GoatConf is happening
 
 - **State:** published
-- **Image:** `post-save-the-date-square.png` (LinkedIn, Mastodon), `post-save-the-date-wide.png` (X, Bluesky)
+- **Image:** [`post-save-the-date-square.png`](https://goatconf.com/share/post-save-the-date-square.png) (LinkedIn, Mastodon), [`post-save-the-date-wide.png`](https://goatconf.com/share/post-save-the-date-wide.png) (X, Bluesky)
 - **Before posting:** Already out (the date it went out was not recorded). Kept here as the record.
 - **LinkedIn:**
 
@@ -74,10 +85,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-15--org--drafting-the-first-posts.md, sources/conversations/2026-10-18--org--social-plan-to-june.md.
 
-### Tue 20 Oct 2026, week 2: Run a session: the call is open
+### Sat 24 Oct 2026, week 2: Run a session: the call is open
 
-- **State:** drafted
-- **Image:** `post-run-a-session-square.png` (LinkedIn, Mastodon), `post-run-a-session-wide.png` (X, Bluesky)
+- **State:** published, Saturday 24 October 2026
+- **Image:** [`post-run-a-session-square.png`](https://goatconf.com/share/post-run-a-session-square.png) (LinkedIn, Mastodon), [`post-run-a-session-wide.png`](https://goatconf.com/share/post-run-a-session-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > The call for GoatConf 2027 is open, and it's for more than talks.
@@ -94,10 +105,31 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--organiser-judges-no-strict-deadlines.md, sources/conversations/2026-10-12--org--all-available-rooms.md, sources/conversations/2026-10-19--org--more-areas.md.
 
-### Tue 27 Oct 2026, week 3: Registration is open, and free
+### Tue 27 Oct 2026, Tuesday: A city of salt
 
 - **State:** drafted
-- **Image:** `post-register-square.png` (LinkedIn, Mastodon), `post-register-wide.png` (X, Bluesky)
+- **Image:** [`post-city-of-salt-square.png`](https://goatconf.com/share/post-city-of-salt-square.png) (LinkedIn, Mastodon), [`post-city-of-salt-wide.png`](https://goatconf.com/share/post-city-of-salt-wide.png) (X, Bluesky)
+- **Before posting:** News first: if a speaker, a supporter or an event was confirmed this week, its post takes this Tuesday and this one moves to the next free Tuesday.
+- **LinkedIn:**
+
+  > Tuzla is a city of salt.
+  >
+  > Its name comes from tuz, the Turkish word for salt. Locals call it the city on a grain of salt: under it lie hundreds of millions of tons of rock salt and salt water, left by the Pannonian Sea more than ten million years ago.
+  >
+  > The salt travelled far. In the 17th century Louis XIV bought Tuzla salt for his palace, and French coins with his name have been found around the city. Today salt water fills the Pannonian Lakes in the middle of town, where GoatConf spends Saturday 5 June.
+  >
+  > Come to Tuzla on 3 to 5 June 2027: goatconf.com
+
+- **Short** (215 characters):
+
+  > Tuzla takes its name from tuz, Turkish for salt. Under the city lie hundreds of millions of tons of it, left by an ancient sea, and Louis XIV bought it for his palace. GoatConf: Tuzla, 3 to 5 June 2027. goatconf.com
+
+  Sources: sources/web/tuzla/tuzla-wikipedia-bs.md, sources/web/tuzla/tztz-history-of-tuzla.md, sources/web/tuzla/tztz-archaeological-park.md, sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md.
+
+### Sat 31 Oct 2026, week 3: Registration is open, and free
+
+- **State:** drafted
+- **Image:** [`post-register-square.png`](https://goatconf.com/share/post-register-square.png) (LinkedIn, Mastodon), [`post-register-wide.png`](https://goatconf.com/share/post-register-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > Registration for GoatConf 2027 is open, and tickets are free.
@@ -114,10 +146,31 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-12--org--registration-on-luma.md, sources/conversations/2026-10-12--org--approval-back-on.md, sources/conversations/2026-10-18--org--registration-approval-not-on-the-site.md, sources/conversations/2026-10-13--org--outside-review-fixes.md, sources/conversations/2026-10-12--org--session-registration-later.md, sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md.
 
-### Tue 3 Nov 2026, week 4: The first speakers are here
+### Tue 3 Nov 2026, Tuesday: 7,000 years of salt
 
 - **State:** drafted
-- **Image:** `post-first-speakers-square.png` (LinkedIn, Mastodon), `post-first-speakers-wide.png` (X, Bluesky)
+- **Image:** [`post-seven-thousand-years-square.png`](https://goatconf.com/share/post-seven-thousand-years-square.png) (LinkedIn, Mastodon), [`post-seven-thousand-years-wide.png`](https://goatconf.com/share/post-seven-thousand-years-wide.png) (X, Bluesky)
+- **Before posting:** News first: if a speaker, a supporter or an event was confirmed this week, its post takes this Tuesday and this one moves to the next free Tuesday.
+- **LinkedIn:**
+
+  > People have made salt in Tuzla for about 7,000 years.
+  >
+  > Under today's city centre lay a large Neolithic village of pile dwellings: houses on wooden stilts, on wetland fed by salt springs. Two of the clay pots its people used to boil salt water have been put back together. One dates to about 5,000 BC, the other to about 3,500 BC.
+  >
+  > The first finds came up in 1903, on the square now called Freedom Square. Since 2006 a rebuilt part of the village stands in the archaeological park by the Pannonian Lakes, and you can walk through it.
+  >
+  > GoatConf is in Tuzla on 3 to 5 June 2027: goatconf.com
+
+- **Short** (239 characters):
+
+  > People have made salt in Tuzla for about 7,000 years: Neolithic villagers boiled it in clay pots, in houses on stilts where the city centre is now. Their village is rebuilt by the salt lakes. GoatConf: Tuzla, 3 to 5 June 2027. goatconf.com
+
+  Sources: sources/web/tuzla/tztz-archaeological-park.md, sources/web/tuzla/tztz-history-of-tuzla.md.
+
+### Sat 7 Nov 2026, week 4: The first speakers are here
+
+- **State:** drafted
+- **Image:** [`post-first-speakers-square.png`](https://goatconf.com/share/post-first-speakers-square.png) (LinkedIn, Mastodon), [`post-first-speakers-wide.png`](https://goatconf.com/share/post-first-speakers-wide.png) (X, Bluesky)
 - **Tag:** each of the eight speakers
 - **Before posting:** When it goes, send each speaker their own card (speaker-<name>-square.png) and ask them to share it. Jan Grodowski stays out while his hold is on.
 - **LinkedIn:**
@@ -143,10 +196,29 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-14--org--speaker-order.md, sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md, sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md, sources/conversations/2026-10-15--org--hold-jan-grodowski.md, sources/conversations/2026-10-15--org--christoph-lipautz.md.
 
-### Tue 10 Nov 2026, week 5: Propose an event
+### Tue 10 Nov 2026, Tuesday: Meet at Meša and Ismet
 
 - **State:** drafted
-- **Image:** `post-add-something-square.png` (LinkedIn, Mastodon), `post-add-something-wide.png` (X, Bluesky)
+- **Image:** [`post-mesa-and-ismet-square.png`](https://goatconf.com/share/post-mesa-and-ismet-square.png) (LinkedIn, Mastodon), [`post-mesa-and-ismet-wide.png`](https://goatconf.com/share/post-mesa-and-ismet-wide.png) (X, Bluesky)
+- **Before posting:** News first: if a speaker, a supporter or an event was confirmed this week, its post takes this Tuesday and this one moves to the next free Tuesday.
+- **LinkedIn:**
+
+  > In Tuzla, "at Meša and Ismet" is all the directions anyone needs.
+  >
+  > On the Korzo, the walking street through the centre, stand statues of the city's two best-known people: the writer Meša Selimović, born in Tuzla in 1910 and author of Death and the Dervish, and the painter Ismet Mujezinović, born there in 1907. Their monument is where the city meets.
+  >
+  > In June 2027 it's a good place to meet the people you came to GoatConf with: goatconf.com
+
+- **Short** (216 characters):
+
+  > In Tuzla, "at Meša and Ismet" is all the directions you need: the statues of the writer Meša Selimović and the painter Ismet Mujezinović on the Korzo are where the city meets. See you there in June 2027. goatconf.com
+
+  Sources: sources/web/tuzla/tztz-mesa-and-ismet-monument.md, sources/web/tuzla/mesa-selimovic-wikipedia.md, sources/web/tuzla/tztz-wireless-city.md.
+
+### Sat 14 Nov 2026, week 5: Propose an event
+
+- **State:** drafted
+- **Image:** [`post-add-something-square.png`](https://goatconf.com/share/post-add-something-square.png) (LinkedIn, Mastodon), [`post-add-something-wide.png`](https://goatconf.com/share/post-add-something-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > GoatConf brings a small core: the rooms, the talks, the breaks. Everything else is added by the people who come.
@@ -163,10 +235,31 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-10--org--charter-and-extensions-approved.md, sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md, sources/conversations/2026-10-18--org--bh-professionals-meetup-accepted.md, sources/conversations/2026-10-18--org--event-and-session-pages.md.
 
-### Tue 17 Nov 2026, week 6: Why a goat
+### Tue 17 Nov 2026, Tuesday: 58 places to run yours
 
 - **State:** drafted
-- **Image:** `post-why-a-goat-square.png` (LinkedIn, Mastodon), `post-why-a-goat-wide.png` (X, Bluesky)
+- **Image:** [`post-where-to-run-it-square.png`](https://goatconf.com/share/post-where-to-run-it-square.png) (LinkedIn, Mastodon), [`post-where-to-run-it-wide.png`](https://goatconf.com/share/post-where-to-run-it-wide.png) (X, Bluesky)
+- **Before posting:** News first: if a speaker, a supporter or an event was confirmed this week, its post takes this Tuesday and this one moves to the next free Tuesday.
+- **LinkedIn:**
+
+  > Want to run something around GoatConf 2027, but not sure where?
+  >
+  > Make it yours now lists 58 places in Tuzla a host could ask, from cafés on Freedom Square to halls for a few hundred people. Search them by what you want to run, how many people are coming, how far it is from IPI Academy, and indoors or out.
+  >
+  > GoatConf has arranged nothing with them: you ask, you book and you pay. Then propose your event, and once it's accepted, it's part of GoatConf.
+  >
+  > goatconf.com/extend
+
+- **Short** (225 characters):
+
+  > Want to run something around GoatConf 2027? Make it yours lists 58 places in Tuzla to ask, from cafés on Freedom Square to halls for a few hundred people. You book it; once accepted, it's part of GoatConf. goatconf.com/extend
+
+  Sources: sources/conversations/2026-10-23--org--keep-looking.md, sources/conversations/2026-10-23--org--venues-approved.md, sources/conversations/2026-10-10--org--charter-and-extensions-approved.md.
+
+### Sat 21 Nov 2026, week 6: Why a goat
+
+- **State:** drafted
+- **Image:** [`post-why-a-goat-square.png`](https://goatconf.com/share/post-why-a-goat-square.png) (LinkedIn, Mastodon), [`post-why-a-goat-wide.png`](https://goatconf.com/share/post-why-a-goat-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > Why is it called GoatConf?
@@ -183,10 +276,29 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/web/funding/euruko-2024-why-the-goat.md, sources/web/tuzla/mondo-tuzlanska-koza-legenda.md, sources/conversations/2026-10-07--org--saying-confirmed.md, sources/conversations/2026-10-18--org--not-only-about-ruby.md.
 
-### Tue 24 Nov 2026, week 7: Speaker: Paul Campbell
+### Tue 24 Nov 2026, Tuesday: Salt Square
 
 - **State:** drafted
-- **Image:** `speaker-paul-campbell-square.png` (LinkedIn, Mastodon), `speaker-paul-campbell-wide.png` (X, Bluesky)
+- **Image:** [`post-salt-square-square.png`](https://goatconf.com/share/post-salt-square-square.png) (LinkedIn, Mastodon), [`post-salt-square-wide.png`](https://goatconf.com/share/post-salt-square-wide.png) (X, Bluesky)
+- **Before posting:** News first: if a speaker, a supporter or an event was confirmed this week, its post takes this Tuesday and this one moves to the next free Tuesday.
+- **LinkedIn:**
+
+  > In the centre of Tuzla there is a square named for salt.
+  >
+  > A salt well was dug on Salt Square in 1476, and up to 80 pots boiled its water into salt. Today the square is an open-air museum of how salt was made under the Ottomans, around a fountain given by the city of Ravenna: a Neolithic salt dish in mosaic.
+  >
+  > It's in the old town's walking centre, with Freedom Square and the Korzo. Come and see it in June 2027: goatconf.com
+
+- **Short** (225 characters):
+
+  > Tuzla has a square named for salt. A well was dug there in 1476 and up to 80 pots boiled its water into salt. Now Salt Square is an open-air museum, with a fountain from Ravenna shaped like a Neolithic salt dish. goatconf.com
+
+  Sources: sources/web/tuzla/tztz-history-of-tuzla.md, sources/web/tuzla/tztz-salt-square.md, sources/web/tuzla/tztz-wireless-city.md.
+
+### Sat 28 Nov 2026, week 7: Speaker: Paul Campbell
+
+- **State:** drafted
+- **Image:** [`speaker-paul-campbell-square.png`](https://goatconf.com/share/speaker-paul-campbell-square.png) (LinkedIn, Mastodon), [`speaker-paul-campbell-wide.png`](https://goatconf.com/share/speaker-paul-campbell-wide.png) (X, Bluesky)
 - **Tag:** Paul Campbell and Tito
 - **LinkedIn:**
 
@@ -202,16 +314,16 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-14--org--paul-campbell.md.
 
-### Tue 1 Dec 2026, week 8: Thank you, IPI Academy
+### Sat 5 Dec 2026, week 8: Thank you, IPI Academy
 
 - **State:** drafted
-- **Image:** `supporter-ipi-academy-square.png` (LinkedIn, Mastodon), `supporter-ipi-academy-wide.png` (X, Bluesky)
+- **Image:** [`supporter-ipi-academy-square.png`](https://goatconf.com/share/supporter-ipi-academy-square.png) (LinkedIn, Mastodon), [`supporter-ipi-academy-wide.png`](https://goatconf.com/share/supporter-ipi-academy-wide.png) (X, Bluesky)
 - **Tag:** IPI Academy
 - **LinkedIn:**
 
   > Thank you, IPI Academy, for hosting GoatConf 2027.
   >
-  > IPI Academy in Tuzla is our host and partner. It gives GoatConf all seven of its rooms on Thursday 3 and Friday 4 June, from the main hall with about 120 seats to two computer centres for workshops, at Kulina bana 2, five minutes from Freedom Square.
+  > IPI Academy in Tuzla is our host and partner. It gives GoatConf all seven of its rooms on Thursday 3 and Friday 4 June, from the main hall with 150 seats to two computer centres for workshops, at Kulina bana 2, five minutes from Freedom Square.
   >
   > goatconf.com/supporter-ipi-academy
 
@@ -221,10 +333,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md, sources/conversations/2026-10-14--org--decisions-one-by-one.md, sources/conversations/2026-10-12--org--all-available-rooms.md.
 
-### Tue 8 Dec 2026, week 9: Speaker: Carmine Paolino
+### Sat 12 Dec 2026, week 9: Speaker: Carmine Paolino
 
 - **State:** drafted
-- **Image:** `speaker-carmine-paolino-square.png` (LinkedIn, Mastodon), `speaker-carmine-paolino-wide.png` (X, Bluesky)
+- **Image:** [`speaker-carmine-paolino-square.png`](https://goatconf.com/share/speaker-carmine-paolino-square.png) (LinkedIn, Mastodon), [`speaker-carmine-paolino-wide.png`](https://goatconf.com/share/speaker-carmine-paolino-wide.png) (X, Bluesky)
 - **Tag:** Carmine Paolino
 - **LinkedIn:**
 
@@ -240,10 +352,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-14--org--carmine-paolino.md.
 
-### Tue 15 Dec 2026, week 10: Speaker: Roy Tomeij
+### Sat 19 Dec 2026, week 10: Speaker: Roy Tomeij
 
 - **State:** drafted
-- **Image:** `speaker-roy-tomeij-square.png` (LinkedIn, Mastodon), `speaker-roy-tomeij-wide.png` (X, Bluesky)
+- **Image:** [`speaker-roy-tomeij-square.png`](https://goatconf.com/share/speaker-roy-tomeij-square.png) (LinkedIn, Mastodon), [`speaker-roy-tomeij-wide.png`](https://goatconf.com/share/speaker-roy-tomeij-wide.png) (X, Bluesky)
 - **Tag:** Roy Tomeij and AppSignal
 - **LinkedIn:**
 
@@ -259,10 +371,10 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-20--org--roy-tomeij.md, sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md, sources/web/speakers/appsignal-roy-tomeij-2026-10-20.md, sources/web/speakers/rubyevents-roy-tomeij-2026-10-20.md.
 
-### Tue 22 Dec 2026, week 11: Your first talk?
+### Sat 26 Dec 2026, week 11: Your first talk?
 
 - **State:** drafted
-- **Image:** `post-your-first-talk-square.png` (LinkedIn, Mastodon), `post-your-first-talk-wide.png` (X, Bluesky)
+- **Image:** [`post-your-first-talk-square.png`](https://goatconf.com/share/post-your-first-talk-square.png) (LinkedIn, Mastodon), [`post-your-first-talk-wide.png`](https://goatconf.com/share/post-your-first-talk-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > Thinking about giving your first talk in 2027?
@@ -278,24 +390,6 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Thinking about your first talk in 2027? GoatConf welcomes first-time speakers: a strong idea counts for more than a famous name. One hour, one room, Tuzla in June. goatconf.com/talk
 
   Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--day-chain-and-session-format.md.
-
-### Tue 29 Dec 2026, week 12: See you in June
-
-- **State:** drafted
-- **Image:** `post-see-you-in-june-square.png` (LinkedIn, Mastodon), `post-see-you-in-june-wide.png` (X, Bluesky)
-- **LinkedIn:**
-
-  > A new year, and GoatConf is five months away.
-  >
-  > Thursday 3 and Friday 4 June 2027: talks, panels and workshops in seven rooms at IPI Academy in Tuzla, with an hour off after every session. Saturday 5 June: the community's day, at the salt lakes and around town.
-  >
-  > Free to attend. If 2027 is the year you visit Bosnia and Herzegovina, register now and we'll see you in June: goatconf.com/register
-
-- **Short** (153 characters):
-
-  > Happy new year from GoatConf. Five months to go: talks in Tuzla on 3 and 4 June 2027, then a day at the salt lakes. Free to attend. goatconf.com/register
-
-  Sources: sources/conversations/2026-10-12--org--two-core-days-and-saturday.md, sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md.
 
 ## Related
 
