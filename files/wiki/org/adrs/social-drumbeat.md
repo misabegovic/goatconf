@@ -2,11 +2,12 @@
 title: "Keep the email list in Luma, and the weekly beats as one calendar page here"
 kind: decision
 status: accepted
-updated: 2026-10-18
+updated: 2026-10-24
 confidence: medium
 depends_on:
   - org/prds/social-drumbeat.md
 sources:
+  - sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
   - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
   - sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md
@@ -97,6 +98,7 @@ the public is the organiser's call
 
 ## Amendments
 
+- **2026-10-24, two posts a week: the plan on Saturdays, news and Tuzla on Tuesdays.** Week 2 did not go out on Tuesday 20 October; the organiser posted it on Saturday 24 October 2026 and chose to post twice a week. The planned posts keep their order and go on Saturdays, from week 2 on 24 October 2026 to week 33 on 29 May 2027; "See you Thursday" stays on Tuesday 1 June 2027, and the event-day posts and the thank-you on Tuesday 8 June 2027 keep their dates. Every Tuesday from 27 October 2026 is a second slot: news first (a speaker, a supporter, an event), otherwise a short Tuzla post, drafted about a month ahead. Each post on [The drumbeat](../outreach/drumbeat.md) now links its images at goatconf.com/share/, and no share page is added to the site. This replaces the 2026-10-18 amendment's "every Tuesday" (source: sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md).
 - **2026-10-18, the calendar is dated to June 2027.** On the organiser's answers, one post goes every Tuesday from 20 October 2026 to 1 June 2027, then on each event day and a thank-you on 8 June 2027, all fully drafted on [The drumbeat](../outreach/drumbeat.md). Week 1 is published (source: sources/conversations/2026-10-18--org--social-plan-to-june.md).
 - **2026-10-12, registration is back on Luma, the channels are chosen, and the calendar exists.** Registration moved to the organiser's Luma event (source: sources/conversations/2026-10-12--org--registration-on-luma.md), so registered guests can again get Luma updates; the earlier amendment's "Luma is no longer used" no longer holds. People who tick the news question on the contact form are the other part of the list. The organiser chose the channels: LinkedIn; X, Bluesky and Mastodon; and Luma with link previews (source: sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md). The calendar is [The drumbeat](../outreach/drumbeat.md), with the launch sequence drafted and the images in `site/share/`.
 - **2026-10-12.** Luma is no longer used. The email list is the people who tick an optional, unticked question on the registration or contact Google Form asking to be sent news about GoatConf; news goes by email from the organiser's Google account. Subscriber data stays in the organiser's Google Sheets and never enters this public repository. The weekly beats calendar here is unchanged. See [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
