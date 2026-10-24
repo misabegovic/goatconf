@@ -38,6 +38,17 @@ home described above.
 - `tools/`: `brain.py` (validate, check, views, search, stats), the generators that build and check parts of the site (program, speakers, extensions, places, navigation, the shared page frame, link previews, files for agents, WebP photos, the trimmed display face) and the HTML check, hooks, templates, CI.
 - `.claude/`: skills, slash commands, agent personas, settings. Sessions start at the repository root, whose `.claude/settings.json` links to the settings here.
 
+## Licence
+
+The code and the writing in this repository are under the MIT licence
+(`LICENSE` at the repository root), on the organiser's decision of
+2026-10-24. It does not cover what belongs to others: the photos (their
+provenance and licences are in `assets/images/` and `sources/web/images/`,
+and the food photos are not freely licensed), the speakers' photos and the
+supporters' logos, the fonts (SIL Open Font License, `site/fonts/LICENSE.md`),
+the map data (© OpenStreetMap contributors) and the copies of web pages
+under `sources/web/`, which stay their authors'.
+
 ## Getting started
 
 ```bash

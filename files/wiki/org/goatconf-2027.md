@@ -2,9 +2,10 @@
 title: "GoatConf 2027: what is known"
 kind: reference
 status: living
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: medium
 sources:
+  - sources/conversations/2026-10-24--org--foss-values-and-mit-licence.md
   - sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md
   - sources/conversations/2026-10-23--org--hosts-hub-approved.md
   - sources/conversations/2026-10-23--org--hosts-hub-answers.md
@@ -108,6 +109,7 @@ is cited to the sources above; nothing is inferred. Proposals live in the
   people, founders: people who build and sell software (sources: sources/conversations/2026-10-12--org--build-and-sell.md,
   sources/conversations/2026-10-12--org--audience-list.md).
   Not tied to any language or stack, Ruby included (source: sources/conversations/2026-10-12--org--what-goatconf-is.md).
+- **Values:** GoatConf is built around the values of free and open-source software, as the charter says; the wording is about FOSS values, not an open-source conference, and it goes on the charter only. The repository, site and tools included, is under the MIT licence (source: sources/conversations/2026-10-24--org--foss-values-and-mit-licence.md).
 - **Size:** 120 to 300 people for the first edition, as the home page says (source: sources/conversations/2026-10-13--org--outside-review-fixes.md). Registration has no
   limit; each room is capped by its own seats, first come, first served at
   the door (source: sources/conversations/2026-10-12--org--first-come-luma-only.md,
