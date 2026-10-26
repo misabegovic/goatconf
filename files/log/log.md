@@ -639,3 +639,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #177: speakers: say Session to be announced on cards without a title
    diff: 34 files, +57/-40
    restricted-paths: true
+2026-10-26 merge — PR #178: speakers: show the session before How to support them
+   diff: 12 files, +43/-34
+   restricted-paths: true

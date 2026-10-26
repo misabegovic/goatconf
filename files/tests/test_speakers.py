@@ -103,6 +103,7 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
         (share / f"speaker-ana-example-announce-{size}.png").write_bytes(b"png")
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], speakers.sessions_by_speaker(detail=True)["ana-example"], speakers.supporters())
     assert page.index("Your card: I'm speaking") < page.index("The announcement card")
+    assert page.index('id="h-talks"') < page.index("Your card: I'm speaking")  # the session comes before the cards
     assert '<img class="share-card" src="share/speaker-ana-example-announce-wide.png"' in page
     shareables = importlib.reload(importlib.import_module("shareables"))
     meta = speakers.speakers()["ana-example"][0]
