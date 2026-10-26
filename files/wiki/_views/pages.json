@@ -773,7 +773,7 @@
       "status": "draft",
       "updated": "2026-10-23",
       "sources": [],
-      "tokens": 1977,
+      "tokens": 1988,
       "affected_by": [
         "org/ideas/lightning-talks.md",
         "org/outreach/drumbeat-2026.md",
@@ -2125,16 +2125,18 @@
       "title": "Speaker: Paul Campbell",
       "kind": "entity",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-10-26",
       "confidence": "medium",
       "sources": [
         "sources/conversations/2026-10-14--org--paul-campbell.md",
         "sources/web/speakers/paulca-com-2026-10-14.md",
         "sources/web/speakers/confex-paul-campbell-2026-10-14.md",
         "sources/web/speakers/team-tito-2026-10-14.md",
-        "sources/web/organiser/muhamed-at-about.md"
+        "sources/web/organiser/muhamed-at-about.md",
+        "sources/conversations/2026-10-26--org--paul-campbell-carlos.md",
+        "sources/web/speakers/carlos-paul-campbell-2026-10-26.md"
       ],
-      "tokens": 969
+      "tokens": 1291
     },
     {
       "path": "org/speakers/predrag-radenkovic.md",
