@@ -645,3 +645,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #179: site: centre the title and lede next to the photo on inner pages
    diff: 32 files, +44/-34
    restricted-paths: false
+2026-10-26 merge — PR #180: site: show the area tags in normal case, keeping their colours
+   diff: 32 files, +39/-29
+   restricted-paths: false
