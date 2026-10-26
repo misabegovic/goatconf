@@ -615,3 +615,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #169: site: make the food tags plain pills again, with the vegan tag green
    diff: 32 files, +49/-30
    restricted-paths: false
+2026-10-26 merge — PR #170: site: drop the stray comma in the register page's heading
+   diff: 2 files, +10/-1
+   restricted-paths: false
