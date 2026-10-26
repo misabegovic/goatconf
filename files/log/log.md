@@ -597,3 +597,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-24 merge — PR #163: charter: say GoatConf is built around FOSS values, open to anyone with something to share, under MIT
    diff: 8 files, +99/-3
    restricted-paths: false
+2026-10-26 merge — PR #164: speakers: add Paul Campbell's session, The story of CARLOS
+   diff: 17 files, +164/-97
+   restricted-paths: false
