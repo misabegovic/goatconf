@@ -87,9 +87,9 @@ def test_home_plans_eight_places_and_says_how_many_it_shows(monkeypatch):
     assert html.count('href="talk.html"') == 2 and "View all speakers" in html
     monkeypatch.setattr(speakers, "speakers", lambda: people(9))
     html = home.speakers_block()
-    assert html.count("sticker--speaker") == 8 and "slot--open" not in html and "Showing 8 of 9 speakers." in html and "View all speakers" in html
+    assert html.count("sticker--speaker") == 8 and "slot--open" not in html and "Showing" not in html and "View all speakers" in html
     monkeypatch.setattr(speakers, "speakers", lambda: people(8))
-    assert "Showing all 8 speakers so far." in home.speakers_block()
+    assert '<p class="copy"><a class="go go--ink" href="speakers.html">View all speakers</a></p>' in home.speakers_block()  # the link alone, no count
     monkeypatch.setattr(speakers, "speakers", lambda: {})
     assert "The first speaker could be you" in home.speakers_block()
 

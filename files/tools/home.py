@@ -114,9 +114,8 @@ def speakers_block() -> str:
         cards = "\n".join([speakers.speaker_card(i, s, m, b, talks.get(s, []), known, (detail.get(s) or [None])[0], anchor=False)
                            for i, (s, (m, b)) in enumerate(people[:SHOWN])]
                           + [open_place() for _ in range(SHOWN - len(people[:SHOWN]))])
-        count = (f"Showing {SHOWN} of {len(people)} speakers." if len(people) > SHOWN
-                 else f"Showing all {len(people)} speakers so far." if len(people) == SHOWN else "")
-        more = (f"{count} " if count else "") + '<a class="go go--ink" href="speakers.html">View all speakers</a>'
+        # Only the link, with no count, so it reads the same however many speakers there are.
+        more = '<a class="go go--ink" href="speakers.html">View all speakers</a>'
         intro = "The people giving the talks, panels and workshops so far. More are added as proposals are accepted."
     else:
         cards = ('    <li class="slots__wide"><a class="slot slot--link slot--wait" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
