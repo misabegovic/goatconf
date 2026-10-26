@@ -8,6 +8,7 @@ depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-10-26--org--speaking-card-on-the-profile.md
   - sources/conversations/2026-10-26--org--speaking-cards-show-the-talk.md
   - sources/conversations/2026-10-14--org--speaker-link-previews.md
   - sources/conversations/2026-10-14--org--speaker-order.md
@@ -107,3 +108,4 @@ profile goes up only with the speaker's consent.
 - **2026-10-14, the organiser's order.** Speakers are listed in the order the organiser sets by each speaker's standing, not alphabetically: a record's `order` (1 first) decides it on the speakers page, the home page and `llms.txt`, and speakers without one follow by name. Two speakers cannot share a number (source: sources/conversations/2026-10-14--org--speaker-order.md).
 - **2026-10-14, each speaker's own link preview.** When a speaker's page is shared, the preview shows that speaker's card, a 1200 by 630 version of their "I'm speaking" card, not the generic banner; the local CI fails while a published speaker has none (source: sources/conversations/2026-10-14--org--speaker-link-previews.md).
 - **2026-10-26, the session title on the cards before a slot.** While a confirmed speaker's session has no slot, their "I'm speaking" cards (square, wide and the link preview) show the title from their record, as "Talk: <title>" or its own format, where they showed only "Tuzla · 3–5 June 2027"; a speaker without a title keeps that line (source: sources/conversations/2026-10-26--org--speaking-cards-show-the-talk.md).
+- **2026-10-26, the card on the profile.** Each speaker's profile shows their "I'm speaking" card in its own section, "Your card: I'm speaking", after the session: the wide card as an image and both sizes to download, the way a supporter's profile shows its cards, in place of a single link to the square card (source: sources/conversations/2026-10-26--org--speaking-card-on-the-profile.md).

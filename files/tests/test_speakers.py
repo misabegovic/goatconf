@@ -90,6 +90,14 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], speakers.sessions_by_speaker(detail=True)["ana-example"], speakers.supporters())
     assert "<h1 class=\"sign\">Ana Example</h1>" in page and "Salt, goats and servers" in page
     assert "funded by" not in page
+    assert "Your card: I'm speaking" not in page  # nothing until the cards are rendered
+    share = tmp_path / "site" / "share"
+    share.mkdir(parents=True, exist_ok=True)
+    for size in ("square", "wide"):
+        (share / f"speaker-ana-example-{size}.png").write_bytes(b"png")
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], speakers.sessions_by_speaker(detail=True)["ana-example"], speakers.supporters())
+    assert "Your card: I'm speaking" in page and '<img class="share-card" src="share/speaker-ana-example-wide.png"' in page
+    assert 'href="share/speaker-ana-example-square.png" download>Download the square card</a>' in page
 
 
 def test_profile_without_consent_is_refused_and_not_linked(tmp_path, monkeypatch):

@@ -312,9 +312,11 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     else:
         talks = ""
     links = "".join(f'<li><a href="{esc(u)}">{esc(re.sub(r"^https?://(www\.)?", "", str(u)).rstrip("/"))}</a></li>' for u in meta.get("links") or [])
-    card = SITE / "share" / f"speaker-{slug}-square.png"
-    share = (f'<p><a class="go go--ink" href="share/speaker-{esc(slug)}-square.png" download>Download the "I\'m speaking" card</a></p>'
-             if card.exists() else "")
+    # The "I'm speaking" card shown as supporters' cards are, with both sizes to download.
+    share = extensions.share_section({"square": f"speaker-{slug}-square.png", "wide": f"speaker-{slug}-wide.png"},
+                                     f"{name}, speaking at GoatConf 2027",
+                                     "Your card, to post as your own: speaking at GoatConf 2027. It links back to the speakers page.",
+                                     "Your card: I'm speaking", SITE)
     photo = (esc(meta["photo"]), 800, 800, meta["name"]) if meta.get("photo") else ("brand/coin.svg", 300, 300, "")
     first = sessions[0] if sessions else None
     lede = (f'{esc(first["format"])} on {program.CORE_DAYS[first["day"]]} at {first["start"]}, {esc(first["room"])}.' if first
@@ -330,8 +332,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
   <h2 class="band" id="h-talks">{"Sessions" if len(sessions) > 1 else "Session"}</h2>
   {f'<ul class="talks">{talks}</ul>' if talks else '<p class="copy">The session will be on the program soon.</p>'}
   <p class="copy"><a class="go go--ink" href="program.html">See the whole program</a> <a class="go go--ink" href="speakers.html">All speakers</a></p>
-  {share}
-</section>"""
+</section>{share}"""
     title = f"{meta['name']}: speaking at GoatConf 2027, Tuzla"
     who = f"{meta['name']} ({meta['role']})" if meta.get("role") else meta["name"]
     if first:
