@@ -62,13 +62,13 @@ and asked that the page for extending the event grow search, filtering,
 guides for "how and maybe what, where", contacts and photos
 (`sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md`).
 The research behind the venues is
-[Places in Tuzla where hosts could run an event](../../tuzla/venues-for-hosts.md).
+[Places in Tuzla where hosts could run an event](../tuzla/venues-for-hosts.md).
 
 The shape is the organiser's from the first day: a minimal core that
 others extend, "like the Pi agent", with "a framework for others to
 build on" (`sources/conversations/2026-10-07--org--conference-vision.md`).
 Today the framework is the record and the rules
-([Extension slots and the record](../../adrs/extension-slots-and-the-record.md));
+([Extension slots and the record](../adrs/extension-slots-and-the-record.md));
 what a would-be host lacks is the help to get from an idea to an event.
 
 ## Objective
@@ -262,6 +262,6 @@ as listed in the frontmatter.
 
 ## Related
 
-- [Places in Tuzla where hosts could run an event](../../tuzla/venues-for-hosts.md)
-- [Extension slots and the record](../../prds/extension-slots-and-the-record.md)
-- [Activities: the lake and the town](../../prds/activities-lake-and-town.md)
+- [Places in Tuzla where hosts could run an event](../tuzla/venues-for-hosts.md)
+- [Extension slots and the record](extension-slots-and-the-record.md)
+- [Activities: the lake and the town](activities-lake-and-town.md)
