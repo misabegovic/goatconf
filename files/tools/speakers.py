@@ -336,12 +336,12 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
   <h2 class="band" id="h-about">Who they are</h2>
   <div class="copy copy--wide">{bio}</div>
   {f'<ul class="speaker-page__links">{links}</ul>' if links else ''}
-</section>{support_section(meta)}
+</section>
 <section class="album-page wrap" aria-labelledby="h-talks">
   <h2 class="band" id="h-talks">{"Sessions" if len(sessions) > 1 else "Session"}</h2>
   {f'<ul class="talks">{talks}</ul>' if talks else '<p class="copy">The session will be on the program soon.</p>'}
   <p class="copy"><a class="go go--ink" href="program.html">See the whole program</a> <a class="go go--ink" href="speakers.html">All speakers</a></p>
-</section>{share}"""
+</section>{support_section(meta)}{share}"""
     title = f"{meta['name']}: speaking at GoatConf 2027, Tuzla"
     who = f"{meta['name']} ({meta['role']})" if meta.get("role") else meta["name"]
     if first:
