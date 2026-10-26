@@ -500,13 +500,14 @@
       "title": "Speaker profiles and travel supporters: consented records, a speakers page and a supporters wall",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-14",
+      "updated": "2026-10-26",
       "confidence": "medium",
       "depends_on": [
         "org/prds/cfp-and-speakers.md",
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-26--org--speaking-cards-show-the-talk.md",
         "sources/conversations/2026-10-14--org--speaker-link-previews.md",
         "sources/conversations/2026-10-14--org--speaker-order.md",
         "sources/conversations/2026-10-14--org--speaker-role-and-employer.md",
@@ -521,7 +522,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 1705,
+      "tokens": 1821,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]

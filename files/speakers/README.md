@@ -38,8 +38,8 @@ is their bio in their own words, at most 120 words.
   a supporter.
 - `talk`: optional, the title of the session they proposed, one line of at
   most 80 characters (for example `Back to the Future`). It shows on
-  their page, their card on the speakers page and their sticker on the
-  home page while the session has no slot.
+  their page, their card on the speakers page, their sticker on the
+  home page and their "I'm speaking" cards while the session has no slot.
 - `talk_about`: optional, their own words on what the session is about,
   at most 300 words; it needs `talk`. Separate paragraphs stay separate
   paragraphs on the page.

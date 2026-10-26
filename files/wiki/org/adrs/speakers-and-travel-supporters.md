@@ -2,12 +2,13 @@
 title: "Speaker profiles and travel supporters: consented records, a speakers page and a supporters wall"
 kind: decision
 status: accepted
-updated: 2026-10-14
+updated: 2026-10-26
 confidence: medium
 depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-10-26--org--speaking-cards-show-the-talk.md
   - sources/conversations/2026-10-14--org--speaker-link-previews.md
   - sources/conversations/2026-10-14--org--speaker-order.md
   - sources/conversations/2026-10-14--org--speaker-role-and-employer.md
@@ -105,3 +106,4 @@ profile goes up only with the speaker's consent.
 - **2026-10-14, role and employer.** A record may carry an optional `role`, one free-text line such as "Staff Engineer at Vinted", shown wherever the speaker's name is: their page, the speakers page, the home page, the "I'm speaking" cards and the files for agents. It is text only, never an employer's logo, so an employer is not mistaken for a supporter. The agent finds it from the speaker's own site or a past conference and records where (source: sources/conversations/2026-10-14--org--speaker-role-and-employer.md).
 - **2026-10-14, the organiser's order.** Speakers are listed in the order the organiser sets by each speaker's standing, not alphabetically: a record's `order` (1 first) decides it on the speakers page, the home page and `llms.txt`, and speakers without one follow by name. Two speakers cannot share a number (source: sources/conversations/2026-10-14--org--speaker-order.md).
 - **2026-10-14, each speaker's own link preview.** When a speaker's page is shared, the preview shows that speaker's card, a 1200 by 630 version of their "I'm speaking" card, not the generic banner; the local CI fails while a published speaker has none (source: sources/conversations/2026-10-14--org--speaker-link-previews.md).
+- **2026-10-26, the session title on the cards before a slot.** While a confirmed speaker's session has no slot, their "I'm speaking" cards (square, wide and the link preview) show the title from their record, as "Talk: <title>" or its own format, where they showed only "Tuzla · 3–5 June 2027"; a speaker without a title keeps that line (source: sources/conversations/2026-10-26--org--speaking-cards-show-the-talk.md).
