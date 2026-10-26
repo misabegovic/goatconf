@@ -630,3 +630,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #174: home: end with See you in Tuzla and a Register button
    diff: 3 files, +14/-0
    restricted-paths: false
+2026-10-26 merge — PR #175: site: make the stickers matte, with no gloss and light shadows
+   diff: 36 files, +77/-70
+   restricted-paths: false
