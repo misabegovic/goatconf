@@ -624,3 +624,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #172: home: show only "View all speakers" under the speakers
    diff: 5 files, +17/-6
    restricted-paths: true
+2026-10-26 merge — PR #173: home: put the date and place right under the title
+   diff: 32 files, +41/-30
+   restricted-paths: false

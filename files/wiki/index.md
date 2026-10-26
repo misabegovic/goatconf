@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-26**: **When and where, right under the title.** The home page's cover now reads "3–5 June 2027 · Tuzla, Bosnia and Herzegovina" under "GoatConf 2027", so a phone shows both in the first screen; the second paragraph no longer repeats them (source: sources/conversations/2026-10-26--org--hero-date-line.md).
 - **2026-10-26**: **Under the home page's speakers, only "View all speakers".** No count before it, so it reads the same however many speakers there are (source: sources/conversations/2026-10-26--org--view-all-speakers.md).
 - **2026-10-26**: **The open event slot names the weekdays.** On the home page it reads "Your event, any day from Wednesday 2nd to Sunday 6th June", so it no longer looks like a clash with "3–5 June" (source: sources/conversations/2026-10-26--org--event-days-weekdays.md).
 - **2026-10-26**: **The food tags are plain again, and vegan is green.** On the home page's food stickers, each dish's description is a small page-print pill in normal case and the vegan ones carry the green tint again, as DESIGN.md has it; a rule for the session tags had turned them all into blue uppercase bars. The first fix from a review of the site, each shown in the organiser's browser before it ships (source: sources/conversations/2026-10-26--org--food-tags.md).
