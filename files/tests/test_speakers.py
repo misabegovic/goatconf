@@ -138,6 +138,10 @@ def test_a_talk_shows_before_it_has_a_slot(tmp_path, monkeypatch):
     assert "The session will be on the program soon." not in page
     assert 'content="Ana Example speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: Salt, goats and servers."' in page
     assert "Talk: Salt, goats and servers" in speakers.speakers_page()
+    shareables = importlib.reload(importlib.import_module("shareables"))
+    meta = speakers.speakers()["ana-example"][0]
+    assert ">Talk: Salt, goats and servers</div>" in shareables.speaker_card("ana-example", meta, [], True)  # the "I'm speaking" card too
+    assert "Tuzla · 3–5 June 2027" in shareables.speaker_card("ana-example", {**meta, "talk": None}, [], True)
 
 
 def test_the_talk_fields_come_off_once_the_session_is_on_the_program(tmp_path, monkeypatch):

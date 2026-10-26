@@ -600,3 +600,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #164: speakers: add Paul Campbell's session, The story of CARLOS
    diff: 17 files, +164/-97
    restricted-paths: false
+2026-10-26 merge — PR #165: speakers: show the session title on the "I'm speaking" cards before a slot
+   diff: 16 files, +29/-6
+   restricted-paths: true

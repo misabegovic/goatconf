@@ -211,7 +211,9 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
     photo = (f'<img src="{(SITE / meta["photo"]).as_uri()}" style="width:100%;height:100%;object-fit:cover">'
              if meta.get("photo") else
              f'<img src="{(SITE / "brand" / "coin-yellow.svg").as_uri()}" style="width:70%;height:70%;margin:15%">')
-    talk = talks[0] if talks else "Tuzla · 3–5 June 2027"
+    # Before the session has a slot, the record's own title stands in for it.
+    talk = (talks[0] if talks else f'{speakers.talk_format(meta)}: {esc(str(meta["talk"]))}' if meta.get("talk")
+            else "Tuzla · 3–5 June 2027")
     size, w, h = (380, 1080, 1080) if square else (330, 1200, height)
     # A long name on the square card shrinks to stay on one line, so the role
     # and the session keep their room above the address.
