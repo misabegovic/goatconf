@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-26**: **Matte stickers.** No more white shine across the stickers, and shorter, lighter shadows on stickers, pages and buttons, so the site feels like paper rather than glossy cards; DESIGN.md's Gloss Rule is now the Matte Rule ([the impeccable ADR](org/adrs/design-with-impeccable.md); source: sources/conversations/2026-10-26--org--matte-stickers.md).
 - **2026-10-26**: **The home page ends with "See you in Tuzla".** A last section after the code of conduct: free to attend, Thursday 3rd to Saturday 5th June 2027, at IPI Academy and around Tuzla, with a "Register for free" button, so a phone reader is asked again at the end (source: sources/conversations/2026-10-26--org--see-you-in-tuzla.md).
 - **2026-10-26**: **When and where, right under the title.** The home page's cover now reads "3–5 June 2027 · Tuzla, Bosnia and Herzegovina" under "GoatConf 2027", so a phone shows both in the first screen; the second paragraph no longer repeats them (source: sources/conversations/2026-10-26--org--hero-date-line.md).
 - **2026-10-26**: **Under the home page's speakers, only "View all speakers".** No count before it, so it reads the same however many speakers there are (source: sources/conversations/2026-10-26--org--view-all-speakers.md).
