@@ -37,7 +37,7 @@ SOCIAL = (
 FOLLOW = blocks.pattern("follow")
 FOOTER_LINKS = re.compile(r'(<footer\b.*?<p class="(?:footer|back-cover)__links">.*?</p>)', re.S)
 LINKS = [("program.html", "Program"), ("speakers.html", "Speakers"), ("travel.html", "Travel"), ("supporters.html", "Supporters")]
-ACTIONS = [("extend.html", "Make it yours", "topbar__cta"), ("talk.html", "Propose a session", "topbar__cta"), ("register.html", "Register", "topbar__cta topbar__cta--main")]
+ACTIONS = [("extend.html", "Host an event", "topbar__cta"), ("talk.html", "Propose a session", "topbar__cta"), ("register.html", "Register", "topbar__cta topbar__cta--main")]
 
 
 def bar(current: str) -> str:
