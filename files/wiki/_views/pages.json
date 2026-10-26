@@ -2136,9 +2136,10 @@
         "sources/web/speakers/team-tito-2026-10-14.md",
         "sources/web/organiser/muhamed-at-about.md",
         "sources/conversations/2026-10-26--org--paul-campbell-carlos.md",
-        "sources/web/speakers/carlos-paul-campbell-2026-10-26.md"
+        "sources/web/speakers/carlos-paul-campbell-2026-10-26.md",
+        "sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md"
       ],
-      "tokens": 1291
+      "tokens": 1346
     },
     {
       "path": "org/speakers/predrag-radenkovic.md",

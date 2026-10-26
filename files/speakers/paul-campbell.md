@@ -15,6 +15,8 @@ talk_about: |
   CARLOS is an architecture for building and shipping apps in the agentic age, built by the people behind Tito and Jelly and drawn from what they learned serving real customers. It rejects both monoliths and microservices in favour of many small full-stack instances: single-process apps, each with its own embedded database, on a cloud provider, on-prem or both.
 
   The numbers come from Tito's own data: 10× lower running costs, 87% less JavaScript, 12× faster to ship, a 4.5× faster first render, 5× faster responses, and backups that land within one to two seconds rather than nightly.
+talk_area: [engineering, business]
+talk_for: developers and founders who build and run web apps
 order: 1
 publish: yes
 support_them:

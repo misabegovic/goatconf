@@ -12,6 +12,7 @@ sources:
   - sources/web/organiser/muhamed-at-about.md
   - sources/conversations/2026-10-26--org--paul-campbell-carlos.md
   - sources/web/speakers/carlos-paul-campbell-2026-10-26.md
+  - sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md
 ---
 
 # Speaker: Paul Campbell
@@ -32,6 +33,7 @@ the same name on Wikipedia.
 - **Session at GoatConf:** "The story of CARLOS", the talk HalfStack Vienna lists for him with the line "The mysterious secrets of CARLOS will be revealed on the day of the event." It has no slot yet (sources: sources/conversations/2026-10-26--org--paul-campbell-carlos.md, sources/web/speakers/carlos-paul-campbell-2026-10-26.md).
 - **CARLOS:** "An architecture for building and shipping uncompromising apps in the agentic age", "built by the people behind Tito and Jelly", favouring "many small full-stack instances" over monoliths and microservices. Its site gives figures from Tito's own data: 10× lower running costs, 87% less JavaScript, 12× faster to ship, 4.5× faster first render, 5× faster responses and "1–2s backup latency rather than nightly". It says all CARLOS software to date was produced with LLM-based coding products (source: sources/web/speakers/carlos-paul-campbell-2026-10-26.md).
 - **Session text on the site:** HalfStack's line word for word, then what CARLOS is and its figures, with a link to carlosframework.com under "How to support them", on the organiser's choice to "include data and link to the site" (source: sources/conversations/2026-10-26--org--paul-campbell-carlos.md).
+- **Area and audience:** tagged Engineering and Business, "for developers and founders who build and run web apps", on the organiser's choice (source: sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md).
 - **Talks and podcasts:** "A Modern Approach to Third-Party Embedded Widgets" at Turing Fest 2018; a speaker at International Confex on 3 and 4 March 2027; a guest on IndieRails (episode 49, January 2025), ShopTalk Show (366) and Code with Jason (227) (source: sources/web/speakers/confex-paul-campbell-2026-10-14.md). None of these is his GoatConf session.
 - **Lately writes about:** AI as augmentation and as accessibility, and using an LLM off the grid, on paulca.com, July to October 2026 (source: sources/web/speakers/paulca-com-2026-10-14.md).
 - **Bio on the site:** his International Confex bio, word for word, on the organiser's choice. It still says "They have recently introduced IO", the product now called Tito Pro (sources: sources/conversations/2026-10-14--org--paul-campbell.md, sources/web/speakers/team-tito-2026-10-14.md).
