@@ -627,3 +627,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #173: home: put the date and place right under the title
    diff: 32 files, +41/-30
    restricted-paths: false
+2026-10-26 merge — PR #174: home: end with See you in Tuzla and a Register button
+   diff: 3 files, +14/-0
+   restricted-paths: false
