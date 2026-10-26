@@ -110,6 +110,12 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     assert "Confirmed speaker at GoatConf 2027" in card and "goatconf.com/speaker-ana-example<" in card and "Free to attend" in card
 
 
+def test_a_speaker_without_a_title_says_the_session_is_to_be_announced(tmp_path, monkeypatch):
+    _, speakers = setup(tmp_path, monkeypatch)
+    (tmp_path / "program" / "s.md").unlink()
+    assert '<span class="speaker__first speaker__first--tba">Session to be announced</span>' in speakers.speakers_page()
+
+
 def test_profile_without_consent_is_refused_and_not_linked(tmp_path, monkeypatch):
     program, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("publish: yes", "publish: no"))
     assert speakers.cmd_check(Args()) == 1
@@ -156,6 +162,7 @@ def test_a_talk_shows_before_it_has_a_slot(tmp_path, monkeypatch):
     assert "The session will be on the program soon." not in page
     assert 'content="Ana Example speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: Salt, goats and servers."' in page
     assert "Talk: Salt, goats and servers" in speakers.speakers_page()
+    assert "Session to be announced" not in speakers.speakers_page()  # only a speaker with no title yet says so
     shareables = importlib.reload(importlib.import_module("shareables"))
     meta = speakers.speakers()["ana-example"][0]
     assert ">Talk: Salt, goats and servers</div>" in shareables.speaker_card("ana-example", meta, [], True)  # the "I'm speaking" card too

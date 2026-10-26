@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-26**: **"Session to be announced" on speakers without a title.** On the home page and the speakers page, a speaker card with no session title yet says so, in soft italic, instead of ending after the role (source: sources/conversations/2026-10-26--org--session-to-be-announced.md).
 - **2026-10-26**: **"Host an event" in the top bar.** The button to /extend in the top bar, the phone menu and the footer now says "Host an event"; the page itself is still called Make it yours (source: sources/conversations/2026-10-26--org--host-an-event-label.md).
 - **2026-10-26**: **Matte stickers.** No more white shine across the stickers, and shorter, lighter shadows on stickers, pages and buttons, so the site feels like paper rather than glossy cards; DESIGN.md's Gloss Rule is now the Matte Rule ([the impeccable ADR](org/adrs/design-with-impeccable.md); source: sources/conversations/2026-10-26--org--matte-stickers.md).
 - **2026-10-26**: **The home page ends with "See you in Tuzla".** A last section after the code of conduct: free to attend, Thursday 3rd to Saturday 5th June 2027, at IPI Academy and around Tuzla, with a "Register for free" button, so a phone reader is asked again at the end (source: sources/conversations/2026-10-26--org--see-you-in-tuzla.md).

@@ -288,7 +288,8 @@ def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None,
     photo = f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo") else goat_photo()
     role = f'<span class="speaker__role">{esc(meta["role"])}</span>' if meta.get("role") else ""
     first = (f'<span class="speaker__first">{sessions[0]}</span>' if sessions
-             else f'<span class="speaker__first">{talk_format(meta)}: {esc(meta["talk"])}</span>' if meta.get("talk") else "")
+             else f'<span class="speaker__first">{talk_format(meta)}: {esc(meta["talk"])}</span>' if meta.get("talk")
+             else '<span class="speaker__first speaker__first--tba">Session to be announced</span>')
     flavor = scheduled or ({"area": meta.get("talk_area"), "for": meta.get("talk_for")} if meta.get("talk") else {})
     first += program.tags(None, flavor.get("area")) + program.for_line(flavor.get("for"), "span")
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
