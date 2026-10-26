@@ -2,11 +2,12 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-10-24
+updated: 2026-10-26
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
   - sources/web/tuzla/tuzla-wikipedia-bs.md
   - sources/web/tuzla/tztz-history-of-tuzla.md
   - sources/web/tuzla/tztz-archaeological-park.md
@@ -298,7 +299,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 28 Nov 2026, week 7: Speaker: Paul Campbell
 
 - **State:** drafted
-- **Image:** [`speaker-paul-campbell-square.png`](https://goatconf.com/share/speaker-paul-campbell-square.png) (LinkedIn, Mastodon), [`speaker-paul-campbell-wide.png`](https://goatconf.com/share/speaker-paul-campbell-wide.png) (X, Bluesky)
+- **Image:** [`speaker-paul-campbell-announce-square.png`](https://goatconf.com/share/speaker-paul-campbell-announce-square.png) (LinkedIn, Mastodon), [`speaker-paul-campbell-announce-wide.png`](https://goatconf.com/share/speaker-paul-campbell-announce-wide.png) (X, Bluesky)
 - **Tag:** Paul Campbell and Tito
 - **LinkedIn:**
 
@@ -336,7 +337,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 12 Dec 2026, week 9: Speaker: Carmine Paolino
 
 - **State:** drafted
-- **Image:** [`speaker-carmine-paolino-square.png`](https://goatconf.com/share/speaker-carmine-paolino-square.png) (LinkedIn, Mastodon), [`speaker-carmine-paolino-wide.png`](https://goatconf.com/share/speaker-carmine-paolino-wide.png) (X, Bluesky)
+- **Image:** [`speaker-carmine-paolino-announce-square.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-square.png) (LinkedIn, Mastodon), [`speaker-carmine-paolino-announce-wide.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-wide.png) (X, Bluesky)
 - **Tag:** Carmine Paolino
 - **LinkedIn:**
 
@@ -355,7 +356,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 19 Dec 2026, week 10: Speaker: Roy Tomeij
 
 - **State:** drafted
-- **Image:** [`speaker-roy-tomeij-square.png`](https://goatconf.com/share/speaker-roy-tomeij-square.png) (LinkedIn, Mastodon), [`speaker-roy-tomeij-wide.png`](https://goatconf.com/share/speaker-roy-tomeij-wide.png) (X, Bluesky)
+- **Image:** [`speaker-roy-tomeij-announce-square.png`](https://goatconf.com/share/speaker-roy-tomeij-announce-square.png) (LinkedIn, Mastodon), [`speaker-roy-tomeij-announce-wide.png`](https://goatconf.com/share/speaker-roy-tomeij-announce-wide.png) (X, Bluesky)
 - **Tag:** Roy Tomeij and AppSignal
 - **LinkedIn:**
 

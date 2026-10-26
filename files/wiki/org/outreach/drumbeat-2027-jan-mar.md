@@ -2,11 +2,12 @@
 title: "The drumbeat, January to March 2027"
 kind: reference
 status: draft
-updated: 2026-10-24
+updated: 2026-10-26
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
   - sources/conversations/2026-10-12--org--two-core-days-and-saturday.md
   - sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md
   - sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md
@@ -86,7 +87,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 9 Jan 2027, week 13: Speaker: Dejan Menges
 
 - **State:** drafted
-- **Image:** [`speaker-dejan-menges-square.png`](https://goatconf.com/share/speaker-dejan-menges-square.png) (LinkedIn, Mastodon), [`speaker-dejan-menges-wide.png`](https://goatconf.com/share/speaker-dejan-menges-wide.png) (X, Bluesky)
+- **Image:** [`speaker-dejan-menges-announce-square.png`](https://goatconf.com/share/speaker-dejan-menges-announce-square.png) (LinkedIn, Mastodon), [`speaker-dejan-menges-announce-wide.png`](https://goatconf.com/share/speaker-dejan-menges-announce-wide.png) (X, Bluesky)
 - **Tag:** Dejan Menges and Vinted
 - **LinkedIn:**
 
@@ -148,7 +149,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 30 Jan 2027, week 16: Speaker: Amar Mahmutbegović
 
 - **State:** drafted
-- **Image:** [`speaker-amar-mahmutbegovic-square.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-square.png) (LinkedIn, Mastodon), [`speaker-amar-mahmutbegovic-wide.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-wide.png) (X, Bluesky)
+- **Image:** [`speaker-amar-mahmutbegovic-announce-square.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-amar-mahmutbegovic-announce-wide.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-wide.png) (X, Bluesky)
 - **Tag:** Amar Mahmutbegović and Semblie
 - **LinkedIn:**
 
@@ -206,7 +207,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 20 Feb 2027, week 19: Speaker: Cristian Planas
 
 - **State:** drafted
-- **Image:** [`speaker-cristian-planas-square.png`](https://goatconf.com/share/speaker-cristian-planas-square.png) (LinkedIn, Mastodon), [`speaker-cristian-planas-wide.png`](https://goatconf.com/share/speaker-cristian-planas-wide.png) (X, Bluesky)
+- **Image:** [`speaker-cristian-planas-announce-square.png`](https://goatconf.com/share/speaker-cristian-planas-announce-square.png) (LinkedIn, Mastodon), [`speaker-cristian-planas-announce-wide.png`](https://goatconf.com/share/speaker-cristian-planas-announce-wide.png) (X, Bluesky)
 - **Tag:** Cristian Planas
 - **LinkedIn:**
 
@@ -264,7 +265,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 13 Mar 2027, week 22: Speaker: Christoph Lipautz
 
 - **State:** drafted
-- **Image:** [`speaker-christoph-lipautz-square.png`](https://goatconf.com/share/speaker-christoph-lipautz-square.png) (LinkedIn, Mastodon), [`speaker-christoph-lipautz-wide.png`](https://goatconf.com/share/speaker-christoph-lipautz-wide.png) (X, Bluesky)
+- **Image:** [`speaker-christoph-lipautz-announce-square.png`](https://goatconf.com/share/speaker-christoph-lipautz-announce-square.png) (LinkedIn, Mastodon), [`speaker-christoph-lipautz-announce-wide.png`](https://goatconf.com/share/speaker-christoph-lipautz-announce-wide.png) (X, Bluesky)
 - **Tag:** Christoph Lipautz and Meister
 - **LinkedIn:**
 
@@ -303,7 +304,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 27 Mar 2027, week 24: Speaker: Predrag Radenkovic
 
 - **State:** drafted
-- **Image:** [`speaker-predrag-radenkovic-square.png`](https://goatconf.com/share/speaker-predrag-radenkovic-square.png) (LinkedIn, Mastodon), [`speaker-predrag-radenkovic-wide.png`](https://goatconf.com/share/speaker-predrag-radenkovic-wide.png) (X, Bluesky)
+- **Image:** [`speaker-predrag-radenkovic-announce-square.png`](https://goatconf.com/share/speaker-predrag-radenkovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-predrag-radenkovic-announce-wide.png`](https://goatconf.com/share/speaker-predrag-radenkovic-announce-wide.png) (X, Bluesky)
 - **Tag:** Predrag Radenkovic and *codeplain
 - **Before posting:** if his talk or workshop on regenerative software is on the program by then, add its title and day.
 - **LinkedIn:**

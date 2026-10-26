@@ -98,6 +98,16 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], speakers.sessions_by_speaker(detail=True)["ana-example"], speakers.supporters())
     assert "Your card: I'm speaking" in page and '<img class="share-card" src="share/speaker-ana-example-wide.png"' in page
     assert 'href="share/speaker-ana-example-square.png" download>Download the square card</a>' in page
+    assert "The announcement card" not in page  # nothing until GoatConf's card is rendered too
+    for size in ("square", "wide"):
+        (share / f"speaker-ana-example-announce-{size}.png").write_bytes(b"png")
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], speakers.sessions_by_speaker(detail=True)["ana-example"], speakers.supporters())
+    assert page.index("Your card: I'm speaking") < page.index("The announcement card")
+    assert '<img class="share-card" src="share/speaker-ana-example-announce-wide.png"' in page
+    shareables = importlib.reload(importlib.import_module("shareables"))
+    meta = speakers.speakers()["ana-example"][0]
+    card = shareables.speaker_card("ana-example", {**meta, "talk": "Salt"}, [], True, announce=True)
+    assert "Confirmed speaker at GoatConf 2027" in card and "goatconf.com/speaker-ana-example<" in card and "Free to attend" in card
 
 
 def test_profile_without_consent_is_refused_and_not_linked(tmp_path, monkeypatch):

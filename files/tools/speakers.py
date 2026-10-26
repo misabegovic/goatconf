@@ -243,6 +243,11 @@ def cmd_check(_args) -> int:
     return 1 if failed or linked else 0
 
 
+def announce_cards(slug: str) -> dict:
+    """GoatConf's "Confirmed speaker" cards announcing the speaker, made by tools/shareables.py."""
+    return {"square": f"speaker-{slug}-announce-square.png", "wide": f"speaker-{slug}-announce-wide.png"}
+
+
 def preview_name(slug: str) -> str:
     """The speaker's own link-preview card in site/share/, made by tools/shareables.py."""
     return f"speaker-{slug}-preview.png"
@@ -317,6 +322,9 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
                                      f"{name}, speaking at GoatConf 2027",
                                      "Your card, to post as your own: speaking at GoatConf 2027. It links back to the speakers page.",
                                      "Your card: I'm speaking", SITE)
+    share += extensions.share_section(announce_cards(slug), f"Confirmed speaker at GoatConf 2027: {name}",
+                                      "GoatConf 2027's card announcing you, for anyone to post. It links to this page.",
+                                      "The announcement card", SITE)
     photo = (esc(meta["photo"]), 800, 800, meta["name"]) if meta.get("photo") else ("brand/coin.svg", 300, 300, "")
     first = sessions[0] if sessions else None
     lede = (f'{esc(first["format"])} on {program.CORE_DAYS[first["day"]]} at {first["start"]}, {esc(first["room"])}.' if first
@@ -532,6 +540,11 @@ def cmd_build(args) -> int:
                 print(f"site/share/{preview_name(slug)} is missing, so the page would share the generic banner: "
                       f"run python3 tools/shareables.py render --only {preview_name(slug)}")
                 stale += 1
+            for card in announce_cards(slug).values():
+                if not (SITE / "share" / card).exists():
+                    print(f"site/share/{card} is missing, so the speaker has no card announcing them: "
+                          f"run python3 tools/shareables.py render --only {card}")
+                    stale += 1
         for slug in supporters():
             for card in [*supporter_cards(slug).values(), *proud_cards(slug).values()]:
                 if not (SITE / "share" / card).exists():
