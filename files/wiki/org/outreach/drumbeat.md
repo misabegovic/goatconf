@@ -2,11 +2,12 @@
 title: "The drumbeat: the weekly posts, from launch to June 2027"
 kind: reference
 status: draft
-updated: 2026-10-24
+updated: 2026-10-26
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
   - sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md
   - sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md
   - sources/conversations/2026-10-21--org--wroclove-rb-extras.md
@@ -36,7 +37,7 @@ The calendar of posts that [the social drumbeat decision](../adrs/social-drumbea
 - **What each post has:** a LinkedIn text, a short text of at most 280 characters for X, Bluesky and Mastodon, and an image in `site/share/` made by `tools/shareables.py`: square for LinkedIn and Mastodon, wide for X and Bluesky. Each image is online at `https://goatconf.com/share/<image>-square.png` and `-wide.png`, and each post on the drumbeat pages links both; no page on the site lists them. Links point at goatconf.com, so each post also shows the link preview.
 - **Photos:** the post images use only photos given for GoatConf, with the credit their giver asked for ("Photo: Grad Tuzla"). The food photos on the site are not freely licensed, so no post image uses them (source: sources/web/images/food-photos-chosen-2026-10-13.md).
 - **Before posting:** some posts carry a note (a price to recheck, a decision still to come). Check it, mark the state published here, and keep the link to the post if you like.
-- **Speakers and supporters:** each speaker has a spotlight with their own "I'm speaking" card, and each supporter a thank-you with their card, so they can share them. Supporters get one post about them, as the supporters page promises (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
+- **Speakers and supporters:** each speaker has a spotlight with GoatConf's "Confirmed speaker" card (source: sources/conversations/2026-10-26--org--confirmed-speaker-cards.md), which links to their page, while their own "I'm speaking" card is theirs to share, and each supporter a thank-you with their card, so they can share them. Supporters get one post about them, as the supporters page promises (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 
 The texts are on three pages: [October to December 2026](drumbeat-2026.md), [January to March 2027](drumbeat-2027-jan-mar.md) and [April to June 2027](drumbeat-2027-apr-jun.md).
 
@@ -92,11 +93,11 @@ The texts are on three pages: [October to December 2026](drumbeat-2026.md), [Jan
 
 Some news can't be dated in advance. When it comes, it takes the next Tuesday, and that Tuesday's Tuzla post moves to the next free Tuesday. The Saturday plan stays as it is:
 
-- **A speaker is confirmed:** a spotlight like the others, with their card (`speaker-<name>-square.png` and `-wide.png`), and a nudge for the speaker to share it.
+- **A speaker is confirmed:** a spotlight like the others, with GoatConf's "Confirmed speaker" card (`speaker-<name>-announce-square.png` and `-wide.png`), and a nudge for the speaker to share their own "I'm speaking" card (`speaker-<name>-square.png` and `-wide.png`).
 - **A supporter joins:** a thank-you naming exactly what they fund, with their card (`supporter-<name>-square.png` and `-wide.png`).
 - **An event is accepted:** a post with its card (`event-<name>-square.png` and `-wide.png`), and the host listed as a supporter if they fund and organise it and agree.
 - **The program fills up:** a post about the full program, in place of the last call.
-- **Jan Grodowski's hold comes off:** his spotlight, with his card.
+- **Jan Grodowski's hold comes off:** his spotlight, with his "Confirmed speaker" card.
 
 ## Related
 

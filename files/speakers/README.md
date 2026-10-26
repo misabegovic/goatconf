@@ -79,7 +79,11 @@ Each speaker has three cards made by `python3 tools/shareables.py render`
 (it needs Chrome): `speaker-<name>-square.png` and `-wide.png` to post, and
 `-preview.png`, the 1200 by 630 image their page shows when its link is
 shared. Their page shows the wide card under "Your card: I'm speaking",
-with both sizes to download, as a supporter's page shows theirs. Render them before building the pages; the local CI fails while a
+with both sizes to download, as a supporter's page shows theirs.
+GoatConf's own card announcing them, "Confirmed speaker at GoatConf 2027"
+(`speaker-<name>-announce-square.png` and `-wide.png`), links to their
+page; it shows under "The announcement card" and is what the drumbeat's
+spotlights post. The local CI fails while a published speaker lacks it. Render them before building the pages; the local CI fails while a
 published speaker has no preview card, so a shared link never falls back to
 the generic banner. Render them again when a name, role or photo changes.
 

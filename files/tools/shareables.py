@@ -11,7 +11,8 @@ from site/brand/, rendered to PNG by headless Chrome into site/share/:
             the first speakers and the drumbeat's posts to June 2027, some
             with a credited photo of Tuzla, each square (1080) and wide (1200 x 675)
   records   an "I'm speaking" card per published speaker (square, wide, and a
-            1200 x 630 preview that their page's link preview shows), a
+            1200 x 630 preview that their page's link preview shows) and
+            GoatConf's "Confirmed speaker" card announcing them (square and wide), a
             "thank you" card and a "proud supporter" card per supporter, and a card per accepted event
             (square, wide, and a 1200 x 630 preview for the event's page),
             built from speakers/, supporters/ and extensions/
@@ -206,12 +207,17 @@ def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, squ
 {seal(140, "right:48px; bottom:48px")}""")
 
 
-def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 675) -> str:
+def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 675, announce: bool = False) -> str:
+    """The speaker's own "I'm speaking" card, or with `announce` GoatConf's card announcing them, which adds when and
+    where and links to their page."""
     name = esc(str(meta["name"]))
     photo = (f'<img src="{(SITE / meta["photo"]).as_uri()}" style="width:100%;height:100%;object-fit:cover">'
              if meta.get("photo") else
              f'<img src="{(SITE / "brand" / "coin-yellow.svg").as_uri()}" style="width:70%;height:70%;margin:15%">')
     # Before the session has a slot, the record's own title stands in for it.
+    address = f"{URL}/{speakers.page_name(slug)[:-5]}" if announce else f"{URL}/speakers.html"
+    # A long address shrinks on the square card so it stays clear of the seal.
+    url_px = (32 if len(address) <= 36 else 26) if square else (26 if len(address) <= 34 else 22)
     talk = (talks[0] if talks else f'{speakers.talk_format(meta)}: {esc(str(meta["talk"]))}' if meta.get("talk")
             else "Tuzla · 3–5 June 2027")
     size, w, h = (380, 1080, 1080) if square else (330, 1200, height)
@@ -223,12 +229,13 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
     return page(w, h, f"""
 {frame if square else frame.replace('left:84px; top:96px', 'left:72px; top:50%; transform:translateY(-50%)')}
 <div style="position:absolute; {'left:84px; top:540px; right:84px' if square else 'left:450px; top:84px; right:300px'}">
-  <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">I'm speaking at GoatConf 2027</div>
+  <div class="sub" style="font-size:{40 if square else 28 if announce else 32}px; color:#fff">{"Confirmed speaker at GoatConf 2027" if announce else "I'm speaking at GoatConf 2027"}</div>
   <div class="word" style="font-size:{name_px}px; margin-top:18px">{name}</div>
   {f'<div style="font-size:{34 if square else 28}px; font-weight:700; line-height:1.2; margin-top:22px; max-width:{680 if square else 450}px; text-wrap:balance">{esc(str(meta["role"]))}</div>' if meta.get("role") else ""}
   <div class="sub" style="font-size:{34 if square else 28}px; line-height:1.2; margin-top:28px; max-width:20ch">{talk}</div>
+  {f'<div style="font-size:{30 if square else 24}px; font-weight:700; margin-top:20px">{FACTS}</div>' if announce and talk != "Tuzla · 3–5 June 2027" else ""}
 </div>
-<div class="url" style="position:absolute; left:{84 if square else 450}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/speakers.html</div>
+<div class="url" style="position:absolute; left:{84 if square else 450}px; bottom:{84 if square else 64}px; font-size:{url_px}px">{address}</div>
 {seal(240 if square else 230, "right:72px; bottom:72px")}""")
 
 
@@ -339,6 +346,9 @@ def jobs() -> dict[str, tuple[int, int, str]]:
         out[f"speaker-{slug}-square.png"] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True))
         out[f"speaker-{slug}-wide.png"] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False))
         out[speakers.preview_name(slug)] = (1200, 630, speaker_card(slug, meta, talks.get(slug, []), False, 630))
+        announce = speakers.announce_cards(slug)
+        out[announce["square"]] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True, announce=True))
+        out[announce["wide"]] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False, announce=True))
     for slug, (meta, _) in speakers.supporters().items():
         out[f"supporter-{slug}-square.png"] = (1080, 1080, supporter_card(slug, meta, True))
         out[f"supporter-{slug}-wide.png"] = (1200, 675, supporter_card(slug, meta, False))
