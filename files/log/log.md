@@ -612,3 +612,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #168: speakers: add a "Confirmed speaker" card for each speaker
    diff: 35 files, +138/-26
    restricted-paths: true
+2026-10-26 merge — PR #169: site: make the food tags plain pills again, with the vegan tag green
+   diff: 32 files, +49/-30
+   restricted-paths: false
