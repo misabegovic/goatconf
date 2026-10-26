@@ -648,3 +648,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #180: site: show the area tags in normal case, keeping their colours
    diff: 32 files, +39/-29
    restricted-paths: false
+2026-10-26 merge — PR #181: home: say "not only about Ruby" once
+   diff: 3 files, +9/-1
+   restricted-paths: false
