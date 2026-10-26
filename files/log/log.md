@@ -618,3 +618,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #170: site: drop the stray comma in the register page's heading
    diff: 2 files, +10/-1
    restricted-paths: false
+2026-10-26 merge — PR #171: home: name the weekdays in the open event slot
+   diff: 4 files, +10/-2
+   restricted-paths: true
