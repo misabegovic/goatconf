@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-26**: **One "not only about Ruby" on the home page.** The line stays in "Why a goat" and is cut from "Who's organising" (source: sources/conversations/2026-10-26--org--repeated-ruby-line.md).
 - **2026-10-26**: **Quieter area tags.** The session area tags keep their colours and read in normal case, "Business of software" rather than small capitals (source: sources/conversations/2026-10-26--org--quieter-area-tags.md).
 - **2026-10-26**: **Inner page tops are centred.** On desktop, each inner page's title and lede sit together, centred next to the photo, instead of low under an empty band of blue; phones are unchanged (source: sources/conversations/2026-10-26--org--page-head-centred.md).
 - **2026-10-26**: **The session before the support links.** A speaker's page now reads Who they are, Session, How to support them, then the cards (source: sources/conversations/2026-10-26--org--session-before-support.md).
