@@ -606,3 +606,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #166: speakers: show the "I'm speaking" card on each profile
    diff: 15 files, +80/-15
    restricted-paths: true
+2026-10-26 merge — PR #167: speakers: tag Paul Campbell's session Engineering and Business
+   diff: 8 files, +24/-5
+   restricted-paths: false
