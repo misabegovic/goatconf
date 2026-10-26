@@ -603,3 +603,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #165: speakers: show the session title on the "I'm speaking" cards before a slot
    diff: 16 files, +29/-6
    restricted-paths: true
+2026-10-26 merge — PR #166: speakers: show the "I'm speaking" card on each profile
+   diff: 15 files, +80/-15
+   restricted-paths: true
