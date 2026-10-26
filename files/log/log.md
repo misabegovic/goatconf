@@ -633,3 +633,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #175: site: make the stickers matte, with no gloss and light shadows
    diff: 36 files, +77/-70
    restricted-paths: false
+2026-10-26 merge — PR #176: site: say Host an event in the top bar, phone menu and footer
+   diff: 35 files, +102/-94
+   restricted-paths: true
