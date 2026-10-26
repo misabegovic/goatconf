@@ -498,6 +498,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .speaker__link { display: flex; flex-direction: column; gap: 0.5rem; height: 100%; text-decoration: none; color: var(--ink); }
 .speaker__link:hover .speaker__photo figcaption, .speaker__link:focus-visible .speaker__photo figcaption { background: var(--album-night); }
 .speaker__first { display: block; font-size: 0.88rem; line-height: 1.35; color: var(--ink); }
+.speaker__first--tba { color: var(--ink-soft); font-style: italic; }
 .speaker__role { display: block; margin-bottom: 0.2rem; font-size: 0.85rem; font-weight: 700; line-height: 1.3; color: var(--ink-soft); }
 .lede__role { display: block; margin-bottom: 0.35rem; color: var(--page); }
 .speaker__more { display: block; margin-top: 0.15rem; font-size: 0.8rem; color: var(--ink-soft); }
