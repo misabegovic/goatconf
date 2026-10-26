@@ -201,9 +201,9 @@ components:
 
 **Creative North Star: "The Sticker Album"**
 
-GoatConf is a sticker album opened flat on an album-blue ground. The organiser sticks in the core facts as glossy die-cut stickers; every other numbered slot is printed empty on the white page and waits for whoever brings a talk, a workshop or a walk. The album is the whole site: a blue ground printed with faint cloven-hoof marks, white album pages with rounded corners, a blue band across the top of each page inside a thin white edge, a numbered sequence that runs through the whole album, a night-blue "shiny" page for the goat story, and a night-blue back cover.
+GoatConf is a sticker album opened flat on an album-blue ground. The organiser sticks in the core facts as matte die-cut stickers; every other numbered slot is printed empty on the white page and waits for whoever brings a talk, a workshop or a walk. The album is the whole site: a blue ground printed with faint cloven-hoof marks, white album pages with rounded corners, a blue band across the top of each page inside a thin white edge, a numbered sequence that runs through the whole album, a night-blue "shiny" page for the goat story, and a night-blue back cover.
 
-The material is printed paper and vinyl, not screen chrome. Stickers have a white die-cut border, a soft lift off the page and a diagonal gloss; empty slots are flat, dashed and printed in the album's own blue at low strength, each with a faint goat silhouette and a printed number. Hierarchy comes from scale contrast in condensed uppercase lettering, not from weight changes or colour noise. The goat itself appears once per spread as a die-cut yellow sticker with a white edge.
+The material is printed paper and vinyl, not screen chrome. Stickers have a white die-cut border and a short, light lift off the page, with no gloss; empty slots are flat, dashed and printed in the album's own blue at low strength, each with a faint goat silhouette and a printed number. Hierarchy comes from scale contrast in condensed uppercase lettering, not from weight changes or colour noise. The goat itself appears once per spread as a die-cut yellow sticker with a white edge.
 
 The world refuses the dark tech-conference hero with a speaker grid. It also refuses to pretend: what is decided is stuck in, what is undecided stays an empty printed slot, and nothing is announced as a sticker before it is true.
 
@@ -280,20 +280,20 @@ Inner pages share one shape: a cover-blue page-head (sign, lede, a tilted photo 
 
 ## Elevation & Depth
 
-Depth is physical: paper pages cast a long soft drop onto the blue, stickers lift a little off the page, and the spread has a spine. Nothing is flat-shadowed by default except the empty slots, which are printed and therefore sit in the page.
+Depth is physical but quiet: paper pages cast a short soft drop onto the blue, stickers lift a little off the page, and the spread has a spine. Nothing is flat-shadowed by default except the empty slots, which are printed and therefore sit in the page.
 
 ### Shadow Vocabulary
-- **Sticker lift** (`box-shadow: 0 0.7rem 1.2rem -0.6rem rgb(0 0 0 / 0.55), 0 0 0 1px rgb(0 0 0 / 0.08)`): every stuck sticker at rest, and the inner-page photo sticker.
-- **Peel lift** (`box-shadow: 0 1.6rem 2.2rem -1rem rgb(0 0 0 / 0.6), 0 0 0 1px rgb(0 0 0 / 0.08)`): a sticker held off the page before it settles.
-- **Page drop** (`box-shadow: 0 2rem 3rem -2rem rgb(0 0 0 / 0.55)`): album pages and the prose page on the blue ground. The spread uses a deeper drop (`0 2.5rem 4rem -2rem rgb(0 0 0 / 0.6)`).
+- **Sticker lift** (`box-shadow: 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3), 0 0 0 1px rgb(0 0 0 / 0.08)`): every stuck sticker at rest, and the inner-page photo sticker.
+- **Peel lift** (`box-shadow: 0 0.6rem 0.9rem -0.45rem rgb(0 0 0 / 0.35), 0 0 0 1px rgb(0 0 0 / 0.08)`): a sticker held off the page before it settles.
+- **Page drop** (`box-shadow: 0 0.6rem 1rem -0.8rem rgb(0 0 0 / 0.3)`): album pages and the prose page on the blue ground. The spread uses a deeper drop (`0 0.8rem 1.4rem -1rem rgb(0 0 0 / 0.35)`).
 - **Spine** (`box-shadow: inset -1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.55)` on the cover, `inset 1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.25)` on the page): the fold between the spread's two pages.
-- **Number lift** (`box-shadow: 0 0.3rem 0.6rem -0.3rem rgb(0 0 0 / 0.6)`): the small yellow number sticker on a stuck sticker.
+- **Number lift** (`box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35)`): the small yellow number sticker on a stuck sticker.
 - **Goat lift** (`filter: drop-shadow(0 0.7rem 0.6rem rgb(0 0 0 / 0.45))`): under the die-cut goat, after its white edge.
 
 ### Named Rules
 **The Printed Is Flat Rule.** An empty slot, a printed number, the ghost goat and the stamp have no shadow. Only things stuck onto the page lift.
 
-**The Gloss Rule.** Every sticker carries the same diagonal gloss, a 115-degree white sheen (40% at the top-left corner, clear through the middle, 18% at the far corner). Printed parts of the page never do.
+**The Matte Rule.** Stickers are matte: no sheen, no gradient, so photos keep their true colours and a fact sticker reads as flat printed blue. Their shadows stay short and light, so they sit on the page rather than float above it (organiser's choice, 2026-10-26, "not too glossy").
 
 ## Shapes
 
@@ -304,7 +304,7 @@ Stickers are set at small individual tilts between -2 and 2 degrees, set per sti
 ## Components
 
 ### Sticker
-Glossy vinyl stuck onto the page: white die-cut border, sticker lift, diagonal gloss, a small tilt.
+Matte vinyl stuck onto the page: white die-cut border, sticker lift, a small tilt.
 - **Photo sticker:** a 4:5 photo (4:3.4 on album pages, 4:3.2 on the food page) over an album-blue caption strip lettered in white.
 - **Place sticker:** a photo sticker whose caption is a place name lettered in yellow at near fact scale (TUZLA).
 - **Fact sticker:** an album-blue sticker whose white die-cut border is drawn inset; a big yellow fact over a short pale-album explanation.
@@ -361,7 +361,7 @@ Every inner page opens on a cover-blue strip: the crest home link, the sign in h
 ### Don't:
 - **Don't** use red for anything but the "Yours?" stamp.
 - **Don't** put a fact on a sticker before it is true: an unconfirmed date stays "June 2027" on the fact sticker and an empty slot for the exact days.
-- **Don't** give printed things (slots, printed numbers, ghost goats, stamps) a lift or gloss, or stuck stickers a dashed outline.
+- **Don't** give printed things (slots, printed numbers, ghost goats, stamps) a lift, or stuck stickers a dashed outline or a gloss.
 - **Don't** write self-aware copy about the album, the design or the site itself; the page talks about the conference, Tuzla and the visitor.
 - **Don't** add small labels above headings, glyph icons, or a second goat drawing; the band, the numbers and the one goat mark carry the page.
 - **Don't** let the goat cover a fact, stand in for text a screen reader needs, or appear on the code of conduct or budget content as a joke.

@@ -218,12 +218,13 @@
       "title": "Build the pages in plain HTML and CSS, with the goat everywhere and playful",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-14",
+      "updated": "2026-10-26",
       "confidence": "medium",
       "depends_on": [
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-26--org--matte-stickers.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-12--org--public-repo-pages-goatconf-com.md",
@@ -235,7 +236,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 1269
+      "tokens": 1356
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
