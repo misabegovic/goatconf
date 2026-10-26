@@ -88,7 +88,7 @@ def days() -> str:
                              + added(ext.get(sat, []))))
     outside = [e for d, evs in ext.items() if d not in program.DAY_PLAN and d != sat and WEEK[0] <= d <= WEEK[1] for e in evs]
     items.append('    <li class="slots__wide"><a class="slot slot--link slot--open" href="extend.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
-                 '<span class="num num--printed">0</span><strong>Your event, any day from 2 to 6 June</strong>'
+                 '<span class="num num--printed">0</span><strong>Your event, any day from Wednesday 2nd to Sunday 6th June</strong>'
                  '<small>Anything you would like to run for the people who come. You run it, and once we accept it, it is on the program.</small>'
                  + added(outside) + '<span class="stamp">Yours?</span></a></li>')
     return f"""<section class="album-page wrap" id="days" aria-labelledby="days-title">
