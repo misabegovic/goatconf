@@ -750,6 +750,9 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goat-one__stage { position: absolute; right: 0.6rem; bottom: 100%; z-index: 30; width: 6.8rem; translate: 0 calc(100% - var(--edge)); pointer-events: none; }
 .has-goat { z-index: 2; }
 .goat-one__stage .goat { position: relative; width: 100%; transform-origin: 50% var(--edge); }
+/* The goat takes a tap or a click for a trick; its "Meee!" pops out beside its head. */
+.goat-one__stage .goat { pointer-events: auto; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.goat-say { position: absolute; right: 72%; bottom: 74%; z-index: 1; padding: 0.15rem 0.55rem 0.2rem; border-radius: 1rem 1rem 0.2rem 1rem; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.05rem; white-space: nowrap; opacity: 0; transform-origin: 100% 100%; pointer-events: none; box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35); }
 /* The companion's goat in layers: its body from the sheet, its eyes, and its head turned left or right. Turned,
    the body shows only below the head band, and the band shows the painted turned head. */
 .goat-one__stage .goat-body, .goat-one__stage .goat-head { position: absolute; display: block; background-repeat: no-repeat; }

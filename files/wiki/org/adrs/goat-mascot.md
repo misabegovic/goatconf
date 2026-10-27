@@ -9,6 +9,7 @@ depends_on:
 sources:
   - sources/conversations/2026-10-27--org--speaker-goat-on-phones.md
   - sources/conversations/2026-10-27--org--see-you-goat-on-phones.md
+  - sources/conversations/2026-10-27--org--goat-tricks.md
   - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
@@ -223,7 +224,8 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   visitor sees one goat at a time: it stands inside the open slot or speaker
   card nearest the middle of the screen, in that slot's role or as that
   speaker's goat, and hops to the next as they scroll or point; it pops up,
-  ducks when the pointer comes close, and while it waits bobs, wiggles,
+  looks towards the pointer when it comes close, plays a trick when tapped
+  or clicked, and while it waits bobs, wiggles,
   stretches, plays peek-a-boo or looks around. Turning is the goat's own
   painted head turned left or right, never a mirrored or spun picture, and
   only the head changes, so its body and legs are always the painted goat's
@@ -265,3 +267,11 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   waves or jumps at "See you in Tuzla" stands centred below the "Register
   for free" button, in room the section keeps for it, instead of over the
   button; on wider screens it stays in the section's bottom corner (source: sources/conversations/2026-10-27--org--see-you-goat-on-phones.md).
+- **2026-10-27, tricks on a tap.** Tapped or clicked, the goat plays the
+  next of its tricks: a jump for joy, a somersault, a shake of its head and
+  a "Meee!" in a small bubble. A goat peeking over a slot bounces and ducks
+  and pops up instead of jumping or flipping, so the end of its painting
+  never shows. The spin first offered showed the goat mirrored and was
+  replaced by the somersault, since the goat is never mirrored. It no longer
+  ducks when the pointer comes close but turns its head towards it, and its
+  own moves come every 3 to 6 seconds instead of 4 to 8 (source: sources/conversations/2026-10-27--org--goat-tricks.md).
