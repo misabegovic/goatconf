@@ -28,6 +28,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import blocks  # noqa: E402
 import extensions  # noqa: E402
+import frame  # noqa: E402
 import images  # noqa: E402
 import program  # noqa: E402
 import speakers  # noqa: E402
@@ -87,7 +88,7 @@ def days() -> str:
                              '<small>A day at the lakes and the goat hunt, planned by us, plus what people add.</small>'
                              + added(ext.get(sat, []))))
     outside = [e for d, evs in ext.items() if d not in program.DAY_PLAN and d != sat and WEEK[0] <= d <= WEEK[1] for e in evs]
-    items.append('    <li class="slots__wide"><a class="slot slot--link slot--open" href="extend.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+    items.append('    <li class="slots__wide"><a class="slot slot--link slot--open" href="extend.html">' + frame.peek("event") + ''
                  '<span class="num num--printed">0</span><strong>Your event, any day from Wednesday 2nd to Sunday 6th June</strong>'
                  '<small>Anything you would like to run for the people who come. You run it, and once we accept it, it is on the program.</small>'
                  + added(outside) + '<span class="stamp">Yours?</span></a></li>')
@@ -101,7 +102,7 @@ def days() -> str:
 
 
 def open_place() -> str:
-    return ('    <li><a class="slot slot--link slot--open" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+    return ('    <li><a class="slot slot--link slot--open" href="talk.html">' + frame.peek("session") + ''
             '<span class="num num--printed">0</span><strong>Your session here?</strong><small>A talk, a panel, a workshop or something else. The call is open.</small>'
             '<span class="stamp">Yours?</span></a></li>')
 
@@ -118,7 +119,7 @@ def speakers_block() -> str:
         more = '<a class="go go--ink" href="speakers.html">View all speakers</a>'
         intro = "The people giving the talks, panels and workshops so far. More are added as proposals are accepted."
     else:
-        cards = ('    <li class="slots__wide"><a class="slot slot--link slot--wait" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+        cards = ('    <li class="slots__wide"><a class="slot slot--link slot--wait" href="talk.html">' + frame.peek("session") + ''
                  '<span class="num num--printed">0</span><strong>The first speaker could be you</strong>'
                  '<small>No one is announced yet. Speakers appear here as their sessions are accepted, and the call for proposals is open now.</small>'
                  '<span class="stamp">Yours?</span></a></li>')
@@ -140,7 +141,7 @@ def supporters_block() -> str:
              f'<small>{esc(m["funds"])}</small></a></li>' for s, (m, _) in known]
     # Until a company supports GoatConf (the host does not count), keep a place inviting one.
     if not any(m.get("host") is not True for _, (m, _b) in known):
-        chips.append('    <li><a class="slot slot--link" href="supporters.html#h-become"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+        chips.append('    <li><a class="slot slot--link" href="supporters.html#h-become">' + frame.peek() + ''
                      '<span class="num num--printed">0</span><strong>Your logo</strong><small>Support GoatConf online for 500 euro, and your logo and link go here.</small><span class="stamp">Yours?</span></a></li>')
     logos = "\n".join(chips)
     return f"""<h3 class="list-title">Who makes it possible</h3>
@@ -165,7 +166,7 @@ def kinds_block() -> str:
     kinds = []
     for kind in HOME_KINDS:
         label = "Something else?" if kind == "other" else extensions.KINDS[kind]
-        kinds.append(f'    <li><a class="slot slot--kind slot--link" href="extend.html?kind={kind}#where"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+        kinds.append(f'    <li><a class="slot slot--kind slot--link" href="extend.html?kind={kind}#where">{frame.peek(kind)}'
                      f'<span class="num num--printed">0</span><strong>{label}</strong><span class="nameline" aria-hidden="true"></span><span class="stamp">Yours?</span></a></li>')
     return (accepted + f'  <p class="copy">{extensions.MORE}</p>\n'
             '  <ul class="slots slots--kinds" aria-label="Kinds of events you can propose">\n' + "\n".join(kinds) + "\n  </ul>")
