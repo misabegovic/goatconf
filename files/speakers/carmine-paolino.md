@@ -9,6 +9,7 @@ links:
   - https://x.com/paolino
   - https://www.linkedin.com/in/carminepaolino/
 order: 3
+goat: {hair: none, cap: '#3a3d42', beard: stubble, beard_colour: '#b0703c', glasses: sun, top: tee, top_colour: '#25272b', prop: mic}
 publish: yes
 support_them:
   - text: "Use RubyLLM, his open-source Ruby gem"

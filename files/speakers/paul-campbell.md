@@ -18,6 +18,7 @@ talk_about: |
 talk_area: [engineering, business]
 talk_for: developers and founders who build and run web apps
 order: 1
+goat: {hair: wavy, hair_colour: '#2b2522', beard: full, beard_colour: '#2b2522', glasses: rect, top: tee, top_colour: '#d9dde3', prop: mic}
 publish: yes
 support_them:
   - text: "Learn about CARLOS, the architecture his team builds Tito on"

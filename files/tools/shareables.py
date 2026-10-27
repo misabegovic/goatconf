@@ -35,6 +35,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import brand  # noqa: E402
 import extensions  # noqa: E402
+import goats  # noqa: E402
 import program  # noqa: E402
 import speakers  # noqa: E402
 
@@ -226,8 +227,11 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
     name_px = (120 if len(str(meta["name"])) <= 14 else 88) if square else 92
     frame = (f'<div style="position:absolute; left:84px; top:96px; width:{size}px; height:{size}px; border-radius:50%; overflow:hidden; '
              f'background:{YELLOW}; box-shadow:0 0 0 10px #fff">{photo}</div>')
+    # The speaker's own goat sits at the edge of their photo (ADR goat-mascot).
+    goat = (f'<div style="position:absolute; {"left:372px; top:268px; width:220px" if square else "left:276px; top:388px; width:168px"}">'
+            f'{goats.whole(meta["goat"])}</div>' if meta.get("goat") else "")
     return page(w, h, f"""
-{frame if square else frame.replace('left:84px; top:96px', 'left:72px; top:50%; transform:translateY(-50%)')}
+{frame if square else frame.replace('left:84px; top:96px', 'left:72px; top:50%; transform:translateY(-50%)')}{goat}
 <div style="position:absolute; {'left:84px; top:540px; right:84px' if square else 'left:450px; top:84px; right:300px'}">
   <div class="sub" style="font-size:{40 if square else 28 if announce else 32}px; color:#fff">{"Confirmed speaker at GoatConf 2027" if announce else "I'm speaking at GoatConf 2027"}</div>
   <div class="word" style="font-size:{name_px}px; margin-top:18px">{name}</div>

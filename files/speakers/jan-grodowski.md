@@ -10,6 +10,7 @@ links:
   - https://x.com/mrgrodo
 order: 5
 hold: waiting for his employer's approval before any announcement
+goat: {hair: side, hair_colour: '#7a5232', beard: stubble, beard_colour: '#a07850', glasses: rect, top: tee, top_colour: '#25272b', prop: mic}
 publish: yes
 ---
 

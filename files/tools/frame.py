@@ -24,6 +24,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import blocks  # noqa: E402
+import goats  # noqa: E402
 import nav  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -61,13 +62,12 @@ LINE_GOAT = """<symbol id="goat" viewBox="0 0 124 100">
 # horns, ears, eyes and front hooves over an open slot's top edge; a role is a
 # small layer on the same goat. PEEK_BY_KIND says which role each kind of slot
 # gets. The faint line goat (#goat) stays until every slot peeks.
-INK = "#051d47"
-_LINE = f'stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"'
-GOAT_PARTS = f"""<g id="gm-horns"><path d="M86 56C82 39 70 28 55 30 44 32 39 42 44 50c4-7 12-9 19-5 7 4 11 10 14 15z" fill="#ffd400" {_LINE}/><path d="M114 56c4-17 16-28 31-26 11 2 16 12 11 20-4-7-12-9-19-5-7 4-11 10-14 15z" fill="#ffd400" {_LINE}/><path d="M62 38c4 1 8 4 11 8M138 38c-4 1-8 4-11 8" fill="none" stroke="{INK}" stroke-width="2.5" stroke-linecap="round"/></g>
-      <g id="gm-ears"><path d="M58 82c-12-4-24-2-32 6 9 7 21 9 33 5z" fill="#fffaf0" {_LINE}/><path d="M38 88c6 2 12 2 17 1" fill="none" stroke="#f3b3ac" stroke-width="4" stroke-linecap="round"/><path d="M142 82c12-4 24-2 32 6-9 7-21 9-33 5z" fill="#fffaf0" {_LINE}/><path d="M162 88c-6 2-12 2-17 1" fill="none" stroke="#f3b3ac" stroke-width="4" stroke-linecap="round"/></g>
-      <g id="gm-face"><path d="M100 48c27 0 45 17 45 40 0 15-7 25-15 33-6 14-17 21-30 21s-24-7-30-21c-8-8-15-18-15-33 0-23 18-40 45-40z" fill="#fffaf0" {_LINE}/><path d="M92 50c3-6 9-8 14-5-4 1-6 4-6 8" fill="none" stroke="{INK}" stroke-width="3" stroke-linecap="round"/><circle cx="71" cy="108" r="7" fill="#f3b3ac" opacity=".7"/><circle cx="129" cy="108" r="7" fill="#f3b3ac" opacity=".7"/><ellipse cx="82" cy="90" rx="9" ry="11" fill="{INK}"/><ellipse cx="118" cy="90" rx="9" ry="11" fill="{INK}"/><circle cx="79" cy="86" r="3.4" fill="#fff"/><circle cx="115" cy="86" r="3.4" fill="#fff"/><circle cx="85" cy="94" r="1.6" fill="#fff"/><circle cx="121" cy="94" r="1.6" fill="#fff"/></g>
-      <g id="gm-hooves"><rect x="52" y="80" width="22" height="12" rx="6" fill="{INK}"/><rect x="126" y="80" width="22" height="12" rx="6" fill="{INK}"/></g>
-      <clipPath id="gm-edge"><rect x="0" y="-10" width="200" height="96"/></clipPath>"""
+INK = goats.INK
+_LINE = goats.LINE
+GOAT_PARTS = (f'<g id="gm-horns">{goats.HORNS}</g>\n      <g id="gm-ears">{goats.EARS}</g>\n      '
+              f'<g id="gm-face">{goats.HEAD}{goats.CURL}{goats.BLUSHES}{goats.EYES}</g>\n      '
+              f'<g id="gm-hooves"><rect x="52" y="80" width="22" height="12" rx="6" fill="{INK}"/><rect x="126" y="80" width="22" height="12" rx="6" fill="{INK}"/></g>\n      '
+              '<clipPath id="gm-edge"><rect x="0" y="-10" width="200" height="96"/></clipPath>')
 # Each role's layers: those on the head (in the head's own coordinates) and
 # those in front, held over the edge.
 ROLES = {

@@ -19,6 +19,7 @@ talk_about: |
 talk_area: [engineering, data]
 talk_for: anyone working with real-life codebases
 order: 4
+goat: {hair: short, hair_colour: '#3b3634', beard: goatee, beard_colour: '#8c8a88', top: tee, top_colour: '#1f3a64', prop: clicker}
 publish: yes
 support_them:
   - text: "Try Enola, his open-source architecture tool"

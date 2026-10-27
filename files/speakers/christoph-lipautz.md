@@ -12,6 +12,7 @@ talk_about: |
 talk_area: [engineering, ai-ml]
 talk_for: every engineer, at any level of experience
 order: 8
+goat: {hair: long, hair_colour: '#5a3c28', beard: long, beard_colour: '#5a3c28', glasses: thin, top: tee, top_colour: '#25272b', prop: cat}
 publish: yes
 support_them:
   - text: "Try airstream, his open-source tool for streaming to AirPlay devices"
