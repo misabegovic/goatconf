@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--speaker-goat-on-phones.md
   - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
@@ -255,3 +256,7 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   the goat hunt in "Why a goat", and waves or jumps for joy at "See you in
   Tuzla"; the cook peeks over the food section's band. The role goats painted
   whole stay on the Stickers page (source: sources/conversations/2026-10-27--org--every-painted-goat-used.md).
+- **2026-10-27, the speaker's goat on a phone.** On a phone a speaker's
+  sitting goat and its "Save as a sticker" link come after their bio,
+  centred, so the bio keeps the page's width; on wider screens the goat
+  stays beside the bio (source: sources/conversations/2026-10-27--org--speaker-goat-on-phones.md).
