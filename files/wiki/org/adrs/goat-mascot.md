@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--mascot-watercolour.md
   - sources/conversations/2026-10-27--org--goat-everywhere.md
   - sources/conversations/2026-10-27--org--speaker-goats.md
   - sources/conversations/2026-10-27--org--goat-peek-home.md
@@ -196,3 +197,14 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   sessions are on the program, it will peek over those too. A goat goes live
   once the organiser approves it, and a speaker can ask for a change or for
   no goat (source: sources/conversations/2026-10-27--org--speaker-goats.md).
+- **2026-10-27, a new base look, to come from an illustrator.** The goat
+  drawn in code stays on the site for now, but its look is to be replaced:
+  the organiser chose a watercolour storybook goat (fluffy, cream, golden
+  horns curled back, big friendly eyes), explored with an image generator
+  and to be drawn by an illustrator so that GoatConf owns it outright. The
+  goat multiverse becomes the same goat across art styles, the watercolour
+  goat being the everyday one; the peek, the roles, the speaker goats and
+  the stickers carry over to the new drawing once it exists. Moving like
+  enola's cat (a bob, a blink, the peek rising) is wanted for the new goat;
+  how much movement is to be settled when it arrives (source:
+  sources/conversations/2026-10-27--org--mascot-watercolour.md).

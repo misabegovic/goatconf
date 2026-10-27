@@ -282,6 +282,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-27--org--mascot-watercolour.md",
         "sources/conversations/2026-10-27--org--goat-everywhere.md",
         "sources/conversations/2026-10-27--org--speaker-goats.md",
         "sources/conversations/2026-10-27--org--goat-peek-home.md",
@@ -294,7 +295,7 @@
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 2818
+      "tokens": 3021
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
