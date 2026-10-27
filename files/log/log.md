@@ -660,3 +660,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #184: org: a goat mascot that peeks over the open slots
    diff: 9 files, +285/-1
    restricted-paths: false
+2026-10-27 merge — PR #185: site: the goat peeks over the home page's open slots
+   diff: 36 files, +153/-52
+   restricted-paths: true
