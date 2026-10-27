@@ -566,6 +566,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-27--org--stickers-tuzla.md",
         "sources/conversations/2026-10-27--org--stickers-page.md",
         "sources/conversations/2026-10-27--org--sticker-packs.md",
         "sources/conversations/2026-10-27--org--speaker-goats.md",
@@ -573,7 +574,7 @@
         "sources/web/organiser/euruko-2024-figma-file-2026-10-27.md",
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md"
       ],
-      "tokens": 1638
+      "tokens": 1738
     },
     {
       "path": "org/adrs/supporters-and-hiring.md",

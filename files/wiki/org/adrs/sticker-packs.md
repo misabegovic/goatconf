@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--stickers-tuzla.md
   - sources/conversations/2026-10-27--org--stickers-page.md
   - sources/conversations/2026-10-27--org--sticker-packs.md
   - sources/conversations/2026-10-27--org--speaker-goats.md
@@ -122,6 +123,11 @@ day: the organiser chose "Approve, start building".
   the current set; the images themselves are rendered on demand, as the
   share cards are. The footer and the brand page link to the page (source:
   sources/conversations/2026-10-27--org--stickers-page.md).
+- **2026-10-27, step two: Tuzla things.** Seven stickers drawn in
+  `tools/stickers.py`: a salt crystal, the Pannonian sea, a fildžan of
+  coffee, ćevapi, burek, the goat statue (the goat in bronze on a plinth)
+  and the salt lakes (source:
+  sources/conversations/2026-10-27--org--stickers-tuzla.md).
 
 ## Related
 

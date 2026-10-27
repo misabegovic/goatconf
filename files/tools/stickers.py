@@ -48,6 +48,7 @@ ZIP_DATE = (2027, 6, 3, 9, 0, 0)
 GROUPS = {
     "goats": ("The goat's roles", "The GoatConf goat in its roles from the EuRuKo 2024 goat multiverse."),
     "words": ("The mark and words", "The seal, the coin, and a few words to stick on things."),
+    "tuzla": ("Tuzla things", "The town of salt, its lakes, its coffee and its food, and the goat on its plinth."),
 }
 
 DISPLAY = "font-family:'Bricolage Grotesque'; font-weight:800; text-transform:uppercase; line-height:.9"
@@ -77,10 +78,53 @@ def _words() -> list[tuple[str, str, str]]:
     ]
 
 
+I = goats.INK
+L = goats.LINE
+_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">'
+
+
+def _statue() -> str:
+    """The goat on a plinth, in bronze, as Tuzla's goat statue."""
+    goat = goats.role("goat").replace(goats.COAT, "#c7a86a").replace(goats.HORN, "#8a6a32").replace(goats.BLUSH, "#b8945a")
+    goat = goat.replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 18 200 186">', '<svg x="34" y="6" width="132" height="122" viewBox="0 18 200 186">')
+    return (_SVG + f'<path d="M48 128h104l8 22H40z" fill="#9aa3b2" {L}/><rect x="56" y="150" width="88" height="34" fill="#b7bfcc" {L}/>'
+            f'<path d="M44 184h112v10H44z" fill="#9aa3b2" {L}/><path d="M78 164h44" stroke="{I}" stroke-width="3" stroke-linecap="round"/>' + goat + "</svg>")
+
+
+TUZLA = [
+    ("salt", "A salt crystal", _SVG + f'<path d="M100 22l58 34v68l-58 34-58-34V56z" fill="#f4f8ff" {L}/><path d="M100 22v68l58 34M100 90l-58 34" fill="none" stroke="#9cb6dc" stroke-width="3"/>'
+     f'<path d="M100 22l58 34-58 34-58-34z" fill="#fff" {L}/><path d="M64 150l20-12 20 12v22l-20 12-20-12z" fill="#e8f0fc" {L}/><path d="M138 152l14-8 14 8v16l-14 8-14-8z" fill="#e8f0fc" {L}/>'
+     f'<path d="M76 70l6 3M118 60l8 4" stroke="#9cb6dc" stroke-width="3" stroke-linecap="round"/></svg>'),
+    ("pannonian-sea", "The Pannonian sea", _SVG + f'<path d="M14 150c10-60 60-110 120-96 34 8 50 38 40 62-8 18-30 22-44 10 16 0 24-14 16-26-12-18-48-12-64 20-12 24-12 44-4 56z" fill="#2f6fd6" {L}/>'
+     f'<path d="M130 126c14 12 36 8 44-10 6 8 6 18 0 24" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>'
+     f'<path d="M10 150c20 10 40 10 60 0s40-10 60 0 40 10 60 0v40H10z" fill="#0b3d91" {L}/><path d="M24 172c14 6 26 6 40 0M96 174c14 6 26 6 40 0" fill="none" stroke="#9cc3ff" stroke-width="4" stroke-linecap="round"/>'
+     f'<circle cx="60" cy="96" r="5" fill="#fff"/><circle cx="74" cy="80" r="4" fill="#fff"/><circle cx="88" cy="70" r="3" fill="#fff"/></svg>'),
+    ("fildzan", "A fildžan of coffee", _SVG + f'<ellipse cx="100" cy="162" rx="72" ry="18" fill="#fff" {L}/><ellipse cx="100" cy="158" rx="46" ry="9" fill="#e6eefb"/>'
+     f'<path d="M58 84h84l-8 58a14 14 0 0 1-14 12H80a14 14 0 0 1-14-12z" fill="#fff" {L}/><ellipse cx="100" cy="84" rx="42" ry="9" fill="#5a3a22" {L}/>'
+     f'<path d="M66 108h68M70 128h60" stroke="#2f6fd6" stroke-width="5"/><path d="M82 116l6 6 6-6 6 6 6-6 6 6 6-6" fill="none" stroke="#d7263d" stroke-width="3" stroke-linejoin="round"/>'
+     f'<path d="M84 64c-8-10 8-14 0-26M100 62c-8-10 8-14 0-26M116 64c-8-10 8-14 0-26" fill="none" stroke="#9aa9c7" stroke-width="4" stroke-linecap="round"/>'
+     f'<rect x="150" y="128" width="20" height="20" rx="3" fill="#fff" {L}/></svg>'),
+    ("cevapi", "Ćevapi", _SVG + f'<ellipse cx="100" cy="120" rx="86" ry="52" fill="#fff" {L}/><path d="M30 118c0-30 32-50 70-50s70 20 70 50c-20 14-44 20-70 20s-50-6-70-20z" fill="#e9c88f" {L}/>'
+     + "".join(f'<rect x="{x}" y="{y}" width="56" height="17" rx="8.5" fill="#8a4e2c" {L} transform="rotate({r} {x + 28} {y + 8})"/>' for x, y, r in ((50, 88, -8), (66, 104, -4), (84, 92, 4), (96, 110, -6), (110, 96, 6)))
+     + f'<path d="M48 140c6-6 14-6 18 0M128 144c6-6 14-6 18 0M90 150c6-6 14-6 18 0" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>'
+     f'<path d="M48 140c6-6 14-6 18 0M128 144c6-6 14-6 18 0M90 150c6-6 14-6 18 0" fill="none" stroke="#c9a0d8" stroke-width="2" stroke-linecap="round"/></svg>'),
+    ("burek", "Burek", _SVG + f'<ellipse cx="100" cy="112" rx="88" ry="76" fill="#fff" {L}/><circle cx="100" cy="108" r="68" fill="#e0a54e" {L}/>'
+     f'<path d="M100 108m0-6a6 6 0 1 1-6 6c0-14 12-22 24-18 16 6 20 26 8 40-16 18-46 14-56-6-12-24 4-52 30-58 32-8 60 16 60 46" fill="none" stroke="#9a5e1e" stroke-width="5" stroke-linecap="round"/>'
+     f'<path d="M50 80l8 4M140 70l6-6M150 130l8 2" stroke="#fff3d6" stroke-width="4" stroke-linecap="round"/></svg>'),
+    ("goat-statue", "The goat statue", _statue()),
+    ("salt-lakes", "The salt lakes", _SVG + f'<defs><clipPath id="lake"><circle cx="100" cy="100" r="82"/></clipPath></defs><circle cx="100" cy="100" r="82" fill="#bfe3ff"/>'
+     f'<g clip-path="url(#lake)"><circle cx="140" cy="62" r="18" fill="#ffd400"/><path d="M0 108c30-8 60-8 100 0s70 8 100 0v100H0z" fill="#2f9be0"/>'
+     f'<path d="M0 150c40-14 80-14 120-4s60 8 80 0v60H0z" fill="#f2dca8"/><path d="M24 128c12 4 22 4 34 0M110 124c12 4 22 4 34 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>'
+     f'<path d="M66 172V116" stroke="{I}" stroke-width="4"/><path d="M36 122c8-20 52-20 60 0z" fill="#e30613" {L}/><path d="M50 122c4-10 28-10 32 0" fill="none" stroke="#fff" stroke-width="4"/></g>'
+     f'<circle cx="100" cy="100" r="82" fill="none" {L}/></svg>'),
+]
+
+
 def stickers() -> list[dict]:
     """The whole set, in order: group, slug, label, and an SVG (drawn) or HTML (lettered) body."""
     out = [{"group": "goats", "slug": f"goat-{r}", "label": goats.ROLE_NAMES[r], "svg": goats.role(r)} for r in goats.ROLE_NAMES]
     out += [{"group": "words", "slug": s, "label": label, "html": body} for s, label, body in _words()]
+    out += [{"group": "tuzla", "slug": s, "label": label, "svg": body} for s, label, body in TUZLA]
     return out
 
 
