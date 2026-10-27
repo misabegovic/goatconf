@@ -33,12 +33,14 @@ import meta  # noqa: E402
 import nav  # noqa: E402
 import program  # noqa: E402
 import sitelib  # noqa: E402
+import speakers  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 OUT = SITE / "stickers"
 PAGE = SITE / "stickers.html"
 ZIP = "goatconf-stickers.zip"
+SPEAKER_ZIP = "goatconf-speaker-stickers.zip"
 SHEET = "goatconf-sticker-sheet.pdf"
 SIZE = 512
 esc = program.esc
@@ -49,6 +51,7 @@ GROUPS = {
     "goats": ("The goat's roles", "The GoatConf goat in its roles from the EuRuKo 2024 goat multiverse."),
     "words": ("The mark and words", "The seal, the coin, and a few words to stick on things."),
     "tuzla": ("Tuzla things", "The town of salt, its lakes, its coffee and its food, and the goat on its plinth."),
+    "speakers": ("The speakers' goats", "Each speaker's own goat, drawn from their photo, in a pack of their own. They show real people: share them, and never use them to mock."),
 }
 
 DISPLAY = "font-family:'Bricolage Grotesque'; font-weight:800; text-transform:uppercase; line-height:.9"
@@ -125,6 +128,13 @@ def stickers() -> list[dict]:
     out = [{"group": "goats", "slug": f"goat-{r}", "label": goats.ROLE_NAMES[r], "svg": goats.role(r)} for r in goats.ROLE_NAMES]
     out += [{"group": "words", "slug": s, "label": label, "html": body} for s, label, body in _words()]
     out += [{"group": "tuzla", "slug": s, "label": label, "svg": body} for s, label, body in TUZLA]
+    for slug, (meta_, _body) in speakers.listed(speakers.speakers()):
+        if meta_.get("goat"):
+            svg = goats.whole(meta_["goat"]).replace('<svg class="goat-whole" aria-hidden="true" focusable="false"', '<svg xmlns="http://www.w3.org/2000/svg"', 1)
+            name = esc(str(meta_["name"]))
+            out.append({"group": "speakers", "slug": f"speaker-{slug}", "label": str(meta_["name"]), "svg": svg,
+                        "html": f'<div style="width:330px; display:grid; justify-items:center">{svg}<div style="margin-top:-6px; background:#0b3d91; color:#fff; '
+                                f'border-radius:14px; padding:12px 22px 10px; font-size:44px; {DISPLAY}; font-stretch:78%; text-align:center; max-width:470px">{name}</div></div>'})
     return out
 
 
@@ -182,13 +192,19 @@ def render() -> int:
         subprocess.run([exe, "--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--virtual-time-budget=3000",
                         f"--print-to-pdf={OUT / SHEET}", src.as_uri()], check=True, capture_output=True, timeout=120)
         print(f"rendered site/stickers/{SHEET}")
-    with zipfile.ZipFile(OUT / ZIP, "w", zipfile.ZIP_DEFLATED) as z:
-        for name in pack_files(items):
-            info = zipfile.ZipInfo(f"goatconf-stickers/{name}", ZIP_DATE)
-            info.compress_type = zipfile.ZIP_DEFLATED
-            z.writestr(info, (OUT / name).read_bytes())
-    print(f"wrote site/stickers/{ZIP}")
+    for zip_name, folder, group in ((ZIP, "goatconf-stickers", "main"), (SPEAKER_ZIP, "goatconf-speaker-stickers", "speakers")):
+        with zipfile.ZipFile(OUT / zip_name, "w", zipfile.ZIP_DEFLATED) as z:
+            for name in pack_files(_pack(items, group)):
+                info = zipfile.ZipInfo(f"{folder}/{name}", ZIP_DATE)
+                info.compress_type = zipfile.ZIP_DEFLATED
+                z.writestr(info, (OUT / name).read_bytes())
+        print(f"wrote site/stickers/{zip_name}")
     return 0
+
+
+def _pack(items: list[dict], which: str) -> list[dict]:
+    """The main pack holds every sticker but the speakers' goats, which have a pack of their own."""
+    return [s for s in items if (s["group"] == "speakers") == (which == "speakers")]
 
 
 def pack_files(items: list[dict]) -> list[str]:
@@ -199,16 +215,17 @@ def pack_files(items: list[dict]) -> list[str]:
 def pack_problems() -> list[str]:
     """The pack matches the set: every PNG and SVG is there and current, and the zip holds exactly them."""
     items = stickers()
-    out = [f"site/stickers/{n} is missing: run python3 tools/stickers.py render" for n in pack_files(items) + [ZIP, SHEET]
+    out = [f"site/stickers/{n} is missing: run python3 tools/stickers.py render" for n in pack_files(items) + [ZIP, SPEAKER_ZIP, SHEET]
            if not (OUT / n).exists()]
     for s in items:
         p = OUT / "svg" / f"{s['slug']}.svg"
         if s.get("svg") and p.exists() and p.read_text(encoding="utf-8") != s["svg"] + "\n":
             out.append(f"site/stickers/svg/{s['slug']}.svg is out of date: run python3 tools/stickers.py render")
-    if (OUT / ZIP).exists():
-        with zipfile.ZipFile(OUT / ZIP) as z:
-            if sorted(z.namelist()) != sorted(f"goatconf-stickers/{n}" for n in pack_files(items)):
-                out.append(f"site/stickers/{ZIP} does not hold the current set: run python3 tools/stickers.py render")
+    for zip_name, folder, group in ((ZIP, "goatconf-stickers", "main"), (SPEAKER_ZIP, "goatconf-speaker-stickers", "speakers")):
+        if (OUT / zip_name).exists():
+            with zipfile.ZipFile(OUT / zip_name) as z:
+                if sorted(z.namelist()) != sorted(f"{folder}/{n}" for n in pack_files(_pack(items, group))):
+                    out.append(f"site/stickers/{zip_name} does not hold the current set: run python3 tools/stickers.py render")
     return out
 
 
@@ -223,13 +240,15 @@ def page() -> str:
   <p class="copy copy--wide">{note} Tap one to save it.</p>
   <ul class="sticker-grid">
 {cells}
-  </ul>
+  </ul>{f"""
+  <p class="copy"><a class="go go--ink" href="stickers/{SPEAKER_ZIP}" download>Download the speakers' pack</a></p>""" if group == "speakers" else ""}
 </section>""")
     main = f"""<section class="album-page wrap" aria-labelledby="h-take">
   <h2 class="band" id="h-take">Take them all</h2>
   <div class="copy copy--wide">
     <p>Every sticker as a transparent image, ready for chats, slides and posts, with the drawn ones also as SVG; or a sheet to print at home or at a print shop, and cut out.</p>
     <p class="cta"><a class="button" href="stickers/{ZIP}" download>Download the pack</a></p>
+    <p>The speakers' goats have a pack of their own, below.</p>
     <p><a class="go go--ink" href="stickers/{SHEET}" download>The print sheet (A4, PDF)</a></p>
     <p>The stickers are free to use for sharing GoatConf: on your laptop, in your slides, in your chats.</p>
   </div>

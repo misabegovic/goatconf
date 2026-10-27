@@ -305,6 +305,12 @@ def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None,
   </li>"""
 
 
+def sticker_link(slug: str) -> str:
+    """The speaker's goat as a sticker to save, once tools/stickers.py has rendered it."""
+    name = f"stickers/speaker-{slug}.png"
+    return f'<a class="go go--ink speaker-page__sticker" href="{name}" download>Save as a sticker</a>' if (SITE / name).exists() else ""
+
+
 def speaker_page(slug: str, meta, body, sessions, known) -> str:
     name = esc(meta["name"])
     bio = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
@@ -337,7 +343,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
         lede = f'<span class="lede__role">{esc(meta["role"])}</span>{lede}'
     main = f"""<section class="album-page wrap speaker-page" aria-labelledby="h-about">
   <h2 class="band" id="h-about">Who they are</h2>
-  {f'<div class="speaker-page__goat">{goats.whole(meta["goat"])}</div>' if meta.get("goat") else ''}<div class="copy copy--wide">{bio}</div>
+  {f'<div class="speaker-page__goat">{goats.whole(meta["goat"])}{sticker_link(slug)}</div>' if meta.get("goat") else ''}<div class="copy copy--wide">{bio}</div>
   {f'<ul class="speaker-page__links">{links}</ul>' if links else ''}
 </section>
 <section class="album-page wrap" aria-labelledby="h-talks">

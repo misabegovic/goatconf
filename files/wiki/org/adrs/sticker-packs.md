@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--stickers-speakers.md
   - sources/conversations/2026-10-27--org--stickers-tuzla.md
   - sources/conversations/2026-10-27--org--stickers-page.md
   - sources/conversations/2026-10-27--org--sticker-packs.md
@@ -128,6 +129,13 @@ day: the organiser chose "Approve, start building".
   coffee, ćevapi, burek, the goat statue (the goat in bronze on a plinth)
   and the salt lakes (source:
   sources/conversations/2026-10-27--org--stickers-tuzla.md).
+- **2026-10-27, step three: the speakers' goats.** Each listed speaker's
+  goat, with their name on a blue label, in `goatconf-speaker-stickers.zip`
+  of its own; the main pack keeps the rest. Each speaker's page offers "Save
+  as a sticker" under their goat once the sticker is rendered. A speaker
+  held from the site is not in the pack (source:
+  sources/conversations/2026-10-27--org--stickers-speakers.md). The Telegram
+  pack waits for the organiser to create it.
 
 ## Related
 
