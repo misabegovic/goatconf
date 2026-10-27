@@ -702,3 +702,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #198: outreach: the goats are in, a post with its cards
    diff: 7 files, +74/-1
    restricted-paths: true
+2026-10-27 merge — PR #199: outreach: the goats post, animated and without overlap
+   diff: 12 files, +161/-7
+   restricted-paths: true
