@@ -720,3 +720,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #204: site: the goat plays a trick when tapped and looks at the pointer
    diff: 37 files, +185/-78
    restricted-paths: false
+2026-10-27 merge — PR #205: site: four speakers' whole goats on their cards, a slower head shake, taps that do not select
+   diff: 41 files, +156/-99
+   restricted-paths: true
