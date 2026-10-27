@@ -651,3 +651,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-26 merge — PR #181: home: say "not only about Ruby" once
    diff: 3 files, +9/-1
    restricted-paths: false
+2026-10-27 merge — PR #182: drumbeat: mark A city of salt published
+   diff: 11 files, +30/-14
+   restricted-paths: false
