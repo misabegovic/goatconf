@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
   - sources/conversations/2026-10-27--org--mascot-watercolour.md
@@ -246,3 +247,11 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   own page their goat stands on the band of each section and follows the
   visitor down the page, one goat at a time. Paul Campbell's goat, painted
   from a black and white photo, has his ginger hair and beard (source: sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md).
+- **2026-10-27, every painted goat in use.** A photo can have several scenes,
+  and the companion shows a different one each time it comes back: the salt
+  lakes photo has the goat floating, jumping off the pier and sunbathing on
+  the beach. The goat strolls on the Korzo, hikes on the photo of Tuzla from
+  above with its green hills, stands as the bronze goat statue at the end of
+  the goat hunt in "Why a goat", and waves or jumps for joy at "See you in
+  Tuzla"; the cook peeks over the food section's band. The role goats painted
+  whole stay on the Stickers page (source: sources/conversations/2026-10-27--org--every-painted-goat-used.md).

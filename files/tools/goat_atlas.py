@@ -34,12 +34,19 @@ WEB = "img/goat"
 # Each sheet's goats, and how tall each goat stands above its edge, in sheet pixels: about twice the size
 # it shows at, so it stays sharp on a phone's screen.
 # The goat's scenes on the Tuzla and food photos, by photo: the companion visits a photo as that photo's scene.
-SCENES = {"img/city-lakes-aerial-summer.jpg": "sticker-salt-lakes", "img/city-square-fountain-summer.jpg": "sticker-salt",
-          "img/food-burek.jpg": "sticker-burek", "img/food-cevapi.jpg": "sticker-cevapi", "img/food-coffee.jpg": "sticker-fildzan"}
+# The goat's scenes on the Tuzla and food photos, by photo: the companion visits a photo as one of that photo's
+# scenes, a different one each visit where a photo has several.
+SCENES = {"img/city-lakes-aerial-summer.jpg": ("sticker-salt-lakes", "sticker-pannonian-sea", "sticker-beach"),
+          "img/city-square-fountain-summer.jpg": ("sticker-salt",),
+          "img/city-korzo-clock.jpg": ("standing",),
+          "img/city-aerial-summer.jpg": ("sticker-hike",),
+          "img/food-burek.jpg": ("sticker-burek",), "img/food-cevapi.jpg": ("sticker-cevapi",), "img/food-coffee.jpg": ("sticker-fildzan",)}
+# Scenes a page places by hand: the goat waving or jumping for joy at the end, the goat statue after the goat hunt.
+HAND_SCENES = ("waving", "jumping", "sticker-goat-statue")
 SETS = {"roles": (("peeking", "peek-host", "peek-coder", "peek-speaker", "peek-cook", "peek-pirate", "peek-hidden"), 190),
         "sitting": (("sitting",), 320),
         # The waving goat says goodbye at the end of the home page.
-        "scenes": (tuple(dict.fromkeys(SCENES.values())) + ("waving",), 280)}
+        "scenes": (tuple(dict.fromkeys(p for poses in SCENES.values() for p in poses)) + HAND_SCENES, 240)}
 # The goats shown on their own, and their long side in pixels.
 SINGLE = 480
 # How far, in master pixels, the turned head band and the body overlap where they meet.

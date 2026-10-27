@@ -143,21 +143,24 @@ def scenes(text: str) -> str:
     def one(m):
         body = SCENE_RE.sub("", m.group(2))
         src = re.search(r'<img src="([^"]+)"', body)
-        pose = goat_atlas.SCENES.get(src.group(1)) if src else None
-        return m.group(1) + body + (goat_atlas.goat(pose, "goat-scene", _beat(pose)) if pose else "") + m.group(3)
+        poses = goat_atlas.SCENES.get(src.group(1), ()) if src else ()
+        return m.group(1) + body + "".join(goat_atlas.goat(p, "goat-scene", _beat(p)) for p in poses) + m.group(3)
     return PHOTO_RE.sub(one, text)
 
 
-GOAT_SPOT_RE = re.compile(r"(<!-- gen:goat-([a-z-]+) tools/frame.py -->).*?(<!-- /gen:goat-\2 -->)", re.S)
+GOAT_SPOT_RE = re.compile(r"(<!-- gen:goat-([a-z+-]+) tools/frame.py -->).*?(<!-- /gen:goat-\2 -->)", re.S)
 
 
 def spots(text: str) -> str:
     """A goat a page places by hand, between <!-- gen:goat-POSE tools/frame.py --> and its end: a scene (the waving
     goat) or a goat peeking over the element it sits in (ADR goat-mascot)."""
     def one(m):
-        pose = m.group(2)
-        scene = goat_atlas.sheet_of(pose) == "scenes"
-        return m.group(1) + goat_atlas.goat(pose, "goat-scene" if scene else "peek peek--art", _beat(pose)) + m.group(3)
+        # Several poses joined by "+" are one spot the companion shows a different one of each visit.
+        out = ""
+        for pose in m.group(2).split("+"):
+            scene = goat_atlas.sheet_of(pose) == "scenes"
+            out += goat_atlas.goat(pose, "goat-scene" if scene else "peek peek--art", _beat(pose))
+        return m.group(1) + out + m.group(3)
     return GOAT_SPOT_RE.sub(one, text)
 
 

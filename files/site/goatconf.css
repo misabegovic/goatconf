@@ -761,5 +761,8 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 /* The goats a page places by hand: over the organiser's numbers, over the conduct photo, and waving goodbye */
 .print { position: relative; }
 #see-you { position: relative; }
+/* The goat statue stands at the end of the goat hunt's paragraph */
+.goat-hunt { position: relative; padding-right: 8rem; min-height: 7rem; }
+.goat-hunt .goat-one__stage.is-scene { right: 0; bottom: -0.5rem; width: 7rem; }
 #see-you .goat-one__stage.is-scene { right: clamp(1rem, 8vw, 6rem); bottom: 0.6rem; width: clamp(6.5rem, 14vw, 9.5rem); }
 .goat-one__stage.is-scene .goat { transform-origin: 80% 90%; filter: drop-shadow(0 0.25rem 0.3rem rgb(0 0 0 / 0.25)); }
