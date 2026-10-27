@@ -281,7 +281,7 @@
   };
 
   // Its tricks, one per tap or click, in turn: a jump for joy, a somersault, a shake of its head and a "Meee!".
-  // A goat peeking over a slot is painted only down to the slot's edge, so it never rises far enough to show
+  // A goat peeking over a slot is painted only down to the slot's edge, unless it is whole, so it never rises far enough to show
   // where the painting ends: it bounces instead of jumping, and ducks and pops up instead of a somersault.
   // With reduced motion it only says "Meee!".
   const say = document.createElement("b");
@@ -314,14 +314,15 @@
       { transform: T("0%", 1, 1, -360) },
     ], { duration: 1000 }).finally(() => { goat.style.transformOrigin = ""; goat.style.transform = REST; });
   };
+  const whole = () => onPhoto() || current.peek.classList.contains("peek--whole");
   const tricks = [
-    () => (onPhoto() ? jump("-45%") : jump("-9%")),
-    () => (onPhoto() ? somersault() : duck().then(() => wait(250)).then(pop)),
+    () => (whole() ? jump("-45%") : jump("-9%")),
+    () => (whole() ? somersault() : duck().then(() => wait(250)).then(pop)),
     // A goat without its turned heads wiggles instead.
     async () => {
       if (!canTurn()) return moves.wiggle();
-      for (const dir of ["left", "right", "left", "right"]) { face(dir); await wait(140); }
-      face("front");
+      for (const dir of ["left", "right", "left"]) { await turnTo(dir); await wait(280); }
+      await turnTo("front");
     },
     () => Promise.all([moves.stretch(), meee()]),
   ];
@@ -338,6 +339,8 @@
     if (!goat || !goat.contains(e.target)) return;
     e.preventDefault();
     e.stopPropagation();
+    // Taps in quick succession count as a double or triple click, which would select the text around it.
+    if (e.detail > 1) getSelection().removeAllRanges();
     if (down) return;
     asked = true;
     if (!busy) return perform();
@@ -350,6 +353,7 @@
     addEventListener("scroll", schedule, { passive: true });
     slots.forEach((s) => s.slot.addEventListener("pointerenter", () => go(s)));
     stage.addEventListener("click", tapped);
+    stage.addEventListener("mousedown", (e) => { if (goat && goat.contains(e.target)) e.preventDefault(); });
     go(pick());
     if (still) return;
     setTimeout(idle, 3000);
