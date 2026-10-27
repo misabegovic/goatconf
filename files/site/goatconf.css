@@ -770,4 +770,6 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goat-hunt { position: relative; padding-right: 8rem; min-height: 7rem; }
 .goat-hunt .goat-one__stage.is-scene { right: 0; bottom: -0.5rem; width: 7rem; }
 #see-you .goat-one__stage.is-scene { right: clamp(1rem, 8vw, 6rem); bottom: 0.6rem; width: clamp(6.5rem, 14vw, 9.5rem); }
+/* On a phone the button takes the page's width, so the goat waves from below it, centred */
+@media (max-width: 47.99rem) { #see-you:has(.goat-one__stage.is-scene) { padding-bottom: 7.6rem; } #see-you .goat-one__stage.is-scene { right: calc(50% - 3.25rem); width: 6.5rem; } }
 .goat-one__stage.is-scene .goat { transform-origin: 80% 90%; filter: drop-shadow(0 0.25rem 0.3rem rgb(0 0 0 / 0.25)); }

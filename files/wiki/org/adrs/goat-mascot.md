@@ -8,6 +8,7 @@ depends_on:
   - org/prds/design-with-impeccable.md
 sources:
   - sources/conversations/2026-10-27--org--speaker-goat-on-phones.md
+  - sources/conversations/2026-10-27--org--see-you-goat-on-phones.md
   - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
@@ -260,3 +261,7 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   sitting goat and its "Save as a sticker" link come after their bio,
   centred, so the bio keeps the page's width; on wider screens the goat
   stays beside the bio (source: sources/conversations/2026-10-27--org--speaker-goat-on-phones.md).
+- **2026-10-27, the goodbye goat on a phone.** On a phone the goat that
+  waves or jumps at "See you in Tuzla" stands centred below the "Register
+  for free" button, in room the section keeps for it, instead of over the
+  button; on wider screens it stays in the section's bottom corner (source: sources/conversations/2026-10-27--org--see-you-goat-on-phones.md).
