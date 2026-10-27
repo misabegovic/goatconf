@@ -699,3 +699,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #197: site: every painted goat in use
    diff: 39 files, +126/-81
    restricted-paths: true
+2026-10-27 merge — PR #198: outreach: the goats are in, a post with its cards
+   diff: 7 files, +74/-1
+   restricted-paths: true

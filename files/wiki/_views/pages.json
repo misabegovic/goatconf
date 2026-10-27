@@ -927,6 +927,8 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-27--org--goats-post.md",
+        "sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md",
         "sources/conversations/2026-10-27--org--city-of-salt-published.md",
         "sources/conversations/2026-10-26--org--confirmed-speaker-cards.md",
         "sources/web/tuzla/tuzla-wikipedia-bs.md",
@@ -983,7 +985,7 @@
         "sources/conversations/2026-10-12--org--day-chain-and-session-format.md",
         "sources/conversations/2026-10-12--org--two-core-days-and-saturday.md"
       ],
-      "tokens": 6263
+      "tokens": 6694
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
