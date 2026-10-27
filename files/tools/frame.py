@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The frame every page of the site shares: the goat sprite, the footer, and
+"""The frame every page of the site shares: the goat mascot, the footer, and
 the page around a generated page's main part.
 
 The generators build their pages with page(). The hand-written pages carry
@@ -7,11 +7,10 @@ the footer between <!-- gen:footer tools/frame.py --> and
 <!-- /gen:footer --> (the home page carries its back cover's links between
 <!-- gen:back-cover-links tools/frame.py --> and its end), which `apply`
 writes and `check` checks, as tools/nav.py does for the top bar. The goat
-sprite sits right after <body> on every page that uses it (#goat-sit or #peek-),
-and on no other.
+is the illustrated mascot in site/img/goat/, which peek() and sitting() place.
 
-  apply     write the footer, the back cover's links and the sprite on every page
-  check     fail if a page's footer, links or sprite are not current
+  apply     write the footer and the back cover's links on every page
+  check     fail if a page's footer or links are not current
 
 Usage: python3 tools/frame.py <apply|check>
 (ADR wiki/org/adrs/one-page-frame-and-one-site-build.md)
@@ -24,7 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import blocks  # noqa: E402
-import goats  # noqa: E402
+import goat_atlas  # noqa: E402
 import nav  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -41,57 +40,38 @@ BACK_COVER = {"charter.html": "The charter", "code-of-conduct.html": "The code o
 LINE = ("GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. "
         'Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.')
 
-# The goat mascot (ADR wiki/org/adrs/goat-mascot.md): one flat goat drawn in
-# parts, cream coat, ink outline, yellow horns curled back. A peek shows its
-# horns, ears, eyes and front hooves over an open slot's top edge; a role is a
-# small layer on the same goat. PEEK_BY_KIND says which role each kind of slot
-# gets; #goat-sit is the whole goat, sitting, where there is no photo yet.
-INK = goats.INK
-_LINE = goats.LINE
-GOAT_PARTS = (f'<g id="gm-horns">{goats.HORNS}</g>\n      <g id="gm-ears">{goats.EARS}</g>\n      '
-              f'<g id="gm-face">{goats.HEAD}{goats.CURL}{goats.BLUSHES}{goats.EYES}</g>\n      '
-              f'<g id="gm-hooves"><rect x="52" y="80" width="22" height="12" rx="6" fill="{INK}"/><rect x="126" y="80" width="22" height="12" rx="6" fill="{INK}"/></g>\n      '
-              '<clipPath id="gm-edge"><rect x="0" y="-10" width="200" height="96"/></clipPath>')
-# Each role's layers: those on the head (in the head's own coordinates) and
-# those in front, held over the edge.
-ROLES = {
-    "goat": ("", ""),
-    "speaker": ("", f'<path d="M62 84 48 62" stroke="{INK}" stroke-width="5" stroke-linecap="round"/><circle cx="45" cy="57" r="8" fill="#ffd400" {_LINE}/><path d="M30 46q-6 8 0 16M22 40q-11 14 0 28" fill="none" stroke="#ffd400" stroke-width="3" stroke-linecap="round"/>'),
-    "host": (f'<path d="M84 50l4-22h24l4 22z" fill="#d7263d" {_LINE}/><path d="M100 28c6 2 9 9 8 18" fill="none" stroke="{INK}" stroke-width="3" stroke-linecap="round"/>',
-             f'<path d="M128 62h22l-3 14a8 8 0 0 1-8 6 8 8 0 0 1-8-6z" fill="#fff" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/><path d="M131 68h16" stroke="#2f6fd6" stroke-width="3"/><path d="M135 56c-3-4 3-6 0-10M142 56c-3-4 3-6 0-10" fill="none" stroke="#9aa9c7" stroke-width="2.5" stroke-linecap="round"/>'),
-    "coder": (f'<g fill="none" stroke="{INK}" stroke-width="3"><circle cx="82" cy="90" r="14"/><circle cx="118" cy="90" r="14"/><path d="M96 89h8"/></g>',
-              f'<rect x="66" y="78" width="68" height="10" rx="2" fill="#ffd400" {_LINE}/>'),
-    "pirate": (f'<path d="M56 60C66 22 134 22 144 60c-12-8-30-8-44-2-14-6-32-6-44 2z" fill="#0b3d91" {_LINE}/><path d="M62 55c12-7 30-7 38-1 8-6 26-6 38 1" fill="none" stroke="#ffd400" stroke-width="3" stroke-linecap="round"/><path d="M60 74l78 24" stroke="{INK}" stroke-width="3"/><ellipse cx="118" cy="91" rx="13" ry="12" fill="{INK}"/>', ""),
-}
-# The hidden goat, as the man in Tuzla hid his: only its horns, ears and the
-# top of its eyes show, and no hooves.
-PEEK_HIDDEN = '<symbol id="peek-hidden" viewBox="0 -6 200 98"><g clip-path="url(#gm-edge)"><g transform="translate(0 -10)"><use href="#gm-ears"/><use href="#gm-horns"/><use href="#gm-face"/></g></g></symbol>'
+# The goat mascot (ADR wiki/org/adrs/goat-mascot.md): the illustrated
+# watercolour goat, painted from its sprite sheet (tools/goat_atlas.py) with its
+# closed eyes laid over it for a blink. It peeks over every open slot, in the
+# role the slot's kind gets, and sits where a speaker or a venue has no photo yet.
 # Which role peeks over each kind of open slot (ADR § Decision 2).
 PEEK_BY_KIND = {"session": "speaker", "talk": "speaker", "panel": "speaker", "podcast": "speaker", "karaoke": "speaker",
                 "event": "host", "evening-event": "host", "meetup": "host", "workshop": "coder", "hackathon": "coder",
-                "trip": "pirate", "other": "hidden"}
+                "trip": "pirate", "food": "cook", "other": "hidden"}
 
 
-def _peek_symbol(role: str) -> str:
-    head, front = ROLES[role]
-    return (f'<symbol id="peek-{role}" viewBox="0 -6 200 98"><g clip-path="url(#gm-edge)"><g transform="translate(0 -24)">'
-            f'<use href="#gm-ears"/><use href="#gm-horns"/><use href="#gm-face"/>{head}</g></g><use href="#gm-hooves"/>{front}</symbol>')
+def _beat(key: str) -> int:
+    """Each goat blinks on its own beat, so a row of goats never blinks at once."""
+    return sum(map(ord, key)) % 7
 
 
 def sitting() -> str:
     """The whole goat, sitting, where a speaker or a venue has no photo yet."""
-    return '<svg aria-hidden="true" focusable="false" viewBox="0 18 200 186"><use href="#goat-sit"/></svg>'
+    return goat_atlas.goat("sitting", "goat-sit")
 
 
 def peek(kind: str = "") -> str:
-    """The goat peeking over an open slot, in the role its kind gets."""
-    role = PEEK_BY_KIND.get(kind, "goat")
-    return f'<svg class="peek" aria-hidden="true" focusable="false" viewBox="0 -6 200 98"><use href="#peek-{role}"/></svg>'
+    """The goat peeking over an open slot, its hooves on the edge, in the role the slot's kind gets."""
+    role = PEEK_BY_KIND.get(kind)
+    return goat_atlas.goat(f"peek-{role}" if role else "peeking", "peek peek--art", _beat(kind or "peeking"))
 
 
-SPRITE = ('<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>'
-          + '<symbol id="goat-sit" viewBox="0 18 200 186">' + goats.role("goat").split(">", 1)[1].rsplit("</svg>", 1)[0] + "</symbol>"
-          + "\n      " + GOAT_PARTS + "\n      " + "".join(_peek_symbol(r) for r in ROLES) + PEEK_HIDDEN + "\n    </defs></svg>")
+def speaker_peek(slug: str) -> str:
+    """A speaker's own painted goat peeking over their card, or the speaker goat while theirs is not painted yet."""
+    pose = f"speaker-{slug}"
+    if goat_atlas.has(pose):
+        return goat_atlas.goat(pose, "peek peek--face", _beat(slug))
+    return goat_atlas.goat("peek-speaker", "peek peek--face", _beat(slug))
 
 
 def block(name: str, body: str) -> str:
@@ -152,17 +132,11 @@ def page(canonical: str, title: str, description: str, photo, h1: str, lede: str
 
 
 SPRITE_RE = re.compile(r'<svg width="0" height="0" style="position:absolute".*?</svg>\n', re.S)
-BODY = re.compile(r"<body[^>]*>\n")
 
 
 def frame(text: str) -> str:
-    """The page with its sprite (only where it is used), footer and back cover's links current."""
+    """The page with its footer and back cover's links current, and no goat sprite left from before."""
     text = SPRITE_RE.sub("", text)
-    if 'href="#goat-sit"' in text or 'href="#peek-' in text:
-        m = BODY.search(text)
-        if not m:
-            raise ValueError("no <body> tag on its own line to put the sprite after")
-        text = text[:m.end()] + SPRITE + "\n" + text[m.end():]
     for name, make in (("footer", footer), ("back-cover-links", back_cover_links)):
         text = blocks.pattern(name).sub(lambda _m: make(), text)
     return text

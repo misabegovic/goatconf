@@ -35,7 +35,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import brand  # noqa: E402
 import extensions  # noqa: E402
-import goats  # noqa: E402
+import goat_atlas  # noqa: E402
 import program  # noqa: E402
 import speakers  # noqa: E402
 
@@ -208,39 +208,69 @@ def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, squ
 {seal(140, "right:48px; bottom:48px")}""")
 
 
+# Where the speaker's goat sits on their cards: "corner", whole, in the bottom corner (the organiser's choice,
+# 2026-10-27), or "ring", small against the photo's ring.
+SPEAKER_GOAT = "corner"
+
+
 def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 675, announce: bool = False) -> str:
-    """The speaker's own "I'm speaking" card, or with `announce` GoatConf's card announcing them, which adds when and
-    where and links to their page."""
+    """The speaker's own "I'm speaking" card, or with `announce` GoatConf's card announcing them. Both say the same,
+    and little: the name and photo, their role and session, one quiet line of when, where and their page's address,
+    and their own goat. Only the headline differs."""
     name = esc(str(meta["name"]))
     photo = (f'<img src="{(SITE / meta["photo"]).as_uri()}" style="width:100%;height:100%;object-fit:cover">'
              if meta.get("photo") else
              f'<img src="{(SITE / "brand" / "coin-yellow.svg").as_uri()}" style="width:70%;height:70%;margin:15%">')
+    address = f"{URL}/{speakers.page_name(slug)[:-5]}"
     # Before the session has a slot, the record's own title stands in for it.
-    address = f"{URL}/{speakers.page_name(slug)[:-5]}" if announce else f"{URL}/speakers.html"
-    # A long address shrinks on the square card so it stays clear of the seal.
-    url_px = (32 if len(address) <= 36 else 26) if square else (26 if len(address) <= 34 else 22)
-    talk = (talks[0] if talks else f'{speakers.talk_format(meta)}: {esc(str(meta["talk"]))}' if meta.get("talk")
-            else "Tuzla · 3–5 June 2027")
-    size, w, h = (380, 1080, 1080) if square else (330, 1200, height)
-    # A long name on the square card shrinks to stay on one line, so the role
-    # and the session keep their room above the address.
-    name_px = (120 if len(str(meta["name"])) <= 14 else 88) if square else 92
-    frame = (f'<div style="position:absolute; left:84px; top:96px; width:{size}px; height:{size}px; border-radius:50%; overflow:hidden; '
-             f'background:{YELLOW}; box-shadow:0 0 0 10px #fff">{photo}</div>')
-    # The speaker's own goat sits at the edge of their photo (ADR goat-mascot).
-    goat = (f'<div style="position:absolute; {"left:372px; top:268px; width:220px" if square else "left:276px; top:388px; width:168px"}">'
-            f'{goats.whole(meta["goat"])}</div>' if meta.get("goat") else "")
-    return page(w, h, f"""
-{frame if square else frame.replace('left:84px; top:96px', 'left:72px; top:50%; transform:translateY(-50%)')}{goat}
-<div style="position:absolute; {'left:84px; top:540px; right:84px' if square else 'left:450px; top:84px; right:300px'}">
-  <div class="sub" style="font-size:{40 if square else 28 if announce else 32}px; color:#fff">{"Confirmed speaker at GoatConf 2027" if announce else "I'm speaking at GoatConf 2027"}</div>
-  <div class="word" style="font-size:{name_px}px; margin-top:18px">{name}</div>
-  {f'<div style="font-size:{34 if square else 28}px; font-weight:700; line-height:1.2; margin-top:22px; max-width:{680 if square else 450}px; text-wrap:balance">{esc(str(meta["role"]))}</div>' if meta.get("role") else ""}
-  <div class="sub" style="font-size:{34 if square else 28}px; line-height:1.2; margin-top:28px; max-width:20ch">{talk}</div>
-  {f'<div style="font-size:{30 if square else 24}px; font-weight:700; margin-top:20px">{FACTS}</div>' if announce and talk != "Tuzla · 3–5 June 2027" else ""}
+    talk = talks[0] if talks else f'{speakers.talk_format(meta)}: {esc(str(meta["talk"]))}' if meta.get("talk") else ""
+    w, h = (1080, 1080) if square else (1200, height)
+    size = 330 if square else min(330, h - 150)
+    long_name = len(str(meta["name"])) > 14
+    name_px = (84 if long_name else 110) if square else (70 if long_name else 92)
+    top = 72 if square else (h - size) // 2
+    frame = (f'<div style="position:absolute; left:{84 if square else 64}px; top:{top}px; width:{size}px; height:{size}px; border-radius:50%; '
+             f'overflow:hidden; background:{YELLOW}; box-shadow:0 0 0 10px #fff">{photo}</div>')
+    # The speaker's own painted goat, whole, sitting in the bottom corner (ADR goat-mascot), or small against
+    # the photo's ring.
+    corner = SPEAKER_GOAT == "corner"
+    pose = f"speaker-{slug}-sitting"
+    if not goat_atlas.has(pose):
+        goat = ""
+    elif corner:
+        gw = 170 if square else min(160, h * 0.25)
+        goat = (f'<img src="{(goat_atlas.ART / (pose + ".webp")).as_uri()}" style="position:absolute; right:{72 if square else 56}px; '
+                f'bottom:{40 if square else 28}px; width:{gw:.0f}px">')
+    else:
+        gw = 140 if square else 112
+        left = (84 + size - gw * 0.55) if square else (64 + size - gw * 0.55)
+        goat = (f'<img src="{(goat_atlas.ART / (pose + ".webp")).as_uri()}" style="position:absolute; left:{left:.0f}px; '
+                f'top:{top + size - gw * 1.05:.0f}px; width:{gw}px">')
+    head = f'<div class="sub" style="font-size:{44 if square else 30}px; color:#fff">{"Confirmed speaker at GoatConf 2027" if announce else "I&#39;m speaking at GoatConf 2027"}</div>'
+    who = f'<div class="word" style="font-size:{name_px}px; margin-top:18px">{name}</div>'
+    role = (f'<div style="font-size:{36 if square else 30}px; font-weight:700; line-height:1.25; margin-top:20px; text-wrap:balance">{esc(str(meta["role"]))}</div>'
+            if meta.get("role") else "")
+    session = (f'<div class="sub" style="font-size:{40 if square else 32}px; line-height:1.2; margin-top:24px; text-wrap:balance">{talk}</div>'
+               if talk else "")
+    # The quiet line of when, where and the page's address follows the text, so the two never meet.
+    foot = (f'<div class="url" style="font-size:{26 if square else 22}px; line-height:1.3; text-wrap:balance">'
+            f'Tuzla · 3–5 June 2027 · {address}</div>')
+    clear = (270 if square else 270) if corner else (84 if square else 72)
+    if square:
+        # The text has the card's width above the goat; only the quiet line beside it steps around it.
+        return page(w, h, f"""
+{frame}{goat}{seal(210, "right:84px; top:84px")}
+<div style="position:absolute; left:84px; right:84px; bottom:{290 if corner else 150}px">
+  {head}{who}{role}{session}
 </div>
-<div class="url" style="position:absolute; left:{84 if square else 450}px; bottom:{84 if square else 64}px; font-size:{url_px}px">{address}</div>
-{seal(240 if square else 230, "right:72px; bottom:72px")}""")
+<div style="position:absolute; left:84px; right:{clear}px; bottom:80px">{foot}</div>""")
+    # The seal stands small in the top corner, above the end of the longest name.
+    return page(w, h, f"""
+{frame}{goat}{seal(112, "right:44px; top:32px")}
+<div style="position:absolute; left:{64 + size + 64}px; right:72px; top:{56 if h < 675 else 72}px">
+  {head}{who}{role}{session}
+</div>
+<div style="position:absolute; left:{64 + size + 64}px; right:{clear}px; bottom:{48 if h < 675 else 60}px">{foot}</div>""")
 
 
 def thanks(meta) -> str:

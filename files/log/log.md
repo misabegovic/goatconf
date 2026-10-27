@@ -690,3 +690,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #194: site: an Introduction to Tuzla guide on the travel page
    diff: 7 files, +245/-3
    restricted-paths: true
+2026-10-27 merge — PR #195: site: the painted goat everywhere, one at a time, with turning heads
+   diff: 188 files, +1758/-423
+   restricted-paths: true

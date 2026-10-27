@@ -29,6 +29,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extensions  # noqa: E402
 import images  # noqa: E402
 import frame  # noqa: E402
+import goat_atlas  # noqa: E402
 import goats  # noqa: E402
 import sitelib  # noqa: E402
 import program  # noqa: E402
@@ -283,6 +284,12 @@ def goat_photo() -> str:
     return f'<span class="speaker__goat" aria-hidden="true">{frame.sitting()}</span>'
 
 
+def sitting_goat(slug: str) -> str:
+    """The speaker's own painted goat, sitting, beside their bio."""
+    src, w, h = goat_atlas.single(f"speaker-{slug}-sitting")
+    return f'<img class="goat-whole" src="{src}" alt="" width="{w}" height="{h}" loading="lazy" decoding="async">'
+
+
 def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None, anchor=True) -> str:
     """One speaker's card, the same on the speakers page and the home page. `scheduled` is the first
     session on the program, with its area and who it is for; `anchor` gives the card the id the speakers page links to."""
@@ -294,8 +301,8 @@ def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None,
     flavor = scheduled or ({"area": meta.get("talk_area"), "for": meta.get("talk_for")} if meta.get("talk") else {})
     first += program.tags(None, flavor.get("area")) + program.for_line(flavor.get("for"), "span")
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
-    # The speaker's own goat, drawn from their photo, peeks over the card (ADR goat-mascot).
-    goat = goats.peek(meta["goat"]) if meta.get("goat") else ""
+    # The speaker's own painted goat peeks over the card (ADR goat-mascot).
+    goat = frame.speaker_peek(slug) if meta.get("goat") or goat_atlas.has(f"speaker-{slug}") else ""
     return f"""  <li class="sticker sticker--speaker"{f' id="{esc(slug)}"' if anchor else ''} style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">{goat}
     <a class="speaker__link" href="{page_name(slug)}">
     <span class="num">{n}</span>
@@ -330,7 +337,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     # The "I'm speaking" card shown as supporters' cards are, with both sizes to download.
     share = extensions.share_section({"square": f"speaker-{slug}-square.png", "wide": f"speaker-{slug}-wide.png"},
                                      f"{name}, speaking at GoatConf 2027",
-                                     "Your card, to post as your own: speaking at GoatConf 2027. It links back to the speakers page.",
+                                     "Your card, to post as your own: speaking at GoatConf 2027. It links back to this page.",
                                      "Your card: I'm speaking", SITE)
     share += extensions.share_section(announce_cards(slug), f"Confirmed speaker at GoatConf 2027: {name}",
                                       "GoatConf 2027's card announcing you, for anyone to post. It links to this page.",
@@ -343,7 +350,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
         lede = f'<span class="lede__role">{esc(meta["role"])}</span>{lede}'
     main = f"""<section class="album-page wrap speaker-page" aria-labelledby="h-about">
   <h2 class="band" id="h-about">Who they are</h2>
-  {f'<div class="speaker-page__goat">{goats.whole(meta["goat"])}{sticker_link(slug)}</div>' if meta.get("goat") else ''}<div class="copy copy--wide">{bio}</div>
+  {f'<div class="speaker-page__goat">{sitting_goat(slug)}{sticker_link(slug)}</div>' if goat_atlas.has(f"speaker-{slug}-sitting") else ''}<div class="copy copy--wide">{bio}</div>
   {f'<ul class="speaker-page__links">{links}</ul>' if links else ''}
 </section>
 <section class="album-page wrap" aria-labelledby="h-talks">

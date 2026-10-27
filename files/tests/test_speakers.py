@@ -108,7 +108,8 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     shareables = importlib.reload(importlib.import_module("shareables"))
     meta = speakers.speakers()["ana-example"][0]
     card = shareables.speaker_card("ana-example", {**meta, "talk": "Salt"}, [], True, announce=True)
-    assert "Confirmed speaker at GoatConf 2027" in card and "goatconf.com/speaker-ana-example<" in card and "Free to attend" in card
+    # One quiet line says when, where and the speaker's page (the organiser's choice, 2026-10-27).
+    assert "Confirmed speaker at GoatConf 2027" in card and "Tuzla · 3–5 June 2027 · goatconf.com/speaker-ana-example<" in card
 
 
 def test_a_speaker_without_a_title_says_the_session_is_to_be_announced(tmp_path, monkeypatch):

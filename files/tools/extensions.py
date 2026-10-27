@@ -352,15 +352,19 @@ def event_page(slug: str, meta, body) -> str:
 
 
 def share_section(names: dict, alt: str, note: str, heading: str = "Cards to share", site=None) -> str:
-    """The wide card to look at, with both sizes to download; nothing until the cards are rendered."""
+    """Both cards to look at, the square and the wide, each with its download; nothing until the cards are rendered."""
     if not all(((site or PAGE.parent) / "share" / names[k]).exists() for k in ("square", "wide")):
         return ""
     return f"""
 <section class="album-page wrap" aria-labelledby="h-cards-{names['wide'][:-9]}">
   <h2 class="band" id="h-cards-{names['wide'][:-9]}">{heading}</h2>
   <p class="copy copy--wide">{note}</p>
-  <img class="share-card" src="share/{names['wide']}" width="1200" height="675" alt="{alt}" loading="lazy">
-  <p class="copy"><a class="go go--ink" href="share/{names['square']}" download>Download the square card</a> <a class="go go--ink" href="share/{names['wide']}" download>Download the wide card</a></p>
+  <div class="share-cards">
+    <figure><img class="share-card" src="share/{names['square']}" width="1080" height="1080" alt="{alt}, the square card" loading="lazy">
+      <figcaption><a class="go go--ink" href="share/{names['square']}" download>Download the square card</a></figcaption></figure>
+    <figure><img class="share-card" src="share/{names['wide']}" width="1200" height="675" alt="{alt}, the wide card" loading="lazy">
+      <figcaption><a class="go go--ink" href="share/{names['wide']}" download>Download the wide card</a></figcaption></figure>
+  </div>
 </section>"""
 
 

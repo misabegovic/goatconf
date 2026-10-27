@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
   - sources/conversations/2026-10-27--org--mascot-watercolour.md
   - sources/conversations/2026-10-27--org--goat-everywhere.md
   - sources/conversations/2026-10-27--org--speaker-goats.md
@@ -208,3 +209,24 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   enola's cat (a bob, a blink, the peek rising) is wanted for the new goat;
   how much movement is to be settled when it arrives (source:
   sources/conversations/2026-10-27--org--mascot-watercolour.md).
+- **2026-10-27, the painted goat on the site, one at a time.** The
+  watercolour goat replaces the drawn goat everywhere now, painted with an
+  image generator by the agent, as the organiser asked ("you are the
+  illustrator"); the illustrator's final drawing can still replace it later.
+  Every role, each speaker's own goat (described from their photos in words,
+  never uploading a photo), the sitting goat, the sleeping goat on the 404
+  page, the stickers and the share cards are painted. With the script a
+  visitor sees one goat at a time: it stands inside the open slot or speaker
+  card nearest the middle of the screen, in that slot's role or as that
+  speaker's goat, and hops to the next as they scroll or point; it pops up,
+  ducks when the pointer comes close, and while it waits bobs, wiggles,
+  stretches, plays peek-a-boo or looks around. Turning is the goat's own
+  painted head turned left or right, never a mirrored or spun picture, and
+  only the head changes, so its body and legs are always the painted goat's
+  own. It must work on a bad connection: one small sprite sheet per set of
+  goats, the turned heads loaded after the page, the goat shown only once its
+  picture has loaded, moves by transform only, and no companion on Save-Data
+  or 2G. Without the script every slot keeps its own still goat; with
+  reduced motion the goat appears and stays still. On the share cards the
+  speaker's whole goat sits in the bottom corner, never cut off (source:
+  sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md).

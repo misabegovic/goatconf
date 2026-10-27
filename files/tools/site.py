@@ -2,7 +2,7 @@
 """Build or check the whole site, every generator in the order they depend on.
 
   build     check the records, then write every generated page and part:
-            the program, the events people add, the speakers and supporters,
+            the goat's sprite sheets (needs Pillow), the program, the events people add, the speakers and supporters,
             the travel page's places, the home page, the files for agents,
             the photos' WebP copies (needs Pillow), the page frame, the top
             bar and the link previews
@@ -27,10 +27,10 @@ from pathlib import Path
 TOOLS = Path(__file__).resolve().parent
 
 RECORDS = [["extensions.py", "check"], ["program.py", "check"], ["speakers.py", "check"]]
-BUILD = [["program.py", "build"], ["extensions.py", "build"], ["speakers.py", "build"], ["stickers.py", "build"], ["places.py", "build"],
+BUILD = [["goat_atlas.py", "build"], ["program.py", "build"], ["extensions.py", "build"], ["speakers.py", "build"], ["stickers.py", "build"], ["places.py", "build"],
          ["home.py", "build"], ["agents.py", "build"], ["images.py", "build"], ["frame.py", "apply"],
          ["nav.py", "apply"], ["meta.py", "apply"]]
-CHECK = [["program.py", "build", "--check"], ["extensions.py", "build", "--check"], ["speakers.py", "build", "--check"],
+CHECK = [["goat_atlas.py", "check"], ["program.py", "build", "--check"], ["extensions.py", "build", "--check"], ["speakers.py", "build", "--check"],
          ["stickers.py", "build", "--check"], ["places.py", "build", "--check"], ["home.py", "build", "--check"], ["agents.py", "build", "--check"],
          ["images.py", "check"], ["frame.py", "check"], ["nav.py", "check"], ["meta.py", "check"],
          ["site_lint.py", "check"]]

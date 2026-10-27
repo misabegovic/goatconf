@@ -31,3 +31,8 @@ entities.json
 .impeccable/review/
 .impeccable/build/
 .impeccable/config.local.json
+
+# The goat's painted masters stay on the organiser's machine: generated images are kept out of this
+# public repository, except the web images built from them. Only their manifest is tracked.
+/art/goat/*
+!/art/goat/manifest.json
