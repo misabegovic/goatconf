@@ -132,7 +132,7 @@ def post(w: int, h: int, title: str, line: str, square: bool) -> str:
 {seal(340, "right:72px; top:50%; transform:translateY(-50%)")}""")
 
 
-def goats_post(w: int, h: int, square: bool) -> str:
+def goats_post(w: int, h: int, square: bool, crowd_in: bool = True) -> str:
     """The painted goats, as a crowd: the post that shows them off (ADR goat-mascot)."""
     def g(pose, width, style):
         return f'<img src="{(goat_atlas.ART / (pose + ".webp")).as_uri()}" style="position:absolute; width:{width}px; {style}">'
@@ -150,7 +150,7 @@ def goats_post(w: int, h: int, square: bool) -> str:
   <div class="word" style="font-size:118px">The goats<br>are in</div>
   <div class="sub" style="font-size:38px; margin-top:26px">goatconf.com</div>
 </div>
-{seal(190, "right:84px; top:84px")}{crowd}""")
+{seal(190, "right:84px; top:84px")}{crowd if crowd_in else ""}""")
     crowd = (g("sticker-salt-lakes", 230, "left:470px; bottom:250px")
              + g("sticker-hike", 190, "left:700px; bottom:262px")
              + g("sticker-pannonian-sea", 210, "right:40px; bottom:252px")
@@ -163,7 +163,7 @@ def goats_post(w: int, h: int, square: bool) -> str:
   <div class="word" style="font-size:104px">The goats<br>are in</div>
   <div class="sub" style="font-size:32px; margin-top:24px">goatconf.com</div>
 </div>
-{seal(170, "left:72px; bottom:64px")}{crowd}""")
+{seal(170, "left:72px; bottom:64px")}{crowd if crowd_in else ""}""")
 
 
 POSTS = {
@@ -403,8 +403,8 @@ def jobs() -> dict[str, tuple[int, int, str]]:
   <div class="sub" style="font-size:42px; margin-top:24px">{FACTS}</div>
 </div>""")),
     }
-    out["post-goats-are-in-square.png"] = (1080, 1080, goats_post(1080, 1080, True))
-    out["post-goats-are-in-wide.png"] = (1200, 675, goats_post(1200, 675, False))
+    # The goats post's cards, still and animated, are tools/goats_post.py's: it lays the goats out on goats_post's
+    # lettering and seal.
     for key, (title, line) in POSTS.items():
         out[f"post-{key}-square.png"] = (1080, 1080, post(1080, 1080, title, line, True))
         out[f"post-{key}-wide.png"] = (1200, 675, post(1200, 675, title.replace("<br>", " "), line, False))
