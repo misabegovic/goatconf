@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-27**: **A guide to Tuzla.** "Introduction to Tuzla", five A4 pages after the EuRuKo 2024 Sarajevo guide, every fact from the brain's sources and every photo Grad Tuzla's, to download from the travel page; `tools/tuzla_guide.py` renders it ([Tuzla for GoatConf](org/tuzla.md); source: sources/conversations/2026-10-27--org--tuzla-guide.md).
 - **2026-10-27**: **The mascot's new look, from an illustrator.** After three rounds of drawn concepts and a generator's styles, the organiser chose a watercolour storybook goat as the everyday goat, the other styles as its multiverse, to be drawn by an illustrator so GoatConf owns it; today's goat stays until then ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-27--org--mascot-watercolour.md).
 - **2026-10-27**: **The mascot in the design notes.** DESIGN.md now describes the goat mascot, the stickers and the peek rise, and the ghost goat is gone from it ([the goat mascot](org/adrs/goat-mascot.md); [the impeccable ADR](org/adrs/design-with-impeccable.md); source: sources/conversations/2026-10-27--org--goat-mascot-approved.md).
 - **2026-10-27**: **The goat everywhere.** The Make it yours page's open slots peek too, and a venue or speaker with no photo shows the goat sitting; the faint line goat is gone ([the ADR](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-27--org--goat-everywhere.md).

@@ -2,9 +2,10 @@
 title: "Tuzla for GoatConf: getting there, staying, costs, June, the lakes, the rules"
 kind: reference
 status: living
-updated: 2026-10-13
+updated: 2026-10-27
 confidence: medium
 sources:
+  - sources/conversations/2026-10-27--org--tuzla-guide.md
   - sources/conversations/2026-10-14--org--car-rental-companies.md
   - sources/conversations/2026-10-14--org--car-rentals.md
   - sources/web/travel/car-rental-2026-10-14.md
@@ -515,3 +516,6 @@ Driving times from Tuzla to each are (unknown, needs source).
   when their data is collected, who the controller is, the legal basis,
   the purpose, how long it is kept, and their rights (Article 15, as
   summarised by the research helper).
+
+## Related
+- **The visitor guide.** "Introduction to Tuzla", five A4 pages drawn from this page's sources, is a download on the travel page, rendered by `tools/tuzla_guide.py` (source: sources/conversations/2026-10-27--org--tuzla-guide.md).

@@ -2486,9 +2486,10 @@
       "title": "Tuzla for GoatConf: getting there, staying, costs, June, the lakes, the rules",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-13",
+      "updated": "2026-10-27",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-10-27--org--tuzla-guide.md",
         "sources/conversations/2026-10-14--org--car-rental-companies.md",
         "sources/conversations/2026-10-14--org--car-rentals.md",
         "sources/web/travel/car-rental-2026-10-14.md",
@@ -2596,7 +2597,7 @@
         "sources/web/tuzla/cvent-hotel-tuzla-address.md",
         "sources/web/tuzla/tztz-atelier-ismet-mujezinovic.md"
       ],
-      "tokens": 7785,
+      "tokens": 7853,
       "consumed_by": [
         "org/tuzla-images.md",
         "org/tuzla/history-and-old-town.md",
