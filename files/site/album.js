@@ -14,7 +14,7 @@
 // the middle of the screen, in that slot's role or as that speaker's own goat, or sits on a Tuzla or food
 // photo as that photo's painted scene, and hops there as you scroll or
 // point. While it waits it bobs, wiggles, stretches, turns its head to look around or plays peek-a-boo, and it
-// ducks behind the edge when the pointer comes close. A turn swaps in the goat's painted head turned left or
+// looks towards the pointer when it comes close. Tapped or clicked, it plays the next of its tricks. A turn swaps in the goat's painted head turned left or
 // right, from a second sheet loaded after the page; its body stays the painted goat's own. It moves by transform only, and appears once its sprite sheet
 // has loaded, so nothing waits on the network mid-move. On Save-Data or a 2G connection there is no goat;
 // without the script every slot keeps its own goat; with reduced motion the goat simply appears where it is.
@@ -38,7 +38,7 @@
   stage.className = "goat-one__stage";
   stage.setAttribute("aria-hidden", "true");
   stage.style.visibility = "hidden";
-  let goat = null, current = null, wanted = null, busy = false, idling = false, down = true, shy = false, facing = "front";
+  let goat = null, current = null, wanted = null, busy = false, idling = false, down = true, facing = "front";
   const turnSheets = new Set();
 
   // Every transform names the same functions in the same order, so a turn passes through a thin goat
@@ -98,8 +98,10 @@
     const tick = () => (Date.now() >= end || stop() ? r() : setTimeout(tick, 50));
     tick();
   });
-  // Whether the goat is wanted at another slot than the one it is on.
+  // Whether the goat is wanted at another slot than the one it is on, or for a trick.
   const called = () => !!wanted && wanted !== current;
+  let asked = false;
+  const interrupted = () => called() || asked;
   // The goat lives inside the slot it stands on, placed as the slot's own goat would be, so it moves with
   // the slot whatever the page does: fonts and images arriving, filters, a resize, a tilted card.
   const settle = (s) => {
@@ -208,7 +210,6 @@
     if (busy) { if (idling) { goat.getAnimations().forEach((a) => a.finish()); face("front"); } return; }
     if (s === current) return;
     busy = true;
-    shy = false;
     const from = current;
     current = s;
     next(s);
@@ -238,8 +239,11 @@
     }
     catchUp();
   };
-  // Where it was last asked to go, by a scroll or a pointer, while it was busy.
-  const catchUp = () => { if (wanted && wanted !== current) go(wanted); };
+  // A trick asked for while it was busy comes first, then where it was last asked to go, by a scroll or a pointer.
+  const catchUp = () => {
+    if (asked && !down) perform();
+    else if (wanted && wanted !== current) go(wanted);
+  };
   let tick = 0;
   const schedule = () => { cancelAnimationFrame(tick); tick = requestAnimationFrame(() => go(pick())); };
 
@@ -257,38 +261,107 @@
       if (!canTurn()) return moves.bob();
       const [one, two] = Math.random() < 0.5 ? ["left", "right"] : ["right", "left"];
       for (const [dir, pause] of [[one, 900 + Math.random() * 500], ["front", 260], [two, 900 + Math.random() * 500]]) {
-        if (called()) break;
+        if (interrupted()) break;
         await turnTo(dir);
-        await wait(pause, called);
+        await wait(pause, interrupted);
       }
       await turnTo("front");
     },
-    peekaboo: () => duck().then(() => wait(700, called)).then(() => (shy ? null : pop())),
+    peekaboo: () => duck().then(() => wait(700, interrupted)).then(pop),
   };
   const idle = async () => {
-    if (!busy && !shy && !down && goat) {
+    if (!busy && !down && goat) {
       busy = idling = true;
       const names = Object.keys(moves);
       try { await moves[names[Math.floor(Math.random() * names.length)]](); } catch (e) { face("front"); goat.style.transform = REST; }
       busy = idling = false;
       catchUp();
     }
-    setTimeout(idle, 4000 + Math.random() * 4000);
+    setTimeout(idle, 3000 + Math.random() * 3000);
+  };
+
+  // Its tricks, one per tap or click, in turn: a jump for joy, a somersault, a shake of its head and a "Meee!".
+  // A goat peeking over a slot is painted only down to the slot's edge, so it never rises far enough to show
+  // where the painting ends: it bounces instead of jumping, and ducks and pops up instead of a somersault.
+  // With reduced motion it only says "Meee!".
+  const say = document.createElement("b");
+  say.className = "goat-say";
+  say.textContent = "Meee!";
+  stage.append(say);
+  const meee = () => play(say, still ? [{ opacity: 0 }, { opacity: 1, offset: 0.1 }, { opacity: 1, offset: 0.85 }, { opacity: 0 }] : [
+    { opacity: 0, transform: "scale(0.4)", easing: "cubic-bezier(.2,.8,.3,1.3)" },
+    { opacity: 1, transform: "scale(1)", offset: 0.15 }, { opacity: 1, transform: "scale(1)", offset: 0.85 },
+    { opacity: 0, transform: "scale(0.9)" },
+  ], { duration: 1500 });
+  const jump = (up) => play(goat, [
+    { transform: REST, easing: "cubic-bezier(.4,0,.6,1)" },
+    { transform: T("6%", 1.1, 0.86), offset: 0.18, easing: "cubic-bezier(.2,.6,.4,1)" },
+    { transform: T(up, 0.92, 1.1, -5), offset: 0.48, easing: "cubic-bezier(.5,0,.8,.4)" },
+    { transform: T("4%", 1.1, 0.86), offset: 0.78, easing: "ease-out" },
+    { transform: T("-2%", 0.97, 1.03), offset: 0.9 },
+    { transform: REST },
+  ], { duration: 760 });
+  // It crouches, springs up, flips once round its middle in the air and lands with a squash. The picture
+  // turns over but is never mirrored.
+  const somersault = () => {
+    goat.style.transformOrigin = "50% 50%";
+    return play(goat, [
+      { transform: REST, easing: "cubic-bezier(.4,0,.6,1)" },
+      { transform: T("6%", 1.08, 0.88), offset: 0.15, easing: "cubic-bezier(.2,.6,.4,1)" },
+      { transform: T("-42%", 1, 1, -180), offset: 0.5, easing: "cubic-bezier(.4,0,.8,.6)" },
+      { transform: T("-6%", 1, 1, -350), offset: 0.76, easing: "ease-out" },
+      { transform: T("3%", 1.08, 0.9, -360), offset: 0.88, easing: "ease-out" },
+      { transform: T("0%", 1, 1, -360) },
+    ], { duration: 1000 }).finally(() => { goat.style.transformOrigin = ""; goat.style.transform = REST; });
+  };
+  const tricks = [
+    () => (onPhoto() ? jump("-45%") : jump("-9%")),
+    () => (onPhoto() ? somersault() : duck().then(() => wait(250)).then(pop)),
+    // A goat without its turned heads wiggles instead.
+    async () => {
+      if (!canTurn()) return moves.wiggle();
+      for (const dir of ["left", "right", "left", "right"]) { face(dir); await wait(140); }
+      face("front");
+    },
+    () => Promise.all([moves.stretch(), meee()]),
+  ];
+  let trick = 0;
+  const perform = async () => {
+    asked = false;
+    busy = true;
+    try { await (still ? meee() : tricks[trick++ % tricks.length]()); } catch (e) { face("front"); goat.style.transform = REST; }
+    busy = false;
+    catchUp();
+  };
+  // A tap on the goat is for the goat: on a speaker's card it plays a trick instead of opening the page.
+  const tapped = (e) => {
+    if (!goat || !goat.contains(e.target)) return;
+    e.preventDefault();
+    e.stopPropagation();
+    if (down) return;
+    asked = true;
+    if (!busy) return perform();
+    // A move while it waits gives way, and the trick follows; a hop or a pop lands first.
+    if (idling) { goat.getAnimations().forEach((a) => a.finish()); face("front"); }
   };
 
   const start = () => {
     stage.style.visibility = "";
     addEventListener("scroll", schedule, { passive: true });
     slots.forEach((s) => s.slot.addEventListener("pointerenter", () => go(s)));
+    stage.addEventListener("click", tapped);
     go(pick());
     if (still) return;
     setTimeout(idle, 3000);
+    // It looks towards a mouse pointer that comes close, and back at you when the pointer is over it or gone.
     addEventListener("pointermove", (e) => {
-      if (busy || !goat || !current) return;
+      if (e.pointerType !== "mouse" || busy || down || !canTurn()) return;
       const r = goat.getBoundingClientRect();
-      const near = Math.hypot(e.clientX - (r.left + r.width / 2), e.clientY - (r.top + r.height * 0.4)) < 110;
-      if (near && !shy && !down) { shy = true; busy = true; duck().then(() => { busy = false; }); }
-      if (!near && shy && down) { shy = false; busy = true; setTimeout(() => pop().then(() => { busy = false; catchUp(); }), 350); }
+      const x = e.clientX - (r.left + r.width / 2), y = e.clientY - (r.top + r.height * 0.4);
+      const dir = Math.hypot(x, y) > 260 || Math.abs(x) < r.width * 0.35 ? "front" : x < 0 ? "left" : "right";
+      if (dir === facing) return;
+      busy = true;
+      turnTo(dir).then(() => { busy = false; catchUp(); }, () => { busy = false; });
     }, { passive: true });
   };
   // The sheets this page's goats are drawn from, decoded before the goat appears; if one fails, every slot
