@@ -10,8 +10,9 @@
             or part is not current, or a page's HTML is broken
             (tools/site_lint.py)
 
-The share cards and the brand files are not part of it: they need Chrome
-(tools/shareables.py, tools/brand.py).
+The share cards, the brand files and the sticker images are not part of it:
+they need Chrome (tools/shareables.py, tools/brand.py, tools/stickers.py
+render); the check does fail if the sticker pack is missing a sticker.
 
 Usage: python3 tools/site.py <build|check>
 (ADR wiki/org/adrs/one-page-frame-and-one-site-build.md)
@@ -26,11 +27,11 @@ from pathlib import Path
 TOOLS = Path(__file__).resolve().parent
 
 RECORDS = [["extensions.py", "check"], ["program.py", "check"], ["speakers.py", "check"]]
-BUILD = [["program.py", "build"], ["extensions.py", "build"], ["speakers.py", "build"], ["places.py", "build"],
+BUILD = [["program.py", "build"], ["extensions.py", "build"], ["speakers.py", "build"], ["stickers.py", "build"], ["places.py", "build"],
          ["home.py", "build"], ["agents.py", "build"], ["images.py", "build"], ["frame.py", "apply"],
          ["nav.py", "apply"], ["meta.py", "apply"]]
 CHECK = [["program.py", "build", "--check"], ["extensions.py", "build", "--check"], ["speakers.py", "build", "--check"],
-         ["places.py", "build", "--check"], ["home.py", "build", "--check"], ["agents.py", "build", "--check"],
+         ["stickers.py", "build", "--check"], ["places.py", "build", "--check"], ["home.py", "build", "--check"], ["agents.py", "build", "--check"],
          ["images.py", "check"], ["frame.py", "check"], ["nav.py", "check"], ["meta.py", "check"],
          ["site_lint.py", "check"]]
 

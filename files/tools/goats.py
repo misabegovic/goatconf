@@ -172,6 +172,51 @@ def peek(traits: dict) -> str:
             f'<rect x="56" y="152" width="24" height="13" rx="6.5" fill="{INK}"/><rect x="120" y="152" width="24" height="13" rx="6.5" fill="{INK}"/></svg>')
 
 
+# The goat's roles from the EuRuKo 2024 goat multiverse, drawn whole: the
+# layers on its head, and what it wears and holds.
+_FES = (f'<path d="M84 50l4-22h24l4 22z" fill="#d7263d" {LINE}/>'
+        f'<path d="M100 28c6 2 9 9 8 18" fill="none" stroke="{INK}" stroke-width="3" stroke-linecap="round"/>')
+_VEST = (f'<path d="M64 170c6-14 18-22 26-24l-4 48H62zM136 170c-6-14-18-22-26-24l4 48h24z" fill="#d7263d" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+         f'<path d="M70 176l8 4M70 186l8 4M130 176l-8 4M130 186l-8 4" stroke="{HORN}" stroke-width="2.5" stroke-linecap="round"/>')
+_FILDZAN = (f'<path d="M128 150h22l-3 16a8 8 0 0 1-8 6 8 8 0 0 1-8-6z" fill="#fff" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+            f'<path d="M131 156h16" stroke="#2f6fd6" stroke-width="3"/>'
+            f'<path d="M136 144c-3-4 3-6 0-10M143 144c-3-4 3-6 0-10" fill="none" stroke="#9aa9c7" stroke-width="2.5" stroke-linecap="round"/>'
+            f'<rect x="118" y="162" width="14" height="10" rx="5" fill="{INK}"/>')
+_TOQUE = (f'<path d="M84 54c-10-1-12-14-2-17 1-10 13-12 18-5 5-7 17-5 18 5 10 3 8 16-2 17z" fill="#fff" {LINE}/>'
+          f'<path d="M85 54h30v-5H85z" fill="#fff" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
+_PLATE = (f'<ellipse cx="100" cy="182" rx="40" ry="11" fill="#fff" {LINE}/>'
+          f'<g fill="#9b5a35" stroke="{INK}" stroke-width="2.5"><rect x="74" y="170" width="22" height="9" rx="4.5"/><rect x="92" y="166" width="22" height="9" rx="4.5"/><rect x="104" y="172" width="22" height="9" rx="4.5"/></g>')
+_TRICORN = (f'<path d="M56 60C66 22 134 22 144 60c-12-8-30-8-44-2-14-6-32-6-44 2z" fill="#0b3d91" {LINE}/>'
+            f'<path d="M62 55c12-7 30-7 38-1 8-6 26-6 38 1" fill="none" stroke="{HORN}" stroke-width="3" stroke-linecap="round"/>'
+            f'<path d="M60 74l78 24" stroke="{INK}" stroke-width="3"/><ellipse cx="118" cy="91" rx="13" ry="12" fill="{INK}"/>')
+_CRYSTAL = (f'<path d="M140 150l10-6 10 6v12l-10 6-10-6z" fill="#fff" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+            f'<path d="M150 144v24M140 150l20 12" stroke="#cfe0f7" stroke-width="2"/>'
+            f'<rect x="130" y="162" width="14" height="10" rx="5" fill="{INK}"/>')
+_WAVES = f'<path d="M150 120q8 8 0 16M158 114q13 14 0 28" fill="none" stroke="{HORN}" stroke-width="3" stroke-linecap="round"/>'
+ROLE_NAMES = {"goat": "The goat", "speaker": "The speaker", "host": "The host", "coder": "The coder",
+              "cook": "The cook", "pirate": "The Pannonian pirate", "hidden": "The hidden goat"}
+
+
+def role(name: str) -> str:
+    """The goat in one of its roles, whole: the viewBox is 0 18 200 186."""
+    svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 18 200 186">'
+    if name == "hidden":
+        # The hidden goat, peeking from the doorway of a little stone house.
+        face = HORNS + EARS + HEAD + CURL + BLUSHES + EYES
+        return (svg + '<defs><clipPath id="door"><path d="M70 204v-46a30 30 0 0 1 60 0v46z"/></clipPath></defs>'
+                f'<path d="M34 204V128l66-40 66 40v76z" fill="#e8d9b5" {LINE}/>'
+                f'<path d="M24 134l76-48 76 48" fill="none" stroke="{INK}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>'
+                f'<path d="M70 204v-46a30 30 0 0 1 60 0v46z" fill="{INK}"/>'
+                f'<g clip-path="url(#door)"><g transform="translate(50 128) scale(.5)">{face}</g></g>'
+                f'<path d="M70 204v-46a30 30 0 0 1 60 0v46" fill="none" stroke="{INK}" stroke-width="3.5"/>'
+                f'<path d="M100 104v8M96 108h8" stroke="{INK}" stroke-width="3" stroke-linecap="round"/></svg>')
+    traits = {"glasses": "round"} if name == "coder" else {}
+    torso = {"host": _top("shirt", "#f3ead8") + _VEST, "pirate": _top("tee", "#1f3a64")}.get(name, f'<path d="{TORSO}" fill="{COAT}" {LINE}/>')
+    hat = {"host": _FES, "cook": _TOQUE, "pirate": _TRICORN}.get(name, "")
+    held = {"speaker": _prop("mic") + _WAVES, "host": _FILDZAN, "coder": _prop("laptop"), "cook": _PLATE, "pirate": _CRYSTAL}.get(name, "")
+    return svg + BODY + torso + LEGS + head(traits) + hat + held + "</svg>"
+
+
 # What a speaker record's `goat:` may say, each a choice from the drawn parts.
 CHOICES = {"hair": ("none", "short", "wavy", "side", "long"), "beard": ("", "full", "short", "goatee", "long", "stubble"),
            "glasses": ("", "rect", "thin", "round", "grey", "sun"), "top": ("tee", "hoodie", "sweater", "shirt"),
