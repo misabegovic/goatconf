@@ -11,6 +11,7 @@ sources:
   - sources/conversations/2026-10-27--org--see-you-goat-on-phones.md
   - sources/conversations/2026-10-27--org--goat-tricks.md
   - sources/conversations/2026-10-27--org--goat-tap-polish.md
+  - sources/conversations/2026-10-27--org--band-goats-on-phones.md
   - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
@@ -285,3 +286,8 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   "Confirmed speaker" cards stay as they are. The head shake turns the head
   at the pace of the goat looking around, and taps on the goat neither
   select the text around it nor flash its card (source: sources/conversations/2026-10-27--org--goat-tap-polish.md).
+- **2026-10-27, goats on bands.** A whole goat on a band sits in front of
+  it, its feet on the page just under the yellow line, sized to the band so
+  its head stays inside the page, which clips anything above its top edge.
+  On a phone a band's heading keeps room on the right for the band's goat,
+  so the goat never covers the heading (source: sources/conversations/2026-10-27--org--band-goats-on-phones.md).
