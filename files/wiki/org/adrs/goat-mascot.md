@@ -169,6 +169,10 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   venue or a speaker with no photo shows the whole goat sitting (`#goat-sit`
   in the sprite). The faint line goat and its `.ghost` styles are gone
   (source: sources/conversations/2026-10-27--org--goat-everywhere.md).
+- **2026-10-27, step three: the design notes.** DESIGN.md describes the
+  goat mascot, the stickers and the peek rise, and drops the ghost goat;
+  `.impeccable/design.json` matches, and the impeccable ADR has an
+  amendment (source: sources/conversations/2026-10-27--org--goat-mascot-approved.md).
 
 ## Related
 

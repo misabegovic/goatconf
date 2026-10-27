@@ -236,7 +236,7 @@ A saturated album blue in three depths, white and a pale printed blue for the pa
 ### Neutral
 - **Page White** (page): album pages, the right page of the spread, the prose page, and every sticker's die-cut border.
 - **Page Print** (page-print): the flat fill of an empty printed slot, the default tag, and the image placeholder under a loading photo.
-- **Slot Line** (slot-line): album blue at 42%. Dashed slot outlines, the ring of a printed number, the ghost goat, the name line in a slot and the dotted leaders of the price list.
+- **Slot Line** (slot-line): album blue at 42%. Dashed slot outlines, the ring of a printed number, the name line in a slot and the dotted leaders of the price list.
 - **Album Ink** (ink): body text on white pages.
 - **Soft Ink** (ink-soft): slot explanations and "last checked" notes on white.
 - **Pale Album** (album-soft): secondary text on the blues (cover sub-line, fact-sticker explanations, back cover, inner-page lede).
@@ -290,7 +290,7 @@ Depth is physical but quiet: paper pages cast a short soft drop onto the blue, s
 - **Goat lift** (`filter: drop-shadow(0 0.7rem 0.6rem rgb(0 0 0 / 0.45))`): under the die-cut goat, after its white edge.
 
 ### Named Rules
-**The Printed Is Flat Rule.** An empty slot, a printed number, the ghost goat and the stamp have no shadow. Only things stuck onto the page lift.
+**The Printed Is Flat Rule.** An empty slot, a printed number and the stamp have no shadow. Only things stuck onto the page lift.
 
 **The Matte Rule.** Stickers are matte: no sheen, no gradient, so photos keep their true colours and a fact sticker reads as flat printed blue. Their shadows stay short and light, so they sit on the page rather than float above it (organiser's choice, 2026-10-26, "not too glossy").
 
@@ -310,7 +310,7 @@ Matte vinyl stuck onto the page: white die-cut border, sticker lift, a small til
 - **Tag:** a small pill under a food sticker's caption: page-print by default, the vegan tint for vegan dishes.
 
 ### Printed Slot
-The empty place in the album: page-print fill, a 2px dashed slot-line outline, 0.6rem corners, at least 9rem tall. It carries a printed number at the top, a faint ghost goat in the top-right corner (slot-line, 70%), a blue lettered title and a soft-ink explanation. Open slots add the red "Yours?" stamp at the bottom right; slots for things a host will add carry a printed name line instead of an explanation.
+The empty place in the album: page-print fill, a 2px dashed slot-line outline, 0.6rem corners, at least 9rem tall. It carries the goat mascot peeking over its top edge, a printed number at the top, a blue lettered title and a soft-ink explanation. Open slots add the red "Yours?" stamp at the bottom right; slots for things a host will add carry a printed name line instead of an explanation.
 
 ### Numbered Sequence
 One run of numbers through the whole album, so a reader can see the gaps. On a stuck sticker the number is a yellow pill sticker overlapping the top-left corner with its own lift; on an empty slot the same number is printed in place: no fill, album-blue figure, a 2px slot-line ring.
@@ -323,6 +323,12 @@ The opening: one rounded frame holding the cover-blue left page (the seal beside
 
 ### Die-cut Goat
 The one goat mark as a sticker: night-blue line drawing with a yellow fill, a 3px white edge cut around the silhouette, the goat lift, set at -6 degrees. It appears on the cover and, larger, on the shiny page. The mini crest (a yellow disc with the goat) marks the top bar, the back cover and the inner-page home link.
+
+### Goat Mascot
+A second goat, kept apart from the mark: a flat, cute goat drawn in code (tools/goats.py) with large eyes, a cream coat, an ink (album-night) outline, yellow horns curled back and soft blush. It comes in roles from the EuRuKo 2024 goat multiverse, each a small layer on the same goat: the goat, the speaker, the host (fes, vest, fildžan), the coder, the cook, the Pannonian pirate and the hidden goat. On an open slot it peeks over the top edge, head and front hooves only, in the role the slot's kind gets; where a speaker or a venue has no photo it sits whole. Each speaker has their own goat, drawn from their photo (hair, beard, glasses or cap, what they wear, what they hold, never a logo), peeking over their card and sitting beside their bio. It is decorative and hidden from screen readers. The seal keeps the EuRuKo 2024 goat; the mascot never replaces the mark.
+
+### Stickers
+The sticker packs (stickers.html) take the same drawings: the goat's roles, the speakers' goats with their names on a blue label, the mark and a few words lettered in Bricolage, and Tuzla things, each with a white die-cut edge and a soft lift on a transparent 512-pixel square, in a zip and on an A4 print sheet.
 
 ### Status Sticker
 The registration status: a yellow pill-cornered sticker (0.45rem) with a night-blue dot and night-blue lettering. It states what is true now, never a date that is not confirmed.
@@ -345,6 +351,8 @@ Every inner page opens on a cover-blue strip: the crest home link, the sign in h
 ### Motion
 **Stickers stay still.** Stickers are stuck in from the first paint and do not animate as they come into view; the organiser found the peel and settle annoying (2026-10-27).
 
+**Peek rise.** When an open slot or a speaker card is hovered or focused, its goat rises 0.45rem over 220ms on the same curve and settles back; reduced motion keeps it where it is. Nothing else about the mascot moves.
+
 **Goat wiggle.** On hover the die-cut goat turns from -6 to 4 degrees and grows 5% over 500ms on the same curve; reduced motion holds it still.
 
 ## Do's and Don'ts
@@ -360,9 +368,9 @@ Every inner page opens on a cover-blue strip: the crest home link, the sign in h
 ### Don't:
 - **Don't** use red for anything but the "Yours?" stamp.
 - **Don't** put a fact on a sticker before it is true: an unconfirmed date stays "June 2027" on the fact sticker and an empty slot for the exact days.
-- **Don't** give printed things (slots, printed numbers, ghost goats, stamps) a lift, or stuck stickers a dashed outline or a gloss.
+- **Don't** give printed things (slots, printed numbers, stamps) a lift, or stuck stickers a dashed outline or a gloss.
 - **Don't** write self-aware copy about the album, the design or the site itself; the page talks about the conference, Tuzla and the visitor.
-- **Don't** add small labels above headings, glyph icons, or a second goat drawing; the band, the numbers and the one goat mark carry the page.
+- **Don't** add small labels above headings, glyph icons, or goat drawings beyond the mark and the mascot; the band, the numbers, the mark and the mascot carry the page.
 - **Don't** let the goat cover a fact, stand in for text a screen reader needs, or appear on the code of conduct or budget content as a joke.
 
 ### Sanctioned detector exceptions
