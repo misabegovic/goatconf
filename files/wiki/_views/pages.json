@@ -556,6 +556,25 @@
       ]
     },
     {
+      "path": "org/adrs/sticker-packs.md",
+      "title": "GoatConf sticker packs: one set, as transparent images, a print sheet and a Telegram pack, on a Stickers page",
+      "kind": "decision",
+      "status": "accepted",
+      "updated": "2026-10-27",
+      "confidence": "medium",
+      "depends_on": [
+        "org/prds/design-with-impeccable.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-27--org--sticker-packs.md",
+        "sources/conversations/2026-10-27--org--speaker-goats.md",
+        "sources/conversations/2026-10-27--org--goat-mascot.md",
+        "sources/web/organiser/euruko-2024-figma-file-2026-10-27.md",
+        "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md"
+      ],
+      "tokens": 1439
+    },
+    {
       "path": "org/adrs/supporters-and-hiring.md",
       "title": "Ask about open to work as an unticked Luma question, shared only for those who tick it",
       "kind": "decision",
@@ -1726,7 +1745,8 @@
       "tokens": 2646,
       "consumed_by": [
         "org/adrs/design-with-impeccable.md",
-        "org/adrs/goat-mascot.md"
+        "org/adrs/goat-mascot.md",
+        "org/adrs/sticker-packs.md"
       ]
     },
     {
