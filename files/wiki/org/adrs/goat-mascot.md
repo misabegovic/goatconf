@@ -1,0 +1,153 @@
+---
+title: "A cute goat mascot that peeks over the open slots, in roles from the EuRuKo 2024 goat multiverse"
+kind: decision
+status: accepted
+updated: 2026-10-27
+confidence: medium
+depends_on:
+  - org/prds/design-with-impeccable.md
+sources:
+  - sources/conversations/2026-10-27--org--goat-mascot-approved.md
+  - sources/conversations/2026-10-27--org--goat-mascot.md
+  - sources/conversations/2026-10-27--org--still-stickers.md
+  - sources/web/organiser/euruko-2024-figma-file-2026-10-27.md
+  - sources/web/organiser/euruko-2024-podcast-notes.md
+  - sources/web/models/enola-tech-mascot-2026-10-27.md
+  - sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md
+  - sources/web/funding/euruko-2024-why-the-goat.md
+---
+
+# A cute goat mascot that peeks over the open slots, in roles from the EuRuKo 2024 goat multiverse
+
+Proposed on 2026-10-27. The organiser asked to improve "this drawn goat on
+the site that is shown everywhere", closer to "the goat multiverse topic of
+euruko 2024", as "some sort of mascot that pops up and it's cute", like
+enola.tech's cat. Shown sketches, they chose a flat goat, a peek that rises
+on hover, and a role that matches the slot (source:
+sources/conversations/2026-10-27--org--goat-mascot.md). Accepted the same
+day: the organiser chose "Approve, start building" (source:
+sources/conversations/2026-10-27--org--goat-mascot-approved.md).
+
+## Context
+
+- **The goat on the site today is a faint line drawing.** One SVG symbol in
+  the shared page frame (`tools/frame.py`), drawn in the slot-line colour at
+  70% opacity in the corner of every open "Yours?" slot, 23 of them on the
+  home page and the Make it yours page, and as the placeholder where a
+  speaker or a venue has no photo yet. It has no face and no character.
+- **The mark is a different goat.** The seal uses the EuRuKo 2024 goat,
+  unchanged, and the brand kit is built from it; the line goat was kept "on
+  the site until the site rework" (source:
+  sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md).
+- **The goat multiverse was a 2024 theme.** The organiser's EuRuKo 2024
+  notes list "Mascot (G.O.A.T.) + goat story in Tuzla" and "Goat multiverse"
+  among the conference's themes (source:
+  sources/web/organiser/euruko-2024-podcast-notes.md). The 2024 design file
+  shows what that meant: one "Multiverse Goat" in many roles, a wall of
+  twelve (samurai, coder, painter, pirate, chef and more), trading cards
+  such as "The Panonnian Pirate", and a main mascot, a white goat in a red
+  fes and embroidered vest holding a fildžan of coffee. The goat hidden by
+  its stone house and the Pannonian pirate tie it to Tuzla's own stories,
+  the hidden goat and the salt sea (source:
+  sources/web/organiser/euruko-2024-figma-file-2026-10-27.md;
+  sources/web/funding/euruko-2024-why-the-goat.md). The 2024 goats are
+  3D-style renders on dark red, far from this site's flat blue album.
+- **The pop-up reference.** enola.tech's flat cat sits in the hero and
+  peeks over the edges of cards and panels, each on a loop that never stops
+  (source: sources/web/models/enola-tech-mascot-2026-10-27.md).
+- **The organiser does not want things moving on their own.** The same day
+  they had the cards' entrance animation removed: "becomes annoying"
+  (source: sources/conversations/2026-10-27--org--still-stickers.md).
+
+## Decision
+
+1. **One flat goat, drawn in code.** A cute goat with large eyes, a cream
+   coat, an ink outline and yellow horns curled back, in the site's own
+   colours, drawn as SVG parts (head, ears, horns, eyes, body, hooves) in the
+   frame's sprite. Roles are small layers on the same goat, so every role is
+   the same character. It replaces the line goat symbol. The seal and the
+   brand kit keep the EuRuKo 2024 goat; the mascot is not the mark.
+2. **Roles from the multiverse, matched to the slot.** The first set, from
+   the organiser's sketches: the goat; the speaker, with a microphone; the
+   host, the 2024 Bosnian goat with fes, vest and fildžan; the coder, with
+   glasses and a laptop; the cook, with a toque and ćevapi; the Pannonian
+   pirate, with a tricorn, an eye patch and a salt crystal; and the hidden
+   goat, peeking from the doorway of a little stone house. A slot names its
+   role, and one table in the tools maps the kinds of slot to roles:
+   - **Session slots** ("Your session here?", "The first speaker could be
+     you"), and the podcast and karaoke kinds: the speaker.
+   - **Event slots** ("Your event, any day", evening events, meetups): the
+     host.
+   - **Hackathons:** the coder.
+   - **Trips:** the Pannonian pirate.
+   - **"Something else?":** the hidden goat.
+   - **Everything else** (hikes, "Your logo", a speaker or venue with no
+     photo yet): the plain goat.
+3. **It peeks, and rises a little when you point.** On an open slot the
+   goat's head, horns and front hooves show over the slot's top edge, as if
+   it were behind the slot. It does not move on load or on scroll and never
+   loops. When the slot is hovered or focused, the goat rises a little,
+   about a third of a rem, over about 200ms, and settles back when you
+   leave; with reduced motion it stays where it is. On a phone, with no
+   hover, it simply sits there. Where a speaker or a venue has no photo, the
+   whole goat sits in the photo's place, still.
+4. **Decorative only.** The goat is hidden from screen readers and carries
+   no text or link of its own; the slot keeps its words and its stamp. It
+   never covers the when, the where or how to register, and it does not
+   appear on the code of conduct, keeping the rule that the goat never makes
+   it read as a joke (see [design with impeccable](design-with-impeccable.md)).
+5. **Written down where the look is written.** DESIGN.md gets a section on
+   the mascot (its parts, colours, roles, the peek and the hover rise), and
+   `.impeccable/design.json` matches it; the impeccable ADR gets an
+   amendment pointing here.
+6. **Built in small steps, each shown in the browser first.** First the goat
+   and the peek on the home page's open slots, with the roles; then the Make
+   it yours page and the photo placeholders; then the design notes. The
+   organiser sees each step next to the live site before it ships.
+
+## Alternatives
+
+- **The 2024 Bosnian goat and the multiverse renders as they are.** The
+  strongest tie to EuRuKo, and the organiser's own images, but they are
+  large 3D-style renders in another palette, heavy on a phone, and they
+  cannot be given a new role without making new images. Not chosen.
+- **A human illustrator draws the goat.** The best drawing, at a cost and a
+  wait. Left open: if an illustrator draws GoatConf's goat later, the parts
+  and the role table stay, and only the drawing changes.
+- **The goat only in a few chosen places** (the 404 page, the end of the
+  home page, empty lists), with the line goat kept in the slots. Fewer
+  surprises, less character. Not chosen.
+- **A peek on a loop, as on enola.tech, or one pop-up per page.** More life,
+  but it is the kind of movement the organiser just had removed from the
+  cards. Not chosen.
+- **Do nothing.** The line goat stays: quiet, faceless, and unrelated to the
+  goat in the seal.
+
+## Consequences
+
+- Every page's sprite grows by the goat's parts and roles, a few kilobytes
+  of inline SVG, once per page.
+- A new role means drawing one small layer and adding a line to the role
+  table; the goat itself is drawn once.
+- The faint line goat retires, along with the `.ghost` look; the open slot
+  keeps its dashed border, number and stamp.
+- The hover rise is the only motion the cards keep, and only when the
+  visitor points at a slot.
+- The shareables, the brand kit and the seal are unchanged by this decision.
+
+## Open questions
+
+- A hiker goat for hikes, and a role for the Saturday at the lakes, or the
+  plain goat until there is one.
+- Whether the mascot later appears on the 404 page, the shareable cards, or
+  the "See you in Tuzla" close.
+- Whether the cook gets a place: the food guide has no open slot today.
+
+## Related
+
+- [Design with impeccable](design-with-impeccable.md): the album look, the
+  goat everywhere and the rule for the code of conduct.
+- [One page frame and one site build](one-page-frame-and-one-site-build.md):
+  the frame module that holds the sprite.
+- sources/conversations/2026-10-27--org--goat-mascot.md
+- sources/web/organiser/euruko-2024-figma-file-2026-10-27.md
