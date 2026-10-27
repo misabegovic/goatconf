@@ -37,3 +37,7 @@ They then wrote, verbatim:
 > awesome. lets now make sure the sections Support GoatConf and Why a goat also have a goat show somewhere
 
 > also, on speaker pages, I want the speaker goat to show on each step and follow the visitor.
+
+Asked to ship, they chose:
+
+> Ship it (Recommended)
