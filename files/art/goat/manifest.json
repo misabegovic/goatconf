@@ -1,0 +1,457 @@
+{
+ "asleep": {
+  "edge": null,
+  "eyes": null,
+  "group": "base",
+  "h": 449,
+  "w": 640
+ },
+ "jumping": {
+  "edge": null,
+  "eyes": [
+   157,
+   129,
+   363,
+   256
+  ],
+  "group": "base",
+  "h": 640,
+  "w": 429
+ },
+ "peek-coder": {
+  "edge": 596,
+  "eyes": [
+   203,
+   187,
+   451,
+   330
+  ],
+  "group": "roles",
+  "h": 640,
+  "turn": {
+   "band": 506,
+   "pad": 96
+  },
+  "w": 627
+ },
+ "peek-cook": {
+  "edge": 593,
+  "eyes": [
+   161,
+   196,
+   382,
+   338
+  ],
+  "group": "roles",
+  "h": 640,
+  "turn": {
+   "band": 502,
+   "pad": 96
+  },
+  "w": 471
+ },
+ "peek-hidden": {
+  "edge": 320,
+  "eyes": [
+   209,
+   196,
+   446,
+   241
+  ],
+  "group": "roles",
+  "h": 366,
+  "turn": {
+   "band": 429,
+   "pad": 93
+  },
+  "w": 621
+ },
+ "peek-host": {
+  "edge": 616,
+  "eyes": [
+   199,
+   195,
+   491,
+   361
+  ],
+  "group": "roles",
+  "h": 640,
+  "turn": {
+   "band": 476,
+   "pad": 0
+  },
+  "w": 617
+ },
+ "peek-pirate": {
+  "edge": 600,
+  "eyes": [
+   103,
+   230,
+   312,
+   400
+  ],
+  "group": "roles",
+  "h": 640,
+  "turn": {
+   "band": 522,
+   "pad": 96
+  },
+  "w": 605
+ },
+ "peek-speaker": {
+  "edge": 572,
+  "eyes": [
+   194,
+   177,
+   446,
+   328
+  ],
+  "group": "roles",
+  "h": 640,
+  "turn": {
+   "band": 506,
+   "pad": 96
+  },
+  "w": 568
+ },
+ "peeking": {
+  "edge": 470,
+  "eyes": [
+   196,
+   214,
+   508,
+   370
+  ],
+  "group": "base",
+  "h": 522,
+  "turn": {
+   "band": 569,
+   "pad": 96
+  },
+  "w": 640
+ },
+ "sitting": {
+  "edge": null,
+  "eyes": [
+   136,
+   166,
+   370,
+   292
+  ],
+  "group": "base",
+  "h": 640,
+  "w": 464
+ },
+ "speaker-amar-mahmutbegovic": {
+  "edge": 565,
+  "eyes": [
+   152,
+   133,
+   349,
+   269
+  ],
+  "group": "speakers",
+  "h": 640,
+  "turn": {
+   "band": 516,
+   "pad": 96
+  },
+  "w": 441
+ },
+ "speaker-amar-mahmutbegovic-sitting": {
+  "edge": null,
+  "eyes": null,
+  "group": "speakers-sitting",
+  "h": 640,
+  "w": 441
+ },
+ "speaker-carmine-paolino": {
+  "edge": 564,
+  "eyes": [
+   190,
+   210,
+   430,
+   326
+  ],
+  "group": "speakers",
+  "h": 640,
+  "turn": {
+   "band": 561,
+   "pad": 96
+  },
+  "w": 549
+ },
+ "speaker-carmine-paolino-sitting": {
+  "edge": null,
+  "eyes": null,
+  "group": "speakers-sitting",
+  "h": 640,
+  "w": 470
+ },
+ "speaker-christoph-lipautz": {
+  "edge": 558,
+  "eyes": [
+   146,
+   143,
+   390,
+   273
+  ],
+  "group": "speakers",
+  "h": 640,
+  "w": 450
+ },
+ "speaker-christoph-lipautz-sitting": {
+  "edge": null,
+  "eyes": null,
+  "group": "speakers-sitting",
+  "h": 640,
+  "w": 449
+ },
+ "speaker-cristian-planas": {
+  "edge": 562,
+  "eyes": [
+   154,
+   134,
+   356,
+   278
+  ],
+  "group": "speakers",
+  "h": 640,
+  "turn": {
+   "band": 511,
+   "pad": 96
+  },
+  "w": 445
+ },
+ "speaker-cristian-planas-sitting": {
+  "edge": null,
+  "eyes": null,
+  "group": "speakers-sitting",
+  "h": 640,
+  "w": 446
+ },
+ "speaker-dejan-menges": {
+  "edge": 564,
+  "eyes": [
+   175,
+   178,
+   421,
+   338
+  ],
+  "group": "speakers",
+  "h": 640,
+  "turn": {
+   "band": 546,
+   "pad": 96
+  },
+  "w": 541
+ },
+ "speaker-dejan-menges-sitting": {
+  "edge": null,
+  "eyes": null,
+  "group": "speakers-sitting",
+  "h": 640,
+  "w": 468
+ },
+ "speaker-paul-campbell": {
+  "edge": 563,
+  "eyes": [
+   170,
+   178,
+   422,
+   342
+  ],
+  "group": "speakers",
+  "h": 640,
+  "turn": {
+   "band": 560,
+   "pad": 96
+  },
+  "w": 541
+ },
+ "speaker-paul-campbell-sitting": {
+  "edge": null,
+  "eyes": null,
+  "group": "speakers-sitting",
+  "h": 640,
+  "w": 467
+ },
+ "speaker-predrag-radenkovic": {
+  "edge": 564,
+  "eyes": [
+   154,
+   142,
+   353,
+   278
+  ],
+  "group": "speakers",
+  "h": 640,
+  "w": 441
+ },
+ "speaker-predrag-radenkovic-sitting": {
+  "edge": null,
+  "eyes": null,
+  "group": "speakers-sitting",
+  "h": 640,
+  "w": 441
+ },
+ "speaker-roy-tomeij": {
+  "edge": 540,
+  "eyes": [
+   171,
+   174,
+   407,
+   318
+  ],
+  "group": "speakers",
+  "h": 640,
+  "turn": {
+   "band": 545,
+   "pad": 96
+  },
+  "w": 521
+ },
+ "speaker-roy-tomeij-sitting": {
+  "edge": null,
+  "eyes": null,
+  "group": "speakers-sitting",
+  "h": 640,
+  "w": 468
+ },
+ "standing": {
+  "edge": null,
+  "eyes": [
+   301,
+   156,
+   417,
+   259
+  ],
+  "group": "base",
+  "h": 640,
+  "w": 529
+ },
+ "sticker-beach": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 574
+ },
+ "sticker-burek": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 446
+ },
+ "sticker-cevapi": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 514
+ },
+ "sticker-coder": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 543
+ },
+ "sticker-cook": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 421
+ },
+ "sticker-fildzan": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 507
+ },
+ "sticker-goat": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 482
+ },
+ "sticker-goat-statue": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 412
+ },
+ "sticker-hidden": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 493
+ },
+ "sticker-hike": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 513
+ },
+ "sticker-host": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 494
+ },
+ "sticker-pannonian-sea": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 514
+ },
+ "sticker-pirate": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 447
+ },
+ "sticker-salt": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 502
+ },
+ "sticker-salt-lakes": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 619
+ },
+ "sticker-speaker": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 511
+ },
+ "waving": {
+  "edge": null,
+  "eyes": [
+   142,
+   144,
+   362,
+   271
+  ],
+  "group": "base",
+  "h": 640,
+  "w": 475
+ }
+}

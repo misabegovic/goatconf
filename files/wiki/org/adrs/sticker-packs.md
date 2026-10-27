@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
   - sources/conversations/2026-10-27--org--stickers-speakers.md
   - sources/conversations/2026-10-27--org--stickers-tuzla.md
   - sources/conversations/2026-10-27--org--stickers-page.md
@@ -136,6 +137,19 @@ day: the organiser chose "Approve, start building".
   held from the site is not in the pack (source:
   sources/conversations/2026-10-27--org--stickers-speakers.md). The Telegram
   pack waits for the organiser to create it.
+- **2026-10-27, step four: the painted stickers.** Every goat sticker is now
+  the painted watercolour goat, whole: its seven roles and the goat statue
+  in bronze on its plinth, and each speaker's own goat sitting above their
+  name. The Tuzla things became the goat out in Tuzla, as the organiser
+  asked ("eating, bathing in the lakes"): a float in the salt lakes, a jump
+  into the lake, a day on the beach, a lick of Tuzla salt, ćevapi, burek, a
+  fildžan of coffee and a hike out of town, beside the goat statue. With no
+  sticker drawn in code any more, the pack holds the PNGs only, without SVG
+  copies; the mark and the words stay lettered. The painted PNGs are heavier,
+  so the Stickers page shows a 256-pixel WebP preview of each (under 0.5 MB
+  for the whole page, against 5.4 MB of PNGs) and keeps the PNG as the
+  download (source:
+  sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md).
 
 ## Related
 

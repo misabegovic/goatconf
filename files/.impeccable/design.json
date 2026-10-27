@@ -294,6 +294,26 @@
         "name": "peek-rise",
         "value": "220ms, translateY(-0.45rem)",
         "purpose": "The mascot rises a little when its slot or speaker card is hovered or focused; reduced motion keeps it still."
+      },
+      {
+        "name": "goat-pop",
+        "value": "640ms, from translateY(108%) through a stretch, an overshoot and a squash to rest",
+        "purpose": "The companion goat rising out from behind a slot's edge."
+      },
+      {
+        "name": "goat-duck",
+        "value": "420ms, a small lift then translateY(108%) behind the edge",
+        "purpose": "The companion goat hiding, also when the pointer comes within 110px."
+      },
+      {
+        "name": "goat-hop",
+        "value": "620 to 900ms, an arc with a crouch, a take-off stretch and a landing squash",
+        "purpose": "The companion goat moving to the next slot, its painted head turned towards where it goes."
+      },
+      {
+        "name": "goat-turn",
+        "value": "300ms, the painted head swapped at the top of a small lift and squash",
+        "purpose": "The companion goat looking left and right with its own turned head; never a mirrored picture."
       }
     ],
     "breakpoints": [

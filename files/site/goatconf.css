@@ -355,7 +355,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .speaker__photo { margin: 0; }
 .speaker__photo img, .speaker__goat { display: block; width: 100%; aspect-ratio: 4 / 4.2; object-fit: cover; border-radius: 0.35rem 0.35rem 0 0; background: var(--page-print); }
 .speaker__goat { display: grid; place-items: center; color: var(--slot-line); --goat-fill: transparent; }
-.speaker__goat svg { width: 55%; }
+.speaker__goat .goat-sit { width: 50%; }
 .speaker__photo figcaption { padding: 0.45rem 0.6rem 0.5rem; border-radius: 0 0 0.35rem 0.35rem; background: var(--album); color: var(--page); font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.2rem; line-height: 1; }
 .speaker__body { padding: 0 0.5rem 0.5rem; font-size: 0.92rem; line-height: 1.45; }
 .speaker__body p { margin: 0 0 0.5rem; }
@@ -496,7 +496,8 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .speaker__role { display: block; margin-bottom: 0.2rem; font-size: 0.85rem; font-weight: 700; line-height: 1.3; color: var(--ink-soft); }
 .lede__role { display: block; margin-bottom: 0.35rem; color: var(--page); }
 .speaker__more { display: block; margin-top: 0.15rem; font-size: 0.8rem; color: var(--ink-soft); }
-.slots--speakers { grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); }
+/* Four speakers to a row, as on the home page */
+.slots--speakers { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 /* A speaker's own page */
 .speaker-page__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; padding: 0; margin: 0.4rem 0 1rem; list-style: none; }
 .speaker-page__links a { color: var(--album); font-weight: 700; }
@@ -540,7 +541,11 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .follow__label { font-weight: 700; }
 .follow__link { display: inline-flex; align-items: center; gap: 0.45rem; }
 .follow__link svg { width: 1.15rem; height: 1.15rem; fill: currentColor; flex: none; }
-.share-card { display: block; width: 100%; max-width: 40rem; height: auto; margin: 0.4rem 0 1.4rem; border-radius: 0.8rem; box-shadow: var(--lift); }
+.share-card { display: block; width: 100%; height: auto; border-radius: 0.8rem; box-shadow: var(--lift); }
+/* Both cards side by side at the same height: the square takes 1 part of the width to the wide card's 16/9 */
+.share-cards { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.778fr); gap: 1.2rem; align-items: start; max-width: 56rem; margin: 0.4rem 0 1.4rem; }
+.share-cards figure { margin: 0; display: grid; gap: 0.6rem; }
+@media (max-width: 47.99rem) { .share-cards { grid-template-columns: minmax(0, 1fr); max-width: 26rem; } }
 
 /* Rows of links get room to tap: each a full-height target, clearly apart,
    and one per line on a phone (feedback, 2026-10-12) */
@@ -651,7 +656,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .sticker--venue[hidden] { display: none; }
 .venue__photo img, .venue__photo .venue__empty { aspect-ratio: 4 / 3; }
 .venue__empty { align-content: center; gap: 0.2rem; }
-.venue__empty svg { width: 38%; }
+.venue__empty .goat-sit { width: 34%; }
 .venue__empty small { font-size: 0.8rem; color: var(--ink-soft); }
 .venue__body { padding: 0 0.5rem 0.5rem; font-size: 0.92rem; line-height: 1.45; }
 .venue__body p { margin: 0 0 0.45rem; }
@@ -696,23 +701,29 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .topbar .topbar__panel .topbar__panel-actions a[aria-current="page"] { box-shadow: inset 0 0 0 2px var(--page); }
 }
 
-/* The goat mascot peeks over an open slot's top edge, still, and rises a little when you point at the slot (ADR goat-mascot) */
-.peek { position: absolute; right: 1rem; bottom: calc(100% - 0.2rem); width: 6.2rem; height: auto; pointer-events: none; transition: transform 220ms var(--ease); }
+/* The goat mascot (ADR goat-mascot): the painted goat, a box drawn from its sprite sheet, with its closed eyes
+   laid over it for a blink on its own beat. A peeking goat stands on the slot's top edge: --edge is where its
+   hooves rest, as a share of its height, and it rises a little when you point at the slot. */
+.goat { display: block; background-repeat: no-repeat; }
+.goat-blink { position: absolute; display: block; background-image: inherit; background-repeat: no-repeat; opacity: 0; animation: goat-blink 7s infinite; animation-delay: var(--beat, 0s); }
+@keyframes goat-blink { 0%, 93%, 98%, 100% { opacity: 0 } 94.5%, 96.5% { opacity: 1 } }
+.goat-sit { position: relative; }
+.peek { position: absolute; right: 0.6rem; bottom: 100%; width: 6.8rem; translate: 0 calc(100% - var(--edge)); pointer-events: none; transition: transform 220ms var(--ease); }
 .slot--link:hover .peek, .slot--link:focus-visible .peek { transform: translateY(-0.45rem); }
-.slots:has(.peek), .album-page .slots:has(.peek) { row-gap: 3.6rem; padding-top: 2.6rem; }
-.slots--hero:has(.peek), .album-page .slots--hero:has(.peek) { row-gap: 2.6rem; padding-top: 0; }
-.slots--hero .peek { width: 5rem; }
-@media (max-width: 47.99rem) { .peek { width: 5.4rem; } .slots:has(.peek), .album-page .slots:has(.peek) { row-gap: 3.2rem; padding-top: 2.3rem; } }
-/* Each speaker's own goat, drawn from their photo: it peeks over their card and sits beside their bio */
-.peek--face { right: 1.2rem; bottom: calc(100% - 0.05rem); width: 5.6rem; z-index: 1; }
+.slots:has(.peek), .album-page .slots:has(.peek) { row-gap: 4.6rem; padding-top: 4.2rem; }
+.slots--hero:has(.peek), .album-page .slots--hero:has(.peek) { row-gap: 3.6rem; padding-top: 0; }
+.slots--hero .peek { width: 5.2rem; }
+@media (max-width: 47.99rem) { .peek { width: 5.8rem; } .slots:has(.peek), .album-page .slots:has(.peek) { row-gap: 4.2rem; padding-top: 3.8rem; } }
+/* Each speaker's own painted goat: it peeks over their card and sits beside their bio */
+.peek--face { right: 0.8rem; width: 6.6rem; z-index: 1; }
 .sticker--speaker:hover .peek, .sticker--speaker:focus-within .peek { transform: translateY(-0.45rem); }
-.slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 4.8rem; padding-top: 4.4rem; }
+.slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 5.4rem; padding-top: 5rem; }
 .speaker-page__goat { float: right; width: clamp(8.5rem, 20vw, 12.5rem); margin: 0 0 1rem 1.5rem; }
-.speaker-page__goat svg, .goat-whole { display: block; width: 100%; height: auto; }
+.goat-whole { display: block; width: 100%; height: auto; }
 .speaker-page__sticker { display: block; width: fit-content; margin: 0.4rem auto 0; font-size: 0.95rem; }
 .speaker-page::after { content: ""; display: block; clear: both; }
-@media (max-width: 47.99rem) { .peek--face { width: 5rem; } .slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 4.4rem; padding-top: 4rem; } }
-@media (prefers-reduced-motion: reduce) { .peek { transition: none; } .slot--link:hover .peek, .slot--link:focus-visible .peek, .sticker--speaker:hover .peek, .sticker--speaker:focus-within .peek { transform: none; } }
+@media (max-width: 47.99rem) { .peek--face { width: 5.8rem; } .slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 4.8rem; padding-top: 4.4rem; } }
+@media (prefers-reduced-motion: reduce) { .goat-blink { animation: none; } .peek { transition: none; } .slot--link:hover .peek, .slot--link:focus-visible .peek, .sticker--speaker:hover .peek, .sticker--speaker:focus-within .peek { transform: none; } }
 
 /* The Stickers page: every sticker to tap and save (ADR sticker-packs) */
 .sticker-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 10.5rem), 1fr)); gap: 1.4rem 1rem; }
@@ -720,3 +731,20 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .sticker-dl a:hover, .sticker-dl a:focus-visible { background: var(--page-print); }
 .sticker-dl img { width: 100%; max-width: 11rem; height: auto; }
 @media (max-width: 47.99rem) { .sticker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* One goat on screen at a time: the script hides the slots' own goats and moves one goat between them.
+   It stands inside the slot it is on, where the slot's own goat would, and moves by transform only. The goat
+   ducks below the stage's edge line, which hides it as if behind the slot. */
+.goat-one .peek, .goat-none .peek { display: none; }
+.goat-one__stage { position: absolute; right: 0.6rem; bottom: 100%; z-index: 30; width: 6.8rem; translate: 0 calc(100% - var(--edge)); pointer-events: none; }
+.has-goat { z-index: 2; }
+.goat-one__stage .goat { position: relative; width: 100%; transform-origin: 50% var(--edge); }
+/* The companion's goat in layers: its body from the sheet, its eyes, and its head turned left or right. Turned,
+   the body shows only below the head band, and the band shows the painted turned head. */
+.goat-one__stage .goat-body, .goat-one__stage .goat-head { position: absolute; display: block; background-repeat: no-repeat; }
+.goat-one__stage .goat-body { inset: 0; }
+.goat-one__stage .goat-head { display: none; }
+.goat-one__stage .goat.is-turned .goat-head { display: block; }
+.goat-one__stage .goat.is-turned .goat-body { clip-path: inset(var(--cut) -50% -50% -50%); }
+.goat-one__stage .goat.is-turned .goat-blink { display: none; }
+.goat-one__stage.is-tucked { clip-path: inset(-100% -60% calc(100% - var(--edge) - 2%) -60%); }

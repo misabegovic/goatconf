@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """GoatConf's sticker packs: one set of stickers, three ways to take them.
 
-Every sticker is drawn in code: the goats by tools/goats.py, the mark and the
-words here. Rendered with a white die-cut edge, each becomes a 512-pixel
+The goats are the painted goat (art/goat/, ADR goat-mascot): in its roles, out
+in Tuzla, and as each speaker's own goat. The mark and the words are lettered
+here. Rendered with a white die-cut edge, each becomes a 512-pixel
 transparent PNG (a chat or a slide takes it as it is, and it meets
-Telegram's rules for static stickers), and the drawn ones keep their SVG.
+Telegram's rules for static stickers).
 The pack gathers them in one zip, and an A4 sheet lays them out to print and
 cut. The Stickers page shows them all, with the downloads.
 
@@ -28,7 +29,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import brand  # noqa: E402
 import frame  # noqa: E402
-import goats  # noqa: E402
+import goat_atlas  # noqa: E402
 import meta  # noqa: E402
 import nav  # noqa: E402
 import program  # noqa: E402
@@ -43,6 +44,8 @@ ZIP = "goatconf-stickers.zip"
 SPEAKER_ZIP = "goatconf-speaker-stickers.zip"
 SHEET = "goatconf-sticker-sheet.pdf"
 SIZE = 512
+# The previews the Stickers page shows: about twice their size on screen, for sharp phones.
+PREVIEW = 256
 esc = program.esc
 # A fixed date inside the zip, so the same stickers make the same file.
 ZIP_DATE = (2027, 6, 3, 9, 0, 0)
@@ -50,8 +53,8 @@ ZIP_DATE = (2027, 6, 3, 9, 0, 0)
 GROUPS = {
     "goats": ("The goat's roles", "The GoatConf goat in its roles from the EuRuKo 2024 goat multiverse."),
     "words": ("The mark and words", "The seal, the coin, and a few words to stick on things."),
-    "tuzla": ("Tuzla things", "The town of salt, its lakes, its coffee and its food, and the goat on its plinth."),
-    "speakers": ("The speakers' goats", "Each speaker's own goat, drawn from their photo, in a pack of their own. They show real people: share them, and never use them to mock."),
+    "tuzla": ("Tuzla things", "The goat in the town of salt: in its lakes, at its coffee and its food, and on its plinth."),
+    "speakers": ("The speakers' goats", "Each speaker's own goat, painted to look like them, in a pack of their own. They show real people: share them, and never use them to mock."),
 }
 
 DISPLAY = "font-family:'Bricolage Grotesque'; font-weight:800; text-transform:uppercase; line-height:.9"
@@ -81,66 +84,36 @@ def _words() -> list[tuple[str, str, str]]:
     ]
 
 
-I = goats.INK
-L = goats.LINE
-_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">'
+# The goat's roles and its days in Tuzla, each a painted master in art/goat/ (sticker-<name>.webp).
+ROLES = [("goat", "The goat"), ("speaker", "The speaker"), ("host", "The host"), ("coder", "The coder"),
+         ("cook", "The cook"), ("pirate", "The Pannonian pirate"), ("hidden", "The hidden goat")]
+TUZLA = [("salt-lakes", "A float in the salt lakes"), ("pannonian-sea", "A jump into the lake"), ("beach", "A day on the beach"),
+         ("salt", "A lick of Tuzla salt"), ("cevapi", "Ćevapi"), ("burek", "Burek"), ("fildzan", "A fildžan of coffee"),
+         ("hike", "A hike out of town"), ("goat-statue", "The goat statue")]
 
 
-def _statue() -> str:
-    """The goat on a plinth, in bronze, as Tuzla's goat statue."""
-    goat = goats.role("goat").replace(goats.COAT, "#c7a86a").replace(goats.HORN, "#8a6a32").replace(goats.BLUSH, "#b8945a")
-    goat = goat.replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 18 200 186">', '<svg x="34" y="6" width="132" height="122" viewBox="0 18 200 186">')
-    return (_SVG + f'<path d="M48 128h104l8 22H40z" fill="#9aa3b2" {L}/><rect x="56" y="150" width="88" height="34" fill="#b7bfcc" {L}/>'
-            f'<path d="M44 184h112v10H44z" fill="#9aa3b2" {L}/><path d="M78 164h44" stroke="{I}" stroke-width="3" stroke-linecap="round"/>' + goat + "</svg>")
-
-
-TUZLA = [
-    ("salt", "A salt crystal", _SVG + f'<path d="M100 22l58 34v68l-58 34-58-34V56z" fill="#f4f8ff" {L}/><path d="M100 22v68l58 34M100 90l-58 34" fill="none" stroke="#9cb6dc" stroke-width="3"/>'
-     f'<path d="M100 22l58 34-58 34-58-34z" fill="#fff" {L}/><path d="M64 150l20-12 20 12v22l-20 12-20-12z" fill="#e8f0fc" {L}/><path d="M138 152l14-8 14 8v16l-14 8-14-8z" fill="#e8f0fc" {L}/>'
-     f'<path d="M76 70l6 3M118 60l8 4" stroke="#9cb6dc" stroke-width="3" stroke-linecap="round"/></svg>'),
-    ("pannonian-sea", "The Pannonian sea", _SVG + f'<path d="M14 150c10-60 60-110 120-96 34 8 50 38 40 62-8 18-30 22-44 10 16 0 24-14 16-26-12-18-48-12-64 20-12 24-12 44-4 56z" fill="#2f6fd6" {L}/>'
-     f'<path d="M130 126c14 12 36 8 44-10 6 8 6 18 0 24" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>'
-     f'<path d="M10 150c20 10 40 10 60 0s40-10 60 0 40 10 60 0v40H10z" fill="#0b3d91" {L}/><path d="M24 172c14 6 26 6 40 0M96 174c14 6 26 6 40 0" fill="none" stroke="#9cc3ff" stroke-width="4" stroke-linecap="round"/>'
-     f'<circle cx="60" cy="96" r="5" fill="#fff"/><circle cx="74" cy="80" r="4" fill="#fff"/><circle cx="88" cy="70" r="3" fill="#fff"/></svg>'),
-    ("fildzan", "A fildžan of coffee", _SVG + f'<ellipse cx="100" cy="162" rx="72" ry="18" fill="#fff" {L}/><ellipse cx="100" cy="158" rx="46" ry="9" fill="#e6eefb"/>'
-     f'<path d="M58 84h84l-8 58a14 14 0 0 1-14 12H80a14 14 0 0 1-14-12z" fill="#fff" {L}/><ellipse cx="100" cy="84" rx="42" ry="9" fill="#5a3a22" {L}/>'
-     f'<path d="M66 108h68M70 128h60" stroke="#2f6fd6" stroke-width="5"/><path d="M82 116l6 6 6-6 6 6 6-6 6 6 6-6" fill="none" stroke="#d7263d" stroke-width="3" stroke-linejoin="round"/>'
-     f'<path d="M84 64c-8-10 8-14 0-26M100 62c-8-10 8-14 0-26M116 64c-8-10 8-14 0-26" fill="none" stroke="#9aa9c7" stroke-width="4" stroke-linecap="round"/>'
-     f'<rect x="150" y="128" width="20" height="20" rx="3" fill="#fff" {L}/></svg>'),
-    ("cevapi", "Ćevapi", _SVG + f'<ellipse cx="100" cy="120" rx="86" ry="52" fill="#fff" {L}/><path d="M30 118c0-30 32-50 70-50s70 20 70 50c-20 14-44 20-70 20s-50-6-70-20z" fill="#e9c88f" {L}/>'
-     + "".join(f'<rect x="{x}" y="{y}" width="56" height="17" rx="8.5" fill="#8a4e2c" {L} transform="rotate({r} {x + 28} {y + 8})"/>' for x, y, r in ((50, 88, -8), (66, 104, -4), (84, 92, 4), (96, 110, -6), (110, 96, 6)))
-     + f'<path d="M48 140c6-6 14-6 18 0M128 144c6-6 14-6 18 0M90 150c6-6 14-6 18 0" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>'
-     f'<path d="M48 140c6-6 14-6 18 0M128 144c6-6 14-6 18 0M90 150c6-6 14-6 18 0" fill="none" stroke="#c9a0d8" stroke-width="2" stroke-linecap="round"/></svg>'),
-    ("burek", "Burek", _SVG + f'<ellipse cx="100" cy="112" rx="88" ry="76" fill="#fff" {L}/><circle cx="100" cy="108" r="68" fill="#e0a54e" {L}/>'
-     f'<path d="M100 108m0-6a6 6 0 1 1-6 6c0-14 12-22 24-18 16 6 20 26 8 40-16 18-46 14-56-6-12-24 4-52 30-58 32-8 60 16 60 46" fill="none" stroke="#9a5e1e" stroke-width="5" stroke-linecap="round"/>'
-     f'<path d="M50 80l8 4M140 70l6-6M150 130l8 2" stroke="#fff3d6" stroke-width="4" stroke-linecap="round"/></svg>'),
-    ("goat-statue", "The goat statue", _statue()),
-    ("salt-lakes", "The salt lakes", _SVG + f'<defs><clipPath id="lake"><circle cx="100" cy="100" r="82"/></clipPath></defs><circle cx="100" cy="100" r="82" fill="#bfe3ff"/>'
-     f'<g clip-path="url(#lake)"><circle cx="140" cy="62" r="18" fill="#ffd400"/><path d="M0 108c30-8 60-8 100 0s70 8 100 0v100H0z" fill="#2f9be0"/>'
-     f'<path d="M0 150c40-14 80-14 120-4s60 8 80 0v60H0z" fill="#f2dca8"/><path d="M24 128c12 4 22 4 34 0M110 124c12 4 22 4 34 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>'
-     f'<path d="M66 172V116" stroke="{I}" stroke-width="4"/><path d="M36 122c8-20 52-20 60 0z" fill="#e30613" {L}/><path d="M50 122c4-10 28-10 32 0" fill="none" stroke="#fff" stroke-width="4"/></g>'
-     f'<circle cx="100" cy="100" r="82" fill="none" {L}/></svg>'),
-]
+def _painted(pose: str) -> str:
+    return f'<img src="{(goat_atlas.ART / (pose + ".webp")).as_uri()}" style="display:block; max-width:420px; max-height:440px">'
 
 
 def stickers() -> list[dict]:
-    """The whole set, in order: group, slug, label, and an SVG (drawn) or HTML (lettered) body."""
-    out = [{"group": "goats", "slug": f"goat-{r}", "label": goats.ROLE_NAMES[r], "svg": goats.role(r)} for r in goats.ROLE_NAMES]
+    """The whole set, in order: group, slug, label, and the HTML that shows it, painted or lettered."""
+    out = [{"group": "goats", "slug": f"goat-{r}", "label": label, "html": _painted(f"sticker-{r}")} for r, label in ROLES]
     out += [{"group": "words", "slug": s, "label": label, "html": body} for s, label, body in _words()]
-    out += [{"group": "tuzla", "slug": s, "label": label, "svg": body} for s, label, body in TUZLA]
+    out += [{"group": "tuzla", "slug": s, "label": label, "html": _painted(f"sticker-{s}")} for s, label in TUZLA]
     for slug, (meta_, _body) in speakers.listed(speakers.speakers()):
-        if meta_.get("goat"):
-            svg = goats.whole(meta_["goat"]).replace('<svg class="goat-whole" aria-hidden="true" focusable="false"', '<svg xmlns="http://www.w3.org/2000/svg"', 1)
+        if goat_atlas.has(f"speaker-{slug}-sitting"):
             name = esc(str(meta_["name"]))
-            out.append({"group": "speakers", "slug": f"speaker-{slug}", "label": str(meta_["name"]), "svg": svg,
-                        "html": f'<div style="width:330px; display:grid; justify-items:center">{svg}<div style="margin-top:-6px; background:#0b3d91; color:#fff; '
+            img = _painted(f"speaker-{slug}-sitting").replace("max-width:420px; max-height:440px", "max-width:330px; max-height:370px")
+            out.append({"group": "speakers", "slug": f"speaker-{slug}", "label": str(meta_["name"]),
+                        "html": f'<div style="width:400px; display:grid; justify-items:center">{img}<div style="margin-top:-14px; background:#0b3d91; color:#fff; '
                                 f'border-radius:14px; padding:12px 22px 10px; font-size:44px; {DISPLAY}; font-stretch:78%; text-align:center; max-width:470px">{name}</div></div>'})
     return out
 
 
 def card(sticker: dict) -> str:
     """One sticker on a transparent 512-pixel square, with a white die-cut edge and a soft lift."""
-    body = sticker.get("html") or f'<div style="width:400px">{sticker["svg"]}</div>'
+    body = sticker["html"]
     edge = " ".join(f"drop-shadow({x}px {y}px 0 #fff)" for x, y in ((7, 0), (-7, 0), (0, 7), (0, -7), (5, 5), (-5, 5), (5, -5), (-5, -5)))
     fonts = (SITE / "fonts").as_uri()
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
@@ -170,7 +143,7 @@ img {{ width: 45mm; height: 45mm; }}
 def render() -> int:
     from PIL import Image  # only render needs Pillow
     OUT.mkdir(exist_ok=True)
-    (OUT / "svg").mkdir(exist_ok=True)
+    (OUT / "preview").mkdir(exist_ok=True)
     exe = brand.chrome()
     items = stickers()
     with tempfile.TemporaryDirectory() as tmp:
@@ -183,9 +156,10 @@ def render() -> int:
                             "--default-background-color=00000000", f"--window-size={SIZE},{SIZE + 200}", f"--screenshot={shot}", src.as_uri()],
                            check=True, capture_output=True, timeout=120)
             with Image.open(shot) as im:
-                im.crop((0, 0, SIZE, SIZE)).save(OUT / f"{s['slug']}.png", optimize=True)
-            if s.get("svg"):
-                (OUT / "svg" / f"{s['slug']}.svg").write_text(s["svg"] + "\n", encoding="utf-8")
+                im = im.crop((0, 0, SIZE, SIZE))
+                im.save(OUT / f"{s['slug']}.png", optimize=True)
+                # The page shows a small WebP of each; the PNG is the download.
+                im.resize((PREVIEW, PREVIEW), Image.LANCZOS).save(OUT / "preview" / f"{s['slug']}.webp", quality=80, method=6)
             print(f"rendered site/stickers/{s['slug']}.png")
         src = tmp / "sheet.html"
         src.write_text(sheet_html(items), encoding="utf-8")
@@ -208,19 +182,16 @@ def _pack(items: list[dict], which: str) -> list[dict]:
 
 
 def pack_files(items: list[dict]) -> list[str]:
-    """What the zip holds: every sticker's PNG, and the SVG of every drawn one."""
-    return [f"{s['slug']}.png" for s in items] + [f"svg/{s['slug']}.svg" for s in items if s.get("svg")]
+    """What the zip holds: every sticker's PNG."""
+    return [f"{s['slug']}.png" for s in items]
 
 
 def pack_problems() -> list[str]:
-    """The pack matches the set: every PNG and SVG is there and current, and the zip holds exactly them."""
+    """The pack matches the set: every PNG is there, and the zip holds exactly them."""
     items = stickers()
-    out = [f"site/stickers/{n} is missing: run python3 tools/stickers.py render" for n in pack_files(items) + [ZIP, SPEAKER_ZIP, SHEET]
+    previews = [f"preview/{s['slug']}.webp" for s in items]
+    out = [f"site/stickers/{n} is missing: run python3 tools/stickers.py render" for n in pack_files(items) + previews + [ZIP, SPEAKER_ZIP, SHEET]
            if not (OUT / n).exists()]
-    for s in items:
-        p = OUT / "svg" / f"{s['slug']}.svg"
-        if s.get("svg") and p.exists() and p.read_text(encoding="utf-8") != s["svg"] + "\n":
-            out.append(f"site/stickers/svg/{s['slug']}.svg is out of date: run python3 tools/stickers.py render")
     for zip_name, folder, group in ((ZIP, "goatconf-stickers", "main"), (SPEAKER_ZIP, "goatconf-speaker-stickers", "speakers")):
         if (OUT / zip_name).exists():
             with zipfile.ZipFile(OUT / zip_name) as z:
@@ -233,7 +204,7 @@ def page() -> str:
     items = stickers()
     sections = []
     for group, (title, note) in GROUPS.items():
-        cells = "\n".join(f'    <li class="sticker-dl"><a href="stickers/{s["slug"]}.png" download><img src="stickers/{s["slug"]}.png" width="512" height="512" '
+        cells = "\n".join(f'    <li class="sticker-dl"><a href="stickers/{s["slug"]}.png" download><img src="stickers/preview/{s["slug"]}.webp" width="{PREVIEW}" height="{PREVIEW}" '
                           f'alt="{esc(s["label"])}" loading="lazy"><span>{esc(s["label"])}</span></a></li>' for s in items if s["group"] == group)
         sections.append(f"""<section class="album-page wrap" aria-labelledby="h-{group}">
   <h2 class="band" id="h-{group}">{title}</h2>
@@ -246,7 +217,7 @@ def page() -> str:
     main = f"""<section class="album-page wrap" aria-labelledby="h-take">
   <h2 class="band" id="h-take">Take them all</h2>
   <div class="copy copy--wide">
-    <p>Every sticker as a transparent image, ready for chats, slides and posts, with the drawn ones also as SVG; or a sheet to print at home or at a print shop, and cut out.</p>
+    <p>Every sticker as a transparent image, ready for chats, slides and posts, or a sheet to print at home or at a print shop, and cut out.</p>
     <p class="cta"><a class="button" href="stickers/{ZIP}" download>Download the pack</a></p>
     <p>The speakers' goats have a pack of their own, below.</p>
     <p><a class="go go--ink" href="stickers/{SHEET}" download>The print sheet (A4, PDF)</a></p>
@@ -255,7 +226,7 @@ def page() -> str:
 </section>
 {chr(10).join(sections)}"""
     return frame.page("stickers", "Stickers: GoatConf 2027, 3–5 June, Tuzla",
-                      "GoatConf 2027 stickers to download: the goat in its roles, the seal and a few words, as images or a sheet to print.",
+                      "GoatConf 2027 stickers to download: the goat in its roles and out in Tuzla, the seal and a few words, as images or a sheet to print.",
                       ("brand/coin.svg", 300, 300, ""), "Stickers", "The goat, the seal and a few words, to stick on your laptop, your slides and your chats.",
                       main, "files/tools/stickers.py build", photo_class=" page-head__photo--mark")
 

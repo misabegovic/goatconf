@@ -325,7 +325,9 @@ The opening: one rounded frame holding the cover-blue left page (the seal beside
 The one goat mark as a sticker: night-blue line drawing with a yellow fill, a 3px white edge cut around the silhouette, the goat lift, set at -6 degrees. It appears on the cover and, larger, on the shiny page. The mini crest (a yellow disc with the goat) marks the top bar, the back cover and the inner-page home link.
 
 ### Goat Mascot
-A second goat, kept apart from the mark: a flat, cute goat drawn in code (tools/goats.py) with large eyes, a cream coat, an ink (album-night) outline, yellow horns curled back and soft blush. It comes in roles from the EuRuKo 2024 goat multiverse, each a small layer on the same goat: the goat, the speaker, the host (fes, vest, fildžan), the coder, the cook, the Pannonian pirate and the hidden goat. On an open slot it peeks over the top edge, head and front hooves only, in the role the slot's kind gets; where a speaker or a venue has no photo it sits whole. Each speaker has their own goat, drawn from their photo (hair, beard, glasses or cap, what they wear, what they hold, never a logo), peeking over their card and sitting beside their bio. It is decorative and hidden from screen readers. The seal keeps the EuRuKo 2024 goat; the mascot never replaces the mark.
+A second goat, kept apart from the mark: a painted watercolour storybook goat, fluffy and cream, with big brown eyes, pink inner ears, a small beard, dark hooves and golden horns curled back. It is painted, not drawn in code: the masters stay on the organiser's machine and `tools/goat_atlas.py` builds the site's images from them, one sprite sheet per set of goats, so a page fetches one small image for all its goats. It comes in roles from the EuRuKo 2024 goat multiverse: the goat, the speaker (microphone), the host (fes and fildžan), the coder (round glasses, laptop), the cook (chef's hat, ćevapi), the Pannonian pirate (tricorn, eye patch) and the hidden goat. On an open slot it peeks over the top edge, its hooves on the edge, in the role the slot's kind gets; where a speaker or a venue has no photo it sits whole; on the 404 page it sleeps. Each speaker has their own painted goat (hair, beard, glasses or cap, what they wear, never a logo), peeking over their card, sitting beside their bio and sitting whole in the corner of their share cards. It blinks, each goat on its own beat. It is decorative and hidden from screen readers. The seal keeps the EuRuKo 2024 goat; the mascot never replaces the mark.
+
+**One goat at a time.** With the script, a visitor sees one goat: it stands inside the open slot or speaker card nearest the middle of the screen, as that slot's role or that speaker's own goat, and hops to the next one as they scroll or point. Without the script every slot keeps its own goat; on Save-Data or 2G there is none; with reduced motion it appears where it is and stays still.
 
 ### Stickers
 The sticker packs (stickers.html) take the same drawings: the goat's roles, the speakers' goats with their names on a blue label, the mark and a few words lettered in Bricolage, and Tuzla things, each with a white die-cut edge and a soft lift on a transparent 512-pixel square, in a zip and on an A4 print sheet.
@@ -351,7 +353,9 @@ Every inner page opens on a cover-blue strip: the crest home link, the sign in h
 ### Motion
 **Stickers stay still.** Stickers are stuck in from the first paint and do not animate as they come into view; the organiser found the peel and settle annoying (2026-10-27).
 
-**Peek rise.** When an open slot or a speaker card is hovered or focused, its goat rises 0.45rem over 220ms on the same curve and settles back; reduced motion keeps it where it is. Nothing else about the mascot moves.
+**Peek rise.** When an open slot or a speaker card is hovered or focused, its goat rises 0.45rem over 220ms on the same curve and settles back; reduced motion keeps it where it is.
+
+**The companion's moves.** All by transform, nothing by position. It pops up with a stretch, an overshoot, a squash on landing and a settle (640ms); it ducks with a small lift and then down behind the edge (420ms), and does so when the pointer comes within 110px. It hops between slots in an arc with a crouch, a stretch on take-off and a squash on landing (620 to 900ms), and turns its painted head towards where it is going. While it waits, every 4 to 8 seconds it bobs, wiggles, stretches, plays peek-a-boo or looks around, turning its painted head left and right with a small lift (300ms a turn); the turned heads load after the page, and until they arrive it looks at you. It never mirrors or spins the picture.
 
 **Goat wiggle.** On hover the die-cut goat turns from -6 to 4 degrees and grows 5% over 500ms on the same curve; reduced motion holds it still.
 
@@ -370,7 +374,7 @@ Every inner page opens on a cover-blue strip: the crest home link, the sign in h
 - **Don't** put a fact on a sticker before it is true: an unconfirmed date stays "June 2027" on the fact sticker and an empty slot for the exact days.
 - **Don't** give printed things (slots, printed numbers, stamps) a lift, or stuck stickers a dashed outline or a gloss.
 - **Don't** write self-aware copy about the album, the design or the site itself; the page talks about the conference, Tuzla and the visitor.
-- **Don't** add small labels above headings, glyph icons, or goat drawings beyond the mark and the mascot; the band, the numbers, the mark and the mascot carry the page.
+- **Don't** add small labels above headings, glyph icons, or goat pictures beyond the mark and the mascot; the band, the numbers, the mark and the mascot carry the page.
 - **Don't** let the goat cover a fact, stand in for text a screen reader needs, or appear on the code of conduct or budget content as a joke.
 
 ### Sanctioned detector exceptions
