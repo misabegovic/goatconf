@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-27**: **Speaker pages on a phone.** The bio keeps the full width, and the speaker's goat with "Save as a sticker" sits centred after it ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-27--org--speaker-goat-on-phones.md).
 - **2026-10-27**: **The goats post, one goat at a time.** The chosen video for today's goats post: seventeen whole painted goats, every speaker's among them, one at a time, each changing into the next at once with a small move of its own, made by `tools/goats_post.py` ([the goat mascot](org/adrs/goat-mascot.md); [the drumbeat](org/outreach/drumbeat-2026.md); source: sources/conversations/2026-10-27--org--goats-post-one-by-one.md).
 - **2026-10-27**: **The goats post, animated.** The goats post's cards no longer overlap, and come as a five-second video and GIF of the goats popping up, bobbing and ducking away ([the drumbeat](org/outreach/drumbeat-2026.md); source: sources/conversations/2026-10-27--org--goats-post-animated.md).
 - **2026-10-27**: **A post: the goats are in.** An extra post for today in the organiser's own voice ("I spent some time today adding cute goats to the site"), with a square and a wide card of the painted goats ([the drumbeat, October to December](org/outreach/drumbeat-2026.md); source: sources/conversations/2026-10-27--org--goats-post.md).

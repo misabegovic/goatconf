@@ -728,6 +728,11 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goat-whole { display: block; width: 100%; height: auto; }
 .speaker-page__sticker { display: block; width: fit-content; margin: 0.4rem auto 0; font-size: 0.95rem; }
 .speaker-page::after { content: ""; display: block; clear: both; }
+/* On a phone the bio keeps the page's width: the goat and its sticker link come after it, centred */
+@media (max-width: 47.99rem) {
+  .speaker-page { display: flex; flex-direction: column; }
+  .speaker-page__goat { order: 5; float: none; width: 11rem; margin: 1.4rem auto 0.4rem; }
+}
 @media (max-width: 47.99rem) { .peek--face { width: 5.8rem; } .slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 4.8rem; padding-top: 4.4rem; } }
 @media (prefers-reduced-motion: reduce) { .goat-blink { animation: none; } .peek { transition: none; } .slot--link:hover .peek, .slot--link:focus-visible .peek, .sticker--speaker:hover .peek, .sticker--speaker:focus-within .peek { transform: none; } }
 
