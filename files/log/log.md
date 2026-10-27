@@ -684,3 +684,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #192: design: the goat mascot and the stickers in DESIGN.md
    diff: 6 files, +44/-13
    restricted-paths: false
+2026-10-27 merge — PR #193: org: the mascot's new look, a watercolour goat from an illustrator
+   diff: 4 files, +34/-1
+   restricted-paths: false
