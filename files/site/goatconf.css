@@ -700,3 +700,12 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .topbar .topbar__panel a.topbar__panel-main { background: var(--yellow); color: var(--album-night); }
   .topbar .topbar__panel .topbar__panel-actions a[aria-current="page"] { box-shadow: inset 0 0 0 2px var(--page); }
 }
+
+/* The goat mascot peeks over an open slot's top edge, still, and rises a little when you point at the slot (ADR goat-mascot) */
+.peek { position: absolute; right: 1rem; bottom: calc(100% - 0.2rem); width: 6.2rem; height: auto; pointer-events: none; transition: transform 220ms var(--ease); }
+.slot--link:hover .peek, .slot--link:focus-visible .peek { transform: translateY(-0.45rem); }
+.slots:has(.peek), .album-page .slots:has(.peek) { row-gap: 3.6rem; padding-top: 2.6rem; }
+.slots--hero:has(.peek), .album-page .slots--hero:has(.peek) { row-gap: 2.6rem; padding-top: 0; }
+.slots--hero .peek { width: 5rem; }
+@media (max-width: 47.99rem) { .peek { width: 5.4rem; } .slots:has(.peek), .album-page .slots:has(.peek) { row-gap: 3.2rem; padding-top: 2.3rem; } }
+@media (prefers-reduced-motion: reduce) { .peek { transition: none; } .slot--link:hover .peek, .slot--link:focus-visible .peek { transform: none; } }

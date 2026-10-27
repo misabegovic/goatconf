@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--goat-peek-home.md
   - sources/conversations/2026-10-27--org--goat-mascot-approved.md
   - sources/conversations/2026-10-27--org--goat-mascot.md
   - sources/conversations/2026-10-27--org--still-stickers.md
@@ -142,6 +143,18 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
 - Whether the mascot later appears on the 404 page, the shareable cards, or
   the "See you in Tuzla" close.
 - Whether the cook gets a place: the food guide has no open slot today.
+
+## Build notes
+
+- **2026-10-27, step one: the home page.** The goat is drawn in parts in the
+  frame's sprite (`tools/frame.py`), with one symbol per role (the goat, the
+  speaker, the host, the coder, the pirate and the hidden goat) and the table
+  of which kind of slot gets which role; `tools/home.py` and the home page's
+  hand-written slots use it, and `goatconf.css` places the peek and the
+  hover rise and gives rows with a peek more room. The cook waits until a
+  slot needs it. The Make it yours page and the photo placeholders keep the
+  line goat until step two (source:
+  sources/conversations/2026-10-27--org--goat-peek-home.md).
 
 ## Related
 
