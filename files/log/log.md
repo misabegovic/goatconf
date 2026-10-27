@@ -654,3 +654,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #182: drumbeat: mark A city of salt published
    diff: 11 files, +30/-14
    restricted-paths: false
+2026-10-27 merge — PR #183: site: stickers sit still, no peel and settle
+   diff: 42 files, +210/-253
+   restricted-paths: true

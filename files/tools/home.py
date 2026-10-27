@@ -71,7 +71,7 @@ def added(events) -> str:
 
 
 def day_sticker(i: int, day, label: str, hours: str, lines: str) -> str:
-    return (f'    <li><a class="sticker sticker--fact sticker--day" href="program.html#{day.isoformat()}" data-peel style="--tilt:{TILTS[i]}deg">'
+    return (f'    <li><a class="sticker sticker--fact sticker--day" href="program.html#{day.isoformat()}" style="--tilt:{TILTS[i]}deg">'
             f'<span class="num">0</span><strong>{label}</strong><span class="day__hours">{hours}</span>{lines}</a></li>')
 
 

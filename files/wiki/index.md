@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-27**: **Still stickers.** The cards no longer lift and settle into place as you scroll; they sit still with their tilt ([the impeccable ADR](org/adrs/design-with-impeccable.md); source: sources/conversations/2026-10-27--org--still-stickers.md).
 - **2026-10-27**: **"A city of salt" is out.** The drumbeat's first Tuesday post went out on 27 October; next is "Registration is open, and free" on Saturday 31 October ([the calendar](org/outreach/drumbeat.md); [October to December 2026](org/outreach/drumbeat-2026.md); source: sources/conversations/2026-10-27--org--city-of-salt-published.md).
 - **2026-10-26**: **One "not only about Ruby" on the home page.** The line stays in "Why a goat" and is cut from "Who's organising" (source: sources/conversations/2026-10-26--org--repeated-ruby-line.md).
 - **2026-10-26**: **Quieter area tags.** The session area tags keep their colours and read in normal case, "Business of software" rather than small capitals (source: sources/conversations/2026-10-26--org--quieter-area-tags.md).

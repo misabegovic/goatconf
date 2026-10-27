@@ -283,7 +283,7 @@ def cell(n: int, found, room: str, reserved=False) -> str:
     if found:
         meta, body = found
         first = body.split("\n\n")[0].strip()
-        return f"""<li class="sticker sticker--session" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg"><span class="num">{n}</span><span class="session__format">{esc(format_label(meta))}, {ROOMS[room][0]}</span>{tags(None, meta.get('area'))}<strong><a class="sticker__open sticker__open--stretch" href="{page_name(meta)}">{esc(meta['title'])}</a></strong><small>{who(meta)}</small>{for_line(meta.get('for'))}<p>{esc(first)}</p>{register(meta)}</li>"""
+        return f"""<li class="sticker sticker--session" style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg"><span class="num">{n}</span><span class="session__format">{esc(format_label(meta))}, {ROOMS[room][0]}</span>{tags(None, meta.get('area'))}<strong><a class="sticker__open sticker__open--stretch" href="{page_name(meta)}">{esc(meta['title'])}</a></strong><small>{who(meta)}</small>{for_line(meta.get('for'))}<p>{esc(first)}</p>{register(meta)}</li>"""
     return f"""<li class="slot slot--session"><span class="num num--printed">{n}</span>{where}<strong>Open</strong><small>Waiting for a talk, a panel or a workshop.</small><span class="stamp">Yours?</span></li>"""
 
 
@@ -328,7 +328,7 @@ def extension_days():
 
 
 def ext_item(slug, meta) -> str:
-    return f"""<li class="sticker sticker--fact sticker--ext" data-peel style="--tilt:-1deg"><a class="sticker__open" href="{extensions.page_name(slug)}"><strong>{esc(meta['name'])}</strong><small>{extensions.KINDS[meta['kind']]}, part of GoatConf 2027, run by {esc(meta['host'])}. {extensions.when(meta)}, {esc(meta['location'])}.</small></a></li>"""
+    return f"""<li class="sticker sticker--fact sticker--ext" style="--tilt:-1deg"><a class="sticker__open" href="{extensions.page_name(slug)}"><strong>{esc(meta['name'])}</strong><small>{extensions.KINDS[meta['kind']]}, part of GoatConf 2027, run by {esc(meta['host'])}. {extensions.when(meta)}, {esc(meta['location'])}.</small></a></li>"""
 
 
 def page() -> str:

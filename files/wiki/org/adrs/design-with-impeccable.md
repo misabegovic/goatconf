@@ -2,11 +2,12 @@
 title: "Build the pages in plain HTML and CSS, with the goat everywhere and playful"
 kind: decision
 status: accepted
-updated: 2026-10-26
+updated: 2026-10-27
 confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--still-stickers.md
   - sources/conversations/2026-10-26--org--matte-stickers.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
@@ -105,3 +106,4 @@ first thing to check before the first copy.
 - **2026-10-12.** The site is published on goatconf.com from this repository, not copied into muhamed.at. See [Website: goatconf.com and Google Forms](goatconf-ba-and-google-forms.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-13, no budget page.** The budget is private, so the site has no budget page and no ledger, and the mentions of the budget ledger above no longer hold. The rule that the goat never makes the code of conduct read as a joke stands (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **2026-10-26, matte stickers.** The stickers lose their diagonal gloss and every shadow gets shorter and lighter (stickers, number pills, album pages, the spread, buttons, the seal), so the album reads as paper rather than glossy app cards; DESIGN.md's Gloss Rule becomes the Matte Rule (source: sources/conversations/2026-10-26--org--matte-stickers.md).
+- **2026-10-27, still stickers.** The stickers no longer peel and settle as they come into view; the organiser found it annoying. They keep their tilt and sit still from the first paint (source: sources/conversations/2026-10-27--org--still-stickers.md).

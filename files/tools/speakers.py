@@ -293,7 +293,7 @@ def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None,
     flavor = scheduled or ({"area": meta.get("talk_area"), "for": meta.get("talk_for")} if meta.get("talk") else {})
     first += program.tags(None, flavor.get("area")) + program.for_line(flavor.get("for"), "span")
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
-    return f"""  <li class="sticker sticker--speaker"{f' id="{esc(slug)}"' if anchor else ''} data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
+    return f"""  <li class="sticker sticker--speaker"{f' id="{esc(slug)}"' if anchor else ''} style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <a class="speaker__link" href="{page_name(slug)}">
     <span class="num">{n}</span>
     <figure class="speaker__photo">{photo}<figcaption>{esc(meta['name'])}</figcaption></figure>
@@ -430,7 +430,7 @@ def supporter_page(slug: str, meta, body) -> str:
 
 def supporter_card(n: int, slug: str, meta, body) -> str:
     """The supporter on the wall: logo, name and their line; who they are is on their profile."""
-    return f"""  <li class="sticker sticker--supporter" id="{esc(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
+    return f"""  <li class="sticker sticker--supporter" id="{esc(slug)}" style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <span class="num">{n}</span>
     <a class="supporter__logo{logo_class(meta, ' supporter__logo')}"{logo_style(meta)} href="{supporter_page_name(slug)}"><img src="{esc(meta['logo'])}" alt="{esc(meta['name'])}" loading="lazy"></a>
     <strong><a href="{supporter_page_name(slug)}">{esc(meta['name'])}</a></strong>
