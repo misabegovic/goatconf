@@ -212,7 +212,7 @@ The world refuses the dark tech-conference hero with a speaker grid. It also ref
 - Two states of every fact: a stuck-in sticker (decided) or an empty printed slot (undecided or open to you).
 - One numbered sequence across the album, yellow on stickers, printed on slots.
 - Condensed uppercase Bricolage lettering at strong scale contrast; Atkinson Hyperlegible Next for reading.
-- Stickers peel and settle once as they enter view; reduced motion shows them already stuck.
+- Stickers sit still in their slots, tilted, with no entrance animation.
 
 ## The mark
 
@@ -284,7 +284,6 @@ Depth is physical but quiet: paper pages cast a short soft drop onto the blue, s
 
 ### Shadow Vocabulary
 - **Sticker lift** (`box-shadow: 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3), 0 0 0 1px rgb(0 0 0 / 0.08)`): every stuck sticker at rest, and the inner-page photo sticker.
-- **Peel lift** (`box-shadow: 0 0.6rem 0.9rem -0.45rem rgb(0 0 0 / 0.35), 0 0 0 1px rgb(0 0 0 / 0.08)`): a sticker held off the page before it settles.
 - **Page drop** (`box-shadow: 0 0.6rem 1rem -0.8rem rgb(0 0 0 / 0.3)`): album pages and the prose page on the blue ground. The spread uses a deeper drop (`0 0.8rem 1.4rem -1rem rgb(0 0 0 / 0.35)`).
 - **Spine** (`box-shadow: inset -1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.55)` on the cover, `inset 1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.25)` on the page): the fold between the spread's two pages.
 - **Number lift** (`box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35)`): the small yellow number sticker on a stuck sticker.
@@ -344,7 +343,7 @@ The footer as the album's back cover: night blue, the crest and mark in white, p
 Every inner page opens on a cover-blue strip: the crest home link, the sign in headline lettering, a pale-album lede, and a photo set as a sticker (white border, lift, 2 degrees). Below it, one white prose page at most 58rem wide, headings lettered in album blue, list markers in album blue, an album-blue table head on the budget ledger, and a printed-slot style empty state when a list has nothing yet.
 
 ### Motion
-**Peel and settle.** On the album, each sticker starts lifted (rotated 7 degrees further, shifted 0.6rem right and 0.9rem up, scaled 1.04, peel lift) and settles once into its slot when 35% of it is in view, over 900ms on `cubic-bezier(0.16, 1, 0.3, 1)`, staggered 120ms plus 90ms per sticker. The peeled start is set by a one-line script in the head before first paint, only when motion is allowed and IntersectionObserver exists, so a sticker never flashes stuck and then jumps. Without the script, or with reduced motion, every sticker is simply stuck. A settled sticker never peels again.
+**Stickers stay still.** Stickers are stuck in from the first paint and do not animate as they come into view; the organiser found the peel and settle annoying (2026-10-27).
 
 **Goat wiggle.** On hover the die-cut goat turns from -6 to 4 degrees and grows 5% over 500ms on the same curve; reduced motion holds it still.
 

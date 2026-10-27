@@ -249,11 +249,6 @@
         "purpose": "Every stuck sticker at rest."
       },
       {
-        "name": "lift-peel",
-        "value": "0 0.6rem 0.9rem -0.45rem rgb(0 0 0 / 0.35), 0 0 0 1px rgb(0 0 0 / 0.08)",
-        "purpose": "A sticker held off the page before it settles."
-      },
-      {
         "name": "page-drop",
         "value": "0 0.6rem 1rem -0.8rem rgb(0 0 0 / 0.3)",
         "purpose": "Album pages and the prose page on the blue ground."
@@ -288,17 +283,7 @@
       {
         "name": "ease",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "The settle curve for stickers and the goat."
-      },
-      {
-        "name": "settle",
-        "value": "900ms",
-        "purpose": "Peel to stuck, once, when 35% of a sticker is in view; staggered 120ms plus 90ms per sticker."
-      },
-      {
-        "name": "peel-start",
-        "value": "rotate(calc(var(--tilt) - 7deg)) translate(0.6rem, -0.9rem) scale(1.04)",
-        "purpose": "The lifted start state, set by a head script before first paint; reduced motion shows stickers stuck."
+        "purpose": "The curve for the goat wiggle and the button hover."
       },
       {
         "name": "goat-wiggle",
@@ -322,9 +307,9 @@
       "name": "Photo Sticker",
       "kind": "card",
       "refersTo": "sticker-photo",
-      "description": "A decided place or thing, stuck in: photo over an album-blue caption, white die-cut border and lift; hover shows the peeled state.",
+      "description": "A decided place or thing, stuck in: photo over an album-blue caption, white die-cut border and lift; it sits still.",
       "html": "<figure class=\"ds-sticker\"><span class=\"ds-num\">9</span><div class=\"ds-photo\"></div><figcaption class=\"ds-cap\">The Korzo</figcaption></figure>",
-      "css": ".ds-sticker { position: relative; margin: 0; padding: 0.42rem; border-radius: 0.6rem; background: var(--page, #ffffff); color: var(--ink, #12204a); box-shadow: 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3), 0 0 0 1px rgb(0 0 0 / 0.08); transform: rotate(-1.5deg); transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 900ms cubic-bezier(0.16, 1, 0.3, 1); width: 12rem; } .ds-sticker:hover { transform: rotate(-8.5deg) translate(0.6rem, -0.9rem) scale(1.04); box-shadow: 0 0.6rem 0.9rem -0.45rem rgb(0 0 0 / 0.35), 0 0 0 1px rgb(0 0 0 / 0.08); } @media (prefers-reduced-motion: reduce) { .ds-sticker { transition: none; } .ds-sticker:hover { transform: rotate(-1.5deg); box-shadow: 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3), 0 0 0 1px rgb(0 0 0 / 0.08); } } .ds-num { position: absolute; top: -0.7rem; left: -0.7rem; z-index: 2; min-width: 2.1rem; height: 2.1rem; padding-inline: 0.35rem; border-radius: 1.05rem; display: grid; place-items: center; background: var(--yellow, #ffd400); color: var(--album-night, #051d47); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.05rem; font-variant-numeric: tabular-nums; box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35); } .ds-photo { aspect-ratio: 4 / 3.4; border-radius: 0.35rem 0.35rem 0 0; background: linear-gradient(160deg, #7fa7d8, #c98b5a); } .ds-cap { margin: 0; padding: 0.45rem 0.6rem 0.5rem; border-radius: 0 0 0.35rem 0.35rem; background: var(--album, #0b3d91); color: var(--page, #ffffff); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.15rem; line-height: 1.05; }"
+      "css": ".ds-sticker { position: relative; margin: 0; padding: 0.42rem; border-radius: 0.6rem; background: var(--page, #ffffff); color: var(--ink, #12204a); box-shadow: 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3), 0 0 0 1px rgb(0 0 0 / 0.08); transform: rotate(-1.5deg); width: 12rem; } .ds-num { position: absolute; top: -0.7rem; left: -0.7rem; z-index: 2; min-width: 2.1rem; height: 2.1rem; padding-inline: 0.35rem; border-radius: 1.05rem; display: grid; place-items: center; background: var(--yellow, #ffd400); color: var(--album-night, #051d47); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.05rem; font-variant-numeric: tabular-nums; box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35); } .ds-photo { aspect-ratio: 4 / 3.4; border-radius: 0.35rem 0.35rem 0 0; background: linear-gradient(160deg, #7fa7d8, #c98b5a); } .ds-cap { margin: 0; padding: 0.45rem 0.6rem 0.5rem; border-radius: 0 0 0.35rem 0.35rem; background: var(--album, #0b3d91); color: var(--page, #ffffff); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.15rem; line-height: 1.05; }"
     },
     {
       "name": "Fact Sticker",
@@ -332,7 +317,7 @@
       "refersTo": "sticker-fact",
       "description": "A decided fact: album-blue sticker with an inset white die-cut border, a big yellow figure and a pale explanation.",
       "html": "<div class=\"ds-sticker ds-fact\"><span class=\"ds-num\">1</span><strong>Free</strong><small>No ticket. Registration is free.</small></div>",
-      "css": ".ds-sticker { position: relative; margin: 0; padding: 0.42rem; border-radius: 0.6rem; background: var(--page, #ffffff); color: var(--ink, #12204a); box-shadow: 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3), 0 0 0 1px rgb(0 0 0 / 0.08); transform: rotate(-1.5deg); transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 900ms cubic-bezier(0.16, 1, 0.3, 1); width: 12rem; } .ds-sticker:hover { transform: rotate(-8.5deg) translate(0.6rem, -0.9rem) scale(1.04); box-shadow: 0 0.6rem 0.9rem -0.45rem rgb(0 0 0 / 0.35), 0 0 0 1px rgb(0 0 0 / 0.08); } @media (prefers-reduced-motion: reduce) { .ds-sticker { transition: none; } .ds-sticker:hover { transform: rotate(-1.5deg); box-shadow: 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3), 0 0 0 1px rgb(0 0 0 / 0.08); } } .ds-num { position: absolute; top: -0.7rem; left: -0.7rem; z-index: 2; min-width: 2.1rem; height: 2.1rem; padding-inline: 0.35rem; border-radius: 1.05rem; display: grid; place-items: center; background: var(--yellow, #ffd400); color: var(--album-night, #051d47); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.05rem; font-variant-numeric: tabular-nums; box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35); } .ds-fact { display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; padding: 1.2rem 1.1rem; background: var(--album, #0b3d91); color: var(--page, #ffffff); outline: 0.42rem solid var(--page, #ffffff); outline-offset: -0.42rem; min-height: 11rem; } .ds-fact strong { font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 75%; font-size: 3rem; line-height: 0.9; color: var(--yellow, #ffd400); } .ds-fact small { font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 0.98rem; line-height: 1.35; color: var(--album-soft, #c9d7f5); }"
+      "css": ".ds-sticker { position: relative; margin: 0; padding: 0.42rem; border-radius: 0.6rem; background: var(--page, #ffffff); color: var(--ink, #12204a); box-shadow: 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3), 0 0 0 1px rgb(0 0 0 / 0.08); transform: rotate(-1.5deg); width: 12rem; } .ds-num { position: absolute; top: -0.7rem; left: -0.7rem; z-index: 2; min-width: 2.1rem; height: 2.1rem; padding-inline: 0.35rem; border-radius: 1.05rem; display: grid; place-items: center; background: var(--yellow, #ffd400); color: var(--album-night, #051d47); font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 80%; font-size: 1.05rem; font-variant-numeric: tabular-nums; box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35); } .ds-fact { display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; padding: 1.2rem 1.1rem; background: var(--album, #0b3d91); color: var(--page, #ffffff); outline: 0.42rem solid var(--page, #ffffff); outline-offset: -0.42rem; min-height: 11rem; } .ds-fact strong { font-family: 'Bricolage Grotesque', 'Atkinson Hyperlegible Next', sans-serif; font-weight: 800; text-transform: uppercase; font-stretch: 75%; font-size: 3rem; line-height: 0.9; color: var(--yellow, #ffd400); } .ds-fact small { font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 0.98rem; line-height: 1.35; color: var(--album-soft, #c9d7f5); }"
     },
     {
       "name": "Printed Slot",
@@ -399,7 +384,7 @@
       "Two states of every fact: a stuck-in sticker (decided) or an empty printed slot (undecided or open to you).",
       "One numbered sequence across the album, yellow on stickers, printed on slots.",
       "Condensed uppercase Bricolage lettering at strong scale contrast; Atkinson Hyperlegible Next for reading.",
-      "Stickers peel and settle once as they enter view; reduced motion shows them already stuck."
+      "Stickers sit still in their slots, tilted, with no entrance animation."
     ],
     "rules": [
       {

@@ -280,7 +280,7 @@ def accepted():
 
 def card(n: int, slug: str, meta) -> str:
     """An accepted event as a sticker that opens its page; the events page and the home page share it."""
-    return (f'<li><a class="sticker sticker--fact sticker--example" href="{page_name(slug)}" data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">'
+    return (f'<li><a class="sticker sticker--fact sticker--example" href="{page_name(slug)}" style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">'
             f'<span class="num">{n}</span><small class="sticker__kind">{KINDS[meta["kind"]]}</small><strong>{html.escape(str(meta["name"]))}</strong>'
             f'<small>{when(meta)}. Run by {html.escape(str(meta["host"]))}.</small></a></li>')
 
@@ -518,7 +518,7 @@ def venue_card(n: int, v) -> str:
     attrs = (f' data-venue data-kinds="{" ".join(v["suits"])}" data-size="{size_band(v)}" data-near="{1 if m is not None and m <= NEAR_M else 0}"'
              f' data-walk="{1 if m is not None and m <= WALK_M else 0}" data-setting="{v["setting"]}" data-first="{1 if v.get("check_first") else 0}"'
              f' data-text="{html.escape(text.lower())}"')
-    return f"""  <li class="sticker sticker--venue" id="venue-{e('id')}"{attrs} data-peel style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
+    return f"""  <li class="sticker sticker--venue" id="venue-{e('id')}"{attrs} style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
     <span class="num">{n}</span>
     <figure class="speaker__photo venue__photo">{photo}<figcaption>{e('name')}</figcaption></figure>
     <div class="venue__body">
