@@ -26,7 +26,14 @@
   if (net && (net.saveData || /2g$/.test(net.effectiveType || ""))) { root.classList.add("goat-none"); return; }
   root.classList.add("goat-one");
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const slots = peeks.map((p) => ({ slot: p.parentElement, peek: p, scene: p.classList.contains("goat-scene") }));
+  // One stop per element; a stop with several goats (the lakes photo, the goodbye) shows a different one each visit.
+  const slots = [];
+  peeks.forEach((p) => {
+    const at = slots.find((s) => s.slot === p.parentElement);
+    if (at) at.alts.push(p);
+    else slots.push({ slot: p.parentElement, peek: p, alts: [p], turn: 0, scene: p.classList.contains("goat-scene") });
+  });
+  const next = (s) => { s.peek = s.alts[s.turn++ % s.alts.length]; };
   const stage = document.createElement("div");
   stage.className = "goat-one__stage";
   stage.setAttribute("aria-hidden", "true");
@@ -204,6 +211,7 @@
     shy = false;
     const from = current;
     current = s;
+    next(s);
     const arrive = () => { settle(s); dress(s); };
     // Whatever happens in a move, the goat is never left stuck: it ends up resting in the slot it went to.
     try {
