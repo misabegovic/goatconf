@@ -687,3 +687,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #193: org: the mascot's new look, a watercolour goat from an illustrator
    diff: 4 files, +34/-1
    restricted-paths: false
+2026-10-27 merge — PR #194: site: an Introduction to Tuzla guide on the travel page
+   diff: 7 files, +245/-3
+   restricted-paths: true
