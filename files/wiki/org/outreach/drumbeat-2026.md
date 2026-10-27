@@ -7,6 +7,8 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-27--org--goats-post.md
+  - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
   - sources/conversations/2026-10-27--org--city-of-salt-published.md
   - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
   - sources/web/tuzla/tuzla-wikipedia-bs.md
@@ -127,6 +129,27 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Tuzla takes its name from tuz, Turkish for salt. Under the city lie hundreds of millions of tons of it, left by an ancient sea, and Louis XIV bought it for his palace. GoatConf: Tuzla, 3 to 5 June 2027. goatconf.com
 
   Sources: sources/web/tuzla/tuzla-wikipedia-bs.md, sources/web/tuzla/tztz-history-of-tuzla.md, sources/web/tuzla/tztz-archaeological-park.md, sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md.
+
+### Tue 27 Oct 2026, an extra: The goats are in
+
+- **State:** draft, for the organiser to post in their own voice (source: sources/conversations/2026-10-27--org--goats-post.md)
+- **Image:** [`post-goats-are-in-square.png`](https://goatconf.com/share/post-goats-are-in-square.png) (LinkedIn, Mastodon, Instagram), [`post-goats-are-in-wide.png`](https://goatconf.com/share/post-goats-are-in-wide.png) (X, Bluesky)
+- **Before posting:** an extra on top of Tuesday's post, written as the organiser; it can go out today or on any day this week.
+- **LinkedIn:**
+
+  > I spent some time today adding cute goats to goatconf.com.
+  >
+  > GoatConf's sign is a goat: the one that fed the whole of Tuzla when everyone else's was banned. So the site now has one, painted in watercolour. It follows you as you scroll, peeks over every open slot, blinks, ducks when you get too close and turns its head to look around. It floats in Tuzla's salt lakes, goes hiking, and eats ćevapi and burek.
+  >
+  > Every speaker has their own goat too, and all of them are free to save as stickers.
+  >
+  > Come say hi: goatconf.com
+
+- **Short** (224 characters):
+
+  > I spent some time today adding cute goats to goatconf.com. One follows you down the page, peeks over every open slot, floats in Tuzla's salt lakes and eats ćevapi. Every speaker has their own. Stickers: goatconf.com/stickers
+
+  Sources: sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md, sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md.
 
 ### Sat 31 Oct 2026, week 3: Registration is open, and free
 

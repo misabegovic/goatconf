@@ -132,6 +132,40 @@ def post(w: int, h: int, title: str, line: str, square: bool) -> str:
 {seal(340, "right:72px; top:50%; transform:translateY(-50%)")}""")
 
 
+def goats_post(w: int, h: int, square: bool) -> str:
+    """The painted goats, as a crowd: the post that shows them off (ADR goat-mascot)."""
+    def g(pose, width, style):
+        return f'<img src="{(goat_atlas.ART / (pose + ".webp")).as_uri()}" style="position:absolute; width:{width}px; {style}">'
+    if square:
+        crowd = (g("sticker-salt-lakes", 255, "left:30px; top:392px")
+                 + g("sticker-hike", 230, "left:290px; top:372px")
+                 + g("sticker-cevapi", 230, "left:540px; top:384px")
+                 + g("sticker-pannonian-sea", 250, "right:30px; top:380px")
+                 + g("sticker-host", 245, "left:24px; bottom:28px")
+                 + g("sticker-coder", 265, "left:278px; bottom:24px")
+                 + g("sticker-pirate", 245, "left:552px; bottom:28px")
+                 + g("sticker-cook", 230, "right:30px; bottom:30px"))
+        return page(w, h, f"""
+<div style="position:absolute; left:84px; top:80px; right:84px">
+  <div class="word" style="font-size:118px">The goats<br>are in</div>
+  <div class="sub" style="font-size:38px; margin-top:26px">goatconf.com</div>
+</div>
+{seal(190, "right:84px; top:84px")}{crowd}""")
+    crowd = (g("sticker-salt-lakes", 230, "left:470px; bottom:250px")
+             + g("sticker-hike", 190, "left:700px; bottom:262px")
+             + g("sticker-pannonian-sea", 210, "right:40px; bottom:252px")
+             + g("sticker-host", 190, "left:470px; bottom:22px")
+             + g("sticker-coder", 205, "left:660px; bottom:18px")
+             + g("sticker-pirate", 190, "left:870px; bottom:22px")
+             + g("sticker-cook", 170, "right:24px; bottom:24px"))
+    return page(w, h, f"""
+<div style="position:absolute; left:72px; top:72px; width:400px">
+  <div class="word" style="font-size:104px">The goats<br>are in</div>
+  <div class="sub" style="font-size:32px; margin-top:24px">goatconf.com</div>
+</div>
+{seal(170, "left:72px; bottom:64px")}{crowd}""")
+
+
 POSTS = {
     "save-the-date": ("Save<br>the date", "Two days of talks in every room of IPI Academy, then a day for the community."),
     "run-a-session": ("Run a<br>session", "A talk, a panel, a workshop or something else. One hour, one room."),
@@ -369,6 +403,8 @@ def jobs() -> dict[str, tuple[int, int, str]]:
   <div class="sub" style="font-size:42px; margin-top:24px">{FACTS}</div>
 </div>""")),
     }
+    out["post-goats-are-in-square.png"] = (1080, 1080, goats_post(1080, 1080, True))
+    out["post-goats-are-in-wide.png"] = (1200, 675, goats_post(1200, 675, False))
     for key, (title, line) in POSTS.items():
         out[f"post-{key}-square.png"] = (1080, 1080, post(1080, 1080, title, line, True))
         out[f"post-{key}-wide.png"] = (1200, 675, post(1200, 675, title.replace("<br>", " "), line, False))
