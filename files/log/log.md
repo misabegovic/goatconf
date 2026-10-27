@@ -669,3 +669,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #187: org: sticker packs, as images, a print sheet and a Telegram pack
    diff: 5 files, +161/-1
    restricted-paths: false
+2026-10-27 merge — PR #188: site: a Stickers page, with the pack and a print sheet
+   diff: 65 files, +484/-65
+   restricted-paths: true

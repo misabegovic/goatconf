@@ -35,7 +35,7 @@ SITE = ROOT / "site"
 LINKS = [("index.html", "Home"), ("program.html", "Program"), ("speakers.html", "Speakers"),
          ("talk.html", "Propose a session"), ("extend.html", "Host an event"), ("register.html", "Register"),
          ("travel.html", "Travel"), ("supporters.html", "Supporters"), ("charter.html", "Charter"),
-         ("code-of-conduct.html", "Code of conduct"), ("brand.html", "Brand"),
+         ("code-of-conduct.html", "Code of conduct"), ("brand.html", "Brand"), ("stickers.html", "Stickers"),
          ("access.html", "Accessibility"), ("contact.html", "Contact")]
 BACK_COVER = {"charter.html": "The charter", "code-of-conduct.html": "The code of conduct"}
 LINE = ("GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. "

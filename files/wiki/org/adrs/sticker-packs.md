@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--stickers-page.md
   - sources/conversations/2026-10-27--org--sticker-packs.md
   - sources/conversations/2026-10-27--org--speaker-goats.md
   - sources/conversations/2026-10-27--org--goat-mascot.md
@@ -108,6 +109,19 @@ day: the organiser chose "Approve, start building".
 - WhatsApp and Signal packs, which need their own app or upload steps.
 - Printed stickers for the event itself, and who pays for them, which is a
   budget question and stays off the site.
+
+## Build notes
+
+- **2026-10-27, step one: the Stickers page.** `tools/stickers.py` holds the
+  set (the goat's roles, drawn whole by `tools/goats.py`, and the mark and
+  words, lettered in the site's display type), renders each sticker with
+  headless Chrome to a 512-pixel transparent PNG with a white die-cut edge,
+  keeps the SVG of the drawn ones, and writes the zip and the A4 print
+  sheet into `site/stickers/`. The site build writes `stickers.html`, and
+  its check fails if the pack is missing a sticker or the zip does not hold
+  the current set; the images themselves are rendered on demand, as the
+  share cards are. The footer and the brand page link to the page (source:
+  sources/conversations/2026-10-27--org--stickers-page.md).
 
 ## Related
 

@@ -717,3 +717,10 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .speaker-page::after { content: ""; display: block; clear: both; }
 @media (max-width: 47.99rem) { .peek--face { width: 5rem; } .slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 4.4rem; padding-top: 4rem; } }
 @media (prefers-reduced-motion: reduce) { .peek { transition: none; } .slot--link:hover .peek, .slot--link:focus-visible .peek, .sticker--speaker:hover .peek, .sticker--speaker:focus-within .peek { transform: none; } }
+
+/* The Stickers page: every sticker to tap and save (ADR sticker-packs) */
+.sticker-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 10.5rem), 1fr)); gap: 1.4rem 1rem; }
+.sticker-dl a { display: grid; justify-items: center; gap: 0.3rem; padding: 0.6rem 0.5rem 0.8rem; border-radius: 0.6rem; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 0.95rem; text-align: center; transition: background-color 200ms; }
+.sticker-dl a:hover, .sticker-dl a:focus-visible { background: var(--page-print); }
+.sticker-dl img { width: 100%; max-width: 11rem; height: auto; }
+@media (max-width: 47.99rem) { .sticker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
