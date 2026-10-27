@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--goat-everywhere.md
   - sources/conversations/2026-10-27--org--speaker-goats.md
   - sources/conversations/2026-10-27--org--goat-peek-home.md
   - sources/conversations/2026-10-27--org--goat-mascot-approved.md
@@ -163,6 +164,11 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   `tools/shareables.py` on the share cards, all re-rendered. The program's
   session cards get the goat when the first session has a slot: today no
   session does (source: sources/conversations/2026-10-27--org--speaker-goats.md).
+- **2026-10-27, step two: everywhere else.** The Make it yours page's open
+  slots peek, the speakers and supporters pages' invitations peek, and a
+  venue or a speaker with no photo shows the whole goat sitting (`#goat-sit`
+  in the sprite). The faint line goat and its `.ghost` styles are gone
+  (source: sources/conversations/2026-10-27--org--goat-everywhere.md).
 
 ## Related
 

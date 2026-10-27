@@ -123,7 +123,6 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .slot small { margin-top: 0.35rem; font-size: 0.98rem; line-height: 1.35; color: var(--ink-soft); }
 .stamp { position: absolute; right: 0.7rem; bottom: 0.6rem; transform: rotate(-9deg); padding: 0.05em 0.45em; border: 3px solid currentColor; border-radius: 0.35rem; color: var(--red); font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.05rem; letter-spacing: 0.04em; mix-blend-mode: multiply; }
 
-.ghost { position: absolute; top: 0.7rem; right: 0.8rem; width: 3.4rem; color: var(--slot-line); --goat-fill: transparent; opacity: 0.7; pointer-events: none; }
 
 /* The opening spread */
 .spread { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); margin-block: clamp(1.25rem, 3vw, 2.5rem) var(--space); border-radius: 0.8rem; overflow: visible; box-shadow: 0 0.8rem 1.4rem -1rem rgb(0 0 0 / 0.35); }
@@ -157,7 +156,6 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .slots--hero .slot { min-height: 0; padding: 0.9rem 0.85rem 2.8rem; justify-content: flex-start; }
 .slots--hero .slot strong { font-size: 1.15rem; }
 .slots--hero .slot small { font-size: 0.85rem; }
-.slots--hero .ghost { width: 2.4rem; }
 /* On wide screens the spread holds 53rem and the photos take up the room */
 @media (min-width: 62rem) {
   .spread { min-height: 53rem; }
@@ -275,7 +273,6 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   .slots--hero .slot { padding: 1.1rem 1.1rem 2.9rem; }
   .slots--hero .slot strong { font-size: 1.5rem; }
   .slots--hero .slot small { font-size: 0.98rem; }
-  .slots--hero .ghost { width: 3.4rem; }
   .spread .cover-actions p.cover-links { flex-direction: row; gap: 0.1rem 1.2rem; }
   .cover-actions .go { font-size: 1.1rem; }
 }
@@ -593,7 +590,6 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .slot--wait { min-height: 12rem; padding: clamp(1.4rem, 3vw, 2.2rem) clamp(1.4rem, 4vw, 2.8rem); padding-right: clamp(6rem, 18vw, 13rem); }
 .slot--wait strong { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.8rem); }
 .slot--wait small { max-width: 44ch; font-size: 1.05rem; }
-.slot--wait .ghost { top: 50%; right: clamp(1.2rem, 4vw, 3rem); width: clamp(4.5rem, 12vw, 8.5rem); transform: translateY(-60%); }
 .sticker--photo .price { display: block; margin: 0.15rem 0.6rem 0.35rem; font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.15rem; color: var(--album); font-variant-numeric: tabular-nums; }
 
 /* Speakers on a phone, on the home page and the speakers page: one sticker after another, a big photo on top */
@@ -617,7 +613,6 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .slots--formats .slot .num { grid-row: 1 / span 2; margin: 0; }
   .slots--formats .slot strong { padding-right: 0; }
   .slots--formats .slot small { margin-top: 0.2rem; }
-  .slots--formats .slot .ghost { display: none; }
   .slots--formats .slot .stamp { position: static; grid-column: 2; justify-self: end; margin-top: 0.15rem; }
   .album-page .slots--supporters-home { grid-template-columns: minmax(0, 26rem); justify-content: center; gap: 1rem; }
   .slots--supporters-home .supporter-chip img { aspect-ratio: 5 / 2; box-sizing: border-box; padding: 0.8rem 1.6rem; }

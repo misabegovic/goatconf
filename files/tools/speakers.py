@@ -280,7 +280,7 @@ def talk_format(meta) -> str:
 
 
 def goat_photo() -> str:
-    return '<span class="speaker__goat" aria-hidden="true"><svg viewBox="0 0 124 100"><use href="#goat"/></svg></span>'
+    return f'<span class="speaker__goat" aria-hidden="true">{frame.sitting()}</span>'
 
 
 def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None, anchor=True) -> str:
@@ -476,8 +476,8 @@ def speakers_page() -> str:
         cards = '<ul class="slots slots--speakers">\n' + "\n".join(
             speaker_card(i + 1, slug, m, b, talks.get(slug, []), known, (detail.get(slug) or [None])[0]) for i, (slug, (m, b)) in enumerate(order)) + "\n</ul>"
     else:
-        cards = """<ul class="slots slots--speakers">
-  <li class="slots__wide"><a class="slot slot--link slot--wait" href="talk.html"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg><span class="num num--printed">1</span><strong>The first speaker could be you</strong><small>No one is announced yet. Speakers appear here as their sessions are accepted, and the call for proposals is open now.</small><span class="stamp">Yours?</span></a></li>
+        cards = f"""<ul class="slots slots--speakers">
+  <li class="slots__wide"><a class="slot slot--link slot--wait" href="talk.html">{frame.peek("session")}<span class="num num--printed">1</span><strong>The first speaker could be you</strong><small>No one is announced yet. Speakers appear here as their sessions are accepted, and the call for proposals is open now.</small><span class="stamp">Yours?</span></a></li>
 </ul>"""
     main = f"""<section class="album-page wrap" aria-labelledby="h-speakers">
   <h2 class="band" id="h-speakers">Who is speaking</h2>
@@ -496,7 +496,7 @@ def supporters_page() -> str:
     order = listed_supporters(known)
     # Until a company supports GoatConf (the host does not count), the wall keeps a place inviting one.
     invite = ("" if any(m.get("host") is not True for _, (m, _b) in order) else
-              f'  <li><a class="slot slot--link" href="#h-become"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg><span class="num num--printed">{len(order) + 1}</span>'
+              f'  <li><a class="slot slot--link" href="#h-become">{frame.peek()}<span class="num num--printed">{len(order) + 1}</span>'
               f'<strong>Your logo</strong><small>{"Be the first supporter." if order else "No supporters yet."} Support GoatConf online and your logo and link go here.</small><span class="stamp">Yours?</span></a></li>')
     cards = '<ul class="slots slots--supporters">\n' + "\n".join(
         [supporter_card(i + 1, slug, m, b) for i, (slug, (m, b)) in enumerate(order)] + ([invite] if invite else [])) + "\n</ul>"

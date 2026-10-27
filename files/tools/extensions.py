@@ -500,7 +500,7 @@ def venue_card(n: int, v) -> str:
         alt = html.escape(str(rec.get("subject") or rec.get("title") or v["name"]))
         photo = f'<img src="img/venues/{html.escape(v["photo"])}" alt="{alt}" loading="lazy">'
     else:
-        photo = '<span class="speaker__goat venue__empty"><svg aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg><small>No photo yet</small></span>'
+        photo = f'<span class="speaker__goat venue__empty">{frame.sitting()}<small>No photo yet</small></span>'
     english = f'<span class="venue__english">{e("english")}</span>' if v.get("english") else ""
     where = f'{e("address")}. {far(m)}' + (", from the street" if v.get("point") == "street" and m is not None else "") + "."
     tags = [f'<span class="tag">{VENUE_KINDS[v["kind"]]}</span>'] + ([] if v["kind"] == "outdoors" else [f'<span class="tag">{SETTINGS[v["setting"]]}</span>'])
@@ -549,7 +549,7 @@ def what_block(start: int) -> str:
     items = []
     for i, (kind, tip) in enumerate(WHAT):
         label = "Something else?" if kind == "other" else KINDS[kind]
-        items.append(f'    <li><a class="slot slot--format slot--link" href="#where" data-pick-kind="{kind}"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+        items.append(f'    <li><a class="slot slot--format slot--link" href="#where" data-pick-kind="{kind}">{frame.peek(kind)}'
                      f'<span class="num num--printed">{start + i}</span><strong>{label}</strong><small>{tip}</small><span class="stamp">Yours?</span></a></li>')
     return '  <ul class="slots slots--kinds slots--what" aria-label="Kinds of events you can run">\n' + "\n".join(items) + "\n  </ul>"
 
@@ -586,7 +586,7 @@ def hub(show_all=False) -> str:
     if good:
         cards = "\n".join("  " + card(i + 1, s, m) for i, (_, s, m, _b) in enumerate(good))
         n = len(good) + 1
-        cards += (f'\n  <li><a class="slot slot--link slot--open" href="#propose"><svg class="ghost" aria-hidden="true" viewBox="0 0 124 100"><use href="#goat"/></svg>'
+        cards += (f'\n  <li><a class="slot slot--link slot--open" href="#propose">{frame.peek("event")}'
                   f'<span class="num num--printed">{n}</span><strong>Yours next?</strong><small>{MORE}</small><span class="stamp">Yours?</span></a></li>')
         listings = f'<ul class="slots slots--events">\n{cards}\n</ul>'
     else:

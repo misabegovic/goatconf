@@ -7,7 +7,7 @@ the footer between <!-- gen:footer tools/frame.py --> and
 <!-- /gen:footer --> (the home page carries its back cover's links between
 <!-- gen:back-cover-links tools/frame.py --> and its end), which `apply`
 writes and `check` checks, as tools/nav.py does for the top bar. The goat
-sprite sits right after <body> on every page that uses it (href="#goat"),
+sprite sits right after <body> on every page that uses it (#goat-sit or #peek-),
 and on no other.
 
   apply     write the footer, the back cover's links and the sprite on every page
@@ -41,27 +41,11 @@ BACK_COVER = {"charter.html": "The charter", "code-of-conduct.html": "The code o
 LINE = ("GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. "
         'Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.')
 
-LINE_GOAT = """<symbol id="goat" viewBox="0 0 124 100">
-      <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M27 49c-1-11 9-17 24-17.5 14-.5 25 .5 31 5.5 4 3.5 5.5 10 3.5 16.5-2.5 8-11 11.5-24 11.5-15 0-27-2-31.5-6.5C27.5 56.5 27 53 27 49z" fill="var(--goat-fill, #f2f6f1)"/>
-        <path d="M80 39c2-7 5.5-13 10-16.5 4.5-3.5 11-3 14.5 1 3 3.5 5 8 4.5 11-.5 2.5-3 3.5-6 3-3-.5-5 1-6.5 4.5-1.5 3.5-3 6.5-5.5 7.5" fill="var(--goat-fill, #f2f6f1)"/>
-        <path d="M93 21c-3-6-8.5-11-15-11.5-3.5-.3-6 1-7 3.5 5-.5 9.5 2.5 13 7.5"/>
-        <path d="M97 22.5c-.5-6-4-11-9-13.5"/>
-        <path d="M92.5 28c-3.5 1-7 3.5-9.5 3"/>
-        <path d="M107 38.5c.5 4-1 9-4 12"/>
-        <path d="M35 63l-2.5 22.5M45 64.5l.5 21M69 64.5l2 21M78.5 61.5l3.5 23.5"/>
-        <path d="M29.5 45c-5-2-8-6-7-11"/>
-      </g>
-      <circle cx="99.5" cy="27.5" r="2" fill="currentColor"/>
-      <path d="M31 85.5h4M44 85.5h4M69.5 85.5h4M80.5 85h4" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-    </symbol>
-"""
-
 # The goat mascot (ADR wiki/org/adrs/goat-mascot.md): one flat goat drawn in
 # parts, cream coat, ink outline, yellow horns curled back. A peek shows its
 # horns, ears, eyes and front hooves over an open slot's top edge; a role is a
 # small layer on the same goat. PEEK_BY_KIND says which role each kind of slot
-# gets. The faint line goat (#goat) stays until every slot peeks.
+# gets; #goat-sit is the whole goat, sitting, where there is no photo yet.
 INK = goats.INK
 _LINE = goats.LINE
 GOAT_PARTS = (f'<g id="gm-horns">{goats.HORNS}</g>\n      <g id="gm-ears">{goats.EARS}</g>\n      '
@@ -94,6 +78,11 @@ def _peek_symbol(role: str) -> str:
             f'<use href="#gm-ears"/><use href="#gm-horns"/><use href="#gm-face"/>{head}</g></g><use href="#gm-hooves"/>{front}</symbol>')
 
 
+def sitting() -> str:
+    """The whole goat, sitting, where a speaker or a venue has no photo yet."""
+    return '<svg aria-hidden="true" focusable="false" viewBox="0 18 200 186"><use href="#goat-sit"/></svg>'
+
+
 def peek(kind: str = "") -> str:
     """The goat peeking over an open slot, in the role its kind gets."""
     role = PEEK_BY_KIND.get(kind, "goat")
@@ -101,7 +90,8 @@ def peek(kind: str = "") -> str:
 
 
 SPRITE = ('<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>'
-          + LINE_GOAT + "\n      " + GOAT_PARTS + "\n      " + "".join(_peek_symbol(r) for r in ROLES) + PEEK_HIDDEN + "\n    </defs></svg>")
+          + '<symbol id="goat-sit" viewBox="0 18 200 186">' + goats.role("goat").split(">", 1)[1].rsplit("</svg>", 1)[0] + "</symbol>"
+          + "\n      " + GOAT_PARTS + "\n      " + "".join(_peek_symbol(r) for r in ROLES) + PEEK_HIDDEN + "\n    </defs></svg>")
 
 
 def block(name: str, body: str) -> str:
@@ -168,7 +158,7 @@ BODY = re.compile(r"<body[^>]*>\n")
 def frame(text: str) -> str:
     """The page with its sprite (only where it is used), footer and back cover's links current."""
     text = SPRITE_RE.sub("", text)
-    if 'href="#goat"' in text or 'href="#peek-' in text:
+    if 'href="#goat-sit"' in text or 'href="#peek-' in text:
         m = BODY.search(text)
         if not m:
             raise ValueError("no <body> tag on its own line to put the sprite after")
