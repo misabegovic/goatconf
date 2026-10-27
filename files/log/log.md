@@ -711,3 +711,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #201: site: the speaker's goat after the bio on phones
    diff: 35 files, +54/-31
    restricted-paths: false
+2026-10-27 merge — PR #202: outreach: the goats post is published
+   diff: 4 files, +16/-2
+   restricted-paths: false
