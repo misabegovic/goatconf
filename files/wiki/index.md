@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-27**: **Proposed: a goat mascot that peeks.** A cute flat goat, in roles from the EuRuKo 2024 goat multiverse (speaker, host with fes and fildžan, coder, cook, the Pannonian pirate, the hidden goat), peeking over the open slots and rising a little on hover, to replace the faint line goat; waiting for the organiser's approval ([the ADR](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-27--org--goat-mascot.md).
 - **2026-10-27**: **Still stickers.** The cards no longer lift and settle into place as you scroll; they sit still with their tilt ([the impeccable ADR](org/adrs/design-with-impeccable.md); source: sources/conversations/2026-10-27--org--still-stickers.md).
 - **2026-10-27**: **"A city of salt" is out.** The drumbeat's first Tuesday post went out on 27 October; next is "Registration is open, and free" on Saturday 31 October ([the calendar](org/outreach/drumbeat.md); [October to December 2026](org/outreach/drumbeat-2026.md); source: sources/conversations/2026-10-27--org--city-of-salt-published.md).
 - **2026-10-26**: **One "not only about Ruby" on the home page.** The line stays in "Why a goat" and is cut from "Who's organising" (source: sources/conversations/2026-10-26--org--repeated-ruby-line.md).

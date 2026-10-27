@@ -270,6 +270,27 @@
       ]
     },
     {
+      "path": "org/adrs/goat-mascot.md",
+      "title": "A cute goat mascot that peeks over the open slots, in roles from the EuRuKo 2024 goat multiverse",
+      "kind": "decision",
+      "status": "proposed",
+      "updated": "2026-10-27",
+      "confidence": "low",
+      "depends_on": [
+        "org/prds/design-with-impeccable.md"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-27--org--goat-mascot.md",
+        "sources/conversations/2026-10-27--org--still-stickers.md",
+        "sources/web/organiser/euruko-2024-figma-file-2026-10-27.md",
+        "sources/web/organiser/euruko-2024-podcast-notes.md",
+        "sources/web/models/enola-tech-mascot-2026-10-27.md",
+        "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
+        "sources/web/funding/euruko-2024-why-the-goat.md"
+      ],
+      "tokens": 2070
+    },
+    {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
       "title": "Website: goatconf.com on GitHub Pages, with every intake through Google Forms",
       "kind": "decision",
@@ -1701,7 +1722,8 @@
       ],
       "tokens": 2646,
       "consumed_by": [
-        "org/adrs/design-with-impeccable.md"
+        "org/adrs/design-with-impeccable.md",
+        "org/adrs/goat-mascot.md"
       ]
     },
     {
