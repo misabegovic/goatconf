@@ -717,3 +717,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #203: site: the goodbye goat waves from below the button on phones
    diff: 35 files, +51/-31
    restricted-paths: false
+2026-10-27 merge — PR #204: site: the goat plays a trick when tapped and looks at the pointer
+   diff: 37 files, +185/-78
+   restricted-paths: false
