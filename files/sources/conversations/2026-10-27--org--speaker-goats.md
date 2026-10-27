@@ -19,3 +19,7 @@ Shown drafts for all nine speakers, each drawn from their photo (hair, beard, gl
 > Yes, build them in (Recommended)
 
 described as: add each goat's traits to the speaker records and put them on the site, peeking over their cards on the home and speakers pages and over their sessions, whole on their profile page, and on their shareable cards, shown in the browser before it ships.
+
+Shown the goats in the browser (peeking over the cards on the speakers page, beside the bio on each speaker's page) and on the re-rendered share cards, and asked "Ship the speaker goats?", the organiser chose, verbatim:
+
+> Ship it (Recommended)
