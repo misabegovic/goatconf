@@ -273,13 +273,14 @@
       "path": "org/adrs/goat-mascot.md",
       "title": "A cute goat mascot that peeks over the open slots, in roles from the EuRuKo 2024 goat multiverse",
       "kind": "decision",
-      "status": "proposed",
+      "status": "accepted",
       "updated": "2026-10-27",
-      "confidence": "low",
+      "confidence": "medium",
       "depends_on": [
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-27--org--goat-mascot-approved.md",
         "sources/conversations/2026-10-27--org--goat-mascot.md",
         "sources/conversations/2026-10-27--org--still-stickers.md",
         "sources/web/organiser/euruko-2024-figma-file-2026-10-27.md",
@@ -288,7 +289,7 @@
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 2070
+      "tokens": 2099
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",

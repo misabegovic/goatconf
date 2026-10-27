@@ -1,12 +1,13 @@
 ---
 title: "A cute goat mascot that peeks over the open slots, in roles from the EuRuKo 2024 goat multiverse"
 kind: decision
-status: proposed
+status: accepted
 updated: 2026-10-27
-confidence: low
+confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--goat-mascot-approved.md
   - sources/conversations/2026-10-27--org--goat-mascot.md
   - sources/conversations/2026-10-27--org--still-stickers.md
   - sources/web/organiser/euruko-2024-figma-file-2026-10-27.md
@@ -23,8 +24,9 @@ the site that is shown everywhere", closer to "the goat multiverse topic of
 euruko 2024", as "some sort of mascot that pops up and it's cute", like
 enola.tech's cat. Shown sketches, they chose a flat goat, a peek that rises
 on hover, and a role that matches the slot (source:
-sources/conversations/2026-10-27--org--goat-mascot.md). Nothing is built
-until the organiser approves this page.
+sources/conversations/2026-10-27--org--goat-mascot.md). Accepted the same
+day: the organiser chose "Approve, start building" (source:
+sources/conversations/2026-10-27--org--goat-mascot-approved.md).
 
 ## Context
 
