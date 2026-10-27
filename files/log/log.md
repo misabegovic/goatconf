@@ -723,3 +723,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #205: site: four speakers' whole goats on their cards, a slower head shake, taps that do not select
    diff: 41 files, +156/-99
    restricted-paths: true
+2026-10-27 merge — PR #206: site: whole goats on profile bands no longer cut off, band headings clear of the goat on phones
+   diff: 37 files, +100/-63
+   restricted-paths: false

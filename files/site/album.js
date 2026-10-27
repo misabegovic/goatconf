@@ -108,7 +108,14 @@
     // On a photo it sits in the photo's corner (CSS); over a slot it stands where the slot's own goat would.
     stage.classList.toggle("is-scene", s.scene);
     const own = getComputedStyle(s.peek);
-    stage.style.width = s.scene ? "" : own.width;
+    // A goat sized by its height (a whole goat on a band) has no width while hidden, so it is measured shown.
+    let width = own.width;
+    if (width === "auto") {
+      s.peek.style.display = "block";
+      width = `${s.peek.getBoundingClientRect().width}px`;
+      s.peek.style.display = "";
+    }
+    stage.style.width = s.scene ? "" : width;
     stage.style.right = s.scene ? "" : own.right;
     stage.style.bottom = s.scene ? "" : own.bottom;
     // On a photo it stands on the photo's own bottom edge, above the caption and the text under it.
