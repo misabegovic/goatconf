@@ -2,11 +2,12 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-10-26
+updated: 2026-10-27
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-27--org--city-of-salt-published.md
   - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
   - sources/web/tuzla/tuzla-wikipedia-bs.md
   - sources/web/tuzla/tztz-history-of-tuzla.md
@@ -108,7 +109,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 27 Oct 2026, Tuesday: A city of salt
 
-- **State:** drafted
+- **State:** published, Tuesday 27 October 2026 (source: sources/conversations/2026-10-27--org--city-of-salt-published.md)
 - **Image:** [`post-city-of-salt-square.png`](https://goatconf.com/share/post-city-of-salt-square.png) (LinkedIn, Mastodon), [`post-city-of-salt-wide.png`](https://goatconf.com/share/post-city-of-salt-wide.png) (X, Bluesky)
 - **Before posting:** News first: if a speaker, a supporter or an event was confirmed this week, its post takes this Tuesday and this one moves to the next free Tuesday.
 - **LinkedIn:**

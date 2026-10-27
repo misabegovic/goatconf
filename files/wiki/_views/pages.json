@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26",
+  "generated": "2026-10-27",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -850,12 +850,13 @@
       "title": "The drumbeat, October to December 2026",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-26",
+      "updated": "2026-10-27",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-27--org--city-of-salt-published.md",
         "sources/conversations/2026-10-26--org--confirmed-speaker-cards.md",
         "sources/web/tuzla/tuzla-wikipedia-bs.md",
         "sources/web/tuzla/tztz-history-of-tuzla.md",
@@ -911,7 +912,7 @@
         "sources/conversations/2026-10-12--org--day-chain-and-session-format.md",
         "sources/conversations/2026-10-12--org--two-core-days-and-saturday.md"
       ],
-      "tokens": 6232
+      "tokens": 6263
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -1034,12 +1035,13 @@
       "title": "The drumbeat: the weekly posts, from launch to June 2027",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-10-26",
+      "updated": "2026-10-27",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-27--org--city-of-salt-published.md",
         "sources/conversations/2026-10-26--org--confirmed-speaker-cards.md",
         "sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md",
         "sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md",
