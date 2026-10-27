@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
   - sources/conversations/2026-10-27--org--mascot-watercolour.md
   - sources/conversations/2026-10-27--org--goat-everywhere.md
@@ -230,3 +231,18 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   reduced motion the goat appears and stays still. On the share cards the
   speaker's whole goat sits in the bottom corner, never cut off (source:
   sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md).
+- **2026-10-27, the goat on the photos and in more places.** The companion
+  goat also visits the Tuzla and food photos on the home page: on a photo
+  it appears as that photo's painted scene, standing on the photo's bottom
+  edge, popping out of its corner and shrinking back into it (floating on the
+  salt lakes, licking salt at the fountain shaped like a salt-boiling dish,
+  eating burek or ćevapi, drinking coffee); a photo without a painted scene
+  yet is not visited, until its scene is painted. It is still one goat at a
+  time. The host goat peeks over the organiser's numbers in "Who's
+  organising", the goat peeks over the photo in "How we treat each other",
+  and the goat waves goodbye beside "Register for free" in "See you in
+  Tuzla". The goat peeks over the support figures in "Support GoatConf", and
+  the hidden goat peeks up beside the saying in "Why a goat". On a speaker's
+  own page their goat stands on the band of each section and follows the
+  visitor down the page, one goat at a time. Paul Campbell's goat, painted
+  from a black and white photo, has his ginger hair and beard (source: sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md).

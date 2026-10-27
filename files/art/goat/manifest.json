@@ -153,7 +153,7 @@
   "group": "speakers",
   "h": 640,
   "turn": {
-   "band": 516,
+   "band": 560,
    "pad": 96
   },
   "w": 441
@@ -176,7 +176,7 @@
   "group": "speakers",
   "h": 640,
   "turn": {
-   "band": 561,
+   "band": 585,
    "pad": 96
   },
   "w": 549
@@ -218,7 +218,7 @@
   "group": "speakers",
   "h": 640,
   "turn": {
-   "band": 511,
+   "band": 537,
    "pad": 96
   },
   "w": 445
@@ -241,7 +241,7 @@
   "group": "speakers",
   "h": 640,
   "turn": {
-   "band": 546,
+   "band": 584,
    "pad": 96
   },
   "w": 541
@@ -264,7 +264,7 @@
   "group": "speakers",
   "h": 640,
   "turn": {
-   "band": 560,
+   "band": 620,
    "pad": 96
   },
   "w": 541

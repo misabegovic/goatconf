@@ -215,7 +215,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .shiny__crest { width: min(100%, 19rem); justify-self: center; }
 .shiny__title { font-size: var(--step-2); color: var(--yellow); margin-bottom: 1.2rem; }
 .shiny__copy p { max-width: 58ch; }
-.saying { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: var(--step-1); line-height: 1.1; color: var(--page); margin-block: 1.4rem; }
+.saying { position: relative; font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: var(--step-1); line-height: 1.1; color: var(--page); margin-block: 1.4rem; }
 .saying small { display: block; margin-top: 0.4rem; font-family: var(--text); font-weight: 400; font-size: 0.9rem; color: var(--album-soft); }
 
 /* Back cover */
@@ -714,6 +714,12 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .slots--hero:has(.peek), .album-page .slots--hero:has(.peek) { row-gap: 3.6rem; padding-top: 0; }
 .slots--hero .peek { width: 5.2rem; }
 @media (max-width: 47.99rem) { .peek { width: 5.8rem; } .slots:has(.peek), .album-page .slots:has(.peek) { row-gap: 4.2rem; padding-top: 3.8rem; } }
+/* On a speaker's page their goat stands on each band's bottom edge, its head in the band, its hooves on the rule */
+.band { position: relative; }
+/* The hidden goat in the goat story peeks up beside the saying, not over the line above it */
+.saying { padding-right: 6.5rem; }
+.saying > .peek { right: 0; bottom: 0; width: 7.5rem; }
+.band > .peek { bottom: -0.45rem; right: clamp(1rem, 3vw, 2.5rem); width: clamp(5rem, 9vw, 6.6rem); }
 /* Each speaker's own painted goat: it peeks over their card and sits beside their bio */
 .peek--face { right: 0.8rem; width: 6.6rem; z-index: 1; }
 .sticker--speaker:hover .peek, .sticker--speaker:focus-within .peek { transform: translateY(-0.45rem); }
@@ -747,4 +753,13 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goat-one__stage .goat.is-turned .goat-head { display: block; }
 .goat-one__stage .goat.is-turned .goat-body { clip-path: inset(var(--cut) -50% -50% -50%); }
 .goat-one__stage .goat.is-turned .goat-blink { display: none; }
-.goat-one__stage.is-tucked { clip-path: inset(-100% -60% calc(100% - var(--edge) - 2%) -60%); }
+.goat-one__stage.is-tucked:not(.is-scene) { clip-path: inset(-100% -60% calc(100% - var(--edge) - 2%) -60%); }
+/* On a Tuzla or food photo the goat sits as the photo's painted scene in its bottom corner, over the caption's top;
+   without the script the photos stay as they are. */
+.goat-scene { display: none; }
+.goat-one__stage.is-scene { right: -1rem; width: 62%; translate: none; }
+/* The goats a page places by hand: over the organiser's numbers, over the conduct photo, and waving goodbye */
+.print { position: relative; }
+#see-you { position: relative; }
+#see-you .goat-one__stage.is-scene { right: clamp(1rem, 8vw, 6rem); bottom: 0.6rem; width: clamp(6.5rem, 14vw, 9.5rem); }
+.goat-one__stage.is-scene .goat { transform-origin: 80% 90%; filter: drop-shadow(0 0.25rem 0.3rem rgb(0 0 0 / 0.25)); }

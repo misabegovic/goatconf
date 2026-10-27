@@ -693,3 +693,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #195: site: the painted goat everywhere, one at a time, with turning heads
    diff: 188 files, +1758/-423
    restricted-paths: true
+2026-10-27 merge — PR #196: site: the goat on the photos, in more sections and on speaker pages
+   diff: 55 files, +320/-175
+   restricted-paths: true

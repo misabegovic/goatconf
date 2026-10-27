@@ -33,7 +33,8 @@ def test_a_goat_that_turns_carries_its_head_band_and_its_cut_line():
     assert turning, "no role goat turns"
     html = goat_atlas.goat(turning[0], "peek peek--art")
     parts = html.split('data-turn="')[1].split('"')[0].split("|")
-    assert parts[0].endswith("-turns.webp") and len(parts) == 9
+    # The address carries a stamp of the sheet's content, so a repainted goat reaches browsers with the old one.
+    assert parts[0].split("?v=")[0].endswith("-turns.webp") and len(parts) == 9
     # The cut line, where the turned head band ends and the goat's own body begins, lies inside the goat.
     assert 0 < float(parts[8].rstrip("%")) < 100
     still = [p for p in goat_atlas.sets()["roles"][0] if not man[p].get("turn")]

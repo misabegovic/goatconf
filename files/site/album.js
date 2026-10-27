@@ -11,21 +11,22 @@
 })();
 
 // One goat on screen at a time (ADR goat-mascot): it peeks over the open slot or the speaker's card nearest
-// the middle of the screen, in that slot's role or as that speaker's own goat, and hops there as you scroll or
+// the middle of the screen, in that slot's role or as that speaker's own goat, or sits on a Tuzla or food
+// photo as that photo's painted scene, and hops there as you scroll or
 // point. While it waits it bobs, wiggles, stretches, turns its head to look around or plays peek-a-boo, and it
 // ducks behind the edge when the pointer comes close. A turn swaps in the goat's painted head turned left or
 // right, from a second sheet loaded after the page; its body stays the painted goat's own. It moves by transform only, and appears once its sprite sheet
 // has loaded, so nothing waits on the network mid-move. On Save-Data or a 2G connection there is no goat;
 // without the script every slot keeps its own goat; with reduced motion the goat simply appears where it is.
 (() => {
-  const peeks = [...document.querySelectorAll(".peek--art, .peek--face")];
+  const peeks = [...document.querySelectorAll(".peek--art, .peek--face, .goat-scene")];
   if (!peeks.length) return;
   const root = document.documentElement;
   const net = navigator.connection;
   if (net && (net.saveData || /2g$/.test(net.effectiveType || ""))) { root.classList.add("goat-none"); return; }
   root.classList.add("goat-one");
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const slots = peeks.map((p) => ({ slot: p.parentElement, peek: p }));
+  const slots = peeks.map((p) => ({ slot: p.parentElement, peek: p, scene: p.classList.contains("goat-scene") }));
   const stage = document.createElement("div");
   stage.className = "goat-one__stage";
   stage.setAttribute("aria-hidden", "true");
@@ -95,9 +96,15 @@
   // The goat lives inside the slot it stands on, placed as the slot's own goat would be, so it moves with
   // the slot whatever the page does: fonts and images arriving, filters, a resize, a tilted card.
   const settle = (s) => {
+    // On a photo it sits in the photo's corner (CSS); over a slot it stands where the slot's own goat would.
+    stage.classList.toggle("is-scene", s.scene);
     const own = getComputedStyle(s.peek);
-    stage.style.width = own.width;
-    stage.style.right = own.right;
+    stage.style.width = s.scene ? "" : own.width;
+    stage.style.right = s.scene ? "" : own.right;
+    stage.style.bottom = s.scene ? "" : own.bottom;
+    // On a photo it stands on the photo's own bottom edge, above the caption and the text under it.
+    const img = s.scene && s.slot.querySelector("img");
+    if (img) stage.style.bottom = `${s.slot.clientHeight - (img.offsetTop + img.offsetHeight) - 4}px`;
     const was = stage.parentElement;
     if (was && was !== s.slot) was.classList.remove("has-goat");
     s.slot.classList.add("has-goat");
@@ -109,9 +116,16 @@
   };
 
   // Ducking: a small lift first, as if pushing off, then down behind the edge, hooves last.
+  const onPhoto = () => stage.classList.contains("is-scene");
+  const TINY = T("0%", 0.02, 0.02);
   const duck = () => {
     stage.classList.add("is-tucked");
     down = true;
+    if (onPhoto()) return play(goat, [
+      { transform: REST, easing: "cubic-bezier(.3,0,.6,1)" },
+      { transform: T("-4%", 1.06, 1.06, -4), offset: 0.3, easing: "cubic-bezier(.55,0,.85,.3)" },
+      { transform: TINY },
+    ], { duration: 380 });
     return play(goat, [
       { transform: REST, easing: "cubic-bezier(.3,0,.6,1)" },
       { transform: T("-5%", 0.97, 1.04), offset: 0.28, easing: "cubic-bezier(.55,0,.85,.3)" },
@@ -122,6 +136,13 @@
   const pop = () => {
     stage.classList.add("is-tucked");
     down = false;
+    // On a photo: out of the corner, a little too big and tilted, back, and settled.
+    if (onPhoto()) return play(goat, [
+      { transform: TINY, easing: "cubic-bezier(.2,.75,.35,1)" },
+      { transform: T("-6%", 1.1, 1.1, -5), offset: 0.55, easing: "cubic-bezier(.5,0,.6,1)" },
+      { transform: T("1%", 0.96, 0.96, 2), offset: 0.78, easing: "ease-out" },
+      { transform: REST },
+    ], { duration: 620 }).then(() => stage.classList.remove("is-tucked"));
     return play(goat, [
       { transform: HIDDEN, easing: "cubic-bezier(.2,.75,.35,1)" },
       { transform: T("-10%", 0.94, 1.08), offset: 0.5, easing: "cubic-bezier(.5,0,.6,1)" },
@@ -193,7 +214,7 @@
       } else {
         // Far away, it ducks here and pops up there; near enough, it hops.
         const a = from.slot.getBoundingClientRect(), b = s.slot.getBoundingClientRect();
-        if (Math.hypot(b.right - a.right, b.top - a.top) > innerHeight * 0.8) {
+        if (from.scene || s.scene || Math.hypot(b.right - a.right, b.top - a.top) > innerHeight * 0.8) {
           await duck();
           arrive();
           await pop();

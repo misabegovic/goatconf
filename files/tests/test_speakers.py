@@ -432,8 +432,9 @@ def test_a_speaker_page_says_who_they_are_and_how_to_support_them(tmp_path, monk
     _, speakers = setup(tmp_path, monkeypatch, SPEAKER.replace("publish: yes", "publish: yes\nsupport_them:\n  - {text: Read her book, url: https://example.com/book}"))
     detail = speakers.sessions_by_speaker(detail=True)["ana-example"]
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], detail, speakers.supporters())
-    assert '<h2 class="band" id="h-about">Who they are</h2>' in page
-    assert '<h2 class="band" id="h-support-them">How to support them</h2>' in page
+    # The speaker's goat stands on each band, before the band's words.
+    assert '<h2 class="band" id="h-about">' in page and 'peek--face' in page and 'Who they are</h2>' in page
+    assert '<h2 class="band" id="h-support-them">' in page and 'How to support them</h2>' in page
     assert '<li><a href="https://example.com/book">Read her book</a></li>' in page
     _, speakers = setup(tmp_path / "bad", monkeypatch, SPEAKER.replace("publish: yes", "publish: yes\nsupport_them: buy the book"))
     problems, _, _ = speakers.check_speaker(tmp_path / "bad" / "speakers" / "ana-example.md", speakers.supporters())
