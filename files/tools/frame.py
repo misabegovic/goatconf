@@ -134,9 +134,37 @@ def page(canonical: str, title: str, description: str, photo, h1: str, lede: str
 SPRITE_RE = re.compile(r'<svg width="0" height="0" style="position:absolute".*?</svg>\n', re.S)
 
 
+PHOTO_RE = re.compile(r'(<figure class="sticker sticker--photo"[^>]*>)(.*?)(</figure>)', re.S)
+SCENE_RE = re.compile(r'<span class="goat goat-scene"[^>]*>.*?</span>')
+
+
+def scenes(text: str) -> str:
+    """Each Tuzla or food photo with a painted scene carries it, for the companion goat to visit (ADR goat-mascot)."""
+    def one(m):
+        body = SCENE_RE.sub("", m.group(2))
+        src = re.search(r'<img src="([^"]+)"', body)
+        pose = goat_atlas.SCENES.get(src.group(1)) if src else None
+        return m.group(1) + body + (goat_atlas.goat(pose, "goat-scene", _beat(pose)) if pose else "") + m.group(3)
+    return PHOTO_RE.sub(one, text)
+
+
+GOAT_SPOT_RE = re.compile(r"(<!-- gen:goat-([a-z-]+) tools/frame.py -->).*?(<!-- /gen:goat-\2 -->)", re.S)
+
+
+def spots(text: str) -> str:
+    """A goat a page places by hand, between <!-- gen:goat-POSE tools/frame.py --> and its end: a scene (the waving
+    goat) or a goat peeking over the element it sits in (ADR goat-mascot)."""
+    def one(m):
+        pose = m.group(2)
+        scene = goat_atlas.sheet_of(pose) == "scenes"
+        return m.group(1) + goat_atlas.goat(pose, "goat-scene" if scene else "peek peek--art", _beat(pose)) + m.group(3)
+    return GOAT_SPOT_RE.sub(one, text)
+
+
 def frame(text: str) -> str:
-    """The page with its footer and back cover's links current, and no goat sprite left from before."""
-    text = SPRITE_RE.sub("", text)
+    """The page with its footer and back cover's links current, its photos' goat scenes, and no goat sprite left
+    from before."""
+    text = spots(scenes(SPRITE_RE.sub("", text)))
     for name, make in (("footer", footer), ("back-cover-links", back_cover_links)):
         text = blocks.pattern(name).sub(lambda _m: make(), text)
     return text

@@ -33,8 +33,13 @@ OUT = ROOT / "site" / "img" / "goat"
 WEB = "img/goat"
 # Each sheet's goats, and how tall each goat stands above its edge, in sheet pixels: about twice the size
 # it shows at, so it stays sharp on a phone's screen.
+# The goat's scenes on the Tuzla and food photos, by photo: the companion visits a photo as that photo's scene.
+SCENES = {"img/city-lakes-aerial-summer.jpg": "sticker-salt-lakes", "img/city-square-fountain-summer.jpg": "sticker-salt",
+          "img/food-burek.jpg": "sticker-burek", "img/food-cevapi.jpg": "sticker-cevapi", "img/food-coffee.jpg": "sticker-fildzan"}
 SETS = {"roles": (("peeking", "peek-host", "peek-coder", "peek-speaker", "peek-cook", "peek-pirate", "peek-hidden"), 190),
-        "sitting": (("sitting",), 320)}
+        "sitting": (("sitting",), 320),
+        # The waving goat says goodbye at the end of the home page.
+        "scenes": (tuple(dict.fromkeys(SCENES.values())) + ("waving",), 280)}
 # The goats shown on their own, and their long side in pixels.
 SINGLE = 480
 # How far, in master pixels, the turned head band and the body overlap where they meet.
@@ -111,6 +116,13 @@ def has(pose: str) -> bool:
     return pose in manifest()
 
 
+def stamped(path: str) -> str:
+    """An image's address with a stamp of its content, so a repainted goat reaches browsers that cached the last one."""
+    import hashlib
+    f = ROOT / "site" / path
+    return f"{path}?v={hashlib.sha1(f.read_bytes()).hexdigest()[:8]}" if f.exists() else path
+
+
 def _pct(n: float) -> str:
     return f"{round(n, 3):g}%"
 
@@ -122,7 +134,7 @@ def goat(pose: str, cls: str, beat: int = 0) -> str:
     c = L["cells"][pose]
     W, H, cw, ch = L["width"], L["height"], L["cell_w"], L["cell_h"]
     y0 = c["row"] * ch
-    style = (f'--beat:-{beat}s;--edge:{_pct(100 * L["edge"] / ch)};aspect-ratio:{cw}/{ch};background-image:url({L["file"]});'
+    style = (f'--beat:-{beat}s;--edge:{_pct(100 * L["edge"] / ch)};aspect-ratio:{cw}/{ch};background-image:url({stamped(L["file"])});'
              f'background-size:{_pct(100 * W / cw)} auto;background-position:0 {_pct(100 * y0 / (H - ch)) if H > ch else "0"}')
     eyes = ""
     e = c["eyes"]
@@ -135,7 +147,7 @@ def goat(pose: str, cls: str, beat: int = 0) -> str:
     if tr:
         T = L["turns"]
         # For the companion: the head band's box on the cell, its sheet, and where its left and right heads are on it.
-        turn = (f' data-turn="{T["file"]}|{_pct(100 * tr["x"] / cw)}|{_pct(100 * tr["y"] / ch)}|{_pct(100 * tr["w"] / cw)}|'
+        turn = (f' data-turn="{stamped(T["file"])}|{_pct(100 * tr["x"] / cw)}|{_pct(100 * tr["y"] / ch)}|{_pct(100 * tr["w"] / cw)}|'
                 f'{_pct(100 * tr["h"] / ch)}|{_pct(100 * T["width"] / tr["w"])}|{_pct(100 * tr["ty"] / (T["height"] - tr["h"])) if T["height"] > tr["h"] else "0%"}|'
                 f'{_pct(100 * (tr["w"] + 2) / (T["width"] - tr["w"]))}|{_pct(100 * tr["cut"] / ch)}"')
     return f'<span class="goat {cls}" aria-hidden="true" data-goat="{pose}"{turn} style="{style}">{eyes}</span>'
@@ -145,7 +157,7 @@ def single(pose: str) -> tuple[str, int, int]:
     """A goat shown on its own: its file and size."""
     m = manifest()[pose]
     k = SINGLE / max(m["w"], m["h"])
-    return f"{WEB}/{pose}.webp", round(m["w"] * k), round(m["h"] * k)
+    return stamped(f"{WEB}/{pose}.webp"), round(m["w"] * k), round(m["h"] * k)
 
 
 def _images():
@@ -187,6 +199,7 @@ def _images():
             yield ROOT / "site" / T["file"], (T["width"], T["height"]), draw_turns
     for p in singles():
         path, w, h = single(p)
+        path = path.split("?")[0]
         yield ROOT / "site" / path, (w, h), (lambda p=p, w=w, h=h: open_(p, (w, h)))
 
 

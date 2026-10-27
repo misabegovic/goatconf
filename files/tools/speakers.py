@@ -368,6 +368,10 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
         subject = "a session at IPI Academy"
     desc = f"{esc(who)} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: {subject}."
     preview = preview_name(slug) if (SITE / "share" / preview_name(slug)).exists() else ""
+    # The speaker's own goat stands on every band of their page; with the script one of them follows the visitor
+    # down the page (ADR goat-mascot).
+    goat = frame.speaker_peek(slug)
+    main = re.sub(r'(<h2 class="band"[^>]*>)', lambda m: m.group(1) + goat, main)
     return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main, preview)
 
 
