@@ -30,6 +30,14 @@ is their bio in their own words, at most 120 words.
   comes first. The organiser sets it by the speaker's standing, not the
   alphabet. Speakers without one come after, by name. No two speakers may
   share a number; the check refuses it.
+- `goat`: optional, the speaker's own goat, drawn from their photo by the
+  organiser: `hair` (`none`, `short`, `wavy`, `side`, `long`) and
+  `hair_colour`, `beard` (`full`, `short`, `goatee`, `long`, `stubble`) and
+  `beard_colour`, `glasses` (`rect`, `thin`, `round`, `grey`, `sun`), `cap`
+  (a colour), `top` (`tee`, `hoodie`, `sweater`, `shirt`) and `top_colour`,
+  and `prop` (`mic`, `clicker`, `cat`, `book`, `laptop`); colours are written
+  like `'#2b2522'`. The goat peeks over their card and sits on their page and
+  their shareable cards. A speaker can ask for a change, or for no goat.
 - `role`: optional, one line of at most 80 characters saying what they do
   and where, as they would put it (for example `Staff Engineer at Vinted`,
   `Independent consultant`). It shows under their name on their page, the

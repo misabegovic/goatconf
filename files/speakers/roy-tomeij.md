@@ -9,6 +9,7 @@ links:
   - https://bsky.app/profile/roy.io
   - https://x.com/roy
 order: 2
+goat: {hair: none, glasses: grey, top: sweater, top_colour: '#c58a2a', prop: mic}
 publish: yes
 support_them:
   - text: "Monitor your app with AppSignal, which he co-founded"

@@ -7,6 +7,7 @@ links:
   - https://www.codeplain.ai/
   - https://blog.codeplain.ai/
 order: 9
+goat: {hair: short, hair_colour: '#2b2522', beard: short, beard_colour: '#2b2522', top: hoodie, top_colour: '#1f2b45', prop: mic}
 publish: yes
 support_them:
   - text: "Read the *codeplain blog on spec-driven development"

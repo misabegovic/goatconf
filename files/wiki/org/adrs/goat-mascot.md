@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--speaker-goats.md
   - sources/conversations/2026-10-27--org--goat-peek-home.md
   - sources/conversations/2026-10-27--org--goat-mascot-approved.md
   - sources/conversations/2026-10-27--org--goat-mascot.md
@@ -155,6 +156,13 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   slot needs it. The Make it yours page and the photo placeholders keep the
   line goat until step two (source:
   sources/conversations/2026-10-27--org--goat-peek-home.md).
+- **2026-10-27, each speaker's own goat.** `tools/goats.py` draws the goat
+  once, in parts, and each speaker's goat from the traits in their record;
+  the frame's sprite takes its parts from it. `tools/speakers.py` checks the
+  traits and puts the goat on the cards and the speaker pages, and
+  `tools/shareables.py` on the share cards, all re-rendered. The program's
+  session cards get the goat when the first session has a slot: today no
+  session does (source: sources/conversations/2026-10-27--org--speaker-goats.md).
 
 ## Related
 
@@ -164,3 +172,17 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   the frame module that holds the sprite.
 - sources/conversations/2026-10-27--org--goat-mascot.md
 - sources/web/organiser/euruko-2024-figma-file-2026-10-27.md
+
+## Amendments
+
+- **2026-10-27, each speaker's own goat.** Every published speaker gets
+  their own goat, drawn from their photo: the same goat with their hair,
+  beard, glasses or cap, what they wear, and what they hold (a microphone, a
+  clicker, or something from the photo), never a logo from their clothes.
+  The traits live in the speaker's record under `goat`, chosen from drawn
+  parts. The goat peeks over their card on the home page and the speakers
+  page, sits beside their bio on their own page, and sits at the edge of
+  their photo on their "I'm speaking" and announcement cards; once their
+  sessions are on the program, it will peek over those too. A goat goes live
+  once the organiser approves it, and a speaker can ask for a change or for
+  no goat (source: sources/conversations/2026-10-27--org--speaker-goats.md).

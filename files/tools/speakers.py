@@ -29,6 +29,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extensions  # noqa: E402
 import images  # noqa: E402
 import frame  # noqa: E402
+import goats  # noqa: E402
 import sitelib  # noqa: E402
 import program  # noqa: E402
 import meta  # noqa: E402
@@ -144,7 +145,7 @@ def check_speaker(path: Path, known_supporters):
         problems.append(f"{', '.join(k for k in TALK_EXTRAS if meta.get(k) is not None)} need talk: the title of the session they describe")
     if "hold" in meta and (not isinstance(meta["hold"], str) or not meta["hold"].strip() or "\n" in meta["hold"] or len(meta["hold"]) > HOLD_CHARS):
         problems.append(f"hold must be one line of at most {HOLD_CHARS} characters: why the speaker stays off the site for now")
-    problems += support_problems(meta)
+    problems += support_problems(meta) + goats.problems(meta.get("goat"))
     if meta.get("photo"):
         p = image_problem(meta["photo"], "speakers", "photo")
         if p:
@@ -293,7 +294,9 @@ def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None,
     flavor = scheduled or ({"area": meta.get("talk_area"), "for": meta.get("talk_for")} if meta.get("talk") else {})
     first += program.tags(None, flavor.get("area")) + program.for_line(flavor.get("for"), "span")
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
-    return f"""  <li class="sticker sticker--speaker"{f' id="{esc(slug)}"' if anchor else ''} style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">
+    # The speaker's own goat, drawn from their photo, peeks over the card (ADR goat-mascot).
+    goat = goats.peek(meta["goat"]) if meta.get("goat") else ""
+    return f"""  <li class="sticker sticker--speaker"{f' id="{esc(slug)}"' if anchor else ''} style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">{goat}
     <a class="speaker__link" href="{page_name(slug)}">
     <span class="num">{n}</span>
     <figure class="speaker__photo">{photo}<figcaption>{esc(meta['name'])}</figcaption></figure>
@@ -334,7 +337,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
         lede = f'<span class="lede__role">{esc(meta["role"])}</span>{lede}'
     main = f"""<section class="album-page wrap speaker-page" aria-labelledby="h-about">
   <h2 class="band" id="h-about">Who they are</h2>
-  <div class="copy copy--wide">{bio}</div>
+  {f'<div class="speaker-page__goat">{goats.whole(meta["goat"])}</div>' if meta.get("goat") else ''}<div class="copy copy--wide">{bio}</div>
   {f'<ul class="speaker-page__links">{links}</ul>' if links else ''}
 </section>
 <section class="album-page wrap" aria-labelledby="h-talks">

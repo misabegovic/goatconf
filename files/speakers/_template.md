@@ -13,6 +13,7 @@ talk_about: |
 # talk_for: who the session is for, one short line in your words
 # support_them:   (optional: how people can support you, shown on your page)
 #   - {text: "Read my book", url: "https://example.com/book"}
+# goat: {hair: short, hair_colour: '#2b2522', top: hoodie, top_colour: '#1f2b45', prop: mic}   (optional: your goat, drawn by the organiser from your photo)
 order: 1
 publish: yes
 ---

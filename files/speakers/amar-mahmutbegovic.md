@@ -7,6 +7,7 @@ links:
   - https://semblie.com/modern-cpp/
   - https://www.embeddedrelated.com/blogs-1/nf/Amar_Mahmutbegovic.php
 order: 6
+goat: {hair: none, beard: full, beard_colour: '#7a5232', top: shirt, top_colour: '#1d2d50', prop: mic}
 publish: yes
 support_them:
   - text: "Read his book, C++ in Embedded Systems (Packt, 2025)"
