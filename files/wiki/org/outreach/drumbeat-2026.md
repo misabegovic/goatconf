@@ -132,7 +132,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 27 Oct 2026, an extra: The goats are in
 
-- **State:** draft, for the organiser to post in their own voice (source: sources/conversations/2026-10-27--org--goats-post.md)
+- **State:** draft, to go out today, Tuesday 27 October 2026, in the organiser's own voice (source: sources/conversations/2026-10-27--org--goats-post.md)
 - **Image:** [`post-goats-are-in-square.png`](https://goatconf.com/share/post-goats-are-in-square.png) (LinkedIn, Mastodon, Instagram), [`post-goats-are-in-wide.png`](https://goatconf.com/share/post-goats-are-in-wide.png) (X, Bluesky)
 - **Before posting:** an extra on top of Tuesday's post, written as the organiser; it can go out today or on any day this week.
 - **LinkedIn:**
