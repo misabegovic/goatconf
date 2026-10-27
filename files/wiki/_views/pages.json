@@ -283,6 +283,7 @@
       ],
       "sources": [
         "sources/conversations/2026-10-27--org--speaker-goat-on-phones.md",
+        "sources/conversations/2026-10-27--org--see-you-goat-on-phones.md",
         "sources/conversations/2026-10-27--org--every-painted-goat-used.md",
         "sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md",
         "sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md",
@@ -299,7 +300,7 @@
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 3974
+      "tokens": 4077
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
