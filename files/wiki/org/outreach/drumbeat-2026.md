@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-27--org--goats-post-animated.md
   - sources/conversations/2026-10-27--org--goats-post.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
   - sources/conversations/2026-10-27--org--city-of-salt-published.md
