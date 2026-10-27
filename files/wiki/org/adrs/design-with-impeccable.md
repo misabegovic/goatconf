@@ -7,6 +7,8 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-10-27--org--goat-mascot.md
+  - sources/conversations/2026-10-27--org--sticker-packs.md
   - sources/conversations/2026-10-27--org--still-stickers.md
   - sources/conversations/2026-10-26--org--matte-stickers.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
@@ -107,3 +109,4 @@ first thing to check before the first copy.
 - **2026-10-13, no budget page.** The budget is private, so the site has no budget page and no ledger, and the mentions of the budget ledger above no longer hold. The rule that the goat never makes the code of conduct read as a joke stands (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **2026-10-26, matte stickers.** The stickers lose their diagonal gloss and every shadow gets shorter and lighter (stickers, number pills, album pages, the spread, buttons, the seal), so the album reads as paper rather than glossy app cards; DESIGN.md's Gloss Rule becomes the Matte Rule (source: sources/conversations/2026-10-26--org--matte-stickers.md).
 - **2026-10-27, still stickers.** The stickers no longer peel and settle as they come into view; the organiser found it annoying. They keep their tilt and sit still from the first paint (source: sources/conversations/2026-10-27--org--still-stickers.md).
+- **2026-10-27, the goat mascot and the stickers.** A second goat joins the mark: a flat, cute mascot drawn in code, in roles from the EuRuKo 2024 goat multiverse, peeking over the open slots and the speaker cards, and each speaker's own goat drawn from their photo; the faint ghost goat is retired, and DESIGN.md's rule against a second goat drawing now allows the mascot. The same drawings make the sticker packs on the Stickers page. See [the goat mascot](goat-mascot.md) and [the sticker packs](sticker-packs.md) (sources: sources/conversations/2026-10-27--org--goat-mascot.md, sources/conversations/2026-10-27--org--sticker-packs.md).

@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-27**: **The mascot in the design notes.** DESIGN.md now describes the goat mascot, the stickers and the peek rise, and the ghost goat is gone from it ([the goat mascot](org/adrs/goat-mascot.md); [the impeccable ADR](org/adrs/design-with-impeccable.md); source: sources/conversations/2026-10-27--org--goat-mascot-approved.md).
 - **2026-10-27**: **The goat everywhere.** The Make it yours page's open slots peek too, and a venue or speaker with no photo shows the goat sitting; the faint line goat is gone ([the ADR](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-27--org--goat-everywhere.md).
 - **2026-10-27**: **The speakers' sticker pack.** Each speaker's goat, with their name, as a sticker in a pack of its own, and "Save as a sticker" on each speaker's page ([the ADR](org/adrs/sticker-packs.md); source: sources/conversations/2026-10-27--org--stickers-speakers.md).
 - **2026-10-27**: **Tuzla stickers.** The Stickers page and the pack gain seven Tuzla things: a salt crystal, the Pannonian sea, a fildžan, ćevapi, burek, the goat statue and the salt lakes ([the ADR](org/adrs/sticker-packs.md); source: sources/conversations/2026-10-27--org--stickers-tuzla.md).

@@ -224,6 +224,8 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-10-27--org--goat-mascot.md",
+        "sources/conversations/2026-10-27--org--sticker-packs.md",
         "sources/conversations/2026-10-27--org--still-stickers.md",
         "sources/conversations/2026-10-26--org--matte-stickers.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
@@ -237,7 +239,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 1421
+      "tokens": 1593
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -292,7 +294,7 @@
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 2734
+      "tokens": 2818
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
