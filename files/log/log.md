@@ -657,3 +657,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #183: site: stickers sit still, no peel and settle
    diff: 42 files, +210/-253
    restricted-paths: true
+2026-10-27 merge — PR #184: org: a goat mascot that peeks over the open slots
+   diff: 9 files, +285/-1
+   restricted-paths: false
