@@ -10,6 +10,7 @@ sources:
   - sources/conversations/2026-10-27--org--speaker-goat-on-phones.md
   - sources/conversations/2026-10-27--org--see-you-goat-on-phones.md
   - sources/conversations/2026-10-27--org--goat-tricks.md
+  - sources/conversations/2026-10-27--org--goat-tap-polish.md
   - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
@@ -275,3 +276,12 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   replaced by the somersault, since the goat is never mirrored. It no longer
   ducks when the pointer comes close but turns its head towards it, and its
   own moves come every 3 to 6 seconds instead of 4 to 8 (source: sources/conversations/2026-10-27--org--goat-tricks.md).
+- **2026-10-27, four whole goats on cards, and the tricks smoothed.** Predrag
+  Radenkovic's, Christoph Lipautz's, Amar Mahmutbegović's and Cristian
+  Planas's whole sitting goats sit on their cards on the home and Speakers
+  pages and on the bands of their own pages, where their goat peeking over
+  the card looked cut off; until those goats' eyes and turned heads are
+  painted they do not blink or turn their heads. Their "I'm speaking" and
+  "Confirmed speaker" cards stay as they are. The head shake turns the head
+  at the pace of the goat looking around, and taps on the goat neither
+  select the text around it nor flash its card (source: sources/conversations/2026-10-27--org--goat-tap-polish.md).

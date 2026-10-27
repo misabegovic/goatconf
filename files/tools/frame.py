@@ -67,7 +67,10 @@ def peek(kind: str = "") -> str:
 
 
 def speaker_peek(slug: str) -> str:
-    """A speaker's own painted goat peeking over their card, or the speaker goat while theirs is not painted yet."""
+    """A speaker's own painted goat peeking over their card, or the speaker goat while theirs is not painted yet.
+    For the speakers whose peeking goat looked cut off, their whole goat sits on the card or band instead."""
+    if slug in goat_atlas.WHOLE_ON_CARD and goat_atlas.has(f"speaker-{slug}-sitting"):
+        return goat_atlas.goat(f"speaker-{slug}-sitting", "peek peek--face peek--whole", _beat(slug))
     pose = f"speaker-{slug}"
     if goat_atlas.has(pose):
         return goat_atlas.goat(pose, "peek peek--face", _beat(slug))

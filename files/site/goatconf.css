@@ -733,7 +733,9 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .speaker-page { display: flex; flex-direction: column; }
   .speaker-page__goat { order: 5; float: none; width: 11rem; margin: 1.4rem auto 0.4rem; }
 }
-@media (max-width: 47.99rem) { .peek--face { width: 5.8rem; } .slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 4.8rem; padding-top: 4.4rem; } }
+/* A whole goat sitting on its card stands as tall above the card as a peeking goat does */
+.peek--whole { width: 5.8rem; }
+@media (max-width: 47.99rem) { .peek--face { width: 5.8rem; } .peek--whole { width: 5.1rem; } .slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 4.8rem; padding-top: 4.4rem; } }
 @media (prefers-reduced-motion: reduce) { .goat-blink { animation: none; } .peek { transition: none; } .slot--link:hover .peek, .slot--link:focus-visible .peek, .sticker--speaker:hover .peek, .sticker--speaker:focus-within .peek { transform: none; } }
 
 /* The Stickers page: every sticker to tap and save (ADR sticker-packs) */
@@ -751,7 +753,10 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .has-goat { z-index: 2; }
 .goat-one__stage .goat { position: relative; width: 100%; transform-origin: 50% var(--edge); }
 /* The goat takes a tap or a click for a trick; its "Meee!" pops out beside its head. */
-.goat-one__stage .goat { pointer-events: auto; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+/* A tap on it, or several quickly, neither selects the text around it nor flashes the slot it stands on. */
+.goat-one__stage .goat { pointer-events: auto; cursor: pointer; touch-action: manipulation; }
+.goat-one__stage { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.has-goat, .goat-one__stage { -webkit-tap-highlight-color: transparent; }
 .goat-say { position: absolute; right: 72%; bottom: 74%; z-index: 1; padding: 0.15rem 0.55rem 0.2rem; border-radius: 1rem 1rem 0.2rem 1rem; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.05rem; white-space: nowrap; opacity: 0; transform-origin: 100% 100%; pointer-events: none; box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35); }
 /* The companion's goat in layers: its body from the sheet, its eyes, and its head turned left or right. Turned,
    the body shows only below the head band, and the band shows the painted turned head. */

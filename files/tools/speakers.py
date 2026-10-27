@@ -301,7 +301,7 @@ def speaker_card(n: int, slug: str, meta, body, sessions, known, scheduled=None,
     flavor = scheduled or ({"area": meta.get("talk_area"), "for": meta.get("talk_for")} if meta.get("talk") else {})
     first += program.tags(None, flavor.get("area")) + program.for_line(flavor.get("for"), "span")
     more = f'<span class="speaker__more">and {len(sessions) - 1} more</span>' if len(sessions) > 1 else ""
-    # The speaker's own painted goat peeks over the card (ADR goat-mascot).
+    # The speaker's own painted goat peeks over the card, or sits on it whole (ADR goat-mascot).
     goat = frame.speaker_peek(slug) if meta.get("goat") or goat_atlas.has(f"speaker-{slug}") else ""
     return f"""  <li class="sticker sticker--speaker"{f' id="{esc(slug)}"' if anchor else ''} style="--tilt:{(-1, 1, -0.5, 0.5)[n % 4]}deg">{goat}
     <a class="speaker__link" href="{page_name(slug)}">
