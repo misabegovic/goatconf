@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-27**: **The speakers' sticker pack.** Each speaker's goat, with their name, as a sticker in a pack of its own, and "Save as a sticker" on each speaker's page ([the ADR](org/adrs/sticker-packs.md); source: sources/conversations/2026-10-27--org--stickers-speakers.md).
 - **2026-10-27**: **Tuzla stickers.** The Stickers page and the pack gain seven Tuzla things: a salt crystal, the Pannonian sea, a fildžan, ćevapi, burek, the goat statue and the salt lakes ([the ADR](org/adrs/sticker-packs.md); source: sources/conversations/2026-10-27--org--stickers-tuzla.md).
 - **2026-10-27**: **The Stickers page is live.** The goat's roles and the mark and words, each as a transparent image to save, all in one zip, and an A4 sheet to print; linked from the footer and the brand page ([the ADR](org/adrs/sticker-packs.md); source: sources/conversations/2026-10-27--org--stickers-page.md).
 - **2026-10-27**: **Sticker packs.** One set of GoatConf stickers (the goat's roles, the speaker goats, the mark and words, Tuzla things) as transparent images, a print sheet and a Telegram pack, on a new Stickers page; approved, built in small steps ([the ADR](org/adrs/sticker-packs.md); source: sources/conversations/2026-10-27--org--sticker-packs.md).

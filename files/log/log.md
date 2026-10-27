@@ -675,3 +675,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #189: site: Tuzla stickers in the pack
    diff: 22 files, +82/-1
    restricted-paths: true
+2026-10-27 merge — PR #190: site: the speakers' goats as a sticker pack of their own
+   diff: 55 files, +121/-52
+   restricted-paths: true
