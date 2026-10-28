@@ -729,3 +729,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #207: site: a bigger cook on the food band on phones, band headings that fill their lines
    diff: 42 files, +78/-40
    restricted-paths: false
+2026-10-28 merge — PR #208: site: on phones a one-line band is as tall as its goat
+   diff: 36 files, +56/-32
+   restricted-paths: false
