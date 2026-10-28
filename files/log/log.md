@@ -744,3 +744,5 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #212: site: the goat says Baaa, and only Carmine's goat says BaaaaAI
    diff: 36 files, +72/-54
    restricted-paths: true
+2026-10-28 shape — pitch → files/wiki/org/pitches/goat-tamagotchi-on-the-site.md (PM agent)
+2026-10-28 zoom-out — skipped for files/wiki/org/pitches/goat-tamagotchi-on-the-site.md (small appetite, a pre-bet pitch with no reverse edges)
