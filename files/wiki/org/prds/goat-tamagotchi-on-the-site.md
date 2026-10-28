@@ -1,15 +1,16 @@
 ---
 title: "Keep a goat: a free tamagotchi of the painted goats on goatconf.com"
 kind: initiative
-status: draft
+status: living
 updated: 2026-10-28
 appetite: small
-confidence: low
+confidence: medium
 supersedes: org/pitches/goat-tamagotchi-on-the-site.md
 affects:
   - org
 sources:
   - sources/conversations/2026-10-28--org--goat-tamagotchi-bet.md
+  - sources/conversations/2026-10-28--org--goat-tamagotchi-how.md
   - sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
   - sources/conversations/2026-10-27--org--goat-tricks.md
@@ -156,3 +157,12 @@ the companion in `site/album.js` or loads as its own small script on
 adoption; how the goat's state is kept in the browser and how its needs
 drift; what the "Your goat" place is (a panel over the page or a page of its
 own); and where each speaker's agreement is recorded.
+
+## Decision
+
+The organiser approved this plan on 2026-10-28 and chose to build it as a
+page of its own, fully separate from the rest of the site: adoption, the
+needs and the cheers all happen on `goat.html`, and the companion goat is
+unchanged, so two Scope bullets (adopting from the companion and the
+Stickers page, and the adopted goat following the visitor) are dropped
+([the ADR](../adrs/goat-tamagotchi-on-the-site.md); source: sources/conversations/2026-10-28--org--goat-tamagotchi-how.md).

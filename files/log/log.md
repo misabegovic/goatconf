@@ -754,3 +754,5 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #214: org: the plan for keeping a goat
    diff: 9 files, +210/-9
    restricted-paths: false
+2026-10-28 shape — files/wiki/org/prds/goat-tamagotchi-on-the-site.md → files/wiki/org/adrs/goat-tamagotchi-on-the-site.md (Tech Lead agent)
+2026-10-28 zoom-out — skipped for files/wiki/org/adrs/goat-tamagotchi-on-the-site.md (small appetite, no reverse edges)
