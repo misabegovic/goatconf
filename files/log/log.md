@@ -732,3 +732,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #208: site: on phones a one-line band is as tall as its goat
    diff: 36 files, +56/-32
    restricted-paths: false
+2026-10-28 merge — PR #209: site: the tapped goat says Maaa, Baaa, conference lines and its speaker's own work
+   diff: 38 files, +215/-131
+   restricted-paths: true
