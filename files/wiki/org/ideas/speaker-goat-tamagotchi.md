@@ -2,12 +2,13 @@
 title: "A tamagotchi of each speaker's goat, for people to keep alive"
 kind: idea
 status: draft
-updated: 2026-10-27
+updated: 2026-10-28
 confidence: low
 affects:
   - org
 sources:
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
+  - sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md
 ---
 
 # A tamagotchi of each speaker's goat, for people to keep alive
@@ -47,6 +48,12 @@ it.
 - Whether it lives on the site, in the visitor's own browser only, or in
   something shared, and what that means for privacy.
 - Whether speakers agree to it before their goat is used this way.
+
+## Shaped
+
+On 2026-10-28 the idea was shaped into a small pitch: a free game on the
+site, in the visitor's browser, not a paid phone app
+([the pitch](../pitches/goat-tamagotchi-on-the-site.md); source: sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md).
 
 ## Related
 

@@ -2,7 +2,7 @@
 title: "GoatConf pitches"
 kind: meta
 status: draft
-updated: 2026-10-07
+updated: 2026-10-28
 sources: []
 ---
 
@@ -17,6 +17,10 @@ organiser bets on which become committed work. Nothing here is decided.
 ## Pitches
 
 - [One goat feeds the town: the minimal core and its extension points](one-goat-minimal-core-and-extensions.md): the umbrella. The core GoatConf guarantees, seven kinds of extension slot sharing one record, four rules, and the kit after 2027. Appetite: big.
+
+## After the bet of 2026-10-07
+
+- [Keep a goat: a free tamagotchi of the painted goats](goat-tamagotchi-on-the-site.md): adopt a goat in your browser, feed it Bosnian food, play and let it sleep; it never dies; the conference cheers it up and its trip to Tuzla counts down. Not a paid app. Appetite: small. Not bet on yet.
 
 ## Area pitches
 
