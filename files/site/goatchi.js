@@ -37,14 +37,27 @@
   const fill = (n, by) => { goatState.needs[n] = [Math.min(1, (by === 1 ? 0 : level(n)) + by), Date.now()]; };
   const sulking = () => NEEDS.some((n) => level(n) < SULK);
   // Each need as a bar, full to empty, and the goat sulking when any runs low.
+  // How long until it starts sulking, from the need that runs low first.
+  const WANTS = { food: "food", play: "to play", sleep: "a nap" };
+  const lasts = () => {
+    if (sulking()) return "It is sulking: feed it, play with it or let it sleep.";
+    const n = NEEDS.reduce((a, b) => (level(b) < level(a) ? b : a));
+    const hours = ((level(n) - SULK) * EMPTY_AFTER) / 3600e3;
+    const when = hours < 1 ? "less than an hour" : `about ${Math.round(hours)} hour${Math.round(hours) === 1 ? "" : "s"}`;
+    return `Happy for ${when} more, then it wants ${WANTS[n]}.`;
+  };
   const showNeeds = () => {
     root.querySelectorAll("[data-need]").forEach((bar) => {
       const v = level(bar.dataset.need);
+      const pct = `${Math.round(v * 100)}%`;
       bar.setAttribute("aria-valuenow", String(Math.round(v * 100)));
+      bar.setAttribute("aria-valuetext", pct);
+      root.querySelector(`[data-pct="${bar.dataset.need}"]`).textContent = pct;
       bar.style.setProperty("--level", v.toFixed(3));
       bar.classList.toggle("is-low", v < SULK);
     });
     root.classList.toggle("is-sulking", sulking());
+    $(".goatchi__lasts").textContent = lasts();
   };
 
   // What the goat says when nothing has just happened: sulking, or the days to Tuzla.

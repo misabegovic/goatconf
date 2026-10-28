@@ -325,6 +325,7 @@
         "sources/conversations/2026-10-28--org--goat-tamagotchi-how.md",
         "sources/conversations/2026-10-28--org--goatchi-adr-approved.md",
         "sources/conversations/2026-10-28--org--goatchi-ship.md",
+        "sources/conversations/2026-10-28--org--goatchi-preview-and-bars.md",
         "tools/goatchi.py",
         "site/goatchi.js",
         "tests/test_goatchi.py",
@@ -333,7 +334,7 @@
         "sources/conversations/2026-10-27--org--goat-tricks.md",
         "sources/conversations/2026-10-28--org--goat-says.md"
       ],
-      "tokens": 2206
+      "tokens": 2303
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
