@@ -12,6 +12,7 @@ sources:
   - sources/conversations/2026-10-27--org--goat-tricks.md
   - sources/conversations/2026-10-27--org--goat-tap-polish.md
   - sources/conversations/2026-10-27--org--band-goats-on-phones.md
+  - sources/conversations/2026-10-28--org--food-band-cook-on-phones.md
   - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
@@ -291,3 +292,7 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   its head stays inside the page, which clips anything above its top edge.
   On a phone a band's heading keeps room on the right for the band's goat,
   so the goat never covers the heading (source: sources/conversations/2026-10-27--org--band-goats-on-phones.md).
+- **2026-10-28, the cook on a phone.** On a phone a band's heading fills
+  each line before it wraps, beside the band's goat, which sits nearer the
+  band's edge and a little bigger; the cook over the food section is bigger
+  still (source: sources/conversations/2026-10-28--org--food-band-cook-on-phones.md).
