@@ -805,7 +805,12 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goatchi__goat { display: block; width: 100%; max-width: 16rem; height: auto; margin: 0 auto; transform-origin: 50% 100%; filter: drop-shadow(0 0.35rem 0.4rem rgb(0 0 0 / 0.2)); transition: filter 400ms; }
 .goatchi__say { position: absolute; top: 0; left: 50%; translate: -50% 0; width: max-content; max-width: 14rem; padding: 0.25rem 0.75rem 0.3rem; border-radius: 1rem 1rem 1rem 0.2rem; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.15rem; line-height: 1.1; box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35); }
 .goatchi__say:empty { display: none; }
-.goatchi__name { margin-top: 0.6rem; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.3rem; }
+.goatchi__kept { display: block; margin-top: 0.2rem; font-size: 0.95rem; color: var(--ink-soft, #4a5670); }
+.goatchi__mode label { display: inline-flex; gap: 0.6rem; align-items: flex-start; font-weight: 700; cursor: pointer; }
+.goatchi__mode input { width: 1.2rem; height: 1.2rem; margin-top: 0.2rem; accent-color: var(--album); }
+.goatchi__hike { display: block; width: 100%; max-width: 13rem; height: auto; margin: 0.5rem 0 0.8rem; }
+.goatchi__gone-line { font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.4rem; }
+.goatchi__name { display: block; margin-top: 0.6rem; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.3rem; }
 .is-sulking .goatchi__goat { filter: saturate(0.55) drop-shadow(0 0.35rem 0.4rem rgb(0 0 0 / 0.2)); }
 .goatchi__needs { list-style: none; margin: 0 0 0.8rem; padding: 0; display: grid; gap: 0.55rem; max-width: 24rem; }
 .goatchi__needs li { display: grid; grid-template-columns: 4.5rem 1fr 3rem; align-items: center; gap: 0.8rem; font-weight: 700; }

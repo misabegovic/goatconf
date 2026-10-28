@@ -36,11 +36,21 @@
   const level = (n) => Math.max(0, Math.min(1, goatState.needs[n][0] - (Date.now() - goatState.needs[n][1]) / EMPTY_AFTER));
   const fill = (n, by) => { goatState.needs[n] = [Math.min(1, (by === 1 ? 0 : level(n)) + by), Date.now()]; };
   const sulking = () => NEEDS.some((n) => level(n) < SULK);
+  // Challenge mode: a goat left with every need empty for three days wanders off. Every need is empty from the
+  // latest of the moments each one ran out; the goat leaves three days after that.
+  const WANDER_AFTER = 3 * 864e5;
+  const leftAt = () => {
+    if (!goatState.challenge) return 0;
+    const allEmpty = Math.max(...NEEDS.map((n) => goatState.needs[n][1] + goatState.needs[n][0] * EMPTY_AFTER));
+    return Date.now() - allEmpty >= WANDER_AFTER ? allEmpty + WANDER_AFTER : 0;
+  };
+  const daysKept = (until) => Math.max(0, Math.floor((until - goatState.since) / 864e5));
+  const keptLine = (days) => (days === 0 ? "Kept since today" : `Kept for ${days} day${days === 1 ? "" : "s"}`);
   // Each need as a bar, full to empty, and the goat sulking when any runs low.
   // How long until it starts sulking, from the need that runs low first.
   const WANTS = { food: "food", play: "to play", sleep: "a nap" };
   const lasts = () => {
-    if (sulking()) return "It is sulking: feed it, play with it or let it sleep.";
+    if (sulking()) return goatState.challenge ? "It is sulking: feed it, play with it or let it sleep. In challenge mode, three days with every need empty and it wanders off." : "It is sulking: feed it, play with it or let it sleep.";
     const n = NEEDS.reduce((a, b) => (level(b) < level(a) ? b : a));
     const hours = ((level(n) - SULK) * EMPTY_AFTER) / 3600e3;
     const when = hours < 1 ? "less than an hour" : `about ${Math.round(hours)} hour${Math.round(hours) === 1 ? "" : "s"}`;
@@ -74,15 +84,25 @@
     clearTimeout(holding);
     holding = ms ? setTimeout(() => { holding = 0; render(); }, ms) : 0;
   };
+  const gone = $(".goatchi__gone");
   const render = () => {
-    const kept = !!goatState;
+    const left = goatState ? leftAt() : 0;
+    const kept = !!goatState && !left;
     playing.hidden = !kept;
-    empty.hidden = kept;
+    empty.hidden = !!goatState;
+    gone.hidden = !left;
+    if (left) {
+      const days = daysKept(left);
+      $(".goatchi__gone-line").textContent = `${goatState.name} went exploring the hills above Tuzla. You kept ${goatState.name.startsWith("The ") ? "it" : "them"} for ${days} day${days === 1 ? "" : "s"}.`;
+      picks.forEach((b) => b.setAttribute("aria-pressed", "false"));
+      return;
+    }
     picks.forEach((b) => b.setAttribute("aria-pressed", String(kept && b.dataset.pose === goatState.pose)));
     if (!kept) return;
     goat.src = goatState.src;
     goat.alt = goatState.name;
     $(".goatchi__name").textContent = goatState.name;
+    $(".goatchi__kept").textContent = `${keptLine(daysKept(Date.now()))}${goatState.challenge ? ", in challenge mode" : ""}`;
     showNeeds();
     const speaker = $('[data-cheer="speaker"]');
     if (goatState.speaker) { speaker.href = goatState.speaker; speaker.textContent = `Read about ${goatState.name.replace(/'s goat$/, "")}`; }
@@ -126,7 +146,8 @@
     }
     const now = Date.now();
     goatState = { pose: b.dataset.pose, name: b.dataset.name, src: b.dataset.src, speaker: b.dataset.speaker || "", since: now,
-      needs: Object.fromEntries(NEEDS.map((n) => [n, [1, now]])), cheered: [] };
+      needs: Object.fromEntries(NEEDS.map((n) => [n, [1, now]])), cheered: [],
+      challenge: !!document.querySelector(".goatchi__challenge:checked") };
     save();
     render();
     speak(`Baaa! Hello!`, 2400);
@@ -145,7 +166,7 @@
       cheer.classList.add("is-done");
       return;
     }
-    if (!act || !goatState) return;
+    if (!act || !goatState || leftAt()) return;
     const name = act.dataset.act;
     if (name === "yes") { const f = onYes; done(); if (f) f(); return; }
     if (name === "no") { done(); return; }
@@ -153,7 +174,7 @@
     if (acts[name]) { done(); acts[name](); save(); showNeeds(); }
   });
   picks.forEach((b) => b.addEventListener("click", () => {
-    if (!goatState) { adopt(b); return; }
+    if (!goatState || leftAt()) { adopt(b); return; }
     if (goatState.pose === b.dataset.pose) { root.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" }); return; }
     root.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" });
     ask(`Swap ${called(goatState.name)} for ${called(b.dataset.name)}? The new goat starts fresh.`, () => adopt(b));
