@@ -1,0 +1,30 @@
+GoatConf
+Copyright 2026 Muhamed Isabegović
+
+The code and the writing in this repository are licensed under the Apache
+License, Version 2.0 (see LICENSE).
+
+The GoatConf brand is not. The GoatConf name, the logo, coin and seal, the
+goat mascot and every painted goat, the stickers and the share cards are
+Copyright 2026 Muhamed Isabegović, all rights reserved. They are not licensed
+under the Apache License, Version 2.0, which grants no permission to use the
+trade names, trademarks, service marks or product names of the licensor
+(section 6). In this repository they are, among others: files/site/brand/,
+files/site/img/goat/, files/site/stickers/, files/site/share/, the favicons
+in files/site/, and files/art/goat/.
+
+You may post, print and use them unchanged to talk about or promote GoatConf:
+the stickers and the sticker pack, a speaker's share card, an event hosted as
+part of GoatConf, a post, a slide or a laptop. Anything else, such as changing
+them, putting them on merchandise or using them for another event, needs
+written permission from the organiser (https://goatconf.com/contact.html).
+
+What belongs to others keeps its owners' licence and is not covered by either:
+the photos (their records are in files/assets/images/ and
+files/sources/web/images/), the speakers' photos, the supporters' logos, the
+fonts (SIL Open Font License, files/site/fonts/LICENSE.md), the map data
+(© OpenStreetMap contributors), the copies of web pages under
+files/sources/web/, and any file that carries its own licence.
+
+Copies of this repository published before 28 October 2026 were released
+under the MIT License, which still applies to those copies.

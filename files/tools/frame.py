@@ -38,6 +38,11 @@ LINKS = [("index.html", "Home"), ("program.html", "Program"), ("speakers.html", 
          ("travel.html", "Travel"), ("supporters.html", "Supporters"), ("charter.html", "Charter"),
          ("code-of-conduct.html", "Code of conduct"), ("brand.html", "Brand"), ("stickers.html", "Stickers"),
          ("access.html", "Accessibility"), ("contact.html", "Contact")]
+# The copyright line under every page: the code and text are Apache 2.0, the brand is reserved but may be shared
+# unchanged (NOTICE; sources/conversations/2026-10-28--org--apache-licence-and-brand.md).
+LEGAL = ('© 2026 Muhamed Isabegović. The GoatConf name, logo and goats: all rights reserved, '
+         '<a href="brand.html#use">share them unchanged</a> to talk about GoatConf. The site\'s code and text: '
+         '<a href="https://github.com/misabegovic/goatconf">Apache 2.0</a>.')
 BACK_COVER = {"charter.html": "The charter", "code-of-conduct.html": "The code of conduct"}
 LINE = ("GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. "
         'Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.')
@@ -93,7 +98,12 @@ def footer() -> str:
   <p>{LINE}</p>
   <p class="footer__links">{links()}</p>
   {nav.follow()}
+  <p class="footer__legal">{LEGAL}</p>
 </footer>""")
+
+
+def legal() -> str:
+    return block("legal", f'    <p class="back-cover__legal">{LEGAL}</p>')
 
 
 def back_cover_links() -> str:
@@ -203,7 +213,7 @@ def frame(text: str) -> str:
     """The page with its footer and back cover's links current, its photos' goat scenes, and no goat sprite left
     from before."""
     text = says(spots(scenes(SPRITE_RE.sub("", text))))
-    for name, make in (("footer", footer), ("back-cover-links", back_cover_links)):
+    for name, make in (("footer", footer), ("back-cover-links", back_cover_links), ("legal", legal)):
         text = blocks.pattern(name).sub(lambda _m: make(), text)
     return text
 

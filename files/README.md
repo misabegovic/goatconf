@@ -40,9 +40,14 @@ home described above.
 
 ## Licence
 
-The code and the writing in this repository are under the MIT licence
-(`LICENSE` at the repository root), on the organiser's decision of
-2026-10-24. It does not cover what belongs to others: the photos (their
+The code and the writing in this repository are under the Apache License,
+Version 2.0 (`LICENSE` at the repository root), on the organiser's decision
+of 2026-10-28; copies published before then were under the MIT licence. The
+GoatConf brand is not: the name, logo, coin and seal, the goat mascot and
+every painted goat, the stickers and the share cards are © 2026 Muhamed
+Isabegović, all rights reserved, and may be shared unchanged to talk about
+or promote GoatConf (`NOTICE` at the repository root). Neither covers what
+belongs to others: the photos (their
 provenance and licences are in `assets/images/` and `sources/web/images/`,
 and the food photos are not freely licensed), the speakers' photos and the
 supporters' logos, the fonts (SIL Open Font License, `site/fonts/LICENSE.md`),

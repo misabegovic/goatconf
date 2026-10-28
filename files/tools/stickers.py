@@ -221,7 +221,7 @@ def page() -> str:
     <p class="cta"><a class="button" href="stickers/{ZIP}" download>Download the pack</a></p>
     <p>The speakers' goats have a pack of their own, below.</p>
     <p><a class="go go--ink" href="stickers/{SHEET}" download>The print sheet (A4, PDF)</a></p>
-    <p>The stickers are free to use for sharing GoatConf: on your laptop, in your slides, in your chats.</p>
+    <p>The stickers are free to share unchanged to talk about GoatConf: on your laptop, in your slides, in your chats. They stay <a href="brand.html#use">all rights reserved</a>, so anything else needs permission first.</p>
   </div>
 </section>
 {chr(10).join(sections)}"""
