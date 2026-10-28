@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-28**: **A bigger cook on phones.** On the home page's food band the cook is bigger on phones, and band headings fill their lines beside their goat instead of squeezing into short ones ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-28--org--food-band-cook-on-phones.md).
 - **2026-10-27**: **Goats on bands, fixed on phones.** A whole goat on a profile band is bigger and no longer cut off at the top, and on phones a band's heading keeps clear of its goat ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-27--org--band-goats-on-phones.md).
 - **2026-10-27**: **Four whole goats on the speaker cards.** Predrag's, Christoph's, Amar's and Cristian's whole sitting goats sit on their cards and profile bands, where their peeking goats looked cut off; the goat's head shake is slower, and tapping it no longer selects the text around it ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-27--org--goat-tap-polish.md).
 - **2026-10-27**: **The goat plays tricks.** Tap or click the goat and it jumps, somersaults, shakes its head or says "Meee!"; it looks towards the pointer instead of ducking, and moves on its own a little more often ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-27--org--goat-tricks.md).

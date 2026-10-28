@@ -726,3 +726,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-27 merge — PR #206: site: whole goats on profile bands no longer cut off, band headings clear of the goat on phones
    diff: 37 files, +100/-63
    restricted-paths: false
+2026-10-28 merge — PR #207: site: a bigger cook on the food band on phones, band headings that fill their lines
+   diff: 42 files, +78/-40
+   restricted-paths: false

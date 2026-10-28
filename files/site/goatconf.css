@@ -724,7 +724,13 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
    under the page's top edge, which clips anything above it */
 .band > .peek--whole { width: auto; bottom: -1.85rem; height: calc(100% + 0.45rem + 0.3rem + 1.4rem); }
 /* On a phone a band's heading keeps clear of the band's goat */
-@media (max-width: 47.99rem) { .band:has(> .peek) { padding-right: 6.4rem; } }
+@media (max-width: 47.99rem) {
+  .band:has(> .peek) { padding-right: 6.1rem; text-wrap: pretty; }
+  .band > .peek:not(.peek--whole) { right: 0.5rem; width: 5.4rem; }
+  /* The cook over the food section is the band's star */
+  #food-title { padding-right: 7.4rem; }
+  #food-title > .peek { width: 7rem; right: 0.3rem; }
+}
 /* Each speaker's own painted goat: it peeks over their card and sits beside their bio */
 .peek--face { right: 0.8rem; width: 6.6rem; z-index: 1; }
 .sticker--speaker:hover .peek, .sticker--speaker:focus-within .peek { transform: translateY(-0.45rem); }

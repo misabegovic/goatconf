@@ -2,7 +2,7 @@
 title: Index — by repo
 kind: meta
 status: living
-updated: 2026-10-27
+updated: 2026-10-28
 confidence: high
 sources:
   - tools/brain.py
