@@ -735,3 +735,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #209: site: the tapped goat says Maaa, Baaa, conference lines and its speaker's own work
    diff: 38 files, +215/-131
    restricted-paths: true
+2026-10-28 merge — PR #210: site: the goat's speech bubble fits its line
+   diff: 37 files, +90/-63
+   restricted-paths: false

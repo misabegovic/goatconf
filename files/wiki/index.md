@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-28**: **A snug speech bubble.** The goat's bubble fits its line, with no empty space when a line wraps ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-28--org--goat-bubble-fit.md).
 - **2026-10-28**: **The goat talks.** Tap a goat and between its tricks it says "Maaa!", "Baaa!", "Come to GoatConf!" or "Use Ruby for BaaaaAI", and a speaker's goat also something about their own work, like "Try RubyLLM!" ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-28--org--goat-says.md).
 - **2026-10-28**: **No goat cut off.** On phones a one-line band is as tall as its goat, so the horns are no longer cut (Dejan's page); every goat stop on seventeen pages at four widths is clear ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-28--org--band-goat-horns.md).
 - **2026-10-28**: **A bigger cook on phones.** On the home page's food band the cook is bigger on phones, and band headings fill their lines beside their goat instead of squeezing into short ones ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-28--org--food-band-cook-on-phones.md).

@@ -15,6 +15,7 @@ sources:
   - sources/conversations/2026-10-28--org--food-band-cook-on-phones.md
   - sources/conversations/2026-10-28--org--band-goat-horns.md
   - sources/conversations/2026-10-28--org--goat-says.md
+  - sources/conversations/2026-10-28--org--goat-bubble-fit.md
   - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
@@ -308,3 +309,6 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   about the conference, and a pun. A speaker's goat also says a line about
   that speaker's own work, drawn from their profile, so no speaker's project
   is promoted by every goat. The lines live in `tools/frame.py` (source: sources/conversations/2026-10-28--org--goat-says.md).
+- **2026-10-28, the bubble fits its line.** The goat's bubble keeps a line on
+  one line up to 12rem wide, and a line that wraps gets a bubble only as
+  wide as its longest line, with no space left beside it (source: sources/conversations/2026-10-28--org--goat-bubble-fit.md).
