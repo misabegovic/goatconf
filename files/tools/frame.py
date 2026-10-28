@@ -152,10 +152,9 @@ SPRITE_RE = re.compile(r'<svg width="0" height="0" style="position:absolute".*?<
 # What the goat says when tapped: every goat picks at random from EVERY, and a speaker's goat also from its own
 # lines, about their own work, from their profile (sources/conversations/2026-10-28--org--goat-says.md). Keep each
 # line short: it shows in a small bubble beside the goat's head.
-SAYS_EVERY = ("Maaa!", "Baaa!", "Come to GoatConf!", "See you in Tuzla!", "Tuzla, 3–5 June 2027!", "Free to attend!",
-              "Use Ruby for BaaaaAI")
+SAYS_EVERY = ("Baaa!", "Come to GoatConf!", "See you in Tuzla!", "Tuzla, 3–5 June 2027!", "Free to attend!")
 SAYS_SPEAKER = {"paul-campbell": ("Try Tito!", "Ask me about CARLOS!"), "roy-tomeij": ("Try AppSignal!",),
-                "carmine-paolino": ("Try RubyLLM!",), "dejan-menges": ("Try Enola!",),
+                "carmine-paolino": ("Try RubyLLM!", "Use Ruby for BaaaaAI"), "dejan-menges": ("Try Enola!",),
                 "amar-mahmutbegovic": ("Try Semblie!",), "cristian-planas": ("Read Rails Scales!",),
                 "christoph-lipautz": ("Back to the Future!",), "predrag-radenkovic": ("Try *codeplain!",)}
 

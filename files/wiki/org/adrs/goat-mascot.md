@@ -16,6 +16,7 @@ sources:
   - sources/conversations/2026-10-28--org--band-goat-horns.md
   - sources/conversations/2026-10-28--org--goat-says.md
   - sources/conversations/2026-10-28--org--goat-bubble-fit.md
+  - sources/conversations/2026-10-28--org--goat-says-baaa.md
   - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
@@ -312,3 +313,6 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
 - **2026-10-28, the bubble fits its line.** The goat's bubble keeps a line on
   one line up to 12rem wide, and a line that wraps gets a bubble only as
   wide as its longest line, with no space left beside it (source: sources/conversations/2026-10-28--org--goat-bubble-fit.md).
+- **2026-10-28, Baaa, and BaaaaAI for Carmine.** The goat's bleat is "Baaa!"
+  only, and "Use Ruby for BaaaaAI" is said by Carmine Paolino's goat, beside
+  "Try RubyLLM!", not by every goat (source: sources/conversations/2026-10-28--org--goat-says-baaa.md).
