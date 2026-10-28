@@ -162,7 +162,7 @@ own); and where each speaker's agreement is recorded.
 
 The organiser approved this plan on 2026-10-28 and chose to build it as a
 page of its own, fully separate from the rest of the site: adoption, the
-needs and the cheers all happen on `goat.html`, and the companion goat is
+needs and the cheers all happen on `goatchi.html`, named Goatchi, and the companion goat is
 unchanged, so two Scope bullets (adopting from the companion and the
 Stickers page, and the adopted goat following the visitor) are dropped
 ([the ADR](../adrs/goat-tamagotchi-on-the-site.md); source: sources/conversations/2026-10-28--org--goat-tamagotchi-how.md).

@@ -1,5 +1,5 @@
 ---
-title: "Keep a goat on a page of its own: goat.html, built by a tool, with its own small script"
+title: "Goatchi, a page of its own: goatchi.html, built by a tool, with its own small script"
 kind: decision
 status: proposed
 updated: 2026-10-28
@@ -15,7 +15,7 @@ sources:
   - sources/conversations/2026-10-28--org--goat-says.md
 ---
 
-# Keep a goat on a page of its own: goat.html, built by a tool, with its own small script
+# Goatchi, a page of its own: goatchi.html, built by a tool, with its own small script
 
 ## Context
 
@@ -42,12 +42,16 @@ On the organiser's choice, the game is **a page of its own, fully
 separate** from the rest of the site
 (source: sources/conversations/2026-10-28--org--goat-tamagotchi-how.md).
 
-- **The page.** `site/goat.html`, "Your goat", written and checked by a new
-  tool, `tools/keep.py`, with `frame.page()`, and built and checked in
+- **The name.** Goatchi: "Goatchi: keep a GoatConf goat". The page may
+  describe it as a little game like a tamagotchi, but the name does not use
+  "Tamagotchi", a registered trademark of Bandai
+  (source: sources/conversations/2026-10-28--org--goat-tamagotchi-how.md).
+- **The page.** `site/goatchi.html`, written and checked by a new tool,
+  `tools/goatchi.py`, with `frame.page()`, and built and checked in
   `tools/site.py`'s order like the other generated pages. It lists the goats
   that can be adopted: the plain goat, the role goats, and each speaker's
   goat whose speaker has agreed.
-- **Its script.** `site/keep.js`, loaded only on that page. It keeps the
+- **Its script.** `site/goatchi.js`, loaded only on that page. It keeps the
   game's state and draws the goat, its needs and its moves. The companion in
   `site/album.js` is unchanged, and the game's goats use their own class so
   the companion does not treat them as its places.
@@ -70,13 +74,13 @@ separate** from the rest of the site
   for another, after a confirmation on the page itself.
 - **Speakers' agreement.** A `goat_keep: yes` field in the speaker's own
   record under `speakers/`, set when the speaker agrees, with their yes kept
-  as a source. `tools/speakers.py check` accepts it, and `tools/keep.py`
+  as a source. `tools/speakers.py check` accepts it, and `tools/goatchi.py`
   offers only those speakers' goats.
 - **The way in.** One link in every page's footer and the home page's back
-  cover, "Your goat", added when the page ships.
+  cover, "Goatchi", added when the page ships.
 
-Scope check against the PRD's seven Scope bullets: four carried (the "Your
-goat" place and its three needs; drift, sulking and no death; give up or
+Scope check against the PRD's seven Scope bullets: four carried (the Goatchi
+page and its three needs; drift, sulking and no death; give up or
 swap; speakers only with agreement), one carried in a changed form (the
 cheers and the countdown, as links and a counter on the goat page), and two
 dropped on the organiser's choice of a fully separate page: adopting from
@@ -104,7 +108,7 @@ only), and the adopted goat becoming the companion on every page.
   gains a link. The plan's first success metric holds by construction.
 - The goat does not follow the visitor; they come back to the goat page to
   see it. That is the trade the organiser made for a separate page.
-- The game's moves are its own small set in `site/keep.js`, a little like
+- The game's moves are its own small set in `site/goatchi.js`, a little like
   the companion's, rather than shared with album.js.
 - The speaker records gain an optional field, set only from a speaker's
   yes; the agent drafts the message asking for it, and the organiser sends

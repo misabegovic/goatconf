@@ -312,7 +312,7 @@
     },
     {
       "path": "org/adrs/goat-tamagotchi-on-the-site.md",
-      "title": "Keep a goat on a page of its own: goat.html, built by a tool, with its own small script",
+      "title": "Goatchi, a page of its own: goatchi.html, built by a tool, with its own small script",
       "kind": "decision",
       "status": "proposed",
       "updated": "2026-10-28",
@@ -328,7 +328,7 @@
         "sources/conversations/2026-10-27--org--goat-tricks.md",
         "sources/conversations/2026-10-28--org--goat-says.md"
       ],
-      "tokens": 1436
+      "tokens": 1524
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
@@ -1900,7 +1900,7 @@
         "sources/conversations/2026-10-28--org--goat-says.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md"
       ],
-      "tokens": 1851
+      "tokens": 1857
     },
     {
       "path": "org/prds/hosts-hub-guides-and-venues.md",
