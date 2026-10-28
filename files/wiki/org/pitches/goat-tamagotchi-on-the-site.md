@@ -1,7 +1,8 @@
 ---
 title: "Keep a goat: a free tamagotchi of the painted goats on goatconf.com"
 kind: pitch
-status: draft
+status: superseded
+superseded_by: org/prds/goat-tamagotchi-on-the-site.md
 updated: 2026-10-28
 appetite: small
 confidence: low
@@ -9,6 +10,7 @@ affects:
   - org
 sources:
   - sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md
+  - sources/conversations/2026-10-28--org--goat-tamagotchi-bet.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
   - sources/conversations/2026-10-27--org--goat-tricks.md
   - sources/conversations/2026-10-28--org--goat-says.md

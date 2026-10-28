@@ -20,7 +20,7 @@ organiser bets on which become committed work. Nothing here is decided.
 
 ## After the bet of 2026-10-07
 
-- [Keep a goat: a free tamagotchi of the painted goats](goat-tamagotchi-on-the-site.md): adopt a goat in your browser, feed it Bosnian food, play and let it sleep; it never dies; the conference cheers it up and its trip to Tuzla counts down. Not a paid app. Appetite: small. Not bet on yet.
+- [Keep a goat: a free tamagotchi of the painted goats](goat-tamagotchi-on-the-site.md): adopt a goat in your browser, feed it Bosnian food, play and let it sleep; it never dies; the conference cheers it up and its trip to Tuzla counts down. Not a paid app. Appetite: small. Bet on 2026-10-28, on its own: [the PRD](../prds/goat-tamagotchi-on-the-site.md).
 
 ## Area pitches
 

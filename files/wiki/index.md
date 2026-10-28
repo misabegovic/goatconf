@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-28**: **Bet: keep a goat.** The organiser bet on the goat tamagotchi pitch, on its own; its plan is drafted for their approval before a decision record and the build ([the PRD](org/prds/goat-tamagotchi-on-the-site.md); source: sources/conversations/2026-10-28--org--goat-tamagotchi-bet.md).
 - **2026-10-28**: **A pitch: keep a goat.** A free tamagotchi of the painted goats on the site, in your own browser, with no account: feed it Bosnian food, play, let it sleep; it never dies, and its trip to Tuzla counts down to June. Not a paid app. Small appetite, not bet on yet ([the pitch](org/pitches/goat-tamagotchi-on-the-site.md); source: sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md).
 - **2026-10-28**: **Baaa, and BaaaaAI for Carmine.** The goats say "Baaa!" (no more "Maaa!"), and only Carmine's goat says "Use Ruby for BaaaaAI" ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-28--org--goat-says-baaa.md).
 - **2026-10-28**: **Apache 2.0, and the brand reserved.** The repository's code and writing move from MIT to the Apache License 2.0; the GoatConf name, logo, seal, goats, stickers and share cards are all rights reserved, free to share unchanged to talk about GoatConf. Every page carries a copyright line ([what is known](org/goatconf-2027.md); source: sources/conversations/2026-10-28--org--apache-licence-and-brand.md).
