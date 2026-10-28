@@ -287,19 +287,30 @@
     setTimeout(idle, 3000 + Math.random() * 3000);
   };
 
-  // Its tricks, one per tap or click, in turn: a jump for joy, a somersault, a shake of its head and a "Meee!".
+  // Its tricks, one per tap or click, in turn, with something said between each: a jump for joy, a somersault and
+  // a shake of its head. What it says is picked at random from what every goat says (written into the page by
+  // tools/frame.py) and, for a speaker's goat, its own lines, never the same twice running.
   // A goat peeking over a slot is painted only down to the slot's edge, unless it is whole, so it never rises far enough to show
   // where the painting ends: it bounces instead of jumping, and ducks and pops up instead of a somersault.
-  // With reduced motion it only says "Meee!".
+  // With reduced motion it only speaks.
   const say = document.createElement("b");
   say.className = "goat-say";
-  say.textContent = "Meee!";
   stage.append(say);
-  const meee = () => play(say, still ? [{ opacity: 0 }, { opacity: 1, offset: 0.1 }, { opacity: 1, offset: 0.85 }, { opacity: 0 }] : [
-    { opacity: 0, transform: "scale(0.4)", easing: "cubic-bezier(.2,.8,.3,1.3)" },
-    { opacity: 1, transform: "scale(1)", offset: 0.15 }, { opacity: 1, transform: "scale(1)", offset: 0.85 },
-    { opacity: 0, transform: "scale(0.9)" },
-  ], { duration: 1500 });
+  const every = (() => { try { return JSON.parse(document.getElementById("goat-says").textContent); } catch (e) { return ["Maaa!"]; } })();
+  let said = "";
+  const meee = () => {
+    const own = current && current.peek.dataset.says ? current.peek.dataset.says.split("|") : [];
+    const lines = every.concat(own).filter((l) => l !== said);
+    said = lines[Math.floor(Math.random() * lines.length)] || "Maaa!";
+    say.textContent = said;
+    // Longer lines stay up longer, so they can be read.
+    const duration = 1300 + said.length * 45;
+    return play(say, still ? [{ opacity: 0 }, { opacity: 1, offset: 0.1 }, { opacity: 1, offset: 0.88 }, { opacity: 0 }] : [
+      { opacity: 0, transform: "scale(0.4)", easing: "cubic-bezier(.2,.8,.3,1.3)" },
+      { opacity: 1, transform: "scale(1)", offset: 0.12 }, { opacity: 1, transform: "scale(1)", offset: 0.88 },
+      { opacity: 0, transform: "scale(0.9)" },
+    ], { duration });
+  };
   const jump = (up) => play(goat, [
     { transform: REST, easing: "cubic-bezier(.4,0,.6,1)" },
     { transform: T("6%", 1.1, 0.86), offset: 0.18, easing: "cubic-bezier(.2,.6,.4,1)" },
@@ -322,16 +333,19 @@
     ], { duration: 1000 }).finally(() => { goat.style.transformOrigin = ""; goat.style.transform = REST; });
   };
   const whole = () => onPhoto() || current.peek.classList.contains("peek--whole");
+  const speak = () => Promise.all([moves.stretch(), meee()]);
   const tricks = [
     () => (whole() ? jump("-45%") : jump("-9%")),
+    speak,
     () => (whole() ? somersault() : duck().then(() => wait(250)).then(pop)),
+    speak,
     // A goat without its turned heads wiggles instead.
     async () => {
       if (!canTurn()) return moves.wiggle();
       for (const dir of ["left", "right", "left"]) { await turnTo(dir); await wait(280); }
       await turnTo("front");
     },
-    () => Promise.all([moves.stretch(), meee()]),
+    speak,
   ];
   let trick = 0;
   const perform = async () => {
