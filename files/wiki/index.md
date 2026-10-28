@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-28**: **Apache 2.0, and the brand reserved.** The repository's code and writing move from MIT to the Apache License 2.0; the GoatConf name, logo, seal, goats, stickers and share cards are all rights reserved, free to share unchanged to talk about GoatConf. Every page carries a copyright line ([what is known](org/goatconf-2027.md); source: sources/conversations/2026-10-28--org--apache-licence-and-brand.md).
 - **2026-10-28**: **A snug speech bubble.** The goat's bubble fits its line, with no empty space when a line wraps ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-28--org--goat-bubble-fit.md).
 - **2026-10-28**: **The goat talks.** Tap a goat and between its tricks it says "Maaa!", "Baaa!", "Come to GoatConf!" or "Use Ruby for BaaaaAI", and a speaker's goat also something about their own work, like "Try RubyLLM!" ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-28--org--goat-says.md).
 - **2026-10-28**: **No goat cut off.** On phones a one-line band is as tall as its goat, so the horns are no longer cut (Dejan's page); every goat stop on seventeen pages at four widths is clear ([the goat mascot](org/adrs/goat-mascot.md); source: sources/conversations/2026-10-28--org--band-goat-horns.md).
