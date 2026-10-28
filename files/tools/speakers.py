@@ -158,6 +158,8 @@ def check_speaker(path: Path, known_supporters):
         problems.append("order must be a whole number from 1, where 1 is listed first")
     if "travel_funded_by" in meta:
         problems.append("travel_funded_by is retired: no supporter pays for a named speaker's travel; remove it")
+    if "goat_keep" in meta and meta["goat_keep"] is not True:
+        problems.append("goat_keep must be yes, set only once the speaker agreed their goat can be kept on Goatchi; otherwise leave it out")
     return problems, meta, body
 
 

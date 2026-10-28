@@ -38,6 +38,10 @@ is their bio in their own words, at most 120 words.
   and `prop` (`mic`, `clicker`, `cat`, `book`, `laptop`); colours are written
   like `'#2b2522'`. The goat peeks over their card and sits on their page and
   their shareable cards. A speaker can ask for a change, or for no goat.
+- `goat_keep: yes`: optional, set only once the speaker agreed that visitors
+  may keep their goat on Goatchi (`site/goatchi.html`), with their yes kept
+  as a source. Without it their goat is not offered there. Any other value
+  fails the check.
 - `role`: optional, one line of at most 80 characters saying what they do
   and where, as they would put it (for example `Staff Engineer at Vinted`,
   `Independent consultant`). It shows under their name on their page, the

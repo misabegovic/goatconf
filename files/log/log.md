@@ -759,3 +759,4 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #215: org: Goatchi, a page of its own
    diff: 9 files, +192/-8
    restricted-paths: false
+2026-10-28 shape — built files/wiki/org/prds/goat-tamagotchi-on-the-site.md (Developer agent)
