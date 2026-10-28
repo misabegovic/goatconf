@@ -749,3 +749,5 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #213: org: pitch a free goat tamagotchi on the site
    diff: 8 files, +173/-8
    restricted-paths: false
+2026-10-28 shape — pitch → files/wiki/org/prds/goat-tamagotchi-on-the-site.md (PM agent)
+2026-10-28 zoom-out — skipped for files/wiki/org/prds/goat-tamagotchi-on-the-site.md (small appetite, no reverse edges)
