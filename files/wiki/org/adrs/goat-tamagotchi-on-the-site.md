@@ -1,7 +1,7 @@
 ---
 title: "Goatchi, a page of its own: goatchi.html, built by a tool, with its own small script"
 kind: decision
-status: proposed
+status: accepted
 updated: 2026-10-28
 confidence: medium
 affects:
@@ -9,6 +9,7 @@ affects:
 sources:
   - wiki/org/prds/goat-tamagotchi-on-the-site.md
   - sources/conversations/2026-10-28--org--goat-tamagotchi-how.md
+  - sources/conversations/2026-10-28--org--goatchi-adr-approved.md
   - sources/conversations/2026-10-28--org--goat-tamagotchi-bet.md
   - sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md
   - sources/conversations/2026-10-27--org--goat-tricks.md
