@@ -760,3 +760,6 @@ Append-only. Newest entries at the bottom. One line per operation:
    diff: 9 files, +192/-8
    restricted-paths: false
 2026-10-28 shape — built files/wiki/org/prds/goat-tamagotchi-on-the-site.md (Developer agent)
+2026-10-28 merge — PR #216: site: Goatchi, keep a GoatConf goat
+   diff: 62 files, +640/-72
+   restricted-paths: true
