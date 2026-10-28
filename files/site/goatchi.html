@@ -7,6 +7,7 @@
 <meta name="description" content="Goatchi: keep a GoatConf goat in your browser. Feed it, play with it and let it sleep; it counts the days to GoatConf in Tuzla.">
 <meta name="theme-color" content="#0b3d91">
 <link rel="canonical" href="https://goatconf.com/goatchi">
+<link rel="image_src" href="https://goatconf.com/share/goatchi-preview.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-96.png" sizes="96x96" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -16,14 +17,14 @@
 <meta property="og:title" content="Goatchi: keep a GoatConf goat">
 <meta property="og:description" content="Goatchi: keep a GoatConf goat in your browser. Feed it, play with it and let it sleep; it counts the days to GoatConf in Tuzla.">
 <meta property="og:url" content="https://goatconf.com/goatchi">
-<meta property="og:image" content="https://goatconf.com/share/og.png">
+<meta property="og:image" content="https://goatconf.com/share/goatchi-preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="GoatConf 2027, Tuzla, 3–5 June 2027, free. The GoatConf seal: the one that feeds the community.">
+<meta property="og:image:alt" content="Goatchi: keep a GoatConf goat">
 <meta name="twitter:card" content="summary_large_image">
 <!-- /gen:link-preview -->
 <link rel="preload" href="fonts/bricolage-wdth-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="goatconf.css?v=ee6f9ade">
+<link rel="stylesheet" href="goatconf.css?v=5eaef87b">
 </head>
 <body>
 <!-- gen:topbar tools/nav.py -->
@@ -74,10 +75,11 @@
     </figure>
     <div class="goatchi__care">
       <ul class="goatchi__needs">
-        <li><span id="need-food">Food</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-food" aria-valuemin="0" aria-valuemax="100" data-need="food"></span></li>
-        <li><span id="need-play">Play</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-play" aria-valuemin="0" aria-valuemax="100" data-need="play"></span></li>
-        <li><span id="need-sleep">Sleep</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-sleep" aria-valuemin="0" aria-valuemax="100" data-need="sleep"></span></li>
+        <li><span id="need-food">Food</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-food" aria-valuemin="0" aria-valuemax="100" data-need="food"></span> <span class="goatchi__pct" data-pct="food"></span></li>
+        <li><span id="need-play">Play</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-play" aria-valuemin="0" aria-valuemax="100" data-need="play"></span> <span class="goatchi__pct" data-pct="play"></span></li>
+        <li><span id="need-sleep">Sleep</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-sleep" aria-valuemin="0" aria-valuemax="100" data-need="sleep"></span> <span class="goatchi__pct" data-pct="sleep"></span></li>
       </ul>
+      <p class="goatchi__lasts"></p>
       <p class="goatchi__acts"><button type="button" class="button" data-act="feed">Feed</button> <button type="button" class="button" data-act="play">Play</button> <button type="button" class="button" data-act="sleep">Sleep</button></p>
       <p class="goatchi__trip"></p>
       <p class="goatchi__cheers-intro">Your goat cheers up the first time you:</p>
@@ -127,6 +129,6 @@
 </footer>
 <!-- /gen:footer -->
 <script src="album.js?v=1ee120f9" defer></script>
-<script src="goatchi.js?v=2bc02826" defer></script>
+<script src="goatchi.js?v=6184e2f2" defer></script>
 </body>
 </html>

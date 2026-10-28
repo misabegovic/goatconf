@@ -69,10 +69,11 @@ def page() -> str:
     </figure>
     <div class="goatchi__care">
       <ul class="goatchi__needs">
-        <li><span id="need-food">Food</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-food" aria-valuemin="0" aria-valuemax="100" data-need="food"></span></li>
-        <li><span id="need-play">Play</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-play" aria-valuemin="0" aria-valuemax="100" data-need="play"></span></li>
-        <li><span id="need-sleep">Sleep</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-sleep" aria-valuemin="0" aria-valuemax="100" data-need="sleep"></span></li>
+        <li><span id="need-food">Food</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-food" aria-valuemin="0" aria-valuemax="100" data-need="food"></span> <span class="goatchi__pct" data-pct="food"></span></li>
+        <li><span id="need-play">Play</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-play" aria-valuemin="0" aria-valuemax="100" data-need="play"></span> <span class="goatchi__pct" data-pct="play"></span></li>
+        <li><span id="need-sleep">Sleep</span> <span class="goatchi__bar" role="meter" aria-labelledby="need-sleep" aria-valuemin="0" aria-valuemax="100" data-need="sleep"></span> <span class="goatchi__pct" data-pct="sleep"></span></li>
       </ul>
+      <p class="goatchi__lasts"></p>
       <p class="goatchi__acts"><button type="button" class="button" data-act="feed">Feed</button> <button type="button" class="button" data-act="play">Play</button> <button type="button" class="button" data-act="sleep">Sleep</button></p>
       <p class="goatchi__trip"></p>
       <p class="goatchi__cheers-intro">Your goat cheers up the first time you:</p>
@@ -110,7 +111,7 @@ def page() -> str:
     html = frame.page("goatchi", "Goatchi: keep a GoatConf goat",
                       "Goatchi: keep a GoatConf goat in your browser. Feed it, play with it and let it sleep; it counts the days to GoatConf in Tuzla.",
                       (src, w, h, ""), "Goatchi", "Keep a GoatConf goat: feed it, play with it, and let it sleep. It lives in your browser and never dies.",
-                      main, "files/tools/goatchi.py build", photo_class=" page-head__photo--mark")
+                      main, "files/tools/goatchi.py build", preview="goatchi-preview.png", photo_class=" page-head__photo--mark")
     return html.replace('<script src="album.js" defer></script>', '<script src="album.js" defer></script>\n<script src="goatchi.js" defer></script>')
 
 

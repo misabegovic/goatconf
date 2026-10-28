@@ -11,6 +11,7 @@ sources:
   - sources/conversations/2026-10-28--org--goat-tamagotchi-how.md
   - sources/conversations/2026-10-28--org--goatchi-adr-approved.md
   - sources/conversations/2026-10-28--org--goatchi-ship.md
+  - sources/conversations/2026-10-28--org--goatchi-preview-and-bars.md
   - tools/goatchi.py
   - site/goatchi.js
   - tests/test_goatchi.py
@@ -147,6 +148,11 @@ Built and shipped on 2026-10-28 (source: sources/conversations/2026-10-28--org--
 - `tools/speakers.py check` accepts `goat_keep: yes` and fails any other
   value; no speaker has it yet, so only the plain and role goats are offered.
 - The footer and the home page's back cover link "Goatchi".
+- Later the same day, on the organiser's ask: Goatchi's own link preview,
+  `site/share/goatchi-preview.png` (made by `tools/shareables.py`), and on
+  each bar its percentage, with a line under the bars saying how long the
+  goat stays happy before its first need runs low
+  (source: sources/conversations/2026-10-28--org--goatchi-preview-and-bars.md).
 
 ### Success metrics, checked
 

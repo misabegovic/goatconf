@@ -763,3 +763,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #216: site: Goatchi, keep a GoatConf goat
    diff: 62 files, +640/-72
    restricted-paths: true
+2026-10-28 merge — PR #217: site: Goatchi's own link preview, and percentages and time left on its bars
+   diff: 40 files, +98/-44
+   restricted-paths: true
