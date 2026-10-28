@@ -74,10 +74,12 @@ def sets() -> dict:
 # what it is fed, and (in singles) the sleeping goat (ADR goat-tamagotchi-on-the-site).
 GOATCHI_GOATS = ("sitting", "sticker-host", "sticker-coder", "sticker-speaker", "sticker-cook", "sticker-pirate", "sticker-hidden")
 GOATCHI_FOOD = ("sticker-burek", "sticker-cevapi", "sticker-fildzan")
+# In Goatchi's challenge mode a neglected goat goes exploring: the goat hiking above Tuzla.
+GOATCHI_GONE = "sticker-hike"
 
 
 def singles() -> tuple:
-    return (("asleep",) + GOATCHI_GOATS + GOATCHI_FOOD
+    return (("asleep",) + GOATCHI_GOATS + GOATCHI_FOOD + (GOATCHI_GONE,)
             + tuple(sorted(k for k, v in manifest().items() if v["group"] == "speakers-sitting")))
 
 

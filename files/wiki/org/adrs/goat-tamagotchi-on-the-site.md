@@ -12,6 +12,7 @@ sources:
   - sources/conversations/2026-10-28--org--goatchi-adr-approved.md
   - sources/conversations/2026-10-28--org--goatchi-ship.md
   - sources/conversations/2026-10-28--org--goatchi-preview-and-bars.md
+  - sources/conversations/2026-10-28--org--goatchi-challenge-mode.md
   - tools/goatchi.py
   - site/goatchi.js
   - tests/test_goatchi.py
@@ -122,6 +123,18 @@ only), and the adopted goat becoming the companion on every page.
 - Clearing the browser loses the goat; the page says so.
 - No new painted art is needed: the goats, the food scenes and the sleeping
   goat exist.
+
+## Amendments
+
+- **2026-10-28, challenge mode.** A player may choose a challenge mode when
+  picking a goat. In it, a goat left with every need empty for three days
+  wanders off to explore the hills above Tuzla: the page shows the painted
+  goat hiking and how many days it was kept, and the player can pick
+  another. It is off by default; without it the goat still sulks and never
+  leaves, so the decision that the goat never dies stands. Every goat shows
+  how long it has been kept. A "permanent sleep" was considered and not
+  chosen, as it reads as the goat dying
+  (source: sources/conversations/2026-10-28--org--goatchi-challenge-mode.md).
 
 ## Linked PRD
 
