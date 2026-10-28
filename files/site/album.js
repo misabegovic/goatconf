@@ -303,6 +303,16 @@
     const lines = every.concat(own).filter((l) => l !== said);
     said = lines[Math.floor(Math.random() * lines.length)] || "Maaa!";
     say.textContent = said;
+    // A wrapped line leaves the bubble at its widest; it is fitted to its longest line instead.
+    say.style.width = "";
+    say.style.transform = "none";
+    const range = document.createRange();
+    range.selectNodeContents(say);
+    const rows = [...range.getClientRects()];
+    if (rows.length > 1) {
+      const cs = getComputedStyle(say);
+      say.style.width = `${Math.ceil(Math.max(...rows.map((r) => r.width)) + parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight))}px`;
+    }
     // Longer lines stay up longer, so they can be read.
     const duration = 1300 + said.length * 45;
     return play(say, still ? [{ opacity: 0 }, { opacity: 1, offset: 0.1 }, { opacity: 1, offset: 0.88 }, { opacity: 0 }] : [
