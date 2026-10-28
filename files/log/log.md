@@ -741,3 +741,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #211: licence: Apache 2.0 for the code and writing, the GoatConf brand all rights reserved
    diff: 41 files, +343/-63
    restricted-paths: true
+2026-10-28 merge — PR #212: site: the goat says Baaa, and only Carmine's goat says BaaaaAI
+   diff: 36 files, +72/-54
+   restricted-paths: true

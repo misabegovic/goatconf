@@ -296,12 +296,12 @@
   const say = document.createElement("b");
   say.className = "goat-say";
   stage.append(say);
-  const every = (() => { try { return JSON.parse(document.getElementById("goat-says").textContent); } catch (e) { return ["Maaa!"]; } })();
+  const every = (() => { try { return JSON.parse(document.getElementById("goat-says").textContent); } catch (e) { return ["Baaa!"]; } })();
   let said = "";
   const meee = () => {
     const own = current && current.peek.dataset.says ? current.peek.dataset.says.split("|") : [];
     const lines = every.concat(own).filter((l) => l !== said);
-    said = lines[Math.floor(Math.random() * lines.length)] || "Maaa!";
+    said = lines[Math.floor(Math.random() * lines.length)] || "Baaa!";
     say.textContent = said;
     // A wrapped line leaves the bubble at its widest; it is fitted to its longest line instead.
     say.style.width = "";
