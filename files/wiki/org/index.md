@@ -42,7 +42,7 @@ timeline, budget, and decisions that touch more than one area.
   - [A weekly drumbeat: an email list, three channels and things people can share](prds/social-drumbeat.md)
   - [Supporters who fund a named thing, and hiring that attendees opt into](prds/supporters-and-hiring.md)
   - [Website and registration: goatconf.com and a free pass per core day](prds/website-and-registration.md)
-- [Keep a goat: a free tamagotchi of the painted goats](prds/goat-tamagotchi-on-the-site.md): a PRD on its own, bet on 2026-10-28, draft for the organiser's approval.
+- [Keep a goat: a free tamagotchi of the painted goats](prds/goat-tamagotchi-on-the-site.md): a PRD on its own, bet on 2026-10-28, approved 2026-10-28, with [its ADR](adrs/goat-tamagotchi-on-the-site.md) (accepted 2026-10-28): a page of its own.
 - ADRs, one per PRD, accepted by the organiser on 2026-10-07:
   - [The organiser runs the goat hunt; the core publishes prices, the breaks list and the lake day](adrs/activities-lake-and-town.md)
   - [Keep the public ledger as one CSV file here, rendered as the budget page](adrs/budget-and-public-ledger.md) (superseded)

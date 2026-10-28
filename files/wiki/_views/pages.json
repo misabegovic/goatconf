@@ -311,6 +311,27 @@
       "tokens": 5066
     },
     {
+      "path": "org/adrs/goat-tamagotchi-on-the-site.md",
+      "title": "Goatchi, a page of its own: goatchi.html, built by a tool, with its own small script",
+      "kind": "decision",
+      "status": "accepted",
+      "updated": "2026-10-28",
+      "confidence": "medium",
+      "affects": [
+        "org"
+      ],
+      "sources": [
+        "wiki/org/prds/goat-tamagotchi-on-the-site.md",
+        "sources/conversations/2026-10-28--org--goat-tamagotchi-how.md",
+        "sources/conversations/2026-10-28--org--goatchi-adr-approved.md",
+        "sources/conversations/2026-10-28--org--goat-tamagotchi-bet.md",
+        "sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md",
+        "sources/conversations/2026-10-27--org--goat-tricks.md",
+        "sources/conversations/2026-10-28--org--goat-says.md"
+      ],
+      "tokens": 1524
+    },
+    {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
       "title": "Website: goatconf.com on GitHub Pages, with every intake through Google Forms",
       "kind": "decision",
@@ -859,8 +880,9 @@
       "status": "draft",
       "updated": "2026-10-28",
       "sources": [],
-      "tokens": 2044,
+      "tokens": 2081,
       "affected_by": [
+        "org/adrs/goat-tamagotchi-on-the-site.md",
         "org/ideas/lightning-talks.md",
         "org/ideas/speaker-goat-tamagotchi.md",
         "org/outreach/drumbeat-2026.md",
@@ -1862,23 +1884,24 @@
       "path": "org/prds/goat-tamagotchi-on-the-site.md",
       "title": "Keep a goat: a free tamagotchi of the painted goats on goatconf.com",
       "kind": "initiative",
-      "status": "draft",
+      "status": "living",
       "updated": "2026-10-28",
       "appetite": "small",
-      "confidence": "low",
+      "confidence": "medium",
       "supersedes": "org/pitches/goat-tamagotchi-on-the-site.md",
       "affects": [
         "org"
       ],
       "sources": [
         "sources/conversations/2026-10-28--org--goat-tamagotchi-bet.md",
+        "sources/conversations/2026-10-28--org--goat-tamagotchi-how.md",
         "sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md",
         "sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md",
         "sources/conversations/2026-10-27--org--goat-tricks.md",
         "sources/conversations/2026-10-28--org--goat-says.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md"
       ],
-      "tokens": 1714
+      "tokens": 1857
     },
     {
       "path": "org/prds/hosts-hub-guides-and-venues.md",
