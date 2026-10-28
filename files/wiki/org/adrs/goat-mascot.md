@@ -14,6 +14,7 @@ sources:
   - sources/conversations/2026-10-27--org--band-goats-on-phones.md
   - sources/conversations/2026-10-28--org--food-band-cook-on-phones.md
   - sources/conversations/2026-10-28--org--band-goat-horns.md
+  - sources/conversations/2026-10-28--org--goat-says.md
   - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
@@ -301,3 +302,9 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   over it is at least as tall as the goat, so the page's top edge never cuts
   its horns. Checked at every stop of the companion on seventeen pages and
   four widths, no goat is cut by an edge (source: sources/conversations/2026-10-28--org--band-goat-horns.md).
+- **2026-10-28, what the goat says.** Between its tricks the tapped goat
+  says a line in its bubble, at random and never twice running: "Maaa!" or
+  "Baaa!" (English speakers did not read "Meee!" as a goat), a few lines
+  about the conference, and a pun. A speaker's goat also says a line about
+  that speaker's own work, drawn from their profile, so no speaker's project
+  is promoted by every goat. The lines live in `tools/frame.py` (source: sources/conversations/2026-10-28--org--goat-says.md).

@@ -17,6 +17,8 @@ Usage: python3 tools/frame.py <apply|check>
 """
 from __future__ import annotations
 
+import html
+import json
 import re
 import sys
 from pathlib import Path
@@ -70,10 +72,10 @@ def speaker_peek(slug: str) -> str:
     """A speaker's own painted goat peeking over their card, or the speaker goat while theirs is not painted yet.
     For the speakers whose peeking goat looked cut off, their whole goat sits on the card or band instead."""
     if slug in goat_atlas.WHOLE_ON_CARD and goat_atlas.has(f"speaker-{slug}-sitting"):
-        return goat_atlas.goat(f"speaker-{slug}-sitting", "peek peek--face peek--whole", _beat(slug))
+        return _says(goat_atlas.goat(f"speaker-{slug}-sitting", "peek peek--face peek--whole", _beat(slug)), slug)
     pose = f"speaker-{slug}"
     if goat_atlas.has(pose):
-        return goat_atlas.goat(pose, "peek peek--face", _beat(slug))
+        return _says(goat_atlas.goat(pose, "peek peek--face", _beat(slug)), slug)
     return goat_atlas.goat("peek-speaker", "peek peek--face", _beat(slug))
 
 
@@ -137,6 +139,36 @@ def page(canonical: str, title: str, description: str, photo, h1: str, lede: str
 SPRITE_RE = re.compile(r'<svg width="0" height="0" style="position:absolute".*?</svg>\n', re.S)
 
 
+# What the goat says when tapped: every goat picks at random from EVERY, and a speaker's goat also from its own
+# lines, about their own work, from their profile (sources/conversations/2026-10-28--org--goat-says.md). Keep each
+# line short: it shows in a small bubble beside the goat's head.
+SAYS_EVERY = ("Maaa!", "Baaa!", "Come to GoatConf!", "See you in Tuzla!", "Tuzla, 3–5 June 2027!", "Free to attend!",
+              "Use Ruby for BaaaaAI")
+SAYS_SPEAKER = {"paul-campbell": ("Try Tito!", "Ask me about CARLOS!"), "roy-tomeij": ("Try AppSignal!",),
+                "carmine-paolino": ("Try RubyLLM!",), "dejan-menges": ("Try Enola!",),
+                "amar-mahmutbegovic": ("Try Semblie!",), "cristian-planas": ("Read Rails Scales!",),
+                "christoph-lipautz": ("Back to the Future!",), "predrag-radenkovic": ("Try *codeplain!",)}
+
+
+def _says(goat: str, slug: str) -> str:
+    """A speaker's goat with its own lines for the companion to say."""
+    lines = SAYS_SPEAKER.get(slug)
+    if not lines:
+        return goat
+    return goat.replace('<span class="goat ', f'<span data-says="{html.escape("|".join(lines))}" class="goat ', 1)
+
+
+SAYS_RE = re.compile(r'(?:<!-- gen:companion-says tools/frame.py -->.*?<!-- /gen:companion-says -->\n)?(<script src="album\.js)', re.S)
+
+
+def says(text: str) -> str:
+    """A page with goats carries what every goat says, before the script that shows it."""
+    if 'class="goat ' not in text:
+        return text
+    body = '<script type="application/json" id="goat-says">' + json.dumps(SAYS_EVERY, ensure_ascii=False) + "</script>"
+    return SAYS_RE.sub(lambda m: blocks.wrap("companion-says", "tools/frame.py", body, sep="") + "\n" + m.group(1), text, count=1)
+
+
 PHOTO_RE = re.compile(r'(<figure class="sticker sticker--photo"[^>]*>)(.*?)(</figure>)', re.S)
 SCENE_RE = re.compile(r'<span class="goat goat-scene"[^>]*>.*?</span>')
 
@@ -170,7 +202,7 @@ def spots(text: str) -> str:
 def frame(text: str) -> str:
     """The page with its footer and back cover's links current, its photos' goat scenes, and no goat sprite left
     from before."""
-    text = spots(scenes(SPRITE_RE.sub("", text)))
+    text = says(spots(scenes(SPRITE_RE.sub("", text))))
     for name, make in (("footer", footer), ("back-cover-links", back_cover_links)):
         text = blocks.pattern(name).sub(lambda _m: make(), text)
     return text
