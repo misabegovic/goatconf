@@ -10,6 +10,10 @@ sources:
   - wiki/org/prds/goat-tamagotchi-on-the-site.md
   - sources/conversations/2026-10-28--org--goat-tamagotchi-how.md
   - sources/conversations/2026-10-28--org--goatchi-adr-approved.md
+  - sources/conversations/2026-10-28--org--goatchi-ship.md
+  - tools/goatchi.py
+  - site/goatchi.js
+  - tests/test_goatchi.py
   - sources/conversations/2026-10-28--org--goat-tamagotchi-bet.md
   - sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md
   - sources/conversations/2026-10-27--org--goat-tricks.md
@@ -121,3 +125,33 @@ only), and the adopted goat becoming the companion on every page.
 ## Linked PRD
 
 [Keep a goat: a free tamagotchi of the painted goats on goatconf.com](../prds/goat-tamagotchi-on-the-site.md)
+
+## Build notes
+
+Built and shipped on 2026-10-28 (source: sources/conversations/2026-10-28--org--goatchi-ship.md).
+
+- `tools/goatchi.py` writes `site/goatchi.html` with `frame.page()`, built
+  and checked in `tools/site.py`'s order after the Stickers page; the page
+  loads `site/goatchi.js`, stamped like the other scripts in `tools/meta.py`.
+- The goats are single images built by `tools/goat_atlas.py` from the
+  painted masters: the plain sitting goat, six role goats (the host, the
+  coder, the speaker, the cook, the pirate and the shy one in a basket), the
+  burek, ćevapi and coffee scenes for feeding, and the sleeping goat, each
+  about 30 KB.
+- The needs show as bars in the site's yellow, red when low, with the ARIA
+  meter role, instead of the browser's own meters.
+- Nothing is written to the browser until a goat is picked; the page only
+  reads whether one is kept. The organiser asked whether the site uses
+  cookies: it uses none, and Goatchi's local storage is the only thing the
+  site stores.
+- `tools/speakers.py check` accepts `goat_keep: yes` and fails any other
+  value; no speaker has it yet, so only the plain and role goats are offered.
+- The footer and the home page's back cover link "Goatchi".
+
+### Success metrics, checked
+
+- "A visitor who never adopts a goat downloads nothing more than today." **met**: `site/goatchi.js` is loaded by `site/goatchi.html` only (grep on 2026-10-28: 0 in `site/index.html` and `site/speakers.html`); other pages gain only the footer link, 2026-10-28.
+- "An adopted goat is still theirs, with its needs where they left them, after closing the browser and coming back." **met**: in the browser, a goat was picked, the page closed and opened again, and the goat and its needs were as left, 2026-10-28.
+- "A goat left alone for a week is sulking, not gone, and cheers up when fed." **met**: with its needs set seven days back, the goat was still kept, every bar was empty and red and it said "Baaa…"; fed, its food bar filled, 2026-10-28.
+- "The scripted goat audit (every page, at 360, 412, 768 and 1300 pixels) shows no console errors and no goat cut off, with and without an adopted goat." **not checked**: the companion goat and the other pages are unchanged apart from a footer link, and an adopted goat lives on the Goatchi page only; that page was checked at 390 and 900 pixels with no console errors, 2026-10-28.
+- "The organiser plays it on their phone and approves it." **not checked**: checkable once it is live on goatconf.com, after this merge.

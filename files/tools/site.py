@@ -27,11 +27,11 @@ from pathlib import Path
 TOOLS = Path(__file__).resolve().parent
 
 RECORDS = [["extensions.py", "check"], ["program.py", "check"], ["speakers.py", "check"]]
-BUILD = [["goat_atlas.py", "build"], ["program.py", "build"], ["extensions.py", "build"], ["speakers.py", "build"], ["stickers.py", "build"], ["places.py", "build"],
+BUILD = [["goat_atlas.py", "build"], ["program.py", "build"], ["extensions.py", "build"], ["speakers.py", "build"], ["stickers.py", "build"], ["goatchi.py", "build"], ["places.py", "build"],
          ["home.py", "build"], ["agents.py", "build"], ["images.py", "build"], ["frame.py", "apply"],
          ["nav.py", "apply"], ["meta.py", "apply"]]
 CHECK = [["goat_atlas.py", "check"], ["program.py", "build", "--check"], ["extensions.py", "build", "--check"], ["speakers.py", "build", "--check"],
-         ["stickers.py", "build", "--check"], ["places.py", "build", "--check"], ["home.py", "build", "--check"], ["agents.py", "build", "--check"],
+         ["stickers.py", "build", "--check"], ["goatchi.py", "build", "--check"], ["places.py", "build", "--check"], ["home.py", "build", "--check"], ["agents.py", "build", "--check"],
          ["images.py", "check"], ["frame.py", "check"], ["nav.py", "check"], ["meta.py", "check"],
          ["site_lint.py", "check"]]
 

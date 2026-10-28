@@ -70,8 +70,15 @@ def sets() -> dict:
     return out
 
 
+# Goatchi's goats, each shown on its own: the plain goat and the role goats a visitor can keep, the goat eating
+# what it is fed, and (in singles) the sleeping goat (ADR goat-tamagotchi-on-the-site).
+GOATCHI_GOATS = ("sitting", "sticker-host", "sticker-coder", "sticker-speaker", "sticker-cook", "sticker-pirate", "sticker-hidden")
+GOATCHI_FOOD = ("sticker-burek", "sticker-cevapi", "sticker-fildzan")
+
+
 def singles() -> tuple:
-    return ("asleep",) + tuple(sorted(k for k, v in manifest().items() if v["group"] == "speakers-sitting"))
+    return (("asleep",) + GOATCHI_GOATS + GOATCHI_FOOD
+            + tuple(sorted(k for k, v in manifest().items() if v["group"] == "speakers-sitting")))
 
 
 @lru_cache(maxsize=None)

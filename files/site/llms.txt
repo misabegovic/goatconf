@@ -55,6 +55,7 @@ Follow GoatConf: LinkedIn https://www.linkedin.com/company/goatconf/, X https://
 - [Accessibility: GoatConf 2027](https://goatconf.com/access): What to expect at GoatConf 2027 if you use a wheelchair, are deaf or hard of hearing, or are blind or have low vision: what we know, what we are still checking, and how to tell us what you need.
 - [Contact: GoatConf 2027](https://goatconf.com/contact): Contact the GoatConf 2027 organiser: questions, supporting the conference, press, data requests and confidential code of conduct reports.
 - [Brand: GoatConf 2027](https://goatconf.com/brand): The GoatConf seal, the goat, the wordmark, colours and type, with files to download for posts, slides, badges and T-shirts.
+- [Goatchi: keep a GoatConf goat](https://goatconf.com/goatchi): Goatchi: keep a GoatConf goat in your browser. Feed it, play with it and let it sleep; it counts the days to GoatConf in Tuzla.
 - [Stickers: GoatConf 2027, 3–5 June, Tuzla](https://goatconf.com/stickers): GoatConf 2027 stickers to download: the goat in its roles and out in Tuzla, the seal and a few words, as images or a sheet to print.
 
 ## Data

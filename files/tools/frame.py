@@ -37,7 +37,7 @@ LINKS = [("index.html", "Home"), ("program.html", "Program"), ("speakers.html", 
          ("talk.html", "Propose a session"), ("extend.html", "Host an event"), ("register.html", "Register"),
          ("travel.html", "Travel"), ("supporters.html", "Supporters"), ("charter.html", "Charter"),
          ("code-of-conduct.html", "Code of conduct"), ("brand.html", "Brand"), ("stickers.html", "Stickers"),
-         ("access.html", "Accessibility"), ("contact.html", "Contact")]
+         ("goatchi.html", "Goatchi"), ("access.html", "Accessibility"), ("contact.html", "Contact")]
 # The copyright line under every page: the code and text are Apache 2.0, the brand is reserved but may be shared
 # unchanged (NOTICE; sources/conversations/2026-10-28--org--apache-licence-and-brand.md).
 LEGAL = ('© 2026 Muhamed Isabegović. The GoatConf name, logo and goats: all rights reserved, '

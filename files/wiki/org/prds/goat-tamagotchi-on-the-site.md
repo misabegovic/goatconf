@@ -1,7 +1,8 @@
 ---
 title: "Keep a goat: a free tamagotchi of the painted goats on goatconf.com"
 kind: initiative
-status: living
+status: superseded
+superseded_by: org/adrs/goat-tamagotchi-on-the-site.md
 updated: 2026-10-28
 appetite: small
 confidence: medium
@@ -166,3 +167,5 @@ needs and the cheers all happen on `goatchi.html`, named Goatchi, and the compan
 unchanged, so two Scope bullets (adopting from the companion and the
 Stickers page, and the adopted goat following the visitor) are dropped
 ([the ADR](../adrs/goat-tamagotchi-on-the-site.md); source: sources/conversations/2026-10-28--org--goat-tamagotchi-how.md).
+
+Built and shipped on 2026-10-28 as Goatchi; see the ADR's build notes and its success metrics, checked (source: sources/conversations/2026-10-28--org--goatchi-ship.md).

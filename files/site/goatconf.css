@@ -796,3 +796,34 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 /* On a phone the button takes the page's width, so the goat waves from below it, centred */
 @media (max-width: 47.99rem) { #see-you:has(.goat-one__stage.is-scene) { padding-bottom: 7.6rem; } #see-you .goat-one__stage.is-scene { right: calc(50% - 3.25rem); width: 6.5rem; } }
 .goat-one__stage.is-scene .goat { transform-origin: 80% 90%; filter: drop-shadow(0 0.25rem 0.3rem rgb(0 0 0 / 0.25)); }
+
+/* Goatchi, the goat a visitor keeps (ADR goat-tamagotchi-on-the-site): the goat on the left with its bubble, its
+   needs and what to do on the right; on a phone, one above the other. */
+.goatchi__play { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 1.5rem 2.5rem; align-items: start; padding-bottom: 0.5rem; }
+.goatchi__play[hidden] { display: none; }
+.goatchi__stage { position: relative; margin: 0; padding-top: 3.2rem; text-align: center; }
+.goatchi__goat { display: block; width: 100%; max-width: 16rem; height: auto; margin: 0 auto; transform-origin: 50% 100%; filter: drop-shadow(0 0.35rem 0.4rem rgb(0 0 0 / 0.2)); transition: filter 400ms; }
+.goatchi__say { position: absolute; top: 0; left: 50%; translate: -50% 0; width: max-content; max-width: 14rem; padding: 0.25rem 0.75rem 0.3rem; border-radius: 1rem 1rem 1rem 0.2rem; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.15rem; line-height: 1.1; box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35); }
+.goatchi__say:empty { display: none; }
+.goatchi__name { margin-top: 0.6rem; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.3rem; }
+.is-sulking .goatchi__goat { filter: saturate(0.55) drop-shadow(0 0.35rem 0.4rem rgb(0 0 0 / 0.2)); }
+.goatchi__needs { list-style: none; margin: 0 0 1.2rem; padding: 0; display: grid; gap: 0.55rem; max-width: 24rem; }
+.goatchi__needs li { display: grid; grid-template-columns: 4.5rem 1fr; align-items: center; gap: 0.8rem; font-weight: 700; }
+.goatchi__bar { position: relative; display: block; height: 0.9rem; border-radius: 0.45rem; background: var(--page-print); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.08); overflow: hidden; }
+.goatchi__bar::before { content: ""; position: absolute; inset: 0 auto 0 0; width: calc(var(--level, 1) * 100%); border-radius: inherit; background: var(--yellow); transition: width 600ms var(--ease); }
+.goatchi__bar.is-low::before { min-width: 0.9rem; background: var(--red); }
+.goatchi__acts { display: flex; flex-wrap: wrap; gap: 1rem 1.2rem; margin: 0 0 1.4rem; }
+button.button { border: 0; cursor: pointer; }
+.goatchi__trip { font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.3rem; margin: 0 0 0.6rem; }
+.goatchi__cheers-intro { margin: 0 0 0.3rem; }
+.goatchi__cheers { margin: 0 0 1.2rem; padding-left: 1.2rem; }
+.goatchi__cheers .is-done { text-decoration-style: dotted; }
+.goatchi__cheers .is-done::after { content: " ✓"; }
+.goatchi__link { padding: 0; border: 0; background: none; color: var(--album); font: inherit; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; cursor: pointer; }
+.goatchi__confirm { padding: 0.6rem 0.9rem; border-radius: 0.6rem; background: var(--page-print); }
+.goatchi__confirm .goatchi__link { margin-left: 0.6rem; }
+.goatchi__pick-goat { display: grid; justify-items: center; gap: 0.3rem; width: 100%; padding: 0.6rem 0.5rem 0.8rem; border: 0; border-radius: 0.6rem; background: none; color: var(--ink); font: inherit; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: background-color 200ms; }
+.goatchi__pick-goat:hover, .goatchi__pick-goat:focus-visible { background: var(--page-print); }
+.goatchi__pick-goat[aria-pressed="true"] { background: var(--page-print); box-shadow: inset 0 0 0 3px var(--yellow); }
+.goatchi__thumb { width: 100%; max-width: 9rem; height: auto; aspect-ratio: 3 / 4; object-fit: contain; }
+@media (max-width: 47.99rem) { .goatchi__play { grid-template-columns: 1fr; } .goatchi__goat { max-width: 13rem; } }

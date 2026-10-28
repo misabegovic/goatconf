@@ -65,7 +65,7 @@ def tags(text: str) -> str:
             f"{END}\n")
 
 
-ASSETS = ("goatconf.css", "album.js", "extend.js")
+ASSETS = ("goatconf.css", "album.js", "extend.js", "goatchi.js")
 # The display face every page's title is set in: fetched early, so the title
 # does not first show in a wider fallback and then jump.
 PRELOAD = '<link rel="preload" href="fonts/bricolage-wdth-latin.woff2" as="font" type="font/woff2" crossorigin>\n'
