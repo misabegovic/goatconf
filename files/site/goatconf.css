@@ -727,6 +727,8 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 @media (max-width: 47.99rem) {
   .band:has(> .peek) { padding-right: 6.1rem; text-wrap: pretty; }
   .band > .peek:not(.peek--whole) { right: 0.5rem; width: 5.4rem; }
+  /* A one-line band is as tall as its goat, so the page's top edge never clips the goat's horns */
+  .band:has(> .peek:not(.peek--whole)) { min-height: 5.25rem; }
   /* The cook over the food section is the band's star */
   #food-title { padding-right: 7.4rem; }
   #food-title > .peek { width: 7rem; right: 0.3rem; }

@@ -13,6 +13,7 @@ sources:
   - sources/conversations/2026-10-27--org--goat-tap-polish.md
   - sources/conversations/2026-10-27--org--band-goats-on-phones.md
   - sources/conversations/2026-10-28--org--food-band-cook-on-phones.md
+  - sources/conversations/2026-10-28--org--band-goat-horns.md
   - sources/conversations/2026-10-27--org--every-painted-goat-used.md
   - sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md
   - sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md
@@ -296,3 +297,7 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
   each line before it wraps, beside the band's goat, which sits nearer the
   band's edge and a little bigger; the cook over the food section is bigger
   still (source: sources/conversations/2026-10-28--org--food-band-cook-on-phones.md).
+- **2026-10-28, room for the horns.** On a phone a band with a goat peeking
+  over it is at least as tall as the goat, so the page's top edge never cuts
+  its horns. Checked at every stop of the companion on seventeen pages and
+  four widths, no goat is cut by an edge (source: sources/conversations/2026-10-28--org--band-goat-horns.md).
