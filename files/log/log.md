@@ -746,3 +746,6 @@ Append-only. Newest entries at the bottom. One line per operation:
    restricted-paths: true
 2026-10-28 shape — pitch → files/wiki/org/pitches/goat-tamagotchi-on-the-site.md (PM agent)
 2026-10-28 zoom-out — skipped for files/wiki/org/pitches/goat-tamagotchi-on-the-site.md (small appetite, a pre-bet pitch with no reverse edges)
+2026-10-28 merge — PR #213: org: pitch a free goat tamagotchi on the site
+   diff: 8 files, +173/-8
+   restricted-paths: false
