@@ -738,3 +738,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #210: site: the goat's speech bubble fits its line
    diff: 37 files, +90/-63
    restricted-paths: false
+2026-10-28 merge — PR #211: licence: Apache 2.0 for the code and writing, the GoatConf brand all rights reserved
+   diff: 41 files, +343/-63
+   restricted-paths: true
