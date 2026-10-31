@@ -351,6 +351,7 @@
         "wiki/org/prds/goatchi-full-game.md",
         "sources/conversations/2026-10-31--org--goatchi-full-game-adr-approved.md",
         "sources/conversations/2026-10-31--org--goatchi-full-game-built.md",
+        "sources/conversations/2026-10-31--org--paul-campbell-goat-ginger.md",
         "site/goatchi-sw.js",
         "site/goatchi.webmanifest",
         "tests/test_goatchi_app.py",
@@ -367,7 +368,7 @@
         "site/goatchi.js",
         "site/album.js"
       ],
-      "tokens": 3233
+      "tokens": 3359
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",

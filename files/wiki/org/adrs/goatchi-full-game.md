@@ -10,6 +10,7 @@ sources:
   - wiki/org/prds/goatchi-full-game.md
   - sources/conversations/2026-10-31--org--goatchi-full-game-adr-approved.md
   - sources/conversations/2026-10-31--org--goatchi-full-game-built.md
+  - sources/conversations/2026-10-31--org--paul-campbell-goat-ginger.md
   - site/goatchi-sw.js
   - site/goatchi.webmanifest
   - tests/test_goatchi_app.py
@@ -198,8 +199,13 @@ its reminders, then the game (source: sources/conversations/2026-10-31--org--goa
 - **No blink yet.** Goatchi's poses have no closed-eye frames; petting,
   blinking and more moves are left for the next animation pitch, on the
   organiser's choice.
-- **Not done in this build:** the speakers' goats, the food and Tuzla photo
-  goats, and Paul Campbell's goat in ginger, which come next on the same art.
+- **Not done in this build:** the speakers' goats and the food and Tuzla
+  photo goats, which come next on the same art.
+- **Paul Campbell's goat, painted in ginger** (2026-10-31, after the build):
+  the peek, its blink, both head turns and the sitting goat repainted in
+  ChatGPT from the goat images alone, replacing the recolour in code; the
+  hooves below the ledge are cut by darkness, since the first cut trimmed a
+  hoof the organiser spotted (source: sources/conversations/2026-10-31--org--paul-campbell-goat-ginger.md).
 
 ### Success metrics, checked
 
@@ -209,4 +215,4 @@ its reminders, then the game (source: sources/conversations/2026-10-31--org--goa
 - "Goatchi before a goat is picked weighs no more than on 2026-10-31 (about 531 KB), and picking adds no more than about 300 KB." **met**: no pose loads before a pick (the requests show none); picking a role goat loads its eight poses, 280 to 308 KB, the host's a little over; the plain goat's four new poses are 150 KB (2026-10-31).
 - "The scripted goat audit (every page, at 360, 412, 768 and 1300 pixels) shows no console errors and no goat cut off." **not checked**: Goatchi was audited at 390 and 1300 pixels with no console errors and no sideways scrolling; the audit of every page at four widths runs with the site's other goats, next.
 - "The organiser plays it end to end on their phone with one goat and calls it final; then Goatchi's post goes." **not checked**: due once this is live, with the hands-on test of installing and reminders on the organiser's Android phone.
-- "The organiser approves Paul Campbell's goat in ginger, and every food and Tuzla photo on the home page has its goat." **not checked**: the second part of this work, next.
+- "The organiser approves Paul Campbell's goat in ginger, and every food and Tuzla photo on the home page has its goat." **not met yet**: the organiser approved Paul Campbell's goat in ginger on 2026-10-31; the food and Tuzla photo goats are next.
