@@ -49,33 +49,51 @@ def goat(hours_ago=0.0, level=1.0, remind=True, challenge=False):
 
 
 CASES = {
-    # name: (goat, last told, expected)
-    "a happy goat": (goat(hours_ago=1), None, False),
-    "a sulking goat": (goat(hours_ago=30), None, True),
-    "a sulking goat, told an hour ago": (goat(hours_ago=30), NOW - 1 * H, False),
-    "a sulking goat, told a day ago": (goat(hours_ago=30), NOW - 25 * H, True),
-    "a sulking goat whose player turned reminders off": (goat(hours_ago=30, remind=False), None, False),
-    "no goat at all": (None, None, False),
-    "a challenge goat, sulking, still here": (goat(hours_ago=40, challenge=True), None, True),
-    "a challenge goat that wandered off": (goat(hours_ago=24 * 6, challenge=True), None, False),
-    "a goat left alone for a week, not in challenge mode": (goat(hours_ago=24 * 7), None, True),
+    # name: (goat, last told, told it left, expected)
+    "a happy goat": (goat(hours_ago=1), None, False, None),
+    "a sulking goat": (goat(hours_ago=30), None, False, "need"),
+    "a sulking goat, told an hour ago": (goat(hours_ago=30), NOW - 1 * H, False, None),
+    "a sulking goat, told a day ago": (goat(hours_ago=30), NOW - 25 * H, False, "need"),
+    "a sulking goat whose player turned reminders off": (goat(hours_ago=30, remind=False), None, False, None),
+    "no goat at all": (None, None, False, None),
+    "a challenge goat, sulking, still here": (goat(hours_ago=40, challenge=True), None, False, "need"),
+    "a challenge goat that just wandered off": (goat(hours_ago=24 * 6, challenge=True), NOW - 1 * H, False, "left"),
+    "a challenge goat that wandered off, already told": (goat(hours_ago=24 * 6, challenge=True), None, True, None),
+    "a goat left alone for a week, not in challenge mode": (goat(hours_ago=24 * 7), None, False, "need"),
 }
+
+
+def node(expr: str):
+    script = f"const sw = require({json.dumps(str(SW))}); process.stdout.write(JSON.stringify({expr}));"
+    return json.loads(subprocess.run(["node", "-e", script], capture_output=True, text=True, check=True).stdout)
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
 @pytest.mark.parametrize("name", list(CASES))
 def test_the_worker_reminds_only_when_it_should(name):
-    g, told, want = CASES[name]
-    script = (f"const sw = require({json.dumps(str(SW))});"
-              f"process.stdout.write(JSON.stringify(sw.shouldRemind({json.dumps(g)}, {json.dumps(told)}, {NOW})));")
-    out = subprocess.run(["node", "-e", script], capture_output=True, text=True, check=True).stdout
-    assert json.loads(out) is want, name
+    g, told, gone, want = CASES[name]
+    assert node(f"sw.remindOf({json.dumps(g)}, {json.dumps(told)}, {json.dumps(gone)}, {NOW})") == want, name
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
-def test_the_reminder_names_the_goat_and_warns_a_challenge_goat():
-    script = (f"const sw = require({json.dumps(str(SW))});"
-              f"process.stdout.write(JSON.stringify([sw.reminder({json.dumps(goat())}), sw.reminder({json.dumps(goat(challenge=True))})]));")
-    plain, challenge = json.loads(subprocess.run(["node", "-e", script], capture_output=True, text=True, check=True).stdout)
-    assert plain["title"] == "The pirate is sulking"
-    assert "hills" not in plain["body"] and "hills" in challenge["body"]
+def test_the_reminder_names_the_need_the_goat_lacks_most():
+    hungry = goat(hours_ago=30)
+    hungry["needs"]["play"] = [1, NOW - 2 * H]
+    hungry["needs"]["sleep"] = [1, NOW - 2 * H]
+    sleepy = goat(hours_ago=30)
+    sleepy["needs"]["food"] = [1, NOW - 2 * H]
+    sleepy["needs"]["play"] = [1, NOW - 2 * H]
+    assert node(f"sw.reminder({json.dumps(hungry)}, 'need', {NOW})")["title"] == "The pirate is hungry"
+    assert node(f"sw.reminder({json.dumps(sleepy)}, 'need', {NOW})")["title"] == "The pirate is sleepy"
+    challenge = goat(hours_ago=30, challenge=True)
+    assert "hills" in node(f"sw.reminder({json.dumps(challenge)}, 'need', {NOW})")["body"]
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_a_goat_that_wandered_off_is_told_once_with_its_days():
+    g = goat(hours_ago=24 * 6, challenge=True)
+    g["since"] = NOW - 24 * 9 * H
+    note = node(f"sw.reminder({json.dumps(g)}, 'left', {NOW})")
+    assert note["title"] == "The pirate went exploring"
+    # every need ran out at 6 - 1.5 days ago, it left three days later: kept 9 - 1.5 = 7.5 days, so 7
+    assert "kept it for 7 days" in note["body"]

@@ -1,7 +1,8 @@
 // Goatchi's service worker (ADR goatchi-full-game), for the Goatchi page only. It keeps what the page last loaded,
 // so an installed Goatchi opens offline, and, only once the player has turned reminders on, it wakes when the browser
 // lets it (periodic background sync), looks at the goat the page left for it in IndexedDB, and says so on this
-// device when the goat sulks, at most once a day. It sends nothing anywhere: there is no server.
+// device when the goat needs it, at most once a day, and once if a challenge goat wanders off. It sends nothing
+// anywhere: there is no server.
 const CACHE = "goatchi-1";
 const EMPTY_AFTER = 36 * 3600e3;
 const SULK = 0.25;
@@ -10,19 +11,40 @@ const DAY = 864e5;
 const WANDER_AFTER = 3 * DAY;
 const TAG = "goatchi-check";
 
-// The needs and moods, worked out from the time passed exactly as the page does.
+// The needs, worked out from the time passed exactly as the page does.
 const level = (goat, n, now) => Math.max(0, Math.min(1, goat.needs[n][0] - (now - goat.needs[n][1]) / EMPTY_AFTER));
-const wandered = (goat, now) => !!goat.challenge
-  && now - Math.max(...NEEDS.map((n) => goat.needs[n][1] + goat.needs[n][0] * EMPTY_AFTER)) >= WANDER_AFTER;
-// Tell the player only about a goat they asked to hear about, still theirs, sulking, and not told about in a day.
-const shouldRemind = (goat, lastTold, now) => !!goat && goat.remind === true && !wandered(goat, now)
-  && NEEDS.some((n) => level(goat, n, now) < SULK) && !(lastTold && now - lastTold < DAY);
-const reminder = (goat) => ({
-  title: `${goat.name} is sulking`,
-  body: goat.challenge ? "Baaa… Feed it, play with it or let it sleep, before it wanders off to the hills." : "Baaa… Feed it, play with it or let it sleep.",
-});
+const lowest = (goat, now) => NEEDS.reduce((a, b) => (level(goat, b, now) < level(goat, a, now) ? b : a));
+// A challenge goat leaves three days after its last need ran out.
+const leftAt = (goat) => (goat.challenge
+  ? Math.max(...NEEDS.map((n) => goat.needs[n][1] + goat.needs[n][0] * EMPTY_AFTER)) + WANDER_AFTER : Infinity);
+const wandered = (goat, now) => now >= leftAt(goat);
+// What to tell the player, if anything, about a goat they asked to hear about: once, that a challenge goat has
+// wandered off; otherwise that it needs them, naming the need it lacks most, when it sulks and not within a day of
+// the last time.
+const remindOf = (goat, lastTold, toldGone, now) => {
+  if (!goat || goat.remind !== true) return null;
+  if (wandered(goat, now)) return toldGone ? null : "left";
+  if (!NEEDS.some((n) => level(goat, n, now) < SULK)) return null;
+  return lastTold && now - lastTold < DAY ? null : "need";
+};
+const shouldRemind = (goat, lastTold, now, toldGone = false) => remindOf(goat, lastTold, toldGone, now) !== null;
+const NEEDING = {
+  food: ["is hungry", "Baaa… Come and feed it."],
+  play: ["wants to play", "Baaa… Come and play with it."],
+  sleep: ["is sleepy", "Baaa… Come and let it sleep."],
+};
+const reminder = (goat, kind = "need", now = Date.now()) => {
+  if (kind === "left") {
+    const days = Math.max(0, Math.floor((leftAt(goat) - goat.since) / DAY));
+    return { title: `${goat.name} went exploring`,
+      body: `It set off for the hills above Tuzla. You kept ${goat.name.startsWith("The ") ? "it" : "them"} for ${days} day${days === 1 ? "" : "s"}.` };
+  }
+  const [what, body] = NEEDING[lowest(goat, now)];
+  return { title: `${goat.name} ${what}`,
+    body: goat.challenge ? `${body} Three days with every need empty and it wanders off to the hills.` : body };
+};
 
-if (typeof module === "object") module.exports = { level, wandered, shouldRemind, reminder };
+if (typeof module === "object") module.exports = { level, wandered, remindOf, shouldRemind, reminder };
 
 // What the page left for the worker: the goat, and when the worker last told the player about it.
 const store = (mode, run) => new Promise((resolve, reject) => {
@@ -40,10 +62,13 @@ const store = (mode, run) => new Promise((resolve, reject) => {
 async function check(now = Date.now()) {
   const goat = await store("readonly", (kv) => kv.get("goat"));
   const told = await store("readonly", (kv) => kv.get("told"));
-  if (!shouldRemind(goat, told, now)) return false;
-  const { title, body } = reminder(goat);
+  const toldGone = await store("readonly", (kv) => kv.get("toldGone"));
+  const kind = remindOf(goat, told, toldGone, now);
+  if (!kind) return false;
+  const { title, body } = reminder(goat, kind, now);
   await self.registration.showNotification(title, { body, tag: TAG, icon: "img/goatchi-icon-192.png", badge: "img/goatchi-icon-192.png" });
   await store("readwrite", (kv) => kv.put(now, "told"));
+  if (kind === "left") await store("readwrite", (kv) => kv.put(true, "toldGone"));
   return true;
 }
 

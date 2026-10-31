@@ -67,7 +67,7 @@ await page.waitForTimeout(500);
 check(await page.evaluate(async () => (await (await navigator.serviceWorker.ready).periodicSync.getTags()).includes("goatchi-check")), "turning it on registers the check");
 await fire();
 const first = await shown();
-check(first.length === 1 && first[0].title === "The goat is sulking", `a sulking goat brings one notification (${JSON.stringify(first)})`);
+check(first.length === 1 && first[0].title === "The goat is hungry", `a sulking goat brings one notification, naming its need (${JSON.stringify(first)})`);
 await clear();
 await fire();
 check((await shown()).length === 0, "no second notification within the day");
@@ -83,6 +83,20 @@ await page.locator(".goatchi__remind input").uncheck();
 await page.waitForTimeout(500);
 check(await page.evaluate(async () => !(await (await navigator.serviceWorker.ready).periodicSync.getTags()).includes("goatchi-check")), "turning it off removes the check");
 check(await page.evaluate(() => new Promise((r) => { const o = indexedDB.open("goatchi", 1); o.onsuccess = () => { const q = o.result.transaction("kv").objectStore("kv").get("goat"); q.onsuccess = () => r(q.result === undefined); }; })), "turning it off removes the goat's copy");
+
+// A challenge goat that wandered off: told once, with how long it was kept, and not again.
+await page.evaluate(() => new Promise((r) => { const o = indexedDB.open("goatchi", 1); o.onsuccess = () => { const t = o.result.transaction("kv", "readwrite"); t.objectStore("kv").delete("told"); t.oncomplete = r; }; }));
+await page.locator(".goatchi__remind input").check();
+await page.waitForTimeout(500);
+await page.evaluate((g) => new Promise((r) => { const o = indexedDB.open("goatchi", 1); o.onsuccess = () => { const t = o.result.transaction("kv", "readwrite"); t.objectStore("kv").put(g, "goat"); t.oncomplete = r; }; }),
+  { ...sulking(24 * 6), challenge: true, remind: true, since: Date.now() - 9 * 24 * H });
+await clear();
+await fire();
+const left = await shown();
+check(left.length === 1 && left[0].title === "The goat went exploring" && /kept it for 7 days/.test(left[0].body), `a challenge goat that wandered off is told once (${JSON.stringify(left)})`);
+await clear();
+await fire();
+check((await shown()).length === 0, "and not told again");
 
 check(errors.length === 0, `no console errors (${errors.join(" | ")})`);
 await browser.close();
