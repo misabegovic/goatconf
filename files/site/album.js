@@ -173,7 +173,10 @@
     stage.style.right = s.scene ? "" : own.right;
     stage.style.bottom = s.scene ? "" : own.bottom;
     // On a photo it stands on the photo's own bottom edge, above the caption and the text under it.
-    const img = s.scene && s.slot.querySelector("img");
+    // A food card keeps its photo clear: the goat sits in the white corner beside the price instead (CSS).
+    const food = !!s.scene && !!s.slot.querySelector(".price");
+    stage.classList.toggle("is-food", food);
+    const img = s.scene && !food && s.slot.querySelector("img");
     if (img) stage.style.bottom = `${s.slot.clientHeight - (img.offsetTop + img.offsetHeight) - 4}px`;
     const was = stage.parentElement;
     if (was && was !== s.slot) was.classList.remove("has-goat");
