@@ -23,6 +23,8 @@ organiser bets on which become committed work. Nothing here is decided.
 - [Keep a goat: a free tamagotchi of the painted goats](goat-tamagotchi-on-the-site.md): adopt a goat in your browser, feed it Bosnian food, play and let it sleep; it never dies; the conference cheers it up and its trip to Tuzla counts down. Not a paid app. Appetite: small. Bet on 2026-10-28, on its own: [the PRD](../prds/goat-tamagotchi-on-the-site.md).
 - [Goatchi as a full game played with one goat, and more poses for every goat](goatchi-full-game.md): each goat type's own eight poses, moods that follow its needs, animations and a story to Tuzla on 3 June; then the speakers' goats, the goats on the food and Tuzla photos, and Paul Campbell's goat painted again in ginger, on the same art. Goatchi ships and is promoted first. Appetite: big. Bet on 2026-10-31, on its own: [the PRD](../prds/goatchi-full-game.md).
 
+- [More goat animations](goat-animations.md): tap to pet, ears and tail that move at rest, and more tricks, for every goat on the site and in Goatchi. Appetite: medium. Not bet on yet.
+
 ## Area pitches
 
 - [Website and registration](website-and-registration.md): plain HTML pages written here and published under muhamed.at, pretix's free quota for registration, collect only what is needed. Appetite: small.
