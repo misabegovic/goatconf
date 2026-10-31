@@ -109,7 +109,8 @@ def goatchi_poses(goat: str) -> dict:
 
 
 def singles() -> tuple:
-    poses = tuple(sorted({n for g in GOATCHI_GOATS for names in goatchi_poses(g).values() for n in names}
+    anims = tuple(sorted(k for g in GOATCHI_GOATS for k, v in manifest().items() if v.get("anim_of") == g))
+    poses = anims + tuple(sorted({n for g in GOATCHI_GOATS for names in goatchi_poses(g).values() for n in names}
                          - {"asleep", GOATCHI_GONE, *GOATCHI_FOOD}))
     return (("asleep",) + GOATCHI_GOATS + GOATCHI_FOOD + (GOATCHI_GONE,)
             + tuple(sorted(k for k, v in manifest().items() if v["group"] == "speakers-sitting")) + poses)
@@ -155,6 +156,19 @@ def layout(name: str) -> dict:
     return {"file": f"{WEB}/sheet-{name}.webp", "cell_w": cell_w, "cell_h": cell_h, "edge": top,
             "width": cell_w + patch_w, "height": height, "scale": k, "cells": cells,
             "turns": {"file": f"{WEB}/sheet-{name}-turns.webp", "width": 2 * turn_w + 2, "height": max(ty, 1)} if turn_w else None}
+
+
+def anim_frames(pose: str) -> tuple:
+    """A goat's animation frames (ADR goat-animations), by name, in a fixed order."""
+    return tuple(sorted(k[len(pose) + 1:] for k, v in manifest().items() if v.get("anim_of") == pose))
+
+
+def anim_layout(pose: str) -> dict:
+    """An animation sheet: one cell per frame, three to a row, each the size of the goat's cell on its own sheet."""
+    L = layout(sheet_of(pose))
+    n = len(anim_frames(pose))
+    return {"file": f"{WEB}/anim-{pose}.webp", "cell_w": L["cell_w"], "cell_h": L["cell_h"], "cols": 3, "rows": (n + 2) // 3,
+            "width": 3 * L["cell_w"], "height": ((n + 2) // 3) * L["cell_h"], "cell": L["cells"][pose]}
 
 
 def gazers() -> tuple:
@@ -218,6 +232,9 @@ def goat(pose: str, cls: str, beat: int = 0) -> str:
                 f'{_pct(100 * tr["h"] / ch)}|{_pct(100 * T["width"] / tr["w"])}|{_pct(100 * tr["ty"] / (T["height"] - tr["h"])) if T["height"] > tr["h"] else "0%"}|'
                 f'{_pct(100 * (tr["w"] + 2) / (T["width"] - tr["w"]))}|{_pct(100 * tr["cut"] / ch)}"')
     gaze = f' data-gaze="{stamped(gaze_layout(pose)["file"])}"' if manifest()[pose].get("gaze") else ""
+    frames = anim_frames(pose)
+    if frames:
+        gaze += f' data-anim="{stamped(anim_layout(pose)["file"])}|{",".join(frames)}"'
     return f'<span class="goat {cls}" aria-hidden="true" data-goat="{pose}"{turn}{gaze} style="{style}">{eyes}</span>'
 
 
@@ -280,6 +297,20 @@ def _images():
                     sheet.alpha_composite(open_(f"{p}-gaze-{r}{col}", (c["w"], c["h"])), (col * G["cell_w"] + c["x"], r * G["cell_h"] + c["y"]))
             return sheet
         yield ROOT / "site" / G["file"], (G["width"], G["height"]), draw_gaze
+    for p in sorted({v["anim_of"] for v in manifest().values() if v.get("anim_of")}):
+        if not sheet_of(p):
+            continue
+        G = anim_layout(p)
+
+        def draw_anim(p=p, G=G):
+            from PIL import Image
+            sheet = Image.new("RGBA", (G["width"], G["height"]), (0, 0, 0, 0))
+            c = G["cell"]
+            for i, f in enumerate(anim_frames(p)):
+                r, col = divmod(i, 3)
+                sheet.alpha_composite(open_(f"{p}-{f}", (c["w"], c["h"])), (col * G["cell_w"] + c["x"], r * G["cell_h"] + c["y"]))
+            return sheet
+        yield ROOT / "site" / G["file"], (G["width"], G["height"]), draw_anim
     for p in singles():
         path, w, h = single(p)
         path = path.split("?")[0]

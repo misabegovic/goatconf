@@ -64,7 +64,10 @@ def postcards() -> list:
 
 def poses(goat: str) -> dict:
     """The goat's own poses on the site, each as the pictures it may show."""
-    return {pose: [goat_atlas.single(n)[0] for n in names] for pose, names in goat_atlas.goatchi_poses(goat).items()}
+    out = {pose: [goat_atlas.single(n)[0] for n in names] for pose, names in goat_atlas.goatchi_poses(goat).items()}
+    # its painted frames (ADR goat-animations), shown for a moment when it is petted or fidgets at rest
+    out.update({f"anim-{f}": [goat_atlas.single(f"{goat}-{f}")[0]] for f in goat_atlas.anim_frames(goat)})
+    return out
 
 
 def goats(people) -> list:
