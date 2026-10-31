@@ -89,16 +89,7 @@
   // A goat painted looking in nine directions (a speaker's goat, ADR goatchi-full-game) looks where the mouse is,
   // anywhere on the page: its whole picture is swapped for the one looking that way, from a sheet of nine laid out
   // like its own cell, so only the head moves. Looking ahead it is its own picture again, and blinks.
-  let gazing = "11", followed = 0, lookBack = 0;
-  // While the mouse moves it only follows; four seconds after it stops, the goat looks back at you and its own
-  // moves take over again.
-  const follow = (x, y) => {
-    followed = Date.now();
-    gazeAt(x, y);
-    clearTimeout(lookBack);
-    lookBack = setTimeout(() => gazeTo(1, 1), 4000);
-  };
-  const following = () => Date.now() - followed < 4000;
+  let gazing = "11", followed = 0, lookBack = 0, wish = "11", wishSince = 0, lookedAt = 0;
   const canGaze = () => !!goat && !!goat.dataset.gaze && gazeSheets.has(goat.dataset.gaze);
   const gazeTo = (r, c) => {
     const key = `${r}${c}`;
@@ -109,14 +100,40 @@
     Object.assign(body.style, { backgroundImage: `url(${goat.dataset.gaze})`, backgroundSize: "300% auto", backgroundPosition: `${c * 50}% ${r * 50}%` });
     goat.classList.add("is-gazing");
   };
-  // The direction from its eyes to a point, in eight sectors; close to its face it looks at you.
-  const SECTORS = [[1, 2], [2, 2], [2, 1], [2, 0], [1, 0], [0, 0], [0, 1], [0, 2]];
-  const gazeAt = (x, y) => {
-    const r = goat.getBoundingClientRect();
-    const dx = x - (r.left + r.width / 2), dy = y - (r.top + r.height * 0.35);
-    if (Math.hypot(dx, dy) < r.width * 0.45) return gazeTo(1, 1);
-    gazeTo(...SECTORS[(Math.round(Math.atan2(dy, dx) / (Math.PI / 4)) + 8) % 8]);
+  // A look: the head turns at the top of a small lift and squash, as a turn does, then the goat settles.
+  const glance = (key) => {
+    lookedAt = Date.now();
+    setTimeout(() => gazeTo(+key[0], +key[1]), 110);
+    play(goat, [
+      { transform: REST, easing: "ease-out" }, { transform: T("-2.5%", 0.985, 1.015), offset: 0.45, easing: "ease-in-out" },
+      { transform: T("0.8%", 1.01, 0.99), offset: 0.8 }, { transform: REST },
+    ], { duration: 300 }).catch(() => {});
   };
+  // The direction from its eyes to a point, in eight sectors; close to its face, at you; far away, it has not noticed.
+  const SECTORS = [[1, 2], [2, 2], [2, 1], [2, 0], [1, 0], [0, 0], [0, 1], [0, 2]];
+  const dirOf = (x, y) => {
+    const r = goat.getBoundingClientRect();
+    const dx = x - (r.left + r.width / 2), dy = y - (r.top + r.height * 0.35), d = Math.hypot(dx, dy);
+    if (d > 700) return null;
+    if (d < r.width * 0.6) return "11";
+    return SECTORS[(Math.round(Math.atan2(dy, dx) / (Math.PI / 4)) + 8) % 8].join("");
+  };
+  // It notices you calmly: the pointer has to rest in one direction for a moment before it looks, it holds each
+  // look for a while, and three seconds after the pointer stops it looks back at you and its own moves go on.
+  const follow = (x, y) => {
+    const d = dirOf(x, y);
+    if (d === null) return;
+    followed = Date.now();
+    if (d !== wish) { wish = d; wishSince = followed; }
+    clearTimeout(lookBack);
+    lookBack = setTimeout(() => { wish = "11"; if (gazing !== "11") glance("11"); }, 3000);
+  };
+  const following = () => Date.now() - followed < 3000;
+  setInterval(() => {
+    if (!canGaze() || down || (busy && !idling) || wish === gazing) return;
+    const now = Date.now();
+    if (now - wishSince >= 350 && now - lookedAt >= 1000) glance(wish);
+  }, 120);
   // A turn: the head swings at the top of a small lift and squash, then the goat settles.
   const turnTo = (dir) => {
     if (dir === facing) return Promise.resolve();
@@ -302,11 +319,11 @@
       if (canGaze()) {
         // A gazing goat glances about: a few directions, then back at you.
         for (let i = 0; i < 3 && !interrupted(); i++) {
-          const [r, c] = SECTORS[Math.floor(Math.random() * SECTORS.length)];
-          gazeTo(r, c);
-          await wait(650 + Math.random() * 500, interrupted);
+          glance(SECTORS[Math.floor(Math.random() * SECTORS.length)].join(""));
+          await wait(900 + Math.random() * 700, interrupted);
         }
-        gazeTo(1, 1);
+        glance("11");
+        await wait(300);
         return;
       }
       if (!canTurn()) return moves.bob();
@@ -432,12 +449,12 @@
     go(pick());
     if (still) return;
     setTimeout(idle, 3000);
-    // A gazing goat follows the mouse anywhere on the page, and on a phone looks where you tap for a moment.
+    // A gazing goat notices the mouse when it comes near, and on a phone looks where you tap for a moment.
     addEventListener("pointermove", (e) => {
       if (e.pointerType !== "mouse" || down || !canGaze() || (busy && !idling)) return;
       follow(e.clientX, e.clientY);
     }, { passive: true });
-    document.documentElement.addEventListener("pointerleave", () => { if (canGaze()) gazeTo(1, 1); });
+    document.documentElement.addEventListener("pointerleave", () => { wish = "11"; });
     addEventListener("pointerdown", (e) => {
       if (e.pointerType === "mouse" || down || !canGaze() || goat.contains(e.target)) return;
       follow(e.clientX, e.clientY);
