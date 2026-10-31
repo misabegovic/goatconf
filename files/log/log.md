@@ -838,3 +838,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #238: site: the speakers' goats' painted moves
    diff: 20 files, +449/-56
    restricted-paths: false
+2026-10-31 merge — PR #239: site: Goatchi's pet is cute, and no longer looks selected
+   diff: 35 files, +54/-36
+   restricted-paths: true

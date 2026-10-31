@@ -809,6 +809,9 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goatchi__play[hidden] { display: none; }
 .goatchi__stage { position: relative; margin: 0; padding-top: 3.2rem; text-align: center; }
 .goatchi__goat { cursor: pointer; }
+/* A tap on the goat is a pet, not a selection: no highlight, no picture menu, no double-tap zoom. */
+.goatchi__stage { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
+.goatchi__goat { touch-action: manipulation; -webkit-user-drag: none; }
 .goatchi__stage .goat-heart { top: 2.6rem; font-size: 2rem; }
 .goatchi__goat { display: block; width: 100%; max-width: 16rem; height: auto; margin: 0 auto; transform-origin: 50% 100%; filter: drop-shadow(0 0.35rem 0.4rem rgb(0 0 0 / 0.2)); transition: filter 400ms; }
 .goatchi__say { position: absolute; top: 0; left: 50%; translate: -50% 0; width: max-content; max-width: 14rem; padding: 0.25rem 0.75rem 0.3rem; border-radius: 1rem 1rem 1rem 0.2rem; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.15rem; line-height: 1.1; box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35); }

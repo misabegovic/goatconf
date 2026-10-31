@@ -207,7 +207,7 @@
   };
   const acts = {
     feed: () => { fill("food", 1); show(look("eating") || food[Math.floor(Math.random() * food.length)], 2600, "is-eating"); speak("Yum! Baaa!", 2600); },
-    play: () => { fill("play", 1); const p = look("playing"); if (p) show(p, 2200, "is-playing"); hop(); speak("Baaa! Again!", 2200); },
+    play: () => { fill("play", 1); const p = look("playing"); if (p) show(p, 2200, "is-playing"); hop(); speak("Wheee! Baaa!", 2200); },
     sleep: () => { fill("sleep", 1); show(look("sleeping") || sleepSrc, 3200, "is-sleeping"); speak("Zzz…", 3200); },
   };
 
@@ -232,7 +232,7 @@
     hop();
     pets = pets.filter((t) => Date.now() - t < 3600e3);
     if (pets.length < 3) { pets.push(Date.now()); fill("play", 0.1); save(); showNeeds(); }
-    speak(["Baaa!", "Again!", "That's nice.", "Baaa, thank you!"][Math.floor(Math.random() * 4)], 1600);
+    speak(["Baaa!", "Hehe, that tickles!", "Best friends!", "Baaa, thank you!"][Math.floor(Math.random() * 4)], 1600);
   });
 
   // Asking before a goat is let go or swapped, on the page itself.
