@@ -63,6 +63,7 @@
     Object.assign(goat.querySelector(".goat-body").style, goat.rest);
     goat.dataset.gaze = s.peek.dataset.gaze || "";
     goat.dataset.anim = s.peek.dataset.anim || "";
+    goat.dataset.goat = s.peek.dataset.goat || "";
     gazing = "11";
     const blink = goat.querySelector(".goat-blink");
     if (blink) blink.style.backgroundImage = own.backgroundImage;
@@ -451,8 +452,9 @@
     () => (canAnim("sneeze") ? moves.sneeze() : moves.wiggle()),
     () => (canAnim("wink") ? Promise.all([moves.wink(), meee()]) : speak()),
   ];
-  // Petting (ADR goat-animations): the first tap, or the first after a pause, pets the goat. A heart rises, it leans
-  // into the tap with a happy squash, and it says a line; the next taps play its tricks.
+  // Petting (ADR goat-animations): the first tap, or the first after a pause, pets the goat. A heart rises (not over a
+  // speaker's goat, on the organiser's word), it leans into the tap with a happy squash, and it says a line; the next
+  // taps play its tricks.
   const heart = document.createElement("b");
   heart.className = "goat-heart";
   heart.setAttribute("aria-hidden", "true");
@@ -460,7 +462,7 @@
   stage.append(heart);
   const pet = () => {
     heart.getAnimations().forEach((a) => a.cancel());
-    heart.animate([
+    if (!goat.dataset.goat.startsWith("speaker-")) heart.animate([
       { opacity: 0, transform: "translate(-50%, 0) scale(.4)" },
       { opacity: 1, transform: "translate(-50%, -40%) scale(1.1)", offset: 0.25 },
       { opacity: 0, transform: "translate(-50%, -160%) scale(1)" },
