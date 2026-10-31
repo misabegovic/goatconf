@@ -853,6 +853,14 @@
   "h": 679,
   "w": 721
  },
+ "speaker-amar-mahmutbegovic-ears": {
+  "anim_of": "speaker-amar-mahmutbegovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 391,
+  "w": 415
+ },
  "speaker-amar-mahmutbegovic-gaze-00": {
   "edge": 575,
   "eyes": null,
@@ -916,12 +924,52 @@
   "h": 679,
   "w": 721
  },
+ "speaker-amar-mahmutbegovic-petted": {
+  "anim_of": "speaker-amar-mahmutbegovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 391,
+  "w": 415
+ },
+ "speaker-amar-mahmutbegovic-scratch": {
+  "anim_of": "speaker-amar-mahmutbegovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 391,
+  "w": 415
+ },
  "speaker-amar-mahmutbegovic-sitting": {
   "edge": null,
   "eyes": null,
   "group": "speakers-sitting",
   "h": 640,
   "w": 404
+ },
+ "speaker-amar-mahmutbegovic-sneeze": {
+  "anim_of": "speaker-amar-mahmutbegovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 391,
+  "w": 415
+ },
+ "speaker-amar-mahmutbegovic-wink": {
+  "anim_of": "speaker-amar-mahmutbegovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 391,
+  "w": 415
+ },
+ "speaker-amar-mahmutbegovic-yawn": {
+  "anim_of": "speaker-amar-mahmutbegovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 391,
+  "w": 415
  },
  "speaker-carmine-paolino": {
   "edge": 575,
@@ -930,6 +978,14 @@
   "group": "speakers",
   "h": 700,
   "w": 769
+ },
+ "speaker-carmine-paolino-ears": {
+  "anim_of": "speaker-carmine-paolino",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 375,
+  "w": 412
  },
  "speaker-carmine-paolino-gaze-00": {
   "edge": 575,
@@ -994,12 +1050,52 @@
   "h": 700,
   "w": 769
  },
+ "speaker-carmine-paolino-petted": {
+  "anim_of": "speaker-carmine-paolino",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 375,
+  "w": 412
+ },
+ "speaker-carmine-paolino-scratch": {
+  "anim_of": "speaker-carmine-paolino",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 375,
+  "w": 412
+ },
  "speaker-carmine-paolino-sitting": {
   "edge": null,
   "eyes": null,
   "group": "speakers-sitting",
   "h": 640,
   "w": 470
+ },
+ "speaker-carmine-paolino-sneeze": {
+  "anim_of": "speaker-carmine-paolino",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 375,
+  "w": 412
+ },
+ "speaker-carmine-paolino-wink": {
+  "anim_of": "speaker-carmine-paolino",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 375,
+  "w": 412
+ },
+ "speaker-carmine-paolino-yawn": {
+  "anim_of": "speaker-carmine-paolino",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 375,
+  "w": 412
  },
  "speaker-christoph-lipautz": {
   "edge": 575,
@@ -1013,6 +1109,14 @@
   "group": "speakers",
   "h": 683,
   "w": 711
+ },
+ "speaker-christoph-lipautz-ears": {
+  "anim_of": "speaker-christoph-lipautz",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 414
  },
  "speaker-christoph-lipautz-gaze-00": {
   "edge": 575,
@@ -1077,12 +1181,52 @@
   "h": 683,
   "w": 711
  },
+ "speaker-christoph-lipautz-petted": {
+  "anim_of": "speaker-christoph-lipautz",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 414
+ },
+ "speaker-christoph-lipautz-scratch": {
+  "anim_of": "speaker-christoph-lipautz",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 414
+ },
  "speaker-christoph-lipautz-sitting": {
   "edge": null,
   "eyes": null,
   "group": "speakers-sitting",
   "h": 640,
   "w": 449
+ },
+ "speaker-christoph-lipautz-sneeze": {
+  "anim_of": "speaker-christoph-lipautz",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 414
+ },
+ "speaker-christoph-lipautz-wink": {
+  "anim_of": "speaker-christoph-lipautz",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 414
+ },
+ "speaker-christoph-lipautz-yawn": {
+  "anim_of": "speaker-christoph-lipautz",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 414
  },
  "speaker-cristian-planas": {
   "edge": 575,
@@ -1096,6 +1240,14 @@
   "group": "speakers",
   "h": 681,
   "w": 701
+ },
+ "speaker-cristian-planas-ears": {
+  "anim_of": "speaker-cristian-planas",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 399,
+  "w": 411
  },
  "speaker-cristian-planas-gaze-00": {
   "edge": 575,
@@ -1160,12 +1312,52 @@
   "h": 681,
   "w": 701
  },
+ "speaker-cristian-planas-petted": {
+  "anim_of": "speaker-cristian-planas",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 399,
+  "w": 411
+ },
+ "speaker-cristian-planas-scratch": {
+  "anim_of": "speaker-cristian-planas",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 399,
+  "w": 411
+ },
  "speaker-cristian-planas-sitting": {
   "edge": null,
   "eyes": null,
   "group": "speakers-sitting",
   "h": 640,
   "w": 446
+ },
+ "speaker-cristian-planas-sneeze": {
+  "anim_of": "speaker-cristian-planas",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 399,
+  "w": 411
+ },
+ "speaker-cristian-planas-wink": {
+  "anim_of": "speaker-cristian-planas",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 399,
+  "w": 411
+ },
+ "speaker-cristian-planas-yawn": {
+  "anim_of": "speaker-cristian-planas",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 399,
+  "w": 411
  },
  "speaker-dejan-menges": {
   "edge": 575,
@@ -1179,6 +1371,14 @@
   "group": "speakers",
   "h": 674,
   "w": 707
+ },
+ "speaker-dejan-menges-ears": {
+  "anim_of": "speaker-dejan-menges",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 388,
+  "w": 407
  },
  "speaker-dejan-menges-gaze-00": {
   "edge": 575,
@@ -1243,12 +1443,52 @@
   "h": 674,
   "w": 707
  },
+ "speaker-dejan-menges-petted": {
+  "anim_of": "speaker-dejan-menges",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 388,
+  "w": 407
+ },
+ "speaker-dejan-menges-scratch": {
+  "anim_of": "speaker-dejan-menges",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 388,
+  "w": 407
+ },
  "speaker-dejan-menges-sitting": {
   "edge": null,
   "eyes": null,
   "group": "speakers-sitting",
   "h": 640,
   "w": 468
+ },
+ "speaker-dejan-menges-sneeze": {
+  "anim_of": "speaker-dejan-menges",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 388,
+  "w": 407
+ },
+ "speaker-dejan-menges-wink": {
+  "anim_of": "speaker-dejan-menges",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 388,
+  "w": 407
+ },
+ "speaker-dejan-menges-yawn": {
+  "anim_of": "speaker-dejan-menges",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 388,
+  "w": 407
  },
  "speaker-eating": {
   "edge": null,
@@ -1297,6 +1537,14 @@
   "group": "speakers",
   "h": 722,
   "w": 771
+ },
+ "speaker-paul-campbell-ears": {
+  "anim_of": "speaker-paul-campbell",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 425
  },
  "speaker-paul-campbell-gaze-00": {
   "edge": 575,
@@ -1361,12 +1609,52 @@
   "h": 722,
   "w": 771
  },
+ "speaker-paul-campbell-petted": {
+  "anim_of": "speaker-paul-campbell",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 425
+ },
+ "speaker-paul-campbell-scratch": {
+  "anim_of": "speaker-paul-campbell",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 425
+ },
  "speaker-paul-campbell-sitting": {
   "edge": null,
   "eyes": null,
   "group": "speakers-sitting",
   "h": 640,
   "w": 464
+ },
+ "speaker-paul-campbell-sneeze": {
+  "anim_of": "speaker-paul-campbell",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 425
+ },
+ "speaker-paul-campbell-wink": {
+  "anim_of": "speaker-paul-campbell",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 425
+ },
+ "speaker-paul-campbell-yawn": {
+  "anim_of": "speaker-paul-campbell",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 398,
+  "w": 425
  },
  "speaker-playing": {
   "edge": null,
@@ -1387,6 +1675,14 @@
   "group": "speakers",
   "h": 682,
   "w": 716
+ },
+ "speaker-predrag-radenkovic-ears": {
+  "anim_of": "speaker-predrag-radenkovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 396,
+  "w": 416
  },
  "speaker-predrag-radenkovic-gaze-00": {
   "edge": 575,
@@ -1451,12 +1747,52 @@
   "h": 682,
   "w": 716
  },
+ "speaker-predrag-radenkovic-petted": {
+  "anim_of": "speaker-predrag-radenkovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 396,
+  "w": 416
+ },
+ "speaker-predrag-radenkovic-scratch": {
+  "anim_of": "speaker-predrag-radenkovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 396,
+  "w": 416
+ },
  "speaker-predrag-radenkovic-sitting": {
   "edge": null,
   "eyes": null,
   "group": "speakers-sitting",
   "h": 640,
   "w": 441
+ },
+ "speaker-predrag-radenkovic-sneeze": {
+  "anim_of": "speaker-predrag-radenkovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 396,
+  "w": 416
+ },
+ "speaker-predrag-radenkovic-wink": {
+  "anim_of": "speaker-predrag-radenkovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 396,
+  "w": 416
+ },
+ "speaker-predrag-radenkovic-yawn": {
+  "anim_of": "speaker-predrag-radenkovic",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 396,
+  "w": 416
  },
  "speaker-roy-tomeij": {
   "edge": 575,
@@ -1470,6 +1806,14 @@
   "group": "speakers",
   "h": 715,
   "w": 790
+ },
+ "speaker-roy-tomeij-ears": {
+  "anim_of": "speaker-roy-tomeij",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 372,
+  "w": 411
  },
  "speaker-roy-tomeij-gaze-00": {
   "edge": 575,
@@ -1534,12 +1878,52 @@
   "h": 715,
   "w": 790
  },
+ "speaker-roy-tomeij-petted": {
+  "anim_of": "speaker-roy-tomeij",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 372,
+  "w": 411
+ },
+ "speaker-roy-tomeij-scratch": {
+  "anim_of": "speaker-roy-tomeij",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 372,
+  "w": 411
+ },
  "speaker-roy-tomeij-sitting": {
   "edge": null,
   "eyes": null,
   "group": "speakers-sitting",
   "h": 640,
   "w": 468
+ },
+ "speaker-roy-tomeij-sneeze": {
+  "anim_of": "speaker-roy-tomeij",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 372,
+  "w": 411
+ },
+ "speaker-roy-tomeij-wink": {
+  "anim_of": "speaker-roy-tomeij",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 372,
+  "w": 411
+ },
+ "speaker-roy-tomeij-yawn": {
+  "anim_of": "speaker-roy-tomeij",
+  "edge": 575,
+  "eyes": null,
+  "group": "anim",
+  "h": 372,
+  "w": 411
  },
  "speaker-sleeping": {
   "edge": null,
