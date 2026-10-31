@@ -823,3 +823,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #233: org: the plan and decision for more goat animations
    diff: 9 files, +191/-5
    restricted-paths: false
+2026-10-31 merge — PR #234: site: tap a goat to pet it
+   diff: 35 files, +120/-65
+   restricted-paths: false
