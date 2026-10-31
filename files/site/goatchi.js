@@ -1,13 +1,14 @@
 // Goatchi: keep a GoatConf goat (ADR goat-tamagotchi-on-the-site). The goat lives in this browser's storage only:
 // which goat, and for each need its value and when it was last set. A need's value now is worked out from the time
-// passed, so nothing runs while you are away. Each need empties over a day and a half; below a quarter the goat
+// passed, so nothing runs while you are away. Food empties over a day, play over a day and a half and sleep over
+// two days (ADR goatchi-full-game, organiser 2026-10-31); below a quarter the goat
 // sulks and says so; it never dies. Picking, swapping and letting go all happen on this page, and nothing is sent
 // anywhere.
 (() => {
   const root = document.getElementById("goatchi");
   if (!root) return;
   const KEY = "goatconf-goatchi";
-  const EMPTY_AFTER = 36 * 3600e3;
+  const EMPTY_AFTER = { food: 24 * 3600e3, play: 36 * 3600e3, sleep: 48 * 3600e3 };
   const SULK = 0.25;
   const NEEDS = ["food", "play", "sleep"];
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -63,7 +64,7 @@
     if (goatState) store.setItem(KEY, JSON.stringify(goatState)); else store.removeItem(KEY);
     if (goatState && goatState.remind) mirror(goatState);
   };
-  const level = (n) => Math.max(0, Math.min(1, goatState.needs[n][0] - (Date.now() - goatState.needs[n][1]) / EMPTY_AFTER));
+  const level = (n) => Math.max(0, Math.min(1, goatState.needs[n][0] - (Date.now() - goatState.needs[n][1]) / EMPTY_AFTER[n]));
   const fill = (n, by) => { goatState.needs[n] = [Math.min(1, (by === 1 ? 0 : level(n)) + by), Date.now()]; };
   const sulking = () => NEEDS.some((n) => level(n) < SULK);
   // Challenge mode: a goat left with every need empty for three days wanders off. Every need is empty from the
@@ -71,7 +72,7 @@
   const WANDER_AFTER = 3 * 864e5;
   const leftAt = () => {
     if (!goatState.challenge) return 0;
-    const allEmpty = Math.max(...NEEDS.map((n) => goatState.needs[n][1] + goatState.needs[n][0] * EMPTY_AFTER));
+    const allEmpty = Math.max(...NEEDS.map((n) => goatState.needs[n][1] + goatState.needs[n][0] * EMPTY_AFTER[n]));
     return Date.now() - allEmpty >= WANDER_AFTER ? allEmpty + WANDER_AFTER : 0;
   };
   const daysKept = (until) => Math.max(0, Math.floor((until - goatState.since) / 864e5));
@@ -81,8 +82,10 @@
   const WANTS = { food: "food", play: "to play", sleep: "a nap" };
   const lasts = () => {
     if (sulking()) return goatState.challenge ? "It is sulking: feed it, play with it or let it sleep. In challenge mode, three days with every need empty and it wanders off." : "It is sulking: feed it, play with it or let it sleep.";
-    const n = NEEDS.reduce((a, b) => (level(b) < level(a) ? b : a));
-    const hours = ((level(n) - SULK) * EMPTY_AFTER) / 3600e3;
+    // the need that reaches a quarter first, at its own speed
+    const until = (k) => (level(k) - SULK) * EMPTY_AFTER[k];
+    const n = NEEDS.reduce((a, b) => (until(b) < until(a) ? b : a));
+    const hours = until(n) / 3600e3;
     const when = hours < 1 ? "less than an hour" : `about ${Math.round(hours)} hour${Math.round(hours) === 1 ? "" : "s"}`;
     return `Happy for ${when} more, then it wants ${WANTS[n]}.`;
   };

@@ -153,7 +153,7 @@ def page() -> str:
 <section class="album-page wrap" aria-labelledby="h-how">
   <h2 class="band" id="h-how">How it works</h2>
   <div class="copy copy--wide">
-    <p>Goatchi is a little game like a tamagotchi. Your goat gets hungry, bored and sleepy over about a day and a half. Left alone it sulks and says so, but it never dies: feed it, play with it or let it sleep, and it is glad you came back.</p>
+    <p>Goatchi is a little game like a tamagotchi. Your goat gets hungry over about a day, bored over a day and a half and sleepy over two days. Left alone it sulks and says so, but it never dies: feed it, play with it or let it sleep, and it is glad you came back.</p>
     <p>In challenge mode, which you choose when you pick a goat, a goat left with every need empty for three days wanders off to explore the hills above Tuzla, and the page tells you how many days you kept it.</p>
     <p>A speaker's goat can be kept once that speaker has said yes. The goats, the name GoatConf and Goatchi are <a href="brand.html#use">all rights reserved</a>.</p>
   </div>

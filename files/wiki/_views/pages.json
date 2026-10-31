@@ -350,6 +350,11 @@
       "sources": [
         "wiki/org/prds/goatchi-full-game.md",
         "sources/conversations/2026-10-31--org--goatchi-full-game-adr-approved.md",
+        "sources/conversations/2026-10-31--org--goatchi-full-game-built.md",
+        "site/goatchi-sw.js",
+        "site/goatchi.webmanifest",
+        "tests/test_goatchi_app.py",
+        "tests/browser/goatchi-reminders.mjs",
         "sources/conversations/2026-10-31--org--goatchi-how-app-and-reminders.md",
         "sources/conversations/2026-10-31--org--goatchi-full-game-bet.md",
         "sources/conversations/2026-10-31--org--goatchi-full-game.md",
@@ -362,7 +367,7 @@
         "site/goatchi.js",
         "site/album.js"
       ],
-      "tokens": 1938
+      "tokens": 3233
     },
     {
       "path": "org/adrs/goatconf-ba-and-google-forms.md",
