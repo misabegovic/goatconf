@@ -398,7 +398,16 @@
     say.textContent = said;
     // A wrapped line leaves the bubble at its widest; it is fitted to its longest line instead.
     say.style.width = "";
+    say.style.maxWidth = "";
     say.style.transform = "none";
+    // It opens to the goat's left, unless that runs off the screen (a goat at the left edge of a phone): then to its
+    // right, and no wider than the screen leaves.
+    say.classList.remove("is-right");
+    if (say.getBoundingClientRect().left < 8) {
+      say.classList.add("is-right");
+      const room = document.documentElement.clientWidth - say.getBoundingClientRect().left - 8;
+      if (say.getBoundingClientRect().right > document.documentElement.clientWidth - 8) say.style.maxWidth = `${Math.max(80, room)}px`;
+    }
     const range = document.createRange();
     range.selectNodeContents(say);
     const rows = [...range.getClientRects()];

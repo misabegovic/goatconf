@@ -853,3 +853,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #243: org: the Goatchi post, published
    diff: 5 files, +20/-6
    restricted-paths: false
+2026-10-31 merge — PR #244: site: the goat's bubble stays on screen on phones
+   diff: 34 files, +81/-62
+   restricted-paths: false
