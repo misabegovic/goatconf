@@ -7,6 +7,10 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-31--org--goatchi-promo-video.md
+  - sources/conversations/2026-10-31--org--goatchi-blink-go.md
+  - sources/conversations/2026-10-31--org--goatchi-pet-cute.md
+  - sources/conversations/2026-10-31--org--goatchi-how-app-and-reminders.md
   - sources/conversations/2026-10-31--org--goatchi-full-game.md
   - sources/conversations/2026-10-27--org--goats-post-published.md
   - sources/conversations/2026-10-27--org--goats-post-one-by-one.md
@@ -158,7 +162,28 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-27--org--illustrated-goat-on-the-site.md, sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md.
 
-### Sat 31 Oct 2026, week 3: Registration is open, and free
+### Sat 31 Oct 2026, week 3: Meet Goatchi
+
+- **State:** drafted, waiting for the organiser to call Goatchi final after their phone test; this Saturday's slot is held for it, and the registration post follows it (source: sources/conversations/2026-10-31--org--goatchi-full-game.md)
+- **Video:** [`post-goatchi-square.mp4`](https://goatconf.com/share/post-goatchi-square.mp4) (LinkedIn, Instagram, Mastodon), [`post-goatchi-wide.mp4`](https://goatconf.com/share/post-goatchi-wide.mp4) (X, Bluesky), [`post-goatchi-vertical.mp4`](https://goatconf.com/share/post-goatchi-vertical.mp4) (Instagram Reels and Stories): 22 seconds, silent, words on screen; a goat says hello and blinks, the seven goats to pick from, feeding, playing and sleeping with the needs filling, a pet, postcards from Tuzla, and where to play. Made with Remotion from Goatchi's own painted goats, outside the repository; the postcards are Grad Tuzla's photos, credited on screen (source: sources/conversations/2026-10-31--org--goatchi-promo-video.md)
+- **Image:** [`post-goatchi-square.png`](https://goatconf.com/share/post-goatchi-square.png), [`post-goatchi-wide.png`](https://goatconf.com/share/post-goatchi-wide.png), where a video does not fit.
+- **LinkedIn:**
+
+  > Meet Goatchi: keep your own GoatConf goat until June.
+  >
+  > Pick one of seven goats, then feed it, play with it and let it sleep. Tap it and it says thank you. Keep it long enough and it sends you postcards from Tuzla, and in the week before GoatConf it starts packing.
+  >
+  > It plays on your phone and installs like an app, with reminders only if you ask for them. No account, nothing to buy, and it's free.
+  >
+  > goatconf.com/goatchi
+
+- **Short** (197 characters):
+
+  > Meet Goatchi: keep your own GoatConf goat until June. Feed it, play with it, let it sleep, pet it, and it sends you postcards from Tuzla. Plays on your phone, free, no account. goatconf.com/goatchi
+
+  Sources: sources/conversations/2026-10-31--org--goatchi-full-game.md, sources/conversations/2026-10-31--org--goatchi-how-app-and-reminders.md, sources/conversations/2026-10-31--org--tap-to-pet-shipped.md, sources/conversations/2026-10-31--org--goatchi-pet-cute.md, sources/conversations/2026-10-31--org--goatchi-promo-video.md.
+
+### After Goatchi's post, week 3: Registration is open, and free
 
 - **State:** drafted, waiting: on 2026-10-31 the organiser held this Saturday's slot for Goatchi, to be promoted once it is final, and this post waits until after it (source: sources/conversations/2026-10-31--org--goatchi-full-game.md; [the pitch](../pitches/goatchi-full-game.md))
 - **Image:** [`post-register-square.png`](https://goatconf.com/share/post-register-square.png) (LinkedIn, Mastodon), [`post-register-wide.png`](https://goatconf.com/share/post-register-wide.png) (X, Bluesky)
