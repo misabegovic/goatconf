@@ -814,3 +814,4 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #231: site: food goats a bit bigger in their corner
    diff: 32 files, +33/-33
    restricted-paths: false
+2026-10-31 shape — pitch → files/wiki/org/pitches/goat-animations.md (PM agent)
