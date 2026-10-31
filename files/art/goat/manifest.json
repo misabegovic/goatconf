@@ -1184,12 +1184,19 @@
   "h": 640,
   "w": 574
  },
- "sticker-burek": {
+ "sticker-begova-corba": {
   "edge": null,
   "eyes": null,
   "group": "stickers",
   "h": 640,
-  "w": 446
+  "w": 540
+ },
+ "sticker-burek": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 604,
+  "w": 530
  },
  "sticker-cevapi": {
   "edge": null,
@@ -1233,6 +1240,13 @@
   "h": 640,
   "w": 412
  },
+ "sticker-grah": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 612,
+  "w": 509
+ },
  "sticker-hidden": {
   "edge": null,
   "eyes": null,
@@ -1254,6 +1268,41 @@
   "h": 640,
   "w": 494
  },
+ "sticker-hurmasice": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 591,
+  "w": 491
+ },
+ "sticker-korzo": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 484,
+  "w": 490
+ },
+ "sticker-krompirusa": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 474,
+  "w": 533
+ },
+ "sticker-neolithic": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 478,
+  "w": 378
+ },
+ "sticker-old-town": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 505,
+  "w": 535
+ },
  "sticker-pannonian-sea": {
   "edge": null,
   "eyes": null,
@@ -1267,6 +1316,13 @@
   "group": "stickers",
   "h": 640,
   "w": 447
+ },
+ "sticker-punjene-paprike": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 612,
+  "w": 494
  },
  "sticker-salt": {
   "edge": null,
@@ -1282,12 +1338,40 @@
   "h": 640,
   "w": 619
  },
+ "sticker-sarma": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 559
+ },
+ "sticker-sirnica": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 494,
+  "w": 397
+ },
  "sticker-speaker": {
   "edge": null,
   "eyes": null,
   "group": "stickers",
   "h": 640,
   "w": 511
+ },
+ "sticker-tufahija": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 640,
+  "w": 503
+ },
+ "sticker-zeljanica": {
+  "edge": null,
+  "eyes": null,
+  "group": "stickers",
+  "h": 486,
+  "w": 531
  },
  "waving": {
   "edge": null,
