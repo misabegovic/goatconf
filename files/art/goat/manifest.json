@@ -6,6 +6,258 @@
   "h": 449,
   "w": 640
  },
+ "coder-eating": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 611,
+  "w": 499
+ },
+ "coder-happy": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 567,
+  "w": 485
+ },
+ "coder-hiking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 634,
+  "w": 488
+ },
+ "coder-hungry": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 629,
+  "w": 450
+ },
+ "coder-packing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 640,
+  "w": 514
+ },
+ "coder-playing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 596,
+  "w": 543
+ },
+ "coder-sleeping": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 442,
+  "w": 614
+ },
+ "coder-sulking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 596,
+  "w": 440
+ },
+ "cook-eating": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 619,
+  "w": 489
+ },
+ "cook-happy": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 586,
+  "w": 530
+ },
+ "cook-hiking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 633,
+  "w": 492
+ },
+ "cook-hungry": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 640,
+  "w": 477
+ },
+ "cook-packing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 640,
+  "w": 424
+ },
+ "cook-playing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 600,
+  "w": 569
+ },
+ "cook-sleeping": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 400,
+  "w": 614
+ },
+ "cook-sulking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 597,
+  "w": 519
+ },
+ "goat-hungry": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 599,
+  "w": 436
+ },
+ "goat-packing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 623,
+  "w": 476
+ },
+ "goat-playing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 600,
+  "w": 580
+ },
+ "goat-sulking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 602,
+  "w": 438
+ },
+ "hidden-eating": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 548,
+  "w": 510
+ },
+ "hidden-happy": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 627,
+  "w": 439
+ },
+ "hidden-hiking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 606,
+  "w": 520
+ },
+ "hidden-hungry": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 608,
+  "w": 564
+ },
+ "hidden-packing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 604,
+  "w": 477
+ },
+ "hidden-playing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 640,
+  "w": 495
+ },
+ "hidden-sleeping": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 502,
+  "w": 551
+ },
+ "hidden-sulking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 429,
+  "w": 522
+ },
+ "host-eating": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 595,
+  "w": 478
+ },
+ "host-happy": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 559,
+  "w": 454
+ },
+ "host-hiking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 602,
+  "w": 429
+ },
+ "host-hungry": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 629,
+  "w": 446
+ },
+ "host-packing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 618,
+  "w": 471
+ },
+ "host-playing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 621,
+  "w": 490
+ },
+ "host-sleeping": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 420,
+  "w": 621
+ },
+ "host-sulking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 572,
+  "w": 432
+ },
  "jumping": {
   "edge": null,
   "eyes": [
@@ -130,6 +382,62 @@
   },
   "w": 640
  },
+ "pirate-eating": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 590,
+  "w": 490
+ },
+ "pirate-happy": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 586,
+  "w": 531
+ },
+ "pirate-hiking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 635,
+  "w": 483
+ },
+ "pirate-hungry": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 625,
+  "w": 504
+ },
+ "pirate-packing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 640,
+  "w": 451
+ },
+ "pirate-playing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 640,
+  "w": 554
+ },
+ "pirate-sleeping": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 528,
+  "w": 607
+ },
+ "pirate-sulking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 557,
+  "w": 536
+ },
  "sitting": {
   "edge": null,
   "eyes": [
@@ -253,6 +561,41 @@
   "h": 640,
   "w": 468
  },
+ "speaker-eating": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 583,
+  "w": 489
+ },
+ "speaker-happy": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 547,
+  "w": 494
+ },
+ "speaker-hiking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 639,
+  "w": 500
+ },
+ "speaker-hungry": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 629,
+  "w": 472
+ },
+ "speaker-packing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 640,
+  "w": 469
+ },
  "speaker-paul-campbell": {
   "edge": 563,
   "eyes": [
@@ -275,6 +618,13 @@
   "group": "speakers-sitting",
   "h": 640,
   "w": 467
+ },
+ "speaker-playing": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 634,
+  "w": 488
  },
  "speaker-predrag-radenkovic": {
   "edge": 564,
@@ -317,6 +667,20 @@
   "group": "speakers-sitting",
   "h": 640,
   "w": 468
+ },
+ "speaker-sleeping": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 500,
+  "w": 608
+ },
+ "speaker-sulking": {
+  "edge": null,
+  "eyes": null,
+  "group": "goatchi",
+  "h": 592,
+  "w": 485
  },
  "standing": {
   "edge": null,

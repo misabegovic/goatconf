@@ -786,3 +786,7 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #222: site: Goatchi installable, with reminders the player turns on
    diff: 10 files, +474/-5
    restricted-paths: true
+2026-10-31 shape — built files/wiki/org/prds/goatchi-full-game.md, part one: Goatchi (Developer agent)
+2026-10-31 merge — PR #223: site: Goatchi played end to end with one goat
+   diff: 97 files, +695/-67
+   restricted-paths: true

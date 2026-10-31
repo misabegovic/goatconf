@@ -95,5 +95,5 @@ def test_a_goat_that_wandered_off_is_told_once_with_its_days():
     g["since"] = NOW - 24 * 9 * H
     note = node(f"sw.reminder({json.dumps(g)}, 'left', {NOW})")
     assert note["title"] == "The pirate went exploring"
-    # every need ran out at 6 - 1.5 days ago, it left three days later: kept 9 - 1.5 = 7.5 days, so 7
-    assert "kept it for 7 days" in note["body"]
+    # sleep, the slowest need, ran out 6 - 2 = 4 days ago and it left three days later, a day ago: kept 8 days
+    assert "kept it for 8 days" in note["body"]

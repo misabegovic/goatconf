@@ -12,6 +12,7 @@
 <link rel="icon" href="favicon-96.png" sizes="96x96" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="goatchi.webmanifest">
+<script>try{localStorage.getItem("goatconf-goatchi")&&document.documentElement.classList.add("goatchi-kept")}catch(e){}</script>
 <!-- gen:link-preview tools/meta.py -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GoatConf">
@@ -25,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- /gen:link-preview -->
 <link rel="preload" href="fonts/bricolage-wdth-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="goatconf.css?v=937bcdc7">
+<link rel="stylesheet" href="goatconf.css?v=3c38a6ab">
 </head>
 <body>
 <!-- gen:topbar tools/nav.py -->
@@ -83,6 +84,14 @@
       <p class="goatchi__lasts"></p>
       <p class="goatchi__acts"><button type="button" class="button" data-act="feed">Feed</button> <button type="button" class="button" data-act="play">Play</button> <button type="button" class="button" data-act="sleep">Sleep</button></p>
       <p class="goatchi__trip"></p>
+      <div class="goatchi__mail">
+        <p class="goatchi__mail-intro">Postcards from Tuzla, the longer you keep your goat:</p>
+        <ul class="goatchi__cards">
+          <li class="goatchi__card" data-day="7"><span class="goatchi__card-lock">At 7 days</span><figure hidden><img src="img/city-lakes-aerial-summer-480.webp" width="480" height="270" alt="The Pannonian salt lakes from the air on a summer day" loading="lazy" decoding="async"><figcaption>The salt lakes <small>Photo: Grad Tuzla</small></figcaption></figure></li>
+          <li class="goatchi__card" data-day="30"><span class="goatchi__card-lock">At 30 days</span><figure hidden><img src="img/city-square-fountain-summer-480.webp" width="480" height="270" alt="The fountain on Freedom Square on a summer day" loading="lazy" decoding="async"><figcaption>Freedom Square <small>Photo: Grad Tuzla</small></figcaption></figure></li>
+          <li class="goatchi__card" data-day="100"><span class="goatchi__card-lock">At 100 days</span><figure hidden><img src="img/city-korzo-clock-480.webp" width="480" height="320" alt="The Korzo on a sunny day" loading="lazy" decoding="async"><figcaption>The Korzo <small>Photo: Grad Tuzla</small></figcaption></figure></li>
+        </ul>
+      </div>
       <p class="goatchi__cheers-intro">Your goat cheers up the first time you:</p>
       <ul class="goatchi__cheers">
         <li><a data-cheer="speaker" href="speakers.html">See who is speaking</a></li>
@@ -111,20 +120,20 @@
   <p class="copy copy--wide">Your goat lives in this browser only: nothing about it is sent anywhere, and clearing your browser's data lets it go. You can swap it for another at any time.</p>
   <p class="copy copy--wide goatchi__mode"><label><input type="checkbox" class="goatchi__challenge"> Challenge mode: left with every need empty for three days, your goat wanders off to explore the hills above Tuzla.</label></p>
   <ul class="sticker-grid goatchi__pick">
-    <li><button type="button" class="goatchi__pick-goat" data-pose="sitting" data-name="The goat" data-src="img/goat/sitting.webp?v=fad69274" data-speaker=""><img class="goatchi__thumb" src="img/goat/sitting.webp?v=fad69274" width="348" height="480" alt="" loading="lazy" decoding="async"><span>The goat</span></button></li>
-    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-host" data-name="The host" data-src="img/goat/sticker-host.webp?v=49d8de18" data-speaker=""><img class="goatchi__thumb" src="img/goat/sticker-host.webp?v=49d8de18" width="370" height="480" alt="" loading="lazy" decoding="async"><span>The host</span></button></li>
-    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-coder" data-name="The coder" data-src="img/goat/sticker-coder.webp?v=faba2cb5" data-speaker=""><img class="goatchi__thumb" src="img/goat/sticker-coder.webp?v=faba2cb5" width="407" height="480" alt="" loading="lazy" decoding="async"><span>The coder</span></button></li>
-    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-speaker" data-name="The speaker" data-src="img/goat/sticker-speaker.webp?v=735de76c" data-speaker=""><img class="goatchi__thumb" src="img/goat/sticker-speaker.webp?v=735de76c" width="383" height="480" alt="" loading="lazy" decoding="async"><span>The speaker</span></button></li>
-    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-cook" data-name="The cook" data-src="img/goat/sticker-cook.webp?v=4a0a3b13" data-speaker=""><img class="goatchi__thumb" src="img/goat/sticker-cook.webp?v=4a0a3b13" width="316" height="480" alt="" loading="lazy" decoding="async"><span>The cook</span></button></li>
-    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-pirate" data-name="The pirate" data-src="img/goat/sticker-pirate.webp?v=5d7f7fb1" data-speaker=""><img class="goatchi__thumb" src="img/goat/sticker-pirate.webp?v=5d7f7fb1" width="335" height="480" alt="" loading="lazy" decoding="async"><span>The pirate</span></button></li>
-    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-hidden" data-name="The shy one" data-src="img/goat/sticker-hidden.webp?v=c1806363" data-speaker=""><img class="goatchi__thumb" src="img/goat/sticker-hidden.webp?v=c1806363" width="370" height="480" alt="" loading="lazy" decoding="async"><span>The shy one</span></button></li>
+    <li><button type="button" class="goatchi__pick-goat" data-pose="sitting" data-name="The goat" data-src="img/goat/sitting.webp?v=fad69274" data-speaker="" data-poses="{&quot;eating&quot;:[&quot;img/goat/sticker-burek.webp?v=5d6b978b&quot;,&quot;img/goat/sticker-cevapi.webp?v=041307d8&quot;,&quot;img/goat/sticker-fildzan.webp?v=0d90d866&quot;],&quot;sleeping&quot;:[&quot;img/goat/asleep.webp?v=f49de98c&quot;],&quot;playing&quot;:[&quot;img/goat/goat-playing.webp?v=7a51614c&quot;],&quot;hungry&quot;:[&quot;img/goat/goat-hungry.webp?v=05117f21&quot;],&quot;sulking&quot;:[&quot;img/goat/goat-sulking.webp?v=f45f2eb5&quot;],&quot;happy&quot;:[&quot;img/goat/jumping.webp?v=970b4367&quot;],&quot;hiking&quot;:[&quot;img/goat/sticker-hike.webp?v=0661b70b&quot;],&quot;packing&quot;:[&quot;img/goat/goat-packing.webp?v=59989084&quot;]}"><img class="goatchi__thumb" src="img/goat/sitting.webp?v=fad69274" width="348" height="480" alt="" loading="lazy" decoding="async"><span>The goat</span></button></li>
+    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-host" data-name="The host" data-src="img/goat/sticker-host.webp?v=49d8de18" data-speaker="" data-poses="{&quot;eating&quot;:[&quot;img/goat/host-eating.webp?v=52c6c6d7&quot;],&quot;sleeping&quot;:[&quot;img/goat/host-sleeping.webp?v=863583f6&quot;],&quot;playing&quot;:[&quot;img/goat/host-playing.webp?v=56bf3ff4&quot;],&quot;hungry&quot;:[&quot;img/goat/host-hungry.webp?v=42e27c8e&quot;],&quot;sulking&quot;:[&quot;img/goat/host-sulking.webp?v=759bca4a&quot;],&quot;happy&quot;:[&quot;img/goat/host-happy.webp?v=c61c7366&quot;],&quot;hiking&quot;:[&quot;img/goat/host-hiking.webp?v=c311d0e4&quot;],&quot;packing&quot;:[&quot;img/goat/host-packing.webp?v=1007302d&quot;]}"><img class="goatchi__thumb" src="img/goat/sticker-host.webp?v=49d8de18" width="370" height="480" alt="" loading="lazy" decoding="async"><span>The host</span></button></li>
+    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-coder" data-name="The coder" data-src="img/goat/sticker-coder.webp?v=faba2cb5" data-speaker="" data-poses="{&quot;eating&quot;:[&quot;img/goat/coder-eating.webp?v=cbe6b0d1&quot;],&quot;sleeping&quot;:[&quot;img/goat/coder-sleeping.webp?v=cf18c750&quot;],&quot;playing&quot;:[&quot;img/goat/coder-playing.webp?v=fac2acc5&quot;],&quot;hungry&quot;:[&quot;img/goat/coder-hungry.webp?v=12a9ac11&quot;],&quot;sulking&quot;:[&quot;img/goat/coder-sulking.webp?v=6a9a929d&quot;],&quot;happy&quot;:[&quot;img/goat/coder-happy.webp?v=c0ce17ef&quot;],&quot;hiking&quot;:[&quot;img/goat/coder-hiking.webp?v=ebc29b8e&quot;],&quot;packing&quot;:[&quot;img/goat/coder-packing.webp?v=2b438f93&quot;]}"><img class="goatchi__thumb" src="img/goat/sticker-coder.webp?v=faba2cb5" width="407" height="480" alt="" loading="lazy" decoding="async"><span>The coder</span></button></li>
+    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-speaker" data-name="The speaker" data-src="img/goat/sticker-speaker.webp?v=735de76c" data-speaker="" data-poses="{&quot;eating&quot;:[&quot;img/goat/speaker-eating.webp?v=e24151c7&quot;],&quot;sleeping&quot;:[&quot;img/goat/speaker-sleeping.webp?v=a3ad0764&quot;],&quot;playing&quot;:[&quot;img/goat/speaker-playing.webp?v=067f7d08&quot;],&quot;hungry&quot;:[&quot;img/goat/speaker-hungry.webp?v=36170bae&quot;],&quot;sulking&quot;:[&quot;img/goat/speaker-sulking.webp?v=1b648eef&quot;],&quot;happy&quot;:[&quot;img/goat/speaker-happy.webp?v=5297db18&quot;],&quot;hiking&quot;:[&quot;img/goat/speaker-hiking.webp?v=3de1538e&quot;],&quot;packing&quot;:[&quot;img/goat/speaker-packing.webp?v=301e0d09&quot;]}"><img class="goatchi__thumb" src="img/goat/sticker-speaker.webp?v=735de76c" width="383" height="480" alt="" loading="lazy" decoding="async"><span>The speaker</span></button></li>
+    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-cook" data-name="The cook" data-src="img/goat/sticker-cook.webp?v=4a0a3b13" data-speaker="" data-poses="{&quot;eating&quot;:[&quot;img/goat/cook-eating.webp?v=ee8e327b&quot;],&quot;sleeping&quot;:[&quot;img/goat/cook-sleeping.webp?v=22fddb98&quot;],&quot;playing&quot;:[&quot;img/goat/cook-playing.webp?v=b2c63d0d&quot;],&quot;hungry&quot;:[&quot;img/goat/cook-hungry.webp?v=df8b547e&quot;],&quot;sulking&quot;:[&quot;img/goat/cook-sulking.webp?v=ec90b306&quot;],&quot;happy&quot;:[&quot;img/goat/cook-happy.webp?v=c882a33d&quot;],&quot;hiking&quot;:[&quot;img/goat/cook-hiking.webp?v=92504999&quot;],&quot;packing&quot;:[&quot;img/goat/cook-packing.webp?v=4a90a5ec&quot;]}"><img class="goatchi__thumb" src="img/goat/sticker-cook.webp?v=4a0a3b13" width="316" height="480" alt="" loading="lazy" decoding="async"><span>The cook</span></button></li>
+    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-pirate" data-name="The pirate" data-src="img/goat/sticker-pirate.webp?v=5d7f7fb1" data-speaker="" data-poses="{&quot;eating&quot;:[&quot;img/goat/pirate-eating.webp?v=8493905a&quot;],&quot;sleeping&quot;:[&quot;img/goat/pirate-sleeping.webp?v=7bf03047&quot;],&quot;playing&quot;:[&quot;img/goat/pirate-playing.webp?v=78164d64&quot;],&quot;hungry&quot;:[&quot;img/goat/pirate-hungry.webp?v=72558057&quot;],&quot;sulking&quot;:[&quot;img/goat/pirate-sulking.webp?v=b8e70be4&quot;],&quot;happy&quot;:[&quot;img/goat/pirate-happy.webp?v=f56acd94&quot;],&quot;hiking&quot;:[&quot;img/goat/pirate-hiking.webp?v=39907596&quot;],&quot;packing&quot;:[&quot;img/goat/pirate-packing.webp?v=bc912ec8&quot;]}"><img class="goatchi__thumb" src="img/goat/sticker-pirate.webp?v=5d7f7fb1" width="335" height="480" alt="" loading="lazy" decoding="async"><span>The pirate</span></button></li>
+    <li><button type="button" class="goatchi__pick-goat" data-pose="sticker-hidden" data-name="The shy one" data-src="img/goat/sticker-hidden.webp?v=c1806363" data-speaker="" data-poses="{&quot;eating&quot;:[&quot;img/goat/hidden-eating.webp?v=650a8623&quot;],&quot;sleeping&quot;:[&quot;img/goat/hidden-sleeping.webp?v=5c7da7d3&quot;],&quot;playing&quot;:[&quot;img/goat/hidden-playing.webp?v=f8a77648&quot;],&quot;hungry&quot;:[&quot;img/goat/hidden-hungry.webp?v=8675345a&quot;],&quot;sulking&quot;:[&quot;img/goat/hidden-sulking.webp?v=302fb343&quot;],&quot;happy&quot;:[&quot;img/goat/hidden-happy.webp?v=3c71786a&quot;],&quot;hiking&quot;:[&quot;img/goat/hidden-hiking.webp?v=d26efa75&quot;],&quot;packing&quot;:[&quot;img/goat/hidden-packing.webp?v=bc1d54a2&quot;]}"><img class="goatchi__thumb" src="img/goat/sticker-hidden.webp?v=c1806363" width="370" height="480" alt="" loading="lazy" decoding="async"><span>The shy one</span></button></li>
   </ul>
 </section>
 
 <section class="album-page wrap" aria-labelledby="h-how">
   <h2 class="band" id="h-how">How it works</h2>
   <div class="copy copy--wide">
-    <p>Goatchi is a little game like a tamagotchi. Your goat gets hungry, bored and sleepy over about a day and a half. Left alone it sulks and says so, but it never dies: feed it, play with it or let it sleep, and it is glad you came back.</p>
+    <p>Goatchi is a little game like a tamagotchi. Your goat gets hungry over about a day, bored over a day and a half and sleepy over two days. Left alone it sulks and says so, but it never dies: feed it, play with it or let it sleep, and it is glad you came back.</p>
     <p>In challenge mode, which you choose when you pick a goat, a goat left with every need empty for three days wanders off to explore the hills above Tuzla, and the page tells you how many days you kept it.</p>
     <p>A speaker's goat can be kept once that speaker has said yes. The goats, the name GoatConf and Goatchi are <a href="brand.html#use">all rights reserved</a>.</p>
   </div>
@@ -139,6 +148,6 @@
 </footer>
 <!-- /gen:footer -->
 <script src="album.js?v=1ee120f9" defer></script>
-<script src="goatchi.js?v=63b20b8d" defer></script>
+<script src="goatchi.js?v=21078be2" defer></script>
 </body>
 </html>

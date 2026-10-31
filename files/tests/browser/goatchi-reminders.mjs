@@ -31,7 +31,7 @@ const regs = new Map();
 await cdp.send("ServiceWorker.enable");
 cdp.on("ServiceWorker.workerRegistrationUpdated", ({ registrations }) => registrations.forEach((r) => regs.set(r.scopeURL, r.registrationId)));
 
-// A goat kept a day and a half ago, every need run low: it is sulking.
+// A goat whose needs were last met so many hours ago: after a day its food is empty and it sulks.
 const sulking = (hoursAgo) => {
   const then = Date.now() - hoursAgo * H;
   return { pose: "sitting", name: "The goat", src: "img/goat/sitting.webp", speaker: "", since: then, cheered: [], challenge: false,
@@ -93,7 +93,7 @@ await page.evaluate((g) => new Promise((r) => { const o = indexedDB.open("goatch
 await clear();
 await fire();
 const left = await shown();
-check(left.length === 1 && left[0].title === "The goat went exploring" && /kept it for 7 days/.test(left[0].body), `a challenge goat that wandered off is told once (${JSON.stringify(left)})`);
+check(left.length === 1 && left[0].title === "The goat went exploring" && /kept it for 8 days/.test(left[0].body), `a challenge goat that wandered off is told once (${JSON.stringify(left)})`);
 await clear();
 await fire();
 check((await shown()).length === 0, "and not told again");
