@@ -829,3 +829,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #235: site: the plain goat's painted moves
    diff: 45 files, +227/-43
    restricted-paths: true
+2026-10-31 merge — PR #236: site: the role goats' painted moves
+   diff: 57 files, +683/-37
+   restricted-paths: true
