@@ -49,7 +49,9 @@ SETS = {"roles": (("peeking", "peek-host", "peek-coder", "peek-speaker", "peek-c
         "scenes": (tuple(dict.fromkeys(p for poses in SCENES.values() for p in poses)) + HAND_SCENES, 240)}
 # The speakers whose whole sitting goat sits on their card on the home and Speakers pages and on the bands of
 # their own page, where their goat peeking over the card looked cut off; the others peek (sources/conversations/2026-10-27--org--goat-tap-polish.md).
-WHOLE_ON_CARD = ("amar-mahmutbegovic", "christoph-lipautz", "cristian-planas", "predrag-radenkovic")
+# Every speaker now peeks with head, chest and hooves over the card, painted looking in nine directions, so none sits
+# whole on its card any more (organiser, 2026-10-31: "I want all speakers goats to be peeking goats").
+WHOLE_ON_CARD = ()
 # The goats shown on their own, and their long side in pixels.
 SINGLE = 480
 # How far, in master pixels, the turned head band and the body overlap where they meet.
@@ -66,7 +68,8 @@ def sets() -> dict:
     """Each sheet's goats in order, and their height above the edge: the fixed sets, and the speakers'."""
     out = dict(SETS)
     out["speakers"] = (tuple(sorted(k for k, v in manifest().items() if v["group"] == "speakers")), 190)
-    out["cards"] = (tuple(f"speaker-{s}-sitting" for s in WHOLE_ON_CARD if f"speaker-{s}-sitting" in manifest()), 300)
+    if WHOLE_ON_CARD:
+        out["cards"] = (tuple(f"speaker-{s}-sitting" for s in WHOLE_ON_CARD if f"speaker-{s}-sitting" in manifest()), 300)
     return out
 
 
