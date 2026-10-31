@@ -778,3 +778,8 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #220: org: the plan for Goatchi as a full game
    diff: 10 files, +252/-7
    restricted-paths: false
+2026-10-31 shape — files/wiki/org/prds/goatchi-full-game.md → files/wiki/org/adrs/goatchi-full-game.md (Tech Lead agent)
+2026-10-31 zoom-out — fired for files/wiki/org/adrs/goatchi-full-game.md (big appetite): a service worker and notifications are new to the site; the no-go on notifications amended on the organiser's choice
+2026-10-31 merge — PR #221: org: how Goatchi grows into a full game
+   diff: 9 files, +238/-8
+   restricted-paths: false
