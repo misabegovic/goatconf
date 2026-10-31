@@ -802,3 +802,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #227: site: Paul Campbell's goat peeks the old way, and looks around calmly
    diff: 37 files, +143/-114
    restricted-paths: false
+2026-10-31 merge — PR #228: site: every speaker's goat peeks the old way and looks around calmly
+   diff: 25 files, +569/-129
+   restricted-paths: true
