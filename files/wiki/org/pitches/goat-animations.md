@@ -1,7 +1,8 @@
 ---
 title: "More goat animations: tap to pet, ears and tail that move at rest, and more tricks"
 kind: pitch
-status: draft
+status: superseded
+superseded_by: org/prds/goat-animations.md
 updated: 2026-10-31
 appetite: medium
 confidence: low
