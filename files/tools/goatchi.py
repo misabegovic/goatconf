@@ -107,7 +107,7 @@ def page() -> str:
   <div class="goatchi__play" hidden>
     <figure class="goatchi__stage">
       <b class="goatchi__say" aria-live="polite"></b>
-      <img class="goatchi__goat" src="{goat_atlas.single("sitting")[0]}" alt="">
+      <img class="goatchi__goat" src="{goat_atlas.single("sitting")[0]}" alt="" draggable="false">
       <figcaption><span class="goatchi__name"></span> <span class="goatchi__kept"></span></figcaption>
     </figure>
     <div class="goatchi__care">
