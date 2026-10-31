@@ -166,17 +166,29 @@ def goats_post(w: int, h: int, square: bool, crowd_in: bool = True) -> str:
 {seal(170, "left:72px; bottom:64px")}{crowd if crowd_in else ""}""")
 
 
-def goatchi_card(w: int = 1200, h: int = 630) -> str:
-    """Goatchi's link preview: its name and what you do, beside the goat eating burek and the plain goat saying hello."""
+def goatchi_card(w: int = 1200, h: int = 630, square: bool = False, url: str = "goatconf.com/goatchi.html") -> str:
+    """Goatchi's link preview and its post: its name and what you do, beside the goat eating burek and the plain goat
+    saying hello."""
     def g(pose, width, style):
         return f'<img src="{(goat_atlas.ART / (pose + ".webp")).as_uri()}" style="position:absolute; width:{width}px; {style}">'
+    if square:
+        return page(w, h, f"""
+<div style="position:absolute; left:84px; top:96px; right:84px">
+  <div class="word" style="font-size:150px">Goatchi</div>
+  <div class="rule" style="width:120px; margin:40px 0 34px"></div>
+  <div class="sub" style="font-size:46px; line-height:1.15; max-width:20ch">Keep a GoatConf goat. Feed it, play with it, let it sleep.</div>
+</div>
+<div style="position:absolute; left:84px; bottom:84px"><div class="url" style="font-size:32px">{url}</div></div>
+{g("sticker-burek", 330, "left:84px; bottom:150px")}
+{g("sitting", 380, "right:72px; bottom:72px")}
+<div class="sub" style="position:absolute; right:300px; bottom:470px; padding:12px 28px 14px; border-radius:34px 34px 34px 6px; background:{YELLOW}; color:#0a1f4d; font-size:48px; font-weight:800">Baaa!</div>""")
     return page(w, h, f"""
 <div style="position:absolute; left:72px; top:84px; width:500px">
   <div class="word" style="font-size:124px">Goatchi</div>
   <div class="rule" style="width:100px; margin:32px 0 28px"></div>
   <div class="sub" style="font-size:38px; line-height:1.15">Keep a GoatConf goat. Feed it, play with it, let it sleep.</div>
 </div>
-<div style="position:absolute; left:72px; bottom:62px"><div class="url" style="font-size:28px">goatconf.com/goatchi.html</div></div>
+<div style="position:absolute; left:72px; bottom:62px"><div class="url" style="font-size:28px">{url}</div></div>
 {g("sticker-burek", 255, "left:590px; bottom:44px")}
 {g("sitting", 290, "right:56px; bottom:40px")}
 <div class="sub" style="position:absolute; right:250px; top:128px; padding:10px 24px 12px; border-radius:30px 30px 30px 6px; background:{YELLOW}; color:#0a1f4d; font-size:40px; font-weight:800">Baaa!</div>""")
@@ -413,6 +425,8 @@ def jobs() -> dict[str, tuple[int, int, str]]:
         "header-3x1.png": (1500, 500, banner(1500, 500, 128, 40, 28, 400, 90, 96)),
         "og.png": (1200, 630, banner(1200, 630, 104, 34, 26, 400, 64, 56)),
         "goatchi-preview.png": (1200, 630, goatchi_card()),
+        "post-goatchi-square.png": (1080, 1080, goatchi_card(1080, 1080, True, "goatconf.com/goatchi")),
+        "post-goatchi-wide.png": (1200, 675, goatchi_card(1200, 675, url="goatconf.com/goatchi")),
         "luma-cover.png": (1080, 1080, page(1080, 1080, f"""
 {seal(600, "left:240px; top:110px")}
 <div style="position:absolute; left:0; right:0; bottom:110px; text-align:center">
