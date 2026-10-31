@@ -790,3 +790,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #223: site: Goatchi played end to end with one goat
    diff: 97 files, +695/-67
    restricted-paths: true
+2026-10-31 merge — PR #224: site: Goatchi on the home page
+   diff: 35 files, +72/-33
+   restricted-paths: true
