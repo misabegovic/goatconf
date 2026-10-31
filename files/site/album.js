@@ -539,7 +539,10 @@
   // The sheets this page's goats are drawn from, decoded before the goat appears; if one fails, every slot
   // gets its own goat back.
   const sheets = [...new Set(peeks.map((p) => p.style.backgroundImage.slice(4, -1).replace(/"/g, "")))];
-  const decode = (src) => { const i = new Image(); i.src = src; return i.decode(); };
+  // Each decoded picture is kept: one let go may be dropped from memory, and swapping the goat to it (a painted
+  // frame, or back to itself after one) then paints a frame with no goat while it decodes again.
+  const held = [];
+  const decode = (src) => { const i = new Image(); i.src = src; held.push(i); return i.decode(); };
   // The turned heads load once the goat is out; until then it simply looks at you.
   const turns = () => {
     [...new Set(peeks.map((p) => (p.dataset.turn || "").split("|")[0]).filter(Boolean))]
