@@ -769,3 +769,4 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-28 merge — PR #218: site: Goatchi's opt-in challenge mode, where a neglected goat wanders off
    diff: 40 files, +113/-43
    restricted-paths: true
+2026-10-31 shape — pitch → files/wiki/org/pitches/goatchi-full-game.md (PM agent)

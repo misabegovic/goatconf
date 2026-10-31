@@ -2,7 +2,7 @@
 title: "GoatConf pitches"
 kind: meta
 status: draft
-updated: 2026-10-28
+updated: 2026-10-31
 sources: []
 ---
 
@@ -21,6 +21,7 @@ organiser bets on which become committed work. Nothing here is decided.
 ## After the bet of 2026-10-07
 
 - [Keep a goat: a free tamagotchi of the painted goats](goat-tamagotchi-on-the-site.md): adopt a goat in your browser, feed it Bosnian food, play and let it sleep; it never dies; the conference cheers it up and its trip to Tuzla counts down. Not a paid app. Appetite: small. Bet on 2026-10-28, on its own: [the PRD](../prds/goat-tamagotchi-on-the-site.md).
+- [Goatchi as a full game played with one goat, and more poses for every goat](goatchi-full-game.md): each goat type's own eight poses, moods that follow its needs, animations and a story to Tuzla on 3 June; then the speakers' goats, the goats on the food and Tuzla photos, and Paul Campbell's goat painted again in ginger, on the same art. Goatchi ships and is promoted first. Appetite: big. Not bet on yet.
 
 ## Area pitches
 
