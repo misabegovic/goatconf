@@ -424,11 +424,32 @@
     },
     speak,
   ];
-  let trick = 0;
+  // Petting (ADR goat-animations): the first tap, or the first after a pause, pets the goat. A heart rises, it leans
+  // into the tap with a happy squash, and it says a line; the next taps play its tricks.
+  const heart = document.createElement("b");
+  heart.className = "goat-heart";
+  heart.setAttribute("aria-hidden", "true");
+  heart.textContent = "\u2665";
+  stage.append(heart);
+  const pet = () => {
+    heart.getAnimations().forEach((a) => a.cancel());
+    heart.animate([
+      { opacity: 0, transform: "translate(-50%, 0) scale(.4)" },
+      { opacity: 1, transform: "translate(-50%, -40%) scale(1.1)", offset: 0.25 },
+      { opacity: 0, transform: "translate(-50%, -160%) scale(1)" },
+    ], { duration: 1300, easing: "ease-out" });
+    return Promise.all([play(goat, [
+      { transform: REST, easing: "ease-out" }, { transform: T("3%", 1.06, 0.93, -4), offset: 0.3, easing: "ease-in-out" },
+      { transform: T("2%", 1.05, 0.95, 4), offset: 0.6, easing: "ease-in-out" }, { transform: REST },
+    ], { duration: 900 }), meee()]);
+  };
+  let trick = 0, lastTap = 0;
   const perform = async () => {
     asked = false;
     busy = true;
-    try { await (still ? meee() : tricks[trick++ % tricks.length]()); } catch (e) { face("front"); goat.style.transform = REST; }
+    const petting = Date.now() - lastTap > 6000;
+    lastTap = Date.now();
+    try { await (still ? meee() : petting ? pet() : tricks[trick++ % tricks.length]()); } catch (e) { face("front"); goat.style.transform = REST; }
     busy = false;
     catchUp();
   };
