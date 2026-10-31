@@ -2,11 +2,12 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-10-27
+updated: 2026-10-31
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-31--org--goatchi-full-game.md
   - sources/conversations/2026-10-27--org--goats-post-published.md
   - sources/conversations/2026-10-27--org--goats-post-one-by-one.md
   - sources/conversations/2026-10-27--org--goats-post-animated.md
@@ -159,7 +160,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Sat 31 Oct 2026, week 3: Registration is open, and free
 
-- **State:** drafted
+- **State:** drafted, waiting: on 2026-10-31 the organiser held this Saturday's slot for Goatchi, to be promoted once it is final, and this post waits until after it (source: sources/conversations/2026-10-31--org--goatchi-full-game.md; [the pitch](../pitches/goatchi-full-game.md))
 - **Image:** [`post-register-square.png`](https://goatconf.com/share/post-register-square.png) (LinkedIn, Mastodon), [`post-register-wide.png`](https://goatconf.com/share/post-register-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
