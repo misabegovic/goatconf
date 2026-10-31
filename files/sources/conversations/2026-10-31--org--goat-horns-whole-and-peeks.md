@@ -21,3 +21,13 @@ Asked which kind of peek, they chose "Head and hooves over the edge (Recommended
 > Also want them also looking up and down, following the mouse
 
 and chose "9 directions + blink", described as: a 3 by 3 sheet of the goat looking in every direction and a blink, per speaker.
+
+The organiser sent Paul Campbell's two gaze sheets from their phone, then wrote, verbatim:
+
+> I see white spots between horns
+
+They were right: the first cut filled the paper showing between and through the horns; it was cut again so bare paper stays see-through. Asked, verbatim:
+
+> If there is no mouse movement or tapping, does the goat go back to its animations?
+
+the agent made the goat look back at the visitor four seconds after the pointer stops, its own moves then resuming. Shown Paul's goat following the mouse in nine directions, and asked whether to paint the other seven speakers the same way, the organiser chose "Ship Paul first", described as: ship the horn fixes and Paul's new peek now, the others in a second pull request.
