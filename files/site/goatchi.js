@@ -207,6 +207,28 @@
     sleep: () => { fill("sleep", 1); show(look("sleeping") || sleepSrc, 3200, "is-sleeping"); speak("Zzz…", 3200); },
   };
 
+  // Petting (ADR goat-animations): a tap on the goat shows a heart, a happy hop and a line, and lifts play a little,
+  // at most three times an hour.
+  const heart = document.createElement("b");
+  heart.className = "goat-heart";
+  heart.setAttribute("aria-hidden", "true");
+  heart.textContent = "\u2665";
+  stage.append(heart);
+  let pets = [];
+  goat.addEventListener("click", () => {
+    if (!goatState || leftAt()) return;
+    heart.getAnimations().forEach((a) => a.cancel());
+    if (!still) heart.animate([
+      { opacity: 0, transform: "translate(-50%, 0) scale(.4)" },
+      { opacity: 1, transform: "translate(-50%, -40%) scale(1.1)", offset: 0.25 },
+      { opacity: 0, transform: "translate(-50%, -160%) scale(1)" },
+    ], { duration: 1300, easing: "ease-out" });
+    hop();
+    pets = pets.filter((t) => Date.now() - t < 3600e3);
+    if (pets.length < 3) { pets.push(Date.now()); fill("play", 0.1); save(); showNeeds(); }
+    speak(["Baaa!", "Again!", "That's nice.", "Baaa, thank you!"][Math.floor(Math.random() * 4)], 1600);
+  });
+
   // Asking before a goat is let go or swapped, on the page itself.
   let onYes = null;
   const ask = (text, yes) => {
