@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """The home page's generated parts, and the album's sticker numbers.
 
-The home page is hand-written, with four parts filled from the records:
+The home page is hand-written, with five parts filled from the records and the tools:
 
   <!-- gen:home-days -->        the three days, from DAY_PLAN in tools/program.py
   <!-- gen:home-speakers -->    the first speakers, from speakers/, in eight places
   <!-- gen:home-supporters -->  the supporters' logos, from supporters/
   <!-- gen:home-kinds -->       every accepted event, from extensions/, then the
                             kinds of event to propose, all still open
+  <!-- gen:home-goatchi -->     Goatchi near the end: goats at play, and the way in
 
 Then every sticker and slot number on the page is renumbered in order, so
 the album keeps one sequence however the sections move.
@@ -29,6 +30,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import blocks  # noqa: E402
 import extensions  # noqa: E402
 import frame  # noqa: E402
+import goat_atlas  # noqa: E402
 import images  # noqa: E402
 import program  # noqa: E402
 import speakers  # noqa: E402
@@ -172,6 +174,20 @@ def kinds_block() -> str:
             '  <ul class="slots slots--kinds" aria-label="Kinds of events you can propose">\n' + "\n".join(kinds) + "\n  </ul>")
 
 
+# Goatchi near the end of the album (ADR goatchi-full-game, amended 2026-10-31): four goats at play, each its own
+# type, and the way in. The goats are decoration; the line and the button say what it is.
+GOATCHI_PLAY = ("goat-playing", "host-playing", "pirate-playing", "hidden-playing")
+
+
+def goatchi_block() -> str:
+    goats = "".join(f'<img src="{src}" width="{w}" height="{h}" alt="" loading="lazy" decoding="async">'
+                    for src, w, h in (goat_atlas.single(p) for p in GOATCHI_PLAY))
+    return (f'  <p class="goatchi-promo__goats" aria-hidden="true">{goats}</p>\n'
+            '  <p class="copy copy--wide">Pick a GoatConf goat and keep it until June: feed it, play with it and let it sleep, '
+            'and it sends you postcards from Tuzla. It lives in your browser, and it is free.</p>\n'
+            '  <p class="cta"><a class="button" href="goatchi.html">Play Goatchi</a></p>')
+
+
 def renumber(text: str) -> str:
     n = 0
 
@@ -184,7 +200,8 @@ def renumber(text: str) -> str:
 
 def page() -> str:
     text = PAGE.read_text(encoding="utf-8")
-    for name, html in (("days", days()), ("speakers", speakers_block()), ("supporters", supporters_block()), ("kinds", kinds_block())):
+    for name, html in (("days", days()), ("speakers", speakers_block()), ("supporters", supporters_block()), ("kinds", kinds_block()),
+                       ("goatchi", goatchi_block())):
         pattern, filled = block(name, html)
         if not pattern.search(text):
             raise SystemExit(f"site/index.html has no {blocks.marks(f'home-{name}', 'tools/home.py')[0]} block")

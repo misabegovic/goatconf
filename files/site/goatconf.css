@@ -858,3 +858,8 @@ button.button { border: 0; cursor: pointer; }
   .goatchi__acts { flex-wrap: nowrap; gap: 0.7rem; }
   .goatchi__acts .button { flex: 1 1 0; padding-inline: 0.3em; font-size: 1.1rem; text-align: center; }
 }
+/* Goatchi on the home page, near the end of the album (ADR goatchi-full-game, amended 2026-10-31). */
+.goatchi-promo__goats { display: grid; grid-template-columns: repeat(4, auto); justify-content: center; align-items: end; gap: 0.8rem clamp(0.5rem, 3vw, 2.5rem); margin: 0.4rem 0 1.2rem; }
+@media (max-width: 47.99rem) { .goatchi-promo__goats { grid-template-columns: repeat(2, auto); } }
+.goatchi-promo__goats img { width: clamp(5.5rem, 20vw, 10rem); height: auto; filter: drop-shadow(0 0.3rem 0.35rem rgb(0 0 0 / 0.18)); transform: rotate(-3deg); }
+.goatchi-promo__goats img:nth-child(even) { transform: rotate(3deg) translateY(-0.4rem); }
