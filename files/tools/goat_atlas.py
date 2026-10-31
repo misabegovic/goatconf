@@ -38,9 +38,16 @@ WEB = "img/goat"
 # scenes, a different one each visit where a photo has several.
 SCENES = {"img/city-lakes-aerial-summer.jpg": ("sticker-salt-lakes", "sticker-pannonian-sea", "sticker-beach"),
           "img/city-square-fountain-summer.jpg": ("sticker-salt",),
-          "img/city-korzo-clock.jpg": ("standing",),
+          "img/city-korzo-clock.jpg": ("standing", "sticker-korzo"),
           "img/city-aerial-summer.jpg": ("sticker-hike",),
-          "img/food-burek.jpg": ("sticker-burek",), "img/food-cevapi.jpg": ("sticker-cevapi",), "img/food-coffee.jpg": ("sticker-fildzan",)}
+          "img/food-burek.jpg": ("sticker-burek",), "img/food-cevapi.jpg": ("sticker-cevapi",), "img/food-coffee.jpg": ("sticker-fildzan",),
+          # every other food and Tuzla photo on the home page, each with its own scene (organiser, 2026-10-31)
+          "img/city-old-town-aerial-paving.jpg": ("sticker-old-town",), "img/city-archaeological-park.jpg": ("sticker-neolithic",),
+          "img/food-grah.jpg": ("sticker-grah",), "img/food-punjene-paprike.jpg": ("sticker-punjene-paprike",),
+          "img/food-begova-corba.jpg": ("sticker-begova-corba",), "img/food-zeljanica.jpg": ("sticker-zeljanica",),
+          "img/food-sirnica.jpg": ("sticker-sirnica",), "img/food-krompirusa.jpg": ("sticker-krompirusa",),
+          "img/food-sarma.jpg": ("sticker-sarma",), "img/food-tufahija.jpg": ("sticker-tufahija",),
+          "img/food-hurmasice.jpg": ("sticker-hurmasice",)}
 # Scenes a page places by hand: the goat waving or jumping for joy at the end, the goat statue after the goat hunt.
 HAND_SCENES = ("waving", "jumping", "sticker-goat-statue")
 SETS = {"roles": (("peeking", "peek-host", "peek-coder", "peek-speaker", "peek-cook", "peek-pirate", "peek-hidden"), 190),
