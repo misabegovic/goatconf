@@ -847,3 +847,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #241: site: Goatchi's goats blink
    diff: 13 files, +91/-14
    restricted-paths: true
+2026-10-31 merge — PR #242: org: Goatchi's promo video and post, drafted
+   diff: 11 files, +69/-7
+   restricted-paths: true
