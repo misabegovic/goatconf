@@ -597,20 +597,80 @@
   "w": 469
  },
  "speaker-paul-campbell": {
-  "edge": 574,
+  "edge": 430,
   "eyes": [
-   142,
-   167,
-   450,
-   378
+   145,
+   153,
+   458,
+   291
   ],
+  "gaze": true,
   "group": "speakers",
-  "h": 640,
-  "turn": {
-   "band": 605,
-   "pad": 96
-  },
-  "w": 549
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-00": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-01": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-02": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-10": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-11": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-12": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-20": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-21": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-22": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
  },
  "speaker-paul-campbell-sitting": {
   "edge": null,

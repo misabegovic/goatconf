@@ -147,6 +147,18 @@ def layout(name: str) -> dict:
             "turns": {"file": f"{WEB}/sheet-{name}-turns.webp", "width": 2 * turn_w + 2, "height": max(ty, 1)} if turn_w else None}
 
 
+def gazers() -> tuple:
+    """The goats painted looking in nine directions."""
+    return tuple(sorted(k for k, v in manifest().items() if v.get("gaze")))
+
+
+def gaze_layout(pose: str) -> dict:
+    """A gaze sheet: three by three cells, each the size of the goat's cell on its own sheet."""
+    L = layout(sheet_of(pose))
+    return {"file": f"{WEB}/gaze-{pose}.webp", "cell_w": L["cell_w"], "cell_h": L["cell_h"],
+            "width": 3 * L["cell_w"], "height": 3 * L["cell_h"], "cell": L["cells"][pose]}
+
+
 def sheet_of(pose: str):
     for name, (poses, _) in sets().items():
         if pose in poses:
@@ -192,7 +204,8 @@ def goat(pose: str, cls: str, beat: int = 0) -> str:
         turn = (f' data-turn="{stamped(T["file"])}|{_pct(100 * tr["x"] / cw)}|{_pct(100 * tr["y"] / ch)}|{_pct(100 * tr["w"] / cw)}|'
                 f'{_pct(100 * tr["h"] / ch)}|{_pct(100 * T["width"] / tr["w"])}|{_pct(100 * tr["ty"] / (T["height"] - tr["h"])) if T["height"] > tr["h"] else "0%"}|'
                 f'{_pct(100 * (tr["w"] + 2) / (T["width"] - tr["w"]))}|{_pct(100 * tr["cut"] / ch)}"')
-    return f'<span class="goat {cls}" aria-hidden="true" data-goat="{pose}"{turn} style="{style}">{eyes}</span>'
+    gaze = f' data-gaze="{stamped(gaze_layout(pose)["file"])}"' if manifest()[pose].get("gaze") else ""
+    return f'<span class="goat {cls}" aria-hidden="true" data-goat="{pose}"{turn}{gaze} style="{style}">{eyes}</span>'
 
 
 def single(pose: str) -> tuple[str, int, int]:
@@ -239,6 +252,21 @@ def _images():
                         sheet.alpha_composite(full.crop((0, 0, tr["w"], tr["h"])), (col * (tr["w"] + 2), tr["ty"]))
                 return sheet
             yield ROOT / "site" / T["file"], (T["width"], T["height"]), draw_turns
+    # A speaker's goat painted looking in nine directions (ADR goatchi-full-game, amended 2026-10-31): a sheet of
+    # nine cells, each the shape of the goat's cell on its own sheet, the goat in the same place in each, so the
+    # companion swaps the whole sheet in and only the head seems to move.
+    for p in gazers():
+        G = gaze_layout(p)
+
+        def draw_gaze(p=p, G=G):
+            from PIL import Image
+            sheet = Image.new("RGBA", (G["width"], G["height"]), (0, 0, 0, 0))
+            c = G["cell"]
+            for r in range(3):
+                for col in range(3):
+                    sheet.alpha_composite(open_(f"{p}-gaze-{r}{col}", (c["w"], c["h"])), (col * G["cell_w"] + c["x"], r * G["cell_h"] + c["y"]))
+            return sheet
+        yield ROOT / "site" / G["file"], (G["width"], G["height"]), draw_gaze
     for p in singles():
         path, w, h = single(p)
         path = path.split("?")[0]

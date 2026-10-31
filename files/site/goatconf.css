@@ -781,6 +781,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goat-one__stage .goat.is-turned .goat-head { display: block; }
 .goat-one__stage .goat.is-turned .goat-body { clip-path: inset(var(--cut) -50% -50% -50%); }
 .goat-one__stage .goat.is-turned .goat-blink { display: none; }
+.goat-one__stage .goat.is-gazing .goat-blink { display: none; }
 .goat-one__stage.is-tucked:not(.is-scene) { clip-path: inset(-100% -60% calc(100% - var(--edge) - 2%) -60%); }
 /* On a Tuzla or food photo the goat sits as the photo's painted scene in its bottom corner, over the caption's top;
    without the script the photos stay as they are. */
