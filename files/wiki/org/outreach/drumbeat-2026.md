@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-31--org--goatchi-post-published.md
   - sources/conversations/2026-10-31--org--goatchi-promo-video.md
   - sources/conversations/2026-10-31--org--goatchi-blink-go.md
   - sources/conversations/2026-10-31--org--goatchi-pet-cute.md
@@ -164,7 +165,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Sat 31 Oct 2026, week 3: Meet Goatchi
 
-- **State:** drafted, waiting for the organiser to call Goatchi final after their phone test; this Saturday's slot is held for it, and the registration post follows it (source: sources/conversations/2026-10-31--org--goatchi-full-game.md)
+- **State:** published, Saturday 31 October 2026, after the organiser asked for the X text; where else is not recorded (source: sources/conversations/2026-10-31--org--goatchi-post-published.md). The registration post comes next.
 - **Video:** [`post-goatchi-square.mp4`](https://goatconf.com/share/post-goatchi-square.mp4) (LinkedIn, Instagram, Mastodon), [`post-goatchi-wide.mp4`](https://goatconf.com/share/post-goatchi-wide.mp4) (X, Bluesky), [`post-goatchi-vertical.mp4`](https://goatconf.com/share/post-goatchi-vertical.mp4) (Instagram Reels and Stories): 22 seconds, silent, words on screen; a goat says hello and blinks, the seven goats to pick from, feeding, playing and sleeping with the needs filling, a pet, postcards from Tuzla, and where to play. Made with Remotion from Goatchi's own painted goats, outside the repository; the postcards are Grad Tuzla's photos, credited on screen (source: sources/conversations/2026-10-31--org--goatchi-promo-video.md)
 - **Image:** [`post-goatchi-square.png`](https://goatconf.com/share/post-goatchi-square.png), [`post-goatchi-wide.png`](https://goatconf.com/share/post-goatchi-wide.png), where a video does not fit.
 - **LinkedIn:**
@@ -185,7 +186,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### After Goatchi's post, week 3: Registration is open, and free
 
-- **State:** drafted, waiting: on 2026-10-31 the organiser held this Saturday's slot for Goatchi, to be promoted once it is final, and this post waits until after it (source: sources/conversations/2026-10-31--org--goatchi-full-game.md; [the pitch](../pitches/goatchi-full-game.md))
+- **State:** drafted, next: it waited until after Goatchi's post, which went out on 2026-10-31 (sources: sources/conversations/2026-10-31--org--goatchi-full-game.md, sources/conversations/2026-10-31--org--goatchi-post-published.md)
 - **Image:** [`post-register-square.png`](https://goatconf.com/share/post-register-square.png) (LinkedIn, Mastodon), [`post-register-wide.png`](https://goatconf.com/share/post-register-wide.png) (X, Bluesky)
 - **LinkedIn:**
 

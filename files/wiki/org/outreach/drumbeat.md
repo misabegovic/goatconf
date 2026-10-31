@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-31--org--goatchi-post-published.md
   - sources/conversations/2026-10-31--org--goatchi-promo-video.md
   - sources/conversations/2026-10-27--org--city-of-salt-published.md
   - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
@@ -51,8 +52,8 @@ The texts are on three pages: [October to December 2026](drumbeat-2026.md), [Jan
 | Already out | week 1 | [GoatConf is happening](drumbeat-2026.md) | `post-save-the-date` | published |
 | Sat 24 Oct 2026 | week 2 | [Run a session: the call is open](drumbeat-2026.md) | `post-run-a-session` | published |
 | Tue 27 Oct 2026 | Tuesday, Tuzla | [A city of salt](drumbeat-2026.md) | `post-city-of-salt` | published |
-| Sat 31 Oct 2026 | week 3 | [Meet Goatchi](drumbeat-2026.md) | `post-goatchi` (video and image) | drafted, waits for Goatchi to be called final |
-| After Goatchi's post | week 3 | [Registration is open, and free](drumbeat-2026.md) | `post-register` | drafted, waits for Goatchi |
+| Sat 31 Oct 2026 | week 3 | [Meet Goatchi](drumbeat-2026.md) | `post-goatchi` (video and image) | published |
+| After Goatchi's post | week 3 | [Registration is open, and free](drumbeat-2026.md) | `post-register` | drafted, next |
 | Tue 3 Nov 2026 | Tuesday, Tuzla | [7,000 years of salt](drumbeat-2026.md) | `post-seven-thousand-years` | drafted |
 | Sat 7 Nov 2026 | week 4 | [The first speakers are here](drumbeat-2026.md) | `post-first-speakers` | drafted |
 | Tue 10 Nov 2026 | Tuesday, Tuzla | [Meet at Meša and Ismet](drumbeat-2026.md) | `post-mesa-and-ismet` | drafted |

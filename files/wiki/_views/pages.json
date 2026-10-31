@@ -1027,6 +1027,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-31--org--goatchi-post-published.md",
         "sources/conversations/2026-10-31--org--goatchi-promo-video.md",
         "sources/conversations/2026-10-31--org--goatchi-blink-go.md",
         "sources/conversations/2026-10-31--org--goatchi-pet-cute.md",
@@ -1093,7 +1094,7 @@
         "sources/conversations/2026-10-12--org--day-chain-and-session-format.md",
         "sources/conversations/2026-10-12--org--two-core-days-and-saturday.md"
       ],
-      "tokens": 7751
+      "tokens": 7742
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -1222,6 +1223,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-31--org--goatchi-post-published.md",
         "sources/conversations/2026-10-31--org--goatchi-promo-video.md",
         "sources/conversations/2026-10-27--org--city-of-salt-published.md",
         "sources/conversations/2026-10-26--org--confirmed-speaker-cards.md",
@@ -1243,7 +1245,7 @@
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
         "sources/web/images/food-photos-chosen-2026-10-13.md"
       ],
-      "tokens": 3107
+      "tokens": 3093
     },
     {
       "path": "org/outreach/ipi-proposal.md",
