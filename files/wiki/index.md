@@ -18,6 +18,7 @@ what is proposed is on the [pitches hub](org/pitches/index.md).
 ## What changed
 
 <!-- home-section: filled; maintained-by: /shape; updated: 2026-10-24 -->
+- **2026-10-31**: **Bet: more goat animations.** The organiser bet on all of it; and approved its plan and decision record: tap to pet first, then a peek set and a whole set of painted frames for every goat ([the PRD](org/prds/goat-animations.md), [the ADR](org/adrs/goat-animations.md); source: sources/conversations/2026-10-31--org--goat-animations-bet.md).
 - **2026-10-31**: **A pitch: more goat animations.** Tap to pet, ears and tail that move at rest, and more tricks, for every goat. Medium appetite, not bet on yet ([the pitch](org/pitches/goat-animations.md); source: sources/conversations/2026-10-31--org--more-goat-animations.md).
 - **2026-10-31**: **A goat on every food and Tuzla photo.** Thirteen new scenes, every pie its own, every walking goat on four hooves; the speakers' goats stand as tall as the others again and turn as they travel ([the decision](org/adrs/goatchi-full-game.md); source: sources/conversations/2026-10-31--org--food-and-tuzla-goats.md).
 - **2026-10-31**: **Every speaker's goat peeks and looks around.** All eight speakers' goats peek over their cards the old way, head, chest and hooves, painted looking in nine directions; each notices the mouse when it comes near, holds the look, and goes back to its own moves ([the decision](org/adrs/goatchi-full-game.md); source: sources/conversations/2026-10-31--org--all-speakers-peek-and-look-around.md).

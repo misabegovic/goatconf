@@ -272,6 +272,25 @@
       ]
     },
     {
+      "path": "org/adrs/goat-animations.md",
+      "title": "Goat animations: a peek set and a whole set of painted frames per goat, swapped like the looking frames",
+      "kind": "decision",
+      "status": "accepted",
+      "updated": "2026-10-31",
+      "confidence": "medium",
+      "affects": [
+        "org"
+      ],
+      "sources": [
+        "wiki/org/prds/goat-animations.md",
+        "sources/conversations/2026-10-31--org--goat-animations-bet.md",
+        "site/album.js",
+        "site/goatchi.js",
+        "tools/goat_atlas.py"
+      ],
+      "tokens": 557
+    },
+    {
       "path": "org/adrs/goat-mascot.md",
       "title": "A cute goat mascot that peeks over the open slots, in roles from the EuRuKo 2024 goat multiverse",
       "kind": "decision",
@@ -921,6 +940,7 @@
       "sources": [],
       "tokens": 2186,
       "affected_by": [
+        "org/adrs/goat-animations.md",
         "org/adrs/goat-tamagotchi-on-the-site.md",
         "org/adrs/goatchi-full-game.md",
         "org/ideas/lightning-talks.md",
@@ -932,6 +952,7 @@
         "org/pitches/goat-animations.md",
         "org/pitches/goat-tamagotchi-on-the-site.md",
         "org/pitches/goatchi-full-game.md",
+        "org/prds/goat-animations.md",
         "org/prds/goat-tamagotchi-on-the-site.md",
         "org/prds/goatchi-full-game.md"
       ]
@@ -1462,7 +1483,8 @@
       "path": "org/pitches/goat-animations.md",
       "title": "More goat animations: tap to pet, ears and tail that move at rest, and more tricks",
       "kind": "pitch",
-      "status": "draft",
+      "status": "superseded",
+      "superseded_by": "org/prds/goat-animations.md",
       "updated": "2026-10-31",
       "appetite": "medium",
       "confidence": "low",
@@ -1533,7 +1555,7 @@
       "status": "draft",
       "updated": "2026-10-31",
       "sources": [],
-      "tokens": 1042
+      "tokens": 1061
     },
     {
       "path": "org/pitches/one-goat-minimal-core-and-extensions.md",
@@ -1969,6 +1991,24 @@
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/open-program-every-room.md"
       ]
+    },
+    {
+      "path": "org/prds/goat-animations.md",
+      "title": "More goat animations: tap to pet, ears and tail that move at rest, and more tricks",
+      "kind": "initiative",
+      "status": "living",
+      "updated": "2026-10-31",
+      "appetite": "medium",
+      "confidence": "medium",
+      "supersedes": "org/pitches/goat-animations.md",
+      "affects": [
+        "org"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-31--org--goat-animations-bet.md",
+        "sources/conversations/2026-10-31--org--more-goat-animations.md"
+      ],
+      "tokens": 720
     },
     {
       "path": "org/prds/goat-tamagotchi-on-the-site.md",

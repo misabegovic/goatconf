@@ -818,3 +818,8 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #232: org: pitch more goat animations
    diff: 7 files, +108/-1
    restricted-paths: false
+2026-10-31 shape — pitch → files/wiki/org/prds/goat-animations.md (PM agent)
+2026-10-31 shape — files/wiki/org/prds/goat-animations.md → files/wiki/org/adrs/goat-animations.md (Tech Lead agent)
+2026-10-31 merge — PR #233: org: the plan and decision for more goat animations
+   diff: 9 files, +191/-5
+   restricted-paths: false
