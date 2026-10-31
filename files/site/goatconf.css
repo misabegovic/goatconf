@@ -789,8 +789,8 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goat-one__stage.is-scene { right: -1rem; width: 62%; translate: none; }
 /* On a food photo the goat stays off the food: small, in the white corner beside the tag and the price, which keep
    room for it (organiser, 2026-10-31). */
-.goat-one__stage.is-scene.is-food { right: 0.3rem; bottom: 0.2rem; width: 30%; }
-.goat-one .slots--food .sticker--photo:has(.goat-scene) :is(.tag, .price) { margin-right: 33%; }
+.goat-one__stage.is-scene.is-food { right: 0.2rem; bottom: 0.1rem; width: 38%; }
+.goat-one .slots--food .sticker--photo:has(.goat-scene) :is(.tag, .price) { margin-right: 40%; }
 /* The goats a page places by hand: over the organiser's numbers, over the conduct photo, and waving goodbye */
 .print { position: relative; }
 #see-you { position: relative; }
