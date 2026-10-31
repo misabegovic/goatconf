@@ -6,7 +6,11 @@ it in their own browser: they feed it, play with it and let it sleep, and it sul
 dies. The page is written here; the game is site/goatchi.js, loaded on this page only, and the rest of the site
 is unchanged apart from a link in the footer.
 
-  build [--check]  write site/goatchi.html; with --check, fail if it is not current
+Goatchi can be installed on its own (ADR wiki/org/adrs/goatchi-full-game.md): this tool also writes its web manifest
+and its home-screen icons, cut from the sitting goat on the album's blue; site/goatchi-sw.js is its service worker,
+registered by goatchi.js for the Goatchi page only, once a goat is kept.
+
+  build [--check]  write site/goatchi.html, its manifest and icons; with --check, fail if any is not current
 
 Usage: python3 tools/goatchi.py build [--check]
 (ADR wiki/org/adrs/goat-tamagotchi-on-the-site.md)
@@ -14,6 +18,8 @@ Usage: python3 tools/goatchi.py build [--check]
 from __future__ import annotations
 
 import argparse
+import io
+import json
 import sys
 from html import escape as esc
 from pathlib import Path
@@ -28,6 +34,12 @@ import speakers  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGE = ROOT / "site" / "goatchi.html"
+MANIFEST = ROOT / "site" / "goatchi.webmanifest"
+# The home-screen icons: name, size, and how much of the square the goat fills (less for the maskable one, which a
+# phone may crop to a circle).
+ICONS = (("img/goatchi-icon-192.png", 192, 0.82, ""), ("img/goatchi-icon-512.png", 512, 0.82, ""),
+         ("img/goatchi-icon-maskable-512.png", 512, 0.62, "maskable"))
+BLUE = (11, 61, 145)
 # The goats anyone can keep, in order, with their names.
 NAMES = {"sitting": "The goat", "sticker-host": "The host", "sticker-coder": "The coder", "sticker-speaker": "The speaker",
          "sticker-cook": "The cook", "sticker-pirate": "The pirate", "sticker-hidden": "The shy one"}
@@ -84,6 +96,8 @@ def page() -> str:
       </ul>
       <p class="goatchi__confirm" hidden><span></span> <button type="button" class="goatchi__link" data-act="yes">Yes</button> <button type="button" class="goatchi__link" data-act="no">No</button></p>
       <p><button type="button" class="goatchi__link" data-act="let-go">Let your goat go</button></p>
+      <p class="goatchi__install" hidden><button type="button" class="button">Add Goatchi to your home screen</button></p>
+      <p class="goatchi__remind goatchi__mode" hidden><label><input type="checkbox"> Tell me when my goat needs me</label> <span class="goatchi__remind-note" aria-live="polite"></span></p>
     </div>
   </div>
   <div class="goatchi__empty copy copy--wide">
@@ -119,7 +133,57 @@ def page() -> str:
                       "Goatchi: keep a GoatConf goat in your browser. Feed it, play with it and let it sleep; it counts the days to GoatConf in Tuzla.",
                       (src, w, h, ""), "Goatchi", "Keep a GoatConf goat: feed it, play with it, and let it sleep. It lives in your browser and never dies.",
                       main, "files/tools/goatchi.py build", preview="goatchi-preview.png", photo_class=" page-head__photo--mark")
+    html = html.replace('<link rel="apple-touch-icon" href="apple-touch-icon.png">',
+                        '<link rel="apple-touch-icon" href="apple-touch-icon.png">\n<link rel="manifest" href="goatchi.webmanifest">', 1)
     return html.replace('<script src="album.js" defer></script>', '<script src="album.js" defer></script>\n<script src="goatchi.js" defer></script>')
+
+
+def manifest() -> str:
+    """Goatchi as an app of its own: it starts at goatchi.html, and its scope is the Goatchi page only."""
+    icons = [{"src": src, "sizes": f"{n}x{n}", "type": "image/png", **({"purpose": purpose} if purpose else {})}
+             for src, n, _fill, purpose in ICONS]
+    return json.dumps({
+        "id": "goatchi.html", "name": "Goatchi: keep a GoatConf goat", "short_name": "Goatchi",
+        "description": "Keep a GoatConf goat: feed it, play with it and let it sleep. It counts the days to GoatConf in Tuzla.",
+        "start_url": "goatchi.html", "scope": "goatchi", "display": "standalone",
+        "background_color": "#0b3d91", "theme_color": "#0b3d91", "icons": icons,
+    }, indent=1, ensure_ascii=False) + "\n"
+
+
+def icon(n: int, fill: float) -> bytes:
+    """The sitting goat, centred on the album's blue, as a PNG."""
+    from PIL import Image
+    goat = Image.open(ROOT / "site" / goat_atlas.single("sitting")[0].split("?")[0]).convert("RGBA")
+    k = n * fill / max(goat.size)
+    goat = goat.resize((round(goat.width * k), round(goat.height * k)), Image.LANCZOS)
+    out = Image.new("RGBA", (n, n), BLUE + (255,))
+    out.alpha_composite(goat, ((n - goat.width) // 2, (n - goat.height) // 2))
+    buf = io.BytesIO()
+    out.convert("RGB").save(buf, "PNG", optimize=True)
+    return buf.getvalue()
+
+
+def write_app(check: bool) -> int:
+    """The manifest and the icons; the icons are only checked to exist, since they need Pillow to draw."""
+    stale = 0
+    have = MANIFEST.read_text(encoding="utf-8") if MANIFEST.exists() else ""
+    if have != manifest():
+        if check:
+            print(f"site/{MANIFEST.name} is out of date: run python3 tools/goatchi.py build")
+            stale += 1
+        else:
+            MANIFEST.write_text(manifest(), encoding="utf-8")
+            print(f"wrote site/{MANIFEST.name}")
+    for src, n, fill, _purpose in ICONS:
+        path = ROOT / "site" / src
+        if check:
+            if not path.exists():
+                print(f"site/{src} is missing: run python3 tools/goatchi.py build")
+                stale += 1
+        else:
+            path.write_bytes(icon(n, fill))
+            print(f"wrote site/{src}")
+    return stale
 
 
 def main(argv=None) -> int:
@@ -129,7 +193,8 @@ def main(argv=None) -> int:
     b.add_argument("--check", action="store_true")
     args = ap.parse_args(argv)
     pages = {PAGE: nav.place(meta.tag(page()), nav.section(PAGE.name))}
-    return 1 if sitelib.write_or_check(pages, args.check, "tools/goatchi.py build") else 0
+    stale = sitelib.write_or_check(pages, args.check, "tools/goatchi.py build") + write_app(args.check)
+    return 1 if stale else 0
 
 
 if __name__ == "__main__":

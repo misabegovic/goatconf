@@ -783,3 +783,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #221: org: how Goatchi grows into a full game
    diff: 9 files, +238/-8
    restricted-paths: false
+2026-10-31 merge — PR #222: site: Goatchi installable, with reminders the player turns on
+   diff: 10 files, +474/-5
+   restricted-paths: true
