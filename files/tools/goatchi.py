@@ -46,6 +46,25 @@ NAMES = {"sitting": "The goat", "sticker-host": "The host", "sticker-coder": "Th
 FOOD = goat_atlas.GOATCHI_FOOD
 # The first day of GoatConf 2027, which the goat counts down to.
 DAY_ONE = "2027-06-03"
+# The postcards a kept goat sends from Tuzla, at so many days kept (ADR goatchi-full-game): photos the site already
+# shows, each with the credit its giver asked for.
+POSTCARDS = ((7, "city-lakes-aerial-summer", "The salt lakes"), (30, "city-square-fountain-summer", "Freedom Square"),
+             (100, "city-korzo-clock", "The Korzo"))
+
+
+def postcards() -> list:
+    out = []
+    for day, photo, place in POSTCARDS:
+        info = json.loads((ROOT / "assets" / "images" / "city" / f"{photo}.jpg.json").read_text(encoding="utf-8"))
+        w, h = goat_atlas.webp_size(ROOT / "site" / "img" / f"{photo}-480.webp")
+        out.append({"day": day, "src": f"img/{photo}-480.webp", "w": w, "h": h, "place": place, "alt": info["title"],
+                    "credit": info["required_credit_line"]})
+    return out
+
+
+def poses(goat: str) -> dict:
+    """The goat's own poses on the site, each as the pictures it may show."""
+    return {pose: [goat_atlas.single(n)[0] for n in names] for pose, names in goat_atlas.goatchi_poses(goat).items()}
 
 
 def goats(people) -> list:
@@ -68,8 +87,13 @@ def page() -> str:
     people = [(slug, m) for slug, (m, _body) in speakers.listed(speakers.speakers())]
     picks = "\n".join(
         f'    <li><button type="button" class="goatchi__pick-goat" data-pose="{g["pose"]}" data-name="{esc(g["name"])}" '
-        f'data-src="{goat_atlas.single(g["pose"])[0]}" data-speaker="{g["speaker"]}">{_img(g["pose"], "goatchi__thumb")}'
+        f'data-src="{goat_atlas.single(g["pose"])[0]}" data-speaker="{g["speaker"]}" '
+        f'data-poses="{esc(json.dumps(poses(g["pose"]), separators=(",", ":")))}">{_img(g["pose"], "goatchi__thumb")}'
         f'<span>{esc(g["name"])}</span></button></li>' for g in goats(people))
+    cards = "\n".join(
+        f'          <li class="goatchi__card" data-day="{c["day"]}"><span class="goatchi__card-lock">At {c["day"]} days</span>'
+        f'<figure hidden><img src="{c["src"]}" width="{c["w"]}" height="{c["h"]}" alt="{esc(c["alt"])}" loading="lazy" decoding="async">'
+        f'<figcaption>{esc(c["place"])} <small>{esc(c["credit"])}</small></figcaption></figure></li>' for c in postcards())
     food = "|".join(goat_atlas.single(p)[0] for p in FOOD)
     main = f"""<section class="album-page wrap" id="goatchi" aria-labelledby="h-goat" data-food="{food}" data-sleep="{goat_atlas.single("asleep")[0]}" data-day="{DAY_ONE}">
   <h2 class="band" id="h-goat">Your goat</h2>
@@ -88,6 +112,12 @@ def page() -> str:
       <p class="goatchi__lasts"></p>
       <p class="goatchi__acts"><button type="button" class="button" data-act="feed">Feed</button> <button type="button" class="button" data-act="play">Play</button> <button type="button" class="button" data-act="sleep">Sleep</button></p>
       <p class="goatchi__trip"></p>
+      <div class="goatchi__mail">
+        <p class="goatchi__mail-intro">Postcards from Tuzla, the longer you keep your goat:</p>
+        <ul class="goatchi__cards">
+{cards}
+        </ul>
+      </div>
       <p class="goatchi__cheers-intro">Your goat cheers up the first time you:</p>
       <ul class="goatchi__cheers">
         <li><a data-cheer="speaker" href="speakers.html">See who is speaking</a></li>
@@ -133,6 +163,10 @@ def page() -> str:
                       "Goatchi: keep a GoatConf goat in your browser. Feed it, play with it and let it sleep; it counts the days to GoatConf in Tuzla.",
                       (src, w, h, ""), "Goatchi", "Keep a GoatConf goat: feed it, play with it, and let it sleep. It lives in your browser and never dies.",
                       main, "files/tools/goatchi.py build", preview="goatchi-preview.png", photo_class=" page-head__photo--mark")
+    # A kept goat's game comes first on phones: known before the page paints, so nothing jumps once it has.
+    html = html.replace('<link rel="stylesheet" href="goatconf.css">',
+                        '<script>try{localStorage.getItem("goatconf-goatchi")&&document.documentElement.classList.add("goatchi-kept")}catch(e){}</script>\n'
+                        '<link rel="stylesheet" href="goatconf.css">', 1)
     html = html.replace('<link rel="apple-touch-icon" href="apple-touch-icon.png">',
                         '<link rel="apple-touch-icon" href="apple-touch-icon.png">\n<link rel="manifest" href="goatchi.webmanifest">', 1)
     return html.replace('<script src="album.js" defer></script>', '<script src="album.js" defer></script>\n<script src="goatchi.js" defer></script>')

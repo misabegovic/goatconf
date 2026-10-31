@@ -76,11 +76,33 @@ GOATCHI_GOATS = ("sitting", "sticker-host", "sticker-coder", "sticker-speaker", 
 GOATCHI_FOOD = ("sticker-burek", "sticker-cevapi", "sticker-fildzan")
 # In Goatchi's challenge mode a neglected goat goes exploring: the goat hiking above Tuzla.
 GOATCHI_GONE = "sticker-hike"
+# Goatchi as a full game (ADR goatchi-full-game): each goat type's own poses, so a kept goat eats, sleeps, plays and
+# shows its mood as itself. A pose's master is named for its type and pose (pirate-eating); the plain goat's poses
+# painted earlier stand in for the ones it already has.
+GOATCHI_TYPES = {"sitting": "goat", "sticker-host": "host", "sticker-coder": "coder", "sticker-speaker": "speaker",
+                 "sticker-cook": "cook", "sticker-pirate": "pirate", "sticker-hidden": "hidden"}
+GOATCHI_POSES = ("eating", "sleeping", "playing", "hungry", "sulking", "happy", "hiking", "packing")
+GOATCHI_PAINTED = {"goat-eating": GOATCHI_FOOD, "goat-sleeping": ("asleep",), "goat-happy": ("jumping",), "goat-hiking": (GOATCHI_GONE,)}
+
+
+def goatchi_poses(goat: str) -> dict:
+    """A goat's own poses that are painted, each as the masters it may show (the plain goat eats three dishes)."""
+    kind = GOATCHI_TYPES.get(goat)
+    if not kind:
+        return {}
+    out = {}
+    for pose in GOATCHI_POSES:
+        names = tuple(n for n in GOATCHI_PAINTED.get(f"{kind}-{pose}", (f"{kind}-{pose}",)) if n in manifest())
+        if names:
+            out[pose] = names
+    return out
 
 
 def singles() -> tuple:
+    poses = tuple(sorted({n for g in GOATCHI_GOATS for names in goatchi_poses(g).values() for n in names}
+                         - {"asleep", GOATCHI_GONE, *GOATCHI_FOOD}))
     return (("asleep",) + GOATCHI_GOATS + GOATCHI_FOOD + (GOATCHI_GONE,)
-            + tuple(sorted(k for k, v in manifest().items() if v["group"] == "speakers-sitting")))
+            + tuple(sorted(k for k, v in manifest().items() if v["group"] == "speakers-sitting")) + poses)
 
 
 @lru_cache(maxsize=None)

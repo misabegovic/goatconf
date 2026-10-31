@@ -17,6 +17,18 @@
   const picks = [...document.querySelectorAll(".goatchi__pick-goat")];
   const food = root.dataset.food.split("|"), sleepSrc = root.dataset.sleep;
   const dayOne = new Date(`${root.dataset.day}T09:00:00+02:00`);
+  const stage = $(".goatchi__stage"), hike = $(".goatchi__hike"), hikeSrc = hike.getAttribute("src");
+  const cards = [...root.querySelectorAll(".goatchi__card")];
+  // A goat's own poses (ADR goatchi-full-game), from its pick: each a list of pictures. A goat without a pose shows
+  // itself, or, for eating and sleep, the plain goat's food and sleep.
+  const posesOf = (pose) => {
+    const b = picks.find((p) => p.dataset.pose === pose);
+    try { return JSON.parse((b && b.dataset.poses) || "{}"); } catch (e) { return {}; }
+  };
+  const look = (name) => {
+    const list = goatState ? posesOf(goatState.pose)[name] : null;
+    return list && list.length ? list[Math.floor(Math.random() * list.length)] : null;
+  };
 
   // Nothing is written until a goat is picked: the page only reads whether one is kept. A browser that keeps
   // nothing (storage off, or a private window that refuses it) gets a note when a goat is picked.
@@ -28,7 +40,10 @@
   const load = () => {
     try {
       const s = JSON.parse(store.getItem(KEY));
-      return s && s.pose && s.src && s.needs && NEEDS.every((n) => Array.isArray(s.needs[n])) ? s : null;
+      if (!(s && s.pose && s.src && s.needs && NEEDS.every((n) => Array.isArray(s.needs[n])))) return null;
+      // A goat kept before the postcards came starts with none, and earns at once what its days already have.
+      if (!Array.isArray(s.cards)) s.cards = [];
+      return s;
     } catch (e) { return null; }
   };
   let goatState = store ? load() : null;
@@ -85,9 +100,42 @@
     $(".goatchi__lasts").textContent = lasts();
   };
 
+  const daysToTuzla = () => Math.ceil((dayOne - Date.now()) / 864e5);
+  // The goat's look at rest: sulking, then hungry, packing in the last week before Tuzla, happy at GoatConf and when
+  // every need is nearly full, and otherwise itself.
+  const mood = () => {
+    if (sulking()) return "sulking";
+    if (level("food") < 0.5 && level("food") <= Math.min(level("play"), level("sleep"))) return "hungry";
+    const d = daysToTuzla();
+    if (d >= 1 && d <= 7) return "packing";
+    if ((d <= 0 && d > -3) || NEEDS.every((n) => level(n) >= 0.9)) return "happy";
+    return "rest";
+  };
+  const restLook = () => (mood() !== "rest" && look(mood())) || goatState.src;
+  // Postcards from Tuzla at so many days kept: earned once each, kept with the goat.
+  const earn = () => {
+    const days = daysKept(Date.now());
+    const fresh = cards.map((c) => +c.dataset.day).filter((d) => days >= d && !goatState.cards.includes(d));
+    if (!fresh.length) return false;
+    goatState.cards.push(...fresh);
+    save();
+    return true;
+  };
+  const showCards = () => cards.forEach((c) => {
+    const got = goatState.cards.includes(+c.dataset.day);
+    c.querySelector("figure").hidden = !got;
+    c.querySelector(".goatchi__card-lock").hidden = got;
+  });
+  let preloaded = "";
+  const preload = () => {
+    if (preloaded === goatState.pose) return;
+    preloaded = goatState.pose;
+    Object.values(posesOf(goatState.pose)).flat().forEach((src) => { const i = new Image(); i.decoding = "async"; i.src = src; });
+  };
+
   // What the goat says when nothing has just happened: sulking, or the days to Tuzla.
   const trip = () => {
-    const days = Math.ceil((dayOne - Date.now()) / 864e5);
+    const days = daysToTuzla();
     if (days > 1) return `${days} days to Tuzla!`;
     if (days === 1) return "Tuzla tomorrow!";
     if (days > -3) return "It's GoatConf!";
@@ -103,18 +151,22 @@
   const render = () => {
     const left = goatState ? leftAt() : 0;
     const kept = !!goatState && !left;
+    document.documentElement.classList.toggle("goatchi-kept", kept);
     playing.hidden = !kept;
     empty.hidden = !!goatState;
     gone.hidden = !left;
     if (left) {
       const days = daysKept(left);
+      hike.src = look("hiking") || hikeSrc;
       $(".goatchi__gone-line").textContent = `${goatState.name} went exploring the hills above Tuzla. You kept ${goatState.name.startsWith("The ") ? "it" : "them"} for ${days} day${days === 1 ? "" : "s"}.`;
       picks.forEach((b) => b.setAttribute("aria-pressed", "false"));
       return;
     }
     picks.forEach((b) => b.setAttribute("aria-pressed", String(kept && b.dataset.pose === goatState.pose)));
     if (!kept) return;
-    goat.src = goatState.src;
+    preload();
+    goat.src = restLook();
+    stage.dataset.mood = mood();
     goat.alt = goatState.name;
     $(".goatchi__name").textContent = goatState.name;
     $(".goatchi__kept").textContent = `${keptLine(daysKept(Date.now()))}${goatState.challenge ? ", in challenge mode" : ""}`;
@@ -123,7 +175,10 @@
     if (goatState.speaker) { speaker.href = goatState.speaker; speaker.textContent = `Read about ${goatState.name.replace(/'s goat$/, "")}`; }
     root.querySelectorAll("[data-cheer]").forEach((a) => a.classList.toggle("is-done", goatState.cheered.includes(a.dataset.cheer)));
     $(".goatchi__trip").textContent = trip().replace("!", ".");
-    speak(sulking() ? "Baaa…" : trip());
+    const news = earn();
+    showCards();
+    if (news) speak("A postcard from Tuzla!", 3200);
+    else speak(sulking() ? "Baaa…" : trip());
   };
 
   // A small move for the goat, by transform only; with reduced motion it stays where it is.
@@ -134,12 +189,19 @@
     { transform: "translateY(3%) scale(1.06, 0.92)", offset: 0.8, easing: "ease-out" },
     { transform: "none" },
   ], { duration: 760 });
-  // For a moment the goat is shown eating or asleep, then it is itself again.
-  const show = (src, ms) => { goat.src = src; setTimeout(() => { if (goatState) goat.src = goatState.src; }, ms); };
+  // For a moment the goat is shown eating, playing or asleep, moving as it does, then it is itself again.
+  let showing = 0;
+  const show = (src, ms, act) => {
+    goat.src = src;
+    stage.classList.remove("is-eating", "is-playing", "is-sleeping");
+    stage.classList.add(act);
+    clearTimeout(showing);
+    showing = setTimeout(() => { stage.classList.remove(act); if (goatState) goat.src = restLook(); }, ms);
+  };
   const acts = {
-    feed: () => { fill("food", 1); show(food[Math.floor(Math.random() * food.length)], 2600); speak("Yum! Baaa!", 2600); },
-    play: () => { fill("play", 1); hop(); speak("Baaa! Again!", 1800); },
-    sleep: () => { fill("sleep", 1); show(sleepSrc, 3200); speak("Zzz…", 3200); },
+    feed: () => { fill("food", 1); show(look("eating") || food[Math.floor(Math.random() * food.length)], 2600, "is-eating"); speak("Yum! Baaa!", 2600); },
+    play: () => { fill("play", 1); const p = look("playing"); if (p) show(p, 2200, "is-playing"); hop(); speak("Baaa! Again!", 2200); },
+    sleep: () => { fill("sleep", 1); show(look("sleeping") || sleepSrc, 3200, "is-sleeping"); speak("Zzz…", 3200); },
   };
 
   // Asking before a goat is let go or swapped, on the page itself.
@@ -163,7 +225,7 @@
     if (goatState && goatState.remind) remindOff();
     const now = Date.now();
     goatState = { pose: b.dataset.pose, name: b.dataset.name, src: b.dataset.src, speaker: b.dataset.speaker || "", since: now,
-      needs: Object.fromEntries(NEEDS.map((n) => [n, [1, now]])), cheered: [],
+      needs: Object.fromEntries(NEEDS.map((n) => [n, [1, now]])), cheered: [], cards: [],
       challenge: !!document.querySelector(".goatchi__challenge:checked") };
     save();
     render();
