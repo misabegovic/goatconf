@@ -1,13 +1,14 @@
 ---
 title: "Goatchi as a full game: one image per pose from the atlas, a story to Tuzla, installable, with opt-in reminders made on the device"
 kind: decision
-status: draft
+status: accepted
 updated: 2026-10-31
 confidence: medium
 affects:
   - org
 sources:
   - wiki/org/prds/goatchi-full-game.md
+  - sources/conversations/2026-10-31--org--goatchi-full-game-adr-approved.md
   - sources/conversations/2026-10-31--org--goatchi-how-app-and-reminders.md
   - sources/conversations/2026-10-31--org--goatchi-full-game-bet.md
   - sources/conversations/2026-10-31--org--goatchi-full-game.md

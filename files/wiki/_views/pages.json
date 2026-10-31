@@ -341,7 +341,7 @@
       "path": "org/adrs/goatchi-full-game.md",
       "title": "Goatchi as a full game: one image per pose from the atlas, a story to Tuzla, installable, with opt-in reminders made on the device",
       "kind": "decision",
-      "status": "draft",
+      "status": "accepted",
       "updated": "2026-10-31",
       "confidence": "medium",
       "affects": [
@@ -349,6 +349,7 @@
       ],
       "sources": [
         "wiki/org/prds/goatchi-full-game.md",
+        "sources/conversations/2026-10-31--org--goatchi-full-game-adr-approved.md",
         "sources/conversations/2026-10-31--org--goatchi-how-app-and-reminders.md",
         "sources/conversations/2026-10-31--org--goatchi-full-game-bet.md",
         "sources/conversations/2026-10-31--org--goatchi-full-game.md",
@@ -912,7 +913,7 @@
       "status": "draft",
       "updated": "2026-10-28",
       "sources": [],
-      "tokens": 2194,
+      "tokens": 2186,
       "affected_by": [
         "org/adrs/goat-tamagotchi-on-the-site.md",
         "org/adrs/goatchi-full-game.md",
