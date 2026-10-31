@@ -43,7 +43,7 @@ timeline, budget, and decisions that touch more than one area.
   - [Supporters who fund a named thing, and hiring that attendees opt into](prds/supporters-and-hiring.md)
   - [Website and registration: goatconf.com and a free pass per core day](prds/website-and-registration.md)
 - [Keep a goat: a free tamagotchi of the painted goats](prds/goat-tamagotchi-on-the-site.md): a PRD on its own, bet on 2026-10-28, approved 2026-10-28, with [its ADR](adrs/goat-tamagotchi-on-the-site.md) (accepted 2026-10-28): a page of its own.
-- [Goatchi as a full game, and more poses for every goat](prds/goatchi-full-game.md): a PRD on its own, bet on 2026-10-31, drafted for the organiser's approval: each goat type's own poses, moods, a story to Tuzla, then the home page's goats on the same art.
+- [Goatchi as a full game, and more poses for every goat](prds/goatchi-full-game.md): a PRD on its own, bet on 2026-10-31, approved 2026-10-31: each goat type's own poses, moods, a story to Tuzla, then the home page's goats on the same art.
 - ADRs, one per PRD, accepted by the organiser on 2026-10-07:
   - [The organiser runs the goat hunt; the core publishes prices, the breaks list and the lake day](adrs/activities-lake-and-town.md)
   - [Keep the public ledger as one CSV file here, rendered as the budget page](adrs/budget-and-public-ledger.md) (superseded)

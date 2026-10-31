@@ -886,7 +886,7 @@
       "status": "draft",
       "updated": "2026-10-28",
       "sources": [],
-      "tokens": 2160,
+      "tokens": 2161,
       "affected_by": [
         "org/adrs/goat-tamagotchi-on-the-site.md",
         "org/ideas/lightning-talks.md",
