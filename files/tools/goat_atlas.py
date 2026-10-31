@@ -198,7 +198,10 @@ def goat(pose: str, cls: str, beat: int = 0) -> str:
     c = L["cells"][pose]
     W, H, cw, ch = L["width"], L["height"], L["cell_w"], L["cell_h"]
     y0 = c["row"] * ch
-    style = (f'--beat:-{beat}s;--edge:{_pct(100 * L["edge"] / ch)};aspect-ratio:{cw}/{ch};background-image:url({stamped(L["file"])});'
+    # A speaker's goat is painted wider than the role goats (its head turns need room for the ears), so its box is
+    # drawn that much wider and the goat stands as tall as the others (organiser, 2026-10-31).
+    size = f"--size:{round(cw / layout('roles')['cell_w'], 3):g};" if sheet_of(pose) == "speakers" else ""
+    style = (f'{size}--beat:-{beat}s;--edge:{_pct(100 * L["edge"] / ch)};aspect-ratio:{cw}/{ch};background-image:url({stamped(L["file"])});'
              f'background-size:{_pct(100 * W / cw)} auto;background-position:0 {_pct(100 * y0 / (H - ch)) if H > ch else "0"}')
     eyes = ""
     e = c["eyes"]

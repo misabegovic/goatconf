@@ -808,3 +808,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #229: site: a goat for every food and Tuzla photo
    diff: 6 files, +117/-26
    restricted-paths: true
+2026-10-31 merge — PR #230: site: speakers' goats full size and turning again; food goats off the food
+   diff: 37 files, +176/-130
+   restricted-paths: true

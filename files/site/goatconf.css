@@ -710,25 +710,25 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goat-blink { position: absolute; display: block; background-image: inherit; background-repeat: no-repeat; opacity: 0; animation: goat-blink 7s infinite; animation-delay: var(--beat, 0s); }
 @keyframes goat-blink { 0%, 93%, 98%, 100% { opacity: 0 } 94.5%, 96.5% { opacity: 1 } }
 .goat-sit { position: relative; }
-.peek { position: absolute; right: 0.6rem; bottom: 100%; width: 6.8rem; translate: 0 calc(100% - var(--edge)); pointer-events: none; transition: transform 220ms var(--ease); }
+.peek { position: absolute; right: 0.6rem; bottom: 100%; width: calc(6.8rem * var(--size, 1)); translate: 0 calc(100% - var(--edge)); pointer-events: none; transition: transform 220ms var(--ease); }
 .slot--link:hover .peek, .slot--link:focus-visible .peek { transform: translateY(-0.45rem); }
 .slots:has(.peek), .album-page .slots:has(.peek) { row-gap: 4.6rem; padding-top: 4.2rem; }
 .slots--hero:has(.peek), .album-page .slots--hero:has(.peek) { row-gap: 3.6rem; padding-top: 0; }
-.slots--hero .peek { width: 5.2rem; }
-@media (max-width: 47.99rem) { .peek { width: 5.8rem; } .slots:has(.peek), .album-page .slots:has(.peek) { row-gap: 4.2rem; padding-top: 3.8rem; } }
+.slots--hero .peek { width: calc(5.2rem * var(--size, 1)); }
+@media (max-width: 47.99rem) { .peek { width: calc(5.8rem * var(--size, 1)); } .slots:has(.peek), .album-page .slots:has(.peek) { row-gap: 4.2rem; padding-top: 3.8rem; } }
 /* On a speaker's page their goat stands on each band's bottom edge, its head in the band, its hooves on the rule */
 .band { position: relative; }
 /* The hidden goat in the goat story peeks up beside the saying, not over the line above it */
 .saying { padding-right: 6.5rem; }
 .saying > .peek { right: 0; bottom: 0; width: 7.5rem; }
-.band > .peek { bottom: -0.45rem; right: clamp(1rem, 3vw, 2.5rem); width: clamp(5rem, 9vw, 6.6rem); }
+.band > .peek { bottom: -0.45rem; right: clamp(1rem, 3vw, 2.5rem); width: calc(clamp(5rem, 9vw, 6.6rem) * var(--size, 1)); }
 /* A whole goat sits in front of the band, its feet on the page just under the yellow line, and its head stays
    under the page's top edge, which clips anything above it */
 .band > .peek--whole { width: auto; bottom: -1.85rem; height: calc(100% + 0.45rem + 0.3rem + 1.4rem); }
 /* On a phone a band's heading keeps clear of the band's goat */
 @media (max-width: 47.99rem) {
   .band:has(> .peek) { padding-right: 6.1rem; text-wrap: pretty; }
-  .band > .peek:not(.peek--whole) { right: 0.5rem; width: 5.4rem; }
+  .band > .peek:not(.peek--whole) { right: 0.5rem; width: calc(5.4rem * var(--size, 1)); }
   /* A one-line band is as tall as its goat, so the page's top edge never clips the goat's horns */
   .band:has(> .peek:not(.peek--whole)) { min-height: 5.25rem; }
   /* The cook over the food section is the band's star */
@@ -736,7 +736,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   #food-title > .peek { width: 7rem; right: 0.3rem; }
 }
 /* Each speaker's own painted goat: it peeks over their card and sits beside their bio */
-.peek--face { right: 0.8rem; width: 6.6rem; z-index: 1; }
+.peek--face { right: 0.8rem; width: calc(6.6rem * var(--size, 1)); z-index: 1; }
 .sticker--speaker:hover .peek, .sticker--speaker:focus-within .peek { transform: translateY(-0.45rem); }
 .slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 5.4rem; padding-top: 5rem; }
 .speaker-page__goat { float: right; width: clamp(8.5rem, 20vw, 12.5rem); margin: 0 0 1rem 1.5rem; }
@@ -750,7 +750,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 }
 /* A whole goat sitting on its card stands as tall above the card as a peeking goat does */
 .peek--whole { width: 5.8rem; }
-@media (max-width: 47.99rem) { .peek--face { width: 5.8rem; } .peek--whole { width: 5.1rem; } .slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 4.8rem; padding-top: 4.4rem; } }
+@media (max-width: 47.99rem) { .peek--face { width: calc(5.8rem * var(--size, 1)); } .peek--whole { width: 5.1rem; } .slots:has(.peek--face), .album-page .slots:has(.peek--face) { row-gap: 4.8rem; padding-top: 4.4rem; } }
 @media (prefers-reduced-motion: reduce) { .goat-blink { animation: none; } .peek { transition: none; } .slot--link:hover .peek, .slot--link:focus-visible .peek, .sticker--speaker:hover .peek, .sticker--speaker:focus-within .peek { transform: none; } }
 
 /* The Stickers page: every sticker to tap and save (ADR sticker-packs) */
@@ -764,7 +764,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
    It stands inside the slot it is on, where the slot's own goat would, and moves by transform only. The goat
    ducks below the stage's edge line, which hides it as if behind the slot. */
 .goat-one .peek, .goat-none .peek { display: none; }
-.goat-one__stage { position: absolute; right: 0.6rem; bottom: 100%; z-index: 30; width: 6.8rem; translate: 0 calc(100% - var(--edge)); pointer-events: none; }
+.goat-one__stage { position: absolute; right: 0.6rem; bottom: 100%; z-index: 30; width: calc(6.8rem * var(--size, 1)); translate: 0 calc(100% - var(--edge)); pointer-events: none; }
 .has-goat { z-index: 2; }
 .goat-one__stage .goat { position: relative; width: 100%; transform-origin: 50% var(--edge); }
 /* The goat takes a tap or a click for a trick; its "Meee!" pops out beside its head. */
@@ -787,6 +787,10 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
    without the script the photos stay as they are. */
 .goat-scene { display: none; }
 .goat-one__stage.is-scene { right: -1rem; width: 62%; translate: none; }
+/* On a food photo the goat stays off the food: small, in the white corner beside the tag and the price, which keep
+   room for it (organiser, 2026-10-31). */
+.goat-one__stage.is-scene.is-food { right: 0.3rem; bottom: 0.2rem; width: 30%; }
+.goat-one .slots--food .sticker--photo:has(.goat-scene) :is(.tag, .price) { margin-right: 33%; }
 /* The goats a page places by hand: over the organiser's numbers, over the conduct photo, and waving goodbye */
 .print { position: relative; }
 #see-you { position: relative; }
