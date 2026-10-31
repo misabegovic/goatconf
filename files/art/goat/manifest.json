@@ -1981,7 +1981,12 @@
  },
  "sticker-coder": {
   "edge": null,
-  "eyes": null,
+  "eyes": [
+   151,
+   139,
+   406,
+   311
+  ],
   "group": "stickers",
   "h": 640,
   "w": 543
@@ -2041,7 +2046,12 @@
  },
  "sticker-cook": {
   "edge": null,
-  "eyes": null,
+  "eyes": [
+   119,
+   169,
+   329,
+   298
+  ],
   "group": "stickers",
   "h": 640,
   "w": 402
@@ -2130,7 +2140,12 @@
  },
  "sticker-hidden": {
   "edge": null,
-  "eyes": null,
+  "eyes": [
+   145,
+   125,
+   395,
+   275
+  ],
   "group": "stickers",
   "h": 640,
   "w": 493
@@ -2198,7 +2213,12 @@
  },
  "sticker-host": {
   "edge": null,
-  "eyes": null,
+  "eyes": [
+   139,
+   128,
+   405,
+   290
+  ],
   "group": "stickers",
   "h": 640,
   "w": 494
@@ -2301,7 +2321,12 @@
  },
  "sticker-pirate": {
   "edge": null,
-  "eyes": null,
+  "eyes": [
+   125,
+   154,
+   241,
+   279
+  ],
   "group": "stickers",
   "h": 640,
   "w": 447
@@ -2397,7 +2422,12 @@
  },
  "sticker-speaker": {
   "edge": null,
-  "eyes": null,
+  "eyes": [
+   134,
+   110,
+   399,
+   314
+  ],
   "group": "stickers",
   "h": 640,
   "w": 511

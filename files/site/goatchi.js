@@ -347,6 +347,19 @@
 
   // While the page stays open, the needs keep drifting.
   setInterval(() => { if (goatState && !holding) render(); }, 60e3);
+  // A goat showing its own picture blinks every few seconds, its eyes shut for a moment (ADR goat-animations); not
+  // with reduced motion. The shut picture is loaded once the goat is chosen.
+  const blinkOf = () => { const b = goatState && picks.find((p) => p.dataset.pose === goatState.pose); return b ? b.dataset.blink : ""; };
+  let blinkReady = "";
+  const blink = () => {
+    setTimeout(blink, 2600 + Math.random() * 3400);
+    const src = blinkOf();
+    if (still || !src || document.hidden || !goatState || leftAt() || goat.getAttribute("src") !== goatState.src) return;
+    if (blinkReady !== src) { const i = new Image(); i.src = src; i.decode().then(() => { blinkReady = src; }, () => {}); return; }
+    goat.src = src;
+    setTimeout(() => { if (goat.getAttribute("src") === src) goat.src = goatState.src; }, 150);
+  };
+  setTimeout(blink, 2000);
   // A goat at rest with painted frames fidgets now and then: flicks its ears, wags its tail, scratches, sneezes or
   // stretches. Not while it eats, plays or sleeps, nor with reduced motion.
   const FIDGETS = { ears: 500, tail: 700, scratch: 1400, sneeze: 600, stretch: 1700 };
