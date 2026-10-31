@@ -799,3 +799,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #226: site: goats with whole horns, and Paul Campbell's goat following the mouse
    diff: 107 files, +397/-216
    restricted-paths: true
+2026-10-31 merge — PR #227: site: Paul Campbell's goat peeks the old way, and looks around calmly
+   diff: 37 files, +143/-114
+   restricted-paths: false
