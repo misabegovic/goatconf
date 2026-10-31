@@ -1,14 +1,15 @@
 ---
 title: "Goatchi as a full game played with one goat, and more poses for every goat on the site"
 kind: initiative
-status: draft
+status: living
 updated: 2026-10-31
 appetite: big
-confidence: low
+confidence: medium
 supersedes: org/pitches/goatchi-full-game.md
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-31--org--goatchi-how-app-and-reminders.md
   - sources/conversations/2026-10-31--org--goatchi-full-game-bet.md
   - sources/conversations/2026-10-31--org--goatchi-full-game.md
   - sources/conversations/2026-10-28--org--goatchi-ship.md
@@ -174,3 +175,24 @@ grows to carry milestones and postcards while keeping today's goats, how
 moods are chosen from the needs, how the pictures load so the weight holds,
 and how the companion and the home page take up the new poses after Goatchi
 ships.
+
+## Decision
+
+The Tech Lead's answer is [the decision record](../adrs/goatchi-full-game.md):
+one image per pose cut by the atlas, a sheet per type with the plain goat's
+as the reference, moods from the needs, postcards from photos the site has,
+today's goats carried over, and Goatchi installable, with reminders the
+player turns on, made on the device.
+
+## Amendments
+
+- **2026-10-31, installable, with opt-in reminders.** While the decision
+  record was written, the organiser added Goatchi installable on its own,
+  and reminders made on the device that the player turns on, where the
+  browser supports them. The no-go "no notifications" now reads: no
+  notifications unless the player turns them on, and never from a server.
+  The organiser asked that the notifications be properly tested, so the work
+  is also done when the notification check passes a unit test, fires in
+  headless Chromium with the shown notification read back, and works by hand
+  on the organiser's Android phone and on desktop Chrome, installed
+  (source: sources/conversations/2026-10-31--org--goatchi-how-app-and-reminders.md).
