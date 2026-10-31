@@ -451,20 +451,80 @@
   "w": 464
  },
  "speaker-amar-mahmutbegovic": {
-  "edge": 572,
+  "edge": 575,
   "eyes": [
-   139,
-   176,
-   320,
-   301
+   235,
+   141,
+   537,
+   420
   ],
+  "gaze": true,
   "group": "speakers",
-  "h": 640,
-  "turn": {
-   "band": 581,
-   "pad": 96
-  },
-  "w": 404
+  "h": 679,
+  "w": 721
+ },
+ "speaker-amar-mahmutbegovic-gaze-00": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 679,
+  "w": 721
+ },
+ "speaker-amar-mahmutbegovic-gaze-01": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 679,
+  "w": 721
+ },
+ "speaker-amar-mahmutbegovic-gaze-02": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 679,
+  "w": 721
+ },
+ "speaker-amar-mahmutbegovic-gaze-10": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 679,
+  "w": 721
+ },
+ "speaker-amar-mahmutbegovic-gaze-11": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 679,
+  "w": 721
+ },
+ "speaker-amar-mahmutbegovic-gaze-12": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 679,
+  "w": 721
+ },
+ "speaker-amar-mahmutbegovic-gaze-20": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 679,
+  "w": 721
+ },
+ "speaker-amar-mahmutbegovic-gaze-21": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 679,
+  "w": 721
+ },
+ "speaker-amar-mahmutbegovic-gaze-22": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 679,
+  "w": 721
  },
  "speaker-amar-mahmutbegovic-sitting": {
   "edge": null,
@@ -474,20 +534,75 @@
   "w": 404
  },
  "speaker-carmine-paolino": {
-  "edge": 564,
-  "eyes": [
-   190,
-   210,
-   430,
-   326
-  ],
+  "edge": 575,
+  "eyes": null,
+  "gaze": true,
   "group": "speakers",
-  "h": 640,
-  "turn": {
-   "band": 585,
-   "pad": 96
-  },
-  "w": 549
+  "h": 700,
+  "w": 769
+ },
+ "speaker-carmine-paolino-gaze-00": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 700,
+  "w": 769
+ },
+ "speaker-carmine-paolino-gaze-01": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 700,
+  "w": 769
+ },
+ "speaker-carmine-paolino-gaze-02": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 700,
+  "w": 769
+ },
+ "speaker-carmine-paolino-gaze-10": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 700,
+  "w": 769
+ },
+ "speaker-carmine-paolino-gaze-11": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 700,
+  "w": 769
+ },
+ "speaker-carmine-paolino-gaze-12": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 700,
+  "w": 769
+ },
+ "speaker-carmine-paolino-gaze-20": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 700,
+  "w": 769
+ },
+ "speaker-carmine-paolino-gaze-21": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 700,
+  "w": 769
+ },
+ "speaker-carmine-paolino-gaze-22": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 700,
+  "w": 769
  },
  "speaker-carmine-paolino-sitting": {
   "edge": null,
@@ -497,16 +612,80 @@
   "w": 470
  },
  "speaker-christoph-lipautz": {
-  "edge": 558,
+  "edge": 575,
   "eyes": [
-   146,
-   143,
-   390,
-   273
+   224,
+   177,
+   499,
+   338
   ],
+  "gaze": true,
   "group": "speakers",
-  "h": 640,
-  "w": 450
+  "h": 683,
+  "w": 711
+ },
+ "speaker-christoph-lipautz-gaze-00": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 683,
+  "w": 711
+ },
+ "speaker-christoph-lipautz-gaze-01": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 683,
+  "w": 711
+ },
+ "speaker-christoph-lipautz-gaze-02": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 683,
+  "w": 711
+ },
+ "speaker-christoph-lipautz-gaze-10": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 683,
+  "w": 711
+ },
+ "speaker-christoph-lipautz-gaze-11": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 683,
+  "w": 711
+ },
+ "speaker-christoph-lipautz-gaze-12": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 683,
+  "w": 711
+ },
+ "speaker-christoph-lipautz-gaze-20": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 683,
+  "w": 711
+ },
+ "speaker-christoph-lipautz-gaze-21": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 683,
+  "w": 711
+ },
+ "speaker-christoph-lipautz-gaze-22": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 683,
+  "w": 711
  },
  "speaker-christoph-lipautz-sitting": {
   "edge": null,
@@ -516,20 +695,80 @@
   "w": 449
  },
  "speaker-cristian-planas": {
-  "edge": 562,
+  "edge": 575,
   "eyes": [
-   154,
-   134,
-   356,
-   278
+   224,
+   147,
+   491,
+   348
   ],
+  "gaze": true,
   "group": "speakers",
-  "h": 640,
-  "turn": {
-   "band": 537,
-   "pad": 96
-  },
-  "w": 445
+  "h": 681,
+  "w": 701
+ },
+ "speaker-cristian-planas-gaze-00": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 681,
+  "w": 701
+ },
+ "speaker-cristian-planas-gaze-01": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 681,
+  "w": 701
+ },
+ "speaker-cristian-planas-gaze-02": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 681,
+  "w": 701
+ },
+ "speaker-cristian-planas-gaze-10": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 681,
+  "w": 701
+ },
+ "speaker-cristian-planas-gaze-11": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 681,
+  "w": 701
+ },
+ "speaker-cristian-planas-gaze-12": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 681,
+  "w": 701
+ },
+ "speaker-cristian-planas-gaze-20": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 681,
+  "w": 701
+ },
+ "speaker-cristian-planas-gaze-21": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 681,
+  "w": 701
+ },
+ "speaker-cristian-planas-gaze-22": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 681,
+  "w": 701
  },
  "speaker-cristian-planas-sitting": {
   "edge": null,
@@ -539,20 +778,80 @@
   "w": 446
  },
  "speaker-dejan-menges": {
-  "edge": 564,
+  "edge": 575,
   "eyes": [
-   175,
-   178,
-   421,
-   338
+   224,
+   193,
+   491,
+   333
   ],
+  "gaze": true,
   "group": "speakers",
-  "h": 640,
-  "turn": {
-   "band": 584,
-   "pad": 96
-  },
-  "w": 541
+  "h": 674,
+  "w": 707
+ },
+ "speaker-dejan-menges-gaze-00": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 674,
+  "w": 707
+ },
+ "speaker-dejan-menges-gaze-01": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 674,
+  "w": 707
+ },
+ "speaker-dejan-menges-gaze-02": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 674,
+  "w": 707
+ },
+ "speaker-dejan-menges-gaze-10": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 674,
+  "w": 707
+ },
+ "speaker-dejan-menges-gaze-11": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 674,
+  "w": 707
+ },
+ "speaker-dejan-menges-gaze-12": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 674,
+  "w": 707
+ },
+ "speaker-dejan-menges-gaze-20": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 674,
+  "w": 707
+ },
+ "speaker-dejan-menges-gaze-21": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 674,
+  "w": 707
+ },
+ "speaker-dejan-menges-gaze-22": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 674,
+  "w": 707
  },
  "speaker-dejan-menges-sitting": {
   "edge": null,
@@ -687,16 +986,80 @@
   "w": 487
  },
  "speaker-predrag-radenkovic": {
-  "edge": 564,
+  "edge": 575,
   "eyes": [
-   154,
-   142,
-   353,
-   278
+   229,
+   117,
+   590,
+   425
   ],
+  "gaze": true,
   "group": "speakers",
-  "h": 640,
-  "w": 441
+  "h": 682,
+  "w": 716
+ },
+ "speaker-predrag-radenkovic-gaze-00": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 682,
+  "w": 716
+ },
+ "speaker-predrag-radenkovic-gaze-01": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 682,
+  "w": 716
+ },
+ "speaker-predrag-radenkovic-gaze-02": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 682,
+  "w": 716
+ },
+ "speaker-predrag-radenkovic-gaze-10": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 682,
+  "w": 716
+ },
+ "speaker-predrag-radenkovic-gaze-11": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 682,
+  "w": 716
+ },
+ "speaker-predrag-radenkovic-gaze-12": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 682,
+  "w": 716
+ },
+ "speaker-predrag-radenkovic-gaze-20": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 682,
+  "w": 716
+ },
+ "speaker-predrag-radenkovic-gaze-21": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 682,
+  "w": 716
+ },
+ "speaker-predrag-radenkovic-gaze-22": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 682,
+  "w": 716
  },
  "speaker-predrag-radenkovic-sitting": {
   "edge": null,
@@ -706,20 +1069,80 @@
   "w": 441
  },
  "speaker-roy-tomeij": {
-  "edge": 540,
+  "edge": 575,
   "eyes": [
-   171,
-   174,
-   407,
-   318
+   196,
+   187,
+   544,
+   394
   ],
+  "gaze": true,
   "group": "speakers",
-  "h": 640,
-  "turn": {
-   "band": 545,
-   "pad": 96
-  },
-  "w": 521
+  "h": 715,
+  "w": 790
+ },
+ "speaker-roy-tomeij-gaze-00": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 715,
+  "w": 790
+ },
+ "speaker-roy-tomeij-gaze-01": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 715,
+  "w": 790
+ },
+ "speaker-roy-tomeij-gaze-02": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 715,
+  "w": 790
+ },
+ "speaker-roy-tomeij-gaze-10": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 715,
+  "w": 790
+ },
+ "speaker-roy-tomeij-gaze-11": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 715,
+  "w": 790
+ },
+ "speaker-roy-tomeij-gaze-12": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 715,
+  "w": 790
+ },
+ "speaker-roy-tomeij-gaze-20": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 715,
+  "w": 790
+ },
+ "speaker-roy-tomeij-gaze-21": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 715,
+  "w": 790
+ },
+ "speaker-roy-tomeij-gaze-22": {
+  "edge": 575,
+  "eyes": null,
+  "group": "gaze",
+  "h": 715,
+  "w": 790
  },
  "speaker-roy-tomeij-sitting": {
   "edge": null,
