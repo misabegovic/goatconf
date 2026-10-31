@@ -773,3 +773,5 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #219: org: pitch Goatchi as a full game, and more poses for every goat
    diff: 14 files, +237/-18
    restricted-paths: false
+2026-10-31 shape — pitch → files/wiki/org/prds/goatchi-full-game.md (PM agent)
+2026-10-31 zoom-out — fired for files/wiki/org/prds/goatchi-full-game.md (big appetite): the registration post waits behind Goatchi for three to four weeks; flagged to the organiser
