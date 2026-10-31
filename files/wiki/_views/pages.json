@@ -886,7 +886,7 @@
       "status": "draft",
       "updated": "2026-10-28",
       "sources": [],
-      "tokens": 2081,
+      "tokens": 2161,
       "affected_by": [
         "org/adrs/goat-tamagotchi-on-the-site.md",
         "org/ideas/lightning-talks.md",
@@ -897,7 +897,8 @@
         "org/outreach/drumbeat.md",
         "org/pitches/goat-tamagotchi-on-the-site.md",
         "org/pitches/goatchi-full-game.md",
-        "org/prds/goat-tamagotchi-on-the-site.md"
+        "org/prds/goat-tamagotchi-on-the-site.md",
+        "org/prds/goatchi-full-game.md"
       ]
     },
     {
@@ -1449,7 +1450,8 @@
       "path": "org/pitches/goatchi-full-game.md",
       "title": "Goatchi as a full game played with one goat, and more poses for every goat on the site",
       "kind": "pitch",
-      "status": "draft",
+      "status": "superseded",
+      "superseded_by": "org/prds/goatchi-full-game.md",
       "updated": "2026-10-31",
       "appetite": "big",
       "confidence": "low",
@@ -1458,6 +1460,7 @@
       ],
       "sources": [
         "sources/conversations/2026-10-31--org--goatchi-full-game.md",
+        "sources/conversations/2026-10-31--org--goatchi-full-game-bet.md",
         "sources/conversations/2026-10-28--org--goatchi-ship.md",
         "sources/conversations/2026-10-28--org--goatchi-challenge-mode.md",
         "sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md",
@@ -1476,7 +1479,7 @@
       "status": "draft",
       "updated": "2026-10-31",
       "sources": [],
-      "tokens": 968
+      "tokens": 992
     },
     {
       "path": "org/pitches/one-goat-minimal-core-and-extensions.md",
@@ -1936,6 +1939,31 @@
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md"
       ],
       "tokens": 1909
+    },
+    {
+      "path": "org/prds/goatchi-full-game.md",
+      "title": "Goatchi as a full game played with one goat, and more poses for every goat on the site",
+      "kind": "initiative",
+      "status": "draft",
+      "updated": "2026-10-31",
+      "appetite": "big",
+      "confidence": "low",
+      "supersedes": "org/pitches/goatchi-full-game.md",
+      "affects": [
+        "org"
+      ],
+      "sources": [
+        "sources/conversations/2026-10-31--org--goatchi-full-game-bet.md",
+        "sources/conversations/2026-10-31--org--goatchi-full-game.md",
+        "sources/conversations/2026-10-28--org--goatchi-ship.md",
+        "sources/conversations/2026-10-28--org--goatchi-challenge-mode.md",
+        "sources/conversations/2026-10-28--org--goat-tamagotchi-how.md",
+        "sources/conversations/2026-10-27--org--mascot-watercolour.md",
+        "sources/conversations/2026-10-27--org--speaker-goats.md",
+        "sources/conversations/2026-10-27--org--goats-on-photos-and-spots.md",
+        "sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md"
+      ],
+      "tokens": 2108
     },
     {
       "path": "org/prds/hosts-hub-guides-and-venues.md",

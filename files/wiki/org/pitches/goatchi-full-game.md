@@ -1,7 +1,8 @@
 ---
 title: "Goatchi as a full game played with one goat, and more poses for every goat on the site"
 kind: pitch
-status: draft
+status: superseded
+superseded_by: org/prds/goatchi-full-game.md
 updated: 2026-10-31
 appetite: big
 confidence: low
@@ -9,6 +10,7 @@ affects:
   - org
 sources:
   - sources/conversations/2026-10-31--org--goatchi-full-game.md
+  - sources/conversations/2026-10-31--org--goatchi-full-game-bet.md
   - sources/conversations/2026-10-28--org--goatchi-ship.md
   - sources/conversations/2026-10-28--org--goatchi-challenge-mode.md
   - sources/conversations/2026-10-28--org--goat-tamagotchi-pitch.md
