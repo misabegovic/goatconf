@@ -73,14 +73,17 @@
       goat.dataset.row = row;
     }
     stage.style.setProperty("--edge", own.getPropertyValue("--edge"));
+    stage.style.setProperty("--size", own.getPropertyValue("--size") || "1");
     face(facing);
   };
   // Which way the goat looks: its own painted head turned left or right, or straight at you. A goat whose
   // turned heads are not painted or not loaded yet keeps looking at you.
-  const canTurn = () => !!goat && !!goat.dataset.turn && turnSheets.has(goat.dataset.turn.split("|")[0]);
+  const canTurn = () => !!goat && ((!!goat.dataset.turn && turnSheets.has(goat.dataset.turn.split("|")[0])) || canGaze());
   const face = (dir) => {
     facing = dir;
     if (!goat) return;
+    // A goat painted looking in nine directions turns with those frames: left, right, or back at you.
+    if (canGaze()) { gazeTo(1, dir === "left" ? 0 : dir === "right" ? 2 : 1); return; }
     if (dir === "front" || !canTurn()) { goat.classList.remove("is-turned"); return; }
     const parts = goat.dataset.turn.split("|");
     goat.querySelector(".goat-head").style.backgroundPosition = `${dir === "left" ? "0%" : parts[7]} ${goat.dataset.row}`;
@@ -461,7 +464,7 @@
     }, { passive: true });
     // It looks towards a mouse pointer that comes close, and back at you when the pointer is over it or gone.
     addEventListener("pointermove", (e) => {
-      if (e.pointerType !== "mouse" || busy || down || !canTurn()) return;
+      if (e.pointerType !== "mouse" || busy || down || !canTurn() || canGaze()) return;
       const r = goat.getBoundingClientRect();
       const x = e.clientX - (r.left + r.width / 2), y = e.clientY - (r.top + r.height * 0.4);
       const dir = Math.hypot(x, y) > 260 || Math.abs(x) < r.width * 0.35 ? "front" : x < 0 ? "left" : "right";
