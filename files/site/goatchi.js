@@ -32,7 +32,22 @@
     } catch (e) { return null; }
   };
   let goatState = store ? load() : null;
-  const save = () => { if (goatState) store.setItem(KEY, JSON.stringify(goatState)); else store.removeItem(KEY); };
+  // With reminders on, the goat is also copied into IndexedDB, the one store the service worker can read.
+  const mirror = (goat) => new Promise((resolve) => {
+    if (!window.indexedDB) { resolve(); return; }
+    const open = indexedDB.open("goatchi", 1);
+    open.onupgradeneeded = () => open.result.createObjectStore("kv");
+    open.onerror = () => resolve();
+    open.onsuccess = () => {
+      const tx = open.result.transaction("kv", "readwrite");
+      if (goat) tx.objectStore("kv").put(goat, "goat"); else tx.objectStore("kv").clear();
+      tx.oncomplete = tx.onerror = () => { open.result.close(); resolve(); };
+    };
+  });
+  const save = () => {
+    if (goatState) store.setItem(KEY, JSON.stringify(goatState)); else store.removeItem(KEY);
+    if (goatState && goatState.remind) mirror(goatState);
+  };
   const level = (n) => Math.max(0, Math.min(1, goatState.needs[n][0] - (Date.now() - goatState.needs[n][1]) / EMPTY_AFTER));
   const fill = (n, by) => { goatState.needs[n] = [Math.min(1, (by === 1 ? 0 : level(n)) + by), Date.now()]; };
   const sulking = () => NEEDS.some((n) => level(n) < SULK);
@@ -144,12 +159,16 @@
       picks.forEach((p) => { p.disabled = true; });
       return;
     }
+    // A goat swapped for another stops its reminders; the new goat starts with them off.
+    if (goatState && goatState.remind) remindOff();
     const now = Date.now();
     goatState = { pose: b.dataset.pose, name: b.dataset.name, src: b.dataset.src, speaker: b.dataset.speaker || "", since: now,
       needs: Object.fromEntries(NEEDS.map((n) => [n, [1, now]])), cheered: [],
       challenge: !!document.querySelector(".goatchi__challenge:checked") };
     save();
     render();
+    startApp();
+    showApp();
     speak(`Baaa! Hello!`, 2400);
     root.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" });
   };
@@ -170,7 +189,7 @@
     const name = act.dataset.act;
     if (name === "yes") { const f = onYes; done(); if (f) f(); return; }
     if (name === "no") { done(); return; }
-    if (name === "let-go") { ask(`Let ${called(goatState.name)} go?`, () => { goatState = null; save(); render(); }); return; }
+    if (name === "let-go") { ask(`Let ${called(goatState.name)} go?`, () => { if (goatState.remind) remindOff(); goatState = null; save(); render(); showApp(); }); return; }
     if (acts[name]) { done(); acts[name](); save(); showNeeds(); }
   });
   picks.forEach((b) => b.addEventListener("click", () => {
@@ -179,7 +198,62 @@
     root.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" });
     ask(`Swap ${called(goatState.name)} for ${called(b.dataset.name)}? The new goat starts fresh.`, () => adopt(b));
   }));
+  // Installable, for this page only, once a goat is kept: the service worker keeps Goatchi for playing offline and,
+  // only if the player turns them on, makes the reminders on this device (goatchi-sw.js). Nothing is registered
+  // before a goat is picked.
+  const TAG = "goatchi-check";
+  const install = $(".goatchi__install"), remind = $(".goatchi__remind");
+  const remindBox = remind.querySelector("input"), remindNote = $(".goatchi__remind-note");
+  let reg = null, installPrompt = null;
+  const canRemind = async () => {
+    if (!reg || !("periodicSync" in reg) || !("Notification" in window) || !navigator.permissions) return false;
+    try { return (await navigator.permissions.query({ name: "periodic-background-sync" })).state === "granted"; } catch (e) { return false; }
+  };
+  const showApp = async () => {
+    install.hidden = !installPrompt || !goatState;
+    remind.hidden = !goatState || !(await canRemind());
+    remindBox.checked = !!(goatState && goatState.remind) && Notification.permission === "granted";
+  };
+  const startApp = () => {
+    if (reg || !("serviceWorker" in navigator)) return;
+    navigator.serviceWorker.register("goatchi-sw.js", { scope: "./goatchi" })
+      .then(() => navigator.serviceWorker.ready).then((r) => { reg = r; showApp(); }).catch(() => {});
+  };
+  const remindOff = async () => {
+    if (goatState) goatState.remind = false;
+    try { if (reg && reg.periodicSync) await reg.periodicSync.unregister(TAG); } catch (e) { /* nothing was registered */ }
+    await mirror(null);
+  };
+  addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); installPrompt = e; showApp(); });
+  addEventListener("appinstalled", () => { installPrompt = null; showApp(); });
+  install.querySelector("button").addEventListener("click", async () => {
+    if (!installPrompt) return;
+    installPrompt.prompt();
+    await installPrompt.userChoice;
+    installPrompt = null;
+    showApp();
+  });
+  remindBox.addEventListener("change", async () => {
+    remindNote.textContent = "";
+    if (!goatState) return;
+    if (!remindBox.checked) { await remindOff(); save(); return; }
+    if (await Notification.requestPermission() !== "granted") {
+      remindBox.checked = false;
+      remindNote.textContent = "This browser is set not to show Goatchi's notifications; you can allow them in its settings for this site.";
+      return;
+    }
+    try { await reg.periodicSync.register(TAG, { minInterval: 12 * 3600e3 }); } catch (e) {
+      remindBox.checked = false;
+      remindNote.textContent = "This browser would not let Goatchi check on your goat.";
+      return;
+    }
+    goatState.remind = true;
+    save();
+    remindNote.textContent = "Your goat will tell you on this device when it sulks, at most once a day.";
+  });
+
   // While the page stays open, the needs keep drifting.
   setInterval(() => { if (goatState && !holding) render(); }, 60e3);
   render();
+  if (goatState) startApp();
 })();
