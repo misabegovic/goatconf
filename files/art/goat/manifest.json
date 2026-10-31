@@ -597,27 +597,27 @@
   "w": 469
  },
  "speaker-paul-campbell": {
-  "edge": 563,
+  "edge": 574,
   "eyes": [
-   170,
-   178,
-   422,
-   342
+   142,
+   167,
+   450,
+   378
   ],
   "group": "speakers",
   "h": 640,
   "turn": {
-   "band": 620,
+   "band": 605,
    "pad": 96
   },
-  "w": 541
+  "w": 549
  },
  "speaker-paul-campbell-sitting": {
   "edge": null,
   "eyes": null,
   "group": "speakers-sitting",
   "h": 640,
-  "w": 467
+  "w": 464
  },
  "speaker-playing": {
   "edge": null,
