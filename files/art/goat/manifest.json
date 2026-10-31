@@ -382,6 +382,54 @@
   },
   "w": 640
  },
+ "peeking-ears": {
+  "anim_of": "peeking",
+  "edge": 176,
+  "eyes": null,
+  "group": "anim",
+  "h": 522,
+  "w": 640
+ },
+ "peeking-petted": {
+  "anim_of": "peeking",
+  "edge": 176,
+  "eyes": null,
+  "group": "anim",
+  "h": 522,
+  "w": 640
+ },
+ "peeking-scratch": {
+  "anim_of": "peeking",
+  "edge": 176,
+  "eyes": null,
+  "group": "anim",
+  "h": 522,
+  "w": 640
+ },
+ "peeking-sneeze": {
+  "anim_of": "peeking",
+  "edge": 176,
+  "eyes": null,
+  "group": "anim",
+  "h": 522,
+  "w": 640
+ },
+ "peeking-wink": {
+  "anim_of": "peeking",
+  "edge": 176,
+  "eyes": null,
+  "group": "anim",
+  "h": 522,
+  "w": 640
+ },
+ "peeking-yawn": {
+  "anim_of": "peeking",
+  "edge": 176,
+  "eyes": null,
+  "group": "anim",
+  "h": 522,
+  "w": 640
+ },
  "pirate-eating": {
   "edge": null,
   "eyes": null,
@@ -447,6 +495,54 @@
    292
   ],
   "group": "base",
+  "h": 640,
+  "w": 464
+ },
+ "sitting-ears": {
+  "anim_of": "sitting",
+  "edge": null,
+  "eyes": null,
+  "group": "anim",
+  "h": 640,
+  "w": 464
+ },
+ "sitting-petted": {
+  "anim_of": "sitting",
+  "edge": null,
+  "eyes": null,
+  "group": "anim",
+  "h": 640,
+  "w": 464
+ },
+ "sitting-scratch": {
+  "anim_of": "sitting",
+  "edge": null,
+  "eyes": null,
+  "group": "anim",
+  "h": 640,
+  "w": 464
+ },
+ "sitting-sneeze": {
+  "anim_of": "sitting",
+  "edge": null,
+  "eyes": null,
+  "group": "anim",
+  "h": 640,
+  "w": 464
+ },
+ "sitting-stretch": {
+  "anim_of": "sitting",
+  "edge": null,
+  "eyes": null,
+  "group": "anim",
+  "h": 640,
+  "w": 464
+ },
+ "sitting-tail": {
+  "anim_of": "sitting",
+  "edge": null,
+  "eyes": null,
+  "group": "anim",
   "h": 640,
   "w": 464
  },

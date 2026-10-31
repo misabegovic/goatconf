@@ -39,7 +39,7 @@
   stage.setAttribute("aria-hidden", "true");
   stage.style.visibility = "hidden";
   let goat = null, current = null, wanted = null, busy = false, idling = false, down = true, facing = "front";
-  const turnSheets = new Set(), gazeSheets = new Set();
+  const turnSheets = new Set(), gazeSheets = new Set(), animSheets = new Set();
 
   // Every transform names the same functions in the same order, so a turn passes through a thin goat
   // instead of spinning, and nothing is decomposed into a matrix.
@@ -62,6 +62,7 @@
     goat.rest = { backgroundImage: own.backgroundImage, backgroundSize: own.backgroundSize, backgroundPosition: own.backgroundPosition };
     Object.assign(goat.querySelector(".goat-body").style, goat.rest);
     goat.dataset.gaze = s.peek.dataset.gaze || "";
+    goat.dataset.anim = s.peek.dataset.anim || "";
     gazing = "11";
     const blink = goat.querySelector(".goat-blink");
     if (blink) blink.style.backgroundImage = own.backgroundImage;
@@ -137,6 +138,24 @@
     const now = Date.now();
     if (now - wishSince >= 350 && now - lookedAt >= 1000) glance(wish);
   }, 120);
+  // Animation frames (ADR goat-animations): a goat with painted frames (ears flicked, petted, a yawn, a sneeze, a
+  // scratch, a wink) shows one for a moment, from a sheet laid out like its own cell, then is itself again.
+  const animOf = () => (goat && goat.dataset.anim ? goat.dataset.anim.split("|") : null);
+  const canAnim = (name) => { const a = animOf(); return !!a && animSheets.has(a[0]) && a[1].split(",").includes(name); };
+  const PAINTED = ["ears", "yawn", "sneeze", "scratch", "wink"];
+  let framing = 0;
+  const frame = (name, ms) => {
+    if (!canAnim(name)) return Promise.resolve(false);
+    const [src, list] = animOf();
+    const names = list.split(","), i = names.indexOf(name), rows = Math.ceil(names.length / 3);
+    if (gazing !== "11") gazeTo(1, 1);
+    const body = goat.querySelector(".goat-body");
+    Object.assign(body.style, { backgroundImage: `url(${src})`, backgroundSize: "300% auto",
+      backgroundPosition: `${(i % 3) * 50}% ${rows > 1 ? (Math.floor(i / 3) / (rows - 1)) * 100 : 0}%` });
+    goat.classList.add("is-gazing");
+    clearTimeout(framing);
+    return new Promise((r) => { framing = setTimeout(() => { if (goat) { Object.assign(body.style, goat.rest); goat.classList.remove("is-gazing"); gazing = "11"; } r(true); }, ms); });
+  };
   // A turn: the head swings at the top of a small lift and squash, then the goat settles.
   const turnTo = (dir) => {
     if (dir === facing) return Promise.resolve();
@@ -342,11 +361,17 @@
       await turnTo("front");
     },
     peekaboo: () => duck().then(() => wait(700, interrupted)).then(pop),
+    // Painted moves, for a goat that has them; a goat without them bobs instead.
+    ears: async () => { if (!canAnim("ears")) return moves.bob(); await frame("ears", 260); await wait(160); await frame("ears", 260); },
+    yawn: () => (canAnim("yawn") ? Promise.all([frame("yawn", 1500), play(goat, [{ transform: REST }, { transform: T("-2%", 0.98, 1.04) }, { transform: REST }], { duration: 1500 })]) : moves.stretch()),
+    sneeze: () => (canAnim("sneeze") ? Promise.all([frame("sneeze", 650), play(goat, [{ transform: REST }, { transform: T("2%", 1.04, 0.95), offset: 0.35 }, { transform: T("-3%", 0.97, 1.03), offset: 0.55 }, { transform: REST }], { duration: 650 })]) : moves.wiggle()),
+    scratch: () => (canAnim("scratch") ? frame("scratch", 1300) : moves.bob()),
+    wink: () => (canAnim("wink") ? frame("wink", 700) : moves.bob()),
   };
   const idle = async () => {
     if (!busy && !down && goat && !(canGaze() && following())) {
       busy = idling = true;
-      const names = Object.keys(moves);
+      const names = Object.keys(moves).filter((n) => !PAINTED.includes(n) || canAnim(n));
       try { await moves[names[Math.floor(Math.random() * names.length)]](); } catch (e) { face("front"); goat.style.transform = REST; }
       busy = idling = false;
       catchUp();
@@ -423,6 +448,8 @@
       await turnTo("front");
     },
     speak,
+    () => (canAnim("sneeze") ? moves.sneeze() : moves.wiggle()),
+    () => (canAnim("wink") ? Promise.all([moves.wink(), meee()]) : speak()),
   ];
   // Petting (ADR goat-animations): the first tap, or the first after a pause, pets the goat. A heart rises, it leans
   // into the tap with a happy squash, and it says a line; the next taps play its tricks.
@@ -438,6 +465,7 @@
       { opacity: 1, transform: "translate(-50%, -40%) scale(1.1)", offset: 0.25 },
       { opacity: 0, transform: "translate(-50%, -160%) scale(1)" },
     ], { duration: 1300, easing: "ease-out" });
+    frame("petted", 1300);
     return Promise.all([play(goat, [
       { transform: REST, easing: "ease-out" }, { transform: T("3%", 1.06, 0.93, -4), offset: 0.3, easing: "ease-in-out" },
       { transform: T("2%", 1.05, 0.95, 4), offset: 0.6, easing: "ease-in-out" }, { transform: REST },
@@ -507,6 +535,8 @@
       .forEach((src) => decode(src).then(() => turnSheets.add(src), () => {}));
     [...new Set(peeks.map((p) => p.dataset.gaze).filter(Boolean))]
       .forEach((src) => decode(src).then(() => gazeSheets.add(src), () => {}));
+    [...new Set(peeks.map((p) => (p.dataset.anim || "").split("|")[0]).filter(Boolean))]
+      .forEach((src) => decode(src).then(() => animSheets.add(src), () => {}));
   };
   const load = () => Promise.all(sheets.map(decode))
     .then(() => { start(); if (!still) later(turns); }, () => root.classList.remove("goat-one"));

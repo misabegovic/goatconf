@@ -196,7 +196,7 @@
   let showing = 0;
   const show = (src, ms, act) => {
     goat.src = src;
-    stage.classList.remove("is-eating", "is-playing", "is-sleeping");
+    stage.classList.remove("is-eating", "is-playing", "is-sleeping", "is-petted", "is-fidget");
     stage.classList.add(act);
     clearTimeout(showing);
     showing = setTimeout(() => { stage.classList.remove(act); if (goatState) goat.src = restLook(); }, ms);
@@ -223,6 +223,8 @@
       { opacity: 1, transform: "translate(-50%, -40%) scale(1.1)", offset: 0.25 },
       { opacity: 0, transform: "translate(-50%, -160%) scale(1)" },
     ], { duration: 1300, easing: "ease-out" });
+    const petted = look("anim-petted");
+    if (petted && !still) show(petted, 1300, "is-petted");
     hop();
     pets = pets.filter((t) => Date.now() - t < 3600e3);
     if (pets.length < 3) { pets.push(Date.now()); fill("play", 0.1); save(); showNeeds(); }
@@ -341,6 +343,19 @@
 
   // While the page stays open, the needs keep drifting.
   setInterval(() => { if (goatState && !holding) render(); }, 60e3);
+  // A goat at rest with painted frames fidgets now and then: flicks its ears, wags its tail, scratches, sneezes or
+  // stretches. Not while it eats, plays or sleeps, nor with reduced motion.
+  const FIDGETS = { ears: 500, tail: 700, scratch: 1400, sneeze: 600, stretch: 1700 };
+  const fidget = () => {
+    setTimeout(fidget, 7000 + Math.random() * 6000);
+    if (still || !goatState || leftAt() || !["rest", "happy"].includes(mood()) || document.hidden) return;
+    if (["is-eating", "is-playing", "is-sleeping", "is-petted", "is-fidget"].some((c) => stage.classList.contains(c))) return;
+    const can = Object.keys(FIDGETS).filter((f) => look(`anim-${f}`));
+    if (!can.length) return;
+    const f = can[Math.floor(Math.random() * can.length)];
+    show(look(`anim-${f}`), FIDGETS[f], "is-fidget");
+  };
+  setTimeout(fidget, 5000);
   render();
   if (goatState) startApp();
 })();
