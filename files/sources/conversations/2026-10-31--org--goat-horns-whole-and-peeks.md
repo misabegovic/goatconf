@@ -31,3 +31,9 @@ They were right: the first cut filled the paper showing between and through the 
 > If there is no mouse movement or tapping, does the goat go back to its animations?
 
 the agent made the goat look back at the visitor four seconds after the pointer stops, its own moves then resuming. Shown Paul's goat following the mouse in nine directions, and asked whether to paint the other seven speakers the same way, the organiser chose "Ship Paul first", described as: ship the horn fixes and Paul's new peek now, the others in a second pull request.
+
+After the head-only peek went live (PR #226), the organiser wrote, verbatim:
+
+> So... I am not sure I like this that much over the old peeking goats. Too small, also too responsive and follows every movement. I want it to feel natural, also react on taps, have its animations... Also a bit more like the previous version in the way it peeks over
+
+Offered to revert, repaint in the old style, or only calm it down, they chose "Repaint in the old style now", described as: a new nine-direction sheet in the old peek framing (head, chest and hooves over the card, the old size) and a calmer follow (a short delay, holding each look, only when the mouse is near). They sent the sheet and its blink from their phone. Shown a video of it on the Speakers page, they chose "Ship it (Recommended)".
