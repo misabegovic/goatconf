@@ -163,6 +163,12 @@ def anim_frames(pose: str) -> tuple:
     return tuple(sorted(k[len(pose) + 1:] for k, v in manifest().items() if v.get("anim_of") == pose))
 
 
+def site_anim(pose: str) -> bool:
+    """Whether the site's companion plays the goat's frames: only a peeking goat (one with an edge) is a companion;
+    a whole goat's frames are Goatchi's."""
+    return bool(anim_frames(pose)) and bool(sheet_of(pose)) and manifest()[pose].get("edge") is not None
+
+
 def anim_layout(pose: str) -> dict:
     """An animation sheet: one cell per frame, three to a row, each the size of the goat's cell on its own sheet."""
     L = layout(sheet_of(pose))
@@ -233,7 +239,7 @@ def goat(pose: str, cls: str, beat: int = 0) -> str:
                 f'{_pct(100 * (tr["w"] + 2) / (T["width"] - tr["w"]))}|{_pct(100 * tr["cut"] / ch)}"')
     gaze = f' data-gaze="{stamped(gaze_layout(pose)["file"])}"' if manifest()[pose].get("gaze") else ""
     frames = anim_frames(pose)
-    if frames:
+    if site_anim(pose):
         gaze += f' data-anim="{stamped(anim_layout(pose)["file"])}|{",".join(frames)}"'
     return f'<span class="goat {cls}" aria-hidden="true" data-goat="{pose}"{turn}{gaze} style="{style}">{eyes}</span>'
 
@@ -298,7 +304,7 @@ def _images():
             return sheet
         yield ROOT / "site" / G["file"], (G["width"], G["height"]), draw_gaze
     for p in sorted({v["anim_of"] for v in manifest().values() if v.get("anim_of")}):
-        if not sheet_of(p):
+        if not site_anim(p):
             continue
         G = anim_layout(p)
 
@@ -308,7 +314,13 @@ def _images():
             c = G["cell"]
             for i, f in enumerate(anim_frames(p)):
                 r, col = divmod(i, 3)
-                sheet.alpha_composite(open_(f"{p}-{f}", (c["w"], c["h"])), (col * G["cell_w"] + c["x"], r * G["cell_h"] + c["y"]))
+                # a frame on a larger canvas is drawn that much larger, on the same bottom middle, inside its cell
+                k = manifest()[f"{p}-{f}"].get("scale", 1)
+                w, h = round(c["w"] * k), round(c["h"] * k)
+                im = open_(f"{p}-{f}", (w, h))
+                frame = Image.new("RGBA", (G["cell_w"], G["cell_h"]), (0, 0, 0, 0))
+                frame.paste(im, (c["x"] - (w - c["w"]) // 2, c["y"] - (h - c["h"])), im)
+                sheet.alpha_composite(frame, (col * G["cell_w"], r * G["cell_h"]))
             return sheet
         yield ROOT / "site" / G["file"], (G["width"], G["height"]), draw_anim
     for p in singles():

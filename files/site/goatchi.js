@@ -169,6 +169,7 @@
     if (!kept) return;
     preload();
     goat.src = restLook();
+    goat.style.scale = "";
     stage.dataset.mood = mood();
     goat.alt = goatState.name;
     $(".goatchi__name").textContent = goatState.name;
@@ -194,12 +195,15 @@
   ], { duration: 760 });
   // For a moment the goat is shown eating, playing or asleep, moving as it does, then it is itself again.
   let showing = 0;
+  // A frame painted on a larger canvas says how much larger after #s=, and is shown that much larger, from its
+  // bottom middle, so the goat stays its own size.
   const show = (src, ms, act) => {
     goat.src = src;
+    goat.style.scale = (src.split("#s=")[1]) || "";
     stage.classList.remove("is-eating", "is-playing", "is-sleeping", "is-petted", "is-fidget");
     stage.classList.add(act);
     clearTimeout(showing);
-    showing = setTimeout(() => { stage.classList.remove(act); if (goatState) goat.src = restLook(); }, ms);
+    showing = setTimeout(() => { stage.classList.remove(act); goat.style.scale = ""; if (goatState) goat.src = restLook(); }, ms);
   };
   const acts = {
     feed: () => { fill("food", 1); show(look("eating") || food[Math.floor(Math.random() * food.length)], 2600, "is-eating"); speak("Yum! Baaa!", 2600); },
