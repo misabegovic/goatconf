@@ -276,14 +276,19 @@
     return Promise.all([body, trip.finished]);
   };
 
+  // The slot mainly on screen: the one showing most, and of slots showing whole, the one nearest the middle. The goat
+  // keeps its own slot until another shows clearly more, so it does not hop onto every card scrolled past, and it only
+  // goes where it would be seen: over a slot, the slot's top; on a photo, the photo's lower part.
   const pick = () => {
     const mid = innerHeight * 0.45;
-    let best = null, gap = Infinity;
+    let best = null, most = -Infinity;
     for (const s of slots) {
       const r = s.slot.getBoundingClientRect();
-      if (r.top < 70 || r.top > innerHeight - 12) continue;
-      const d = Math.abs(r.top - mid);
-      if (d < gap) { gap = d; best = s; }
+      const spot = s.scene ? r.top + r.height * 0.7 : r.top;
+      if (spot < (s.scene ? 160 : 70) || spot > innerHeight - 12) continue;
+      const seen = Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 70));
+      const score = seen - Math.abs(r.top - mid) * 0.1 + (s === current ? Math.min(r.height, innerHeight) * 0.25 : 0);
+      if (score > most) { most = score; best = s; }
     }
     return best;
   };
@@ -328,8 +333,9 @@
     if (asked && !down) perform();
     else if (wanted && wanted !== current) go(wanted);
   };
+  // It moves once the scrolling stops, not while the page is still going past.
   let tick = 0;
-  const schedule = () => { cancelAnimationFrame(tick); tick = requestAnimationFrame(() => go(pick())); };
+  const schedule = () => { clearTimeout(tick); tick = setTimeout(() => go(pick()), 250); };
 
   // Moves while it waits, each one transform keyframes on the goat.
   const moves = {

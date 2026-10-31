@@ -859,3 +859,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #245: site: the goat no longer blinks out when it changes picture
    diff: 32 files, +35/-32
    restricted-paths: false
+2026-10-31 merge — PR #246: site: the goat stays on the card mainly on screen while you scroll
+   diff: 33 files, +53/-36
+   restricted-paths: false
