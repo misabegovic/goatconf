@@ -39,7 +39,7 @@
   stage.setAttribute("aria-hidden", "true");
   stage.style.visibility = "hidden";
   let goat = null, current = null, wanted = null, busy = false, idling = false, down = true, facing = "front";
-  const turnSheets = new Set();
+  const turnSheets = new Set(), gazeSheets = new Set();
 
   // Every transform names the same functions in the same order, so a turn passes through a thin goat
   // instead of spinning, and nothing is decomposed into a matrix.
@@ -59,7 +59,10 @@
     goat.setAttribute("style", `--beat:${own.getPropertyValue("--beat")};--edge:${own.getPropertyValue("--edge")};aspect-ratio:${own.aspectRatio}`);
     goat.style.transform = pose;
     goat.innerHTML = `<i class="goat-body"></i>${s.peek.innerHTML}<i class="goat-head"></i>`;
-    Object.assign(goat.querySelector(".goat-body").style, { backgroundImage: own.backgroundImage, backgroundSize: own.backgroundSize, backgroundPosition: own.backgroundPosition });
+    goat.rest = { backgroundImage: own.backgroundImage, backgroundSize: own.backgroundSize, backgroundPosition: own.backgroundPosition };
+    Object.assign(goat.querySelector(".goat-body").style, goat.rest);
+    goat.dataset.gaze = s.peek.dataset.gaze || "";
+    gazing = "11";
     const blink = goat.querySelector(".goat-blink");
     if (blink) blink.style.backgroundImage = own.backgroundImage;
     goat.dataset.turn = s.peek.dataset.turn || "";
@@ -82,6 +85,37 @@
     const parts = goat.dataset.turn.split("|");
     goat.querySelector(".goat-head").style.backgroundPosition = `${dir === "left" ? "0%" : parts[7]} ${goat.dataset.row}`;
     goat.classList.add("is-turned");
+  };
+  // A goat painted looking in nine directions (a speaker's goat, ADR goatchi-full-game) looks where the mouse is,
+  // anywhere on the page: its whole picture is swapped for the one looking that way, from a sheet of nine laid out
+  // like its own cell, so only the head moves. Looking ahead it is its own picture again, and blinks.
+  let gazing = "11", followed = 0, lookBack = 0;
+  // While the mouse moves it only follows; four seconds after it stops, the goat looks back at you and its own
+  // moves take over again.
+  const follow = (x, y) => {
+    followed = Date.now();
+    gazeAt(x, y);
+    clearTimeout(lookBack);
+    lookBack = setTimeout(() => gazeTo(1, 1), 4000);
+  };
+  const following = () => Date.now() - followed < 4000;
+  const canGaze = () => !!goat && !!goat.dataset.gaze && gazeSheets.has(goat.dataset.gaze);
+  const gazeTo = (r, c) => {
+    const key = `${r}${c}`;
+    if (!goat || key === gazing) return;
+    gazing = key;
+    const body = goat.querySelector(".goat-body");
+    if (key === "11" || !canGaze()) { Object.assign(body.style, goat.rest); goat.classList.remove("is-gazing"); return; }
+    Object.assign(body.style, { backgroundImage: `url(${goat.dataset.gaze})`, backgroundSize: "300% auto", backgroundPosition: `${c * 50}% ${r * 50}%` });
+    goat.classList.add("is-gazing");
+  };
+  // The direction from its eyes to a point, in eight sectors; close to its face it looks at you.
+  const SECTORS = [[1, 2], [2, 2], [2, 1], [2, 0], [1, 0], [0, 0], [0, 1], [0, 2]];
+  const gazeAt = (x, y) => {
+    const r = goat.getBoundingClientRect();
+    const dx = x - (r.left + r.width / 2), dy = y - (r.top + r.height * 0.35);
+    if (Math.hypot(dx, dy) < r.width * 0.45) return gazeTo(1, 1);
+    gazeTo(...SECTORS[(Math.round(Math.atan2(dy, dx) / (Math.PI / 4)) + 8) % 8]);
   };
   // A turn: the head swings at the top of a small lift and squash, then the goat settles.
   const turnTo = (dir) => {
@@ -265,6 +299,16 @@
     // Looking around: its head turns one way, back to you, the other way, and back.
     // It stops looking as soon as it is wanted at another slot.
     look: async () => {
+      if (canGaze()) {
+        // A gazing goat glances about: a few directions, then back at you.
+        for (let i = 0; i < 3 && !interrupted(); i++) {
+          const [r, c] = SECTORS[Math.floor(Math.random() * SECTORS.length)];
+          gazeTo(r, c);
+          await wait(650 + Math.random() * 500, interrupted);
+        }
+        gazeTo(1, 1);
+        return;
+      }
       if (!canTurn()) return moves.bob();
       const [one, two] = Math.random() < 0.5 ? ["left", "right"] : ["right", "left"];
       for (const [dir, pause] of [[one, 900 + Math.random() * 500], ["front", 260], [two, 900 + Math.random() * 500]]) {
@@ -277,7 +321,7 @@
     peekaboo: () => duck().then(() => wait(700, interrupted)).then(pop),
   };
   const idle = async () => {
-    if (!busy && !down && goat) {
+    if (!busy && !down && goat && !(canGaze() && following())) {
       busy = idling = true;
       const names = Object.keys(moves);
       try { await moves[names[Math.floor(Math.random() * names.length)]](); } catch (e) { face("front"); goat.style.transform = REST; }
@@ -388,6 +432,16 @@
     go(pick());
     if (still) return;
     setTimeout(idle, 3000);
+    // A gazing goat follows the mouse anywhere on the page, and on a phone looks where you tap for a moment.
+    addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse" || down || !canGaze() || (busy && !idling)) return;
+      follow(e.clientX, e.clientY);
+    }, { passive: true });
+    document.documentElement.addEventListener("pointerleave", () => { if (canGaze()) gazeTo(1, 1); });
+    addEventListener("pointerdown", (e) => {
+      if (e.pointerType === "mouse" || down || !canGaze() || goat.contains(e.target)) return;
+      follow(e.clientX, e.clientY);
+    }, { passive: true });
     // It looks towards a mouse pointer that comes close, and back at you when the pointer is over it or gone.
     addEventListener("pointermove", (e) => {
       if (e.pointerType !== "mouse" || busy || down || !canTurn()) return;
@@ -404,8 +458,12 @@
   const sheets = [...new Set(peeks.map((p) => p.style.backgroundImage.slice(4, -1).replace(/"/g, "")))];
   const decode = (src) => { const i = new Image(); i.src = src; return i.decode(); };
   // The turned heads load once the goat is out; until then it simply looks at you.
-  const turns = () => [...new Set(peeks.map((p) => (p.dataset.turn || "").split("|")[0]).filter(Boolean))]
-    .forEach((src) => decode(src).then(() => turnSheets.add(src), () => {}));
+  const turns = () => {
+    [...new Set(peeks.map((p) => (p.dataset.turn || "").split("|")[0]).filter(Boolean))]
+      .forEach((src) => decode(src).then(() => turnSheets.add(src), () => {}));
+    [...new Set(peeks.map((p) => p.dataset.gaze).filter(Boolean))]
+      .forEach((src) => decode(src).then(() => gazeSheets.add(src), () => {}));
+  };
   const load = () => Promise.all(sheets.map(decode))
     .then(() => { start(); if (!still) later(turns); }, () => root.classList.remove("goat-one"));
   const later = window.requestIdleCallback || ((f) => setTimeout(f, 200));

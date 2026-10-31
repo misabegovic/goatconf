@@ -24,8 +24,8 @@
   "edge": null,
   "eyes": null,
   "group": "goatchi",
-  "h": 634,
-  "w": 488
+  "h": 640,
+  "w": 489
  },
  "coder-hungry": {
   "edge": null,
@@ -66,14 +66,14 @@
   "edge": null,
   "eyes": null,
   "group": "goatchi",
-  "h": 619,
-  "w": 489
+  "h": 640,
+  "w": 478
  },
  "cook-happy": {
   "edge": null,
   "eyes": null,
   "group": "goatchi",
-  "h": 586,
+  "h": 588,
   "w": 530
  },
  "cook-hiking": {
@@ -101,7 +101,7 @@
   "edge": null,
   "eyes": null,
   "group": "goatchi",
-  "h": 600,
+  "h": 609,
   "w": 569
  },
  "cook-sleeping": {
@@ -130,7 +130,7 @@
   "eyes": null,
   "group": "goatchi",
   "h": 623,
-  "w": 476
+  "w": 477
  },
  "goat-playing": {
   "edge": null,
@@ -157,8 +157,8 @@
   "edge": null,
   "eyes": null,
   "group": "goatchi",
-  "h": 627,
-  "w": 439
+  "h": 640,
+  "w": 404
  },
  "hidden-hiking": {
   "edge": null,
@@ -178,7 +178,7 @@
   "edge": null,
   "eyes": null,
   "group": "goatchi",
-  "h": 604,
+  "h": 605,
   "w": 477
  },
  "hidden-playing": {
@@ -261,14 +261,14 @@
  "jumping": {
   "edge": null,
   "eyes": [
-   157,
-   129,
-   363,
-   256
+   144,
+   172,
+   332,
+   288
   ],
   "group": "base",
   "h": 640,
-  "w": 429
+  "w": 393
  },
  "peek-coder": {
   "edge": 596,
@@ -287,20 +287,20 @@
   "w": 627
  },
  "peek-cook": {
-  "edge": 593,
+  "edge": 551,
   "eyes": [
-   161,
+   162,
    196,
-   382,
+   385,
    338
   ],
   "group": "roles",
   "h": 640,
   "turn": {
-   "band": 502,
+   "band": 495,
    "pad": 96
   },
-  "w": 471
+  "w": 475
  },
  "peek-hidden": {
   "edge": 320,
@@ -400,7 +400,7 @@
   "edge": null,
   "eyes": null,
   "group": "goatchi",
-  "h": 635,
+  "h": 639,
   "w": 483
  },
  "pirate-hungry": {
@@ -429,7 +429,7 @@
   "eyes": null,
   "group": "goatchi",
   "h": 528,
-  "w": 607
+  "w": 608
  },
  "pirate-sulking": {
   "edge": null,
@@ -451,27 +451,27 @@
   "w": 464
  },
  "speaker-amar-mahmutbegovic": {
-  "edge": 565,
+  "edge": 572,
   "eyes": [
-   152,
-   133,
-   349,
-   269
+   139,
+   176,
+   320,
+   301
   ],
   "group": "speakers",
   "h": 640,
   "turn": {
-   "band": 560,
+   "band": 581,
    "pad": 96
   },
-  "w": 441
+  "w": 404
  },
  "speaker-amar-mahmutbegovic-sitting": {
   "edge": null,
   "eyes": null,
   "group": "speakers-sitting",
   "h": 640,
-  "w": 441
+  "w": 404
  },
  "speaker-carmine-paolino": {
   "edge": 564,
@@ -579,8 +579,8 @@
   "edge": null,
   "eyes": null,
   "group": "goatchi",
-  "h": 639,
-  "w": 500
+  "h": 640,
+  "w": 509
  },
  "speaker-hungry": {
   "edge": null,
@@ -597,20 +597,80 @@
   "w": 469
  },
  "speaker-paul-campbell": {
-  "edge": 574,
+  "edge": 430,
   "eyes": [
-   142,
-   167,
-   450,
-   378
+   145,
+   153,
+   458,
+   291
   ],
+  "gaze": true,
   "group": "speakers",
-  "h": 640,
-  "turn": {
-   "band": 605,
-   "pad": 96
-  },
-  "w": 549
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-00": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-01": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-02": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-10": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-11": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-12": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-20": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-21": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
+ },
+ "speaker-paul-campbell-gaze-22": {
+  "edge": 430,
+  "eyes": null,
+  "group": "gaze",
+  "h": 532,
+  "w": 640
  },
  "speaker-paul-campbell-sitting": {
   "edge": null,
@@ -623,8 +683,8 @@
   "edge": null,
   "eyes": null,
   "group": "goatchi",
-  "h": 634,
-  "w": 488
+  "h": 640,
+  "w": 487
  },
  "speaker-predrag-radenkovic": {
   "edge": 564,
@@ -727,7 +787,7 @@
   "eyes": null,
   "group": "stickers",
   "h": 640,
-  "w": 421
+  "w": 402
  },
  "sticker-fildzan": {
   "edge": null,
@@ -809,13 +869,13 @@
  "waving": {
   "edge": null,
   "eyes": [
-   142,
-   144,
-   362,
-   271
+   130,
+   184,
+   333,
+   301
   ],
   "group": "base",
   "h": 640,
-  "w": 475
+  "w": 437
  }
 }
