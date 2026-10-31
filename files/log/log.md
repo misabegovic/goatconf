@@ -856,3 +856,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #244: site: the goat's bubble stays on screen on phones
    diff: 34 files, +81/-62
    restricted-paths: false
+2026-10-31 merge — PR #245: site: the goat no longer blinks out when it changes picture
+   diff: 32 files, +35/-32
+   restricted-paths: false
