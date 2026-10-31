@@ -85,6 +85,12 @@ def goats(people) -> list:
     return out
 
 
+def blink_attr(pose: str) -> str:
+    """The goat with its eyes shut, for its blink, when it has one (ADR goat-animations)."""
+    b = goat_atlas.blink_single(pose)
+    return f'data-blink="{b}" ' if b else ""
+
+
 def _img(pose: str, cls: str, alt: str = "", lazy: bool = True) -> str:
     src, w, h = goat_atlas.single(pose)
     return f'<img class="{cls}" src="{src}" width="{w}" height="{h}" alt="{esc(alt)}"{" loading=\"lazy\"" if lazy else ""} decoding="async">'
@@ -95,6 +101,7 @@ def page() -> str:
     picks = "\n".join(
         f'    <li><button type="button" class="goatchi__pick-goat" data-pose="{g["pose"]}" data-name="{esc(g["name"])}" '
         f'data-src="{goat_atlas.single(g["pose"])[0]}" data-speaker="{g["speaker"]}" '
+        f'{blink_attr(g["pose"])}'
         f'data-poses="{esc(json.dumps(poses(g["pose"]), separators=(",", ":")))}">{_img(g["pose"], "goatchi__thumb")}'
         f'<span>{esc(g["name"])}</span></button></li>' for g in goats(people))
     cards = "\n".join(

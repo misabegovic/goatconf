@@ -844,3 +844,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #240: site: the coder goat's laptop, without its logo
    diff: 6 files, +33/-24
    restricted-paths: false
+2026-10-31 merge — PR #241: site: Goatchi's goats blink
+   diff: 13 files, +91/-14
+   restricted-paths: true

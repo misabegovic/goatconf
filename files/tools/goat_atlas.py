@@ -244,6 +244,13 @@ def goat(pose: str, cls: str, beat: int = 0) -> str:
     return f'<span class="goat {cls}" aria-hidden="true" data-goat="{pose}"{turn}{gaze} style="{style}">{eyes}</span>'
 
 
+def blink_single(pose: str):
+    """A Goatchi goat with its eyes shut, the size of its single, for its blink; None for a goat with no blink layer."""
+    if pose not in GOATCHI_GOATS or not manifest()[pose].get("eyes"):
+        return None
+    return stamped(f"{WEB}/{pose}-blink.webp")
+
+
 def single(pose: str) -> tuple[str, int, int]:
     """A goat shown on its own: its file and size."""
     m = manifest()[pose]
@@ -327,6 +334,13 @@ def _images():
         path, w, h = single(p)
         path = path.split("?")[0]
         yield ROOT / "site" / path, (w, h), (lambda p=p, w=w, h=h: open_(p, (w, h)))
+        if blink_single(p):
+            def shut(p=p, w=w, h=h):
+                from PIL import Image
+                im = open_(p, (w, h))
+                im.alpha_composite(Image.open(ART / f"{p}-blink.webp").convert("RGBA").resize((w, h), Image.LANCZOS))
+                return im
+            yield ROOT / "site" / blink_single(p).split("?")[0], (w, h), shut
 
 
 def masters() -> bool:
