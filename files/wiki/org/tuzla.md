@@ -58,6 +58,8 @@ sources:
   - sources/web/travel/tzl-bus-line-34-2026-11-02.md
   - sources/web/travel/tzl-airport-to-town-2026-11-02.md
   - sources/web/travel/airport-transfers-2026-11-02.md
+  - sources/web/travel/balkantransfer-routes-2026-11-02.md
+  - sources/conversations/2026-11-02--org--balkan-transfer-routes.md
   - sources/web/travel/banja-luka-airport-2026-11-02.md
   - sources/web/travel/trains-to-tuzla-2026-11-02.md
   - sources/web/travel/zrs-banja-luka-doboj-2026-11-02.md
@@ -191,8 +193,11 @@ and fond of a goat that one family hid when goats were banned
   estimate was 13 to 17 USD (`sources/web/travel/rome2rio-tzl-airport-tuzla.md`).
 - **Transfer companies** (source: sources/web/travel/airport-transfers-2026-11-02.md):
   from Sarajevo airport, Balkan Transfer runs shared vans timed to every
-  flight, door to door in Tuzla in about 2 hours (price only when
-  booking), Daytrip a private car (above) and Easy Balkan Transfers on
+  flight, door to door in Tuzla in about 2 hours, from 19 EUR a seat,
+  and back from Tuzla to Sarajevo airport; its booking form offers no
+  route from Tuzla airport into Tuzla, nor from Banja Luka airport to
+  Tuzla (source: sources/web/travel/balkantransfer-routes-2026-11-02.md,
+  sources/conversations/2026-11-02--org--balkan-transfer-routes.md), Daytrip a private car (above) and Easy Balkan Transfers on
   quote; from Tuzla airport, Easy Balkan Transfers (above). No company
   found lists Banja Luka airport to Tuzla. JAM Transfer's Tuzla page was
   left out as unreliable. The travel page names them in "From the
