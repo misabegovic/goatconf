@@ -60,6 +60,8 @@ sources:
   - sources/web/travel/airport-transfers-2026-11-02.md
   - sources/web/travel/banja-luka-airport-2026-11-02.md
   - sources/web/travel/trains-to-tuzla-2026-11-02.md
+  - sources/web/travel/zrs-banja-luka-doboj-2026-11-02.md
+  - sources/conversations/2026-11-02--org--banja-luka-train-two-a-day.md
   - sources/web/travel/obilet-tuzla-sarajevo-bus.md
   - sources/web/travel/rome2rio-sarajevo-tuzla.md
   - sources/web/travel/rome2rio-belgrade-tuzla.md
@@ -207,8 +209,13 @@ and fond of a goat that one family hid when goats were banned
 - **Trains:** no passenger train runs to Tuzla; the Doboj to Tuzla
   service ended with the December 2019 timetable, by a search extract of
   a railway guide. The nearest trains are at Doboj, about 1 h 10 min to
-  1 h 45 min from Tuzla by bus (four a day). One train a day runs Banja
-  Luka to Doboj (04:32 to 06:38, 10.40 KM); ŽFBH's own trains run only
+  1 h 45 min from Tuzla by bus (four a day). Two passenger trains a day
+  run Banja Luka to Doboj, 04:32 to 06:38 and 15:38 to 17:45, and back
+  from Doboj at 04:15 and 15:30, for 10.40 KM, by ŽRS's own timetable for
+  2025/2026 (source: sources/web/travel/zrs-banja-luka-doboj-2026-11-02.md);
+  the afternoon train meets the 18:25 bus to Tuzla (19:45). An aggregator
+  had listed only the morning train (source: sources/conversations/2026-11-02--org--banja-luka-train-two-a-day.md).
+  ŽFBH's own trains run only
   Sarajevo to Mostar, Čapljina and Ploče (source: sources/web/travel/trains-to-tuzla-2026-11-02.md).
   From Croatia, train to Slavonski Brod (from Zagreb) or Vinkovci (from
   Osijek), then bus: about 6 to 8 hours (`sources/web/travel/rome2rio-zagreb-tuzla.md`,
