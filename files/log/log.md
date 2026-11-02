@@ -865,3 +865,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-02 merge — PR #247: site: trains, the airport bus, Banja Luka airport and transfer companies on the travel page
    diff: 22 files, +619/-102
    restricted-paths: false
+2026-11-02 merge — PR #249: drumbeat: announce the speakers one by one, on Tuesdays
+   diff: 9 files, +371/-228
+   restricted-paths: false
