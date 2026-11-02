@@ -2,11 +2,12 @@
 title: "The drumbeat, January to March 2027"
 kind: reference
 status: draft
-updated: 2026-10-26
+updated: 2026-11-02
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-02--org--speakers-one-by-one.md
   - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
   - sources/conversations/2026-10-12--org--two-core-days-and-saturday.md
   - sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md
@@ -60,6 +61,12 @@ sources:
   - sources/web/tuzla/hotelscombined-tuzla.md
   - sources/web/tuzla/fcdo-bih-entry-requirements.md
   - sources/conversations/2026-10-13--org--lake-season-opens-1-june.md
+  - sources/conversations/2026-10-12--org--approval-back-on.md
+  - sources/conversations/2026-10-12--org--registration-on-luma.md
+  - sources/conversations/2026-10-12--org--session-registration-later.md
+  - sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md
+  - sources/conversations/2026-10-13--org--outside-review-fixes.md
+  - sources/conversations/2026-10-18--org--registration-approval-not-on-the-site.md
 ---
 
 # The drumbeat, January to March 2027
@@ -84,24 +91,25 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-12--org--two-core-days-and-saturday.md, sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md.
 
-### Sat 9 Jan 2027, week 13: Speaker: Dejan Menges
+### Sat 9 Jan 2027, week 13: Registration is open, and free
 
-- **State:** drafted
-- **Image:** [`speaker-dejan-menges-announce-square.png`](https://goatconf.com/share/speaker-dejan-menges-announce-square.png) (LinkedIn, Mastodon), [`speaker-dejan-menges-announce-wide.png`](https://goatconf.com/share/speaker-dejan-menges-announce-wide.png) (X, Bluesky)
-- **Tag:** Dejan Menges and Vinted
+- **State:** drafted; on the organiser's word it goes after the last speaker spotlight, on Tuesday 29 December 2026 (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md)
+- **Image:** [`post-register-square.png`](https://goatconf.com/share/post-register-square.png) (LinkedIn, Mastodon), [`post-register-wide.png`](https://goatconf.com/share/post-register-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
-  > Meet a GoatConf 2027 speaker: Dejan Menges.
+  > Registration for GoatConf 2027 is open, and tickets are free.
   >
-  > Dejan is a staff engineer at Vinted with more than twenty-five years spent designing distributed systems. He works on moving organisations from monoliths to scalable, event-driven architectures, and builds Enola, an open-source architecture intelligence tool for developers and coding agents.
+  > Talks on Thursday 3 and Friday 4 June at IPI Academy in Tuzla, then Saturday 5 June for the community: the salt lakes, a goat hunt through town, and whatever people add.
   >
-  > His talk: Teaching Twenty Languages to Describe One System. In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-dejan-menges
+  > Register on Luma in a minute, and Luma emails you when you're in. Closer to June, you'll also pick the sessions you want, because each room has only so many seats.
+  >
+  > goatconf.com/register
 
-- **Short** (183 characters):
+- **Short** (190 characters):
 
-  > Meet a GoatConf 2027 speaker: Dejan Menges, staff engineer at Vinted and author of Enola. His talk: Teaching Twenty Languages to Describe One System. goatconf.com/speaker-dejan-menges
+  > Registration for GoatConf 2027 is open, and tickets are free. Talks on 3 and 4 June at IPI Academy, Tuzla, then a community day at the salt lakes. Register in a minute: goatconf.com/register
 
-  Sources: sources/conversations/2026-10-14--org--speakers-before-sessions.md, sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md, sources/conversations/2026-10-17--org--dejan-photo-and-role.md.
+  Sources: sources/conversations/2026-10-12--org--registration-on-luma.md, sources/conversations/2026-10-12--org--approval-back-on.md, sources/conversations/2026-10-18--org--registration-approval-not-on-the-site.md, sources/conversations/2026-10-13--org--outside-review-fixes.md, sources/conversations/2026-10-12--org--session-registration-later.md, sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md.
 
 ### Sat 16 Jan 2027, week 14: Thank you, wroclove.rb
 
@@ -146,25 +154,6 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-18--org--bh-professionals-meetup-accepted.md, sources/conversations/2026-10-18--org--bhff-funding-and-organising.md, sources/conversations/2026-10-18--org--bhff-card-official-program.md, sources/conversations/2026-10-18--org--bhff-listed-as-supporter.md.
 
-### Sat 30 Jan 2027, week 16: Speaker: Amar Mahmutbegović
-
-- **State:** drafted
-- **Image:** [`speaker-amar-mahmutbegovic-announce-square.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-amar-mahmutbegovic-announce-wide.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-wide.png) (X, Bluesky)
-- **Tag:** Amar Mahmutbegović and Semblie
-- **LinkedIn:**
-
-  > Meet a GoatConf 2027 speaker, from Tuzla itself: Amar Mahmutbegović.
-  >
-  > Amar is the co-founder and Head of Engineering at Semblie, where he leads the use of modern C++ for firmware development. He shows the embedded community what C++ can do through his blog posts and on LinkedIn, and he wrote C++ in Embedded Systems (Packt, 2025).
-  >
-  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-amar-mahmutbegovic
-
-- **Short** (175 characters):
-
-  > Meet a GoatConf 2027 speaker from Tuzla: Amar Mahmutbegović, co-founder of Semblie and author of C++ in Embedded Systems (Packt, 2025). goatconf.com/speaker-amar-mahmutbegovic
-
-  Sources: sources/conversations/2026-10-14--org--amar-mahmutbegovic.md.
-
 ### Sat 6 Feb 2027, week 17: Not only for engineers
 
 - **State:** drafted
@@ -203,25 +192,6 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Getting to GoatConf in Tuzla: fly into Tuzla (Wizz Air) or Sarajevo, about two hours away, or take the bus from Belgrade, Zagreb or Osijek. All the options: goatconf.com/travel
 
   Sources: sources/web/travel/tzl-flight-board-2026-10-07.md, sources/web/travel/rome2rio-sarajevo-tuzla.md, sources/web/travel/obilet-tuzla-sarajevo-bus.md, sources/web/travel/rome2rio-belgrade-tuzla.md, sources/web/travel/rome2rio-zagreb-tuzla.md, sources/web/travel/car-rental-2026-10-14.md.
-
-### Sat 20 Feb 2027, week 19: Speaker: Cristian Planas
-
-- **State:** drafted
-- **Image:** [`speaker-cristian-planas-announce-square.png`](https://goatconf.com/share/speaker-cristian-planas-announce-square.png) (LinkedIn, Mastodon), [`speaker-cristian-planas-announce-wide.png`](https://goatconf.com/share/speaker-cristian-planas-announce-wide.png) (X, Bluesky)
-- **Tag:** Cristian Planas
-- **LinkedIn:**
-
-  > Meet a GoatConf 2027 speaker: Cristian Planas.
-  >
-  > Cristian is a Ruby developer, conference speaker and the author of Rails Scales!. With over 15 years of Rails experience, he has helped build and scale large applications at Zendesk, and now works at Combinaut, exploring the intersection of Ruby, testing and AI-assisted development.
-  >
-  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-cristian-planas
-
-- **Short** (179 characters):
-
-  > Meet a GoatConf 2027 speaker: Cristian Planas, author of Rails Scales!, 15 years of Rails, from Zendesk to Combinaut. In Tuzla on 3 or 4 June. goatconf.com/speaker-cristian-planas
-
-  Sources: sources/conversations/2026-10-14--org--cristian-planas.md.
 
 ### Sat 27 Feb 2027, week 20: Support GoatConf online
 
@@ -262,25 +232,6 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-13--org--speaker-travel-and-luma-question.md, sources/conversations/2026-10-15--org--christoph-lipautz.md.
 
-### Sat 13 Mar 2027, week 22: Speaker: Christoph Lipautz
-
-- **State:** drafted
-- **Image:** [`speaker-christoph-lipautz-announce-square.png`](https://goatconf.com/share/speaker-christoph-lipautz-announce-square.png) (LinkedIn, Mastodon), [`speaker-christoph-lipautz-announce-wide.png`](https://goatconf.com/share/speaker-christoph-lipautz-announce-wide.png) (X, Bluesky)
-- **Tag:** Christoph Lipautz and Meister
-- **LinkedIn:**
-
-  > Meet a GoatConf 2027 speaker: Christoph Lipautz.
-  >
-  > Christoph is a Senior Staff Engineer at Meister, an open-source enthusiast and a Linux user, and he was on the speakers team of EuRuKo 2024. His talk at GoatConf: Back to the Future.
-  >
-  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-christoph-lipautz
-
-- **Short** (178 characters):
-
-  > Meet a GoatConf 2027 speaker: Christoph Lipautz, Senior Staff Engineer at Meister and open-source enthusiast. His talk: Back to the Future. goatconf.com/speaker-christoph-lipautz
-
-  Sources: sources/conversations/2026-10-15--org--christoph-lipautz.md, sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md.
-
 ### Sat 20 Mar 2027, week 23: An hour off after every session
 
 - **State:** drafted
@@ -300,28 +251,6 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > GoatConf is not a crammed schedule: every one-hour session is followed by an hour off on Freedom Square, five minutes from the rooms. Coffee, lunch and time to talk. goatconf.com/program
 
   Sources: sources/conversations/2026-10-12--org--day-chain-and-session-format.md, sources/conversations/2026-10-12--org--friday-dzuma-schedule.md.
-
-### Sat 27 Mar 2027, week 24: Speaker: Predrag Radenkovic
-
-- **State:** drafted
-- **Image:** [`speaker-predrag-radenkovic-announce-square.png`](https://goatconf.com/share/speaker-predrag-radenkovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-predrag-radenkovic-announce-wide.png`](https://goatconf.com/share/speaker-predrag-radenkovic-announce-wide.png) (X, Bluesky)
-- **Tag:** Predrag Radenkovic and *codeplain
-- **Before posting:** if his talk or workshop on regenerative software is on the program by then, add its title and day.
-- **LinkedIn:**
-
-  > Meet a GoatConf 2027 speaker: Predrag Radenkovic.
-  >
-  > Predrag is the CTO of *codeplain, which turns specifications written in ***plain into production-ready software: when something needs to change, the spec is edited and the code regenerated. A two-time founding engineer, he has led technical teams at Silverfin, Toptal and FIS, and he teaches developers to make specifications the source of truth for the code AI writes.
-  >
-  > Thank you, *codeplain, for covering his travel to Tuzla.
-  >
-  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-predrag-radenkovic
-
-- **Short** (215 characters):
-
-  > Meet a GoatConf 2027 speaker: Predrag Radenkovic, CTO of *codeplain, where specs are the source of truth and code is regenerated from them. Thanks, *codeplain, for his travel. goatconf.com/speaker-predrag-radenkovic
-
-  Sources: sources/conversations/2026-10-23--org--predrag-radenkovic.md, sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md, sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md, sources/web/supporters/codeplain-logo-and-site-2026-10-23.md, sources/web/speakers/thenewstack-codeplain-2026-10-23.md, sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md.
 
 ## Related
 
