@@ -2,7 +2,7 @@
 title: "Tuzla for GoatConf: getting there, staying, costs, June, the lakes, the rules"
 kind: reference
 status: living
-updated: 2026-10-27
+updated: 2026-11-02
 confidence: medium
 sources:
   - sources/conversations/2026-10-27--org--tuzla-guide.md
@@ -54,6 +54,12 @@ sources:
   - sources/web/travel/easybalkan-tzl-transfers.md
   - sources/web/travel/rome2rio-tzl-airport-tuzla.md
   - sources/web/travel/daytrip-sjj-airport-tuzla.md
+  - sources/conversations/2026-11-02--org--trains-airport-buses-banja-luka-transfers.md
+  - sources/web/travel/tzl-bus-line-34-2026-11-02.md
+  - sources/web/travel/tzl-airport-to-town-2026-11-02.md
+  - sources/web/travel/airport-transfers-2026-11-02.md
+  - sources/web/travel/banja-luka-airport-2026-11-02.md
+  - sources/web/travel/trains-to-tuzla-2026-11-02.md
   - sources/web/travel/obilet-tuzla-sarajevo-bus.md
   - sources/web/travel/rome2rio-sarajevo-tuzla.md
   - sources/web/travel/rome2rio-belgrade-tuzla.md
@@ -169,13 +175,49 @@ and fond of a goat that one family hid when goats were banned
   the public travel page should not promise a route before it is on
   sale.
 - **Renting a car:** Sarajevo airport lists about 20 rental companies with desks there, and Tuzla airport says rental desks are in its arrivals hall, without naming them; Enterprise allows one-way rentals between Sarajevo and Tuzla for a drop fee. Expect a licence held for two years and a minimum age of 21; licences not in the Latin alphabet need an international driving permit or a certified translation, and UK licence holders renting in Bosnia and Herzegovina need the 1968 permit. Dipped headlights are required at all times. Rental prices for June 2027 and Tuzla's parking rates are (unknown, needs source) (source: sources/web/travel/car-rental-2026-10-14.md). The travel page says so in a short "Renting a car" block (source: sources/conversations/2026-10-14--org--car-rentals.md), which names the 20 companies on Sarajevo airport's list and, for Tuzla airport, Enterprise with Alamo, and Carwiz (source: sources/conversations/2026-10-14--org--car-rental-companies.md).
-- **Airport to the city:** a private transfer at 25 EUR for a car, about
-  12 minutes (`sources/web/travel/easybalkan-tzl-transfers.md`); a taxi
-  estimated at 13 to 17 USD (`sources/web/travel/rome2rio-tzl-airport-tuzla.md`).
-  A public bus from the airport is (unknown, needs source).
+- **Airport to the city:** from 18 June 2026 city bus line 34 (GIPS)
+  runs between the terminal and Tuzla AS Istok every two hours, every
+  day: from the airport at odd hours 07:00 to 23:00, from AS Istok at
+  even hours 06:00 to 22:00 (`sources/web/travel/tzl-bus-line-34-2026-11-02.md`).
+  Travel sites put its fare at 2.50 KM to the driver and the ride at
+  about 25 minutes, past the main bus station and the Higijena (Kipovi)
+  stop; shuttle vans meet each arrival and run to the main bus station
+  for 10 KM or 5 EUR; a taxi is about 30 KM, cash
+  (`sources/web/travel/tzl-airport-to-town-2026-11-02.md`). A private
+  transfer is 25 EUR for a car or 30 EUR for a minivan, about 12 minutes
+  (`sources/web/travel/easybalkan-tzl-transfers.md`); an older taxi
+  estimate was 13 to 17 USD (`sources/web/travel/rome2rio-tzl-airport-tuzla.md`).
+- **Transfer companies** (source: sources/web/travel/airport-transfers-2026-11-02.md):
+  from Sarajevo airport, Balkan Transfer runs shared vans timed to every
+  flight, door to door in Tuzla in about 2 hours (price only when
+  booking), Daytrip a private car (above) and Easy Balkan Transfers on
+  quote; from Tuzla airport, Easy Balkan Transfers (above). No company
+  found lists Banja Luka airport to Tuzla. JAM Transfer's Tuzla page was
+  left out as unreliable. The travel page names them in "From the
+  airport to town" (source: sources/conversations/2026-11-02--org--trains-airport-buses-banja-luka-transfers.md).
+- **Banja Luka airport (BNX)** is a third way in, about 2 hours from
+  Tuzla by car. Its board on 2026-11-02 showed Ryanair (Karlsruhe,
+  Gothenburg, Vienna, Memmingen), Wizz Air (Dortmund) and Air Serbia
+  (Belgrade); a Smiljić Company shuttle meets every flight and runs to
+  the city centre and the new bus station for 12 KM; Avis and Carwiz
+  rent cars there. Buses from Banja Luka to Tuzla take about 4 hours,
+  one direct a day by Rome2Rio, otherwise with a change at Doboj; a
+  taxi is about 220 to 270 KM (source: sources/web/travel/banja-luka-airport-2026-11-02.md).
+  Its summer 2027 routes are (unknown, needs source).
+- **Trains:** no passenger train runs to Tuzla; the Doboj to Tuzla
+  service ended with the December 2019 timetable, by a search extract of
+  a railway guide. The nearest trains are at Doboj, about 1 h 10 min to
+  1 h 45 min from Tuzla by bus (four a day). One train a day runs Banja
+  Luka to Doboj (04:32 to 06:38, 10.40 KM); ŽFBH's own trains run only
+  Sarajevo to Mostar, Čapljina and Ploče (source: sources/web/travel/trains-to-tuzla-2026-11-02.md).
+  From Croatia, train to Slavonski Brod (from Zagreb) or Vinkovci (from
+  Osijek), then bus: about 6 to 8 hours (`sources/web/travel/rome2rio-zagreb-tuzla.md`,
+  `rome2rio-osijek-tuzla.md`). The 2027 timetables are (unknown, needs source).
 - **From Sarajevo:** the airport is 122 km away, about 2 h 10 min by
   private transfer from 27 USD per person
-  (`sources/web/travel/daytrip-sjj-airport-tuzla.md`); buses from the
+  (`sources/web/travel/daytrip-sjj-airport-tuzla.md`); Centrotrans's
+  airport bus runs into Sarajevo for 5 KM, timed to the flights
+  (`sources/web/travel/airport-transfers-2026-11-02.md`); buses from the
   Sarajevo bus station take about 3 to 3.5 hours at about 23 to 39 KM
   (`sources/web/travel/obilet-tuzla-sarajevo-bus.md`,
   `rome2rio-sarajevo-tuzla.md`).
