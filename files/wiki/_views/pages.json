@@ -599,6 +599,7 @@
         "org/prds/social-drumbeat.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-02--org--speakers-from-tomorrow.md",
         "sources/conversations/2026-11-02--org--do-what-feels-best.md",
         "sources/conversations/2026-11-02--org--speakers-one-by-one.md",
         "sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md",
@@ -617,7 +618,7 @@
         "sources/web/social/goatconf-linkedin-2026-10-15.md",
         "sources/web/social/goatconf-x-2026-10-15.md"
       ],
-      "tokens": 1877
+      "tokens": 1852
     },
     {
       "path": "org/adrs/speakers-and-travel-supporters.md",
@@ -1029,9 +1030,8 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-02--org--speakers-from-tomorrow.md",
         "sources/conversations/2026-11-02--org--do-what-feels-best.md",
-        "sources/web/tuzla/tztz-geological-exhibition-pannonica.md",
-        "sources/web/tuzla/tztz-pannonian-lakes.md",
         "sources/conversations/2026-11-02--org--speakers-one-by-one.md",
         "sources/conversations/2026-10-31--org--goatchi-post-published.md",
         "sources/conversations/2026-10-31--org--goatchi-promo-video.md",
@@ -1115,7 +1115,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 8582
+      "tokens": 8211
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -1177,6 +1177,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-02--org--speakers-from-tomorrow.md",
         "sources/conversations/2026-11-02--org--do-what-feels-best.md",
         "sources/conversations/2026-11-02--org--speakers-one-by-one.md",
         "sources/conversations/2026-10-26--org--confirmed-speaker-cards.md",
@@ -1239,7 +1240,7 @@
         "sources/conversations/2026-10-13--org--outside-review-fixes.md",
         "sources/conversations/2026-10-18--org--registration-approval-not-on-the-site.md"
       ],
-      "tokens": 3110
+      "tokens": 3126
     },
     {
       "path": "org/outreach/drumbeat.md",
@@ -1252,6 +1253,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-02--org--speakers-from-tomorrow.md",
         "sources/conversations/2026-11-02--org--do-what-feels-best.md",
         "sources/conversations/2026-11-02--org--speakers-one-by-one.md",
         "sources/conversations/2026-10-31--org--goatchi-post-published.md",
@@ -1276,7 +1278,7 @@
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
         "sources/web/images/food-photos-chosen-2026-10-13.md"
       ],
-      "tokens": 2843
+      "tokens": 2858
     },
     {
       "path": "org/outreach/ipi-proposal.md",

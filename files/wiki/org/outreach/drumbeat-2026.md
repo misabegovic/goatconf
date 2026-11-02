@@ -7,9 +7,8 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-02--org--speakers-from-tomorrow.md
   - sources/conversations/2026-11-02--org--do-what-feels-best.md
-  - sources/web/tuzla/tztz-geological-exhibition-pannonica.md
-  - sources/web/tuzla/tztz-pannonian-lakes.md
   - sources/conversations/2026-11-02--org--speakers-one-by-one.md
   - sources/conversations/2026-10-31--org--goatchi-post-published.md
   - sources/conversations/2026-10-31--org--goatchi-promo-video.md
@@ -203,47 +202,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-31--org--goatchi-full-game.md, sources/conversations/2026-10-31--org--goatchi-how-app-and-reminders.md, sources/conversations/2026-10-31--org--tap-to-pet-shipped.md, sources/conversations/2026-10-31--org--goatchi-pet-cute.md, sources/conversations/2026-10-31--org--goatchi-promo-video.md.
 
-### Tue 3 Nov 2026, Tuesday: 7,000 years of salt
-
-- **State:** drafted
-- **Image:** [`post-seven-thousand-years-square.png`](https://goatconf.com/share/post-seven-thousand-years-square.png) (LinkedIn, Mastodon), [`post-seven-thousand-years-wide.png`](https://goatconf.com/share/post-seven-thousand-years-wide.png) (X, Bluesky)
-- **Before posting:** News first: if a speaker, a supporter or an event was confirmed this week, its post takes this Tuesday and this one moves to the next free Tuesday.
-- **LinkedIn:**
-
-  > People have made salt in Tuzla for about 7,000 years.
-  >
-  > Under today's city centre lay a large Neolithic village of pile dwellings: houses on wooden stilts, on wetland fed by salt springs. Two of the clay pots its people used to boil salt water have been put back together. One dates to about 5,000 BC, the other to about 3,500 BC.
-  >
-  > The first finds came up in 1903, on the square now called Freedom Square. Since 2006 a rebuilt part of the village stands in the archaeological park by the Pannonian Lakes, and you can walk through it.
-  >
-  > GoatConf is in Tuzla on 3 to 5 June 2027: goatconf.com
-
-- **Short** (239 characters):
-
-  > People have made salt in Tuzla for about 7,000 years: Neolithic villagers boiled it in clay pots, in houses on stilts where the city centre is now. Their village is rebuilt by the salt lakes. GoatConf: Tuzla, 3 to 5 June 2027. goatconf.com
-
-  Sources: sources/web/tuzla/tztz-archaeological-park.md, sources/web/tuzla/tztz-history-of-tuzla.md.
-
-### Sat 7 Nov 2026, week 4: Meet at Meša and Ismet
-
-- **State:** drafted
-- **Image:** [`post-mesa-and-ismet-square.png`](https://goatconf.com/share/post-mesa-and-ismet-square.png) (LinkedIn, Mastodon), [`post-mesa-and-ismet-wide.png`](https://goatconf.com/share/post-mesa-and-ismet-wide.png) (X, Bluesky)
-- **Before posting:** News first: until the speaker run ends on Tuesday 29 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
-- **LinkedIn:**
-
-  > In Tuzla, "at Meša and Ismet" is all the directions anyone needs.
-  >
-  > On the Korzo, the walking street through the centre, stand statues of the city's two best-known people: the writer Meša Selimović, born in Tuzla in 1910 and author of Death and the Dervish, and the painter Ismet Mujezinović, born there in 1907. Their monument is where the city meets.
-  >
-  > In June 2027 it's a good place to meet the people you came to GoatConf with: goatconf.com
-
-- **Short** (216 characters):
-
-  > In Tuzla, "at Meša and Ismet" is all the directions you need: the statues of the writer Meša Selimović and the painter Ismet Mujezinović on the Korzo are where the city meets. See you there in June 2027. goatconf.com
-
-  Sources: sources/web/tuzla/tztz-mesa-and-ismet-monument.md, sources/web/tuzla/mesa-selimovic-wikipedia.md, sources/web/tuzla/tztz-wireless-city.md.
-
-### Tue 10 Nov 2026, Tuesday: Speaker: Paul Campbell
+### Tue 3 Nov 2026, Tuesday: Speaker: Paul Campbell
 
 - **State:** drafted
 - **Image:** [`speaker-paul-campbell-announce-square.png`](https://goatconf.com/share/speaker-paul-campbell-announce-square.png) (LinkedIn, Mastodon), [`speaker-paul-campbell-announce-wide.png`](https://goatconf.com/share/speaker-paul-campbell-announce-wide.png) (X, Bluesky)
@@ -262,6 +221,45 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Meet a GoatConf 2027 speaker: Paul Campbell, co-founder and CEO of Tito, who has run conferences on moving buses, in a castle and on an island. In Tuzla on 3 or 4 June. goatconf.com/speaker-paul-campbell
 
   Sources: sources/conversations/2026-10-14--org--paul-campbell.md.
+
+### Sat 7 Nov 2026, week 4: Meet at Meša and Ismet
+
+- **State:** drafted
+- **Image:** [`post-mesa-and-ismet-square.png`](https://goatconf.com/share/post-mesa-and-ismet-square.png) (LinkedIn, Mastodon), [`post-mesa-and-ismet-wide.png`](https://goatconf.com/share/post-mesa-and-ismet-wide.png) (X, Bluesky)
+- **Before posting:** News first: until the speaker run ends on Tuesday 22 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **LinkedIn:**
+
+  > In Tuzla, "at Meša and Ismet" is all the directions anyone needs.
+  >
+  > On the Korzo, the walking street through the centre, stand statues of the city's two best-known people: the writer Meša Selimović, born in Tuzla in 1910 and author of Death and the Dervish, and the painter Ismet Mujezinović, born there in 1907. Their monument is where the city meets.
+  >
+  > In June 2027 it's a good place to meet the people you came to GoatConf with: goatconf.com
+
+- **Short** (216 characters):
+
+  > In Tuzla, "at Meša and Ismet" is all the directions you need: the statues of the writer Meša Selimović and the painter Ismet Mujezinović on the Korzo are where the city meets. See you there in June 2027. goatconf.com
+
+  Sources: sources/web/tuzla/tztz-mesa-and-ismet-monument.md, sources/web/tuzla/mesa-selimovic-wikipedia.md, sources/web/tuzla/tztz-wireless-city.md.
+
+### Tue 10 Nov 2026, Tuesday: Speaker: Roy Tomeij
+
+- **State:** drafted
+- **Image:** [`speaker-roy-tomeij-announce-square.png`](https://goatconf.com/share/speaker-roy-tomeij-announce-square.png) (LinkedIn, Mastodon), [`speaker-roy-tomeij-announce-wide.png`](https://goatconf.com/share/speaker-roy-tomeij-announce-wide.png) (X, Bluesky)
+- **Tag:** Roy Tomeij and AppSignal
+- **Before posting:** When it goes, send the speaker their own "I'm speaking" card (speaker-roy-tomeij-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **LinkedIn:**
+
+  > Meet a GoatConf 2027 speaker: Roy Tomeij.
+  >
+  > Roy co-founded AppSignal, monitoring and logging for Ruby on Rails, which raised a $22M Series A in 2025. AppSignal's founders have been part of the Rails community since 2005, and Roy has spoken at RailsConf and EuRuKo. Now he works with founders and leadership teams on customer experience, operations and growth.
+  >
+  > He's speaking in Tuzla on 3 or 4 June 2027. His profile: goatconf.com/speaker-roy-tomeij
+
+- **Short** (201 characters):
+
+  > Meet a GoatConf 2027 speaker: Roy Tomeij, co-founder of AppSignal, monitoring and logging for Ruby on Rails, and a RailsConf and EuRuKo speaker. In Tuzla on 3 or 4 June. goatconf.com/speaker-roy-tomeij
+
+  Sources: sources/conversations/2026-10-20--org--roy-tomeij.md, sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md, sources/web/speakers/appsignal-roy-tomeij-2026-10-20.md, sources/web/speakers/rubyevents-roy-tomeij-2026-10-20.md.
 
 ### Sat 14 Nov 2026, week 5: Propose an event
 
@@ -283,25 +281,25 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-10--org--charter-and-extensions-approved.md, sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md, sources/conversations/2026-10-18--org--bh-professionals-meetup-accepted.md, sources/conversations/2026-10-18--org--event-and-session-pages.md.
 
-### Tue 17 Nov 2026, Tuesday: Speaker: Roy Tomeij
+### Tue 17 Nov 2026, Tuesday: Speaker: Carmine Paolino
 
 - **State:** drafted
-- **Image:** [`speaker-roy-tomeij-announce-square.png`](https://goatconf.com/share/speaker-roy-tomeij-announce-square.png) (LinkedIn, Mastodon), [`speaker-roy-tomeij-announce-wide.png`](https://goatconf.com/share/speaker-roy-tomeij-announce-wide.png) (X, Bluesky)
-- **Tag:** Roy Tomeij and AppSignal
-- **Before posting:** When it goes, send the speaker their own "I'm speaking" card (speaker-roy-tomeij-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **Image:** [`speaker-carmine-paolino-announce-square.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-square.png) (LinkedIn, Mastodon), [`speaker-carmine-paolino-announce-wide.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-wide.png) (X, Bluesky)
+- **Tag:** Carmine Paolino
+- **Before posting:** When it goes, send the speaker their own "I'm speaking" card (speaker-carmine-paolino-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
 - **LinkedIn:**
 
-  > Meet a GoatConf 2027 speaker: Roy Tomeij.
+  > Meet a GoatConf 2027 speaker: Carmine Paolino.
   >
-  > Roy co-founded AppSignal, monitoring and logging for Ruby on Rails, which raised a $22M Series A in 2025. AppSignal's founders have been part of the Rails community since 2005, and Roy has spoken at RailsConf and EuRuKo. Now he works with founders and leadership teams on customer experience, operations and growth.
+  > Carmine is a software engineer, founder and musician in Berlin. He created RubyLLM, a framework for building AI applications in Ruby, and builds Chat with Work, an AI assistant that connects to your work tools. He runs Plenty, the company behind this work.
   >
-  > He's speaking in Tuzla on 3 or 4 June 2027. His profile: goatconf.com/speaker-roy-tomeij
+  > He's speaking in Tuzla on 3 or 4 June 2027. His profile: goatconf.com/speaker-carmine-paolino
 
-- **Short** (201 characters):
+- **Short** (192 characters):
 
-  > Meet a GoatConf 2027 speaker: Roy Tomeij, co-founder of AppSignal, monitoring and logging for Ruby on Rails, and a RailsConf and EuRuKo speaker. In Tuzla on 3 or 4 June. goatconf.com/speaker-roy-tomeij
+  > Meet a GoatConf 2027 speaker: Carmine Paolino, creator of RubyLLM and founder of Plenty, software engineer and musician in Berlin. In Tuzla on 3 or 4 June. goatconf.com/speaker-carmine-paolino
 
-  Sources: sources/conversations/2026-10-20--org--roy-tomeij.md, sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md, sources/web/speakers/appsignal-roy-tomeij-2026-10-20.md, sources/web/speakers/rubyevents-roy-tomeij-2026-10-20.md.
+  Sources: sources/conversations/2026-10-14--org--carmine-paolino.md.
 
 ### Sat 21 Nov 2026, week 6: Why a goat
 
@@ -323,48 +321,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/web/funding/euruko-2024-why-the-goat.md, sources/web/tuzla/mondo-tuzlanska-koza-legenda.md, sources/conversations/2026-10-07--org--saying-confirmed.md, sources/conversations/2026-10-18--org--not-only-about-ruby.md.
 
-### Tue 24 Nov 2026, Tuesday: Speaker: Carmine Paolino
-
-- **State:** drafted
-- **Image:** [`speaker-carmine-paolino-announce-square.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-square.png) (LinkedIn, Mastodon), [`speaker-carmine-paolino-announce-wide.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-wide.png) (X, Bluesky)
-- **Tag:** Carmine Paolino
-- **Before posting:** When it goes, send the speaker their own "I'm speaking" card (speaker-carmine-paolino-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
-- **LinkedIn:**
-
-  > Meet a GoatConf 2027 speaker: Carmine Paolino.
-  >
-  > Carmine is a software engineer, founder and musician in Berlin. He created RubyLLM, a framework for building AI applications in Ruby, and builds Chat with Work, an AI assistant that connects to your work tools. He runs Plenty, the company behind this work.
-  >
-  > He's speaking in Tuzla on 3 or 4 June 2027. His profile: goatconf.com/speaker-carmine-paolino
-
-- **Short** (192 characters):
-
-  > Meet a GoatConf 2027 speaker: Carmine Paolino, creator of RubyLLM and founder of Plenty, software engineer and musician in Berlin. In Tuzla on 3 or 4 June. goatconf.com/speaker-carmine-paolino
-
-  Sources: sources/conversations/2026-10-14--org--carmine-paolino.md.
-
-### Sat 28 Nov 2026, week 7: 58 places to run yours
-
-- **State:** drafted
-- **Image:** [`post-where-to-run-it-square.png`](https://goatconf.com/share/post-where-to-run-it-square.png) (LinkedIn, Mastodon), [`post-where-to-run-it-wide.png`](https://goatconf.com/share/post-where-to-run-it-wide.png) (X, Bluesky)
-- **Before posting:** News first: until the speaker run ends on Tuesday 29 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
-- **LinkedIn:**
-
-  > Want to run something around GoatConf 2027, but not sure where?
-  >
-  > Make it yours now lists 58 places in Tuzla a host could ask, from cafés on Freedom Square to halls for a few hundred people. Search them by what you want to run, how many people are coming, how far it is from IPI Academy, and indoors or out.
-  >
-  > GoatConf has arranged nothing with them: you ask, you book and you pay. Then propose your event, and once it's accepted, it's part of GoatConf.
-  >
-  > goatconf.com/extend
-
-- **Short** (225 characters):
-
-  > Want to run something around GoatConf 2027? Make it yours lists 58 places in Tuzla to ask, from cafés on Freedom Square to halls for a few hundred people. You book it; once accepted, it's part of GoatConf. goatconf.com/extend
-
-  Sources: sources/conversations/2026-10-23--org--keep-looking.md, sources/conversations/2026-10-23--org--venues-approved.md, sources/conversations/2026-10-10--org--charter-and-extensions-approved.md.
-
-### Tue 1 Dec 2026, Tuesday: Speaker: Dejan Menges
+### Tue 24 Nov 2026, Tuesday: Speaker: Dejan Menges
 
 - **State:** drafted
 - **Image:** [`speaker-dejan-menges-announce-square.png`](https://goatconf.com/share/speaker-dejan-menges-announce-square.png) (LinkedIn, Mastodon), [`speaker-dejan-menges-announce-wide.png`](https://goatconf.com/share/speaker-dejan-menges-announce-wide.png) (X, Bluesky)
@@ -383,6 +340,47 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Meet a GoatConf 2027 speaker: Dejan Menges, staff engineer at Vinted and author of Enola. His talk: Teaching Twenty Languages to Describe One System. goatconf.com/speaker-dejan-menges
 
   Sources: sources/conversations/2026-10-14--org--speakers-before-sessions.md, sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md, sources/conversations/2026-10-17--org--dejan-photo-and-role.md.
+
+### Sat 28 Nov 2026, week 7: 58 places to run yours
+
+- **State:** drafted
+- **Image:** [`post-where-to-run-it-square.png`](https://goatconf.com/share/post-where-to-run-it-square.png) (LinkedIn, Mastodon), [`post-where-to-run-it-wide.png`](https://goatconf.com/share/post-where-to-run-it-wide.png) (X, Bluesky)
+- **Before posting:** News first: until the speaker run ends on Tuesday 22 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **LinkedIn:**
+
+  > Want to run something around GoatConf 2027, but not sure where?
+  >
+  > Make it yours now lists 58 places in Tuzla a host could ask, from cafés on Freedom Square to halls for a few hundred people. Search them by what you want to run, how many people are coming, how far it is from IPI Academy, and indoors or out.
+  >
+  > GoatConf has arranged nothing with them: you ask, you book and you pay. Then propose your event, and once it's accepted, it's part of GoatConf.
+  >
+  > goatconf.com/extend
+
+- **Short** (225 characters):
+
+  > Want to run something around GoatConf 2027? Make it yours lists 58 places in Tuzla to ask, from cafés on Freedom Square to halls for a few hundred people. You book it; once accepted, it's part of GoatConf. goatconf.com/extend
+
+  Sources: sources/conversations/2026-10-23--org--keep-looking.md, sources/conversations/2026-10-23--org--venues-approved.md, sources/conversations/2026-10-10--org--charter-and-extensions-approved.md.
+
+### Tue 1 Dec 2026, Tuesday: Speaker: Amar Mahmutbegović
+
+- **State:** drafted
+- **Image:** [`speaker-amar-mahmutbegovic-announce-square.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-amar-mahmutbegovic-announce-wide.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-wide.png) (X, Bluesky)
+- **Tag:** Amar Mahmutbegović and Semblie
+- **Before posting:** When it goes, send the speaker their own "I'm speaking" card (speaker-amar-mahmutbegovic-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **LinkedIn:**
+
+  > Meet a GoatConf 2027 speaker, from Tuzla itself: Amar Mahmutbegović.
+  >
+  > Amar is the co-founder and Head of Engineering at Semblie, where he leads the use of modern C++ for firmware development. He shows the embedded community what C++ can do through his blog posts and on LinkedIn, and he wrote C++ in Embedded Systems (Packt, 2025).
+  >
+  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-amar-mahmutbegovic
+
+- **Short** (175 characters):
+
+  > Meet a GoatConf 2027 speaker from Tuzla: Amar Mahmutbegović, co-founder of Semblie and author of C++ in Embedded Systems (Packt, 2025). goatconf.com/speaker-amar-mahmutbegovic
+
+  Sources: sources/conversations/2026-10-14--org--amar-mahmutbegovic.md.
 
 ### Sat 5 Dec 2026, week 8: Thank you, IPI Academy
 
@@ -403,46 +401,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md, sources/conversations/2026-10-14--org--decisions-one-by-one.md, sources/conversations/2026-10-12--org--all-available-rooms.md.
 
-### Tue 8 Dec 2026, Tuesday: Speaker: Amar Mahmutbegović
-
-- **State:** drafted
-- **Image:** [`speaker-amar-mahmutbegovic-announce-square.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-amar-mahmutbegovic-announce-wide.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-wide.png) (X, Bluesky)
-- **Tag:** Amar Mahmutbegović and Semblie
-- **Before posting:** When it goes, send the speaker their own "I'm speaking" card (speaker-amar-mahmutbegovic-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
-- **LinkedIn:**
-
-  > Meet a GoatConf 2027 speaker, from Tuzla itself: Amar Mahmutbegović.
-  >
-  > Amar is the co-founder and Head of Engineering at Semblie, where he leads the use of modern C++ for firmware development. He shows the embedded community what C++ can do through his blog posts and on LinkedIn, and he wrote C++ in Embedded Systems (Packt, 2025).
-  >
-  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-amar-mahmutbegovic
-
-- **Short** (175 characters):
-
-  > Meet a GoatConf 2027 speaker from Tuzla: Amar Mahmutbegović, co-founder of Semblie and author of C++ in Embedded Systems (Packt, 2025). goatconf.com/speaker-amar-mahmutbegovic
-
-  Sources: sources/conversations/2026-10-14--org--amar-mahmutbegovic.md.
-
-### Sat 12 Dec 2026, week 9: Salt Square
-
-- **State:** drafted
-- **Image:** [`post-salt-square-square.png`](https://goatconf.com/share/post-salt-square-square.png) (LinkedIn, Mastodon), [`post-salt-square-wide.png`](https://goatconf.com/share/post-salt-square-wide.png) (X, Bluesky)
-- **Before posting:** News first: until the speaker run ends on Tuesday 29 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
-- **LinkedIn:**
-
-  > In the centre of Tuzla there is a square named for salt.
-  >
-  > A salt well was dug on Salt Square in 1476, and up to 80 pots boiled its water into salt. Today the square is an open-air museum of how salt was made under the Ottomans, around a fountain given by the city of Ravenna: a Neolithic salt dish in mosaic.
-  >
-  > It's in the old town's walking centre, with Freedom Square and the Korzo. Come and see it in June 2027: goatconf.com
-
-- **Short** (225 characters):
-
-  > Tuzla has a square named for salt. A well was dug there in 1476 and up to 80 pots boiled its water into salt. Now Salt Square is an open-air museum, with a fountain from Ravenna shaped like a Neolithic salt dish. goatconf.com
-
-  Sources: sources/web/tuzla/tztz-history-of-tuzla.md, sources/web/tuzla/tztz-salt-square.md, sources/web/tuzla/tztz-wireless-city.md.
-
-### Tue 15 Dec 2026, Tuesday: Speaker: Cristian Planas
+### Tue 8 Dec 2026, Tuesday: Speaker: Cristian Planas
 
 - **State:** drafted
 - **Image:** [`speaker-cristian-planas-announce-square.png`](https://goatconf.com/share/speaker-cristian-planas-announce-square.png) (LinkedIn, Mastodon), [`speaker-cristian-planas-announce-wide.png`](https://goatconf.com/share/speaker-cristian-planas-announce-wide.png) (X, Bluesky)
@@ -462,26 +421,26 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-14--org--cristian-planas.md.
 
-### Sat 19 Dec 2026, week 10: Named after Tuzla
+### Sat 12 Dec 2026, week 9: Salt Square
 
 - **State:** drafted
-- **Image:** [`post-pannonica-square.png`](https://goatconf.com/share/post-pannonica-square.png) (LinkedIn, Mastodon), [`post-pannonica-wide.png`](https://goatconf.com/share/post-pannonica-wide.png) (X, Bluesky)
-- **Before posting:** News first: until the speaker run ends on Tuesday 29 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **Image:** [`post-salt-square-square.png`](https://goatconf.com/share/post-salt-square-square.png) (LinkedIn, Mastodon), [`post-salt-square-wide.png`](https://goatconf.com/share/post-salt-square-wide.png) (X, Bluesky)
+- **Before posting:** News first: until the speaker run ends on Tuesday 22 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
 - **LinkedIn:**
 
-  > There is a mineral named after Tuzla: tuzlaite, found in the city's salt deposits.
+  > In the centre of Tuzla there is a square named for salt.
   >
-  > You can see it at Pannonica, a geological exhibition at the Pannonian Lakes, the salt lakes in the middle of the city. It shows 100 minerals and 120 fossils, among them a fossil typical of the Pannonian Sea, which left Tuzla its salt when it retreated millions of years ago.
+  > A salt well was dug on Salt Square in 1476, and up to 80 pots boiled its water into salt. Today the square is an open-air museum of how salt was made under the Ottomans, around a fountain given by the city of Ravenna: a Neolithic salt dish in mosaic.
   >
-  > The lakes are where many people head after the talks, and where Saturday 5 June, GoatConf's community day, begins: goatconf.com
+  > It's in the old town's walking centre, with Freedom Square and the Korzo. Come and see it in June 2027: goatconf.com
 
-- **Short** (230 characters):
+- **Short** (225 characters):
 
-  > A mineral named after a city: tuzlaite, from Tuzla's salt deposits. See it at Pannonica, by the salt lakes in the middle of town: 100 minerals, 120 fossils. GoatConf's community day starts at the lakes on 5 June 2027. goatconf.com
+  > Tuzla has a square named for salt. A well was dug there in 1476 and up to 80 pots boiled its water into salt. Now Salt Square is an open-air museum, with a fountain from Ravenna shaped like a Neolithic salt dish. goatconf.com
 
-  Sources: sources/web/tuzla/tztz-geological-exhibition-pannonica.md, sources/web/tuzla/tztz-pannonian-lakes.md, sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md, sources/conversations/2026-11-02--org--do-what-feels-best.md.
+  Sources: sources/web/tuzla/tztz-history-of-tuzla.md, sources/web/tuzla/tztz-salt-square.md, sources/web/tuzla/tztz-wireless-city.md.
 
-### Tue 22 Dec 2026, Tuesday: Speaker: Christoph Lipautz
+### Tue 15 Dec 2026, Tuesday: Speaker: Christoph Lipautz
 
 - **State:** drafted
 - **Image:** [`speaker-christoph-lipautz-announce-square.png`](https://goatconf.com/share/speaker-christoph-lipautz-announce-square.png) (LinkedIn, Mastodon), [`speaker-christoph-lipautz-announce-wide.png`](https://goatconf.com/share/speaker-christoph-lipautz-announce-wide.png) (X, Bluesky)
@@ -501,27 +460,28 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   Sources: sources/conversations/2026-10-15--org--christoph-lipautz.md, sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md.
 
-### Sat 26 Dec 2026, week 11: Your first talk?
+### Sat 19 Dec 2026, week 10: 7,000 years of salt
 
 - **State:** drafted
-- **Image:** [`post-your-first-talk-square.png`](https://goatconf.com/share/post-your-first-talk-square.png) (LinkedIn, Mastodon), [`post-your-first-talk-wide.png`](https://goatconf.com/share/post-your-first-talk-wide.png) (X, Bluesky)
+- **Image:** [`post-seven-thousand-years-square.png`](https://goatconf.com/share/post-seven-thousand-years-square.png) (LinkedIn, Mastodon), [`post-seven-thousand-years-wide.png`](https://goatconf.com/share/post-seven-thousand-years-wide.png) (X, Bluesky)
+- **Before posting:** Moved from Tuesday 3 November, when the speakers started (source: sources/conversations/2026-11-02--org--speakers-from-tomorrow.md). News first: a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday.
 - **LinkedIn:**
 
-  > Thinking about giving your first talk in 2027?
+  > People have made salt in Tuzla for about 7,000 years.
   >
-  > GoatConf welcomes first-time speakers. A strong idea counts for more than a famous name, and the organiser reads every proposal with the session first and your name after.
+  > Under today's city centre lay a large Neolithic village of pile dwellings: houses on wooden stilts, on wetland fed by salt springs. Two of the clay pots its people used to boil salt water have been put back together. One dates to about 5,000 BC, the other to about 3,500 BC.
   >
-  > You get a room, an hour and an audience, and after your session an hour off on Freedom Square, where the people who heard you can find you. Not sure your idea fits? Propose it anyway and say what you have in mind.
+  > The first finds came up in 1903, on the square now called Freedom Square. Since 2006 a rebuilt part of the village stands in the archaeological park by the Pannonian Lakes, and you can walk through it.
   >
-  > goatconf.com/talk
+  > GoatConf is in Tuzla on 3 to 5 June 2027: goatconf.com
 
-- **Short** (181 characters):
+- **Short** (239 characters):
 
-  > Thinking about your first talk in 2027? GoatConf welcomes first-time speakers: a strong idea counts for more than a famous name. One hour, one room, Tuzla in June. goatconf.com/talk
+  > People have made salt in Tuzla for about 7,000 years: Neolithic villagers boiled it in clay pots, in houses on stilts where the city centre is now. Their village is rebuilt by the salt lakes. GoatConf: Tuzla, 3 to 5 June 2027. goatconf.com
 
-  Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--day-chain-and-session-format.md.
+  Sources: sources/web/tuzla/tztz-archaeological-park.md, sources/web/tuzla/tztz-history-of-tuzla.md.
 
-### Tue 29 Dec 2026, Tuesday: Speaker: Predrag Radenkovic
+### Tue 22 Dec 2026, Tuesday: Speaker: Predrag Radenkovic
 
 - **State:** drafted
 - **Image:** [`speaker-predrag-radenkovic-announce-square.png`](https://goatconf.com/share/speaker-predrag-radenkovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-predrag-radenkovic-announce-wide.png`](https://goatconf.com/share/speaker-predrag-radenkovic-announce-wide.png) (X, Bluesky)
@@ -542,6 +502,26 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Meet a GoatConf 2027 speaker: Predrag Radenkovic, CTO of *codeplain, where specs are the source of truth and code is regenerated from them. Thanks, *codeplain, for his travel. goatconf.com/speaker-predrag-radenkovic
 
   Sources: sources/conversations/2026-10-23--org--predrag-radenkovic.md, sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md, sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md, sources/web/supporters/codeplain-logo-and-site-2026-10-23.md, sources/web/speakers/thenewstack-codeplain-2026-10-23.md, sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md.
+
+### Sat 26 Dec 2026, week 11: Your first talk?
+
+- **State:** drafted
+- **Image:** [`post-your-first-talk-square.png`](https://goatconf.com/share/post-your-first-talk-square.png) (LinkedIn, Mastodon), [`post-your-first-talk-wide.png`](https://goatconf.com/share/post-your-first-talk-wide.png) (X, Bluesky)
+- **LinkedIn:**
+
+  > Thinking about giving your first talk in 2027?
+  >
+  > GoatConf welcomes first-time speakers. A strong idea counts for more than a famous name, and the organiser reads every proposal with the session first and your name after.
+  >
+  > You get a room, an hour and an audience, and after your session an hour off on Freedom Square, where the people who heard you can find you. Not sure your idea fits? Propose it anyway and say what you have in mind.
+  >
+  > goatconf.com/talk
+
+- **Short** (181 characters):
+
+  > Thinking about your first talk in 2027? GoatConf welcomes first-time speakers: a strong idea counts for more than a famous name. One hour, one room, Tuzla in June. goatconf.com/talk
+
+  Sources: sources/conversations/2026-10-18--org--run-a-session.md, sources/conversations/2026-10-12--org--day-chain-and-session-format.md.
 
 ## Related
 

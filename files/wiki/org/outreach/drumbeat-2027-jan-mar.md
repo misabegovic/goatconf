@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-02--org--speakers-from-tomorrow.md
   - sources/conversations/2026-11-02--org--do-what-feels-best.md
   - sources/conversations/2026-11-02--org--speakers-one-by-one.md
   - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
@@ -94,7 +95,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Sat 9 Jan 2027, week 13: Registration is open, and free
 
-- **State:** drafted; on the organiser's word it goes after the last speaker spotlight, on Tuesday 29 December 2026 (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md)
+- **State:** drafted; on the organiser's word it goes after the last speaker spotlight, on Tuesday 22 December 2026 (sources: sources/conversations/2026-11-02--org--speakers-one-by-one.md, sources/conversations/2026-11-02--org--speakers-from-tomorrow.md)
 - **Image:** [`post-register-square.png`](https://goatconf.com/share/post-register-square.png) (LinkedIn, Mastodon), [`post-register-wide.png`](https://goatconf.com/share/post-register-wide.png) (X, Bluesky)
 - **LinkedIn:**
 

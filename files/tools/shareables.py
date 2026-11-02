@@ -221,7 +221,6 @@ POSTS = {
     "mesa-and-ismet": ("Meet at<br>Meša and<br>Ismet", "The writer and the painter on the Korzo: Tuzla's meeting point."),
     "where-to-run-it": ("58 places<br>to run<br>yours", "From cafés on Freedom Square to halls for a few hundred people."),
     "salt-square": ("Salt<br>Square", "An Ottoman salt well from 1476, now an open-air museum."),
-    "pannonica": ("Named<br>after<br>Tuzla", "Tuzlaite, a mineral from the city's salt deposits."),
 }
 
 # Posts with a photo given for GoatConf, each with the credit line its giver asked for
