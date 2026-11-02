@@ -862,3 +862,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-10-31 merge — PR #246: site: the goat stays on the card mainly on screen while you scroll
    diff: 33 files, +53/-36
    restricted-paths: false
+2026-11-02 merge — PR #247: site: trains, the airport bus, Banja Luka airport and transfer companies on the travel page
+   diff: 22 files, +619/-102
+   restricted-paths: false
