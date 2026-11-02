@@ -60,6 +60,8 @@ sources:
   - sources/web/travel/airport-transfers-2026-11-02.md
   - sources/web/travel/balkantransfer-routes-2026-11-02.md
   - sources/conversations/2026-11-02--org--balkan-transfer-routes.md
+  - sources/web/travel/balkantransfer-bnx-doboj-2026-11-02.md
+  - sources/conversations/2026-11-02--org--banja-luka-airport-via-doboj.md
   - sources/web/travel/banja-luka-airport-2026-11-02.md
   - sources/web/travel/trains-to-tuzla-2026-11-02.md
   - sources/web/travel/zrs-banja-luka-doboj-2026-11-02.md
@@ -199,7 +201,7 @@ and fond of a goat that one family hid when goats were banned
   Tuzla (source: sources/web/travel/balkantransfer-routes-2026-11-02.md,
   sources/conversations/2026-11-02--org--balkan-transfer-routes.md), Daytrip a private car (above) and Easy Balkan Transfers on
   quote; from Tuzla airport, Easy Balkan Transfers (above). No company
-  found lists Banja Luka airport to Tuzla. JAM Transfer's Tuzla page was
+  found lists Banja Luka airport to Tuzla; Balkan Transfer goes from there to Doboj (about 50 minutes, timed to the flights, price when booking; source: sources/web/travel/balkantransfer-bnx-doboj-2026-11-02.md), where four buses a day leave for Tuzla, so the travel page offers that pairing (source: sources/conversations/2026-11-02--org--banja-luka-airport-via-doboj.md). JAM Transfer's Tuzla page was
   left out as unreliable. The travel page names them in "From the
   airport to town" (source: sources/conversations/2026-11-02--org--trains-airport-buses-banja-luka-transfers.md).
 - **Banja Luka airport (BNX)** is a third way in, about 2 hours from

@@ -2815,6 +2815,8 @@
         "sources/web/travel/airport-transfers-2026-11-02.md",
         "sources/web/travel/balkantransfer-routes-2026-11-02.md",
         "sources/conversations/2026-11-02--org--balkan-transfer-routes.md",
+        "sources/web/travel/balkantransfer-bnx-doboj-2026-11-02.md",
+        "sources/conversations/2026-11-02--org--banja-luka-airport-via-doboj.md",
         "sources/web/travel/banja-luka-airport-2026-11-02.md",
         "sources/web/travel/trains-to-tuzla-2026-11-02.md",
         "sources/web/travel/zrs-banja-luka-doboj-2026-11-02.md",
@@ -2878,7 +2880,7 @@
         "sources/web/tuzla/cvent-hotel-tuzla-address.md",
         "sources/web/tuzla/tztz-atelier-ismet-mujezinovic.md"
       ],
-      "tokens": 7453,
+      "tokens": 7536,
       "consumed_by": [
         "org/tuzla-images.md",
         "org/tuzla/history-and-old-town.md",
