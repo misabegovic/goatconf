@@ -7,6 +7,9 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-02--org--do-what-feels-best.md
+  - sources/web/tuzla/tztz-geological-exhibition-pannonica.md
+  - sources/web/tuzla/tztz-pannonian-lakes.md
   - sources/conversations/2026-11-02--org--speakers-one-by-one.md
   - sources/conversations/2026-10-31--org--goatchi-post-published.md
   - sources/conversations/2026-10-31--org--goatchi-promo-video.md
@@ -458,6 +461,25 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Meet a GoatConf 2027 speaker: Cristian Planas, author of Rails Scales!, 15 years of Rails, from Zendesk to Combinaut. In Tuzla on 3 or 4 June. goatconf.com/speaker-cristian-planas
 
   Sources: sources/conversations/2026-10-14--org--cristian-planas.md.
+
+### Sat 19 Dec 2026, week 10: Named after Tuzla
+
+- **State:** drafted
+- **Image:** [`post-pannonica-square.png`](https://goatconf.com/share/post-pannonica-square.png) (LinkedIn, Mastodon), [`post-pannonica-wide.png`](https://goatconf.com/share/post-pannonica-wide.png) (X, Bluesky)
+- **Before posting:** News first: until the speaker run ends on Tuesday 29 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **LinkedIn:**
+
+  > There is a mineral named after Tuzla: tuzlaite, found in the city's salt deposits.
+  >
+  > You can see it at Pannonica, a geological exhibition at the Pannonian Lakes, the salt lakes in the middle of the city. It shows 100 minerals and 120 fossils, among them a fossil typical of the Pannonian Sea, which left Tuzla its salt when it retreated millions of years ago.
+  >
+  > The lakes are where many people head after the talks, and where Saturday 5 June, GoatConf's community day, begins: goatconf.com
+
+- **Short** (230 characters):
+
+  > A mineral named after a city: tuzlaite, from Tuzla's salt deposits. See it at Pannonica, by the salt lakes in the middle of town: 100 minerals, 120 fossils. GoatConf's community day starts at the lakes on 5 June 2027. goatconf.com
+
+  Sources: sources/web/tuzla/tztz-geological-exhibition-pannonica.md, sources/web/tuzla/tztz-pannonian-lakes.md, sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md, sources/conversations/2026-11-02--org--do-what-feels-best.md.
 
 ### Tue 22 Dec 2026, Tuesday: Speaker: Christoph Lipautz
 

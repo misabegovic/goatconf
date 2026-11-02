@@ -599,6 +599,7 @@
         "org/prds/social-drumbeat.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-02--org--do-what-feels-best.md",
         "sources/conversations/2026-11-02--org--speakers-one-by-one.md",
         "sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md",
         "sources/conversations/2026-10-18--org--social-plan-to-june.md",
@@ -616,7 +617,7 @@
         "sources/web/social/goatconf-linkedin-2026-10-15.md",
         "sources/web/social/goatconf-x-2026-10-15.md"
       ],
-      "tokens": 1795
+      "tokens": 1877
     },
     {
       "path": "org/adrs/speakers-and-travel-supporters.md",
@@ -1028,6 +1029,9 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-02--org--do-what-feels-best.md",
+        "sources/web/tuzla/tztz-geological-exhibition-pannonica.md",
+        "sources/web/tuzla/tztz-pannonian-lakes.md",
         "sources/conversations/2026-11-02--org--speakers-one-by-one.md",
         "sources/conversations/2026-10-31--org--goatchi-post-published.md",
         "sources/conversations/2026-10-31--org--goatchi-promo-video.md",
@@ -1111,7 +1115,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 8184
+      "tokens": 8582
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -1173,6 +1177,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-02--org--do-what-feels-best.md",
         "sources/conversations/2026-11-02--org--speakers-one-by-one.md",
         "sources/conversations/2026-10-26--org--confirmed-speaker-cards.md",
         "sources/conversations/2026-10-12--org--two-core-days-and-saturday.md",
@@ -1234,7 +1239,7 @@
         "sources/conversations/2026-10-13--org--outside-review-fixes.md",
         "sources/conversations/2026-10-18--org--registration-approval-not-on-the-site.md"
       ],
-      "tokens": 3076
+      "tokens": 3110
     },
     {
       "path": "org/outreach/drumbeat.md",
@@ -1247,6 +1252,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-02--org--do-what-feels-best.md",
         "sources/conversations/2026-11-02--org--speakers-one-by-one.md",
         "sources/conversations/2026-10-31--org--goatchi-post-published.md",
         "sources/conversations/2026-10-31--org--goatchi-promo-video.md",
@@ -1270,7 +1276,7 @@
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
         "sources/web/images/food-photos-chosen-2026-10-13.md"
       ],
-      "tokens": 2793
+      "tokens": 2843
     },
     {
       "path": "org/outreach/ipi-proposal.md",

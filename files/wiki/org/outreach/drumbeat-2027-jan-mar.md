@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-02--org--do-what-feels-best.md
   - sources/conversations/2026-11-02--org--speakers-one-by-one.md
   - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
   - sources/conversations/2026-10-12--org--two-core-days-and-saturday.md
@@ -83,13 +84,13 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   >
   > Thursday 3 and Friday 4 June 2027: talks, panels and workshops in seven rooms at IPI Academy in Tuzla, with an hour off after every session. Saturday 5 June: the community's day, at the salt lakes and around town.
   >
-  > Free to attend. If 2027 is the year you visit Bosnia and Herzegovina, register now and we'll see you in June: goatconf.com/register
+  > Free to attend. If 2027 is the year you visit Bosnia and Herzegovina, we'll see you in June: goatconf.com
 
-- **Short** (153 characters):
+- **Short** (144 characters):
 
-  > Happy new year from GoatConf. Five months to go: talks in Tuzla on 3 and 4 June 2027, then a day at the salt lakes. Free to attend. goatconf.com/register
+  > Happy new year from GoatConf. Five months to go: talks in Tuzla on 3 and 4 June 2027, then a day at the salt lakes. Free to attend. goatconf.com
 
-  Sources: sources/conversations/2026-10-12--org--two-core-days-and-saturday.md, sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md.
+  Sources: sources/conversations/2026-10-12--org--two-core-days-and-saturday.md, sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md. The link goes to the home page, not the register page, because the registration post follows a week later (sources/conversations/2026-11-02--org--do-what-feels-best.md).
 
 ### Sat 9 Jan 2027, week 13: Registration is open, and free
 
