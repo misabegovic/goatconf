@@ -2,11 +2,14 @@
 title: "Keep the email list in Luma, and the weekly beats as one calendar page here"
 kind: decision
 status: accepted
-updated: 2026-10-24
+updated: 2026-11-02
 confidence: medium
 depends_on:
   - org/prds/social-drumbeat.md
 sources:
+  - sources/conversations/2026-11-02--org--speakers-from-tomorrow.md
+  - sources/conversations/2026-11-02--org--do-what-feels-best.md
+  - sources/conversations/2026-11-02--org--speakers-one-by-one.md
   - sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md
   - sources/conversations/2026-10-18--org--social-plan-to-june.md
   - sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md
@@ -98,6 +101,7 @@ the public is the organiser's call
 
 ## Amendments
 
+- **2026-11-02, the speakers one by one, on Tuesdays.** On the organiser's choice, the round-up post naming all eight speakers is dropped and each speaker gets their own spotlight, one each Tuesday from 3 November to 22 December 2026, in the organiser's standing order from the speaker records. The Tuzla posts those Tuesdays held move to the Saturdays the speakers left, the registration post goes after the last speaker, on Saturday 9 January 2027, and "See you in June" links to the home page so it does not repeat the registration ask a week early. The Saturdays left open in 2027 are kept for news. From Tuesday 29 December 2026 the Tuesdays are news and Tuzla again, as the 2026-10-24 amendment set them (sources: sources/conversations/2026-11-02--org--speakers-one-by-one.md, sources/conversations/2026-11-02--org--do-what-feels-best.md, sources/conversations/2026-11-02--org--speakers-from-tomorrow.md).
 - **2026-10-24, two posts a week: the plan on Saturdays, news and Tuzla on Tuesdays.** Week 2 did not go out on Tuesday 20 October; the organiser posted it on Saturday 24 October 2026 and chose to post twice a week. The planned posts keep their order and go on Saturdays, from week 2 on 24 October 2026 to week 33 on 29 May 2027; "See you Thursday" stays on Tuesday 1 June 2027, and the event-day posts and the thank-you on Tuesday 8 June 2027 keep their dates. Every Tuesday from 27 October 2026 is a second slot: news first (a speaker, a supporter, an event), otherwise a short Tuzla post, drafted about a month ahead. Each post on [The drumbeat](../outreach/drumbeat.md) now links its images at goatconf.com/share/, and no share page is added to the site. This replaces the 2026-10-18 amendment's "every Tuesday" (source: sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md).
 - **2026-10-18, the calendar is dated to June 2027.** On the organiser's answers, one post goes every Tuesday from 20 October 2026 to 1 June 2027, then on each event day and a thank-you on 8 June 2027, all fully drafted on [The drumbeat](../outreach/drumbeat.md). Week 1 is published (source: sources/conversations/2026-10-18--org--social-plan-to-june.md).
 - **2026-10-12, registration is back on Luma, the channels are chosen, and the calendar exists.** Registration moved to the organiser's Luma event (source: sources/conversations/2026-10-12--org--registration-on-luma.md), so registered guests can again get Luma updates; the earlier amendment's "Luma is no longer used" no longer holds. People who tick the news question on the contact form are the other part of the list. The organiser chose the channels: LinkedIn; X, Bluesky and Mastodon; and Luma with link previews (source: sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md). The calendar is [The drumbeat](../outreach/drumbeat.md), with the launch sequence drafted and the images in `site/share/`.
