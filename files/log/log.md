@@ -871,3 +871,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-03 merge — PR #251: speakers: rewrite Paul Campbell's spotlight and update his profile
    diff: 13 files, +202/-22
    restricted-paths: false
+2026-11-03 merge — PR #253: drumbeat: mark Paul Campbell's spotlight published
+   diff: 5 files, +25/-5
+   restricted-paths: false
