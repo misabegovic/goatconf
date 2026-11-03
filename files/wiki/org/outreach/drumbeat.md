@@ -2,11 +2,12 @@
 title: "The drumbeat: the weekly posts, from launch to June 2027"
 kind: reference
 status: draft
-updated: 2026-11-02
+updated: 2026-11-03
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-03--org--paul-spotlight-published.md
   - sources/conversations/2026-11-02--org--speakers-from-tomorrow.md
   - sources/conversations/2026-11-02--org--do-what-feels-best.md
   - sources/conversations/2026-11-02--org--speakers-one-by-one.md
@@ -57,7 +58,7 @@ The texts are on three pages: [October to December 2026](drumbeat-2026.md), [Jan
 | Sat 24 Oct 2026 | week 2 | [Run a session: the call is open](drumbeat-2026.md) | `post-run-a-session` | published |
 | Tue 27 Oct 2026 | Tuesday, Tuzla | [A city of salt](drumbeat-2026.md) | `post-city-of-salt` | published |
 | Sat 31 Oct 2026 | week 3 | [Meet Goatchi](drumbeat-2026.md) | `post-goatchi` (video and image) | published |
-| Tue 3 Nov 2026 | Tuesday, speaker | [Speaker: Paul Campbell](drumbeat-2026.md) | `speaker-paul-campbell` | drafted |
+| Tue 3 Nov 2026 | Tuesday, speaker | [Speaker: Paul Campbell](drumbeat-2026.md) | `speaker-paul-campbell` | published |
 | Sat 7 Nov 2026 | week 4 | [Meet at Meša and Ismet](drumbeat-2026.md) | `post-mesa-and-ismet` | drafted |
 | Tue 10 Nov 2026 | Tuesday, speaker | [Speaker: Roy Tomeij](drumbeat-2026.md) | `speaker-roy-tomeij` | drafted |
 | Sat 14 Nov 2026 | week 5 | [Propose an event](drumbeat-2026.md) | `post-add-something` | drafted |

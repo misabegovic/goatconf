@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-03--org--paul-spotlight-published.md
   - sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md
   - sources/conversations/2026-10-26--org--paul-campbell-carlos.md
   - sources/web/speakers/carlos-paul-campbell-2026-10-26.md
@@ -211,7 +212,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 3 Nov 2026, Tuesday: Speaker: Paul Campbell
 
-- **State:** drafted, rewritten on 2026-11-03 to sell the conference (source: sources/conversations/2026-11-03--org--paul-spotlight-rewrite.md)
+- **State:** published, Tuesday 3 November 2026, rewritten that day to sell the conference; where is not recorded (sources: sources/conversations/2026-11-03--org--paul-spotlight-rewrite.md, sources/conversations/2026-11-03--org--paul-spotlight-published.md)
 - **Image:** [`speaker-paul-campbell-announce-square.png`](https://goatconf.com/share/speaker-paul-campbell-announce-square.png) (LinkedIn, Mastodon), [`speaker-paul-campbell-announce-wide.png`](https://goatconf.com/share/speaker-paul-campbell-announce-wide.png) (X, Bluesky)
 - **Tag:** Paul Campbell and Tito
 - **Before posting:** When it goes, send the speaker their own "I'm speaking" card (speaker-paul-campbell-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
