@@ -2,11 +2,18 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-11-02
+updated: 2026-11-03
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md
+  - sources/conversations/2026-10-26--org--paul-campbell-carlos.md
+  - sources/web/speakers/carlos-paul-campbell-2026-10-26.md
+  - sources/web/speakers/confex-paul-campbell-2026-10-14.md
+  - sources/web/speakers/team-tito-2026-10-14.md
+  - sources/conversations/2026-11-03--org--paul-spotlight-rewrite.md
+  - sources/web/speakers/paul-campbell-carlos-and-events-2026-11-03.md
   - sources/conversations/2026-11-02--org--speakers-from-tomorrow.md
   - sources/conversations/2026-11-02--org--do-what-feels-best.md
   - sources/conversations/2026-11-02--org--speakers-one-by-one.md
@@ -204,23 +211,29 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 3 Nov 2026, Tuesday: Speaker: Paul Campbell
 
-- **State:** drafted
+- **State:** drafted, rewritten on 2026-11-03 to sell the conference (source: sources/conversations/2026-11-03--org--paul-spotlight-rewrite.md)
 - **Image:** [`speaker-paul-campbell-announce-square.png`](https://goatconf.com/share/speaker-paul-campbell-announce-square.png) (LinkedIn, Mastodon), [`speaker-paul-campbell-announce-wide.png`](https://goatconf.com/share/speaker-paul-campbell-announce-wide.png) (X, Bluesky)
 - **Tag:** Paul Campbell and Tito
 - **Before posting:** When it goes, send the speaker their own "I'm speaking" card (speaker-paul-campbell-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
 - **LinkedIn:**
 
-  > Meet a GoatConf 2027 speaker: Paul Campbell.
+  > Paul Campbell is coming to Tuzla.
   >
-  > Paul is the co-founder and CEO of Tito, simple, fast registration software for events. He has run experiential events like Funconf, a conference series that happened on moving buses, in a castle and on an island, and This Next Thing, which brought 150 tech leaders together in the Swiss Alps.
+  > Paul co-founded Tito, the registration software that has processed over $1 billion in tickets for thousands of event organisers. He also knows how to make a conference people remember: he ran Funconf, on moving buses, in a castle and on an island, and helped bring 150 tech leaders to the Swiss Alps for This Next Thing.
   >
-  > He's speaking in Tuzla on 3 or 4 June 2027. His profile: goatconf.com/speaker-paul-campbell
+  > At GoatConf he tells The story of CARLOS. Computers keep getting faster, yet the software we use every day still feels slow. So Paul set AI agents to build it differently: many small apps, each a single program with its own database, instead of one giant shared one. On Tito's own measurements, it costs 10× less to run, ships new features 12× faster and shows a page 4.5× sooner. The rest of CARLOS's secrets are revealed on the day.
+  >
+  > A Rails developer since version 0.13 and a RailsConf speaker back in 2010, Paul talks to developers and founders who build and run web apps.
+  >
+  > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
+  > Paul's profile: goatconf.com/speaker-paul-campbell
+  > Register: goatconf.com/register
 
-- **Short** (203 characters):
+- **Short** (273 characters):
 
-  > Meet a GoatConf 2027 speaker: Paul Campbell, co-founder and CEO of Tito, who has run conferences on moving buses, in a castle and on an island. In Tuzla on 3 or 4 June. goatconf.com/speaker-paul-campbell
+  > Paul Campbell is coming to Tuzla. Tito, which he co-founded, has processed over $1 billion in event tickets. His talk, The story of CARLOS: how AI agents rebuilt it to run 10× cheaper and ship 12× faster. GoatConf, 3 to 5 June 2027, free: goatconf.com/speaker-paul-campbell
 
-  Sources: sources/conversations/2026-10-14--org--paul-campbell.md.
+  Sources: sources/conversations/2026-11-03--org--paul-spotlight-rewrite.md, sources/web/speakers/paul-campbell-carlos-and-events-2026-11-03.md, sources/conversations/2026-10-14--org--paul-campbell.md, sources/web/speakers/team-tito-2026-10-14.md, sources/web/speakers/confex-paul-campbell-2026-10-14.md, sources/web/speakers/carlos-paul-campbell-2026-10-26.md, sources/conversations/2026-10-26--org--paul-campbell-carlos.md, sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md.
 
 ### Sat 7 Nov 2026, week 4: Meet at Meša and Ismet
 

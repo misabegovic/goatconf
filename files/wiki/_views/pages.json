@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02",
+  "generated": "2026-11-03",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -1024,12 +1024,19 @@
       "title": "The drumbeat, October to December 2026",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-11-02",
+      "updated": "2026-11-03",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md",
+        "sources/conversations/2026-10-26--org--paul-campbell-carlos.md",
+        "sources/web/speakers/carlos-paul-campbell-2026-10-26.md",
+        "sources/web/speakers/confex-paul-campbell-2026-10-14.md",
+        "sources/web/speakers/team-tito-2026-10-14.md",
+        "sources/conversations/2026-11-03--org--paul-spotlight-rewrite.md",
+        "sources/web/speakers/paul-campbell-carlos-and-events-2026-11-03.md",
         "sources/conversations/2026-11-02--org--speakers-from-tomorrow.md",
         "sources/conversations/2026-11-02--org--do-what-feels-best.md",
         "sources/conversations/2026-11-02--org--speakers-one-by-one.md",
@@ -1115,7 +1122,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 8211
+      "tokens": 8534
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
