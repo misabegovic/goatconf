@@ -31,3 +31,17 @@ Shown the draft, the organiser wrote, verbatim:
 > "created Úll, a conference series inspired by Apple" idk about this line
 
 The line is dropped; the post keeps Funconf and This Next Thing.
+
+The organiser then wrote, verbatim:
+
+> Ok, show the entire thing. Also update Paul's profile on the website
+
+His record (speakers/paul-campbell.md) was updated from the same sources:
+the bio, until then his International Confex bio word for word (which
+still named IO, renamed Tito Pro in April 2026), now draws on his own
+site, Tito's about page, IndieRails, RubyEvents and his CARLOS posts, and
+adds Tito's $1 billion in tickets, Vito and Tito Pro, his Rails history
+and CARLOS, without Úll. His session text gains a paragraph, from his
+CARLOS post, on why he built it, and the HalfStack line still opens it,
+so the acronym stays a secret for the day. "How to support them" gains
+his blog post on CARLOS.

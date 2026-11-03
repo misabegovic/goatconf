@@ -12,7 +12,7 @@ talk: The story of CARLOS
 talk_about: |
   The mysterious secrets of CARLOS will be revealed on the day of the event.
 
-  CARLOS is an architecture for building and shipping apps in the agentic age, built by the people behind Tito and Jelly and drawn from what they learned serving real customers. It rejects both monoliths and microservices in favour of many small full-stack instances: single-process apps, each with its own embedded database, on a cloud provider, on-prem or both.
+  Computers got very, very fast, yet software still feels slow: sign-ins, cookie banners, upgrade modals and loading spinners, built for the company rather than the person using it. CARLOS is Paul's answer, an architecture for building and shipping apps in the agentic age, built by the people behind Tito and Jelly and drawn from what they learned serving real customers. It rejects both monoliths and microservices in favour of many small full-stack instances: single-process apps, each with its own embedded database, on a cloud provider, on-prem or both.
 
   The numbers come from Tito's own data: 10× lower running costs, 87% less JavaScript, 12× faster to ship, a 4.5× faster first render, 5× faster responses, and backups that land within one to two seconds rather than nightly.
 talk_area: [engineering, business]
@@ -23,6 +23,8 @@ publish: yes
 support_them:
   - text: "Learn about CARLOS, the architecture his team builds Tito on"
     url: "https://carlosframework.com/"
+  - text: "Read the story behind CARLOS on his blog"
+    url: "https://paulca.com/blog/carlos/"
   - text: "Sell your event's tickets with Tito"
     url: "https://ti.to/"
   - text: "Build an online community with Vito, from his team at Tito"
@@ -35,4 +37,8 @@ support_them:
     url: "https://paulca.com/"
 ---
 
-Paul is the co-founder and CEO of Team Tito. Tito is simple, fast registration software. They have recently introduced IO for high-end, invitation-only events. Paul has run a number of experiential events such as Funconf, a conference series that happened on moving busses, in a castle, and on an island. Paul's most recent event, This Next Thing, brought 150 tech leaders together in the Swiss Alps.
+Paul makes software in Dublin, Ireland. He is the co-founder and CEO of Team Tito, whose registration software, Tito, has processed over $1 billion worth of tickets for thousands of organisers worldwide. The team also makes Vito, for online communities, and Tito Pro, for fully branded event registration.
+
+A Rails developer since version 0.13, Paul spoke at RailsConf and RubyConf in 2010. He has run a number of experiential events, such as Funconf, a conference series that happened on moving buses, in a castle and on an island, and This Next Thing, which brought 150 tech leaders together in the Swiss Alps.
+
+These days he is working on CARLOS: fast, open and accessible software, built with AI agents.
