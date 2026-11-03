@@ -25,3 +25,9 @@ co-founded, has processed over $1 billion in tickets for thousands of
 organisers; he has run conferences people remember (Funconf, Úll, This
 Next Thing); and his talk, on why software stays slow while computers get
 faster and how AI agents rebuilt Tito on CARLOS, with Tito's own figures.
+
+Shown the draft, the organiser wrote, verbatim:
+
+> "created Úll, a conference series inspired by Apple" idk about this line
+
+The line is dropped; the post keeps Funconf and This Next Thing.

@@ -219,7 +219,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   > Paul Campbell is coming to Tuzla.
   >
-  > Paul co-founded Tito, the registration software that has processed over $1 billion in tickets for thousands of event organisers. He also knows how to make a conference people remember: he ran Funconf, on moving buses, in a castle and on an island; created Úll, a conference series inspired by Apple; and helped bring 150 tech leaders to the Swiss Alps for This Next Thing.
+  > Paul co-founded Tito, the registration software that has processed over $1 billion in tickets for thousands of event organisers. He also knows how to make a conference people remember: he ran Funconf, on moving buses, in a castle and on an island, and helped bring 150 tech leaders to the Swiss Alps for This Next Thing.
   >
   > At GoatConf he tells The story of CARLOS. Computers keep getting faster, yet the software we use every day still feels slow. So Paul set AI agents to build it differently: many small apps, each a single program with its own database, instead of one giant shared one. On Tito's own measurements, it costs 10× less to run, ships new features 12× faster and shows a page 4.5× sooner. The rest of CARLOS's secrets are revealed on the day.
   >
