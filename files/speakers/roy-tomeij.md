@@ -16,8 +16,12 @@ support_them:
     url: "https://www.appsignal.com/"
   - text: "Read his writing on SaaS, operations and building companies"
     url: "https://roytomeij.com/articles"
-  - text: "Work with him: advising founders on customer experience, operations and growth"
+  - text: "Read his essay AI Might Kill the Next Rails"
+    url: "https://roytomeij.com/articles/ai-might-kill-the-next-rails"
+  - text: "Work with him: advising founders on alignment, operations and growth"
     url: "https://roytomeij.com"
 ---
 
-Roy co-founded AppSignal, monitoring and logging for Ruby on Rails, which raised a $22M Series A in 2025. Now he works with founders and leadership teams on customer experience, operations and growth: as an advisor, a board member, or hands-on.
+Roy has been building for the web since the late nineties. In 2002 he and his co-founder each put €1,000 of their own money into a hosting and consulting business that grew into AppSignal, monitoring and logging for Ruby on Rails, bootstrapped to over 2,000 customers before a $22M Series A in 2025. He is on AppSignal's board.
+
+He has spoken at RailsConf, EuRuKo and wroclove.rb. Now he works with founders and leadership teams on founder alignment, operations and vision-driven growth: as an advisor, a board member, or hands-on. He also invests in private companies, and writes about SaaS, operations, building companies and what AI changes for the people who build software.

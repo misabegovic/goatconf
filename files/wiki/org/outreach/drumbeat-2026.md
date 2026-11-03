@@ -7,6 +7,8 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/web/speakers/roy-tomeij-story-and-writing-2026-11-03.md
+  - sources/conversations/2026-11-03--org--roy-spotlight-rewrite.md
   - sources/conversations/2026-11-03--org--paul-spotlight-published.md
   - sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md
   - sources/conversations/2026-10-26--org--paul-campbell-carlos.md
@@ -257,23 +259,29 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 10 Nov 2026, Tuesday: Speaker: Roy Tomeij
 
-- **State:** drafted
+- **State:** drafted, rewritten on 2026-11-03 to sell the conference (source: sources/conversations/2026-11-03--org--roy-spotlight-rewrite.md)
 - **Image:** [`speaker-roy-tomeij-announce-square.png`](https://goatconf.com/share/speaker-roy-tomeij-announce-square.png) (LinkedIn, Mastodon), [`speaker-roy-tomeij-announce-wide.png`](https://goatconf.com/share/speaker-roy-tomeij-announce-wide.png) (X, Bluesky)
 - **Tag:** Roy Tomeij and AppSignal
 - **Before posting:** When it goes, send the speaker their own "I'm speaking" card (speaker-roy-tomeij-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
 - **LinkedIn:**
 
-  > Meet a GoatConf 2027 speaker: Roy Tomeij.
+  > Roy Tomeij is coming to Tuzla.
   >
-  > Roy co-founded AppSignal, monitoring and logging for Ruby on Rails, which raised a $22M Series A in 2025. AppSignal's founders have been part of the Rails community since 2005, and Roy has spoken at RailsConf and EuRuKo. Now he works with founders and leadership teams on customer experience, operations and growth.
+  > In 2002 Roy and his co-founder each put €1,000 of their own money into a small hosting and consulting business. It grew into AppSignal, monitoring for Ruby on Rails apps, and they bootstrapped it to over 2,000 customers before raising a $22M Series A in 2025. Today AppSignal watches over 100 billion requests a month.
   >
-  > He's speaking in Tuzla on 3 or 4 June 2027. His profile: goatconf.com/speaker-roy-tomeij
+  > Roy has been building for the web since the late nineties and has spoken at RailsConf and EuRuKo. These days he sits on AppSignal's board, advises founders on alignment, operations and growth, and writes about what AI changes for the people who build software. His line on it: "The next Rails won't come from a prompt; it'll come from someone who's annoyed enough to ignore the easy answer."
+  >
+  > Every session at GoatConf is followed by an hour off, so after his you can ask him how a €2,000 start became a company with 2,000 customers.
+  >
+  > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
+  > Roy's profile: goatconf.com/speaker-roy-tomeij
+  > Register: goatconf.com/register
 
-- **Short** (201 characters):
+- **Short** (278 characters):
 
-  > Meet a GoatConf 2027 speaker: Roy Tomeij, co-founder of AppSignal, monitoring and logging for Ruby on Rails, and a RailsConf and EuRuKo speaker. In Tuzla on 3 or 4 June. goatconf.com/speaker-roy-tomeij
+  > Roy Tomeij is coming to Tuzla. In 2002 he and his co-founder put in €1,000 each; it grew into AppSignal, bootstrapped to over 2,000 customers before a $22M Series A. Ask him how in the hour off after his session. GoatConf, 3 to 5 June 2027, free: goatconf.com/speaker-roy-tomeij
 
-  Sources: sources/conversations/2026-10-20--org--roy-tomeij.md, sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md, sources/web/speakers/appsignal-roy-tomeij-2026-10-20.md, sources/web/speakers/rubyevents-roy-tomeij-2026-10-20.md.
+  Sources: sources/conversations/2026-11-03--org--roy-spotlight-rewrite.md, sources/web/speakers/roy-tomeij-story-and-writing-2026-11-03.md, sources/conversations/2026-10-20--org--roy-tomeij.md, sources/web/speakers/appsignal-roy-tomeij-2026-10-20.md, sources/web/speakers/rubyevents-roy-tomeij-2026-10-20.md, sources/conversations/2026-10-12--org--day-chain-and-session-format.md.
 
 ### Sat 14 Nov 2026, week 5: Propose an event
 

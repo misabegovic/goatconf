@@ -1030,6 +1030,8 @@
         "org"
       ],
       "sources": [
+        "sources/web/speakers/roy-tomeij-story-and-writing-2026-11-03.md",
+        "sources/conversations/2026-11-03--org--roy-spotlight-rewrite.md",
         "sources/conversations/2026-11-03--org--paul-spotlight-published.md",
         "sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md",
         "sources/conversations/2026-10-26--org--paul-campbell-carlos.md",
@@ -1123,7 +1125,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 8562
+      "tokens": 8797
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
