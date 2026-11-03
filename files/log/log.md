@@ -868,3 +868,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-02 merge — PR #249: drumbeat: announce the speakers one by one, on Tuesdays
    diff: 9 files, +371/-228
    restricted-paths: false
+2026-11-03 merge — PR #251: speakers: rewrite Paul Campbell's spotlight and update his profile
+   diff: 13 files, +202/-22
+   restricted-paths: false
