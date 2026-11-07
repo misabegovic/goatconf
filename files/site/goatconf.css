@@ -963,12 +963,3 @@ button.button { border: 0; cursor: pointer; }
 /* A speaker's session, read at the size and ink of their bio (sources/conversations/2026-11-07--org--speakers-register-cta.md) */
 .talks .talk p:not(.for-line) { font-size: inherit; color: var(--ink); max-width: 70ch; }
 .talks + .cta { margin-top: 1.6rem; }
-
-/* The home page on a phone: the speakers as the faces strip, and the food folded to four dishes
-   (sources/conversations/2026-11-07--org--home-page-order.md) */
-.home-faces { display: none; }
-@media (max-width: 47.99rem) {
-  .home-faces { display: block; }
-  #speakers .slots--mini { display: none; }
-  .fold__toggle:not(:checked) ~ .slots--food > :nth-child(n+5) { display: none; }
-}
