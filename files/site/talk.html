@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- /gen:link-preview -->
 <link rel="preload" href="fonts/bricolage-wdth-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="goatconf.css?v=18671fd6">
+<link rel="stylesheet" href="goatconf.css?v=e2d731ae">
 </head>
 <body>
 <!-- gen:topbar tools/nav.py -->
@@ -65,13 +65,9 @@
 </div>
 <section class="album-page wrap" aria-labelledby="h-why">
   <h2 class="band" id="h-why">Why speak at GoatConf</h2>
-  <div class="page-grid">
-    <div class="copy">
+  <div class="page-grid page-grid--why">
+    <div class="copy why__intro">
       <p>GoatConf is a free conference in Tuzla for people who build and sell software: engineers, designers, product people, researchers and founders, in any language or stack. The first edition expects 120 to 300 people.</p>
-      <p>It is organised by Muhamed Isabegović, who founded and organised EuRuKo 2024, the first Ruby conference in Bosnia and Herzegovina, and RubyConf Austria.</p>
-      <p>First-time speakers are welcome. A strong idea counts for more than a famous name, and once your session is picked we help you get it ready.</p>
-      <p class="cta"><a class="button" data-form="talk" href="https://docs.google.com/forms/d/e/1FAIpQLSdRVeP2C8LmLp0CDjO2s8jAn-TBq1o2XMdaBR8QkH8nRMjBtQ/viewform">Propose a session</a><span>The call is open. There is no strict deadline: slots fill as good proposals come in.</span></p>
-      <p><a class="go go--ink" href="speakers.html">See who is already speaking</a></p>
     </div>
     <ul class="slots slots--why" aria-label="What you get as a speaker">
       <li class="sticker sticker--fact" style="--tilt:-1.5deg"><span class="num">1</span><strong>One hour</strong><small>A room at IPI Academy, in your format, for people who build software.</small></li>
@@ -81,11 +77,25 @@
       <li class="sticker sticker--fact" style="--tilt:-0.5deg"><span class="num">5</span><strong>Rehearsal</strong><small>First time speaking? A call with us to go through your session, and a rehearsal at IPI Academy on Wednesday 2nd June.</small></li>
       <li class="slot"><span class="num num--printed">6</span><strong>Recorded?</strong><small>We aim to record the sessions in the main hall and the first-floor hall. It depends on the budget, so it is not promised yet.</small></li>
     </ul>
+    <div class="copy why__more">
+      <p>It is organised by Muhamed Isabegović, who founded and organised EuRuKo 2024, the first Ruby conference in Bosnia and Herzegovina, and RubyConf Austria.</p>
+      <p>First-time speakers are welcome. A strong idea counts for more than a famous name, and once your session is picked we help you get it ready.</p>
+      <p class="cta"><a class="button" data-form="talk" href="https://docs.google.com/forms/d/e/1FAIpQLSdRVeP2C8LmLp0CDjO2s8jAn-TBq1o2XMdaBR8QkH8nRMjBtQ/viewform">Propose a session</a><span>The call is open. There is no strict deadline: slots fill as good proposals come in.</span></p>
+      <p><a class="go go--ink" href="speakers.html">See who is already speaking</a></p>
+    </div>
   </div>
 </section>
 <section class="album-page wrap" aria-labelledby="h-what">
   <h2 class="band" id="h-what">What a session can be</h2>
-  <div class="page-grid">
+  <div class="page-grid page-grid--cards-first">
+    <ul class="slots slots--formats slots--one-goat" aria-label="Kinds of sessions you can propose">
+      <li class="slot slot--format"><!-- gen:goat-peek-speaker tools/frame.py --><span class="goat peek peek--art" aria-hidden="true" data-goat="peek-speaker" data-turn="img/goat/sheet-roles-turns.webp?v=4287a1a1|-7.547%|-7.456%|114.151%|70.614%|219.835%|51.6%|84.138%|60.526%" data-anim="img/goat/anim-peek-speaker.webp?v=1bf7305b|ears,petted,scratch,sneeze,wink,yawn" style="--beat:-2s;--edge:85.965%;aspect-ratio:212/228;background-image:url(img/goat/sheet-roles.webp?v=3bf18bcf);background-size:147.17% auto;background-position:0 50%"><i class="goat-blink" style="left:35.849%;top:30.702%;width:38.679%;height:21.491%;background-size:380.488% auto;background-position:92.174% 10.149%"></i></span><!-- /gen:goat-peek-speaker --><span class="num num--printed">7</span><strong>Talk</strong><small>With time for questions.</small><span class="stamp">Yours?</span></li>
+      <li class="slot slot--format"><span class="num num--printed">8</span><strong>Panel</strong><small>A few people on one question, with the room joining in.</small><span class="stamp">Yours?</span></li>
+      <li class="slot slot--format"><span class="num num--printed">9</span><strong>Workshop</strong><small>People learn by doing, on the laptops they bring.</small><span class="stamp">Yours?</span></li>
+      <li class="slot slot--format"><span class="num num--printed">10</span><strong>Live coding</strong><small>Build or show something on stage, or run a hands-on lab people follow on their laptops.</small><span class="stamp">Yours?</span></li>
+      <li class="slot slot--format"><span class="num num--printed">11</span><strong>Fireside chat</strong><small>An interview, a debate or an open discussion, with the room asking questions.</small><span class="stamp">Yours?</span></li>
+      <li class="slot slot--format"><span class="num num--printed">12</span><strong>Not sure?</strong><small>Propose it anyway and say what you have in mind.</small><span class="stamp">Yours?</span></li>
+    </ul>
     <div class="copy">
       <p>The call is for more than talks. Every slot is one hour, and you choose what happens in it. A format that is not on the list is shown on the program under its own name.</p>
       <h3 class="list-title">Workshops</h3>
@@ -95,14 +105,6 @@
       <h3 class="list-title">A session or an event?</h3>
       <p>A session takes one of the hour slots at IPI Academy on Thursday or Friday, and we pick it. A meetup, a dinner, a hackathon or a workshop that you run and pay for yourself, outside the session slots, on any day from 2 to 6 June, is an event: <a href="extend.html">propose an event</a> instead.</p>
     </div>
-    <ul class="slots slots--formats" aria-label="Kinds of sessions you can propose">
-      <li class="slot slot--format"><!-- gen:goat-peek-speaker tools/frame.py --><span class="goat peek peek--art" aria-hidden="true" data-goat="peek-speaker" data-turn="img/goat/sheet-roles-turns.webp?v=4287a1a1|-7.547%|-7.456%|114.151%|70.614%|219.835%|51.6%|84.138%|60.526%" data-anim="img/goat/anim-peek-speaker.webp?v=1bf7305b|ears,petted,scratch,sneeze,wink,yawn" style="--beat:-2s;--edge:85.965%;aspect-ratio:212/228;background-image:url(img/goat/sheet-roles.webp?v=3bf18bcf);background-size:147.17% auto;background-position:0 50%"><i class="goat-blink" style="left:35.849%;top:30.702%;width:38.679%;height:21.491%;background-size:380.488% auto;background-position:92.174% 10.149%"></i></span><!-- /gen:goat-peek-speaker --><span class="num num--printed">7</span><strong>Talk</strong><small>With time for questions.</small><span class="stamp">Yours?</span></li>
-      <li class="slot slot--format"><!-- gen:goat-peek-speaker tools/frame.py --><span class="goat peek peek--art" aria-hidden="true" data-goat="peek-speaker" data-turn="img/goat/sheet-roles-turns.webp?v=4287a1a1|-7.547%|-7.456%|114.151%|70.614%|219.835%|51.6%|84.138%|60.526%" data-anim="img/goat/anim-peek-speaker.webp?v=1bf7305b|ears,petted,scratch,sneeze,wink,yawn" style="--beat:-2s;--edge:85.965%;aspect-ratio:212/228;background-image:url(img/goat/sheet-roles.webp?v=3bf18bcf);background-size:147.17% auto;background-position:0 50%"><i class="goat-blink" style="left:35.849%;top:30.702%;width:38.679%;height:21.491%;background-size:380.488% auto;background-position:92.174% 10.149%"></i></span><!-- /gen:goat-peek-speaker --><span class="num num--printed">8</span><strong>Panel</strong><small>A few people on one question, with the room joining in.</small><span class="stamp">Yours?</span></li>
-      <li class="slot slot--format"><!-- gen:goat-peek-coder tools/frame.py --><span class="goat peek peek--art" aria-hidden="true" data-goat="peek-coder" data-turn="img/goat/sheet-roles-turns.webp?v=4287a1a1|-11.792%|-10.965%|123.113%|70.614%|203.831%|34.778%|97.048%|57.018%" data-anim="img/goat/anim-peek-coder.webp?v=ba2d5407|ears,petted,scratch,sneeze,wink,yawn" style="--beat:-4s;--edge:85.965%;aspect-ratio:212/228;background-image:url(img/goat/sheet-roles.webp?v=3bf18bcf);background-size:147.17% auto;background-position:0 33.333%"><i class="goat-blink" style="left:33.019%;top:28.509%;width:37.736%;height:20.614%;background-size:390% auto;background-position:91.379% 6.972%"></i></span><!-- /gen:goat-peek-coder --><span class="num num--printed">9</span><strong>Workshop</strong><small>People learn by doing, on the laptops they bring.</small><span class="stamp">Yours?</span></li>
-      <li class="slot slot--format"><!-- gen:goat-peek-coder tools/frame.py --><span class="goat peek peek--art" aria-hidden="true" data-goat="peek-coder" data-turn="img/goat/sheet-roles-turns.webp?v=4287a1a1|-11.792%|-10.965%|123.113%|70.614%|203.831%|34.778%|97.048%|57.018%" data-anim="img/goat/anim-peek-coder.webp?v=ba2d5407|ears,petted,scratch,sneeze,wink,yawn" style="--beat:-4s;--edge:85.965%;aspect-ratio:212/228;background-image:url(img/goat/sheet-roles.webp?v=3bf18bcf);background-size:147.17% auto;background-position:0 33.333%"><i class="goat-blink" style="left:33.019%;top:28.509%;width:37.736%;height:20.614%;background-size:390% auto;background-position:91.379% 6.972%"></i></span><!-- /gen:goat-peek-coder --><span class="num num--printed">10</span><strong>Live coding</strong><small>Build or show something on stage, or run a hands-on lab people follow on their laptops.</small><span class="stamp">Yours?</span></li>
-      <li class="slot slot--format"><!-- gen:goat-peek-speaker tools/frame.py --><span class="goat peek peek--art" aria-hidden="true" data-goat="peek-speaker" data-turn="img/goat/sheet-roles-turns.webp?v=4287a1a1|-7.547%|-7.456%|114.151%|70.614%|219.835%|51.6%|84.138%|60.526%" data-anim="img/goat/anim-peek-speaker.webp?v=1bf7305b|ears,petted,scratch,sneeze,wink,yawn" style="--beat:-2s;--edge:85.965%;aspect-ratio:212/228;background-image:url(img/goat/sheet-roles.webp?v=3bf18bcf);background-size:147.17% auto;background-position:0 50%"><i class="goat-blink" style="left:35.849%;top:30.702%;width:38.679%;height:21.491%;background-size:380.488% auto;background-position:92.174% 10.149%"></i></span><!-- /gen:goat-peek-speaker --><span class="num num--printed">11</span><strong>Fireside chat</strong><small>An interview, a debate or an open discussion, with the room asking questions.</small><span class="stamp">Yours?</span></li>
-      <li class="slot slot--format"><!-- gen:goat-peek-hidden tools/frame.py --><span class="goat peek peek--art" aria-hidden="true" data-goat="peek-hidden" data-turn="img/goat/sheet-roles-turns.webp?v=4287a1a1|-10.849%|28.07%|121.226%|60.088%|207.004%|99.799%|94.182%|85.526%" data-anim="img/goat/anim-peek-hidden.webp?v=20fa08ef|ears,petted,scratch,sneeze,wink,yawn" style="--beat:-1s;--edge:85.965%;aspect-ratio:212/228;background-image:url(img/goat/sheet-roles.webp?v=3bf18bcf);background-size:147.17% auto;background-position:0 100%"><i class="goat-blink" style="left:34.434%;top:68.421%;width:36.321%;height:6.579%;background-size:405.195% auto;background-position:90.213% 19.798%"></i></span><!-- /gen:goat-peek-hidden --><span class="num num--printed">12</span><strong>Not sure?</strong><small>Propose it anyway and say what you have in mind.</small><span class="stamp">Yours?</span></li>
-    </ul>
   </div>
 </section>
 <section class="album-page wrap" aria-labelledby="h-who">
@@ -157,7 +159,7 @@
       <h3 class="list-title">Make a trip of it</h3>
       <p>Stay for Saturday 5th June, the community's day: a day at the Pannonian salt lakes, the goat hunt through town, and the events people add. See the <a href="program.html">program</a>.</p>
     </div>
-    <div class="prices">
+    <div class="prices prices--stay">
       <h3>What a stay costs</h3>
       <ul class="pricelist">
         <li><span>Hotel Vertigos, a night</span><i aria-hidden="true"></i><b>from&nbsp;48&nbsp;€</b></li>

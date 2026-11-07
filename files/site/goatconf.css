@@ -588,16 +588,39 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .ledger-stickers--quad { grid-template-columns: repeat(2, minmax(0, 1fr)); align-self: start; }
 .ledger-stickers--quad .sticker--fact { justify-content: flex-start; }
 .ledger-stickers--quad .sticker--fact strong { font-size: clamp(2rem, 1.5rem + 1.4vw, 2.8rem); }
-/* The talk page: what a speaker gets, as stickers beside the copy, two across */
+/* The talk page: what a speaker gets, as stickers beside the copy, two across. The cards come first in the
+   source, so on one column they follow the intro (why) or open the section (formats); wide, the copy keeps the
+   left column and the cards the right. */
 .slots--why { grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; align-self: start; }
 .slots--why > li { height: 100%; justify-content: flex-start; }
 .slots--why .sticker--fact strong { font-size: clamp(1.9rem, 1.3rem + 1.4vw, 2.6rem); }
 .slots--why .slot { min-height: 0; }
 .page-grid > .prices { margin-top: 0; }
-@media (max-width: 47.99rem) {
-  .slots--why .sticker--fact strong { font-size: 1.6rem; }
-  .slots--why small { font-size: 0.9rem; }
+@media (min-width: 62rem) {
+  .page-grid--why { grid-template-areas: "intro cards" "more cards"; grid-template-rows: auto 1fr; row-gap: 0; }
+  .page-grid--why > .why__intro { grid-area: intro; }
+  .page-grid--why > .why__more { grid-area: more; }
+  .page-grid--why > .slots--why { grid-area: cards; }
+  .page-grid--why > .why__intro > p:last-child { margin-bottom: 1em; }
+  .page-grid--cards-first > .slots { grid-column: 2; grid-row: 1; }
+  .page-grid--cards-first > .copy { grid-column: 1; grid-row: 1; }
 }
+/* On a phone: one sticker after another, each only as tall as it needs, nearly level */
+@media (max-width: 47.99rem) {
+  .album-page .slots.slots--why { grid-template-columns: minmax(0, 26rem); justify-content: center; gap: 1.4rem; margin-block: 0.4rem 1.8rem; }
+  .slots--why > li { height: auto; padding: 1.1rem 1.1rem 1.15rem; }
+  .slots--why > li:nth-child(odd) { --tilt: -0.6deg !important; }
+  .slots--why > li:nth-child(even) { --tilt: 0.6deg !important; }
+  .slots--why .sticker--fact strong { font-size: 2.2rem; }
+  .slots--why .slot strong { font-size: 1.5rem; }
+  .slots--why small { font-size: 0.98rem; }
+  .page-grid--cards-first > .slots { margin-bottom: 0.4rem; }
+  .prices--stay .pricelist span { font-size: 0.98rem; }
+  .prices--stay .pricelist b { font-size: 1.3rem; }
+}
+/* The formats on the talk page: one goat, over the first slot, so the rows close up below it */
+.album-page .slots.slots--formats.slots--one-goat { row-gap: 1.2rem; }
+@media (max-width: 47.99rem) { .album-page .slots.slots--formats.slots--one-goat { row-gap: 0.9rem; } }
 .stamp--planned { color: var(--album); }
 .slot--reserved { border-style: solid; }
 .slot--reserved small a { color: var(--album); font-weight: 700; }
