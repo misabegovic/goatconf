@@ -6,7 +6,8 @@ This file summarises what the brain holds, for impeccable. The brain stays
 the source of truth: [the facts page](wiki/org/goatconf-2027.md), [the
 epic](wiki/org/epics/goatconf-2027.md), the PRDs and ADRs under
 `wiki/org/` (read each with its amendments), and the personas under
-`.claude/personas/`. Brought up to date on 2026-10-15.
+`.claude/personas/`. Brought up to date on 2026-10-15; the recording line on
+2026-11-07.
 
 ## Platform
 
@@ -80,8 +81,10 @@ newsletters.
   content. A speaker's company that covers their travel is listed the
   same way.
 - The budget is private: no budget page, and the site never mentions it.
-- GoatConf does not record the talks; people who come may record or
-  podcast.
+- GoatConf aims to record the sessions in IPI Academy's two big halls,
+  the main hall and the first-floor hall; this is not promised yet, as
+  it depends on the available budget. People who come may also bring a
+  camera or a podcast.
 - Pages: home, program, register, propose a talk, travel and stay,
   speakers, propose an event, supporters, extensions, charter, code of
   conduct, accessibility, contact, brand.
