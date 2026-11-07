@@ -327,8 +327,25 @@ def extension_days():
     return by_day
 
 
-def ext_item(slug, meta) -> str:
-    return f"""<li class="sticker sticker--fact sticker--ext" style="--tilt:-1deg"><a class="sticker__open" href="{extensions.page_name(slug)}"><strong>{esc(meta['name'])}</strong><small>{extensions.KINDS[meta['kind']]}, part of GoatConf 2027, run by {esc(meta['host'])}. {extensions.when(meta)}, {esc(meta['location'])}.</small></a></li>"""
+def ext_item(slug, meta, num=None) -> str:
+    badge = f'<span class="num">{num}</span>' if num is not None else ""
+    return f"""<li class="sticker sticker--fact sticker--ext" style="--tilt:-1deg">{badge}<a class="sticker__open" href="{extensions.page_name(slug)}"><strong>{esc(meta['name'])}</strong><small>{extensions.KINDS[meta['kind']]}, part of GoatConf 2027, run by {esc(meta['host'])}. {extensions.when(meta)}, {esc(meta['location'])}.</small></a></li>"""
+
+
+def confirmed_block() -> str:
+    """The confirmed speakers before the timetable, while their sessions are still to come
+    (sources/conversations/2026-11-07--org--program-page-lineup.md)."""
+    import speakers  # here, not at the top: speakers imports this module
+    strip = speakers.faces()
+    if not strip:
+        return ""
+    return f"""<section class="album-page wrap" id="confirmed" aria-labelledby="h-confirmed">
+  <h2 class="band" id="h-confirmed">Confirmed so far</h2>
+  <p class="copy copy--wide">These speakers are confirmed. Their sessions, days and times are still to come; each main-hall cell marked Reserved below is held for one of them.</p>
+{strip}
+  <p class="copy"><a class="go go--ink" href="speakers.html">Who they are and what they will talk about</a></p>
+</section>
+"""
 
 
 def page() -> str:
@@ -340,7 +357,9 @@ def page() -> str:
         block, n = day_block(day, label, table, n)
         days.append(block)
     sat, sat_label = COMMUNITY_DAY
-    sat_items = "\n".join(ext_item(s, m) for _, s, m, _ in ext.get(sat, []))
+    sat_ext = ext.get(sat, [])
+    sat_items = "\n".join(ext_item(s, m, n + i) for i, (_, s, m, _) in enumerate(sat_ext))
+    n += len(sat_ext)
     sat_open = "\n".join(f'<li class="slot"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp{" stamp--planned" if planned else ""}">{"Planned" if planned else "Yours?"}</span></li>'
                          for i, (name, what, planned) in enumerate([("A day at the lakes", "Swimming, the salt waterfalls and the beach at the Pannonian Lakes.", True),
                                                            ("The goat hunt", "Clues through town for teams of people who just met, ending at the goat statue.", True),
@@ -359,23 +378,22 @@ def page() -> str:
         "The GoatConf 2027 program: two core days, Thursday 3rd and Friday 4th June, in every room of IPI Academy, Tuzla, and Saturday 5th June for the community.",
         ("img/ipi-lecture-hall.jpg", 1024, 768, "A talk in IPI Academy's lecture hall, students' faces blurred"),
         "The program",
-        "Two days of talks in every room of IPI Academy, then a community day on Saturday. Every empty slot is waiting for someone.",
-        f"""<section class="album-page wrap" aria-labelledby="h-how">
+        "Two days of sessions in every room of IPI Academy, an hour off after each for the hallway track, then a community day on Saturday.",
+        f"""{confirmed_block()}<section class="album-page wrap" aria-labelledby="h-how">
   <h2 class="band" id="h-how">How a day runs</h2>
   <div class="page-grid">
     <div class="copy">
-      <p>Thursday 3rd and Friday 4th June 2027 are the core days, at IPI Academy, Kulina bana 2, Tuzla. Each day runs on one timetable for every room, so you can change rooms at every break.</p>
-      <p>Every slot is one hour: a talk with time for questions, a panel, a workshop or something else. Two half-hour sessions can share a slot, and a workshop in a computer centre can run longer. At a workshop, everyone works on the laptop they bring. After each slot comes a full hour off, the hallway track, in the cafés on Freedom Square under five minutes away: talk to the person you just heard, and meet each other.</p>
-      <p>{' '.join(f'{CORE_DAYS[d].split()[0]} runs from {day_hours(d)}.' for d in CORE_DAYS)}</p>
-      <p>GoatConf aims to record the sessions in the two big halls, the main hall and the first-floor hall. This is not promised yet, as it depends on the available budget. You may also bring a camera or a podcast and record, and podcasts are welcome in some of the rooms.</p>
-      <p>The slots fill as proposals come in and are accepted. Days, times and rooms are final only once the program is finalised, closer to the event. Until then a session's place on this page can still move. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>
+      <p>Thursday 3rd and Friday 4th June 2027 are the core days, at IPI Academy, Kulina bana 2, Tuzla. {' '.join(f'{CORE_DAYS[d].split()[0]} runs from {day_hours(d)}.' for d in CORE_DAYS)} Every room keeps the same timetable, so you can change rooms at every break.</p>
+      <p>Every slot is one hour: a talk with time for questions, a panel, a workshop or something else. Two half-hour sessions can share a slot, and a workshop in a computer centre, on the laptops people bring, can run longer. After each slot comes a full hour off, the hallway track, in the cafés on Freedom Square under five minutes away: talk to the person you just heard, and meet each other.</p>
+      <p>GoatConf aims to record the two big halls, the main hall and the first-floor hall; this is not promised yet, as it depends on the available budget. You may bring a camera or a podcast, and podcasts are welcome in some of the rooms.</p>
+      <p>Slots fill as proposals are accepted, and days, times and rooms are final only once the program is finalised, closer to the event. <a href="talk.html">Propose a session</a>, or <a href="register.html">register for free</a> to come and listen.</p>
     </div>
     <div>
       <h3 class="list-title">The rooms</h3>
       <ul class="rooms-list">
 {room_list}
       </ul>
-      <p class="checked">Closer to June, you will also register for the sessions you want, because each room has only so many seats. Everyone with a ticket gets an email with how. Seats nobody registered for go to whoever is at the door when a session starts.</p>
+      <p class="checked">Each room has only so many seats, so closer to June everyone with a ticket also registers for the sessions they want. <a href="register.html#days">How seats work</a>.</p>
       <p><a class="go go--ink" href="goatconf-2027.ics" download>Add the three days to your calendar</a></p>
     </div>
   </div>

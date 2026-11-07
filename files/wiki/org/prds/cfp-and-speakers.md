@@ -8,6 +8,7 @@ appetite: medium
 confidence: medium
 supersedes: org/pitches/cfp-and-speakers.md
 sources:
+  - sources/conversations/2026-11-07--org--program-page-lineup.md
   - sources/conversations/2026-11-07--org--longer-sessions-home-and-llms.md
   - sources/conversations/2026-11-07--org--longer-sessions-on-request.md
   - sources/conversations/2026-11-07--org--talk-page-redesign.md
@@ -316,3 +317,4 @@ submissions use the same tool, so the ADR's choice binds that PRD too.
 - **2026-10-18, final slots closer to the event.** Days, times and rooms are final only once the program is finalised, closer to the event; until then a session's place can move. The program page and the talk page say so (source: sources/conversations/2026-10-18--org--final-slots-closer-to-the-event.md).
 - **2026-11-07, what a speaker gets first, travel after.** The talk page opens on why to speak at GoatConf (who comes, who organises it, and stickers for the hour, the hour off, the promotion, the speakers dinner and the first-timer rehearsal, with recording as an empty slot while it is not promised) and explains travel later, in a "Getting to Tuzla" section with what a stay costs. The call no longer puts the money first, as the Scope above says; it still states plainly that speakers pay their own travel and stay, before the form asks anything. Both form buttons stay, at the top and at the bottom (source: sources/conversations/2026-11-07--org--talk-page-redesign.md).
 - **2026-11-07, longer sessions on request.** Any session, not only a workshop in a computer centre, may ask for more than an hour: the speaker says how long in the proposal, and the organiser sees if it can be made to work, never promised. Half an hour stays welcome. The talk page says so on its "One hour" sticker, beside the formats and in the slot details, and the home page's "Run a session" section and llms.txt say it too; the live talk form is unchanged (sources: sources/conversations/2026-11-07--org--longer-sessions-on-request.md, sources/conversations/2026-11-07--org--longer-sessions-home-and-llms.md).
+- **2026-11-07, the lineup on the program page.** The program page opens on "Confirmed so far", every listed speaker's photo and name, with their sessions, days and times still to come; the reserved main-hall cells stay unnamed, since their slot is not decided. On every width the open rooms of a slot fold into one line, and only reserved rooms and sessions show as cards (source: sources/conversations/2026-11-07--org--program-page-lineup.md).

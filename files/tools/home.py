@@ -142,26 +142,13 @@ def speakers_block() -> str:
 </section>"""
 
 
-# Small tilts for the register page's faces, varied between neighbours.
-FACE_TILTS = (-1.5, 1, -0.5, 1.5, -1, 0.5, 1.2, -1.2)
-
-
 def register_speakers() -> str:
-    """Every listed speaker as a small photo sticker with their name, for the register page
-    (sources/conversations/2026-11-07--org--register-page-and-hallway-track.md)."""
-    people = speakers.listed(speakers.speakers())
-    if not people:
+    """Every listed speaker's photo and name, for the register page."""
+    strip = speakers.faces()
+    if not strip:
         return ('  <p class="copy">No one is announced yet. Speakers appear here as their sessions are accepted. '
                 '<a href="talk.html">Propose a session</a>.</p>')
-    faces = []
-    for i, (slug, (meta, _body)) in enumerate(people):
-        photo = (f'<img src="{speakers.esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo")
-                 else speakers.goat_photo())
-        faces.append(f'    <li><a class="sticker sticker--photo sticker--face" href="{speakers.page_name(slug)}" '
-                     f'style="--tilt:{FACE_TILTS[i % len(FACE_TILTS)]}deg">{photo}'
-                     f'<span class="sticker__name">{speakers.esc(meta["name"])}</span></a></li>')
-    return ('  <ul class="slots slots--faces" aria-label="Speakers">\n' + "\n".join(faces) + '\n  </ul>\n'
-            '  <p class="copy"><a class="go go--ink" href="speakers.html">View all speakers and their sessions</a></p>')
+    return strip + '\n  <p class="copy"><a class="go go--ink" href="speakers.html">View all speakers and their sessions</a></p>'
 
 
 def register_page() -> str:

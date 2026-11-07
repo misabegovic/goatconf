@@ -943,3 +943,19 @@ button.button { border: 0; cursor: pointer; }
   .album-page .slots.slots--faces { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem 0.9rem; }
   .sticker__name { font-size: 0.9rem; }
 }
+
+/* The program at every width: open rooms fold into one line per slot, and only reserved rooms and sessions show
+   as cards (sources/conversations/2026-11-07--org--program-page-lineup.md) */
+@media (min-width: 48rem) {
+  .rooms > .slot--session:not(.slot--reserved) { display: none; }
+  .timeslot__open { display: block; margin: -0.3rem 0 0.9rem; padding: 0.6rem 0.9rem; border-radius: 0.6rem; border: 2px dashed var(--slot-line); background: var(--page-print); font-size: 0.95rem; max-width: 40rem; }
+  .timeslot__open a { color: var(--album); font-weight: 700; }
+  .timeslot:has(.timeslot__open) .timeslot__time span { display: none; }
+  /* Cards first, then the open rooms' line beside them, filling the row; it wraps under them once the row is full. */
+  .timeslot { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0.9rem; }
+  .timeslot__time { flex-basis: 100%; margin-bottom: 0; }
+  .timeslot > .rooms { order: 1; display: flex; flex-wrap: wrap; gap: 0.9rem; }
+  .timeslot > .rooms > li { width: 15rem; }
+  .timeslot > .rooms:not(:has(> li:not(.slot--session), > .slot--reserved)) { display: none; }
+  .timeslot__open { order: 2; flex: 1 1 16rem; display: block; align-content: center; margin: 0; max-width: none; }
+}
