@@ -133,11 +133,15 @@ def speakers_block() -> str:
         more = '<a class="go go--ink" href="talk.html">Propose a session</a>'
         intro = ""
     intro_html = f'\n  <p class="copy copy--wide">{intro}</p>' if intro else ""
+    # On a phone the speakers show as the faces strip, and the cards on wider screens
+    # (sources/conversations/2026-11-07--org--home-page-order.md).
+    strip = speakers.faces() if people else ""
+    faces = f'\n  <div class="home-faces">\n{strip}\n  </div>' if strip else ""
     return f"""<section class="album-page wrap" id="speakers" aria-labelledby="speakers-title">
   <h2 class="band" id="speakers-title">Who is speaking</h2>{intro_html}
   <ul class="slots slots--mini">
 {cards}
-  </ul>
+  </ul>{faces}
   <p class="copy">{more}</p>
 </section>"""
 
