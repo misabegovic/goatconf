@@ -889,3 +889,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-07 merge — PR #263: site: the register page refreshed, and the hour off named as the hallway track
    diff: 43 files, +250/-78
    restricted-paths: true
+2026-11-07 merge — PR #265: site: the program page leads with the lineup and folds the open rooms
+   diff: 40 files, +178/-73
+   restricted-paths: true
