@@ -892,3 +892,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-07 merge — PR #265: site: the program page leads with the lineup and folds the open rooms
    diff: 40 files, +178/-73
    restricted-paths: true
+2026-11-07 merge — PR #267: site: the speaker pages ask you to meet the speaker in person, and their session text reads at body size
+   diff: 38 files, +148/-35
+   restricted-paths: true
