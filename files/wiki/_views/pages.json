@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-03",
+  "generated": "2026-11-07",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -1024,12 +1024,13 @@
       "title": "The drumbeat, October to December 2026",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-11-03",
+      "updated": "2026-11-07",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md",
         "sources/conversations/2026-11-03--org--paul-spotlight-published.md",
         "sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md",
         "sources/conversations/2026-10-26--org--paul-campbell-carlos.md",
@@ -1123,7 +1124,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 8562
+      "tokens": 8676
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -2723,12 +2724,13 @@
       "title": "Images of Tuzla for GoatConf: free to use, ask first, and gaps",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-10-19",
+      "updated": "2026-11-07",
       "confidence": "medium",
       "depends_on": [
         "org/tuzla.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
         "sources/web/images/food-photos-chosen-2026-10-13.md",
@@ -2792,7 +2794,7 @@
         "sources/web/images/burek-nisici.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 7162
+      "tokens": 7409
     },
     {
       "path": "org/tuzla.md",

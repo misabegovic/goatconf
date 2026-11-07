@@ -218,13 +218,13 @@ POSTS = {
     "community-day": ("The<br>community's<br>day", "The salt lakes, the goat hunt, and the evening meetup."),
     "thank-you": ("Thank<br>you", "To everyone who spoke, supported, hosted, volunteered and came."),
     # The Tuesday Tuzla posts (wiki/org/outreach/drumbeat.md)
-    "mesa-and-ismet": ("Meet at<br>Meša and<br>Ismet", "The writer and the painter on the Korzo: Tuzla's meeting point."),
     "where-to-run-it": ("58 places<br>to run<br>yours", "From cafés on Freedom Square to halls for a few hundred people."),
     "salt-square": ("Salt<br>Square", "An Ottoman salt well from 1476, now an open-air museum."),
 }
 
-# Posts with a photo given for GoatConf, each with the credit line its giver asked for
-# (wiki/org/tuzla-images.md). The food photos are not freely licensed, so none is here.
+# Posts with a photo given for GoatConf, each with the credit line its giver asked for, or none where the organiser
+# chose no credit (wiki/org/tuzla-images.md). The food photos are not freely licensed, so none is here. An optional
+# fifth item says where to hold the photo in the square and in the wide crop (CSS object-position).
 PHOTO_POSTS = {
     "getting-to-tuzla": ("Getting<br>to Tuzla", "Fly to Tuzla or Sarajevo, or come by bus.", "img/city-square-mosque-summer.jpg", "Photo: Grad Tuzla"),
     "an-hour-off": ("An hour<br>off", "After every session: Freedom Square, five minutes away.", "img/city-square-fountain-summer.jpg", "Photo: Grad Tuzla"),
@@ -233,22 +233,27 @@ PHOTO_POSTS = {
     "next-week": ("Next week<br>in Tuzla", "The salt lakes open for the season on 1 June.", "img/city-old-town-aerial-paving.jpg", "Photo: Grad Tuzla"),
     "city-of-salt": ("A city of<br>salt", "Tuzla takes its name from tuz, the Turkish for salt.", "img/city-aerial-summer.jpg", "Photo: Grad Tuzla"),
     "seven-thousand-years": ("7,000<br>years", "Neolithic people boiled salt here, in houses on stilts.", "img/city-archaeological-park.jpg", "Photo: Grad Tuzla"),
+    # The Tuesday Tuzla posts (wiki/org/outreach/drumbeat.md): the two statues facing each other, the Korzo behind.
+    "mesa-and-ismet": ("Meet at Meša and Ismet", "The writer and the painter on the Korzo: Tuzla's meeting point.",
+                       "img/korzo-mesa-and-ismet.jpg", "", ("50% 60%", "40% 50%")),
 }
 
 
-def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, square: bool) -> str:
-    """A post with a photo: the photo on top (square) or on the left (wide), its credit on it, the words beside."""
+def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, square: bool,
+               focus: tuple[str, str] = ("50% 50%", "50% 50%")) -> str:
+    """A post with a photo: the photo on top (square) or on the left (wide), its credit on it if it has one, the words
+    beside. A title without set line breaks takes the card's full width and wraps into even lines."""
     src = (SITE / img).as_uri()
     cred = (f'<div style="position:absolute; left:18px; bottom:14px; font-size:20px; font-weight:700; '
-            f'text-shadow:0 1px 4px rgb(0 0 0 / .8)">{esc(credit)}</div>')
+            f'text-shadow:0 1px 4px rgb(0 0 0 / .8)">{esc(credit)}</div>') if credit else ""
     if square:
         return page(w, h, f"""
 <div style="position:absolute; left:0; top:0; width:{w}px; height:540px; overflow:hidden">
-  <img src="{src}" style="width:100%; height:100%; object-fit:cover">{cred}</div>
+  <img src="{src}" style="width:100%; height:100%; object-fit:cover; object-position:{focus[0]}">{cred}</div>
 <div class="rule" style="position:absolute; left:0; top:540px; width:{w}px; border-radius:0"></div>
-<div style="position:absolute; left:84px; top:600px; right:330px">
-  <div class="word" style="font-size:112px">{title}</div>
-  <div class="sub" style="font-size:38px; line-height:1.15; margin-top:30px">{line}</div>
+<div style="position:absolute; left:84px; top:600px; right:84px">
+  <div class="word" style="font-size:112px; text-wrap:balance">{title}</div>
+  <div class="sub" style="font-size:38px; line-height:1.15; margin-top:30px; margin-right:246px">{line}</div>
 </div>
 <div style="position:absolute; left:84px; bottom:64px">
   <div class="sub" style="font-size:30px; color:#fff">{FACTS}</div>
@@ -257,10 +262,10 @@ def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, squ
 {seal(230, "right:64px; bottom:64px")}""")
     return page(w, h, f"""
 <div style="position:absolute; left:0; top:0; width:560px; height:{h}px; overflow:hidden">
-  <img src="{src}" style="width:100%; height:100%; object-fit:cover">{cred}</div>
+  <img src="{src}" style="width:100%; height:100%; object-fit:cover; object-position:{focus[1]}">{cred}</div>
 <div class="rule" style="position:absolute; left:560px; top:0; width:6px; height:{h}px; border-radius:0"></div>
 <div style="position:absolute; left:620px; top:64px; right:56px">
-  <div class="word" style="font-size:88px">{title}</div>
+  <div class="word" style="font-size:{88 if "<br>" in title else 100}px; text-wrap:balance">{title}</div>
   <div class="sub" style="font-size:30px; line-height:1.15; margin-top:24px">{line}</div>
 </div>
 <div style="position:absolute; left:620px; bottom:56px; right:200px">
@@ -439,9 +444,9 @@ def jobs() -> dict[str, tuple[int, int, str]]:
     for key, (title, line) in POSTS.items():
         out[f"post-{key}-square.png"] = (1080, 1080, post(1080, 1080, title, line, True))
         out[f"post-{key}-wide.png"] = (1200, 675, post(1200, 675, title.replace("<br>", " "), line, False))
-    for key, (title, line, img, credit) in PHOTO_POSTS.items():
-        out[f"post-{key}-square.png"] = (1080, 1080, photo_post(1080, 1080, title, line, img, credit, True))
-        out[f"post-{key}-wide.png"] = (1200, 675, photo_post(1200, 675, title, line, img, credit, False))
+    for key, (title, line, img, credit, *focus) in PHOTO_POSTS.items():
+        out[f"post-{key}-square.png"] = (1080, 1080, photo_post(1080, 1080, title, line, img, credit, True, *focus))
+        out[f"post-{key}-wide.png"] = (1200, 675, photo_post(1200, 675, title, line, img, credit, False, *focus))
     talks = speakers.sessions_by_speaker()
     for slug, (meta, _) in speakers.speakers().items():
         out[f"speaker-{slug}-square.png"] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True))
