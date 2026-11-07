@@ -2,11 +2,12 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-11-03
+updated: 2026-11-07
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md
   - sources/conversations/2026-11-03--org--paul-spotlight-published.md
   - sources/conversations/2026-10-26--org--paul-campbell-carlos-area.md
   - sources/conversations/2026-10-26--org--paul-campbell-carlos.md
@@ -239,8 +240,8 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 7 Nov 2026, week 4: Meet at Meša and Ismet
 
 - **State:** drafted
-- **Image:** [`post-mesa-and-ismet-square.png`](https://goatconf.com/share/post-mesa-and-ismet-square.png) (LinkedIn, Mastodon), [`post-mesa-and-ismet-wide.png`](https://goatconf.com/share/post-mesa-and-ismet-wide.png) (X, Bluesky)
-- **Before posting:** News first: until the speaker run ends on Tuesday 22 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **Image:** [`post-mesa-and-ismet-square.png`](https://goatconf.com/share/post-mesa-and-ismet-square.png) (LinkedIn, Mastodon), [`post-mesa-and-ismet-wide.png`](https://goatconf.com/share/post-mesa-and-ismet-wide.png) (X, Bluesky). Since 2026-11-07 each card shows a photo of the two statues facing each other with the Korzo behind them, which the organiser chose over the plain lettering; on the organiser's call the photo carries no credit, on the card or in the text (source: sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md).
+- **Before posting:** The new cards reach goatconf.com/share only once the change is merged and the site is published; until then post the PNGs from the repository. News first: until the speaker run ends on Tuesday 22 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
 - **LinkedIn:**
 
   > In Tuzla, "at Meša and Ismet" is all the directions anyone needs.

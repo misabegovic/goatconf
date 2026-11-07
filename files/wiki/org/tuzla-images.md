@@ -2,11 +2,12 @@
 title: "Images of Tuzla for GoatConf: free to use, ask first, and gaps"
 kind: reference
 status: living
-updated: 2026-10-19
+updated: 2026-11-07
 confidence: medium
 depends_on:
   - org/tuzla.md
 sources:
+  - sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md
   - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
   - sources/web/images/food-photos-chosen-2026-10-13.md
@@ -330,3 +331,21 @@ Uštipci then gave way to `site/img/food-sarma.jpg` (sarma in a pot, by BiHVolim
 The organiser replaced all twelve food photos on the home page with ones picked from sheets of candidates, dish by dish (source: sources/conversations/2026-10-13--org--food-photos-one-by-one.md). They are **not freely licensed**: they come from recipe, news and blog sites, Pinterest and Tuzla restaurants' Korpa.ba menus, and are used on the organiser's decision, who takes one down if its owner asks. Every image and the page it came from is in `sources/web/images/food-photos-chosen-2026-10-13.md`. The earlier Commons photos for grah (pasulj) and burek (Nišići) are no longer on the site; the Commons licence records above stay as history.
 
 On 2026-10-19, on the organiser's call, the eleven photos no page showed came off the site: their copies under `site/img/` were removed, and the originals stay in `assets/images/` (source: sources/conversations/2026-10-19--org--site-review-decisions.md). The site now serves WebP copies of each photo it shows, written by `tools/images.py`.
+
+## Meša and Ismet, added 2026-11-07
+
+For the "Meet at Meša and Ismet" post the organiser chose a photo of their
+own finding: the two statues facing each other on the Korzo, low and wide,
+with the walking street, its trees and café umbrellas behind them in summer.
+Where it is from is *(unknown, needs source)*, and on the organiser's call it
+carries no credit. It is `assets/images/organiser/korzo-mesa-and-ismet.jpg`,
+with its record beside it, and `site/img/korzo-mesa-and-ismet.jpg`, which
+only the post cards use (source:
+sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md).
+
+The search for it found freely licensed fallbacks, none downloaded into
+`assets/`: one photo of each statue by Sebleouf on Wikimedia Commons (2019,
+CC BY-SA 4.0), and both statues in one frame by Goran Necin on Flickr
+(2013-06-27, CC BY-SA 2.0), with a bank sign and a beer poster behind. Both
+statues are modern sculptures, so the freedom of panorama note above applies
+to every photo of them.
