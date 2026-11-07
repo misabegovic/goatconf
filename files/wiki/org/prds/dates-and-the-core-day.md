@@ -2,12 +2,13 @@
 title: "Dates and the core days: Thursday 3 and Friday 4 June 2027, every room in parallel, breaks on Freedom Square"
 kind: initiative
 status: living
-updated: 2026-10-12
+updated: 2026-11-07
 parent_epic: goatconf-2027
 appetite: medium
 confidence: medium
 supersedes: org/pitches/dates-format-and-schedule.md
 sources:
+  - sources/conversations/2026-11-07--org--register-page-and-hallway-track.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--bet-on-every-pitch.md
   - sources/conversations/2026-10-07--org--date-options-for-ipi.md
@@ -284,3 +285,4 @@ midday break with the talks gathered either side.
 
 - **2026-10-12.** The dates and the format are decided. GoatConf 2027 has two core days, Thursday 3 and Friday 4 June 2027, and Saturday 5 June is free for the community. Each core day runs 10:00 to 17:00 with a 09:45 welcome, one-hour slots at 10, 12, 14 and 16 and one-hour breaks on Freedom Square at 11, 13 and 15, in every available IPI room in parallel on one shared timetable. The six-option list, the one-core-day rule, the one-track and no-parallel rules, the four-talk limit and the single cap of about 120 are superseded. IPI's written confirmation of the two days remains a dependency. See [Dates: two core days](../adrs/two-core-days-first-week.md), [Core days: parallel rooms](../adrs/core-day-parallel-tracks.md), [Program: every room open](../adrs/open-program-every-room.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
 - **2026-10-12.** IPI Academy has accepted the dates, Thursday 3 and Friday 4 June 2027 as core days and Saturday 5 June as the community day, and GoatConf has access to all seven rooms, as the organiser reported; no written copy is in the brain. The written-confirmation dependency in the entry above is answered (`sources/conversations/2026-10-12--org--ipi-accepted-dates-all-rooms.md`).
+- **2026-11-07, the hour off is the hallway track.** The hour off after every slot is there for the hallway track: meeting the speakers and each other in the cafés on Freedom Square. The site now says so wherever the hour off is named: the register and talk pages, the home page's days, the program page and each session page, and llms.txt; the program's "Hour off" rows stay short (source: sources/conversations/2026-11-07--org--register-page-and-hallway-track.md).

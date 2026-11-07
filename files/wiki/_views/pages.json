@@ -1930,12 +1930,13 @@
       "title": "Dates and the core days: Thursday 3 and Friday 4 June 2027, every room in parallel, breaks on Freedom Square",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-12",
+      "updated": "2026-11-07",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/dates-format-and-schedule.md",
       "sources": [
+        "sources/conversations/2026-11-07--org--register-page-and-hallway-track.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--bet-on-every-pitch.md",
         "sources/conversations/2026-10-07--org--date-options-for-ipi.md",
@@ -1962,7 +1963,7 @@
         "sources/web/venue/ipi-akademija-app-challenge.md",
         "sources/web/venue/tztz-hotel-tuzla.md"
       ],
-      "tokens": 3400,
+      "tokens": 3517,
       "consumed_by": [
         "org/adrs/core-day-parallel-tracks.md",
         "org/adrs/dates-and-the-core-day.md",
@@ -2340,12 +2341,13 @@
       "title": "Website and registration: goatconf.com and a free pass per core day",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-11-07",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-07--org--register-page-and-hallway-track.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-12--org--google-forms-built-and-published.md",
         "sources/conversations/2026-10-12--org--session-registration-later.md",
@@ -2373,7 +2375,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 3194,
+      "tokens": 3308,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
