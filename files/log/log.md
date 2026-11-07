@@ -895,3 +895,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-07 merge — PR #267: site: the speaker pages ask you to meet the speaker in person, and their session text reads at body size
    diff: 38 files, +148/-35
    restricted-paths: true
+2026-11-07 merge — PR #269: site: the home page tells the attendee's story first, with a Register band in the middle
+   diff: 7 files, +125/-47
+   restricted-paths: false
