@@ -27,6 +27,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extensions  # noqa: E402
+import formlinks  # noqa: E402
 import images  # noqa: E402
 import frame  # noqa: E402
 import goat_atlas  # noqa: E402
@@ -338,6 +339,13 @@ def sticker_link(slug: str) -> str:
     return f'<a class="go go--ink speaker-page__sticker" href="{name}" download>Save as a sticker</a>' if (SITE / name).exists() else ""
 
 
+def register_cta(label: str) -> str:
+    """The register button for the speaker pages, to the Luma event in forms.yml (formlinks fills the link)
+    (sources/conversations/2026-11-07--org--speakers-register-cta.md)."""
+    return (f'<p class="cta"><a class="button" data-form="register" href="register.html">{label}</a>'
+            '<span>Free, for everyone. Luma emails you when you are in.</span></p>')
+
+
 def speaker_page(slug: str, meta, body, sessions, known) -> str:
     name = esc(meta["name"])
     bio = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
@@ -376,6 +384,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
 <section class="album-page wrap" aria-labelledby="h-talks">
   <h2 class="band" id="h-talks">{"Sessions" if len(sessions) > 1 else "Session"}</h2>
   {f'<ul class="talks">{talks}</ul>' if talks else '<p class="copy">The session will be on the program soon.</p>'}
+  {register_cta(f"Meet {esc(str(meta['name']).split()[0])} in person")}
   <p class="copy"><a class="go go--ink" href="program.html">See the whole program</a> <a class="go go--ink" href="speakers.html">All speakers</a></p>
 </section>{support_section(meta)}{share}"""
     title = f"{meta['name']}: speaking at GoatConf 2027, Tuzla"
@@ -392,7 +401,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     # down the page (ADR goat-mascot).
     goat = frame.speaker_peek(slug)
     main = re.sub(r'(<h2 class="band"[^>]*>)', lambda m: m.group(1) + goat, main)
-    return shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main, preview)
+    return formlinks.rewrite(shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main, preview), formlinks.forms())
 
 
 def support_problems(meta) -> list:
@@ -514,11 +523,25 @@ def speakers_page() -> str:
   <h2 class="band" id="h-speakers">Who is speaking</h2>
   <p class="copy copy--wide">Each speaker here has a session on Thursday 3rd or Friday 4th June 2027, or will have one soon: some are confirmed before their session has a time and room. They wrote their profiles themselves. Days, times and rooms are set closer to the event; the <a href="program.html">program</a> shows each session once it has its slot.</p>
   {cards}
+</section>
+<section class="album-page wrap" aria-labelledby="h-come">
+  <h2 class="band" id="h-come">Meet them in person</h2>
+  <div class="page-grid page-grid--even">
+    <div class="copy">
+      <p>Two days of sessions in every room of IPI Academy, Thursday 3rd and Friday 4th June 2027, an hour off after each for the hallway track, and a Saturday at the lakes.</p>
+      {register_cta("Register for free")}
+    </div>
+    <div class="copy">
+      <h3 class="list-title">Want to be on this page?</h3>
+      <p>The call is open: a talk, a panel, a workshop or something else that fits an hour, and first-time speakers are welcome.</p>
+      <p><a class="go go--ink" href="talk.html">Propose a session</a></p>
+    </div>
+  </div>
 </section>"""
-    return shell("speakers", "Speakers: GoatConf 2027, 3–5 June, Tuzla",
+    return formlinks.rewrite(shell("speakers", "Speakers: GoatConf 2027, 3–5 June, Tuzla",
                  "The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words.",
                  ("img/ipi-lecture-hall.jpg", 1024, 768, "A talk in IPI Academy's lecture hall, students' faces blurred"),
-                 "The speakers", "The people giving the talks, panels and workshops, in their own words.", main)
+                 "The speakers", "The people giving the talks, panels and workshops, in their own words.", main), formlinks.forms())
 
 
 def supporters_page() -> str:

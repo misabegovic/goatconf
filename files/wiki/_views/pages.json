@@ -1878,6 +1878,8 @@
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-11-07--org--meet-them-in-person.md",
+        "sources/conversations/2026-11-07--org--speakers-register-cta.md",
         "sources/conversations/2026-11-07--org--program-page-lineup.md",
         "sources/conversations/2026-11-07--org--longer-sessions-home-and-llms.md",
         "sources/conversations/2026-11-07--org--longer-sessions-on-request.md",
@@ -1916,7 +1918,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 5311,
+      "tokens": 5429,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
