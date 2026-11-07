@@ -908,3 +908,26 @@ button.button { border: 0; cursor: pointer; }
 @media (max-width: 47.99rem) { .goatchi-promo__goats { grid-template-columns: repeat(2, auto); } }
 .goatchi-promo__goats img { width: clamp(5.5rem, 20vw, 10rem); height: auto; filter: drop-shadow(0 0.3rem 0.35rem rgb(0 0 0 / 0.18)); transform: rotate(-3deg); }
 .goatchi-promo__goats img:nth-child(even) { transform: rotate(3deg) translateY(-0.4rem); }
+
+/* The travel page: jump links, two even columns of routes, and the food list folded on a phone */
+@media (min-width: 62rem) { .page-grid--even { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.daynav--page { flex-wrap: wrap; }
+.album-page[id] { scroll-margin-top: 7rem; }
+.album-page > .list-title { margin-top: clamp(1.75rem, 3vw, 2.5rem); }
+.album-page > .page-grid + p { margin-top: 1.4rem; max-width: 74ch; }
+.album-page > .checked { max-width: 74ch; }
+.fold-list { margin-top: 0.4rem; }
+.fold-list summary { cursor: pointer; color: var(--album); font-weight: 700; }
+.fold-list[open] summary { margin-bottom: 0.3rem; }
+.fold__toggle { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.fold__more { display: none; }
+@media (max-width: 47.99rem) {
+  .daynav--page { position: static; margin-bottom: 0; }
+  .album-page[id] { scroll-margin-top: 4rem; }
+  .fold { position: relative; }
+  .fold__toggle:not(:checked) ~ .places > .place:nth-child(n+6) { display: none; }
+  .fold__more { display: inline-block; margin: 0.2rem 0 1rem; padding: 0.55em 1em; border-radius: 0.45rem; border: 2px solid var(--album); color: var(--album); font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 1rem; cursor: pointer; }
+  .fold__toggle:checked ~ .fold__more .fold__show, .fold__toggle:not(:checked) ~ .fold__more .fold__hide { display: none; }
+  .fold:has(.fold__toggle:focus-visible) .fold__more { outline: 3px solid var(--album); outline-offset: 2px; }
+}
+@media (max-width: 47.99rem) { .daynav--page { border-radius: 0.8rem; } }
