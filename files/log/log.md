@@ -880,3 +880,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-07 merge — PR #257: site: the talk page sells speaking first, and explains travel after
    diff: 42 files, +392/-122
    restricted-paths: true
+2026-11-07 merge — PR #259: product: PRODUCT.md matches the recording plan
+   diff: 2 files, +30/-3
+   restricted-paths: false
