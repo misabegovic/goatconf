@@ -877,3 +877,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-07 merge — PR #255: drumbeat: show Meša and Ismet on the Korzo in the week 4 post
    diff: 17 files, +124/-30
    restricted-paths: true
+2026-11-07 merge — PR #257: site: the talk page sells speaking first, and explains travel after
+   diff: 42 files, +392/-122
+   restricted-paths: true
