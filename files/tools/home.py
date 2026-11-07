@@ -13,7 +13,11 @@ The home page is hand-written, with five parts filled from the records and the t
 Then every sticker and slot number on the page is renumbered in order, so
 the album keeps one sequence however the sections move.
 
-  build [--check]   write site/index.html; with --check, fail if it is not current
+The register page carries one part from here too:
+
+  <!-- gen:register-speakers --> every listed speaker's photo and name, from speakers/
+
+  build [--check]   write site/index.html and site/register.html; with --check, fail if either is not current
 
 Usage: python3 tools/home.py build [--check]
 """
@@ -37,6 +41,7 @@ import speakers  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGE = ROOT / "site" / "index.html"
+REGISTER = ROOT / "site" / "register.html"
 # The home page plans for eight speakers: two full rows of four on a wide screen,
 # four rows of two on a phone. Places not yet taken invite a proposal; once all
 # eight are speakers, none does, and the line under them says how many are shown
@@ -64,7 +69,7 @@ def hours_off(plan) -> str:
         what = what[0].lower() + what[1:]
         if what not in kinds:
             kinds.append(what)
-    return "Hours off: " + " and ".join(kinds) + "."
+    return "Hours off, for the hallway track: " + " and ".join(kinds) + "."
 
 
 def added(events) -> str:
@@ -135,6 +140,33 @@ def speakers_block() -> str:
   </ul>
   <p class="copy">{more}</p>
 </section>"""
+
+
+# Small tilts for the register page's faces, varied between neighbours.
+FACE_TILTS = (-1.5, 1, -0.5, 1.5, -1, 0.5, 1.2, -1.2)
+
+
+def register_speakers() -> str:
+    """Every listed speaker as a small photo sticker with their name, for the register page
+    (sources/conversations/2026-11-07--org--register-page-and-hallway-track.md)."""
+    people = speakers.listed(speakers.speakers())
+    if not people:
+        return ('  <p class="copy">No one is announced yet. Speakers appear here as their sessions are accepted. '
+                '<a href="talk.html">Propose a session</a>.</p>')
+    faces = []
+    for i, (slug, (meta, _body)) in enumerate(people):
+        photo = (f'<img src="{speakers.esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo")
+                 else speakers.goat_photo())
+        faces.append(f'    <li><a class="sticker sticker--photo sticker--face" href="{speakers.page_name(slug)}" '
+                     f'style="--tilt:{FACE_TILTS[i % len(FACE_TILTS)]}deg">{photo}'
+                     f'<span class="sticker__name">{speakers.esc(meta["name"])}</span></a></li>')
+    return ('  <ul class="slots slots--faces" aria-label="Speakers">\n' + "\n".join(faces) + '\n  </ul>\n'
+            '  <p class="copy"><a class="go go--ink" href="speakers.html">View all speakers and their sessions</a></p>')
+
+
+def register_page() -> str:
+    text = REGISTER.read_text(encoding="utf-8")
+    return blocks.fill(text, "register-speakers", "tools/home.py", register_speakers(), "site/register.html")
 
 
 def supporters_block() -> str:
@@ -215,17 +247,21 @@ def main(argv=None) -> int:
     b = sub.add_parser("build")
     b.add_argument("--check", action="store_true")
     args = ap.parse_args(argv)
-    want = images.wrap(page())
-    have = PAGE.read_text(encoding="utf-8")
-    if args.check:
-        if want != have:
-            print("site/index.html is out of date: run python3 tools/home.py build")
-            return 1
-        print("site/index.html is current")
-        return 0
-    PAGE.write_text(want, encoding="utf-8")
-    print("wrote site/index.html")
-    return 0
+    stale = 0
+    for path, make in ((PAGE, page), (REGISTER, register_page)):
+        want = images.wrap(make())
+        have = path.read_text(encoding="utf-8")
+        name = f"site/{path.name}"
+        if args.check:
+            if want != have:
+                print(f"{name} is out of date: run python3 tools/home.py build")
+                stale += 1
+            else:
+                print(f"{name} is current")
+            continue
+        path.write_text(want, encoding="utf-8")
+        print(f"wrote {name}")
+    return 1 if stale else 0
 
 
 if __name__ == "__main__":
