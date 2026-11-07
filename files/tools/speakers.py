@@ -384,7 +384,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
 <section class="album-page wrap" aria-labelledby="h-talks">
   <h2 class="band" id="h-talks">{"Sessions" if len(sessions) > 1 else "Session"}</h2>
   {f'<ul class="talks">{talks}</ul>' if talks else '<p class="copy">The session will be on the program soon.</p>'}
-  {register_cta(f"Register for free to hear {esc(str(meta['name']).split()[0])}")}
+  {register_cta(f"Meet {esc(str(meta['name']).split()[0])} in person")}
   <p class="copy"><a class="go go--ink" href="program.html">See the whole program</a> <a class="go go--ink" href="speakers.html">All speakers</a></p>
 </section>{support_section(meta)}{share}"""
     title = f"{meta['name']}: speaking at GoatConf 2027, Tuzla"
@@ -525,7 +525,7 @@ def speakers_page() -> str:
   {cards}
 </section>
 <section class="album-page wrap" aria-labelledby="h-come">
-  <h2 class="band" id="h-come">Come and hear them</h2>
+  <h2 class="band" id="h-come">Meet them in person</h2>
   <div class="page-grid page-grid--even">
     <div class="copy">
       <p>Two days of sessions in every room of IPI Academy, Thursday 3rd and Friday 4th June 2027, an hour off after each for the hallway track, and a Saturday at the lakes.</p>
