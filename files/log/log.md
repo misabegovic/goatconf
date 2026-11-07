@@ -874,3 +874,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-03 merge — PR #253: drumbeat: mark Paul Campbell's spotlight published
    diff: 5 files, +25/-5
    restricted-paths: false
+2026-11-07 merge — PR #255: drumbeat: show Meša and Ismet on the Korzo in the week 4 post
+   diff: 17 files, +124/-30
+   restricted-paths: true
