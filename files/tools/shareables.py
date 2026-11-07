@@ -234,7 +234,7 @@ PHOTO_POSTS = {
     "city-of-salt": ("A city of<br>salt", "Tuzla takes its name from tuz, the Turkish for salt.", "img/city-aerial-summer.jpg", "Photo: Grad Tuzla"),
     "seven-thousand-years": ("7,000<br>years", "Neolithic people boiled salt here, in houses on stilts.", "img/city-archaeological-park.jpg", "Photo: Grad Tuzla"),
     # The Tuesday Tuzla posts (wiki/org/outreach/drumbeat.md): the two statues facing each other, the Korzo behind.
-    "mesa-and-ismet": ("Meet at<br>Meša and<br>Ismet", "The writer and the painter on the Korzo: Tuzla's meeting point.",
+    "mesa-and-ismet": ("Meet at Meša and Ismet", "The writer and the painter on the Korzo: Tuzla's meeting point.",
                        "img/korzo-mesa-and-ismet.jpg", "", ("50% 60%", "40% 50%")),
 }
 
@@ -242,33 +242,30 @@ PHOTO_POSTS = {
 def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, square: bool,
                focus: tuple[str, str] = ("50% 50%", "50% 50%")) -> str:
     """A post with a photo: the photo on top (square) or on the left (wide), its credit on it if it has one, the words
-    beside. A three-line title gets a taller photo and smaller words on the square card, so the words still fit."""
+    beside. A title without set line breaks takes the card's full width and wraps into even lines."""
     src = (SITE / img).as_uri()
     cred = (f'<div style="position:absolute; left:18px; bottom:14px; font-size:20px; font-weight:700; '
             f'text-shadow:0 1px 4px rgb(0 0 0 / .8)">{esc(credit)}</div>') if credit else ""
     if square:
-        tall = title.count("<br>") >= 2
-        band, word, sub, facts, url, seal_size, bottom = ((580, 88, 31, 28, 26, 220, 50) if tall
-                                                          else (540, 112, 38, 30, 28, 230, 64))
         return page(w, h, f"""
-<div style="position:absolute; left:0; top:0; width:{w}px; height:{band}px; overflow:hidden">
+<div style="position:absolute; left:0; top:0; width:{w}px; height:540px; overflow:hidden">
   <img src="{src}" style="width:100%; height:100%; object-fit:cover; object-position:{focus[0]}">{cred}</div>
-<div class="rule" style="position:absolute; left:0; top:{band}px; width:{w}px; border-radius:0"></div>
-<div style="position:absolute; left:84px; top:{band + (46 if tall else 60)}px; right:330px">
-  <div class="word" style="font-size:{word}px">{title}</div>
-  <div class="sub" style="font-size:{sub}px; line-height:1.15; margin-top:{20 if tall else 30}px">{line}</div>
+<div class="rule" style="position:absolute; left:0; top:540px; width:{w}px; border-radius:0"></div>
+<div style="position:absolute; left:84px; top:600px; right:84px">
+  <div class="word" style="font-size:112px; text-wrap:balance">{title}</div>
+  <div class="sub" style="font-size:38px; line-height:1.15; margin-top:30px; margin-right:246px">{line}</div>
 </div>
-<div style="position:absolute; left:84px; bottom:{bottom}px">
-  <div class="sub" style="font-size:{facts}px; color:#fff">{FACTS}</div>
-  <div class="url" style="font-size:{url}px; margin-top:{8 if tall else 10}px">{URL}</div>
+<div style="position:absolute; left:84px; bottom:64px">
+  <div class="sub" style="font-size:30px; color:#fff">{FACTS}</div>
+  <div class="url" style="font-size:28px; margin-top:10px">{URL}</div>
 </div>
-{seal(seal_size, f"right:64px; bottom:{bottom + 6 if tall else 64}px")}""")
+{seal(230, "right:64px; bottom:64px")}""")
     return page(w, h, f"""
 <div style="position:absolute; left:0; top:0; width:560px; height:{h}px; overflow:hidden">
   <img src="{src}" style="width:100%; height:100%; object-fit:cover; object-position:{focus[1]}">{cred}</div>
 <div class="rule" style="position:absolute; left:560px; top:0; width:6px; height:{h}px; border-radius:0"></div>
 <div style="position:absolute; left:620px; top:64px; right:56px">
-  <div class="word" style="font-size:88px">{title}</div>
+  <div class="word" style="font-size:{88 if "<br>" in title else 100}px; text-wrap:balance">{title}</div>
   <div class="sub" style="font-size:30px; line-height:1.15; margin-top:24px">{line}</div>
 </div>
 <div style="position:absolute; left:620px; bottom:56px; right:200px">
