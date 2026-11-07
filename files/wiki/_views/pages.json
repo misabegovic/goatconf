@@ -1872,12 +1872,15 @@
       "title": "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-18",
+      "updated": "2026-11-07",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-11-07--org--longer-sessions-home-and-llms.md",
+        "sources/conversations/2026-11-07--org--longer-sessions-on-request.md",
+        "sources/conversations/2026-11-07--org--talk-page-redesign.md",
         "sources/conversations/2026-10-18--org--final-slots-closer-to-the-event.md",
         "sources/conversations/2026-10-18--org--slots-reserved-for-confirmed-speakers.md",
         "sources/conversations/2026-10-18--org--thirty-minute-sessions.md",
@@ -1912,7 +1915,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 4877,
+      "tokens": 5200,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
