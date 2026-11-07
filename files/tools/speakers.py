@@ -282,6 +282,24 @@ def talk_format(meta) -> str:
     return esc(program.format_label(meta, "talk_format", "talk_format_name"))
 
 
+# Small tilts for the faces strip, varied between neighbours.
+FACE_TILTS = (-1.5, 1, -0.5, 1.5, -1, 0.5, 1.2, -1.2)
+
+
+def faces(people=None) -> str:
+    """Every listed speaker as a small photo sticker with their name, linking to their page: the strip on the
+    register and program pages (sources/conversations/2026-11-07--org--register-page-and-hallway-track.md,
+    sources/conversations/2026-11-07--org--program-page-lineup.md). Empty when no one is listed."""
+    people = listed(speakers()) if people is None else people
+    items = []
+    for i, (slug, (meta, _body)) in enumerate(people):
+        photo = f'<img src="{esc(meta["photo"])}" alt="" loading="lazy">' if meta.get("photo") else goat_photo()
+        items.append(f'    <li><a class="sticker sticker--photo sticker--face" href="{page_name(slug)}" '
+                     f'style="--tilt:{FACE_TILTS[i % len(FACE_TILTS)]}deg">{photo}'
+                     f'<span class="sticker__name">{esc(meta["name"])}</span></a></li>')
+    return ('  <ul class="slots slots--faces" aria-label="Speakers">\n' + "\n".join(items) + '\n  </ul>') if items else ""
+
+
 def goat_photo() -> str:
     return f'<span class="speaker__goat" aria-hidden="true">{frame.sitting()}</span>'
 
