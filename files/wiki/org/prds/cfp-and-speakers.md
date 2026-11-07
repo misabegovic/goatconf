@@ -2,12 +2,13 @@
 title: "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund"
 kind: initiative
 status: living
-updated: 2026-10-18
+updated: 2026-11-07
 parent_epic: goatconf-2027
 appetite: medium
 confidence: medium
 supersedes: org/pitches/cfp-and-speakers.md
 sources:
+  - sources/conversations/2026-11-07--org--talk-page-redesign.md
   - sources/conversations/2026-10-18--org--final-slots-closer-to-the-event.md
   - sources/conversations/2026-10-18--org--slots-reserved-for-confirmed-speakers.md
   - sources/conversations/2026-10-18--org--thirty-minute-sessions.md
@@ -311,5 +312,4 @@ submissions use the same tool, so the ADR's choice binds that PRD too.
 - **2026-10-18, 30-minute proposals.** A proposal may fit 30 minutes; the organiser may pair two short sessions into one hour-long slot. It is meant for first-time speakers and anyone who would rather not fill an hour alone. The talk page, the home page and llms.txt say so; the live talk form is unchanged (source: sources/conversations/2026-10-18--org--thirty-minute-sessions.md).
 - **2026-10-18, main-hall slots reserved for confirmed speakers.** The program page holds a main-hall cell for each published speaker whose session has no slot yet, in the order Thursday 10:00, 12:00, 14:00, then Friday 09:30, 11:30, 13:30, so six are held now; a held speaker is not counted, and a cell frees itself once the speaker's session has a program record. The held cells read "Reserved" and link to the speakers page (source: sources/conversations/2026-10-18--org--slots-reserved-for-confirmed-speakers.md).
 - **2026-10-18, final slots closer to the event.** Days, times and rooms are final only once the program is finalised, closer to the event; until then a session's place can move. The program page and the talk page say so (source: sources/conversations/2026-10-18--org--final-slots-closer-to-the-event.md).
-
-
+- **2026-11-07, what a speaker gets first, travel after.** The talk page opens on why to speak at GoatConf (who comes, who organises it, and stickers for the hour, the hour off, the promotion, the speakers dinner and the first-timer rehearsal, with recording as an empty slot while it is not promised) and explains travel later, in a "Getting to Tuzla" section with what a stay costs. The call no longer puts the money first, as the Scope above says; it still states plainly that speakers pay their own travel and stay, before the form asks anything. Both form buttons stay, at the top and at the bottom (source: sources/conversations/2026-11-07--org--talk-page-redesign.md).

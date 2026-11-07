@@ -588,6 +588,16 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .ledger-stickers--quad { grid-template-columns: repeat(2, minmax(0, 1fr)); align-self: start; }
 .ledger-stickers--quad .sticker--fact { justify-content: flex-start; }
 .ledger-stickers--quad .sticker--fact strong { font-size: clamp(2rem, 1.5rem + 1.4vw, 2.8rem); }
+/* The talk page: what a speaker gets, as stickers beside the copy, two across */
+.slots--why { grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; align-self: start; }
+.slots--why > li { height: 100%; justify-content: flex-start; }
+.slots--why .sticker--fact strong { font-size: clamp(1.9rem, 1.3rem + 1.4vw, 2.6rem); }
+.slots--why .slot { min-height: 0; }
+.page-grid > .prices { margin-top: 0; }
+@media (max-width: 47.99rem) {
+  .slots--why .sticker--fact strong { font-size: 1.6rem; }
+  .slots--why small { font-size: 0.9rem; }
+}
 .stamp--planned { color: var(--album); }
 .slot--reserved { border-style: solid; }
 .slot--reserved small a { color: var(--album); font-weight: 700; }
