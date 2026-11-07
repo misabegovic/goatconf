@@ -886,3 +886,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-07 merge — PR #261: site: the travel page opens on the ways in, then what things cost
    diff: 35 files, +262/-107
    restricted-paths: false
+2026-11-07 merge — PR #263: site: the register page refreshed, and the hour off named as the hallway track
+   diff: 43 files, +250/-78
+   restricted-paths: true
