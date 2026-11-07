@@ -883,3 +883,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-07 merge — PR #259: product: PRODUCT.md matches the recording plan
    diff: 2 files, +30/-3
    restricted-paths: false
+2026-11-07 merge — PR #261: site: the travel page opens on the ways in, then what things cost
+   diff: 35 files, +262/-107
+   restricted-paths: false
