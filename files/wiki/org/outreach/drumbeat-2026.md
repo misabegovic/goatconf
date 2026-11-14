@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-14--org--propose-an-event-published.md
   - sources/conversations/2026-11-14--org--mesa-published.md
   - sources/conversations/2026-11-14--org--roy-moves-to-17-november.md
   - sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md
@@ -260,7 +261,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Sat 14 Nov 2026, week 5: Propose an event
 
-- **State:** drafted
+- **State:** published, Saturday 14 November 2026, on LinkedIn and X; which card went with it and whether BHFF was tagged is not recorded (source: sources/conversations/2026-11-14--org--propose-an-event-published.md)
 - **Image:** [`post-add-something-square.png`](https://goatconf.com/share/post-add-something-square.png) (LinkedIn, Mastodon), [`post-add-something-wide.png`](https://goatconf.com/share/post-add-something-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
