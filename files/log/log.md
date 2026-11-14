@@ -904,3 +904,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-14 merge — PR #273: drumbeat: Meet at Meša and Ismet is published
    diff: 5 files, +21/-3
    restricted-paths: false
+2026-11-14 merge — PR #275: drumbeat: Propose an event is published
+   diff: 5 files, +23/-4
+   restricted-paths: false
