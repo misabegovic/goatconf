@@ -898,3 +898,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-07 merge — PR #269: site: the home page tells the attendee's story first, with a Register band in the middle
    diff: 7 files, +125/-47
    restricted-paths: false
+2026-11-14 merge — PR #271: drumbeat: move Roy Tomeij to Tuesday 17 November, and the speakers after him a week
+   diff: 13 files, +153/-114
+   restricted-paths: false
