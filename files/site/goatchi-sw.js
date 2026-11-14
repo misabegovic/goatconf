@@ -4,18 +4,18 @@
 // device when the goat needs it, at most once a day, and once if a challenge goat wanders off. It sends nothing
 // anywhere: there is no server.
 const CACHE = "goatchi-1";
-// Food empties over a day, play over a day and a half, sleep over two days, as on the page.
-const EMPTY_AFTER = { food: 24 * 3600e3, play: 36 * 3600e3, sleep: 48 * 3600e3 };
+// Food empties over three days, play over four and a half, sleep over six days, as on the page.
+const EMPTY_AFTER = { food: 72 * 3600e3, play: 108 * 3600e3, sleep: 144 * 3600e3 };
 const SULK = 0.25;
 const NEEDS = ["food", "play", "sleep"];
 const DAY = 864e5;
-const WANDER_AFTER = 3 * DAY;
+const WANDER_AFTER = 21 * DAY;
 const TAG = "goatchi-check";
 
 // The needs, worked out from the time passed exactly as the page does.
 const level = (goat, n, now) => Math.max(0, Math.min(1, goat.needs[n][0] - (now - goat.needs[n][1]) / EMPTY_AFTER[n]));
 const lowest = (goat, now) => NEEDS.reduce((a, b) => (level(goat, b, now) < level(goat, a, now) ? b : a));
-// A challenge goat leaves three days after its last need ran out.
+// A challenge goat leaves three weeks after its last need ran out.
 const leftAt = (goat) => (goat.challenge
   ? Math.max(...NEEDS.map((n) => goat.needs[n][1] + goat.needs[n][0] * EMPTY_AFTER[n])) + WANDER_AFTER : Infinity);
 const wandered = (goat, now) => now >= leftAt(goat);
@@ -42,7 +42,7 @@ const reminder = (goat, kind = "need", now = Date.now()) => {
   }
   const [what, body] = NEEDING[lowest(goat, now)];
   return { title: `${goat.name} ${what}`,
-    body: goat.challenge ? `${body} Three days with every need empty and it wanders off to the hills.` : body };
+    body: goat.challenge ? `${body} Three weeks with every need empty and it wanders off to the hills.` : body };
 };
 
 if (typeof module === "object") module.exports = { level, wandered, remindOf, shouldRemind, reminder };

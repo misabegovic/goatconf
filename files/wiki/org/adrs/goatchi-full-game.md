@@ -2,12 +2,13 @@
 title: "Goatchi as a full game: one image per pose from the atlas, a story to Tuzla, installable, with opt-in reminders made on the device"
 kind: decision
 status: accepted
-updated: 2026-10-31
+updated: 2026-11-14
 confidence: medium
 affects:
   - org
 sources:
   - wiki/org/prds/goatchi-full-game.md
+  - sources/conversations/2026-11-14--org--goatchi-slower-needs.md
   - sources/conversations/2026-10-31--org--goatchi-full-game-adr-approved.md
   - sources/conversations/2026-10-31--org--goatchi-full-game-built.md
   - sources/conversations/2026-10-31--org--paul-campbell-goat-ginger.md
@@ -164,6 +165,15 @@ additions (installable, reminders) are the organiser's of 2026-10-31.
   over a day and a half and sleep over two days, in the page and the worker
   alike, so a player who comes once a day keeps the goat happy
   (source: sources/conversations/2026-10-31--org--goatchi-full-game-built.md).
+- **2026-11-14, the needs three times slower, and three weeks to wander off.**
+  The organiser asked for a goat that needs attention less often and chose
+  today's speeds times three: food empties over three days, play over four
+  and a half and sleep over six, so the goat first sulks about two and a
+  quarter days after a feed. A challenge goat wanders off after three weeks
+  with every need empty, not three days. Reminders stay at most once a day
+  while the goat sulks. The page, the worker and the page's own text change
+  together, and a goat already kept drains at the new speeds from its
+  stored levels (source: sources/conversations/2026-11-14--org--goatchi-slower-needs.md).
 - **2026-10-31, a Goatchi section on the home page.** The first Goatchi
   decision kept the game on its own page with a footer link only; the
   organiser chose a section near the bottom of the home page, live with this
