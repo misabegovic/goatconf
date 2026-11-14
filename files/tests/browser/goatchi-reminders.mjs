@@ -31,7 +31,7 @@ const regs = new Map();
 await cdp.send("ServiceWorker.enable");
 cdp.on("ServiceWorker.workerRegistrationUpdated", ({ registrations }) => registrations.forEach((r) => regs.set(r.scopeURL, r.registrationId)));
 
-// A goat whose needs were last met so many hours ago: after a day its food is empty and it sulks.
+// A goat whose needs were last met so many hours ago: after two and a quarter days its food is below a quarter and it sulks.
 const sulking = (hoursAgo) => {
   const then = Date.now() - hoursAgo * H;
   return { pose: "sitting", name: "The goat", src: "img/goat/sitting.webp", speaker: "", since: then, cheered: [], challenge: false,
@@ -51,7 +51,7 @@ check(await page.evaluate(async () => (await navigator.serviceWorker.getRegistra
 check(await page.locator(".goatchi__remind").isHidden(), "no reminder switch before a goat is picked");
 
 // A kept goat: the worker registers, and where periodic sync is allowed the switch appears, off.
-await page.evaluate((g) => localStorage.setItem("goatconf-goatchi", JSON.stringify(g)), sulking(30));
+await page.evaluate((g) => localStorage.setItem("goatconf-goatchi", JSON.stringify(g)), sulking(60));
 await page.reload({ waitUntil: "networkidle" });
 await page.waitForFunction(() => !document.querySelector(".goatchi__remind").hidden, null, { timeout: 5000 }).catch(() => {});
 check(await page.locator(".goatchi__remind").isVisible(), "the switch appears for a kept goat where periodic sync is allowed");
@@ -89,11 +89,11 @@ await page.evaluate(() => new Promise((r) => { const o = indexedDB.open("goatchi
 await page.locator(".goatchi__remind input").check();
 await page.waitForTimeout(500);
 await page.evaluate((g) => new Promise((r) => { const o = indexedDB.open("goatchi", 1); o.onsuccess = () => { const t = o.result.transaction("kv", "readwrite"); t.objectStore("kv").put(g, "goat"); t.oncomplete = r; }; }),
-  { ...sulking(24 * 6), challenge: true, remind: true, since: Date.now() - 9 * 24 * H });
+  { ...sulking(24 * 28), challenge: true, remind: true, since: Date.now() - 31 * 24 * H });
 await clear();
 await fire();
 const left = await shown();
-check(left.length === 1 && left[0].title === "The goat went exploring" && /kept it for 8 days/.test(left[0].body), `a challenge goat that wandered off is told once (${JSON.stringify(left)})`);
+check(left.length === 1 && left[0].title === "The goat went exploring" && /kept it for 30 days/.test(left[0].body), `a challenge goat that wandered off is told once (${JSON.stringify(left)})`);
 await clear();
 await fire();
 check((await shown()).length === 0, "and not told again");

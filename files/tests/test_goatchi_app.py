@@ -51,14 +51,16 @@ def goat(hours_ago=0.0, level=1.0, remind=True, challenge=False):
 CASES = {
     # name: (goat, last told, told it left, expected)
     "a happy goat": (goat(hours_ago=1), None, False, None),
-    "a sulking goat": (goat(hours_ago=30), None, False, "need"),
-    "a sulking goat, told an hour ago": (goat(hours_ago=30), NOW - 1 * H, False, None),
-    "a sulking goat, told a day ago": (goat(hours_ago=30), NOW - 25 * H, False, "need"),
-    "a sulking goat whose player turned reminders off": (goat(hours_ago=30, remind=False), None, False, None),
+    "a goat cared for two days ago, still happy": (goat(hours_ago=48), None, False, None),
+    "a sulking goat": (goat(hours_ago=60), None, False, "need"),
+    "a sulking goat, told an hour ago": (goat(hours_ago=60), NOW - 1 * H, False, None),
+    "a sulking goat, told a day ago": (goat(hours_ago=60), NOW - 25 * H, False, "need"),
+    "a sulking goat whose player turned reminders off": (goat(hours_ago=60, remind=False), None, False, None),
     "no goat at all": (None, None, False, None),
-    "a challenge goat, sulking, still here": (goat(hours_ago=40, challenge=True), None, False, "need"),
-    "a challenge goat that just wandered off": (goat(hours_ago=24 * 6, challenge=True), NOW - 1 * H, False, "left"),
-    "a challenge goat that wandered off, already told": (goat(hours_ago=24 * 6, challenge=True), None, True, None),
+    "a challenge goat, sulking, still here": (goat(hours_ago=80, challenge=True), None, False, "need"),
+    "a challenge goat empty for two weeks, still here": (goat(hours_ago=24 * 20, challenge=True), None, False, "need"),
+    "a challenge goat that just wandered off": (goat(hours_ago=24 * 28, challenge=True), NOW - 1 * H, False, "left"),
+    "a challenge goat that wandered off, already told": (goat(hours_ago=24 * 28, challenge=True), None, True, None),
     "a goat left alone for a week, not in challenge mode": (goat(hours_ago=24 * 7), None, False, "need"),
 }
 
@@ -77,23 +79,23 @@ def test_the_worker_reminds_only_when_it_should(name):
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
 def test_the_reminder_names_the_need_the_goat_lacks_most():
-    hungry = goat(hours_ago=30)
+    hungry = goat(hours_ago=60)
     hungry["needs"]["play"] = [1, NOW - 2 * H]
     hungry["needs"]["sleep"] = [1, NOW - 2 * H]
-    sleepy = goat(hours_ago=30)
+    sleepy = goat(hours_ago=60)
     sleepy["needs"]["food"] = [1, NOW - 2 * H]
     sleepy["needs"]["play"] = [1, NOW - 2 * H]
     assert node(f"sw.reminder({json.dumps(hungry)}, 'need', {NOW})")["title"] == "The pirate is hungry"
     assert node(f"sw.reminder({json.dumps(sleepy)}, 'need', {NOW})")["title"] == "The pirate is sleepy"
-    challenge = goat(hours_ago=30, challenge=True)
+    challenge = goat(hours_ago=60, challenge=True)
     assert "hills" in node(f"sw.reminder({json.dumps(challenge)}, 'need', {NOW})")["body"]
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
 def test_a_goat_that_wandered_off_is_told_once_with_its_days():
-    g = goat(hours_ago=24 * 6, challenge=True)
-    g["since"] = NOW - 24 * 9 * H
+    g = goat(hours_ago=24 * 28, challenge=True)
+    g["since"] = NOW - 24 * 31 * H
     note = node(f"sw.reminder({json.dumps(g)}, 'left', {NOW})")
     assert note["title"] == "The pirate went exploring"
-    # sleep, the slowest need, ran out 6 - 2 = 4 days ago and it left three days later, a day ago: kept 8 days
-    assert "kept it for 8 days" in note["body"]
+    # sleep, the slowest need, ran out 28 - 6 = 22 days ago and it left three weeks later, a day ago: kept 30 days
+    assert "kept it for 30 days" in note["body"]

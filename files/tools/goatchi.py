@@ -158,7 +158,7 @@ def page() -> str:
 <section class="album-page wrap" aria-labelledby="h-pick">
   <h2 class="band" id="h-pick">Pick a goat</h2>
   <p class="copy copy--wide">Your goat lives in this browser only: nothing about it is sent anywhere, and clearing your browser's data lets it go. You can swap it for another at any time.</p>
-  <p class="copy copy--wide goatchi__mode"><label><input type="checkbox" class="goatchi__challenge"> Challenge mode: left with every need empty for three days, your goat wanders off to explore the hills above Tuzla.</label></p>
+  <p class="copy copy--wide goatchi__mode"><label><input type="checkbox" class="goatchi__challenge"> Challenge mode: left with every need empty for three weeks, your goat wanders off to explore the hills above Tuzla.</label></p>
   <ul class="sticker-grid goatchi__pick">
 {picks}
   </ul>
@@ -167,8 +167,8 @@ def page() -> str:
 <section class="album-page wrap" aria-labelledby="h-how">
   <h2 class="band" id="h-how">How it works</h2>
   <div class="copy copy--wide">
-    <p>Goatchi is a little game like a tamagotchi. Your goat gets hungry over about a day, bored over a day and a half and sleepy over two days. Left alone it sulks and says so, but it never dies: feed it, play with it or let it sleep, and it is glad you came back.</p>
-    <p>In challenge mode, which you choose when you pick a goat, a goat left with every need empty for three days wanders off to explore the hills above Tuzla, and the page tells you how many days you kept it.</p>
+    <p>Goatchi is a little game like a tamagotchi. Your goat gets hungry over about three days, bored over four and a half days and sleepy over six days. Left alone it sulks and says so, but it never dies: feed it, play with it or let it sleep, and it is glad you came back.</p>
+    <p>In challenge mode, which you choose when you pick a goat, a goat left with every need empty for three weeks wanders off to explore the hills above Tuzla, and the page tells you how many days you kept it.</p>
     <p>A speaker's goat can be kept once that speaker has said yes. The goats, the name GoatConf and Goatchi are <a href="brand.html#use">all rights reserved</a>.</p>
   </div>
 </section>"""
