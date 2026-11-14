@@ -907,3 +907,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-14 merge — PR #275: drumbeat: Propose an event is published
    diff: 5 files, +23/-4
    restricted-paths: false
+2026-11-14 merge — PR #277: site: Goatchi's needs three times slower, and three weeks before a challenge goat wanders off
+   diff: 10 files, +157/-125
+   restricted-paths: true
