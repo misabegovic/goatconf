@@ -2,7 +2,7 @@
 title: Index — by team
 kind: meta
 status: living
-updated: 2026-11-07
+updated: 2026-11-14
 confidence: high
 sources:
   - tools/brain.py
