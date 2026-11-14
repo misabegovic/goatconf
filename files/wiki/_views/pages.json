@@ -1031,6 +1031,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-14--org--mesa-published.md",
         "sources/conversations/2026-11-14--org--roy-moves-to-17-november.md",
         "sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md",
         "sources/conversations/2026-11-03--org--paul-spotlight-published.md",
@@ -1126,7 +1127,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 8956
+      "tokens": 8985
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -1265,6 +1266,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-14--org--mesa-published.md",
         "sources/conversations/2026-11-14--org--roy-moves-to-17-november.md",
         "sources/conversations/2026-11-03--org--paul-spotlight-published.md",
         "sources/conversations/2026-11-02--org--speakers-from-tomorrow.md",

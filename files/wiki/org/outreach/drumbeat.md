@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-14--org--mesa-published.md
   - sources/conversations/2026-11-14--org--roy-moves-to-17-november.md
   - sources/conversations/2026-11-03--org--paul-spotlight-published.md
   - sources/conversations/2026-11-02--org--speakers-from-tomorrow.md
@@ -60,7 +61,7 @@ The texts are on three pages: [October to December 2026](drumbeat-2026.md), [Jan
 | Tue 27 Oct 2026 | Tuesday, Tuzla | [A city of salt](drumbeat-2026.md) | `post-city-of-salt` | published |
 | Sat 31 Oct 2026 | week 3 | [Meet Goatchi](drumbeat-2026.md) | `post-goatchi` (video and image) | published |
 | Tue 3 Nov 2026 | Tuesday, speaker | [Speaker: Paul Campbell](drumbeat-2026.md) | `speaker-paul-campbell` | published |
-| Sat 7 Nov 2026 | week 4 | [Meet at Meša and Ismet](drumbeat-2026.md) | `post-mesa-and-ismet` | drafted |
+| Sat 7 Nov 2026 | week 4 | [Meet at Meša and Ismet](drumbeat-2026.md) | `post-mesa-and-ismet` | published |
 | Sat 14 Nov 2026 | week 5 | [Propose an event](drumbeat-2026.md) | `post-add-something` | drafted |
 | Tue 17 Nov 2026 | Tuesday, speaker | [Speaker: Roy Tomeij](drumbeat-2026.md) | `speaker-roy-tomeij` | drafted |
 | Sat 21 Nov 2026 | week 6 | [Why a goat](drumbeat-2026.md) | `post-why-a-goat` | drafted |
