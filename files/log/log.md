@@ -901,3 +901,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-14 merge — PR #271: drumbeat: move Roy Tomeij to Tuesday 17 November, and the speakers after him a week
    diff: 13 files, +153/-114
    restricted-paths: false
+2026-11-14 merge — PR #273: drumbeat: Meet at Meša and Ismet is published
+   diff: 5 files, +21/-3
+   restricted-paths: false
