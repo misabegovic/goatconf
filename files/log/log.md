@@ -910,3 +910,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-14 merge — PR #277: site: Goatchi's needs three times slower, and three weeks before a challenge goat wanders off
    diff: 10 files, +157/-125
    restricted-paths: true
+2026-11-17 merge — PR #279: drumbeat: Roy Tomeij's spotlight is published, and his profile tells his story
+   diff: 16 files, +273/-114
+   restricted-paths: false
