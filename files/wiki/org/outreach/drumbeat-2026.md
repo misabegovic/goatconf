@@ -2,11 +2,14 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-11-14
+updated: 2026-11-17
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-17--org--roy-spotlight-published.md
+  - sources/conversations/2026-11-03--org--roy-spotlight-rewrite.md
+  - sources/web/speakers/roy-tomeij-story-and-writing-2026-11-03.md
   - sources/conversations/2026-11-14--org--propose-an-event-published.md
   - sources/conversations/2026-11-14--org--mesa-published.md
   - sources/conversations/2026-11-14--org--roy-moves-to-17-november.md
@@ -281,23 +284,29 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 17 Nov 2026, Tuesday: Speaker: Roy Tomeij
 
-- **State:** drafted
+- **State:** published, Tuesday 17 November 2026, on LinkedIn and X, with the text below, which the organiser edited from a rewrite of 2026-11-03; Roy has been sent his own "I'm speaking" card (sources: sources/conversations/2026-11-17--org--roy-spotlight-published.md, sources/conversations/2026-11-03--org--roy-spotlight-rewrite.md)
 - **Image:** [`speaker-roy-tomeij-announce-square.png`](https://goatconf.com/share/speaker-roy-tomeij-announce-square.png) (LinkedIn, Mastodon), [`speaker-roy-tomeij-announce-wide.png`](https://goatconf.com/share/speaker-roy-tomeij-announce-wide.png) (X, Bluesky)
 - **Tag:** Roy Tomeij and AppSignal
 - **Before posting:** Moved from Tuesday 10 November (the organiser skipped that Tuesday, when their podcast went out; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-roy-tomeij-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
-- **LinkedIn:**
+- **LinkedIn**, as posted:
 
-  > Meet a GoatConf 2027 speaker: Roy Tomeij.
+  > Roy Tomeij is coming to Tuzla.
   >
-  > Roy co-founded AppSignal, monitoring and logging for Ruby on Rails, which raised a $22M Series A in 2025. AppSignal's founders have been part of the Rails community since 2005, and Roy has spoken at RailsConf and EuRuKo. Now he works with founders and leadership teams on customer experience, operations and growth.
+  > In 2002 Roy and his co-founder Thijs Cadier each put €1,000 into a small hosting and consulting business. It became AppSignal, monitoring built for developers, which now monitors over 100 billion requests a month. They grew it without outside investment to more than 2,000 customers, and only then raised a $22M Series A, in 2025.
   >
-  > He's speaking in Tuzla on 3 or 4 June 2027. His profile: goatconf.com/speaker-roy-tomeij
+  > Roy has been building for the web since the late nineties and has spoken at RailsConf three times, and at EuRuKo and wroclove.rb. These days he writes candidly about what AI changes for developers and what founders get wrong about their teams.
+  >
+  > He now advises founders and leadership teams on alignment, operations and growth. If you build software, or a company around it, he is one to hear, and to find in the hallway afterwards.
+  >
+  > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
+  > Roy's profile: goatconf.com/speaker-roy-tomeij
+  > Register: goatconf.com/register
 
-- **Short** (201 characters):
+- **Short:** what went out on X is not recorded (source: sources/conversations/2026-11-17--org--roy-spotlight-published.md). The draft it had before the rewrite (201 characters):
 
   > Meet a GoatConf 2027 speaker: Roy Tomeij, co-founder of AppSignal, monitoring and logging for Ruby on Rails, and a RailsConf and EuRuKo speaker. In Tuzla on 3 or 4 June. goatconf.com/speaker-roy-tomeij
 
-  Sources: sources/conversations/2026-10-20--org--roy-tomeij.md, sources/conversations/2026-10-20--org--roy-tomeij-spotlight.md, sources/web/speakers/appsignal-roy-tomeij-2026-10-20.md, sources/web/speakers/rubyevents-roy-tomeij-2026-10-20.md.
+  Sources: sources/conversations/2026-11-17--org--roy-spotlight-published.md, sources/web/speakers/roy-tomeij-story-and-writing-2026-11-03.md, sources/web/speakers/rubyevents-roy-tomeij-2026-10-20.md, sources/web/speakers/appsignal-roy-tomeij-2026-10-20.md, sources/conversations/2026-10-20--org--roy-tomeij.md. The co-founder's surname, "monitoring built for developers" and "what founders get wrong about their teams" are the organiser's words, in no snapshot here.
 
 ### Sat 21 Nov 2026, week 6: Why a goat
 
