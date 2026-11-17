@@ -2,7 +2,7 @@
 title: AI suggestions — drafts for human review
 kind: meta
 status: living
-updated: 2026-11-14
+updated: 2026-11-17
 confidence: high
 sources:
   - tools/brain.py
