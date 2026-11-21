@@ -1319,3 +1319,86 @@ a.sticker--fact:focus-visible, .album-page a.sticker--fact:focus-visible { outli
 /* The band a step smaller, so it weighs less against its page; a band with a goat keeps the goat's room */
 .band { font-size: clamp(1.75rem, 1.25rem + 2.2vw, 3rem); padding-block: 0.85rem 0.8rem; }
 @media (min-width: 48rem) { .band:has(> .peek) { min-height: 5.7rem; align-content: center; } }
+
+/* Variant: less blue, minimal (branch site/less-blue-minimal, sources/conversations/2026-11-21--org--continue-iterating-round-four.md).
+   On top of the calm variant: blue is lettering and line only. The top bar, the cover, the page heads, the goat
+   story and the back cover are white or paper; a band is blue lettering over its yellow rule; a caption is ink on
+   the sticker's white. Round five: the hoof marks are back, the cover is composed, the bar is designed. */
+html { scrollbar-color: var(--album) var(--page-print); }
+:is(.topbar, .spread__cover, .page-head, .shiny, .back-cover, .band) a { text-decoration-color: var(--album); }
+:is(.topbar, .spread__cover, .page-head, .shiny, .back-cover, .band) :focus-visible { outline-color: var(--album); }
+.topbar, .page-head, .spread__cover, .shiny, .back-cover { caret-color: var(--album); }
+/* The top bar */
+.topbar { background: var(--page); box-shadow: 0 3px 0 var(--album), 0 0.6rem 0.7rem -0.45rem rgb(11 61 145 / 0.3); }
+.topbar .topbar__home { color: var(--album); }
+.topbar, .topbar a { color: var(--ink); }
+.topbar__year { margin-left: 0.05em; padding: 0.02em 0.3em 0.07em; border-radius: 0.25rem; background: var(--yellow); color: var(--album-night); }
+.topbar nav a:hover { color: var(--album); }
+.topbar nav a[aria-current="page"] { color: var(--album); }
+.topbar nav a.topbar__cta, .topbar nav a.topbar__cta:hover, .topbar .topbar__register { color: var(--album-night); }
+.topbar nav a.topbar__cta[aria-current="page"], .topbar__register[aria-current="page"] { box-shadow: inset 0 0 0 2px var(--album-night); }
+.topbar .topbar__register:focus-visible { outline-color: var(--album); }
+.topbar__menu summary { color: var(--album); box-shadow: inset 0 0 0 2px var(--album); }
+.topbar__menu[open] summary { background: var(--page-print); }
+.topbar__menu summary:focus-visible, .topbar__panel a:focus-visible { outline-color: var(--album); }
+.topbar .topbar__panel { background: var(--page); box-shadow: 0 3px 0 var(--album), 0 0.6rem 0.7rem -0.45rem rgb(11 61 145 / 0.3); }
+.topbar .topbar__panel a { border-bottom-color: var(--page-print); }
+.topbar .topbar__panel a.topbar__panel-cta { color: var(--album); box-shadow: inset 0 0 0 2px var(--album); }
+.topbar .topbar__panel .topbar__panel-actions a[aria-current="page"] { box-shadow: inset 0 0 0 2px var(--album-night); }
+/* Bands: blue lettering on the page, over the yellow rule */
+.band { background: transparent; color: var(--album); padding-bottom: 0.75rem; }
+.band__sub { color: var(--ink-soft); }
+/* The cover */
+.spread__cover { background: var(--page); color: var(--ink); box-shadow: inset -2px 0 0 var(--page-print); }
+.spread__page { box-shadow: none; }
+.cover-title { color: var(--album); }
+.cover-title span { display: inline-block; margin-top: 0.12em; padding: 0.02em 0.16em 0.07em; border-radius: 0.3rem; background: var(--yellow); color: var(--album-night); }
+.cover-when, .cover-lede { color: var(--ink); }
+.cover-lede strong { color: var(--album); }
+.spread__cover .go { color: var(--album); }
+@media (max-width: 61.99rem) { .spread__cover { box-shadow: inset 0 -2px 0 var(--page-print); } }
+/* Page heads */
+.page-head { background: var(--page); color: var(--ink); box-shadow: 0 0 0 2px var(--album), 0 0.4rem 0 0 rgb(11 61 145 / 0.14); border-bottom: 0.45rem solid var(--yellow); padding-bottom: calc(clamp(1.5rem, 4vw, 3rem) - 0.45rem); }
+.page-head .sign { color: var(--album); }
+.page-head .lede, .page-head .page-head__cta span { color: var(--ink-soft); }
+.lede__role { color: var(--ink); }
+/* Captions: ink lettering on the sticker's white */
+.sticker--photo figcaption, .speaker__photo figcaption, .sticker__name { background: var(--page); color: var(--ink); }
+.sticker--photo.sticker--place figcaption { color: var(--album); }
+.speaker__link:hover .speaker__photo figcaption, .speaker__link:focus-visible .speaker__photo figcaption { background: var(--page-print); }
+/* The goat story: a white page with a blue keyline */
+.shiny { background: var(--page); color: var(--ink); box-shadow: 0 0 0 2px var(--album), 0 0.4rem 0 0 rgb(11 61 145 / 0.14); }
+.shiny__title { color: var(--album); }
+.saying, .statue .statue__line { color: var(--ink); }
+.saying small { color: var(--ink-soft); }
+/* The back cover: paper */
+.back-cover { background: var(--page); color: var(--ink-soft); border-top: 0.45rem solid var(--yellow); box-shadow: 0 -2px 0 var(--album); padding-top: calc(2.2rem - 0.45rem); }
+.back-cover__mark { color: var(--ink); }
+.back-cover a { color: var(--album); }
+.back-cover .footer__group b { color: var(--ink-soft); }
+/* The day and jump links */
+.daynav { background: var(--page); outline: 2px solid var(--album); outline-offset: -2px; }
+.daynav a { color: var(--album); }
+.caption__where { color: var(--ink-soft); }
+
+/* The cover, composed: the seal, the name at display size with the year on its chip, the yellow rule, then the
+   date, the lede, the button and the links */
+.cover-head { padding-bottom: 0.8rem; border-bottom: 0.35rem solid var(--yellow); }
+.cover-when { margin-top: 0.7rem; }
+.cover-lede { margin-top: 0.9rem; }
+.cover-lede--second { margin-top: 0.6rem; }
+.cover-actions { margin-top: 1.1rem; }
+@media (min-width: 62rem) {
+  .cover-head { gap: 1.5rem; padding-bottom: 1.3rem; border-bottom-width: 0.45rem; }
+  .cover-seal { width: 9.5rem; }
+  .cover-title { font-size: clamp(3.4rem, 0.9rem + 5.2vw, 5.7rem); line-height: 0.84; }
+  .cover-when { margin-top: 1.1rem; }
+}
+/* A button is a yellow sticker with a solid lip: it lifts when pointed at and goes flat when pressed */
+.button { box-shadow: 0 0.28rem 0 0 var(--album-night); }
+.button:hover { box-shadow: 0 0.5rem 0 0 var(--album-night); }
+.button:active { transform: rotate(-1deg) translateY(0.2rem); box-shadow: 0 0.06rem 0 0 var(--album-night); }
+.button:focus-visible, .album-page .button:focus-visible, .prose .button:focus-visible { outline: 3px solid var(--album); outline-offset: 5px; box-shadow: 0 0.28rem 0 0 var(--album-night); }
+@media (prefers-reduced-motion: reduce) { .button:active { transform: rotate(-1deg); } }
+@media (max-width: 47.99rem) { .topbar__year { padding-inline: 0.2em; } .topbar { gap: 0.35rem; } }
+@media (max-width: 23.4rem) { .topbar__year { padding-inline: 0.14em; } }
