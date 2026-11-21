@@ -214,7 +214,7 @@ POSTS = {
     "see-you-thursday": ("See you<br>Thursday", f"Welcome at {THURSDAY['welcome']}, IPI Academy, Kulina bana 2, Tuzla."),
     "day-one": ("Day<br>one", "Seven rooms, four sessions each, an hour off after every one."),
     "day-two": ("Day<br>two", f"Starting at {FRIDAY['slots'][0]}, welcome at {FRIDAY['welcome']}."),
-    "community-day": ("The<br>community's<br>day", "The salt lakes, the goat hunt, and the evening meetup."),
+    "community-day": ("The<br>community's<br>day", "The salt lakes and the evening meetup."),
     "thank-you": ("Thank<br>you", "To everyone who spoke, supported, hosted, volunteered and came."),
     # The Tuesday Tuzla posts (wiki/org/outreach/drumbeat.md)
     "where-to-run-it": ("58 places<br>to run<br>yours", "From cafés on Freedom Square to halls for a few hundred people."),
@@ -228,7 +228,7 @@ PHOTO_POSTS = {
     "getting-to-tuzla": ("Getting<br>to Tuzla", "Fly to Tuzla or Sarajevo, or come by bus.", "img/city-square-mosque-summer.jpg", "Photo: Grad Tuzla"),
     "an-hour-off": ("An hour<br>off", "After every session: Freedom Square, five minutes away.", "img/city-square-fountain-summer.jpg", "Photo: Grad Tuzla"),
     "where-to-stay": ("Where<br>to stay", "Hotels and guest houses a short walk from IPI Academy.", "img/city-korzo-clock.jpg", "Photo: Grad Tuzla"),
-    "saturday": ("Saturday<br>at the lakes", "The salt lakes, the goat hunt, and what people add.", "img/city-lakes-aerial-summer.jpg", "Photo: Grad Tuzla"),
+    "saturday": ("Saturday<br>at the lakes", "The salt lakes and what people add.", "img/city-lakes-aerial-summer.jpg", "Photo: Grad Tuzla"),
     "next-week": ("Next week<br>in Tuzla", "The salt lakes open for the season on 1 June.", "img/city-old-town-aerial-paving.jpg", "Photo: Grad Tuzla"),
     "city-of-salt": ("A city of<br>salt", "Tuzla takes its name from tuz, the Turkish for salt.", "img/city-aerial-summer.jpg", "Photo: Grad Tuzla"),
     "seven-thousand-years": ("7,000<br>years", "Neolithic people boiled salt here, in houses on stilts.", "img/city-archaeological-park.jpg", "Photo: Grad Tuzla"),

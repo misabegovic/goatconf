@@ -49,7 +49,7 @@ to 300 people.
 A minimal core others extend, "like the Pi agent". Two core days,
 Thursday 3 and Friday 4 June, run one-hour sessions in all seven IPI
 rooms at once, with an hour off after each session on Freedom Square.
-Saturday 5 June is the community day: the lake day and the goat hunt the
+Saturday 5 June is the community day: the lake day the
 organiser plans, and the events hosts add. Named after Tuzla's goat: the
 man who hid his goat when Austria-Hungary banned them, and the saying "The
 whole of Tuzla milked one goat".

@@ -48,7 +48,7 @@ SCENES = {"img/city-lakes-aerial-summer.jpg": ("sticker-salt-lakes", "sticker-pa
           "img/food-sirnica.jpg": ("sticker-sirnica",), "img/food-krompirusa.jpg": ("sticker-krompirusa",),
           "img/food-sarma.jpg": ("sticker-sarma",), "img/food-tufahija.jpg": ("sticker-tufahija",),
           "img/food-hurmasice.jpg": ("sticker-hurmasice",)}
-# Scenes a page places by hand: the goat waving or jumping for joy at the end, the goat statue after the goat hunt.
+# Scenes a page places by hand: the goat waving or jumping for joy at the end, the goat statue at the end of the goat story.
 HAND_SCENES = ("waving", "jumping", "sticker-goat-statue")
 SETS = {"roles": (("peeking", "peek-host", "peek-coder", "peek-speaker", "peek-cook", "peek-pirate", "peek-hidden"), 190),
         "sitting": (("sitting",), 320),

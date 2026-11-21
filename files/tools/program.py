@@ -362,7 +362,6 @@ def page() -> str:
     n += len(sat_ext)
     sat_open = "\n".join(f'<li class="slot"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp{" stamp--planned" if planned else ""}">{"Planned" if planned else "Yours?"}</span></li>'
                          for i, (name, what, planned) in enumerate([("A day at the lakes", "Swimming, the salt waterfalls and the beach at the Pannonian Lakes.", True),
-                                                           ("The goat hunt", "Clues through town for teams of people who just met, ending at the goat statue.", True),
                                                            ("A walk or a hike", "The old town, the salt story, the hills above Tuzla.", False),
                                                            ("Something else?", "A meetup, a dinner, a corner for your community.", False)]))
     around = []
@@ -404,7 +403,7 @@ def page() -> str:
 {chr(10).join(days)}
 <section class="album-page wrap day" id="{sat.isoformat()}" aria-labelledby="h-sat">
   <h2 class="band" id="h-sat">{sat_label}<span class="band__sub">The community's day</span></h2>
-  <p class="copy copy--wide">No talks on Saturday. We plan a day at the lakes and run the goat hunt. Walks, meetups and anything else are events people add; each host runs their own and says how to join.</p>
+  <p class="copy copy--wide">No talks on Saturday. We plan a day at the lakes. Walks, meetups and anything else are events people add; each host runs their own and says how to join.</p>
   <ul class="slots slots--kinds">
 {sat_items}
 {sat_open}
