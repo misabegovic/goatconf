@@ -2,11 +2,12 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-11-17
+updated: 2026-11-21
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-21--org--ruby-line-a-wider-community.md
   - sources/conversations/2026-11-17--org--roy-spotlight-published.md
   - sources/conversations/2026-11-03--org--roy-spotlight-rewrite.md
   - sources/web/speakers/roy-tomeij-story-and-writing-2026-11-03.md
@@ -318,7 +319,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   >
   > When Austria-Hungary ruled Tuzla, it ordered every goat gone. One man hid his. Word got around, and soon the whole town was buying milk and cheese from that one goat. People in Bosnia and Herzegovina still say it: the whole of Tuzla milked one goat.
   >
-  > That goat is our mark: the one that feeds the community. It first appeared as the mascot of EuRuKo 2024, the first Ruby conference in Bosnia and Herzegovina. GoatConf is not only about Ruby or any one stack: Ruby is welcome, and so is every other language and framework.
+  > That goat is our mark: the one that feeds the community. It first appeared as the mascot of EuRuKo 2024, the first Ruby conference in Bosnia and Herzegovina. Now it feeds a wider community: every language and framework is welcome at GoatConf, Ruby included.
   >
   > goatconf.com
 
@@ -326,7 +327,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   > Why GoatConf? In Tuzla, when goats were banned, one man hid his, and that one goat fed the whole town. Our seal says it: the one that feeds the community. goatconf.com
 
-  Sources: sources/web/funding/euruko-2024-why-the-goat.md, sources/web/tuzla/mondo-tuzlanska-koza-legenda.md, sources/conversations/2026-10-07--org--saying-confirmed.md, sources/conversations/2026-10-18--org--not-only-about-ruby.md.
+  Sources: sources/web/funding/euruko-2024-why-the-goat.md, sources/web/tuzla/mondo-tuzlanska-koza-legenda.md, sources/conversations/2026-10-07--org--saying-confirmed.md, sources/conversations/2026-10-18--org--not-only-about-ruby.md, sources/conversations/2026-11-21--org--ruby-line-a-wider-community.md.
 
 ### Tue 24 Nov 2026, Tuesday: Speaker: Carmine Paolino
 
