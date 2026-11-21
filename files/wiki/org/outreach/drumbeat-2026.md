@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-21--org--why-a-goat-published.md
   - sources/conversations/2026-11-21--org--goat-statue-photo.md
   - sources/conversations/2026-11-21--org--ruby-line-a-wider-community.md
   - sources/conversations/2026-11-17--org--roy-spotlight-published.md
@@ -312,7 +313,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Sat 21 Nov 2026, week 6: Why a goat
 
-- **State:** drafted
+- **State:** published, Saturday 21 November 2026; where, and whether with the statue cards and the text below, is not recorded (source: sources/conversations/2026-11-21--org--why-a-goat-published.md)
 - **Photo:** the goat statue, the organiser's own photo, no credit on their call; the square card stands it on the left at full height (source: sources/conversations/2026-11-21--org--goat-statue-photo.md).
 - **Image:** [`post-why-a-goat-square.png`](https://goatconf.com/share/post-why-a-goat-square.png) (LinkedIn, Mastodon), [`post-why-a-goat-wide.png`](https://goatconf.com/share/post-why-a-goat-wide.png) (X, Bluesky)
 - **LinkedIn:**
