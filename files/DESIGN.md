@@ -378,13 +378,14 @@ The top bar is night blue and sticky: the mini crest and GOATCONF with a yellow 
 ### What is clickable
 One system, in both themes (`sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md`). A reader can tell what is a link without pointing at it, and nothing that is not a link looks like one.
 - **Headings and labels** are plain lettering: never underlined, no arrow, no pointer.
-- **A link in a sentence** is underlined, 2px, in the lettering blue of its theme, 0.22em under the text. Pointed at, focused or pressed, it becomes a yellow marker stroke with night lettering. Colour alone never marks a link.
+- **A link in a sentence** is underlined, 2px, in the lettering blue of its theme, 0.22em under the text. Pointed at, focused or pressed, it becomes a yellow marker stroke with night lettering. The rule never catches a card, a slot, a sticker or a button. Colour alone never marks a link.
 - **A link on its own** ("See the program") is the same underlined lettering, a step larger, ending in a small drawn arrow that moves a little when pointed at. On a phone it is at least 44 pixels tall.
-- **A link that leaves the site** ends in a small drawn corner arrow and tells a screen reader "(another site)".
-- **A sticker or card that is a link** (a day, a speaker, a supporter, an accepted event) carries a small arrow chip in its lower corner and lifts when pointed at. A photo sticker that is not a link has no chip, no pointer and does not move.
-- **A slot link** answers as a whole: its outline turns solid, its fill lifts, its stamp grows.
+- **A link that leaves the site** ends in a small drawn corner arrow and tells a screen reader "(another site)". The compact rows of contact links under a place or a speaker (a website, a phone number, a map) are underlined without the arrow.
+- **A sticker or card that is a link** (a day, a speaker, a supporter, an accepted event) carries the same small arrow in its lower corner, speaker cards, face stickers and supporter stickers included, and lifts when pointed at; the whole sticker is the link. A photo sticker that is not a link has no chip, no pointer and does not move.
+- **A slot stamped "Yours?"** is always a link to where it invites. It answers as a whole: its outline turns solid, its fill lifts, its stamp grows.
 - **The top bar** marks the page you are on with a filled tab, and a link pointed at with the same tab, lighter. **The footer** underlines its links and marks the page you are on.
-- **A button** is the yellow sticker with its lip; nothing else is filled yellow at rest.
+- **A button** is the yellow sticker with its lip (night blue by day, a darker yellow at night); nothing else is filled yellow at rest, tags included.
+- **Lettering that is not a link** (a step's lead-in, a venue's subtitle, "Added:") is ink, never link blue.
 - Everything pressable has a pressed state, and the focus ring is as before.
 
 ### Back Cover

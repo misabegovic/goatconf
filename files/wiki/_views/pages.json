@@ -219,12 +219,13 @@
       "title": "Build the pages in plain HTML and CSS, with the goat everywhere and playful",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-11-21",
+      "updated": "2026-11-22",
       "confidence": "medium",
       "depends_on": [
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--continue-round-eight.md",
         "sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md",
         "sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md",
         "sources/conversations/2026-11-21--org--hooves-stay-and-more-improvements.md",
@@ -247,7 +248,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 5647
+      "tokens": 6054
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -1903,12 +1904,13 @@
       "title": "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-11-21",
+      "updated": "2026-11-22",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-11-22--org--continue-round-eight.md",
         "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
         "sources/conversations/2026-11-21--org--continue-iterating.md",
         "sources/conversations/2026-11-21--org--keep-iterating.md",
@@ -1952,7 +1954,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 6291,
+      "tokens": 6382,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
