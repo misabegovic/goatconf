@@ -995,6 +995,14 @@ button.button { border: 0; cursor: pointer; }
 .slots--days > .slots__wide:has(.peek) { margin-top: 3.1rem; }
 @media (max-width: 47.99rem) { .slots--days > .slots__wide:has(.peek) { margin-top: 2.7rem; } }
 .copy--wide:has(+ .slots:has(.peek)) { margin-bottom: 0.6rem; }
+/* What is decided, on a phone: only its last slot has a goat, so only that slot keeps room above it */
+@media (max-width: 47.99rem) {
+  .slots--hero:has(.peek) { padding-top: 0; row-gap: 1.4rem; }
+  .slots--hero .hero-slot { margin-top: 2.8rem; }
+}
+
+/* In one column, the goat over the first fact sticker stands clear of the links above it */
+@media (max-width: 61.99rem) { .page-grid > .ledger-stickers:has(.peek) { margin-top: 3.4rem; } }
 
 /* The ticket: one sticker cut as a ticket, with a tear line and a notch bitten out of each end of it */
 .ticket { position: relative; max-width: 60rem; margin: 0.4rem auto 0.6rem; transform: rotate(var(--tilt, 0deg)); }
