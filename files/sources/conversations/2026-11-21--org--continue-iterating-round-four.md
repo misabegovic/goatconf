@@ -54,3 +54,12 @@ changed by either, so they would differ from the site until the organiser
 decides. Where an earlier decision on the blue world conflicts with these
 words, these words are the newer direction, and each earlier decision
 moved past is named in the variant's amendment.
+
+Later in the same round the organiser added, verbatim:
+
+> Share cards and brand files are part of it once we have a way forward
+
+Read as: the share cards (tools/shareables.py) and the brand files
+(tools/brand.py) follow the less-blue direction, but only after the
+organiser has chosen between the two variants. In this round they are not
+rendered again; each variant's amendment names them as the next step.

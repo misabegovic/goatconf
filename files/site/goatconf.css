@@ -1183,3 +1183,56 @@ button.button { border: 0; cursor: pointer; }
 .topbar, .page-head, .spread__cover, .shiny, .back-cover, .footer { caret-color: var(--yellow); }
 ::-webkit-scrollbar { width: 0.8rem; height: 0.8rem; background: var(--album-night); }
 ::-webkit-scrollbar-thumb { border: 2px solid var(--album-night); border-radius: 0.4rem; background: var(--yellow); }
+
+/* 2026-11-21, round four (sources/conversations/2026-11-21--org--continue-iterating-round-four.md) */
+/* Why a goat: on a wide screen the seal shares its column with the statue photo, which overlaps the seal's lower
+   corner, the sentence beside it. On one column the seal comes first and the statue row closes the story. */
+.shiny__left { display: contents; }
+.shiny__left > .shiny__seal { order: -1; }
+.shiny__left > .statue { order: 3; }
+@media (min-width: 62rem) {
+  .shiny__left { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; column-gap: 1.1rem; align-self: center; }
+  .shiny__left > .shiny__seal { grid-column: 1 / -1; justify-self: start; width: min(68%, 15rem); margin-bottom: -3.4rem; }
+  .shiny__left > .statue { display: contents; }
+  .shiny__left .statue__line { grid-column: 1; align-self: end; max-width: 13ch; padding-bottom: 0.4rem; }
+  .shiny__left .statue__photo { grid-column: 2; position: relative; z-index: 1; width: clamp(10rem, 12.5vw, 12rem); margin-right: 1.8rem; }
+  .shiny__left .goat-one__stage.is-scene { right: -2.2rem; bottom: -0.7rem; width: 5rem; }
+}
+
+/* A head with no picture: the sign and the lede across the strip */
+.page-head--plain { grid-template-columns: minmax(0, 1fr); }
+.page-head--plain .lede { max-width: 46ch; }
+
+/* The program on a wide screen: the open rooms as one printed box, as tall as the slot's cards, a small empty slot
+   drawn for each open room over the one line. On a phone the line alone. */
+.timeslot__rooms { display: none; }
+@media (min-width: 48rem) {
+  .timeslot__open { align-self: stretch; flex: 0 1 auto; display: flex; flex-direction: column; justify-content: center; gap: 0.6rem; padding: 0.7rem 1.1rem; }
+  .timeslot__rooms { display: flex; gap: 0.4rem; }
+  .timeslot__rooms i { width: 1.7rem; height: 2.1rem; border: 2px dashed var(--slot-line); border-radius: 0.25rem; background: var(--page); }
+}
+
+/* Make it yours on a phone: a place is a compact row, its photo a small square beside its name plate, and the list
+   folds after eight places behind a control that needs no script */
+.fold--places .fold__more { display: none; }
+@media (max-width: 47.99rem) {
+  .album-page .slots.slots--venues { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .sticker--venue { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 0.45rem 0.7rem; align-items: start; padding: 0.5rem 0.55rem 0.6rem; }
+  .sticker--venue:nth-child(odd) { --tilt: -0.3deg !important; }
+  .sticker--venue:nth-child(even) { --tilt: 0.3deg !important; }
+  .sticker--venue .venue__photo { display: contents; }
+  .sticker--venue .venue__photo img, .sticker--venue .venue__photo .venue__empty { grid-column: 1; grid-row: 1; width: 5rem; aspect-ratio: 1; border-radius: 0.35rem; }
+  .sticker--venue .venue__photo .venue__empty small { display: none; }
+  .sticker--venue .venue__photo figcaption { grid-column: 2; grid-row: 1; align-self: center; border-radius: 0.35rem; font-size: 1.05rem; padding: 0.45rem 0.6rem; }
+  .sticker--venue .venue__body { grid-column: 1 / -1; padding: 0 0.15rem; font-size: 0.86rem; line-height: 1.4; }
+  .sticker--venue .venue__body p { margin-bottom: 0.3rem; }
+  .sticker--venue .venue__tags { margin-bottom: 0.3rem; }
+  .sticker--venue .venue__first { padding: 0.4rem 0.55rem; }
+  .sticker--venue .venue__links a { padding-block: 0.35rem; }
+  .fold--places .fold__toggle:not(:checked) ~ .slots--venues > li:nth-child(n+9):not(:target) { display: none; }
+  .fold--places .fold__more { display: inline-block; margin-top: 1rem; }
+}
+@media (max-width: 61.99rem) { .shiny__left > .statue { margin-top: -1.3rem; } }
+/* A focused fact sticker keeps its white die-cut edge and gets the button's two rings outside it; before, its edge
+   turned album blue on an album-blue sticker and the focus could not be seen */
+a.sticker--fact:focus-visible, .album-page a.sticker--fact:focus-visible { outline: 0.42rem solid var(--page); outline-offset: -0.42rem; box-shadow: var(--lift), 0 0 0 3px var(--album-night), 0 0 0 6px var(--yellow); }

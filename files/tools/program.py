@@ -299,7 +299,9 @@ def day_block(day, label, table, start_n) -> tuple[str, int]:
             n += 1
         filled = sum(1 for room in ROOMS if (day, t, room) in table or (day, t, room) in held)
         open_rooms = len(ROOMS) - filled
-        open_line = (f'\n    <p class="timeslot__open">{open_rooms} of {len(ROOMS)} rooms still open. <a href="talk.html">Propose a session</a></p>'
+        # One small drawn slot per open room, then the one line (sources/conversations/2026-11-21--org--continue-iterating-round-four.md).
+        pips = '<span class="timeslot__rooms" aria-hidden="true">' + "<i></i>" * open_rooms + "</span>"
+        open_line = (f'\n    <p class="timeslot__open">{pips}<span>{open_rooms} of {len(ROOMS)} rooms still open. <a href="talk.html">Propose a session</a></span></p>'
                      if open_rooms else "")
         rows.append(f"""<li class="timeslot">
     <h3 class="timeslot__time">{t}<span>{filled} of {len(ROOMS)} rooms taken</span></h3>{open_line}

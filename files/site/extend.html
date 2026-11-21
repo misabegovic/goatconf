@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- /gen:link-preview -->
 <link rel="preload" href="fonts/bricolage-wdth-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="goatconf.css?v=8180daf9">
+<link rel="stylesheet" href="goatconf.css?v=73a0c4e3">
 </head>
 <body>
 <!-- gen:topbar tools/nav.py -->
@@ -130,6 +130,8 @@
     <p class="finder__field finder__field--check"><input id="f-first" name="first" type="checkbox"><label for="f-first">Leave out places to ask GoatConf about first</label></p>
     <p class="finder__count" data-count aria-live="polite"></p>
   </form>
+  <div class="fold fold--places">
+  <input class="fold__toggle" type="checkbox" id="places-all" data-places-all>
   <ul class="slots slots--venues" data-places>
   <li class="sticker sticker--venue" id="venue-ipi-student-hub" data-venue data-kinds="workshop hackathon meetup" data-size="unknown" data-near="1" data-walk="1" data-setting="indoor" data-first="1" data-text="student hub @ipia ipi academy&#x27;s student hub kulina bana 2, inside ipi academy a space in ipi academy where students develop their ideas and business plans for free, with modern equipment and mentoring. the academy also has an active student club. a designed space for students; capacity is not published. study or tech space workshops, hackathons and meetups" style="--tilt:0.5deg">
     <span class="num">11</span>
@@ -828,6 +830,8 @@
     </div>
   </li>
   </ul>
+  <label class="fold__more" for="places-all"><span class="fold__show">Show all 58 places</span><span class="fold__hide">Show fewer</span></label>
+  </div>
   <p class="ledger-empty" data-none hidden>No place matches all of that. Try fewer filters, or pick any place you like: these are only ideas.</p>
   <p class="checked">Checked on 23 October 2026. Places change hands and close: ask each one before you plan, and tell us if something here is wrong.</p>
 </section>
@@ -862,6 +866,6 @@
 <!-- /gen:footer -->
 <!-- gen:companion-says tools/frame.py --><script type="application/json" id="goat-says">["Baaa!", "Come to GoatConf!", "See you in Tuzla!", "Tuzla, 3–5 June 2027!", "Free to attend!"]</script><!-- /gen:companion-says -->
 <script src="album.js?v=5fe7e269" defer></script>
-<script src="extend.js?v=82078061" defer></script>
+<script src="extend.js?v=e00defd2" defer></script>
 </body>
 </html>

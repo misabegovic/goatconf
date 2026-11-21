@@ -606,9 +606,13 @@ def hub(show_all=False) -> str:
         vcards = "\n".join(venue_card(start + i, v) for i, v in enumerate(places))
         checked = dt.date.fromisoformat(str(venue_data().get("checked")))
         where = f"""{finder()}
+  <div class="fold fold--places">
+  <input class="fold__toggle" type="checkbox" id="places-all" data-places-all>
   <ul class="slots slots--venues" data-places>
 {vcards}
   </ul>
+  <label class="fold__more" for="places-all"><span class="fold__show">Show all {len(places)} places</span><span class="fold__hide">Show fewer</span></label>
+  </div>
   <p class="ledger-empty" data-none hidden>No place matches all of that. Try fewer filters, or pick any place you like: these are only ideas.</p>
   <p class="checked">Checked on {checked.day} {checked:%B %Y}. Places change hands and close: ask each one before you plan, and tell us if something here is wrong.</p>"""
     else:

@@ -2194,7 +2194,7 @@
         "sources/web/models/fosdem-2026-fringe.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3569,
+      "tokens": 3578,
       "consumed_by": [
         "org/adrs/make-it-yours-hub.md"
       ]
