@@ -984,7 +984,7 @@ button.button { border: 0; cursor: pointer; }
 }
 /* A sticker's number and a goat never sit on the line above them */
 .list-title + .slots--events { padding-top: 0.5rem; }
-.copy + .slots--kinds { margin-top: 1.6rem; }
+.copy + .slots--kinds { margin-top: 3rem; }
 /* A focused button: night blue, then yellow, outside its white die-cut edge, so it shows on the cover and on white */
 .button:focus-visible, .album-page .button:focus-visible, .prose .button:focus-visible { outline: 3px solid var(--yellow); outline-offset: calc(0.3rem + 3px); border-radius: 0.5rem; box-shadow: 0 0 0 0.3rem var(--page), 0 0 0 calc(0.3rem + 3px) var(--album-night); }
 /* The cover's three links are full tap targets on a phone */
