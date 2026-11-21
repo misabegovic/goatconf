@@ -133,7 +133,10 @@ def test_the_phone_bar_is_the_mark_register_and_a_menu_with_every_link():
     panel = phone[phone.index('<nav class="topbar__panel"'):phone.index("</nav>")]
     for href, label in [*nav.LINKS, ("extend.html", "Host an event"), ("talk.html", "Propose a session"), ("register.html", "Register")]:
         assert f'href="{href}"' in panel and label in panel
-    actions = panel[panel.index('<p class="topbar__panel-actions">'):]
+    actions = panel[panel.index('<p class="topbar__panel-actions">'):panel.index("</p>") + 4]
+    # the theme control closes the menu: three radio buttons in a labelled group, hidden until the script shows it
+    assert '<fieldset class="theme" data-theme-control hidden><legend>Theme</legend>' in panel[panel.index("</p>"):]
+    assert panel.count('type="radio" name="theme-menu"') == 3
     assert '<a class="topbar__panel-cta" href="extend.html">Host an event</a>' in actions
     assert '<a class="topbar__panel-cta" href="talk.html">Propose a session</a>' in actions
     assert actions.rstrip().endswith('<a class="topbar__panel-main" href="register.html">Register</a>\n        </p>')
