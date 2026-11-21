@@ -916,3 +916,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-21 merge — PR #281: drumbeat: Why a goat is out, with the real goat statue and the Ruby line said positively
    diff: 20 files, +213/-110
    restricted-paths: true
+2026-11-21 merge — PR #283: drumbeat: Why a goat went out on LinkedIn and X, with the statue cards
+   diff: 4 files, +16/-3
+   restricted-paths: false
