@@ -230,10 +230,12 @@ GoatConf's mark is a round seal: the EuRuKo 2024 goat in a coin at the centre, a
 
 ## Colors
 
+> **Variant: less blue, calm (2026-11-21, pending the organiser's choice).** On this branch the ground is paper, the pale page-print tint, and blue is kept for the top bar, the bands, the cover and page heads, photo captions, the goat-story page and the back cover. Fact stickers, the ticket and the session sticker are white with a 2px album-blue keyline and album-blue lettering. Where the text below says the ground is album blue or a fact sticker is album blue with yellow lettering, this note is the newer rule here. The share cards and the brand files follow as the next step (`sources/conversations/2026-11-21--org--continue-iterating-round-four.md`).
+
 A saturated album blue in three depths, white and a pale printed blue for the pages, and two signal colours that each own a narrow job.
 
 ### Primary
-- **Album Blue** (album): the ground of the whole site, behind everything, printed with the hoof pattern at 6% white. Also the album-page band, the fact-sticker body, photo-sticker captions, page titles and in-page links on white.
+- **Album Blue** (album): the album-page band, the fact-sticker body, photo-sticker captions, page titles and in-page links on white.
 - **Cover Blue** (album-deep): the album cover. The left page of the opening spread and the page-head strip on every inner page.
 - **Night Blue** (album-night): the darkest binding. The sticky top bar, the shiny goat-story page and the back cover; also the ink on yellow surfaces.
 
@@ -245,7 +247,7 @@ A saturated album blue in three depths, white and a pale printed blue for the pa
 
 ### Neutral
 - **Page White** (page): album pages, the right page of the spread, the prose page, and every sticker's die-cut border.
-- **Page Print** (page-print): the flat fill of an empty printed slot, the default tag, and the image placeholder under a loading photo.
+- **Page Print** (page-print): the ground of the whole site, printed with the hoof pattern in album blue at 5%; the flat fill of an empty printed slot, the default tag, and the image placeholder under a loading photo.
 - **Slot Line** (slot-line): album blue at 60%, which holds at least 3:1 against the slot's page-print fill (3.3:1) and against white (3.5:1); at 42% it measured 2.2:1. Dashed slot outlines, the ring of a printed number, the name line in a slot and the dotted leaders of the price list.
 - **Album Ink** (ink): body text on white pages.
 - **Soft Ink** (ink-soft): slot explanations and "last checked" notes on white.
@@ -316,7 +318,7 @@ Stickers are set at small individual tilts between -2 and 2 degrees, set per sti
 Matte vinyl stuck onto the page: white die-cut border, sticker lift, a small tilt.
 - **Photo sticker:** a 4:5 photo (4:3.4 on album pages, 4:3.2 on the food page) over an album-blue caption strip lettered in white.
 - **Place sticker:** a photo sticker whose caption is a place name lettered in yellow at near fact scale (TUZLA).
-- **Fact sticker:** an album-blue sticker whose white die-cut border is drawn inset; a big yellow fact over a short pale-album explanation.
+- **Fact sticker:** a white sticker with a 2px album-blue keyline inside its die-cut edge; a big album-blue fact over a short soft-ink explanation, its number in yellow.
 - **Tag:** a small pill under a food sticker's caption: page-print by default, the vegan tint for vegan dishes.
 
 ### Printed Slot
@@ -367,7 +369,7 @@ Item, a dotted slot-line leader, and the price lettered in album blue at 1.6rem 
 The one solid beat: a night-blue page with a white die-cut border drawn inset (0.42rem), the big goat on the left, the yellow title and the saying lettered in white on the right. On wide screens the seal shares the left column with a photo sticker of Tuzla's goat statue, 10rem to 12rem wide, overlapping the seal's lower corner, numbered like every sticker, its one sentence lettered in white beside it; the painted statue stands at the photo's corner as the goat's stop. On a phone the page closes on one row, the sentence and the photo at 7rem.
 
 ### Navigation
-The top bar is night blue and sticky: the mini crest and GOATCONF with a yellow 2027 on the left, uppercase condensed links on the right that turn yellow on hover. On wide screens Register is the bar's only button. On phones the bar shows the mark, Register and Menu, and every link folds into the Menu panel; the menu is a `<details>`, so it opens without a script. Links in running text are underlined in yellow on blue and in album blue on white, thickening from 2px to 4px on hover. Focus is a 3px yellow ring on blue and a 3px album-blue ring on white pages; a button's ring is described under Button. Links a visitor taps are at least 44 pixels tall on phones, the cover's three links included. The "go" link (a larger lettered link, 750 weight) leads each page's call to action.
+The top bar is night blue and sticky: the mini crest and GOATCONF with a yellow 2027 on the left, uppercase condensed links on the right that turn yellow on hover. On wide screens Register is the bar's only button. On phones the bar shows the mark, Register and Menu, and every link folds into the Menu panel; the menu is a `<details>`, so it opens without a script. Links in running text are underlined in yellow on blue and in album blue on white, thickening from 2px to 4px on hover. Focus is a 3px album-blue ring on paper and white pages and a 3px yellow ring on the blue surfaces; a button's ring is described under Button. Links a visitor taps are at least 44 pixels tall on phones, the cover's three links included. The "go" link (a larger lettered link, 750 weight) leads each page's call to action.
 
 ### Back Cover
 The footer as the album's back cover: night blue, the crest and mark in white, pale-album text, white links. The links sit in four groups, each a small lettered label in yellow (pale album on inner pages) over its links in one row: the four groups side by side on wide screens, one under another on phones, each link still 44 pixels tall there. Inner pages carry the same groups on the blue ground.
