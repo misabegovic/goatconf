@@ -2,11 +2,12 @@
 title: "Images of Tuzla for GoatConf: free to use, ask first, and gaps"
 kind: reference
 status: living
-updated: 2026-11-07
+updated: 2026-11-21
 confidence: medium
 depends_on:
   - org/tuzla.md
 sources:
+  - sources/conversations/2026-11-21--org--goat-statue-photo.md
   - sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md
   - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/conversations/2026-10-13--org--food-photos-one-by-one.md
@@ -276,8 +277,9 @@ in June light, morning or late afternoon:
 1. **The goat statue,** in front of Hotel Tuzla at ZAVNOBiH-a 13
    (`sources/web/tuzla/mondo-tuzlanska-koza-legenda.md`,
    `sources/web/tuzla/cvent-hotel-tuzla-address.md`). Commons has no photo
-   of it. Take a close-up, a wide shot with the hotel, and one with a person
-   for scale. Note the sculptor's name from any plaque.
+   of it; since 2026-11-21 the organiser's own photo covers it (see below).
+   Still wanted: a close-up, a wide shot with the hotel, and one with a
+   person for scale. Note the sculptor's name from any plaque.
 2. **IPI Academy,** the façade at Kulina bana 2 and the hall, empty and in
    use. `assets/images/tuzla/kulina-bana-street.jpg` shows only the avenue.
 3. **Tuzla from above:** a view from Ilinčica or another hill over the
@@ -349,3 +351,15 @@ CC BY-SA 4.0), and both statues in one frame by Goran Necin on Flickr
 (2013-06-27, CC BY-SA 2.0), with a bank sign and a beer poster behind. Both
 statues are modern sculptures, so the freedom of panorama note above applies
 to every photo of them.
+
+## The goat statue, added 2026-11-21
+
+The organiser took a photo of the goat statue: the goat standing on a stone
+plinth on a lawn under trees in summer, seen from the front left. It is their
+own, free for GoatConf to use, and on their call it carries no credit. It is
+`assets/images/organiser/tuzla-goat-statue.jpg`, with its record beside it,
+and `site/img/tuzla-goat-statue.jpg`, which only the post cards use; the week
+6 post "Why a goat" shows it (source: sources/conversations/2026-11-21--org--goat-statue-photo.md). The statue is a
+modern sculpture, so the note on freedom of panorama above applies: fine for
+the site and free posts, but ask the sculptor or the city before it goes on
+anything sold.

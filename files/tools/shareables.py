@@ -201,7 +201,6 @@ POSTS = {
     "add-something": ("Propose<br>an event", "A workshop, a meetup, a dinner, a hike: run it around GoatConf."),
     "first-speakers": ("The first<br>speakers<br>are here", "Eight speakers so far, each with an hour at IPI Academy on 3 or 4 June."),
     # The drumbeat to June 2027 (wiki/org/outreach/drumbeat.md)
-    "why-a-goat": ("Why<br>a goat?", "The whole of Tuzla milked one goat."),
     "your-first-talk": ("Your<br>first talk?", "First-time speakers are welcome. A strong idea counts for more than a famous name."),
     "see-you-in-june": ("See you<br>in June", "Two days of talks in Tuzla, then a day for the community."),
     "not-only-engineers": ("Not only<br>engineers", "AI/ML, data, UX/UI, product, research, business, leadership: for people who build and sell software."),
@@ -236,16 +235,37 @@ PHOTO_POSTS = {
     # The Tuesday Tuzla posts (wiki/org/outreach/drumbeat.md): the two statues facing each other, the Korzo behind.
     "mesa-and-ismet": ("Meet at Meša and Ismet", "The writer and the painter on the Korzo: Tuzla's meeting point.",
                        "img/korzo-mesa-and-ismet.jpg", "", ("50% 60%", "40% 50%")),
+    # The drumbeat's week 6 post: the goat statue in front of Hotel Tuzla, the organiser's own photo, no credit.
+    "why-a-goat": ("Why<br>a goat?", "The whole of Tuzla milked one goat.", "img/tuzla-goat-statue.jpg", "",
+                   ("47% 50%", "50% 50%")),
 }
+# Photos taller than wide, whose subject a band across the square card would cut: on the square card they stand on
+# the left at full height, as on the wide card.
+UPRIGHT = {"why-a-goat"}
 
 
 def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, square: bool,
-               focus: tuple[str, str] = ("50% 50%", "50% 50%")) -> str:
-    """A post with a photo: the photo on top (square) or on the left (wide), its credit on it if it has one, the words
-    beside. A title without set line breaks takes the card's full width and wraps into even lines."""
+               focus: tuple[str, str] = ("50% 50%", "50% 50%"), upright: bool = False) -> str:
+    """A post with a photo: the photo on top (square) or on the left (wide, and square when `upright`), its credit on
+    it if it has one, the words beside. A title without set line breaks takes the card's full width and wraps into
+    even lines."""
     src = (SITE / img).as_uri()
     cred = (f'<div style="position:absolute; left:18px; bottom:14px; font-size:20px; font-weight:700; '
             f'text-shadow:0 1px 4px rgb(0 0 0 / .8)">{esc(credit)}</div>') if credit else ""
+    if square and upright:
+        return page(w, h, f"""
+<div style="position:absolute; left:0; top:0; width:580px; height:{h}px; overflow:hidden">
+  <img src="{src}" style="width:100%; height:100%; object-fit:cover; object-position:{focus[0]}">{cred}</div>
+<div class="rule" style="position:absolute; left:580px; top:0; width:8px; height:{h}px; border-radius:0"></div>
+<div style="position:absolute; left:644px; top:84px; right:56px">
+  <div class="word" style="font-size:104px; text-wrap:balance">{title}</div>
+  <div class="sub" style="font-size:36px; line-height:1.15; margin-top:30px">{line}</div>
+</div>
+<div style="position:absolute; left:644px; bottom:290px; right:56px">
+  <div class="sub" style="font-size:30px; line-height:1.3; color:#fff">{FACTS.replace(" · ", "<br>")}</div>
+  <div class="url" style="font-size:28px; margin-top:12px">{URL}</div>
+</div>
+{seal(200, "right:56px; bottom:64px")}""")
     if square:
         return page(w, h, f"""
 <div style="position:absolute; left:0; top:0; width:{w}px; height:540px; overflow:hidden">
@@ -445,7 +465,8 @@ def jobs() -> dict[str, tuple[int, int, str]]:
         out[f"post-{key}-square.png"] = (1080, 1080, post(1080, 1080, title, line, True))
         out[f"post-{key}-wide.png"] = (1200, 675, post(1200, 675, title.replace("<br>", " "), line, False))
     for key, (title, line, img, credit, *focus) in PHOTO_POSTS.items():
-        out[f"post-{key}-square.png"] = (1080, 1080, photo_post(1080, 1080, title, line, img, credit, True, *focus))
+        out[f"post-{key}-square.png"] = (1080, 1080, photo_post(1080, 1080, title, line, img, credit, True, *focus,
+                                                                upright=key in UPRIGHT))
         out[f"post-{key}-wide.png"] = (1200, 675, photo_post(1200, 675, title, line, img, credit, False, *focus))
     talks = speakers.sessions_by_speaker()
     for slug, (meta, _) in speakers.speakers().items():
