@@ -1232,7 +1232,7 @@ button.button { border: 0; cursor: pointer; }
   .fold--places .fold__toggle:not(:checked) ~ .slots--venues > li:nth-child(n+9):not(:target) { display: none; }
   .fold--places .fold__more { display: inline-block; margin-top: 1rem; }
 }
-@media (max-width: 61.99rem) { .shiny__left > .statue { margin-top: -1.3rem; } }
+@media (max-width: 61.99rem) { .shiny__left > .statue { margin-top: -1.9rem; } }
 /* A focused fact sticker keeps its white die-cut edge and gets the button's two rings outside it; before, its edge
    turned album blue on an album-blue sticker and the focus could not be seen */
 a.sticker--fact:focus-visible, .album-page a.sticker--fact:focus-visible { outline: 0.42rem solid var(--page); outline-offset: -0.42rem; box-shadow: var(--lift), 0 0 0 3px var(--album-night), 0 0 0 6px var(--yellow); }
