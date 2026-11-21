@@ -2,12 +2,13 @@
 title: "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund"
 kind: initiative
 status: living
-updated: 2026-11-07
+updated: 2026-11-21
 parent_epic: goatconf-2027
 appetite: medium
 confidence: medium
 supersedes: org/pitches/cfp-and-speakers.md
 sources:
+  - sources/conversations/2026-11-21--org--keep-iterating.md
   - sources/conversations/2026-11-07--org--meet-them-in-person.md
   - sources/conversations/2026-11-07--org--speakers-register-cta.md
   - sources/conversations/2026-11-07--org--program-page-lineup.md
@@ -321,3 +322,4 @@ submissions use the same tool, so the ADR's choice binds that PRD too.
 - **2026-11-07, longer sessions on request.** Any session, not only a workshop in a computer centre, may ask for more than an hour: the speaker says how long in the proposal, and the organiser sees if it can be made to work, never promised. Half an hour stays welcome. The talk page says so on its "One hour" sticker, beside the formats and in the slot details, and the home page's "Run a session" section and llms.txt say it too; the live talk form is unchanged (sources: sources/conversations/2026-11-07--org--longer-sessions-on-request.md, sources/conversations/2026-11-07--org--longer-sessions-home-and-llms.md).
 - **2026-11-07, the lineup on the program page.** The program page opens on "Confirmed so far", every listed speaker's photo and name, with their sessions, days and times still to come; the reserved main-hall cells stay unnamed, since their slot is not decided. On every width the open rooms of a slot fold into one line, and only reserved rooms and sessions show as cards (source: sources/conversations/2026-11-07--org--program-page-lineup.md).
 - **2026-11-07, register from the speaker pages.** Every speaker's page asks the visitor to register under their session ("Meet" and the speaker's first name, "in person"), and the speakers page closes on "Meet them in person", with the register button and a way to propose a session; the session description reads at the bio's size (sources: sources/conversations/2026-11-07--org--speakers-register-cta.md, sources/conversations/2026-11-07--org--meet-them-in-person.md).
+- **2026-11-21, a card with no session yet looks intended, and the session leads a speaker's page.** Second round on the local branch `site/phone-first-and-one-ask`, pending the organiser's approval from screenshots; nothing is published before that (source: sources/conversations/2026-11-21--org--keep-iterating.md). (1) On the home page and the speakers page, a speaker with no session yet keeps the words "Session to be announced", shipped on 2026-10-26 (source: sources/conversations/2026-10-26--org--session-to-be-announced.md), now set as an empty printed slot inside the card that fills the card down to its row's height: the speaker is stuck in, the session's place is printed and waiting. It carries no "Yours?" stamp, since the session is the speaker's and not open to others, and no card shows an unprinted empty area. (2) On a speaker's own page the session is a sticker, the strongest thing on the page below the bands: its title is lettered at 1.8rem or more, larger than any link in "How to support them". The order stays who they are, session, how to support them (source: sources/conversations/2026-10-26--org--session-before-support.md), and the description keeps the bio's size (source: sources/conversations/2026-11-07--org--speakers-register-cta.md). A speaker with no session yet keeps "The session will be on the program soon." (source: sources/conversations/2026-10-14--org--speakers-before-sessions.md), set as the same empty printed slot.

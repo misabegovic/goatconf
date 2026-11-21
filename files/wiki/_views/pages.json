@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-10-27--org--goat-mascot.md",
         "sources/conversations/2026-10-27--org--sticker-packs.md",
@@ -241,7 +242,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 1930
+      "tokens": 2114
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -406,6 +407,7 @@
       ],
       "supersedes": "org/adrs/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-17--org--three-days-section.md",
@@ -429,7 +431,7 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 3319
+      "tokens": 3544
     },
     {
       "path": "org/adrs/make-it-yours-hub.md",
@@ -630,13 +632,14 @@
       "title": "Speaker profiles and travel supporters: consented records, a speakers page and a supporters wall",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-26",
+      "updated": "2026-11-21",
       "confidence": "medium",
       "depends_on": [
         "org/prds/cfp-and-speakers.md",
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-10-26--org--confirmed-speaker-cards.md",
         "sources/conversations/2026-10-26--org--speaking-card-on-the-profile.md",
         "sources/conversations/2026-10-26--org--speaking-cards-show-the-talk.md",
@@ -654,7 +657,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 2056,
+      "tokens": 2211,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]
@@ -1893,12 +1896,13 @@
       "title": "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-11-07",
+      "updated": "2026-11-21",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-07--org--meet-them-in-person.md",
         "sources/conversations/2026-11-07--org--speakers-register-cta.md",
         "sources/conversations/2026-11-07--org--program-page-lineup.md",
@@ -1939,7 +1943,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 5454,
+      "tokens": 5825,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -2371,6 +2375,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-11-07--org--home-goats-stay.md",
         "sources/conversations/2026-11-07--org--home-page-order.md",
@@ -2402,7 +2407,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 4142,
+      "tokens": 4890,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
@@ -2765,6 +2770,7 @@
         "org/tuzla.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-21--org--goat-statue-photo.md",
         "sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
@@ -2830,7 +2836,7 @@
         "sources/web/images/burek-nisici.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 8700
+      "tokens": 8750
     },
     {
       "path": "org/tuzla.md",
