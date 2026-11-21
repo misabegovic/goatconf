@@ -230,7 +230,7 @@ GoatConf's mark is a round seal: the EuRuKo 2024 goat in a coin at the centre, a
 
 ## Colors
 
-> **Variant: less blue, calm (2026-11-21, pending the organiser's choice).** On this branch the ground is paper, the pale page-print tint, and blue is kept for the top bar, the bands, the cover and page heads, photo captions, the goat-story page and the back cover. Fact stickers, the ticket and the session sticker are white with a 2px album-blue keyline and album-blue lettering. Where the text below says the ground is album blue or a fact sticker is album blue with yellow lettering, this note is the newer rule here. The share cards and the brand files follow as the next step (`sources/conversations/2026-11-21--org--continue-iterating-round-four.md`).
+> **Variant: less blue, calm (2026-11-21, pending the organiser's choice).** On this branch the ground is paper, the pale page-print tint, and blue is kept for the top bar, the bands, the cover and page heads, photo captions, the goat-story page and the back cover. Fact stickers, the ticket and the session sticker are white with a solid 2px album-blue edge, a solid lip under them and heavy album-blue lettering, so a stuck sticker never reads as an empty slot; an album page has a 2px album-blue keyline and a short crisp shadow; the hoof marks are printed on the ground at 13% (`sources/conversations/2026-11-21--org--hooves-stay-and-more-improvements.md`). Where the text below says the ground is album blue or a fact sticker is album blue with yellow lettering, this note is the newer rule here. The share cards and the brand files follow as the next step (`sources/conversations/2026-11-21--org--continue-iterating-round-four.md`).
 
 A saturated album blue in three depths, white and a pale printed blue for the pages, and two signal colours that each own a narrow job.
 
@@ -247,7 +247,7 @@ A saturated album blue in three depths, white and a pale printed blue for the pa
 
 ### Neutral
 - **Page White** (page): album pages, the right page of the spread, the prose page, and every sticker's die-cut border.
-- **Page Print** (page-print): the ground of the whole site, printed with the hoof pattern in album blue at 5%; the flat fill of an empty printed slot, the default tag, and the image placeholder under a loading photo.
+- **Page Print** (page-print): the ground of the whole site, printed with the hoof pattern in album blue at 13%; the flat fill of an empty printed slot, the default tag, and the image placeholder under a loading photo.
 - **Slot Line** (slot-line): album blue at 60%, which holds at least 3:1 against the slot's page-print fill (3.3:1) and against white (3.5:1); at 42% it measured 2.2:1. Dashed slot outlines, the ring of a printed number, the name line in a slot and the dotted leaders of the price list.
 - **Album Ink** (ink): body text on white pages.
 - **Soft Ink** (ink-soft): slot explanations and "last checked" notes on white.
@@ -318,7 +318,7 @@ Stickers are set at small individual tilts between -2 and 2 degrees, set per sti
 Matte vinyl stuck onto the page: white die-cut border, sticker lift, a small tilt.
 - **Photo sticker:** a 4:5 photo (4:3.4 on album pages, 4:3.2 on the food page) over an album-blue caption strip lettered in white.
 - **Place sticker:** a photo sticker whose caption is a place name lettered in yellow at near fact scale (TUZLA).
-- **Fact sticker:** a white sticker with a 2px album-blue keyline inside its die-cut edge; a big album-blue fact over a short soft-ink explanation, its number in yellow.
+- **Fact sticker:** a white sticker with a solid 2px album-blue edge and a solid lip under it; a big album-blue fact over a short soft-ink explanation, its number in yellow.
 - **Tag:** a small pill under a food sticker's caption: page-print by default, the vegan tint for vegan dishes.
 
 ### Printed Slot
