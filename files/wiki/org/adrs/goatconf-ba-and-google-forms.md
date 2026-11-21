@@ -2,7 +2,7 @@
 title: "Website: goatconf.com on GitHub Pages, with every intake through Google Forms"
 kind: decision
 status: accepted
-updated: 2026-10-19
+updated: 2026-11-21
 confidence: medium
 depends_on:
   - org/prds/website-and-registration.md
@@ -10,6 +10,7 @@ depends_on:
   - org/prds/extension-slots-and-the-record.md
 supersedes: org/adrs/website-and-registration.md
 sources:
+  - sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md
   - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/conversations/2026-10-17--org--three-days-section.md
   - sources/conversations/2026-10-17--org--event-kinds-clickable.md
@@ -135,6 +136,7 @@ builds are checked by the local CI.
 - **2026-10-17, who's organising, below why a goat.** On the organiser's ask, the organiser block (the organiser, IPI Academy, the fact stickers and the conferences run before) moves from after the three days to after why a goat, so the home page runs: the cover with the seal, the three days, who is speaking, give a talk, Tuzla, food, propose an event, the supporters, why a goat, who's organising, and the code of conduct; the album's numbers follow the new order (source: sources/conversations/2026-10-17--org--organiser-block-below-the-goat.md).
 - **2026-10-17, the event kinds are links.** On the organiser's ask, every kind in the home page's "Propose an event" section links to the page for proposing one, as the "Your talk" slots link to the call for talks (source: sources/conversations/2026-10-17--org--event-kinds-clickable.md).
 - **2026-10-17, the three days invite events on any day.** On the organiser's ask, the home page's day stickers link to their day on the program, say what the hours off are, open the Thursday and Friday evenings to events people add, and list accepted events under their day; a "Yours?" slot after them invites an event on any day from 2 to 6 June (source: sources/conversations/2026-10-17--org--three-days-section.md).
+- **2026-11-21, one button in the top bar, Register on the phone bar, and the button in the register page's head.** Decided on the local branch `site/phone-first-and-one-ask` and pending the organiser's approval from screenshots; nothing is published before that (source: sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md). The top bar from `tools/nav.py` keeps Program, Speakers, Travel and Supporters, shows Host an event and Propose a session as plain links after them, and keeps Register as its only button. On phones the bar shows the mark with its year, a compact Register button and Menu; the Menu panel keeps its three buttons as the organiser set them on 2026-10-23 (source: sources/conversations/2026-10-23--org--phone-menu.md). The register page's head carries the Luma button and one line under it; the "Your ticket" section says that choosing sessions comes later and links to the seats, instead of repeating the button. The home page's ticket page becomes a ticket-shaped sticker. The home page's order, and every card on it, stay as decided on 2026-11-07. The measures are in the PRD's amendment of the same date.
 
 ## Related
 

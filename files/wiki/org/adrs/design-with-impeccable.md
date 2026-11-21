@@ -2,11 +2,12 @@
 title: "Build the pages in plain HTML and CSS, with the goat everywhere and playful"
 kind: decision
 status: accepted
-updated: 2026-10-27
+updated: 2026-11-21
 confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md
   - sources/conversations/2026-10-27--org--goat-mascot.md
   - sources/conversations/2026-10-27--org--sticker-packs.md
   - sources/conversations/2026-10-27--org--still-stickers.md
@@ -110,3 +111,4 @@ first thing to check before the first copy.
 - **2026-10-26, matte stickers.** The stickers lose their diagonal gloss and every shadow gets shorter and lighter (stickers, number pills, album pages, the spread, buttons, the seal), so the album reads as paper rather than glossy app cards; DESIGN.md's Gloss Rule becomes the Matte Rule (source: sources/conversations/2026-10-26--org--matte-stickers.md).
 - **2026-10-27, still stickers.** The stickers no longer peel and settle as they come into view; the organiser found it annoying. They keep their tilt and sit still from the first paint (source: sources/conversations/2026-10-27--org--still-stickers.md).
 - **2026-10-27, the goat mascot and the stickers.** A second goat joins the mark: a flat, cute mascot drawn in code, in roles from the EuRuKo 2024 goat multiverse, peeking over the open slots and the speaker cards, and each speaker's own goat drawn from their photo; the faint ghost goat is retired, and DESIGN.md's rule against a second goat drawing now allows the mascot. The same drawings make the sticker packs on the Stickers page. See [the goat mascot](goat-mascot.md) and [the sticker packs](sticker-packs.md) (sources: sources/conversations/2026-10-27--org--goat-mascot.md, sources/conversations/2026-10-27--org--sticker-packs.md).
+- **2026-11-21, the album keeps its own rules.** Decided on the local branch `site/phone-first-and-one-ask` and pending the organiser's approval from screenshots; nothing is published before that (source: sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md). The stamp red darkens from #e30613 to #c80510, so the "Yours?" lettering is at least 4.5:1 on the slot fill (5.4:1 measured, from 4.35:1). The slot line rises from 42% to 60% album blue, so the dashed outline is at least 3:1 against the slot fill (3.3:1, from 2.2:1). The six fact stickers on the home page that had no number get one, through the same pass in `tools/home.py` that numbers the rest. A focused button shows a night-blue ring and a yellow ring outside its white die-cut edge, visible on the blue cover and on white. The cover's three links are at least 44 pixels tall on a phone. The gap between a band's intro line and its first row closes where no goat peeks over that row. DESIGN.md says, as an exception to the Yellow Means Stuck Rule, that a button is the one yellow fill that is not a number or a fact, and it no longer says both "two across on phones" and "one after another": the lists a visitor reads go one after another on phones, as the organiser chose in October.

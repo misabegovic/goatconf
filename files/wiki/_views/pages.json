@@ -218,12 +218,13 @@
       "title": "Build the pages in plain HTML and CSS, with the goat everywhere and playful",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-27",
+      "updated": "2026-11-21",
       "confidence": "medium",
       "depends_on": [
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-10-27--org--goat-mascot.md",
         "sources/conversations/2026-10-27--org--sticker-packs.md",
         "sources/conversations/2026-10-27--org--still-stickers.md",
@@ -239,7 +240,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 1593
+      "tokens": 1930
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -395,7 +396,7 @@
       "title": "Website: goatconf.com on GitHub Pages, with every intake through Google Forms",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-19",
+      "updated": "2026-11-21",
       "confidence": "medium",
       "depends_on": [
         "org/prds/website-and-registration.md",
@@ -404,6 +405,7 @@
       ],
       "supersedes": "org/adrs/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-17--org--three-days-section.md",
         "sources/conversations/2026-10-17--org--event-kinds-clickable.md",
@@ -426,7 +428,7 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 3040
+      "tokens": 3319
     },
     {
       "path": "org/adrs/make-it-yours-hub.md",
@@ -2361,12 +2363,13 @@
       "title": "Website and registration: goatconf.com and a free pass per core day",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-11-07",
+      "updated": "2026-11-21",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-11-07--org--home-goats-stay.md",
         "sources/conversations/2026-11-07--org--home-page-order.md",
         "sources/conversations/2026-11-07--org--register-page-and-hallway-track.md",
@@ -2397,7 +2400,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 3493,
+      "tokens": 4117,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
