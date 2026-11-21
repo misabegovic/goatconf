@@ -2,11 +2,12 @@
 title: "The organiser runs the goat hunt; the core publishes prices, the breaks list and the lake day"
 kind: decision
 status: accepted
-updated: 2026-10-13
+updated: 2026-11-21
 confidence: medium
 depends_on:
   - org/prds/activities-lake-and-town.md
 sources:
+  - sources/conversations/2026-11-21--org--goat-hunt-not-promised-for-now.md
   - sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md
   - sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md
   - sources/conversations/2026-10-07--org--adr-answers.md
@@ -91,5 +92,6 @@ since June is Tuzla's wettest month (`sources/web/tuzla/tuzla-wikipedia.md`).
 
 ## Amendments
 
+- **2026-11-21, the goat hunt is not promised for now.** On the organiser's word the site, the files agents read, PRODUCT.md and the drafted posts no longer name the goat hunt: Saturday's promise is the day at the lakes the organiser plans and the events people add. The decision that the organiser runs the hunt is not withdrawn; it is not announced until the organiser says so, and when it returns it comes back through the program's planned list. Measured: no page under `site/` and no generator under `tools/` that writes one contains the words "goat hunt" (source: sources/conversations/2026-11-21--org--goat-hunt-not-promised-for-now.md).
 - **2026-10-13, the lake day is planned by the organiser, and the lakes fit every evening.** The organiser plans Saturday's lake day; nobody else needs to own it, so the program stamps it "Planned", as it does the goat hunt. Many people go to the lakes around 17:00 or 18:00, so the lakes are also an activity after the talks on both core days (source: sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md).
 - **2026-10-12.** The day after the talks is Saturday 5 June 2027, the community day. See [Dates: two core days](two-core-days-first-week.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).

@@ -115,13 +115,13 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   > Saturday 5 June is the community's day. No talks.
   >
-  > The organiser plans a day at the Pannonian Lakes, three salt lakes in the middle of town, with salt waterfalls and a beach, and runs the goat hunt: clues through town for teams of people who just met, ending at the goat statue. In the evening, the BH Professionals Meetup.
+  > The organiser plans a day at the Pannonian Lakes, three salt lakes in the middle of town, with salt waterfalls and a beach. In the evening, the BH Professionals Meetup.
   >
   > Want to add a walk, a hike, a meetup or a dinner? Propose it: goatconf.com/add
 
 - **Short** (182 characters):
 
-  > Saturday 5 June at GoatConf: no talks. A day at Tuzla's salt lakes, the goat hunt through town, the BH Professionals Meetup in the evening, and whatever you add. goatconf.com/program
+  > Saturday 5 June at GoatConf: no talks. A day at Tuzla's salt lakes, the BH Professionals Meetup in the evening, and whatever you add. goatconf.com/program
 
   Sources: sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md, sources/web/tuzla/pannonian-lakes-wikipedia.md, sources/conversations/2026-10-18--org--bh-professionals-meetup-accepted.md.
 
@@ -286,13 +286,13 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   > Saturday at GoatConf: the community's day.
   >
-  > The salt lakes, the goat hunt through town, and in the evening the BH Professionals Meetup from 18:00. Each event is run by its host, who says how to join.
+  > The salt lakes, and in the evening the BH Professionals Meetup from 18:00. Each event is run by its host, who says how to join.
   >
   > goatconf.com/program
 
 - **Short** (117 characters):
 
-  > Saturday at GoatConf: the salt lakes, the goat hunt, and the BH Professionals Meetup from 18:00. goatconf.com/program
+  > Saturday at GoatConf: the salt lakes and the BH Professionals Meetup from 18:00. goatconf.com/program
 
   Sources: sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md, sources/conversations/2026-10-18--org--bh-professionals-meetup-accepted.md.
 
