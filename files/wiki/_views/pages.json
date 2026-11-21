@@ -2385,6 +2385,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md",
         "sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md",
         "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
         "sources/conversations/2026-11-21--org--continue-iterating.md",
@@ -2420,7 +2421,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 6049,
+      "tokens": 6258,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",

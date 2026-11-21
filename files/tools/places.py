@@ -108,10 +108,10 @@ def base(view, ways) -> str:
                 small.append(f'<path d="{path(view, g)}"/>')
             else:
                 roads.setdefault(hw, []).append(path(view, g))
-    out = [f'<rect width="{W}" height="{view.h}" fill="#edf2fb"/>',
-           f'<g fill="#d9f2df">{"".join(parks)}</g>',
+    out = [f'<rect class="map-ground" width="{W}" height="{view.h}" fill="#edf2fb"/>',
+           f'<g class="map-parks" fill="#d9f2df">{"".join(parks)}</g>',
            f'<g fill="#a9c7f2" stroke="#a9c7f2" stroke-width="3" class="water">{"".join(water)}</g>',
-           f'<g fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" opacity=".9">{"".join(small)}</g>']
+           f'<g class="map-small" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" opacity=".9">{"".join(small)}</g>']
     order = ["service", "residential", "unclassified", "living_street", "tertiary", "secondary", "primary", "trunk", "pedestrian"]
     for hw in order:
         if hw not in roads:
@@ -120,8 +120,8 @@ def base(view, ways) -> str:
         color = "#fff3b0" if hw == "pedestrian" else "#ffffff"
         casing = "#c9d7f5"
         d = " ".join(roads[hw])
-        out.append(f'<path d="{d}" fill="none" stroke="{casing}" stroke-width="{wdt + 2.4}" stroke-linecap="round" stroke-linejoin="round"/>')
-        out.append(f'<path d="{d}" fill="none" stroke="{color}" stroke-width="{wdt}" stroke-linecap="round" stroke-linejoin="round"/>')
+        out.append(f'<path class="map-casing" d="{d}" fill="none" stroke="{casing}" stroke-width="{wdt + 2.4}" stroke-linecap="round" stroke-linejoin="round"/>')
+        out.append(f'<path class="map-road{" map-road--walk" if hw == "pedestrian" else ""}" d="{d}" fill="none" stroke="{color}" stroke-width="{wdt}" stroke-linecap="round" stroke-linejoin="round"/>')
     return "".join(out)
 
 

@@ -580,3 +580,11 @@
   groups.forEach((g) => { g.hidden = false; g.addEventListener("change", (e) => set(e.target.value)); });
   show(stored);
 })();
+
+// The footer marks the page you are on, as the top bar does.
+(() => {
+  const here = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll("footer .footer__group a").forEach((a) => {
+    if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
+  });
+})();

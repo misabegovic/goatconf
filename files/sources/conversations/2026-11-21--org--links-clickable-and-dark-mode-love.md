@@ -21,3 +21,13 @@ is improved too.
 
 Nothing is pushed, merged or published before the organiser approves it
 (sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md).
+
+Later in the same round the organiser added, verbatim:
+
+> Ok. Also maybe optimize in the hero section and remove the "an excuse to..." Text to remove noise?
+
+Read as: the paragraph "An excuse to hang out with like-minded people and
+learn from folks sharing their current best." leaves the home page's
+cover, and the cover is tightened as a whole. The organiser asked only
+about the hero, so the same sentence stays wherever else it is used until
+they decide.

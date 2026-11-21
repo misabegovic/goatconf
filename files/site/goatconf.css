@@ -1409,7 +1409,7 @@ html { scrollbar-color: var(--album) var(--page-print); }
    (sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md).
    Every colour comes from a token with a light and a dark value. What sits on a light tile in both themes (the maps,
    supporter logos, brand files, postcards) resets the tokens to their light values. */
-:root, .map, .brand-files figure:not(.brand-files__dark), .swatches li, .goatchi__card figure, .sticker-dl a, .goatchi__pick-goat {
+:root, .brand-files figure:not(.brand-files__dark), .swatches li, .goatchi__card figure, .sticker-dl a, .goatchi__pick-goat {
   --album: #0b3d91; --page: #ffffff; --page-print: #edf2fb; --ink: #12204a; --ink-soft: #46557a;
   --slot-line: rgb(11 61 145 / 0.6); --red: #c80510; --stamp-blend: multiply; --slot-hover: #e2eafa;
   --hoof-col: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='84' viewBox='22 38 20 84'%3E%3Cg fill='%230b3d91' fill-opacity='.2'%3E%3Cpath d='M30 40c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E%3Cpath d='M34 40c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3C/g%3E%3C/svg%3E"); --tile: #edf2fb; --tile-white: #ffffff; --on-yellow: #051d47; --yellow-hover: #ffe25a; --yellow-press: #f2c800;
@@ -1468,7 +1468,6 @@ html { scrollbar-color: var(--album) var(--page-print); }
 .supporter-chip:not(.supporter-chip--dark, .supporter-chip--tinted) img, .supporter__logo:not(.supporter__logo--dark, .supporter__logo--tinted) { background: var(--tile); }
 .page-head__photo--logo:not(.page-head__photo--logo-dark, .page-head__photo--logo-tinted) { background: var(--tile-white); }
 .past-conf__logo { box-sizing: content-box; padding: 0.45rem 0.6rem; border-radius: 0.35rem; background: var(--tile-white); margin-top: -0.45rem; margin-left: -0.6rem; margin-bottom: 0.35rem; }
-.map { background: var(--tile); }
 .share-card { box-shadow: 0 0 0 0.3rem var(--tile-white), var(--lift); }
 .brand-files figure:not(.brand-files__dark), .swatches li { color: var(--ink); }
 .brand-files figure:not(.brand-files__dark) figcaption, .brand-files figure:not(.brand-files__dark) a { color: var(--ink-soft); }
@@ -1504,7 +1503,6 @@ html { scrollbar-color: var(--album) var(--page-print); }
   .stamp { mix-blend-mode: normal; }
 }
 a.button, button.button, .copy a.button, .prose a.button, .album-page a.button { color: var(--on-yellow); }
-.map { color: var(--ink); }
 .brand-files .brand-files__dark figcaption, .brand-files .brand-files__dark a { color: var(--tile-white); }
 @media (max-width: 23.4rem) { .topbar { padding-inline: 0.5rem; gap: 0.3rem; } .topbar__home { font-size: 0.92rem; gap: 0.28rem; } .topbar__home .topbar__coin { width: 1.55rem; height: 1.55rem; } .topbar__menu summary, .topbar__register { padding: 0 0.45rem; } .topbar__phone { gap: 0.3rem; } }
 /* The footer's theme control shares the Follow row on wide screens; on a phone the control is in the menu, which is
@@ -1512,3 +1510,122 @@ a.button, button.button, .copy a.button, .prose a.button, .album-page a.button {
 @media (min-width: 48rem) { footer .theme { float: right; margin: -2.05rem 0 0; } .back-cover__inner { position: relative; } .back-cover__inner > .theme { float: none; position: absolute; right: 0; bottom: 2.3rem; margin: 0; } }
 @media (max-width: 47.99rem) { footer .theme { display: none; } }
 @media (max-width: 47.99rem) { .past-confs { margin-top: 0.7rem; } }
+
+/* 2026-11-21, round seven: what is clickable looks clickable, and the dark theme with care
+   (sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md) */
+:root, .brand-files figure:not(.brand-files__dark), .swatches li, .goatchi__card figure, .sticker-dl a, .goatchi__pick-goat {
+  --link: #0b3d91; --line: #0b3d91; --sticker: #ffffff; --lit: 0 0 0 0 transparent;
+  --map-ground: #edf2fb; --map-parks: #d9f2df; --map-water: #a9c7f2; --map-road: #ffffff; --map-casing: #c9d7f5; --map-walk: #fff3b0; --map-ink: #0b3d91; --map-line: #051d47;
+  --arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8h11M8.5 3.5 13 8l-4.5 4.5' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); --arrow-out: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 3.5h6.5V10M12.5 3.5 4 12' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --album: #f3f6ff; --link: #a9c4ff; --line: #a9c4ff; --page: #0c2757; --page-print: #051534; --sticker: #14387a; --lit: inset 0 0 0 1px rgb(169 196 255 / 0.3);
+    --slot-hover: #0a2150; --map-ground: #0b2250; --map-parks: #123f33; --map-water: #1f55a6; --map-road: #32528c; --map-casing: #071a3c; --map-walk: #7a6716; --map-ink: #f3f6ff; --map-line: #e8eefc;
+  }
+}
+:root[data-theme="dark"] {
+  --album: #f3f6ff; --link: #a9c4ff; --line: #a9c4ff; --page: #0c2757; --page-print: #051534; --sticker: #14387a; --lit: inset 0 0 0 1px rgb(169 196 255 / 0.3);
+  --slot-hover: #0a2150; --map-ground: #0b2250; --map-parks: #123f33; --map-water: #1f55a6; --map-road: #32528c; --map-casing: #071a3c; --map-walk: #7a6716; --map-ink: #f3f6ff; --map-line: #e8eefc;
+}
+
+/* Lines and edges take the line blue; the big lettering takes --album, which is pale ink at night */
+.album-page, .prose, .spread, .page-head, .shiny { box-shadow: 0 0 0 2px var(--line), 0 0.4rem 0 0 var(--edge); }
+.topbar, .topbar .topbar__panel { box-shadow: 0 3px 0 var(--line), 0 0.6rem 0.7rem -0.45rem var(--edge); }
+.back-cover { box-shadow: 0 -2px 0 var(--line); }
+.daynav { outline-color: var(--line); }
+.topbar__menu summary, .topbar .topbar__panel a.topbar__panel-cta { color: var(--link); box-shadow: inset 0 0 0 2px var(--line); }
+.fold__more { border-color: var(--line); color: var(--link); }
+.theme label { color: var(--link); }
+.theme input:checked + label { background: var(--line); color: var(--page); }
+.theme label:hover { box-shadow: inset 0 0 0 2px var(--line); }
+html { scrollbar-color: var(--line) var(--page-print); }
+::-webkit-scrollbar-thumb { background: var(--line); }
+:focus-visible, .album-page :focus-visible, .spread__page :focus-visible, .prose :focus-visible, :is(.topbar, .spread__cover, .page-head, .shiny, .back-cover, .band) :focus-visible, .theme input:focus-visible + label { outline-color: var(--line); }
+
+/* At night the layers have an order: the ground darkest, the page a step up, a sticker a step above with a lit edge */
+.sticker, .supporter-chip, .sticker--photo figcaption, .speaker__photo figcaption, .sticker__name, .ticket__main, .talks .talk, .past-conf, .place, .breakrow, .facts, .finder { background-color: var(--sticker); }
+.sticker { box-shadow: var(--lift), var(--lit); }
+.sticker--fact, .talks .talk { box-shadow: inset 0 0 0 2px var(--line), 0 0.28rem 0 0 var(--line); }
+.ticket__paper { background: var(--sticker); box-shadow: inset 0 0 0 2px var(--line), 0 0.28rem 0 0 var(--line); }
+.ticket__stub { border-color: var(--line); }
+.ticket__stub::before, .ticket__stub::after { border-color: var(--line); }
+.supporter-chip { box-shadow: var(--lift), var(--lit); }
+.breakrow--welcome { background: transparent; border-color: var(--slot-line); }
+
+/* Every logo on a tile with a white die-cut edge, in both themes */
+.supporter-chip img, .supporter__logo, .page-head__photo--logo, .past-conf__logo { box-shadow: 0 0 0 0.22rem var(--tile-white), 0 0 0 calc(0.22rem + 1px) rgb(0 0 0 / 0.12); }
+
+/* The maps, drawn once and coloured by the theme */
+.map { background: var(--map-ground); box-shadow: 0 0 0 2px var(--line); }
+.map .map-ground { fill: var(--map-ground); }
+.map .map-parks { fill: var(--map-parks); }
+.map .water { fill: var(--map-water); stroke: var(--map-water); }
+.map .map-small, .map .map-road { stroke: var(--map-road); }
+.map .map-casing { stroke: var(--map-casing); }
+.map .map-road--walk { stroke: var(--map-walk); }
+.map .map-lines { stroke: var(--map-line); fill: var(--map-line); }
+.map-label { fill: var(--map-ink); stroke: var(--map-ground); }
+
+/* What is clickable. A link in a sentence: underlined in the link blue; a yellow marker stroke when pointed at,
+   focused or pressed. Headings and labels are never underlined. */
+:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register) { color: var(--link); text-decoration-line: underline; text-decoration-color: var(--link); text-decoration-thickness: 2px; text-underline-offset: 0.22em; border-radius: 0.15em; transition: background-color 120ms, box-shadow 120ms; }
+:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register):is(:hover, :active), a.go:is(:hover, :active) { background: var(--yellow); color: var(--on-yellow); text-decoration-color: var(--on-yellow); text-decoration-thickness: 2px; box-shadow: 0 0 0 0.14em var(--yellow); }
+:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register):active, a.go:active { background: var(--yellow-press); box-shadow: 0 0 0 0.14em var(--yellow-press); }
+/* A link on its own ends in a drawn arrow */
+a.go, a.go.go--ink, .spread__cover .go { color: var(--link); text-decoration-color: var(--link); text-decoration-thickness: 2px; text-underline-offset: 0.22em; border-radius: 0.15em; transition: background-color 120ms, box-shadow 120ms; }
+a.go::after { content: ""; display: inline-block; width: 0.72em; height: 0.72em; margin-left: 0.32em; vertical-align: -0.04em; background: currentColor; -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; transition: translate 160ms var(--ease); }
+a.go:hover::after { translate: 0.18em 0; }
+/* A link that leaves the site ends in a drawn corner arrow, and says so */
+:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register)[href^="http"]:not([href*="goatconf.com"])::after, a.go[href^="http"]:not([href*="goatconf.com"])::after { content: ""; content: "" / " (another site)"; display: inline-block; width: 0.56em; height: 0.56em; margin-left: 0.12em; vertical-align: 0.04em; background: currentColor; -webkit-mask: var(--arrow-out) center / contain no-repeat; mask: var(--arrow-out) center / contain no-repeat; translate: none; }
+.follow__link::after { display: none !important; }
+/* The top bar: the page you are on is a filled tab; a link pointed at is the same tab, lighter */
+.topbar nav.topbar__wide { gap: 0.15rem 0.2rem; }
+.topbar nav.topbar__wide a:not(.topbar__cta) { padding: 0.4rem 0.6rem; border-radius: 0.4rem; text-decoration: none; transition: background-color 120ms; }
+.topbar nav.topbar__wide a:not(.topbar__cta):hover { background: var(--page-print); color: var(--ink); }
+.topbar nav.topbar__wide a:not(.topbar__cta):active { background: var(--yellow); color: var(--on-yellow); }
+.topbar nav.topbar__wide a:not(.topbar__cta)[aria-current="page"] { background: var(--line); color: var(--page); text-decoration: none; }
+.topbar nav.topbar__wide a.topbar__cta { margin-left: 0.5rem; }
+.topbar .topbar__panel a[aria-current="page"]:not(.topbar__panel-cta, .topbar__panel-main) { color: var(--link); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 0.3em; }
+/* The footer marks the page you are on */
+footer .footer__group a[aria-current="page"] { font-weight: 700; text-decoration-thickness: 4px; text-decoration-color: var(--yellow); }
+/* A sticker or card that is a link: an arrow in its lower corner, and a lift when pointed at. Photo stickers that
+   are not links have neither. */
+.speaker__link, .supporter-chip { position: relative; }
+a.sticker--day::after, a.sticker--example::after, .speaker__link::after, .supporter-chip::after { content: ""; position: absolute; right: 0.7rem; bottom: 0.65rem; width: 1.05rem; height: 1.05rem; background: var(--link); -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; transition: translate 160ms var(--ease); }
+.speaker__link::after { right: 0.45rem; bottom: 0.4rem; }
+a.sticker--day:hover::after, a.sticker--example:hover::after, .speaker__link:hover::after, .supporter-chip:hover::after { translate: 0.2rem 0; }
+a.sticker--day, a.sticker--example, .sticker--speaker, .supporter-chip, a.sticker--face { transition: transform 180ms var(--ease), box-shadow 180ms var(--ease); }
+a.sticker--day:hover, a.sticker--example:hover, .sticker--speaker:has(.speaker__link:hover), .supporter-chip:hover, a.sticker--face:hover { transform: rotate(var(--tilt, 0deg)) translateY(-0.22rem); }
+a.sticker--day:hover, a.sticker--example:hover { box-shadow: inset 0 0 0 2px var(--line), 0 0.5rem 0 0 var(--line); }
+a.sticker--day:active, a.sticker--example:active, .sticker--speaker:has(.speaker__link:active), .supporter-chip:active, a.sticker--face:active { transform: rotate(var(--tilt, 0deg)) translateY(0.1rem); }
+.speaker__link::after { top: 0.75rem; right: 0.75rem; bottom: auto; width: 1.5rem; height: 1.5rem; padding: 0; background: var(--yellow); -webkit-mask: none; mask: none; border-radius: 50%; box-shadow: 0 0.12rem 0 0 var(--on-yellow); }
+.speaker__link::before { content: ""; position: absolute; z-index: 1; top: 1.07rem; right: 1.07rem; width: 0.86rem; height: 0.86rem; background: var(--on-yellow); -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; }
+/* A slot link answers as a whole */
+.slot--link { cursor: pointer; transition: background-color 160ms, border-color 160ms; }
+.slot--link:hover { border-style: solid; border-color: var(--line); }
+.slot--link:active { background: var(--yellow); }
+/* The small controls answer too */
+.fold__more:hover, .daynav a:hover, .daynav a:focus-visible { background: var(--yellow); color: var(--on-yellow); border-color: var(--yellow); }
+.fold-list summary:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+.topbar__menu summary:hover { background: var(--page-print); }
+.topbar .topbar__panel a.topbar__panel-cta:hover { background: var(--page-print); }
+@media (prefers-reduced-motion: reduce) {
+  a.go::after, a.sticker--day::after, a.sticker--example::after, .speaker__link::after, .supporter-chip::after { transition: none; translate: none !important; }
+  a.sticker--day, a.sticker--example, .sticker--speaker, .supporter-chip, a.sticker--face { transition: none; }
+  a.sticker--day:hover, a.sticker--example:hover, .sticker--speaker:has(.speaker__link:hover), .supporter-chip:hover, a.sticker--face:hover, a.sticker--day:active, a.sticker--example:active, .sticker--speaker:has(.speaker__link:active), .supporter-chip:active, a.sticker--face:active { transform: rotate(var(--tilt, 0deg)); }
+}
+@media (forced-colors: active) { a.go::after, a.sticker--day::after, a.sticker--example::after, .speaker__link::after, .supporter-chip::after { background: LinkText; } }
+.brand-files .brand-files__dark figcaption a:not(.button) { color: var(--tile-white); text-decoration-color: var(--tile-white); }
+/* Lists of contact links under a place stay compact: underlined, without the corner arrow */
+:is(.place__links, .venue__links, .speaker-page__links, .fold-list) a::after { display: none !important; }
+.supporter-chip::after { right: 0.55rem; bottom: 0.5rem; width: 0.9rem; height: 0.9rem; }
+.supporter-chip small { padding-right: 1.1rem; }
+@media (min-width: 62rem) { .spread .cover-links { gap: 0.4rem 1.05rem; } .cover-actions .go { font-size: 1.12rem; } }
+@media (max-width: 47.99rem) { .supporter-chip small { padding-right: 0; } .supporter-chip::after { top: 0.6rem; bottom: auto; } :root { --space: 1.45rem; } }
+/* The cover, tightened: the mark and name, the date and place, the promise, who it is for in a quieter line, the
+   button, the links */
+.cover-lede strong { display: block; font-size: clamp(1.45rem, 1.15rem + 1.1vw, 2rem); line-height: 1.12; text-wrap: balance; }
+.cover-lede__who { display: block; margin-top: 0.55rem; font-family: var(--text); font-weight: 400; font-stretch: normal; font-size: var(--step-0); line-height: 1.5; color: var(--ink-soft); max-width: 36ch; }
+@media (min-width: 62rem) { .spread { min-height: 0; } .cover-actions { margin-top: 1.6rem; padding-top: 0; } }
+@media (max-width: 47.99rem) { .cover-when { margin-top: 0.55rem; font-size: 1.15rem; } .cover-lede { margin-top: 0.7rem; } .cover-lede__who { margin-top: 0.4rem; } .cover-actions { margin-top: 0.95rem; } }
