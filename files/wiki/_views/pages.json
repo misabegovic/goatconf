@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--continue-iterating.md",
         "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-10-27--org--goat-mascot.md",
@@ -242,7 +243,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 2114
+      "tokens": 2318
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -407,6 +408,7 @@
       ],
       "supersedes": "org/adrs/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--continue-iterating.md",
         "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
@@ -431,7 +433,7 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 3544
+      "tokens": 3756
     },
     {
       "path": "org/adrs/make-it-yours-hub.md",
@@ -1902,6 +1904,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--continue-iterating.md",
         "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-07--org--meet-them-in-person.md",
         "sources/conversations/2026-11-07--org--speakers-register-cta.md",
@@ -1943,7 +1946,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 5825,
+      "tokens": 6076,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -2375,6 +2378,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--continue-iterating.md",
         "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-11-07--org--home-goats-stay.md",
@@ -2407,7 +2411,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 4897,
+      "tokens": 5523,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
