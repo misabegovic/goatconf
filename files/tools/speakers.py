@@ -343,7 +343,7 @@ def register_cta(label: str) -> str:
     """The register button for the speaker pages, to the Luma event in forms.yml (formlinks fills the link)
     (sources/conversations/2026-11-07--org--speakers-register-cta.md)."""
     return (f'<p class="cta"><a class="button" data-form="register" href="register.html">{label}</a>'
-            '<span>Free, for everyone. Luma confirms your ticket by email.</span></p>')
+            '<span>Free, for everyone. Luma emails you when you are in.</span></p>')
 
 
 def speaker_page(slug: str, meta, body, sessions, known) -> str:
@@ -383,7 +383,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
 </section>
 <section class="album-page wrap" aria-labelledby="h-talks">
   <h2 class="band" id="h-talks">{"Sessions" if len(sessions) > 1 else "Session"}</h2>
-  {f'<ul class="talks">{talks}</ul>' if talks else '<p class="copy">The session will be on the program soon.</p>'}
+  {f'<ul class="talks">{talks}</ul>' if talks else '<p class="copy talks-soon">The session will be on the program soon.</p>'}
   {register_cta(f"Meet {esc(str(meta['name']).split()[0])} in person")}
   <p class="copy"><a class="go go--ink" href="program.html">See the whole program</a> <a class="go go--ink" href="speakers.html">All speakers</a></p>
 </section>{support_section(meta)}{share}"""

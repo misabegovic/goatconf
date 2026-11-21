@@ -833,8 +833,6 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .print { position: relative; }
 #see-you { position: relative; }
 /* The goat statue stands at the end of its paragraph */
-.goat-hunt { position: relative; padding-right: 8rem; min-height: 7rem; }
-.goat-hunt .goat-one__stage.is-scene { right: 0; bottom: -0.5rem; width: 7rem; }
 #see-you .goat-one__stage.is-scene { right: clamp(1rem, 8vw, 6rem); bottom: 0.6rem; width: clamp(6.5rem, 14vw, 9.5rem); }
 /* On a phone the button takes the page's width, so the goat waves from below it, centred */
 @media (max-width: 47.99rem) { #see-you:has(.goat-one__stage.is-scene) { padding-bottom: 7.6rem; } #see-you .goat-one__stage.is-scene { right: calc(50% - 3.25rem); width: 6.5rem; } }
@@ -1039,3 +1037,82 @@ button.button { border: 0; cursor: pointer; }
 .page-head .page-head__cta span { color: var(--album-soft); max-width: 36ch; }
 @media (max-width: 61.99rem) { .page-head .page-head__cta { grid-row: auto; } }
 @media (max-width: 47.99rem) { .page-head .page-head__cta { margin-top: 1.2rem; gap: 0.9rem; } }
+
+/* 2026-11-21, round two (sources/conversations/2026-11-21--org--keep-iterating.md) */
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* The closing page: the dates and the place as lettering, the button, and room for the goat to wave */
+.farewell { margin: 0.2rem 0 1.7rem; }
+.farewell > span { display: block; }
+.farewell__free { font-family: var(--display); font-weight: 700; font-stretch: 88%; font-size: var(--step-1); line-height: 1.2; color: var(--ink-soft); }
+.farewell__when { margin-top: 0.45rem; max-width: 15ch; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: var(--step-2); line-height: 0.95; letter-spacing: 0.005em; color: var(--album); text-wrap: balance; }
+.farewell__where { margin-top: 0.7rem; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem); line-height: 1; color: var(--ink); }
+#see-you .cta { margin-bottom: 0.6rem; }
+@media (min-width: 48rem) {
+  #see-you .farewell, #see-you .cta { padding-right: clamp(10rem, 26vw, 20rem); }
+  #see-you .goat-one__stage.is-scene { right: clamp(1.5rem, 8vw, 8rem); bottom: 1.6rem; width: clamp(8rem, 15vw, 13rem); }
+}
+
+/* Why a goat closes on the statue: the photo as a sticker, one sentence beside it, the painted statue at its corner */
+.statue { display: flex; align-items: center; gap: clamp(1.1rem, 3vw, 2.2rem); margin-top: 1.9rem; }
+.statue__photo { flex: none; width: clamp(8.5rem, 17vw, 12.5rem); }
+.statue__photo img { aspect-ratio: 1; object-position: 50% 30%; }
+.statue__photo figcaption { font-size: 1rem; }
+.statue .statue__line { margin: 0; max-width: 20ch; font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: var(--step-1); line-height: 1.1; color: var(--page); }
+.statue .goat-one__stage.is-scene { right: -2.1rem; bottom: -0.8rem; width: 5.2rem; }
+@media (max-width: 47.99rem) { .statue { gap: 1.9rem; } .statue .goat-one__stage.is-scene { right: -1.5rem; width: 4rem; } .statue .statue__line { font-size: 1.2rem; } }
+
+/* The venue's address under its name, on the opening page's photo */
+.caption__where { display: block; margin-top: 0.2rem; font-family: var(--text); font-weight: 400; font-stretch: normal; font-size: 0.82rem; line-height: 1.3; text-transform: none; letter-spacing: 0; color: var(--album-soft); }
+/* The ticket's calendar link, under its button */
+.ticket .ticket__cal { display: inline-flex; align-items: center; min-height: 2.75rem; margin-block: -0.7rem; color: var(--page); font-family: var(--display); font-weight: 750; font-stretch: 85%; font-size: 1.1rem; text-decoration-color: var(--yellow); text-decoration-thickness: 2px; }
+.ticket .ticket__cal:focus-visible { outline-color: var(--yellow); }
+@media (max-width: 47.99rem) { .ticket .ticket__cal { justify-content: center; } }
+
+/* A session not announced yet: an empty printed slot inside the stuck card, down to the row's height. No stamp:
+   the place is the speaker's. */
+.sticker--speaker .speaker__body { display: flex; flex-direction: column; flex: 1; }
+.speaker__body .speaker__first--tba { flex: 1; display: flex; align-items: center; min-height: 3.5rem; margin-top: 0.4rem; padding: 0.6rem 0.75rem; border: 2px dashed var(--slot-line); border-radius: 0.45rem; background: var(--page-print); color: var(--album); font-family: var(--display); font-weight: 800; font-stretch: 80%; font-style: normal; text-transform: uppercase; font-size: 1.05rem; line-height: 1.05; }
+.talks-soon { display: flex; align-items: center; min-height: 5.5rem; max-width: 36rem; margin-bottom: 1.6rem; padding: 1rem 1.2rem; border: 2px dashed var(--slot-line); border-radius: 0.6rem; background: var(--page-print); color: var(--ink); }
+
+/* A speaker's session, the strongest thing on their page: a sticker in the fact sticker's colours */
+.talks .talk { padding: clamp(1.4rem, 2.6vw, 2rem) clamp(1.3rem, 2.6vw, 2.1rem); border-radius: 0.6rem; background: var(--album); color: var(--page); outline: 0.42rem solid var(--page); outline-offset: -0.42rem; box-shadow: var(--lift); transform: rotate(-0.3deg); }
+.talks .talk .talk__when { color: var(--album-soft); font-size: 0.95rem; }
+.talks .talk .talk__when > span:first-child, .talks .talk .talk__when a { font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 1.05rem; letter-spacing: 0.03em; color: var(--page); text-decoration-color: var(--yellow); }
+.talks .talk strong { margin-top: 0.7rem; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem); line-height: 0.95; color: var(--yellow); text-wrap: balance; }
+.talks .talk strong a { color: inherit; text-decoration-color: var(--yellow); }
+.talks .talk .tags { margin-top: 0.8rem; }
+.talks .talk .for-line { margin-top: 0.7rem; color: var(--album-soft); }
+.talks .talk p:not(.for-line) { margin-top: 0.7rem; color: var(--page); }
+.talks .talk :focus-visible { outline-color: var(--yellow); }
+
+/* The register page: what the ticket gets you in one row, then one line for students and volunteers */
+.slots--four { margin-bottom: 1.7rem; }
+@media (min-width: 62rem) { .slots--four { grid-template-columns: repeat(4, minmax(0, 1fr)); } .slots--four.slots--why .sticker--fact strong { font-size: clamp(1.9rem, 1.2rem + 1.2vw, 2.4rem); } }
+.ticket-also { max-width: 74ch; margin-bottom: 0; }
+
+/* The footer's links in four groups, each under its label */
+.footer__links, .back-cover__links { display: grid; grid-template-columns: repeat(4, minmax(0, max-content)); gap: 1.4rem clamp(1.6rem, 5vw, 4.5rem); margin-block: 0.7rem 0.5rem; }
+.footer__group { display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+.footer__group b { margin-bottom: 0.15rem; font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.06em; color: var(--album-soft); }
+.back-cover .footer__group b { color: var(--yellow); }
+@media (max-width: 47.99rem) {
+  .footer__links, .back-cover__links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem 1rem; }
+  .footer__group { gap: 0; }
+}
+
+/* A phone's rhythm, inside the one-by-one lists: pages 1.75rem apart, stacked stickers with no goat between them
+   1.1rem apart, a shorter step under a band and at a page's foot. No card changes size. */
+@media (max-width: 47.99rem) {
+  :root { --space: 1.75rem; }
+  .band { margin-bottom: 1.1rem; }
+  .album-page { padding-bottom: 1.2rem; }
+  .copy + .slots--kinds { margin-top: 1.2rem; }
+  .speaker__body .speaker__first--tba { min-height: 2.75rem; margin-top: 0.3rem; padding-block: 0.45rem; }
+  .prices, .money-supporters, .past-confs { margin-top: 1.7rem; }
+  .slots--hero, .slots--hero:has(.peek) { row-gap: 1.1rem; }
+  .album-page .slots--days:has(.peek) { row-gap: 1.1rem; }
+  .album-page .slots--city, .album-page .slots--food, .album-page .slots.slots--why { gap: 1.1rem; }
+  .album-page .slots--supporters-home { gap: 0.8rem; }
+}
+.ticket__addr { display: inline-block; }

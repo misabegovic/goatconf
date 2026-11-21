@@ -148,3 +148,13 @@ def test_the_wide_bar_has_one_button_and_the_doors_are_plain_links():
     assert wide.count('class="topbar__cta') == 1
     assert '<a class="topbar__cta" href="register.html">Register</a>' in wide
     assert '<a href="extend.html">Host an event</a>' in wide and '<a href="talk.html">Propose a session</a>' in wide
+
+
+def test_the_footer_groups_hold_every_link_once():
+    frame = importlib.reload(importlib.import_module("frame"))
+    grouped = [href for _, hrefs in frame.GROUPS for href in hrefs]
+    assert sorted(grouped) == sorted(href for href, _ in frame.LINKS) and len(grouped) == len(set(grouped))
+    inner, cover = frame.links(), frame.links(back_cover=True)
+    assert inner.count("<a ") == len(frame.LINKS) and cover.count("<a ") == len(frame.LINKS) - 1
+    assert inner.count('<span class="footer__group"><b>') == len(frame.GROUPS)
+    assert '<a href="charter.html">The charter</a>' in cover and '<a href="charter.html">Charter</a>' in inner

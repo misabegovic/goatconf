@@ -2407,7 +2407,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 4890,
+      "tokens": 4897,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",

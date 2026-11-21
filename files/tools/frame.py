@@ -88,9 +88,22 @@ def block(name: str, body: str) -> str:
     return blocks.wrap(name, "tools/frame.py", body)
 
 
+# The same links in four groups, so a visitor can scan them (sources/conversations/2026-11-21--org--keep-iterating.md).
+# Every page in LINKS belongs to exactly one group; tests/test_home_and_nav.py checks it.
+GROUPS = [("The conference", ("index.html", "program.html", "speakers.html", "travel.html", "register.html")),
+          ("Take part", ("talk.html", "extend.html", "supporters.html", "contact.html")),
+          ("Good to know", ("charter.html", "code-of-conduct.html", "access.html")),
+          ("Brand and goats", ("brand.html", "stickers.html", "goatchi.html"))]
+
+
 def links(back_cover: bool = False) -> str:
-    return " ".join(f'<a href="{href}">{BACK_COVER.get(href, label) if back_cover else label}</a>'
-                    for href, label in LINKS if not (back_cover and href == "index.html"))
+    labels = dict(LINKS)
+    groups = []
+    for title, hrefs in GROUPS:
+        items = " ".join(f'<a href="{href}">{BACK_COVER.get(href, labels[href]) if back_cover else labels[href]}</a>'
+                         for href in hrefs if not (back_cover and href == "index.html"))
+        groups.append(f'<span class="footer__group"><b>{title}</b> {items}</span>')
+    return " ".join(groups)
 
 
 def footer() -> str:
