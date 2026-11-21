@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md",
         "sources/conversations/2026-11-21--org--hooves-stay-and-more-improvements.md",
         "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
         "sources/conversations/2026-11-21--org--continue-iterating.md",
@@ -245,7 +246,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 4565
+      "tokens": 5183
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -2383,6 +2384,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md",
         "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
         "sources/conversations/2026-11-21--org--continue-iterating.md",
         "sources/conversations/2026-11-21--org--keep-iterating.md",
@@ -2417,7 +2419,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 5909,
+      "tokens": 6049,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
