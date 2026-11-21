@@ -913,3 +913,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-17 merge — PR #279: drumbeat: Roy Tomeij's spotlight is published, and his profile tells his story
    diff: 16 files, +273/-114
    restricted-paths: false
+2026-11-21 merge — PR #281: drumbeat: Why a goat is out, with the real goat statue and the Ruby line said positively
+   diff: 20 files, +213/-110
+   restricted-paths: true
