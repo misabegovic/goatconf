@@ -1629,3 +1629,4 @@ a.sticker--day:active, a.sticker--example:active, .sticker--speaker:has(.speaker
 .cover-lede__who { display: block; margin-top: 0.55rem; font-family: var(--text); font-weight: 400; font-stretch: normal; font-size: var(--step-0); line-height: 1.5; color: var(--ink-soft); max-width: 36ch; }
 @media (min-width: 62rem) { .spread { min-height: 0; } .cover-actions { margin-top: 1.6rem; padding-top: 0; } }
 @media (max-width: 47.99rem) { .cover-when { margin-top: 0.55rem; font-size: 1.15rem; } .cover-lede { margin-top: 0.7rem; } .cover-lede__who { margin-top: 0.4rem; } .cover-actions { margin-top: 0.95rem; } }
+a.go:is(:hover, :active), a.go.go--ink:is(:hover, :active), .spread__cover a.go:is(:hover, :active) { color: var(--on-yellow); text-decoration-color: var(--on-yellow); }
