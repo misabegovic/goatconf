@@ -540,8 +540,9 @@ def speakers_page() -> str:
 </section>"""
     return formlinks.rewrite(shell("speakers", "Speakers: GoatConf 2027, 3–5 June, Tuzla",
                  "The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words.",
-                 ("img/ipi-lecture-hall.jpg", 1024, 768, "A talk in IPI Academy's lecture hall, students' faces blurred"),
-                 "The speakers", "The people giving the talks, panels and workshops, in their own words.", main), formlinks.forms())
+                 (*goat_atlas.single("sticker-speaker"), "The GoatConf goat as a speaker, holding a microphone"),
+                 "The speakers", "The people giving the talks, panels and workshops, in their own words.", main,
+                 photo_class=" page-head__photo--mark page-head__photo--goat"), formlinks.forms())
 
 
 def supporters_page() -> str:

@@ -375,7 +375,9 @@ def page() -> str:
     room_list = "\n".join(f"    <li><strong>{name}</strong>, {seats}</li>" for name, seats in ROOMS.values())
     return frame.page("program", "Program: GoatConf 2027, 3–5 June, Tuzla",
         "The GoatConf 2027 program: two core days, Thursday 3rd and Friday 4th June, in every room of IPI Academy, Tuzla, and Saturday 5th June for the community.",
-        ("img/ipi-lecture-hall.jpg", 1024, 768, "A talk in IPI Academy's lecture hall, students' faces blurred"),
+        # Freedom Square, where the hour off is spent; the speakers and propose pages open on their own pictures
+        # (sources/conversations/2026-11-21--org--continue-iterating.md).
+        ("img/city-square-mosque-summer.jpg", 1800, 1195, "Freedom Square in Tuzla in summer, the mosque's minaret above the colourful houses"),
         "The program",
         "Two days of sessions in every room of IPI Academy, an hour off after each for the hallway track, then a community day on Saturday.",
         f"""{confirmed_block()}<section class="album-page wrap" aria-labelledby="h-how">
