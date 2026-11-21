@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md",
         "sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md",
         "sources/conversations/2026-11-21--org--hooves-stay-and-more-improvements.md",
         "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
@@ -246,7 +247,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 5183
+      "tokens": 5647
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",

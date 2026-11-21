@@ -232,7 +232,7 @@ GoatConf's mark is a round seal: the EuRuKo 2024 goat in a coin at the centre, a
 
 > **The chosen look: minimal, in light and dark (2026-11-21, `sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md`), unpublished until approved.** The ground is paper, the pale page-print tint, printed with hoof marks; blue is only lettering and line: headings, links, keylines, the solid edge of a stuck sticker and the seal. The top bar, the cover, the page heads, the goat-story page and the back cover are white or paper with ink text; a band is album-blue lettering over its yellow rule; a photo caption is ink lettering on white; the year sits on a yellow chip; a button is a yellow sticker with a solid lip. Where the text below says the ground is album blue or a surface is blue, this note is the newer rule.
 >
-> **Themes.** Light is as above. Dark is the album at night, each token with its second value: ground and slot fill `#061a3f`, page `#0d2a5e`, ink `#e8eefc`, soft ink `#b6c5e8`, lettering and line blue `#a9c4ff`, slot line that blue at 60%, stamp red `#ff8a8a` printed without the multiply blend, hoof marks in the lettering blue at 12%, yellow unchanged. The site follows the system setting; a control in every footer and in the phone menu lets a visitor choose System, Light or Dark. Supporter logos, the maps, card previews and the Goatchi postcards keep a light tile in both themes. On a phone the page's side margin is 1.5rem and its inner padding 0.85rem, and the marks are printed small and close, so they show in the margins and between pages.
+> **Themes.** Light is as above. Dark is the album at night, each token with its second value: ground and slot fill `#051534`, page `#0c2757`, sticker `#14387a` with a lit edge, ink `#e8eefc`, soft ink `#b6c5e8`, big lettering `#f3f6ff`, link and line blue `#a9c4ff`, slot line that blue at 60%, stamp red `#ff8a8a` printed without the multiply blend, hoof marks in the lettering blue at 12%, yellow unchanged. The site follows the system setting; a control in every footer and in the phone menu lets a visitor choose System, Light or Dark. Supporter logos, the maps, card previews and the Goatchi postcards keep a light tile in both themes. On a phone the page's side margin is 1.5rem and its inner padding 0.85rem, and the marks are printed small and close, so they show in the margins and between pages.
 >
 > **Cards and brand files.** A share card has one look, the light one: paper with hoof marks, blue lettering, yellow rule, the seal. The marks themselves are unchanged.
 
@@ -374,6 +374,18 @@ The one solid beat: a night-blue page with a white die-cut border drawn inset (0
 
 ### Navigation
 The top bar is night blue and sticky: the mini crest and GOATCONF with a yellow 2027 on the left, uppercase condensed links on the right that turn yellow on hover. On wide screens Register is the bar's only button. On phones the bar shows the mark, Register and Menu, and every link folds into the Menu panel; the menu is a `<details>`, so it opens without a script. Links in running text are underlined in yellow on blue and in album blue on white, thickening from 2px to 4px on hover. Focus is a 3px album-blue ring on every ground; a button's ring is described under Button. Links a visitor taps are at least 44 pixels tall on phones, the cover's three links included. The "go" link (a larger lettered link, 750 weight) leads each page's call to action.
+
+### What is clickable
+One system, in both themes (`sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md`). A reader can tell what is a link without pointing at it, and nothing that is not a link looks like one.
+- **Headings and labels** are plain lettering: never underlined, no arrow, no pointer.
+- **A link in a sentence** is underlined, 2px, in the lettering blue of its theme, 0.22em under the text. Pointed at, focused or pressed, it becomes a yellow marker stroke with night lettering. Colour alone never marks a link.
+- **A link on its own** ("See the program") is the same underlined lettering, a step larger, ending in a small drawn arrow that moves a little when pointed at. On a phone it is at least 44 pixels tall.
+- **A link that leaves the site** ends in a small drawn corner arrow and tells a screen reader "(another site)".
+- **A sticker or card that is a link** (a day, a speaker, a supporter, an accepted event) carries a small arrow chip in its lower corner and lifts when pointed at. A photo sticker that is not a link has no chip, no pointer and does not move.
+- **A slot link** answers as a whole: its outline turns solid, its fill lifts, its stamp grows.
+- **The top bar** marks the page you are on with a filled tab, and a link pointed at with the same tab, lighter. **The footer** underlines its links and marks the page you are on.
+- **A button** is the yellow sticker with its lip; nothing else is filled yellow at rest.
+- Everything pressable has a pressed state, and the focus ring is as before.
 
 ### Back Cover
 The footer as the album's back cover: night blue, the crest and mark in white, pale-album text, white links. The links sit in four groups, each a small lettered label in yellow (pale album on inner pages) over its links in one row: the four groups side by side on wide screens, one under another on phones, each link still 44 pixels tall there. Inner pages carry the same groups on the blue ground.
