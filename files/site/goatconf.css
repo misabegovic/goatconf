@@ -1288,6 +1288,8 @@ a.sticker--fact:focus-visible, .album-page a.sticker--fact:focus-visible { outli
 /* The hoof marks stay: printed on the paper ground, clearly there and quiet. No body text sits on them. */
 body { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cg fill='%230b3d91' fill-opacity='.13'%3E%3Cpath d='M30 40c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E%3Cpath d='M34 40c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3Cpath d='M112 104c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E%3Cpath d='M116 104c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3C/g%3E%3C/svg%3E"); }
 .footer { background: var(--page-print); box-shadow: 0 0 0 1rem var(--page-print); }
+/* On a phone the ground shows only in the margins and between pages: the marks are printed closer together there */
+@media (max-width: 47.99rem) { body { background-size: 4.6rem 4.6rem; background-position: 0.1rem 0; } }
 /* An album page on paper is an object: a keyline and a short crisp shadow */
 .album-page, .prose, .spread { box-shadow: 0 0 0 2px var(--album), 0 0.4rem 0 0 rgb(11 61 145 / 0.14); }
 /* A stuck sticker: a solid blue edge, a solid lip under it, heavy lettering, its yellow number. A slot stays
