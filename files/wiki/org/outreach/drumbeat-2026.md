@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-21--org--goat-statue-photo.md
   - sources/conversations/2026-11-21--org--ruby-line-a-wider-community.md
   - sources/conversations/2026-11-17--org--roy-spotlight-published.md
   - sources/conversations/2026-11-03--org--roy-spotlight-rewrite.md
@@ -312,22 +313,23 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 ### Sat 21 Nov 2026, week 6: Why a goat
 
 - **State:** drafted
+- **Photo:** the goat statue, the organiser's own photo, no credit on their call; the square card stands it on the left at full height (source: sources/conversations/2026-11-21--org--goat-statue-photo.md).
 - **Image:** [`post-why-a-goat-square.png`](https://goatconf.com/share/post-why-a-goat-square.png) (LinkedIn, Mastodon), [`post-why-a-goat-wide.png`](https://goatconf.com/share/post-why-a-goat-wide.png) (X, Bluesky)
 - **LinkedIn:**
 
   > Why is it called GoatConf?
   >
-  > When Austria-Hungary ruled Tuzla, it ordered every goat gone. One man hid his. Word got around, and soon the whole town was buying milk and cheese from that one goat. People in Bosnia and Herzegovina still say it: the whole of Tuzla milked one goat.
+  > When Austria-Hungary ruled Tuzla, it ordered every goat gone. One man hid his. Word got around, and soon the whole town was buying milk and cheese from that one goat. People in Bosnia and Herzegovina still say it: the whole of Tuzla milked one goat. Today the goat has its own statue, in front of Hotel Tuzla.
   >
   > That goat is our mark: the one that feeds the community. It first appeared as the mascot of EuRuKo 2024, the first Ruby conference in Bosnia and Herzegovina. Now it feeds a wider community: every language and framework is welcome at GoatConf, Ruby included.
   >
   > goatconf.com
 
-- **Short** (167 characters):
+- **Short** (214 characters):
 
-  > Why GoatConf? In Tuzla, when goats were banned, one man hid his, and that one goat fed the whole town. Our seal says it: the one that feeds the community. goatconf.com
+  > Why GoatConf? In Tuzla, when goats were banned, one man hid his, and that one goat fed the whole town. Today it has a statue in front of Hotel Tuzla. Our seal says it: the one that feeds the community. goatconf.com
 
-  Sources: sources/web/funding/euruko-2024-why-the-goat.md, sources/web/tuzla/mondo-tuzlanska-koza-legenda.md, sources/conversations/2026-10-07--org--saying-confirmed.md, sources/conversations/2026-10-18--org--not-only-about-ruby.md, sources/conversations/2026-11-21--org--ruby-line-a-wider-community.md.
+  Sources: sources/web/funding/euruko-2024-why-the-goat.md, sources/web/tuzla/mondo-tuzlanska-koza-legenda.md, sources/conversations/2026-10-07--org--saying-confirmed.md, sources/conversations/2026-10-18--org--not-only-about-ruby.md, sources/conversations/2026-11-21--org--ruby-line-a-wider-community.md, sources/conversations/2026-11-21--org--goat-statue-photo.md.
 
 ### Tue 24 Nov 2026, Tuesday: Speaker: Carmine Paolino
 

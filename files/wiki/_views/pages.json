@@ -1032,6 +1032,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--goat-statue-photo.md",
         "sources/conversations/2026-11-21--org--ruby-line-a-wider-community.md",
         "sources/conversations/2026-11-17--org--roy-spotlight-published.md",
         "sources/conversations/2026-11-03--org--roy-spotlight-rewrite.md",
@@ -1133,7 +1134,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 10495
+      "tokens": 10599
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -2751,12 +2752,13 @@
       "title": "Images of Tuzla for GoatConf: free to use, ask first, and gaps",
       "kind": "reference",
       "status": "living",
-      "updated": "2026-11-07",
+      "updated": "2026-11-21",
       "confidence": "medium",
       "depends_on": [
         "org/tuzla.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--goat-statue-photo.md",
         "sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-13--org--food-photos-one-by-one.md",
@@ -2821,7 +2823,7 @@
         "sources/web/images/burek-nisici.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 8485
+      "tokens": 8700
     },
     {
       "path": "org/tuzla.md",
