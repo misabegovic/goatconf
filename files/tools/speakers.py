@@ -400,7 +400,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     # The speaker's own goat stands on every band of their page; with the script one of them follows the visitor
     # down the page (ADR goat-mascot).
     goat = frame.speaker_peek(slug)
-    main = re.sub(r'(<h2 class="band"[^>]*>)', lambda m: m.group(1) + goat, main)
+    main = re.sub(r'(<h2 class="band"[^>]*>)', lambda m: m.group(1) + ("" if 'id="h-about"' in m.group(1) and goat_atlas.has(f"speaker-{slug}-sitting") else goat), main)
     return formlinks.rewrite(shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main, preview), formlinks.forms())
 
 

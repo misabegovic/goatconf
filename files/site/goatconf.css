@@ -1569,15 +1569,15 @@ html { scrollbar-color: var(--line) var(--page-print); }
 
 /* What is clickable. A link in a sentence: underlined in the link blue; a yellow marker stroke when pointed at,
    focused or pressed. Headings and labels are never underlined. */
-:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register) { color: var(--link); text-decoration-line: underline; text-decoration-color: var(--link); text-decoration-thickness: 2px; text-underline-offset: 0.22em; border-radius: 0.15em; transition: background-color 120ms, box-shadow 120ms; }
-:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register):is(:hover, :active), a.go:is(:hover, :active) { background: var(--yellow); color: var(--on-yellow); text-decoration-color: var(--on-yellow); text-decoration-thickness: 2px; box-shadow: 0 0 0 0.14em var(--yellow); }
-:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register):active, a.go:active { background: var(--yellow-press); box-shadow: 0 0 0 0.14em var(--yellow-press); }
+:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register, .slot, .sticker, .sticker__open, .speaker__link, .supporter-chip, .supporter__logo, .sticker--face) { color: var(--link); text-decoration-line: underline; text-decoration-color: var(--link); text-decoration-thickness: 2px; text-underline-offset: 0.22em; border-radius: 0.15em; transition: background-color 120ms, box-shadow 120ms; }
+:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register, .slot, .sticker, .sticker__open, .speaker__link, .supporter-chip, .supporter__logo, .sticker--face):is(:hover, :active, :focus-visible), a.go:is(:hover, :active, :focus-visible) { background: var(--yellow); color: var(--on-yellow); text-decoration-color: var(--on-yellow); text-decoration-thickness: 2px; box-shadow: 0 0 0 0.14em var(--yellow); }
+:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register, .slot, .sticker, .sticker__open, .speaker__link, .supporter-chip, .supporter__logo, .sticker--face):active, a.go:active { background: var(--yellow-press); box-shadow: 0 0 0 0.14em var(--yellow-press); }
 /* A link on its own ends in a drawn arrow */
 a.go, a.go.go--ink, .spread__cover .go { color: var(--link); text-decoration-color: var(--link); text-decoration-thickness: 2px; text-underline-offset: 0.22em; border-radius: 0.15em; transition: background-color 120ms, box-shadow 120ms; }
 a.go::after { content: ""; display: inline-block; width: 0.72em; height: 0.72em; margin-left: 0.32em; vertical-align: -0.04em; background: currentColor; -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; transition: translate 160ms var(--ease); }
 a.go:hover::after { translate: 0.18em 0; }
 /* A link that leaves the site ends in a drawn corner arrow, and says so */
-:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register)[href^="http"]:not([href*="goatconf.com"])::after, a.go[href^="http"]:not([href*="goatconf.com"])::after { content: ""; content: "" / " (another site)"; display: inline-block; width: 0.56em; height: 0.56em; margin-left: 0.12em; vertical-align: 0.04em; background: currentColor; -webkit-mask: var(--arrow-out) center / contain no-repeat; mask: var(--arrow-out) center / contain no-repeat; translate: none; }
+:is(.copy, .prose, .checked, .place__links, .venue__links, .venue__first, .speaker-page__links, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register, .slot, .sticker, .sticker__open, .speaker__link, .supporter-chip, .supporter__logo, .sticker--face)[href^="http"]:not([href*="goatconf.com"])::after, a.go[href^="http"]:not([href*="goatconf.com"])::after { content: ""; content: "" / " (another site)"; display: inline-block; width: 0.56em; height: 0.56em; margin-left: 0.12em; vertical-align: 0.04em; background: currentColor; -webkit-mask: var(--arrow-out) center / contain no-repeat; mask: var(--arrow-out) center / contain no-repeat; translate: none; }
 .follow__link::after { display: none !important; }
 /* The top bar: the page you are on is a filled tab; a link pointed at is the same tab, lighter */
 .topbar nav.topbar__wide { gap: 0.15rem 0.2rem; }
@@ -1629,4 +1629,100 @@ a.sticker--day:active, a.sticker--example:active, .sticker--speaker:has(.speaker
 .cover-lede__who { display: block; margin-top: 0.55rem; font-family: var(--text); font-weight: 400; font-stretch: normal; font-size: var(--step-0); line-height: 1.5; color: var(--ink-soft); max-width: 36ch; }
 @media (min-width: 62rem) { .spread { min-height: 0; } .cover-actions { margin-top: 1.6rem; padding-top: 0; } }
 @media (max-width: 47.99rem) { .cover-when { margin-top: 0.55rem; font-size: 1.15rem; } .cover-lede { margin-top: 0.7rem; } .cover-lede__who { margin-top: 0.4rem; } .cover-actions { margin-top: 0.95rem; } }
-a.go:is(:hover, :active), a.go.go--ink:is(:hover, :active), .spread__cover a.go:is(:hover, :active) { color: var(--on-yellow); text-decoration-color: var(--on-yellow); }
+a.go:is(:hover, :active, :focus-visible), a.go.go--ink:is(:hover, :active, :focus-visible), .spread__cover a.go:is(:hover, :active, :focus-visible) { color: var(--on-yellow); text-decoration-color: var(--on-yellow); }
+
+/* 2026-11-22, round eight: the review's faults closed (sources/conversations/2026-11-22--org--continue-round-eight.md) */
+:root { --lip: #051d47; --tag-bg: #edf2fb; --panel: #edf2fb; --pick-bg: #edf2fb; --pick-ink: #12204a; --photo-lit: 0 0 0 0 transparent; --pin: #0b3d91; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --lip: #b39500; --tag-bg: #214a96; --panel: #14387a; --pick-bg: #14387a; --pick-ink: #e8eefc; --photo-lit: 0 0 0 1px rgb(169 196 255 / 0.55); --tile: #dfe7f8; --tile-white: #dfe7f8; } }
+:root[data-theme="dark"] { --lip: #b39500; --tag-bg: #214a96; --panel: #14387a; --pick-bg: #14387a; --pick-ink: #e8eefc; --photo-lit: 0 0 0 1px rgb(169 196 255 / 0.55); --tile: #dfe7f8; --tile-white: #dfe7f8; }
+/* 4: a button's lip, night blue by day and a darker yellow at night */
+.button, .button:focus-visible, .album-page .button:focus-visible, .prose .button:focus-visible { box-shadow: 0 0.28rem 0 0 var(--lip); }
+.button:hover { box-shadow: 0 0.5rem 0 0 var(--lip); }
+.button:active { box-shadow: 0 0.06rem 0 0 var(--lip); }
+/* 5, 6: tags. A dish's description is a plain line; a pill is for a word or two; no tag is filled yellow */
+.tag { background: var(--tag-bg); }
+.slots--food .tag:not(.tag--veg) { display: block; margin: 0.4rem 0.6rem 0.1rem; padding: 0; border-radius: 0; background: none; font-weight: 400; font-size: 0.86rem; line-height: 1.35; color: var(--ink-soft); }
+:is(.tags, .venue__tags) .tag { font-size: 0.8rem; }
+.venue__tags .tag { background: var(--tag-bg); color: var(--ink); }
+.venue__tags .tag--near, .tag--near { background: transparent; color: var(--link); box-shadow: inset 0 0 0 2px var(--line); }
+.venue__tags .tag--first { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+/* 8: stickers to save and goats to pick sit on the sticker colour; logo tiles are one toned tint at night */
+.sticker-dl a, .goatchi__pick-goat { background: var(--pick-bg); color: var(--pick-ink); }
+.sticker-dl a:hover, .sticker-dl a:focus-visible, .goatchi__pick-goat:hover, .goatchi__pick-goat:focus-visible { background: var(--pick-bg); box-shadow: inset 0 0 0 2px var(--line); }
+/* 9: a photo sticker keeps a lit edge at night */
+.page-head__photo:not(.page-head__photo--mark), .sticker--photo, .sticker--speaker { box-shadow: var(--lift), var(--photo-lit); }
+/* 10: panels carry the paper tint by day, the sticker step at night */
+.breakrow:not(.breakrow--welcome), .place, .facts, .finder, .past-conf { background-color: var(--panel); }
+/* 11: the open rooms fill their row */
+@media (min-width: 48rem) { .timeslot__open { flex: 1 1 16rem; } }
+/* 12: the jump links are a pill with a soft shadow, no strip across the page; on a phone as wide as the pages */
+.daynav { box-shadow: 0 0.35rem 0.7rem -0.3rem rgb(0 0 0 / 0.35); clip-path: none; }
+@media (max-width: 47.99rem) { .daynav, .daynav--page { width: auto; max-width: none; margin-inline: var(--pad); } .daynav a { min-height: 2.75rem; } }
+/* 13: the footer's ground no longer covers the phone's hoof columns */
+@media (max-width: 47.99rem) { .footer { box-shadow: none; } }
+/* 14: lettering that is not a link is ink */
+.steps strong, .venue__english, .place strong { color: var(--ink); }
+.day__added { color: var(--ink) !important; }
+/* 16: a venue card's contact links sit at its foot */
+@media (min-width: 48rem) { .sticker--venue .venue__body { display: flex; flex-direction: column; flex: 1; } .sticker--venue .venue__links { margin-top: auto; } }
+/* 18: the closing page keeps room on the right only while the goat is there */
+@media (min-width: 48rem) { .farewell-row:not(:has(.goat-one__stage)) { padding-right: 0; } }
+/* 19: the cover's button and links sit at its foot */
+@media (min-width: 62rem) { .cover-actions { margin-top: auto; padding-top: 1.6rem; } }
+/* 21: a map never taller than the screen on a wide one */
+@media (min-width: 62rem) { .map { width: auto; max-width: 100%; max-height: 78vh; margin-inline: auto; } }
+/* 23: a sub-head stands clear of the numbers under it */
+.list-title + .slots, .list-title + ul.slots { margin-top: 0.9rem; }
+/* 27: a session not announced yet is a quiet line, not a box */
+.speaker__body .speaker__first--tba { min-height: 0; margin-top: auto; padding: 0.2rem 0 0; border: 0; background: none; color: var(--ink-soft); font-family: var(--text); font-weight: 400; font-style: italic; text-transform: none; font-size: 0.88rem; line-height: 1.35; }
+.talks-soon { border: 0; background: none; min-height: 0; padding: 0; color: var(--ink-soft); font-style: italic; }
+/* 29: the code of conduct's photo is a photo sticker */
+.print img { box-sizing: border-box; padding: 0.42rem; background: var(--sticker); border-radius: 0.6rem; box-shadow: var(--lift), var(--photo-lit); transform: rotate(1deg); }
+/* 30: a past conference's logo tile lines up with its text */
+.past-conf__logo { margin-left: 0; margin-top: 0; }
+/* 31: native controls take the line blue */
+:root { accent-color: var(--line); }
+.finder__field--check input, .goatchi__mode input { accent-color: var(--line); }
+@media (max-width: 47.99rem) { .finder__field--check input { width: 1.5rem; height: 1.5rem; } }
+/* 34: the footer's theme control sits on the Follow row */
+@media (min-width: 48rem) { footer .theme { margin-top: -2.75rem; } .back-cover__inner > .theme { bottom: 3.05rem; } }
+/* 35: a price breaks evenly, never to a lone word */
+.sticker--photo .price { text-wrap: balance; }
+/* 38: list numbers match their pins at night */
+[id^="stay-"] .place__num { background: var(--pin); color: #ffffff; box-shadow: 0 0 0 2px #ffffff; }
+/* 3: one arrow, one corner, on every sticker that is a link */
+.speaker__link::before { display: none; }
+.speaker__link::after { top: auto; right: 0.45rem; bottom: 0.4rem; width: 1.05rem; height: 1.05rem; border-radius: 0; box-shadow: none; background: var(--link); -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; }
+.speaker__body > :last-child { padding-right: 1.5rem; }
+.sticker--face .sticker__name { position: relative; padding-right: 1.05rem; }
+.slots--faces { margin-bottom: 0.6rem; }
+.sticker--face .sticker__name::after { width: 0.7rem !important; height: 0.7rem !important; right: 0.3rem !important; bottom: 0.35rem !important; }
+.sticker--face .sticker__name::after, .sticker--ext::before, .sticker--supporter::after { content: ""; position: absolute; right: 0.4rem; bottom: 0.4rem; width: 0.8rem; height: 0.8rem; background: var(--link); -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; }
+.sticker--ext::before, .sticker--supporter::after { right: 0.7rem; bottom: 0.65rem; width: 1.05rem; height: 1.05rem; }
+.sticker--supporter strong a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.sticker--supporter, .sticker--ext { transition: transform 180ms var(--ease); }
+.sticker--supporter:hover, .sticker--ext:hover { transform: rotate(var(--tilt, 0deg)) translateY(-0.22rem); }
+@media (prefers-reduced-motion: reduce) { .sticker--supporter, .sticker--ext { transition: none; } .sticker--supporter:hover, .sticker--ext:hover { transform: rotate(var(--tilt, 0deg)); } }
+/* 7: with the script on, one goat is on screen: the room kept over a row is cut to what that goat needs.
+   Without the script every slot keeps its own goat and its room. */
+.goat-one .slots:has(.peek), .goat-one .album-page .slots:has(.peek) { row-gap: 2.6rem; padding-top: 3rem; }
+.goat-one .slots:has(.peek--face), .goat-one .album-page .slots:has(.peek--face) { row-gap: 3rem; padding-top: 3.4rem; }
+.goat-one .slots--hero:has(.peek), .goat-one .album-page .slots--hero:has(.peek) { padding-top: 0; }
+.goat-one .album-page .slots--days:has(.peek) { padding-top: 0; row-gap: 1.5rem; }
+.goat-one .album-page .slots.slots--formats.slots--one-goat { row-gap: 1.2rem; }
+@media (max-width: 47.99rem) {
+  .goat-one .slots:has(.peek), .goat-one .album-page .slots:has(.peek) { row-gap: 2.4rem; padding-top: 2.8rem; }
+  .goat-one .slots:has(.peek--face), .goat-one .album-page .slots:has(.peek--face) { row-gap: 2.8rem; padding-top: 3.2rem; }
+  .goat-one .slots--hero:has(.peek) { padding-top: 0; row-gap: 1.1rem; }
+  .goat-one .album-page .slots--days:has(.peek) { padding-top: 0; row-gap: 1.1rem; }
+  .goat-one .album-page .slots.slots--formats.slots--one-goat { row-gap: 0.9rem; }
+}
+@media (max-width: 47.99rem) { .daynav, .daynav--page { margin-top: 0.9rem; padding: 0.15rem 0.3rem; gap: 0 0.2rem; } }
+@media (min-width: 48rem) { .slots--venues { row-gap: 1.5rem; } }
+a.supporter__logo, .sticker--supporter strong a { text-decoration: none; }
+.slots--faces { margin-bottom: 0.4rem; }
+@media (max-width: 47.99rem) { .daynav--page { margin-top: 0.4rem; } }
+@media (min-width: 48rem) { .goat-one .slots:has(.peek--face), .goat-one .album-page .slots:has(.peek--face) { padding-top: 4.3rem; } }
+@media (max-width: 47.99rem) { .daynav--page { margin-top: 0.1rem; } .goat-one .slots:has(.peek--face), .goat-one .album-page .slots:has(.peek--face) { padding-top: 3.9rem; } }
+.page-head__photo--logo { box-shadow: 0 0 0 0.22rem var(--tile-white), 0 0 0 calc(0.22rem + 1px) rgb(0 0 0 / 0.12), var(--lift); }
+@media (max-width: 47.99rem) { .daynav--page { margin-top: 0; padding-block: 0.05rem; } }

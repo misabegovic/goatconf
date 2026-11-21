@@ -362,7 +362,9 @@ def page() -> str:
     sat_ext = ext.get(sat, [])
     sat_items = "\n".join(ext_item(s, m, n + i) for i, (_, s, m, _) in enumerate(sat_ext))
     n += len(sat_ext)
-    sat_open = "\n".join(f'<li class="slot"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp{" stamp--planned" if planned else ""}">{"Planned" if planned else "Yours?"}</span></li>'
+    # A slot stamped "Yours?" is a link to where it invites; a planned one is not a link.
+    sat_open = "\n".join((f'<li class="slot"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp stamp--planned">Planned</span></li>' if planned else
+                          f'<li><a class="slot slot--link" href="extend.html"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp">Yours?</span></a></li>')
                          for i, (name, what, planned) in enumerate([("A day at the lakes", "Swimming, the salt waterfalls and the beach at the Pannonian Lakes.", True),
                                                            ("A walk or a hike", "The old town, the salt story, the hills above Tuzla.", False),
                                                            ("Something else?", "A meetup, a dinner, a corner for your community.", False)]))
