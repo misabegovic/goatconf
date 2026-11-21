@@ -44,6 +44,20 @@ DOORS = [("extend.html", "Host an event"), ("talk.html", "Propose a session")]
 REGISTER = ("register.html", "Register")
 
 
+# The visitor's theme (sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md): the
+# site follows the system setting; a stored choice of light or dark is put on <html> before the page paints. The
+# control is three radio buttons in a labelled group, hidden until the script shows it, so with scripting off it
+# is not there and the system setting still applies.
+THEME_BOOT = ('<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")'
+              'document.documentElement.dataset.theme=t}catch(e){}</script>')
+
+
+def theme_control(where: str) -> str:
+    opts = "".join(f'<input type="radio" name="theme-{where}" id="theme-{where}-{v}" value="{v}"{" checked" if v == "system" else ""}>'
+                   f'<label for="theme-{where}-{v}">{label}</label>' for v, label in (("system", "System"), ("light", "Light"), ("dark", "Dark")))
+    return f'<fieldset class="theme" data-theme-control hidden><legend>Theme</legend>{opts}</fieldset>'
+
+
 def bar(current: str) -> str:
     def a(href, label, cls=""):
         attrs = f' class="{cls}"' if cls else ""
@@ -59,6 +73,7 @@ def bar(current: str) -> str:
     panel_actions = "\n          ".join([a(h, l, "topbar__panel-cta") for h, l in DOORS] + [a(*REGISTER, "topbar__panel-main")])
     register = a(*REGISTER, "topbar__register")
     return f"""{START}
+{THEME_BOOT}
 <a class="skip" href="#main">Skip to the content</a>
 <header class="topbar">
   <a class="topbar__home" href="index.html" aria-label="GoatConf home"><img class="topbar__coin" src="brand/coin.svg" width="36" height="36" alt="">GoatConf <span class="topbar__year">2027</span></a>
@@ -75,6 +90,7 @@ def bar(current: str) -> str:
         <p class="topbar__panel-actions">
           {panel_actions}
         </p>
+        {theme_control("menu")}
       </nav>
     </details>
   </div>

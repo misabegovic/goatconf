@@ -563,3 +563,20 @@
   const later = window.requestIdleCallback || ((f) => setTimeout(f, 200));
   document.readyState === "complete" ? later(load) : addEventListener("load", () => later(load), { once: true });
 })();
+
+// The theme control (system, light, dark): shown only with the script, kept in localStorage, the same in the menu
+// and the footer. The choice is put on <html> before paint by the small script at the top of each page.
+(() => {
+  const groups = [...document.querySelectorAll("[data-theme-control]")];
+  if (!groups.length) return;
+  let stored = "system";
+  try { const t = localStorage.getItem("theme"); if (t === "light" || t === "dark") stored = t; } catch (e) { /* no storage */ }
+  const show = (value) => groups.forEach((g) => g.querySelectorAll("input").forEach((i) => { i.checked = i.value === value; }));
+  const set = (value) => {
+    if (value === "system") delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = value;
+    try { if (value === "system") localStorage.removeItem("theme"); else localStorage.setItem("theme", value); } catch (e) { /* no storage */ }
+    show(value);
+  };
+  groups.forEach((g) => { g.hidden = false; g.addEventListener("change", (e) => set(e.target.value)); });
+  show(stored);
+})();

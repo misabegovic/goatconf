@@ -111,12 +111,13 @@ def footer() -> str:
   <p>{LINE}</p>
   <p class="footer__links">{links()}</p>
   {nav.follow()}
+  {nav.theme_control("foot")}
   <p class="footer__legal">{LEGAL}</p>
 </footer>""")
 
 
 def legal() -> str:
-    return block("legal", f'    <p class="back-cover__legal">{LEGAL}</p>')
+    return block("legal", f'    {nav.theme_control("foot")}\n    <p class="back-cover__legal">{LEGAL}</p>')
 
 
 def back_cover_links() -> str:
@@ -135,7 +136,8 @@ def page(canonical: str, title: str, description: str, photo, h1: str, lede: str
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
-<meta name="theme-color" content="#0b3d91">
+<meta name="theme-color" content="#edf2fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#061a3f" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://goatconf.com/{canonical}">{image}
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-96.png" sizes="96x96" type="image/png">
