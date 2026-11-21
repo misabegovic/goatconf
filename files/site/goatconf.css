@@ -43,10 +43,10 @@
   --album-night: #051d47;
   --album-soft: #c9d7f5;
   --yellow: #ffd400;
-  --red: #e30613;
+  --red: #c80510;
   --page: #ffffff;
   --page-print: #edf2fb;
-  --slot-line: rgb(11 61 145 / 0.42);
+  --slot-line: rgb(11 61 145 / 0.6);
   --ink: #12204a;
   --ink-soft: #46557a;
 
@@ -394,10 +394,9 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .topbar__coin { width: 2.25rem; height: 2.25rem; display: block; }
 .topbar nav { align-items: center; }
 .topbar nav a[aria-current="page"] { color: var(--yellow); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 0.35em; }
-.topbar nav a.topbar__cta { padding: 0.45rem 0.8rem; border-radius: 0.45rem; box-shadow: inset 0 0 0 2px var(--yellow); color: var(--yellow); }
-.topbar nav a.topbar__cta:hover { background: rgb(255 212 0 / 0.12); }
-.topbar nav a.topbar__cta--main { background: var(--yellow); color: var(--album-night); }
-.topbar nav a.topbar__cta--main:hover { background: #ffe25a; color: var(--album-night); }
+/* One button in the bar: Register. Every other item is a plain link. */
+.topbar nav a.topbar__cta { padding: 0.45rem 0.9rem; border-radius: 0.45rem; background: var(--yellow); color: var(--album-night); }
+.topbar nav a.topbar__cta:hover { background: #ffe25a; color: var(--album-night); }
 .topbar nav a.topbar__cta[aria-current="page"] { text-decoration: none; box-shadow: inset 0 0 0 2px var(--page); }
 .cover-seal { display: block; flex: none; width: clamp(5.5rem, 2rem + 6vw, 8.5rem); margin: 0; transform: rotate(-6deg); filter: drop-shadow(0 0.4rem 0.5rem rgb(0 0 0 / 0.25)); }
 .shiny__seal { filter: drop-shadow(0 0.5rem 0.6rem rgb(0 0 0 / 0.25)); transform: rotate(-4deg); }
@@ -718,12 +717,16 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .topbar__menu[open] .topbar__open { display: none; }
 .topbar__menu[open] .topbar__close { display: inline; }
 @media (max-width: 47.99rem) {
-  .topbar { flex-wrap: nowrap; gap: 0.6rem; padding-block: 0.5rem; }
+  .topbar { flex-wrap: nowrap; gap: 0.5rem; padding-block: 0.4rem; }
   .topbar__home { font-size: 1.2rem; gap: 0.45rem; }
   .topbar__home .topbar__coin { width: 2rem; height: 2rem; }
   .topbar .topbar__wide { display: none; }
-  .topbar__phone { display: flex; align-items: center; gap: 0.5rem; font-family: var(--display); font-stretch: 85%; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; font-size: 0.95rem; }
-  .topbar__menu summary { display: block; padding: 0.5rem 0.75rem; border-radius: 0.45rem; text-decoration: none; line-height: 1.1; white-space: nowrap; }
+  .topbar__phone { display: flex; align-items: center; gap: 0.45rem; font-family: var(--display); font-stretch: 85%; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; font-size: 0.95rem; }
+  /* Register and Menu, side by side, each a 44 pixel target */
+  .topbar__menu summary, .topbar__register { display: flex; align-items: center; justify-content: center; min-height: 2.75rem; min-width: 2.75rem; padding: 0 0.75rem; border-radius: 0.45rem; text-decoration: none; line-height: 1.1; white-space: nowrap; }
+  .topbar__register { background: var(--yellow); color: var(--album-night); font-weight: 800; }
+  .topbar__register[aria-current="page"] { box-shadow: inset 0 0 0 2px var(--page); }
+  .topbar__register:focus-visible { outline: 3px solid var(--page); outline-offset: 2px; }
   .topbar__menu summary { box-shadow: inset 0 0 0 2px var(--yellow); color: var(--yellow); }
   .topbar__menu[open] summary { background: rgb(255 212 0 / 0.14); }
   .topbar__menu summary:focus-visible, .topbar__panel a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
@@ -963,3 +966,68 @@ button.button { border: 0; cursor: pointer; }
 /* A speaker's session, read at the size and ink of their bio (sources/conversations/2026-11-07--org--speakers-register-cta.md) */
 .talks .talk p:not(.for-line) { font-size: inherit; color: var(--ink); max-width: 70ch; }
 .talks + .cta { margin-top: 1.6rem; }
+
+/* 2026-11-21: one ask, and the album's own rules (sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md) */
+@media (min-width: 48rem) { .topbar__register { display: none; } }
+/* The narrowest phones keep the mark's year beside Register and Menu */
+@media (max-width: 23.4rem) {
+  .topbar { gap: 0.35rem; padding-inline: 0.7rem; }
+  .topbar__home { font-size: 1.02rem; gap: 0.35rem; }
+  .topbar__home .topbar__coin { width: 1.75rem; height: 1.75rem; }
+  .topbar__phone { gap: 0.35rem; font-size: 0.86rem; letter-spacing: 0.01em; }
+  .topbar__menu summary, .topbar__register { padding: 0 0.55rem; }
+}
+/* Between a phone and a wide screen the links take a row of their own under the mark, Register at its end */
+@media (min-width: 48rem) and (max-width: 63rem) {
+  .topbar nav.topbar__wide { width: 100%; flex-wrap: nowrap; gap: 0 0.85rem; font-size: 0.9rem; }
+  .topbar nav.topbar__wide a.topbar__cta { margin-left: auto; }
+}
+/* A sticker's number and a goat never sit on the line above them */
+.list-title + .slots--events { padding-top: 0.5rem; }
+.copy + .slots--kinds { margin-top: 1.6rem; }
+/* A focused button: night blue, then yellow, outside its white die-cut edge, so it shows on the cover and on white */
+.button:focus-visible, .album-page .button:focus-visible, .prose .button:focus-visible { outline: 3px solid var(--yellow); outline-offset: calc(0.3rem + 3px); border-radius: 0.5rem; box-shadow: 0 0 0 0.3rem var(--page), 0 0 0 calc(0.3rem + 3px) var(--album-night); }
+/* The cover's three links are full tap targets on a phone */
+@media (max-width: 47.99rem) { .cover-actions .go { display: inline-flex; align-items: center; min-height: 2.75rem; padding-block: 0; } }
+/* A band's intro and its first row sit close: only a row with a goat over it keeps room above it. The days'
+   only goat is on the last slot, so the first row starts right under the band. */
+.album-page .slots--days:has(.peek) { padding-top: 0; row-gap: 1.5rem; }
+.slots--days > .slots__wide:has(.peek) { margin-top: 3.1rem; }
+@media (max-width: 47.99rem) { .slots--days > .slots__wide:has(.peek) { margin-top: 2.7rem; } }
+.copy--wide:has(+ .slots:has(.peek)) { margin-bottom: 0.6rem; }
+
+/* The ticket: one sticker cut as a ticket, with a tear line and a notch bitten out of each end of it */
+.ticket { position: relative; max-width: 60rem; margin: 0.4rem auto 0.6rem; transform: rotate(var(--tilt, 0deg)); }
+.ticket__paper { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 20rem); padding: 0.42rem; border-radius: 0.6rem; background: var(--page); box-shadow: var(--lift); }
+.ticket__main, .ticket__stub { background: var(--album); color: var(--page); }
+.ticket__main { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 0.5rem clamp(1.2rem, 3vw, 2.4rem); padding: clamp(1.2rem, 2.5vw, 1.9rem) clamp(1.2rem, 2.5vw, 2rem); border-radius: 0.35rem 0 0 0.35rem; }
+.ticket__fact { font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; font-size: clamp(4rem, 2.2rem + 5.5vw, 6.5rem); line-height: 0.82; color: var(--yellow); }
+.ticket__facts { margin: 0; }
+.ticket__when, .ticket__where { display: block; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; line-height: 1.02; }
+.ticket__when { font-size: clamp(1.6rem, 1.2rem + 1.3vw, 2.3rem); color: var(--page); }
+.ticket__where { margin-top: 0.25rem; font-size: 1.25rem; color: var(--yellow); }
+.ticket__what { margin: 0.7rem 0 0; font-size: 0.98rem; line-height: 1.4; color: var(--album-soft); max-width: 44ch; }
+.ticket__stub { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 1.1rem; padding: 1.4rem 1.3rem 1.4rem 1.6rem; border-left: 2px dashed rgb(255 255 255 / 0.75); border-radius: 0 0.35rem 0.35rem 0; }
+.ticket__stub::before, .ticket__stub::after { content: ""; position: absolute; left: calc(-0.75rem - 1px); width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--page); }
+.ticket__stub::before { top: calc(-0.42rem - 0.75rem); }
+.ticket__stub::after { bottom: calc(-0.42rem - 0.75rem); }
+.ticket__note { margin: 0; font-size: 0.92rem; line-height: 1.4; color: var(--album-soft); }
+.ticket .button { font-size: 1.2rem; }
+@media (max-width: 47.99rem) {
+  .ticket { max-width: 26rem; }
+  .ticket__paper { grid-template-columns: minmax(0, 1fr); }
+  .ticket__main { grid-template-columns: minmax(0, 1fr); gap: 0.7rem; padding: 1.3rem 1.2rem 1.4rem; border-radius: 0.35rem 0.35rem 0 0; }
+  .ticket__fact { font-size: 4.6rem; }
+  .ticket__stub { align-items: stretch; padding: 1.5rem 1.2rem 1.3rem; border-left: 0; border-top: 2px dashed rgb(255 255 255 / 0.75); border-radius: 0 0 0.35rem 0.35rem; }
+  .ticket__stub .button { text-align: center; }
+  .ticket__stub::before, .ticket__stub::after { top: calc(-0.75rem - 1px); bottom: auto; }
+  .ticket__stub::before { left: calc(-0.42rem - 0.75rem); }
+  .ticket__stub::after { left: auto; right: calc(-0.42rem - 0.75rem); }
+}
+
+/* An inner page whose head carries its action: the register page's button, with one line under it */
+@media (min-width: 62rem) { .page-head--action { grid-template-rows: 1fr auto auto auto 1fr; } }
+.page-head .page-head__cta { grid-column: 1; grid-row: 4; align-self: start; margin: 1.5rem 0 0.3rem; }
+.page-head .page-head__cta span { color: var(--album-soft); max-width: 36ch; }
+@media (max-width: 61.99rem) { .page-head .page-head__cta { grid-row: auto; } }
+@media (max-width: 47.99rem) { .page-head .page-head__cta { margin-top: 1.2rem; gap: 0.9rem; } }
