@@ -65,12 +65,13 @@
       "title": "The organiser runs the goat hunt; the core publishes prices, the breaks list and the lake day",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-13",
+      "updated": "2026-11-21",
       "confidence": "medium",
       "depends_on": [
         "org/prds/activities-lake-and-town.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--goat-hunt-not-promised-for-now.md",
         "sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--adr-answers.md",
@@ -81,7 +82,7 @@
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md",
         "sources/web/tuzla/tuzla-wikipedia.md"
       ],
-      "tokens": 1004
+      "tokens": 1163
     },
     {
       "path": "org/adrs/budget-and-public-ledger.md",
@@ -1187,7 +1188,7 @@
         "sources/conversations/2026-10-12--org--day-chain-and-session-format.md",
         "sources/conversations/2026-10-07--org--saying-confirmed.md"
       ],
-      "tokens": 4370
+      "tokens": 4330
     },
     {
       "path": "org/outreach/drumbeat-2027-jan-mar.md",
@@ -1264,7 +1265,7 @@
         "sources/conversations/2026-10-13--org--outside-review-fixes.md",
         "sources/conversations/2026-10-18--org--registration-approval-not-on-the-site.md"
       ],
-      "tokens": 3507
+      "tokens": 3500
     },
     {
       "path": "org/outreach/drumbeat.md",
@@ -1805,12 +1806,13 @@
       "title": "Activities: the salt lake, a goat hunt, and a cheap city as the gift",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-11-21",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/activities-the-lake-and-the-town.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--goat-hunt-not-promised-for-now.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md",
@@ -1839,7 +1841,7 @@
         "sources/web/venue/tztz-peace-flame-house.md",
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md"
       ],
-      "tokens": 3437,
+      "tokens": 3528,
       "consumed_by": [
         "org/adrs/activities-lake-and-town.md"
       ]
