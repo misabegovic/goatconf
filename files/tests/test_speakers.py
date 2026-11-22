@@ -141,8 +141,18 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     # One quiet line says when, where and the speaker's page (the organiser's choice, 2026-10-27).
     # The dot between its parts belongs to the address, so none is left hanging when the address takes its own line
     # (sources/conversations/2026-11-22--org--anything-left-lets-iterate.md).
-    assert "Confirmed speaker at GoatConf 2027" in card and "Tuzla · 3–5 June 2027</span>" in card
+    assert "Confirmed speaker at GoatConf 2027" in card
     assert ">·</span>goatconf.com/speaker-ana-example<" in card and "2027 · goatconf.com" not in card
+    # The line says it is free too, in the post cards' own line, held in one place; a speaker's link preview keeps
+    # the line it had (sources/conversations/2026-11-22--org--ship-the-polish-round-and-the-folds-you-choose.md).
+    assert shareables.FACTS == "Tuzla · 3–5 June 2027 · Free to attend" and shareables.FACTS in names["post-register-square.png"][2]
+    own = shareables.speaker_card("ana-example", meta, [], False)
+    assert f"{shareables.FACTS}</span>" in card and f"{shareables.FACTS}</span>" in own and "attend · goatconf.com" not in card
+    for name in ("speaker-ana-example-square.png", "speaker-ana-example-wide-dark.png", "speaker-ana-example-announce-square-dark.png",
+                 "speaker-ana-example-announce-wide.png"):
+        assert f"{shareables.FACTS}</span>" in names[name][2], name
+    for name in ("speaker-ana-example-preview.png", "speaker-ana-example-preview-dark.png"):
+        assert "Tuzla · 3–5 June 2027</span>" in names[name][2] and "Free to attend" not in names[name][2], name
     # A card built around a photograph never takes a palette; the flat ones may.
     photo = next(iter(shareables.PHOTO_POSTS))
     assert shareables.photo_card(f"post-{photo}-square.png") and shareables.photo_card(f"post-{photo}-wide-dark.png")
@@ -406,6 +416,10 @@ def test_each_supporter_has_a_profile_with_their_cards(tmp_path, monkeypatch, ca
     assert 'href="supporter-acme.html"' in home.supporters_block()
     page = speakers.supporter_page("acme", *speakers.supporters()["acme"])
     assert '<h1 class="sign">Acme</h1>' in page and 'href="https://acme.example">acme.example</a>' in page
+    # Above what the supporter covers the page says what it is, once, set as a speaker's role is
+    # (sources/conversations/2026-11-22--org--ship-the-polish-round-and-the-folds-you-choose.md).
+    assert speakers.SUPPORTER_OF == "Supporter of GoatConf 2027" and page.count(speakers.SUPPORTER_OF) == 1
+    assert f'<p class="lede"><span class="lede__role">{speakers.SUPPORTER_OF}</span>{speakers.supporters()["acme"][0]["funds"]}</p>' in page
     assert "The thank-you card" not in page and "Your card: proud supporter" not in page and "image_src" not in page  # no cards rendered yet
     assert speakers.cmd_build(type("A", (), {"check": False})()) == 0
     assert (tmp_path / "site" / "supporter-acme.html").exists()

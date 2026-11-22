@@ -148,6 +148,10 @@ def test_each_accepted_event_gets_its_own_page_that_links_out(ext):
     event = (root / "site" / "event-rust.html").read_text(encoding="utf-8")
     assert "<h1 class=\"sign\">Rust by the lake</h1>" in event
     assert '<a class="button" href="https://example.org/rust">Register with the host</a>' in event
+    # The Register row's link says the button's own words, never the raw address, and leads to the same place
+    # (sources/conversations/2026-11-22--org--ship-the-polish-round-and-the-folds-you-choose.md).
+    assert '<dt>Register</dt><dd><a href="https://example.org/rust">Register with the host</a></dd>' in event
+    assert ">example.org/rust<" not in event and event.count(mod.REGISTER_WITH_HOST) == 2
     assert '<a href="mailto:hello@example.org">hello@example.org</a>' in event
     assert "A morning of pairing on small Rust programs, for beginners." in event
     assert '<link rel="canonical" href="https://goatconf.com/event-rust">' in event
@@ -160,6 +164,13 @@ def test_each_accepted_event_gets_its_own_page_that_links_out(ext):
     assert mod.main(["build"]) == 0
     event = (root / "site" / "event-rust.html").read_text(encoding="utf-8")
     assert "runs it, so questions about it go to the host." in event and "pays for it" not in event
+    # A way to register that is not a web address is shown in the row as it is written, with no button.
+    write(root, "rust.md", GOOD.replace("registration: https://example.org/rust", "registration: Just come to the park at ten"))
+    assert mod.main(["build"]) == 0
+    event = (root / "site" / "event-rust.html").read_text(encoding="utf-8")
+    assert "<dt>Register</dt><dd>Just come to the park at ten</dd>" in event and mod.REGISTER_WITH_HOST not in event
+    write(root, "rust.md", GOOD.replace("paid_by: The host", "paid_by: the people who come"))
+    assert mod.main(["build"]) == 0
     # The host page stresses, once, that a host need not pay for everything, and never says a host must.
     hub = (root / "site" / "extend.html").read_text(encoding="utf-8")
     assert hub.count('<p class="stress">You run it. You do not have to pay for everything:') == 1

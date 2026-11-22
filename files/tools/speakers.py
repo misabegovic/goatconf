@@ -441,6 +441,12 @@ def proud_cards(slug: str) -> dict:
     return {"square": f"supporter-{slug}-proud-square.png", "wide": f"supporter-{slug}-proud-wide.png"}
 
 
+# What a supporter's page says above its lede, of every supporter alike: the host and partner and a community
+# partner stand among the supporters on the site, and what each covers is the lede under this line
+# (sources/conversations/2026-11-22--org--ship-the-polish-round-and-the-folds-you-choose.md).
+SUPPORTER_OF = "Supporter of GoatConf 2027"
+
+
 def supporter_page(slug: str, meta, body) -> str:
     name = esc(meta["name"])
     words = "".join(f"<p>{esc(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
@@ -479,7 +485,8 @@ def supporter_page(slug: str, meta, body) -> str:
     preview = next((name for name in previews if (SITE / "share" / name).exists()), "")
     dark = " page-head__photo--logo" + {"dark": " page-head__photo--logo-dark", "tinted": " page-head__photo--logo-tinted"}.get(logo_class(meta, "")[2:], "")
     return shell(supporter_page_name(slug)[:-5], f"{name}: supporting GoatConf 2027, Tuzla", f"{name} supports GoatConf 2027 in Tuzla: {esc(meta['funds'])}.",
-                 (esc(meta["logo"]), 600, 300, name), name, esc(meta["funds"]), main, preview, dark, logo_style(meta))
+                 (esc(meta["logo"]), 600, 300, name), name, f'<span class="lede__role">{SUPPORTER_OF}</span>{esc(meta["funds"])}', main,
+                 preview, dark, logo_style(meta))
 
 
 def supporter_card(n: int, slug: str, meta, body) -> str:
