@@ -2032,14 +2032,12 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 .card-fold[open] { margin-bottom: var(--gap-5); }
 @media (min-width: 48rem) { .card-list__row a { padding-block: 0.1rem; } .card-list__row { display: inline-block; margin-right: 1.2rem; } }
 
-/* Who's organising has a page of its own (round twelve). Since round thirteen the home page has no row for it
-   (sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md): the link sits beside "The supporters"
-   under "Who makes it possible", with the host goat's stop at the end of that row, which stays on the home page
-   (sources/conversations/2026-11-07--org--home-goats-stay.md). */
-.row-link { position: relative; min-height: 5.6rem; margin-bottom: 0; padding-right: 7rem; align-items: center; align-content: center; }
-.row-link > .peek { right: clamp(0rem, 2vw, 1.5rem); bottom: 0; width: calc(5.4rem * var(--size, 1)); }
+/* Who's organising has a page of its own (round twelve). Since round thirteen the home page has no row for it: the
+   link sits beside "The supporters" under "Who makes it possible" and keeps the old section's address. The host
+   goat stood at the end of that row until the organiser removed that one stop
+   (sources/conversations/2026-11-22--org--no-goat-beside-the-organising-link.md). */
 #organiser { scroll-margin-top: 8rem; }
-@media (max-width: 47.99rem) { .copy.row-link { align-items: flex-start; justify-content: center; } }
+.money-supporters > .copy:last-child { margin-bottom: 0; }
 /* The organising page's first sheet has no heading of its own: the page's title heads it. */
 .album-page--open { padding-top: clamp(1.75rem, 3.5vw, 3rem); }
 @media (max-width: 47.99rem) { .album-page--open { padding-top: var(--gap-5); } }

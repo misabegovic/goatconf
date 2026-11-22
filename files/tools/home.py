@@ -213,16 +213,15 @@ def supporters_block() -> str:
         chips.append('    <li><a class="slot slot--link" href="supporters.html#h-become">' + frame.peek() + ''
                      '<span class="num num--printed">0</span><strong>Your logo</strong><small>Support GoatConf online for 500 euro, and your logo and link go here.</small><span class="stamp">Yours?</span></a></li>')
     logos = "\n".join(chips)
-    # Beside the supporters' link, the link to who is organising, which has a page of its own; the host goat's stop
-    # stays on the home page here, and the link keeps the address the old section had
-    # (sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md).
-    host_goat = ("<!-- gen:goat-peek-host tools/frame.py -->"
-                 + goat_atlas.goat("peek-host", "peek peek--art", frame._beat("peek-host")) + "<!-- /gen:goat-peek-host -->")
+    # Beside the supporters' link, the link to who is organising, which has a page of its own. It keeps the address
+    # the old section had (sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md). The host goat
+    # does not stand here: the organiser removed that one stop
+    # (sources/conversations/2026-11-22--org--no-goat-beside-the-organising-link.md).
     return f"""<h3 class="list-title">Who makes it possible</h3>
     <ul class="slots slots--supporters-home">
 {logos}
     </ul>
-    <p class="copy row-link">{host_goat}<a class="go go--ink" href="supporters.html">The supporters</a> <a class="go go--ink" id="organiser" href="organising.html">Who's organising</a></p>"""
+    <p class="copy"><a class="go go--ink" href="supporters.html">The supporters</a> <a class="go go--ink" id="organiser" href="organising.html">Who's organising</a></p>"""
 
 
 # The kinds of event the home page invites, in the form's order. They stay open
