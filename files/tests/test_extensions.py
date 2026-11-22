@@ -153,6 +153,19 @@ def test_each_accepted_event_gets_its_own_page_that_links_out(ext):
     assert 'href="program.html#h-around"' in event  # 2 June is outside the three days
     assert 'aria-current="page"' in event and 'href="program.html" aria-current="page"' in event
 
+    # The page says the host pays for it only where the record says so; otherwise only who runs it.
+    assert "Tuzla Rustaceans runs it and pays for it, so questions about it go to the host." in event
+    write(root, "rust.md", GOOD.replace("paid_by: The host", "paid_by: the people who come"))
+    assert mod.main(["build"]) == 0
+    event = (root / "site" / "event-rust.html").read_text(encoding="utf-8")
+    assert "runs it, so questions about it go to the host." in event and "pays for it" not in event
+    # The host page stresses, once, that a host need not pay for everything, and never says a host must.
+    hub = (root / "site" / "extend.html").read_text(encoding="utf-8")
+    assert hub.count('<p class="stress">You run it. You do not have to pay for everything:') == 1
+    assert "GoatConf does not pay for it" in hub and "GoatConf has arranged nothing with them and pays for nothing" in hub
+    assert "pays for it directly" not in hub and "you pay for it" not in hub and "pay for yourself" not in hub
+    assert "An event in an hour off is short, free and open to everyone who comes." in hub
+
 
 def test_a_page_whose_event_is_gone_is_removed_and_caught(ext, capsys):
     mod, root = ext
