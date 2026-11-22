@@ -122,6 +122,12 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     assert "og.png" in names and "og-dark.png" in names and len(names) % 2 == 0
     assert "#edf2fb" in names["og.png"][2] and "#051534" in names["og-dark.png"][2]
     assert shareables.THEME == "light"
+    # The goat on a card says nothing until a line is picked; one value picks, and a record's own line wins.
+    assert shareables.SPEAKER_SAYS == "" and shareables.card_line("ana-example", meta) == ""
+    assert shareables.card_line("ana-example", meta, 1, mode="rotate") == shareables.SAYS_CARD[1]
+    assert shareables.card_line("ana-example", meta, mode="See you in Tuzla!") == "See you in Tuzla!"
+    assert shareables.card_line("ana-example", {**meta, "card_says": "Baaa!"}, mode="rotate") == "Baaa!"
+    assert "See you in Tuzla!" in shareables.bubble("See you in Tuzla!", 200, 200, 38, 520) and shareables.bubble("", 0, 0, 38, 520) == ""
     # One quiet line says when, where and the speaker's page (the organiser's choice, 2026-10-27).
     assert "Confirmed speaker at GoatConf 2027" in card and "Tuzla · 3–5 June 2027 · goatconf.com/speaker-ana-example<" in card
 
