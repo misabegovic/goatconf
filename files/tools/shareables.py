@@ -26,6 +26,8 @@ Usage: python3 tools/shareables.py <render|list> [--only NAME]
 from __future__ import annotations
 
 import argparse
+import io
+import math
 import re
 import html
 import subprocess
@@ -427,8 +429,13 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
     session = (f'<div class="sub" style="font-size:{40 if square else 32}px; line-height:1.2; margin-top:24px; text-wrap:balance">{talk}</div>'
                if talk else "")
     # The quiet line of when, where and the page's address follows the text, so the two never meet.
-    foot = (f'<div class="url" style="font-size:{26 if square else 22}px; line-height:1.3; text-wrap:balance">'
-            f'Tuzla · 3–5 June 2027 · {address}</div>')
+    # The dot between the two parts belongs to the second and stands to its left: when the address takes a line of
+    # its own the dot falls outside the line's clipped edge, so no dot is left hanging at the end of the first line.
+    foot = (f'<div class="url" style="font-size:{26 if square else 22}px; line-height:1.3; overflow:hidden">'
+            f'<div style="display:flex; flex-wrap:wrap; margin-left:-0.8em">'
+            f'<span style="padding-left:0.8em; white-space:nowrap">Tuzla · 3–5 June 2027</span>'
+            f'<span style="position:relative; padding-left:0.8em; white-space:nowrap">'
+            f'<span style="position:absolute; left:0; width:0.8em; text-align:center">·</span>{address}</span></div></div>')
     clear = (270 if square else 270) if corner else (84 if square else 72)
     if square:
         # The text has the card's width above the goat; only the quiet line beside it steps around it.
@@ -623,6 +630,40 @@ def says_samples(out: Path) -> int:
     return 0
 
 
+# The weight of the cards (sources/conversations/2026-11-22--org--anything-left-lets-iterate.md). A card of flat
+# colour is saved with a palette of 256 colours when the palette reproduces the full-colour render at this peak
+# signal to noise ratio or better, where the difference is not seen; every other card keeps full colour.
+PALETTE_DB = 45.0
+
+
+def photo_card(name: str) -> bool:
+    """A post built around a photograph, which never takes a palette."""
+    m = re.match(r"post-(.+)-(?:square|wide)(?:-dark)?\.png$", name)
+    return bool(m) and m.group(1) in PHOTO_POSTS
+
+
+def slim(path: Path, name: str) -> bool:
+    """Save a rendered card with a palette of 256 colours when that reproduces it at PALETTE_DB or better, so a
+    re-render stays small; the path and the size in pixels stay as they were. Says whether the palette was taken."""
+    if photo_card(name):
+        return False
+    from PIL import Image, ImageChops, ImageStat  # only render needs Pillow
+    with Image.open(path) as im:
+        if im.mode == "P":
+            return True
+        full = im.convert("RGB")
+    few = full.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
+    error = sum(ImageStat.Stat(ImageChops.difference(full, few.convert("RGB"))).sum2) / (full.width * full.height * 3)
+    if error and 10 * math.log10(255 * 255 / error) < PALETTE_DB:
+        return False
+    packed = io.BytesIO()
+    few.save(packed, format="PNG", optimize=True)
+    if len(packed.getvalue()) >= path.stat().st_size:
+        return False
+    path.write_bytes(packed.getvalue())
+    return True
+
+
 def render(name: str, w: int, h: int, doc: str, tmp: Path, exe: str, out: Path | None = None) -> None:
     src = tmp / f"{name}.html"
     src.write_text(doc, encoding="utf-8")
@@ -631,6 +672,7 @@ def render(name: str, w: int, h: int, doc: str, tmp: Path, exe: str, out: Path |
                     f"--window-size={w},{h + 200}", f"--screenshot={shot}", src.as_uri()],
                    check=True, capture_output=True, timeout=120)
     brand.crop(shot, (out or OUT) / name, w, h)
+    slim((out or OUT) / name, name)
 
 
 def main(argv=None) -> int:
@@ -639,6 +681,7 @@ def main(argv=None) -> int:
     r = sub.add_parser("render")
     r.add_argument("--only")
     sub.add_parser("list")
+    sub.add_parser("slim", help="save the cards already rendered with a palette where it reproduces them, as render does")
     sm = sub.add_parser("says-samples", help="the proposal's samples of a goat that says a line, written to a folder outside the site")
     sm.add_argument("out")
     args = ap.parse_args(argv)
@@ -648,6 +691,10 @@ def main(argv=None) -> int:
     if args.cmd == "list":
         for name, (w, h, _) in todo.items():
             print(f"{name}  {w}x{h}")
+        return 0
+    if args.cmd == "slim":
+        took = sum(slim(OUT / name, name) for name in todo if (OUT / name).exists())
+        print(f"{took} of {sum((OUT / name).exists() for name in todo)} cards are saved with a palette")
         return 0
     OUT.mkdir(exist_ok=True)
     exe = brand.chrome()

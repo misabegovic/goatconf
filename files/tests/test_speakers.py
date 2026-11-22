@@ -139,7 +139,14 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     assert shareables.card_line("ana-example", {**meta, "card_says": "Baaa!"}, mode="rotate") == "Baaa!"
     assert "See you in Tuzla!" in shareables.bubble("See you in Tuzla!", 200, 200, 38, 520) and shareables.bubble("", 0, 0, 38, 520) == ""
     # One quiet line says when, where and the speaker's page (the organiser's choice, 2026-10-27).
-    assert "Confirmed speaker at GoatConf 2027" in card and "Tuzla · 3–5 June 2027 · goatconf.com/speaker-ana-example<" in card
+    # The dot between its parts belongs to the address, so none is left hanging when the address takes its own line
+    # (sources/conversations/2026-11-22--org--anything-left-lets-iterate.md).
+    assert "Confirmed speaker at GoatConf 2027" in card and "Tuzla · 3–5 June 2027</span>" in card
+    assert ">·</span>goatconf.com/speaker-ana-example<" in card and "2027 · goatconf.com" not in card
+    # A card built around a photograph never takes a palette; the flat ones may.
+    photo = next(iter(shareables.PHOTO_POSTS))
+    assert shareables.photo_card(f"post-{photo}-square.png") and shareables.photo_card(f"post-{photo}-wide-dark.png")
+    assert not shareables.photo_card("og.png") and not shareables.photo_card("speaker-ana-example-square.png")
 
 
 def test_a_speaker_without_a_title_says_the_session_is_to_be_announced(tmp_path, monkeypatch):
