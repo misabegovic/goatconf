@@ -934,3 +934,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #293: site: no host goat beside the organising link on the home page
    diff: 42 files, +96/-50
    restricted-paths: true
+2026-11-22 merge — PR #295: site: home page sections open and close, and remember how they were left
+   diff: 49 files, +862/-173
+   restricted-paths: true
