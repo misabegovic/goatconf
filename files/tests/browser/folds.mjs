@@ -337,6 +337,44 @@ for (const [name, want] of Object.entries(LONG)) {
 }
 await forget();
 
+// The cover on a phone, as the organiser chose it (sources/conversations/2026-11-22--org--phone-hero-layout-and-trim-keep-the-six-cards.md): on a first visit the first screen shows the name, the date,
+// the place, the promise and the whole Register button, at five phone sizes; of who it is for the cover shows "Any
+// programming language, any stack." and the sentence before it is not displayed; the three links are one row, each 44
+// pixels tall, on one line each from 21.5rem and on two lines each under it, never one left alone on a second row;
+// the goat stands on the cover's rule, whole and clear of the top bar and of the name, and leaves once the page has
+// moved its stop under the bar; "What is decided" shows its six stickers numbered 1 to 6; nothing is wider than the
+// window. The window is a phone's here (mobile: true), so it is as wide as it says: with a desktop window the
+// scrollbar takes 15 pixels of it. From 48rem up the cover has no goat stop, its date line is one run of words with
+// its dot, its links keep their arrows and it says the whole of who it is for.
+const phoneWindow = (width, height) => S("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: true });
+const WHO = "Any programming language, any stack.";
+const coverNow = `(() => { const b = (s) => document.querySelector(s).getBoundingClientRect(), bar = b(".topbar").bottom, wide = document.documentElement.clientWidth; const st = document.querySelector(".goat-one__stage"), on = st && st.parentElement, g = st ? st.getBoundingClientRect() : null; const links = [...document.querySelectorAll(".cover-links a")].map((a) => a.getBoundingClientRect()); const parts = [...document.querySelectorAll(".cover-when__part")].map((e) => e.getBoundingClientRect()); const shown = (e) => e.getClientRects().length > 0; return { wide, said: [".cover-title", ".cover-when", ".cover-lede strong", ".cover-lede__who", ".button--cover"].every((s) => b(s).top >= bar && b(s).bottom <= innerHeight), who: document.querySelector(".cover-lede__who").innerText.replace(/\\s+/g, " ").trim(), long: shown(document.querySelector(".cover-lede__long")), rows: new Set(links.map((r) => Math.round(r.top))).size, tall: links.every((r) => r.height >= 44 && r.left >= 0 && r.right <= wide), apart: links.slice(1).every((r, i) => r.left - links[i].right >= 8), lines: parts.length === 2 && parts[1].top >= parts[0].bottom - 1 && parts.every((r) => r.height < 30), goat: !!on && on.matches(".cover-perch") && getComputedStyle(st).visibility === "visible" && g.top >= bar && g.right <= wide && g.left >= b(".cover-title").right, fits: document.documentElement.scrollWidth <= wide, stickers: [...document.querySelectorAll(".slots--hero > *")].filter(shown).map((e) => e.querySelector(".num").textContent).join("") }; })()`;
+for (const [width, height] of [[390, 844], [412, 915], [390, 700], [360, 780], [320, 640]]) {
+  await phoneWindow(width, height);
+  await forget(); await nav("index.html", 2600);
+  const c = await ev(coverNow);
+  check(c.wide === width && c.said && c.fits, `at ${width} by ${height} the first screen shows the name, the date and place, the promise, who it is for and the whole Register button, and nothing is wider than the window`);
+  check(c.who === WHO && !c.long, `at ${width} wide the cover says "${WHO}" of who it is for, and the sentence before it is not displayed`);
+  check(c.rows === 1 && c.tall && c.apart, `at ${width} wide the cover's three links are one row, each 44 pixels tall, 8 pixels or more apart (${c.rows} rows)`);
+  check(c.lines, `at ${width} wide the date is one line and the place the next, neither wrapped`);
+  check(c.goat, `at ${width} by ${height} the goat stands on the cover's rule, whole, clear of the top bar and of the name`);
+  check(c.stickers === "123456", `at ${width} wide "What is decided" shows its six stickers, numbered 1 to 6 (${c.stickers})`);
+}
+// The goat leaves the cover's rule once its stop is under the top bar, and is back when the page is at its top.
+await phoneWindow(390, 844);
+await forget(); await nav("index.html", 2600);
+await ev(`document.documentElement.style.scrollBehavior = "auto"; 1`);
+const coverGoat = `(() => { const st = document.querySelector(".goat-one__stage"); return !!st && !!st.parentElement && st.parentElement.matches(".cover-perch") && getComputedStyle(st).visibility === "visible"; })()`;
+let stayed = 0;
+for (const y of [30, 90]) { await ev(`window.scrollTo(0, ${y}); 1`); for (let i = 0; i < 40 && await ev(coverGoat); i++) await sleep(150); if (await ev(coverGoat)) stayed += 1; }
+check(stayed === 0, "scrolled so that the cover's rule is under the top bar, the goat does not stay there");
+await ev(`window.scrollTo(0, 0); 1`); for (let i = 0; i < 40 && !await ev(coverGoat); i++) await sleep(150);
+check(await ev(coverGoat), "back at the top of the page, the goat is on the cover's rule again");
+await S("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
+await forget(); await nav("index.html", 2600);
+check(await ev(`document.querySelector(".cover-perch").getClientRects().length === 0 && !document.querySelector(".cover-perch .goat-one__stage") && getComputedStyle(document.querySelector(".cover-when__dot")).display === "inline" && [...document.querySelectorAll(".cover-when__part")].every((e) => getComputedStyle(e).display === "inline") && getComputedStyle(document.querySelector(".cover-links a"), "::after").content !== "none" && document.querySelector(".cover-lede__who").innerText.replace(/\\s+/g, " ").trim() === "Engineers, designers, product people, founders, and the incurably curious dreamers and visionaries. Any programming language, any stack." && [...document.querySelectorAll(".slots--hero > *")].filter((e) => e.getClientRects().length).length === 6`), "from 48rem up the cover has no goat stop, its date and place are one run of words with the dot, its links keep their arrows, and it says the whole of who it is for beside six stickers");
+await S("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
+
 // Never a trap.
 await forget();
 const { identifier } = await S("Page.addScriptToEvaluateOnNewDocument", { source: `Object.defineProperty(window, "localStorage", { get() { throw new DOMException("denied", "SecurityError"); } });` });

@@ -585,7 +585,9 @@ def test_speaker_and_register_pages_say_when_where_and_free_in_the_covers_words(
     import re
     site = Path(__file__).resolve().parent.parent / "site"
     home = (site / "index.html").read_text(encoding="utf-8")
-    when = re.search(r'<p class="cover-when">(.*?)</p>', home).group(1)
+    # On the cover the date and the place are each in a span, so a phone can set the place on a line of its own;
+    # the words are the line's own.
+    when = re.sub(r"<[^>]+>", "", re.search(r'<p class="cover-when">(.*?)</p>', home).group(1))
     # The line is the cover's own, kept in one place for the pages that repeat it.
     assert when == importlib.import_module("speakers").COVER_WHEN
     assert "Free to attend." in home and '<a class="button" href="register.html">Register for free</a>' in home

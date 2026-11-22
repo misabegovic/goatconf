@@ -31,7 +31,7 @@
   peeks.forEach((p) => {
     const at = slots.find((s) => s.slot === p.parentElement);
     if (at) at.alts.push(p);
-    else slots.push({ slot: p.parentElement, peek: p, alts: [p], turn: 0, scene: p.classList.contains("goat-scene"), row: p.parentElement.matches("[data-folds] > section") });
+    else slots.push({ slot: p.parentElement, peek: p, alts: [p], turn: 0, scene: p.classList.contains("goat-scene"), row: p.parentElement.matches("[data-folds] > section"), perch: p.parentElement.classList.contains("cover-perch") });
   });
   const next = (s) => { s.peek = s.alts[s.turn++ % s.alts.length]; };
   const stage = document.createElement("div");
@@ -431,8 +431,13 @@
   let tick = 0;
   const schedule = () => { clearTimeout(tick); tick = setTimeout(() => {
     const next = pick();
-    // With nowhere else to stand, it does not stay on a row that has come to rest under the top bar.
-    if (!next && current && current.row && !busy && current.slot.getBoundingClientRect().top < headroom(current)) leave();
+    // With nowhere else to stand, it does not stay on a row that has come to rest under the top bar. Nor on the
+    // cover's rule on a phone, its stop on the first screen: once the page has moved on it leaves, and it is back when
+    // the page is at its top again (sources/conversations/2026-11-22--org--phone-hero-layout-and-trim-keep-the-six-cards.md).
+    // In the middle of a move it is asked again when the move is over, so it is not left there.
+    const under = !next && !!current && (current.row || current.perch) && current.slot.getBoundingClientRect().top < headroom(current);
+    if (under && busy) schedule();
+    else if (under) leave();
     else go(next);
   }, 250); };
 
