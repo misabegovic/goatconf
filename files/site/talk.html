@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Propose a session: GoatConf 2027</title>
 <meta name="description" content="Propose a talk, a panel, a workshop or something else that fits an hour for GoatConf 2027 in Tuzla: one-hour slots on 3rd and 4th June, every proposal read by the organiser, no strict deadline.">
-<meta name="theme-color" content="#0b3d91">
+<meta name="theme-color" content="#edf2fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#061a3f" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://goatconf.com/talk">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-96.png" sizes="96x96" type="image/png">
@@ -23,10 +24,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- /gen:link-preview -->
 <link rel="preload" href="fonts/bricolage-wdth-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="goatconf.css?v=227e1894">
+<link rel="stylesheet" href="goatconf.css?v=9555e7f0">
 </head>
 <body>
 <!-- gen:topbar tools/nav.py -->
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <a class="skip" href="#main">Skip to the content</a>
 <header class="topbar">
   <a class="topbar__home" href="index.html" aria-label="GoatConf home"><img class="topbar__coin" src="brand/coin.svg" width="36" height="36" alt="">GoatConf <span class="topbar__year">2027</span></a>
@@ -35,11 +37,12 @@
     <a href="speakers.html">Speakers</a>
     <a href="travel.html">Travel</a>
     <a href="supporters.html">Supporters</a>
-    <a class="topbar__cta" href="extend.html">Host an event</a>
-    <a class="topbar__cta" href="talk.html" aria-current="page">Propose a session</a>
-    <a class="topbar__cta topbar__cta--main" href="register.html">Register</a>
+    <a href="extend.html">Host an event</a>
+    <a href="talk.html" aria-current="page">Propose a session</a>
+    <a class="topbar__cta" href="register.html">Register</a>
   </nav>
   <div class="topbar__phone">
+    <a class="topbar__register" href="register.html">Register</a>
     <details class="topbar__menu">
       <summary><span class="topbar__open">Menu</span><span class="topbar__close">Close</span></summary>
       <nav class="topbar__panel" aria-label="Menu">
@@ -52,6 +55,7 @@
           <a class="topbar__panel-cta" href="talk.html" aria-current="page">Propose a session</a>
           <a class="topbar__panel-main" href="register.html">Register</a>
         </p>
+        <fieldset class="theme" data-theme-control hidden><legend>Theme</legend><input type="radio" name="theme-menu" id="theme-menu-system" value="system" checked><label for="theme-menu-system">System</label><input type="radio" name="theme-menu" id="theme-menu-light" value="light"><label for="theme-menu-light">Light</label><input type="radio" name="theme-menu" id="theme-menu-dark" value="dark"><label for="theme-menu-dark">Dark</label></fieldset>
       </nav>
     </details>
   </div>
@@ -89,12 +93,12 @@
   <h2 class="band" id="h-what">What a session can be</h2>
   <div class="page-grid page-grid--cards-first">
     <ul class="slots slots--formats slots--one-goat" aria-label="Kinds of sessions you can propose">
-      <li class="slot slot--format"><!-- gen:goat-peek-speaker tools/frame.py --><span class="goat peek peek--art" aria-hidden="true" data-goat="peek-speaker" data-turn="img/goat/sheet-roles-turns.webp?v=4287a1a1|-7.547%|-7.456%|114.151%|70.614%|219.835%|51.6%|84.138%|60.526%" data-anim="img/goat/anim-peek-speaker.webp?v=1bf7305b|ears,petted,scratch,sneeze,wink,yawn" style="--beat:-2s;--edge:85.965%;aspect-ratio:212/228;background-image:url(img/goat/sheet-roles.webp?v=3bf18bcf);background-size:147.17% auto;background-position:0 50%"><i class="goat-blink" style="left:35.849%;top:30.702%;width:38.679%;height:21.491%;background-size:380.488% auto;background-position:92.174% 10.149%"></i></span><!-- /gen:goat-peek-speaker --><span class="num num--printed">7</span><strong>Talk</strong><small>With time for questions.</small><span class="stamp">Yours?</span></li>
-      <li class="slot slot--format"><span class="num num--printed">8</span><strong>Panel</strong><small>A few people on one question, with the room joining in.</small><span class="stamp">Yours?</span></li>
-      <li class="slot slot--format"><span class="num num--printed">9</span><strong>Workshop</strong><small>People learn by doing, on the laptops they bring.</small><span class="stamp">Yours?</span></li>
-      <li class="slot slot--format"><span class="num num--printed">10</span><strong>Live coding</strong><small>Build or show something on stage, or run a hands-on lab people follow on their laptops.</small><span class="stamp">Yours?</span></li>
-      <li class="slot slot--format"><span class="num num--printed">11</span><strong>Fireside chat</strong><small>An interview, a debate or an open discussion, with the room asking questions.</small><span class="stamp">Yours?</span></li>
-      <li class="slot slot--format"><span class="num num--printed">12</span><strong>Not sure?</strong><small>Propose it anyway and say what you have in mind.</small><span class="stamp">Yours?</span></li>
+      <li><a class="slot slot--format slot--link" data-form="talk" href="https://docs.google.com/forms/d/e/1FAIpQLSdRVeP2C8LmLp0CDjO2s8jAn-TBq1o2XMdaBR8QkH8nRMjBtQ/viewform"><!-- gen:goat-peek-speaker tools/frame.py --><span class="goat peek peek--art" aria-hidden="true" data-goat="peek-speaker" data-turn="img/goat/sheet-roles-turns.webp?v=4287a1a1|-7.547%|-7.456%|114.151%|70.614%|219.835%|51.6%|84.138%|60.526%" data-anim="img/goat/anim-peek-speaker.webp?v=1bf7305b|ears,petted,scratch,sneeze,wink,yawn" style="--beat:-2s;--edge:85.965%;aspect-ratio:212/228;background-image:url(img/goat/sheet-roles.webp?v=3bf18bcf);background-size:147.17% auto;background-position:0 50%"><i class="goat-blink" style="left:35.849%;top:30.702%;width:38.679%;height:21.491%;background-size:380.488% auto;background-position:92.174% 10.149%"></i></span><!-- /gen:goat-peek-speaker --><span class="num num--printed">7</span><strong>Talk</strong><small>With time for questions.</small><span class="stamp">Yours?</span></a></li>
+      <li><a class="slot slot--format slot--link" data-form="talk" href="https://docs.google.com/forms/d/e/1FAIpQLSdRVeP2C8LmLp0CDjO2s8jAn-TBq1o2XMdaBR8QkH8nRMjBtQ/viewform"><span class="num num--printed">8</span><strong>Panel</strong><small>A few people on one question, with the room joining in.</small><span class="stamp">Yours?</span></a></li>
+      <li><a class="slot slot--format slot--link" data-form="talk" href="https://docs.google.com/forms/d/e/1FAIpQLSdRVeP2C8LmLp0CDjO2s8jAn-TBq1o2XMdaBR8QkH8nRMjBtQ/viewform"><span class="num num--printed">9</span><strong>Workshop</strong><small>People learn by doing, on the laptops they bring.</small><span class="stamp">Yours?</span></a></li>
+      <li><a class="slot slot--format slot--link" data-form="talk" href="https://docs.google.com/forms/d/e/1FAIpQLSdRVeP2C8LmLp0CDjO2s8jAn-TBq1o2XMdaBR8QkH8nRMjBtQ/viewform"><span class="num num--printed">10</span><strong>Live coding</strong><small>Build or show something on stage, or run a hands-on lab people follow on their laptops.</small><span class="stamp">Yours?</span></a></li>
+      <li><a class="slot slot--format slot--link" data-form="talk" href="https://docs.google.com/forms/d/e/1FAIpQLSdRVeP2C8LmLp0CDjO2s8jAn-TBq1o2XMdaBR8QkH8nRMjBtQ/viewform"><span class="num num--printed">11</span><strong>Fireside chat</strong><small>An interview, a debate or an open discussion, with the room asking questions.</small><span class="stamp">Yours?</span></a></li>
+      <li><a class="slot slot--format slot--link" data-form="talk" href="https://docs.google.com/forms/d/e/1FAIpQLSdRVeP2C8LmLp0CDjO2s8jAn-TBq1o2XMdaBR8QkH8nRMjBtQ/viewform"><span class="num num--printed">12</span><strong>Not sure?</strong><small>Propose it anyway and say what you have in mind.</small><span class="stamp">Yours?</span></a></li>
     </ul>
     <div class="copy">
       <p>The call is for more than talks. Every slot is one hour, and you choose what happens in it. A format that is not on the list is shown on the program under its own name.</p>
@@ -158,7 +162,7 @@
       <h3 class="list-title">If you pay your own way</h3>
       <p>Money from supporters that the event does not need goes first to refunding speakers who pay their own way, some or all of it, after the event. This is not promised, and it never affects whether your session is picked.</p>
       <h3 class="list-title">Make a trip of it</h3>
-      <p>Stay for Saturday 5th June, the community's day: a day at the Pannonian salt lakes, the goat hunt through town, and the events people add. See the <a href="program.html">program</a>.</p>
+      <p>Stay for Saturday 5th June, the community's day: a day at the Pannonian salt lakes and the events people add. See the <a href="program.html">program</a>.</p>
     </div>
     <div class="prices prices--stay">
       <h3>What a stay costs</h3>
@@ -228,12 +232,13 @@ Main hall (ground floor, 150 seats); First-floor hall (100 seats); Second-floor 
 <!-- gen:footer tools/frame.py -->
 <footer class="footer">
   <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
-  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Propose a session</a> <a href="extend.html">Host an event</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="stickers.html">Stickers</a> <a href="goatchi.html">Goatchi</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
+  <p class="footer__links"><span class="footer__group"><b>The conference</b> <a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="travel.html">Travel</a> <a href="register.html">Register</a></span> <span class="footer__group"><b>Take part</b> <a href="talk.html">Propose a session</a> <a href="extend.html">Host an event</a> <a href="supporters.html">Supporters</a> <a href="contact.html">Contact</a></span> <span class="footer__group"><b>Good to know</b> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="access.html">Accessibility</a></span> <span class="footer__group"><b>Brand and goats</b> <a href="brand.html">Brand</a> <a href="stickers.html">Stickers</a> <a href="goatchi.html">Goatchi</a></span></p>
   <!-- gen:follow tools/nav.py --><p class="follow"><span class="follow__label">Follow GoatConf</span> <a class="follow__link" href="https://www.linkedin.com/company/goatconf/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a> <a class="follow__link" href="https://x.com/goatconf"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>X</a></p><!-- /gen:follow -->
+  <fieldset class="theme" data-theme-control hidden><legend>Theme</legend><input type="radio" name="theme-foot" id="theme-foot-system" value="system" checked><label for="theme-foot-system">System</label><input type="radio" name="theme-foot" id="theme-foot-light" value="light"><label for="theme-foot-light">Light</label><input type="radio" name="theme-foot" id="theme-foot-dark" value="dark"><label for="theme-foot-dark">Dark</label></fieldset>
   <p class="footer__legal">© 2026 Muhamed Isabegović. The GoatConf name, logo and goats: all rights reserved, <a href="brand.html#use">share them unchanged</a> to talk about GoatConf. The site's code and text: <a href="https://github.com/misabegovic/goatconf">Apache 2.0</a>.</p>
 </footer>
 <!-- /gen:footer -->
 <!-- gen:companion-says tools/frame.py --><script type="application/json" id="goat-says">["Baaa!", "Come to GoatConf!", "See you in Tuzla!", "Tuzla, 3–5 June 2027!", "Free to attend!"]</script><!-- /gen:companion-says -->
-<script src="album.js?v=5fe7e269" defer></script>
+<script src="album.js?v=3605c275" defer></script>
 </body>
 </html>

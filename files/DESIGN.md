@@ -8,11 +8,11 @@ colors:
   album-soft: "#c9d7f5"
   page: "#ffffff"
   page-print: "#edf2fb"
-  slot-line: "rgb(11 61 145 / 0.42)"
+  slot-line: "rgb(11 61 145 / 0.6)"
   ink: "#12204a"
   ink-soft: "#46557a"
   yellow: "#ffd400"
-  red: "#e30613"
+  red: "#c80510"
   veg-tint: "#d9f2df"
   veg-ink: "#0f4d24"
 typography:
@@ -135,6 +135,16 @@ components:
     textColor: "{colors.red}"
     rounded: "{rounded.photo-inner}"
     padding: "0.05em 0.45em"
+  button:
+    backgroundColor: "{colors.yellow}"
+    textColor: "{colors.album-night}"
+    rounded: "{rounded.button}"
+    padding: "0.75em 1.3em"
+  ticket:
+    backgroundColor: "{colors.album}"
+    textColor: "{colors.page}"
+    rounded: "{rounded.sticker}"
+    padding: "{spacing.die-cut}"
   status-sticker:
     backgroundColor: "{colors.yellow}"
     textColor: "{colors.album-night}"
@@ -220,10 +230,16 @@ GoatConf's mark is a round seal: the EuRuKo 2024 goat in a coin at the centre, a
 
 ## Colors
 
+> **The chosen look: minimal, in light and dark (2026-11-21, `sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md`), unpublished until approved.** The ground is paper, the pale page-print tint, printed with hoof marks; blue is only lettering and line: headings, links, keylines, the solid edge of a stuck sticker and the seal. The top bar, the cover, the page heads, the goat-story page and the back cover are white or paper with ink text; a band is album-blue lettering over its yellow rule; a photo caption is ink lettering on white; the year sits on a yellow chip; a button is a yellow sticker with a solid lip. Where the text below says the ground is album blue or a surface is blue, this note is the newer rule.
+>
+> **Themes.** Light is as above. Dark is the album at night, each token with its second value: ground and slot fill `#051534`, page `#0c2757`, sticker `#14387a` with a lit edge, ink `#e8eefc`, soft ink `#b6c5e8`, big lettering `#f3f6ff`, link and line blue `#a9c4ff`, slot line that blue at 60%, stamp red `#ff8a8a` printed without the multiply blend, hoof marks in the lettering blue at 12%, yellow unchanged. The site follows the system setting; a control in every footer and in the phone menu lets a visitor choose System, Light or Dark. Supporter logos, the maps, card previews and the Goatchi postcards keep a light tile in both themes. On a phone the page's side margin is 1.5rem and its inner padding 0.85rem, and the marks are printed small and close, so they show in the margins and between pages.
+>
+> **Cards and brand files.** A share card has one look, the light one: paper with hoof marks, blue lettering, yellow rule, the seal. The marks themselves are unchanged.
+
 A saturated album blue in three depths, white and a pale printed blue for the pages, and two signal colours that each own a narrow job.
 
 ### Primary
-- **Album Blue** (album): the ground of the whole site, behind everything, printed with the hoof pattern at 6% white. Also the album-page band, the fact-sticker body, photo-sticker captions, page titles and in-page links on white.
+- **Album Blue** (album): lettering and line only: the band's lettering, the fact-sticker body, photo-sticker captions, page titles and in-page links on white.
 - **Cover Blue** (album-deep): the album cover. The left page of the opening spread and the page-head strip on every inner page.
 - **Night Blue** (album-night): the darkest binding. The sticky top bar, the shiny goat-story page and the back cover; also the ink on yellow surfaces.
 
@@ -231,12 +247,12 @@ A saturated album blue in three depths, white and a pale printed blue for the pa
 - **Signal Yellow** (yellow): numbers, the big facts and the status. Stuck-in sticker numbers, fact-sticker figures, the place-sticker caption (TUZLA), the registration status sticker, the year in the mark, and the shiny page title. It also carries the album's printed trim: the rule under every band, link underlines on blue, the crest disc and the focus ring on blue.
 
 ### Tertiary
-- **Stamp Red** (red): the "Yours?" stamp and nothing else. It is set with a multiply blend so it reads as ink pressed onto the printed slot.
+- **Stamp Red** (red, #c80510): the "Yours?" stamp and nothing else. It is set with a multiply blend so it reads as ink pressed onto the printed slot. The value is dark enough that the stamp's lettering holds at least 4.5:1 on every surface it is pressed onto: the slot's page-print fill (5.4:1), the slot's hover fill (5.0:1) and white (6.0:1). The brighter #e30613 it replaces measured 4.35:1 on the slot fill.
 
 ### Neutral
 - **Page White** (page): album pages, the right page of the spread, the prose page, and every sticker's die-cut border.
-- **Page Print** (page-print): the flat fill of an empty printed slot, the default tag, and the image placeholder under a loading photo.
-- **Slot Line** (slot-line): album blue at 42%. Dashed slot outlines, the ring of a printed number, the name line in a slot and the dotted leaders of the price list.
+- **Page Print** (page-print): the ground of the whole site, printed with the hoof pattern in album blue at 13%; the flat fill of an empty printed slot, the default tag, and the image placeholder under a loading photo.
+- **Slot Line** (slot-line): album blue at 60%, which holds at least 3:1 against the slot's page-print fill (3.3:1) and against white (3.5:1); at 42% it measured 2.2:1. Dashed slot outlines, the ring of a printed number, the name line in a slot and the dotted leaders of the price list.
 - **Album Ink** (ink): body text on white pages.
 - **Soft Ink** (ink-soft): slot explanations and "last checked" notes on white.
 - **Pale Album** (album-soft): secondary text on the blues (cover sub-line, fact-sticker explanations, back cover, inner-page lede).
@@ -245,7 +261,9 @@ A saturated album blue in three depths, white and a pale printed blue for the pa
 ### Named Rules
 **The Red Stamp Rule.** Red appears only as the "Yours?" stamp on an empty slot. It never marks an error, a price, a link or a heading.
 
-**The Yellow Means Stuck Rule.** Yellow fills only things that are decided or numbered: a stuck-in number, a fact, the status. An empty slot never carries a yellow fill; its number is printed in blue.
+**The Yellow Means Stuck Rule.** Yellow fills only things that are decided or numbered: a stuck-in number, a fact, the status. An empty slot never carries a yellow fill; its number is printed in blue. The one exception is the button: a button is a yellow die-cut sticker you press (Register, Propose a session, Play Goatchi, and Register in the top bar), so a yellow fill that is not a number or a fact is always something to press, and nothing else on a page is filled yellow.
+
+**The Yellow At Night Rule (a designer's choice, for the organiser to look at again).** Since round ten (`sources/conversations/2026-11-22--org--fix-all.md`) the dark theme keeps yellow for what asks to be pressed or is being pointed at: the Register buttons, the year chip, the seal, focus and hover. The number on a sticker, the rule under a heading, the rule over the footer, a place's number and the goat's speech are drawn in the line blue instead: a number is the page colour with a 2px line-blue ring and pale lettering (13.5 to 1 on the page colour). On the home page that takes the elements showing yellow from 76 to 9. The light theme keeps every yellow it had.
 
 ## Typography
 
@@ -265,6 +283,39 @@ A saturated album blue in three depths, white and a pale printed blue for the pa
 - **Body** (400, clamp(1.0625rem, 0.98rem + 0.3vw, 1.1875rem), 1.6): all running text, held to 62ch (74ch on wide copy, 58ch on the shiny page).
 - **Small / Credit** (400, 0.98rem at 1.35; 0.82rem at 1.45): slot and fact explanations; checked dates.
 
+### Type scale
+Since 2026-11-22 (`sources/conversations/2026-11-22--org--continue-round-nine.md`) every size set in rem comes from one scale of fourteen steps. Since round ten (`sources/conversations/2026-11-22--org--fix-all.md`) the sizes that grow with the window come from eight named steps too, where there were four named and twenty-three written out by hand; the second table lists them.
+
+| Step | rem | Used for |
+|---|---|---|
+| 1 | 0.75 | the smallest print: postcard captions, map credit |
+| 2 | 0.8 | tags, group labels, credits |
+| 3 | 0.85 | card small print, checked dates |
+| 4 | 0.9 | card body, captions |
+| 5 | 0.95 | slot and fact explanations, nav, footer |
+| 6 | 1.05 | stamps, numbers, labels |
+| 7 | 1.15 | photo captions, prices on cards |
+| 8 | 1.2 | card titles, buttons in the ticket |
+| 9 | 1.35 | bar mark, card names on phones |
+| 10 | 1.5 | slot titles, sub-heads |
+| 11 | 1.6 | prices in a price list |
+| 12 | 2.2 | facts on phones |
+| 13 | 3 | the cover title on phones |
+| 14 | 4.6 | the ticket's FREE on phones |
+
+| Fluid step | From, to (rem) | Used for |
+|---|---|---|
+| `--step-0` | 1.0625 to 1.1875 | running text |
+| `--step-sub` | 1.15 to 1.45 | the place line on the closing page, the statue's line |
+| `--step-1` | 1.3 to 1.75 | ledes, the saying, the cover's date line |
+| `--step-title` | 1.45 to 2 | a prose page's headings, "What is decided", long facts, the ticket's dates |
+| `--step-fact` | 1.7 to 2.5 | the facts on stickers, day names, session formats |
+| `--step-head` | 1.75 to 3 | the band over every album page, place names on photo stickers, the closing page's dates |
+| `--step-2` | 2.1 to 3.75 | an inner page's sign, the shiny page's title |
+| `--step-3` | 3.4 to 5.7 | the cover title, the ticket's FREE |
+
+Running text is held to 62 characters a line (74 on wide copy). Headings balance their lines; times, dates and prices use tabular figures.
+
 ### Named Rules
 **The Lettered, Not Typed Rule.** Every heading, caption, number and stamp is Bricolage at 800, condensed and uppercase. Weight never varies to make hierarchy; size does.
 
@@ -274,9 +325,24 @@ A saturated album blue in three depths, white and a pale printed blue for the pa
 
 The site is a column of album pages on the blue ground, each at most 82rem wide with a side margin of clamp(1.1rem, 4vw, 3.5rem), separated by clamp(2.5rem, 1.8rem + 3vw, 5rem). The opening spread is two pages in one rounded frame (1fr cover, 1.2fr page), 53rem tall on wide screens, that stack on screens under 62rem with the spine shadow turning horizontal. Album pages run a two-column grid (1fr copy, 1.2fr stickers) that collapses to one column under 62rem.
 
-Slots and stickers sit in auto-filling grids (minimum 12.5rem per cell, gap 1.6rem by 1.3rem). The opening page is a photo column: three across, the Tuzla and IPI Academy photos each two cells wide and two tall, the facts beside them, so the numbers still read 1 to 6 (on phones, one sticker after another, at most 26rem wide); the food page three across; the add-your-own page four across. Under 48rem every slot grid becomes two across with a 1.2rem by 0.9rem gap, so stickers stay sticker-sized on phones rather than going full width. The top bar is sticky. Under 48rem it is one row about 3rem tall: the mark with its year and a Menu button that opens a night-blue panel under the bar with the four page links, centred, one per row, then three separate centred buttons of one width: Make it yours and Propose a session outlined in yellow, Register filled in yellow (the organiser, 2026-10-23, `sources/conversations/2026-10-23--org--phone-menu.md`).
+Slots and stickers sit in auto-filling grids (minimum 12.5rem per cell, gap 1.6rem by 1.3rem). The opening page is a photo column: three across, the Tuzla and IPI Academy photos each two cells wide and two tall, the facts beside them, so the numbers still read 1 to 6 (on phones, one sticker after another, at most 26rem wide); the food page three across; the add-your-own page four across. Under 48rem the stickers a visitor reads go one after another, in the album's order, in one centred column at most 26rem wide: the opening page's six, the days, the speakers, the Tuzla photos, the food and the supporters, each as the organiser chose after seeing them two across (`sources/conversations/2026-10-17--org--three-days-mobile-and-open-wording.md`, `sources/conversations/2026-10-18--org--what-is-decided-one-by-one.md`, `sources/conversations/2026-10-18--org--speakers-one-by-one-on-mobile.md`, `sources/conversations/2026-10-18--org--tuzla-and-food-one-by-one-on-mobile.md`, `sources/conversations/2026-10-20--org--hero-phone-list.md`). Between album pages a phone keeps 1.75rem, and stacked stickers with no goat between them sit 1.1rem apart; a row with a goat over it keeps the room the goat needs. The small grids stay two across with a 1.2rem by 0.9rem gap: the kinds of event, the numbers on fact stickers beside copy, the faces on the register page and the photos of past conferences. The top bar is sticky. On wide screens it has one button, Register, filled in yellow; every other item, Host an event and Propose a session included, is a plain link. Under 48rem it is one row about 3.5rem tall: the mark with its year, a compact yellow Register button and a Menu button, each at least 44 pixels tall, so registering is one tap away at every scroll position. Menu opens a night-blue panel under the bar with the four page links, centred, one per row, then three separate centred buttons of one width: Host an event and Propose a session outlined in yellow, Register filled in yellow (the organiser, 2026-10-23, `sources/conversations/2026-10-23--org--phone-menu.md`). On 2026-10-23 the organiser took Register out of the phone bar, when the build that had it dropped the year; the 2026-11-21 iteration puts it back with the year kept at every width down to 320 pixels, for the organiser to approve (`sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md`).
 
 Inner pages share one shape: a cover-blue page-head (sign, lede, a tilted photo sticker on the right, stacked under 62rem) followed by one white prose page, 58rem at most, and a plain footer on the blue. Make it yours and Propose a session follow the page-head with album pages instead, each with its band and a two-column grid of copy and stickers; on Propose a session, what a speaker gets comes first as numbered fact stickers, two across on wide screens and one after another on phones at most 26rem wide (an empty printed slot for anything not promised yet); the formats follow as open slots with one goat, over the first, so the rows close up; and travel comes after them with a price list of a stay. On one column the cards come before the text in their section: the stickers after the first paragraph, the format slots before their details (the organiser, 2026-11-07, `sources/conversations/2026-11-07--org--talk-page-phone.md`). Getting here, staying and money follows them too: jump links in the day menu's night-blue pill (sticky on wide screens, in the flow on phones), the ways in as four numbered fact stickers, then a price list, then the details in two even columns; on a phone the food list shows its first five places behind a "Show all" toggle that needs no script (`sources/conversations/2026-11-07--org--travel-page-redesign.md`). Register follows them in short: the button beside four fact stickers, then who is speaking as small square photo stickers with the name on an album-blue strip (eight across, two on a phone), then the days and how it works (`sources/conversations/2026-11-07--org--register-page-and-hallway-track.md`). The program opens on the same faces strip, "Confirmed so far", and at every width folds a slot's open rooms into one dashed line beside its cards, so a slot shows what is there and how much is still open (`sources/conversations/2026-11-07--org--program-page-lineup.md`). The home page keeps every speaker card and every dish on a phone, never the faces strip or a fold, so each goat on them stays a stop for the companion goat (`sources/conversations/2026-11-07--org--home-goats-stay.md`).
+
+### Spacing scale
+Since round ten (`sources/conversations/2026-11-22--org--fix-all.md`) the room between a heading and its text, between two pieces of text and between two sections comes from one scale of six steps and the section step. The right-hand column is what was measured on the site before, in pixels, on a phone and on a wide screen.
+
+| Step | rem (px) | Used for | Before |
+|---|---|---|---|
+| `--gap-1` | 0.25 (4) | the lines of one item (a place's lines, a slot's time and its open rooms on a phone) | 3, 5, 6 |
+| `--gap-2` | 0.5 (8) | the items of a list in running text, a line under a card's title | 7, 9, 10, 11 |
+| `--gap-3` | 0.75 (12) | a sub-heading and the text it heads; the sign and its lede on a phone | 6, 10, 13, 14, 16, 17, 19 |
+| `--gap-4` | 1 (16) | a paragraph and the next; a band and the first thing under it on a phone | 14, 17, 18, 19, 22, 32 |
+| `--gap-5` | 1.5 (24) | text and the cards beside it in the flow, either way round; text and the next sub-heading; two sections on a phone | 0, 6, 19, 22, 26, 28, 29, 32, 48 |
+| `--gap-6` | 2.5 (40) | a band and the first thing under it on a wide screen; the last text and the next heading of a prose page; text and a row of cards a goat peeks over | 35, 38, 40, 48, 62 |
+| `--space` | 2.4 to 4.7 (67 at 1440) | two sections on a wide screen | 67 |
+
+A gap that is part of a card's own drawing (the ticket, a sticker's caption, a goat's room over a row) is not on the scale.
 
 ## Elevation & Depth
 
@@ -306,14 +372,14 @@ Stickers are set at small individual tilts between -2 and 2 degrees, set per sti
 Matte vinyl stuck onto the page: white die-cut border, sticker lift, a small tilt.
 - **Photo sticker:** a 4:5 photo (4:3.4 on album pages, 4:3.2 on the food page) over an album-blue caption strip lettered in white.
 - **Place sticker:** a photo sticker whose caption is a place name lettered in yellow at near fact scale (TUZLA).
-- **Fact sticker:** an album-blue sticker whose white die-cut border is drawn inset; a big yellow fact over a short pale-album explanation.
+- **Fact sticker:** a white sticker with a solid 2px album-blue edge and a solid lip under it; a big album-blue fact over a short soft-ink explanation, its number in yellow.
 - **Tag:** a small pill under a food sticker's caption: page-print by default, the vegan tint for vegan dishes.
 
 ### Printed Slot
 The empty place in the album: page-print fill, a 2px dashed slot-line outline, 0.6rem corners, at least 9rem tall. It carries the goat mascot peeking over its top edge, a printed number at the top, a blue lettered title and a soft-ink explanation. Open slots add the red "Yours?" stamp at the bottom right; slots for things a host will add carry a printed name line instead of an explanation.
 
 ### Numbered Sequence
-One run of numbers through the whole album, so a reader can see the gaps. On a stuck sticker the number is a yellow pill sticker overlapping the top-left corner with its own lift; on an empty slot the same number is printed in place: no fill, album-blue figure, a 2px slot-line ring.
+One run of numbers through the whole album, so a reader can see the gaps. On a stuck sticker the number is a yellow pill sticker overlapping the top-left corner with its own lift; on an empty slot the same number is printed in place: no fill, album-blue figure, a 2px slot-line ring. On the home page every fact sticker carries its number, the ones beside copy included (the supporter's price, the organiser's numbers); `tools/home.py` numbers them all in one pass.
 
 ### Album Page and Band
 A white page with 0.8rem corners and the page drop. Its heading is the band: album blue, white headline lettering, a 0.45rem yellow rule beneath, running across the top of the page inside a 0.42rem white edge with 0.4rem corners. The edge keeps the page's silhouette whole, since the band and the ground are the same blue.
@@ -332,6 +398,21 @@ A second goat, kept apart from the mark: a painted watercolour storybook goat, f
 ### Stickers
 The sticker packs (stickers.html) take the same drawings: the goat's roles, the speakers' goats with their names on a blue label, the mark and a few words lettered in Bricolage, and Tuzla things, each with a white die-cut edge and a soft lift on a transparent 512-pixel square, in a zip and on an A4 print sheet.
 
+### Ticket
+The home page's "Get your free ticket" page holds one sticker cut as a ticket: album blue inside the white die-cut border, a dashed tear line with a notch bitten out of each end, and a number like any other sticker. The larger part letters FREE in yellow at fact scale over the dates and the place in white; the stub holds the Register button and one line on what registering gets you. On wide screens the stub is on the right; under 48rem it is below, with the tear line across. It is matte and tilted like every sticker, and it is the only ticket on the site. The place reads with its address, and under the button a plain link adds the three days to a calendar.
+
+### Button
+A yellow die-cut sticker you press: yellow fill, night-blue lettering, a white die-cut ring, set at -1 degree. Pointed at, it lifts: it turns to 1 degree, rises 0.25rem, grows 3% and casts a longer shadow, over 180ms. Pressed, it goes flat: back to -1 degree, 3% smaller, the shadow gone, the yellow a shade darker. With reduced motion it does not move; only the yellow changes. Focused, it gets two more rings outside the white one, night blue then yellow, so the focus shows on the blue cover and on a white page alike.
+
+### Closing Page
+The home page's last page, "See you in Tuzla". On wide screens, since round ten (`sources/conversations/2026-11-22--org--fix-all.md`): "Free to attend." in soft ink, then the dates across the page on one line at heading size (two balanced lines where the window is narrower), then one row with the place lettered on the left and the Register button beside it. The waving goat, when it is here, stands at the right end of the page beyond the dates, 8rem to 10rem wide; the dates never run under it, and nothing in the middle of the page is held empty for it or moves when it comes. On a phone the lettering, the button and the goat stack, the goat centred below the button. Nothing else is on the page.
+
+### Session Slot and Session Sticker
+A speaker card whose session is not announced yet holds an empty printed slot under the role: page-print fill, the dashed slot-line outline, "Session to be announced" lettered in album blue at label size, one line tall, at the foot of the card, so the slots of a row line up. It has no stamp and no goat: the place is the speaker's, not open. On a speaker's own page an announced session is a sticker in the fact sticker's colours: album blue inside the white die-cut border, the format and time in white label lettering, the title in yellow at 1.8rem to 2.6rem, the description in white at body size, tilted under half a degree. A session still to come on that page is the same empty printed slot.
+
+### Open Rooms and Place Rows
+On the program, a slot's open rooms are one printed box beside the slot's cards, as tall as they are: a small empty slot drawn for each open room, over one line. On a phone it is the line alone. On Make it yours a place is a sticker with its photo on wide screens; under 48rem it is a compact row, the photo a 5rem square beside the name plate and its lines in small type, and the list folds after eight places behind a control that needs no script.
+
 ### Status Sticker
 The registration status: a yellow pill-cornered sticker (0.45rem) with a night-blue dot and night-blue lettering. It states what is true now, never a date that is not confirmed.
 
@@ -339,16 +420,32 @@ The registration status: a yellow pill-cornered sticker (0.45rem) with a night-b
 Item, a dotted slot-line leader, and the price lettered in album blue at 1.6rem with tabular figures. Followed by a soft-ink "last checked" line.
 
 ### Shiny Page
-The one solid beat: a night-blue page with a white die-cut border drawn inset (0.42rem), the big goat on the left, the yellow title and the saying lettered in white on the right.
+The one solid beat: a night-blue page with a white die-cut border drawn inset (0.42rem), the big goat on the left, the yellow title and the saying lettered in white on the right. On wide screens the seal shares the left column with a photo sticker of Tuzla's goat statue, 10rem to 12rem wide, overlapping the seal's lower corner, numbered like every sticker, its one sentence lettered in white beside it; the painted statue stands at the photo's corner as the goat's stop. On a phone the page closes on one row, the sentence and the photo at 7rem.
 
 ### Navigation
-The top bar is night blue and sticky: the mini crest and GOATCONF with a yellow 2027 on the left, uppercase condensed links on the right that turn yellow on hover. On phones every link, Register included, folds into a Menu panel; the menu is a `<details>`, so it opens without a script. Links in running text are underlined in yellow on blue and in album blue on white, thickening from 2px to 4px on hover. Focus is a 3px yellow ring on blue and a 3px album-blue ring on white pages. The "go" link (a larger lettered link, 750 weight) leads each page's call to action.
+The top bar is night blue and sticky: the mini crest and GOATCONF with a yellow 2027 on the left, uppercase condensed links on the right that turn yellow on hover. On wide screens Register is the bar's only button. On phones the bar shows the mark, Register and Menu, and every link folds into the Menu panel; the menu is a `<details>`, so it opens without a script. Links in running text are underlined in yellow on blue and in album blue on white, thickening from 2px to 4px on hover. Focus is a 3px album-blue ring on every ground; a button's ring is described under Button. Links a visitor taps are at least 44 pixels tall on phones, the cover's three links included. The "go" link (a larger lettered link, 750 weight) leads each page's call to action. **The jump row.** Since round ten (`sources/conversations/2026-11-22--org--fix-all.md`) the links that jump down a page (the program's three days, the travel page's seven parts) are a row of their own. On a wide screen the row is as wide as the window, opaque, lettered at the right, with one line under it; it sticks directly under the top bar, whatever the bar's height, and a heading it jumps to lands under the row. Because the row spans the window, no heading can sit beside it or show through it. On a phone the program's row takes no screen while a visitor reads down the page and comes back the moment they scroll up; without the script it stays where it is written, between two sections, and takes no screen at all. The travel page's row stays in the page. Every link in it is at least 44 by 44.
+
+### What is clickable
+One system, in both themes (`sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md`). A reader can tell what is a link without pointing at it, and nothing that is not a link looks like one.
+- **Headings and labels** are plain lettering: never underlined, no arrow, no pointer.
+- **A link in a sentence** is underlined, 2px, in the lettering blue of its theme, 0.22em under the text. Pointed at, focused or pressed, it becomes a yellow marker stroke with night lettering. The rule never catches a card, a slot, a sticker or a button. Colour alone never marks a link.
+- **A link on its own** ("See the program") is the same underlined lettering, a step larger, ending in a small drawn arrow that moves a little when pointed at. On a phone it is at least 44 pixels tall.
+- **A link that leaves the site** ends in a small drawn corner arrow and tells a screen reader "(another site)". The compact rows of contact links under a place or a speaker (a website, a phone number, a map) are underlined without the arrow.
+- **A sticker or card that is a link** (a day, a speaker, a supporter, an accepted event) carries the same small arrow in its lower corner, speaker cards, face stickers and supporter stickers included, and lifts when pointed at; the whole sticker is the link. A photo sticker that is not a link has no chip, no pointer and does not move.
+- **A slot stamped "Yours?"** is always a link to where it invites. It answers as a whole: its outline turns solid, its fill lifts, its stamp grows.
+- **The top bar** marks the page you are on with a filled tab, and a link pointed at with the same tab, lighter. **The footer** underlines its links and marks the page you are on.
+- **A button** is the yellow sticker with its lip (night blue by day, a darker yellow at night); nothing else is filled yellow at rest, tags included.
+- **Lettering that is not a link** (a step's lead-in, a venue's subtitle, "Added:") is ink, never link blue.
+- Everything pressable has a pressed state, and the focus ring is as before.
 
 ### Back Cover
-The footer as the album's back cover: night blue, the crest and mark in white, pale-album text, white links.
+The footer as the album's back cover: night blue, the crest and mark in white, pale-album text, white links. The links sit in four groups, each a small lettered label in yellow (pale album on inner pages) over its links in one row: the four groups side by side on wide screens, one under another on phones, each link still 44 pixels tall there. Inner pages carry the same groups on the blue ground.
 
 ### Inner Page-head and Prose Page
-Every inner page opens on a cover-blue strip: the crest home link, the sign in headline lettering, a pale-album lede, and a photo set as a sticker (white border, lift, 2 degrees). Below it, one white prose page at most 58rem wide, headings lettered in album blue, list markers in album blue, an album-blue table head on the budget ledger, and a printed-slot style empty state when a list has nothing yet.
+Every inner page opens on a cover-blue strip: the crest home link, the sign in headline lettering, a pale-album lede, and a photo set as a sticker (white border, lift, 2 degrees). On a phone the photo is a small square sticker, 5.5rem, in the strip's top right corner beside the sign; a speaker's portrait, a supporter's logo and the mark keep their own size. The program, speakers and propose pages each open on their own picture, and no two pages of one footer group share one; a page with no fitting picture opens without one, its sign and lede across the strip. Below it, one white prose page at most 58rem wide, headings lettered in album blue, list markers in album blue, an album-blue table head on the budget ledger, and a printed-slot style empty state when a list has nothing yet.
+
+### Loading Photo, Caret and Scrollbars
+Until a photo loads, its place in a sticker shows an unprinted sticker: the page-print fill printed with the album's hoof marks in slot-line blue. The text caret is album blue on white and yellow on the blues; scrollbars are yellow on night blue.
 
 ### Motion
 **Stickers stay still.** Stickers are stuck in from the first paint and do not animate as they come into view; the organiser found the peel and settle annoying (2026-10-27).
@@ -366,8 +463,14 @@ Every inner page opens on a cover-blue strip: the crest home link, the sign in h
 ### Do:
 - **Do** show a decided fact as a stuck-in sticker and an undecided or open one as an empty printed slot, with its reason in the slot's explanation.
 - **Do** give every sticker and slot the next number in the album's single sequence.
-- **Do** keep stickers sticker-sized: two across on phones, never full-width cards.
+- **Do** keep stickers sticker-sized on wide screens, and on phones list the ones a visitor reads one after another, at most 26rem wide, as the Layout section says; the small grids named there stay two across.
+- **Do** keep the gap between a band's intro line and its first row of stickers short: only a row with a goat peeking over it keeps room above it.
 - **Do** set a small per-sticker tilt between -2 and 2 degrees, and vary it between neighbours.
+- **Do** list the cover's three links one a row on a phone, and the host page's "What you could run" one slot a row with its number beside the words and its stamp at the left, clear of the goat (`sources/conversations/2026-11-22--org--fix-all.md`).
+- **Do** keep a map's labels clear of its pins and space the pins for their phone size, where they are drawn 1.6 times larger and take a tap on a clear ring 44 across; a pin moved off its place keeps a line back to it.
+- **Do** keep a goat's room beside a phone heading only while the goat is on it; the heading keeps the height it has with the room, so nothing moves when the goat comes.
+- **Do** check every page type under forced colours: a logo keeps its tile, a swatch its colour, a number its ring, the page you are on its mark.
+- **Do**, on the shorter phone home page only (the branch `site/less-blue-minimal-short-home`, built for the organiser to choose or not, `sources/conversations/2026-11-22--org--fix-all.md`), fold the second and later paragraphs of "Tuzla, the host town", "Eat and drink" and "Propose a session" behind a control that needs no script ("More about Tuzla", "Show less"). A wider screen folds nothing. No sticker list, photo, price or goat stop is folded, because the organiser set those one after another and in full on a phone.
 - **Do not** print photo credits on the site; the organiser decided on 2026-10-12 to show no credits (`sources/conversations/2026-10-12--org--no-photo-credits.md`).
 - **Do** write plain sentences: one idea per sentence, common words, and no em dashes anywhere, including captions, alt text and generated pages.
 

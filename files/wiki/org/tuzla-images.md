@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/tuzla.md
 sources:
+  - sources/conversations/2026-11-21--org--keep-iterating.md
   - sources/conversations/2026-11-21--org--goat-statue-photo.md
   - sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md
   - sources/conversations/2026-10-19--org--site-review-decisions.md
@@ -358,8 +359,8 @@ The organiser took a photo of the goat statue: the goat standing on a stone
 plinth on a lawn under trees in summer, seen from the front left. It is their
 own, free for GoatConf to use, and on their call it carries no credit. It is
 `assets/images/organiser/tuzla-goat-statue.jpg`, with its record beside it,
-and `site/img/tuzla-goat-statue.jpg`, which only the post cards use; the week
-6 post "Why a goat" shows it (source: sources/conversations/2026-11-21--org--goat-statue-photo.md). The statue is a
+and `site/img/tuzla-goat-statue.jpg`; the week
+6 post "Why a goat" shows it (source: sources/conversations/2026-11-21--org--goat-statue-photo.md). On the design branch of 2026-11-21 it also closes the home page's "Why a goat" as a photo sticker, pending the organiser's approval (source: sources/conversations/2026-11-21--org--keep-iterating.md). The statue is a
 modern sculpture, so the note on freedom of panorama above applies: fine for
 the site and free posts, but ask the sculptor or the city before it goes on
 anything sold.

@@ -563,3 +563,81 @@
   const later = window.requestIdleCallback || ((f) => setTimeout(f, 200));
   document.readyState === "complete" ? later(load) : addEventListener("load", () => later(load), { once: true });
 })();
+
+// The theme control (system, light, dark): shown only with the script, kept in localStorage, the same in the menu
+// and the footer. The choice is put on <html> before paint by the small script at the top of each page.
+(() => {
+  const groups = [...document.querySelectorAll("[data-theme-control]")];
+  if (!groups.length) return;
+  let stored = "system";
+  try { const t = localStorage.getItem("theme"); if (t === "light" || t === "dark") stored = t; } catch (e) { /* no storage */ }
+  const show = (value) => groups.forEach((g) => g.querySelectorAll("input").forEach((i) => { i.checked = i.value === value; }));
+  const set = (value) => {
+    if (value === "system") delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = value;
+    try { if (value === "system") localStorage.removeItem("theme"); else localStorage.setItem("theme", value); } catch (e) { /* no storage */ }
+    show(value);
+  };
+  groups.forEach((g) => { g.hidden = false; g.addEventListener("change", (e) => set(e.target.value)); });
+  show(stored);
+})();
+
+// The footer marks the page you are on, as the top bar does.
+(() => {
+  const here = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll("footer .footer__group a").forEach((a) => {
+    if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
+  });
+})();
+
+// On a phone the program's day links stay out of the way while you read down the page and come back as soon as
+// you scroll up. Without the script they sit in the page where they are written and take no screen at all.
+(() => {
+  const nav = document.querySelector(".daynav:not(.daynav--page)");
+  if (!nav || !window.matchMedia) return;
+  const phone = window.matchMedia("(max-width: 47.99rem)");
+  const bar = document.querySelector(".topbar");
+  document.documentElement.classList.add("jump-smart");
+  let last = window.scrollY;
+  let away = false;
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    if (Math.abs(y - last) < 8) return;
+    const down = y > last;
+    last = y;
+    const stuck = nav.getBoundingClientRect().top <= (bar ? bar.getBoundingClientRect().bottom : 0) + 1;
+    const want = phone.matches && down && stuck;
+    if (want !== away) { away = want; nav.classList.toggle("daynav--away", away); }
+  }, { passive: true });
+})();
+
+// What sticks under the top bar (the jump links) and where a link lands both follow the bar's real height: on a
+// middle-sized screen the bar is two rows tall. The stylesheet carries the two usual heights for when this is off.
+(() => {
+  const bar = document.querySelector(".topbar");
+  if (!bar || !window.ResizeObserver) return;
+  new ResizeObserver(() => {
+    document.documentElement.style.setProperty("--bar-h", bar.getBoundingClientRect().height + "px");
+  }).observe(bar);
+})();
+
+// On a phone a heading that is one of the goat's stops keeps the goat's room clear only while the goat is on it,
+// so its words wrap as any other heading's do. So that nothing on the page moves when the goat arrives, each such
+// heading is given, once the fonts are in and again when the window changes, the height it has with the room kept.
+(() => {
+  const root = document.documentElement;
+  const bands = [...document.querySelectorAll(".band")].filter((b) => b.querySelector(":scope > .peek"));
+  if (!bands.length || !root.classList.contains("goat-one") || !window.matchMedia) return;
+  const phone = matchMedia("(max-width: 47.99rem)");
+  const hold = () => bands.forEach((b) => {
+    b.style.minHeight = "";
+    if (!phone.matches) return;
+    b.classList.add("band--room");
+    const h = b.getBoundingClientRect().height;
+    b.classList.remove("band--room");
+    b.style.minHeight = `${h}px`;
+  });
+  root.classList.add("goat-room");
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(hold);
+  let waiting = 0;
+  addEventListener("resize", () => { cancelAnimationFrame(waiting); waiting = requestAnimationFrame(hold); });
+})();

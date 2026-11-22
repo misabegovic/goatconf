@@ -2,12 +2,13 @@
 title: "Activities: the salt lake, a goat hunt, and a cheap city as the gift"
 kind: initiative
 status: living
-updated: 2026-10-14
+updated: 2026-11-21
 parent_epic: goatconf-2027
 appetite: small
 confidence: medium
 supersedes: org/pitches/activities-the-lake-and-the-town.md
 sources:
+  - sources/conversations/2026-11-21--org--goat-hunt-not-promised-for-now.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md
@@ -257,6 +258,7 @@ links the extension listings.
 
 ## Amendments
 
+- **2026-11-21, the goat hunt is not promised for now.** The body's goat hunt stays the plan on paper and is not announced: the site and the drafted posts name the lake day and the events people add, and the bullet on five mixed teams waits until the hunt is promised again (source: sources/conversations/2026-11-21--org--goat-hunt-not-promised-for-now.md).
 - **2026-10-14, read with the later decisions.** The body's references to the public ledger no longer hold: the budget is private, with no budget page and no public ledger; online supporters pay the organiser's Austrian business 500 EUR for online perks only, and speakers' travel is refunded only if the budget allows, never promised (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **2026-10-13, the lakes every evening.** The organiser plans Saturday's lake day, and the lakes are also an everyday activity after the talks, since many people go around 17:00 or 18:00 (source: sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md).
 - **2026-10-13, the lakes are open.** The lakes' swimming season opens on 1 June, as the organiser confirmed, so swimming is possible on every GoatConf day (source: sources/conversations/2026-10-13--org--lake-season-opens-1-june.md).

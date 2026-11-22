@@ -26,6 +26,7 @@ Usage: python3 tools/shareables.py <render|list> [--only NAME]
 from __future__ import annotations
 
 import argparse
+import re
 import html
 import subprocess
 import sys
@@ -45,18 +46,35 @@ THURSDAY, FRIDAY = (program.DAY_PLAN[d] for d in program.CORE_DAYS)
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 OUT = SITE / "share"
-BLUE, YELLOW, NIGHT, SOFT = brand.BLUE, brand.YELLOW, brand.NIGHT, "#c9d7f5"
+# The cards take the site's chosen look, the light one: paper with hoof marks, blue lettering, ink text, a yellow
+# rule along the foot and the seal (sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md).
+BLUE, YELLOW, NIGHT, SOFT = brand.BLUE, brand.YELLOW, brand.NIGHT, "#46557a"
+PAPER, INK = "#edf2fb", brand.INK
 FACTS = "Tuzla · 3–5 June 2027 · Free to attend"
 URL = "goatconf.com"
 esc = html.escape
 
 HOOVES = ("url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E"
-          "%3Cg fill='white' fill-opacity='.06'%3E%3Cpath d='M30 40c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E"
+          "%3Cg fill='%230b3d91' fill-opacity='.13'%3E%3Cpath d='M30 40c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E"
           "%3Cpath d='M34 40c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3Cpath d='M112 104c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E"
           "%3Cpath d='M116 104c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3C/g%3E%3C/svg%3E\")")
 
 
-def page(w: int, h: int, body: str, bg: str = BLUE) -> str:
+def goat_src(pose: str) -> str:
+    """A painted goat for a card: its master where the masters are (the organiser's machine), else the copy the
+    site already publishes."""
+    master = goat_atlas.ART / (pose + ".webp")
+    return (master if master.exists() else SITE / "img" / "goat" / (pose + ".webp")).as_uri()
+
+
+def missing(doc: str) -> list[str]:
+    """The local pictures a card's page names that are not on this machine: such a card is not rendered."""
+    import urllib.parse
+    paths = (urllib.parse.unquote(urllib.parse.urlparse(u).path) for u in re.findall(r'(?:src="|url\(["\']?)(file://[^"\')]+)', doc))
+    return sorted({p for p in paths if not Path(p).exists()})
+
+
+def page(w: int, h: int, body: str, bg: str = PAPER) -> str:
     fonts = (SITE / "fonts").as_uri()
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face {{ font-family: "Bricolage Grotesque"; src: url("{fonts}/bricolage-wdth-latin.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; }}
@@ -65,9 +83,10 @@ def page(w: int, h: int, body: str, bg: str = BLUE) -> str:
 @font-face {{ font-family: "Atkinson Hyperlegible Next"; src: url("{fonts}/atkinson-latin-ext.woff2") format("woff2"); font-weight: 200 800; unicode-range: U+0100-02BA; }}
 * {{ box-sizing: border-box; margin: 0; }}
 html, body {{ width: {w}px; height: {h}px; overflow: hidden; }}
-body {{ background: {bg} {HOOVES}; color: #fff; font-family: "Atkinson Hyperlegible Next", sans-serif; position: relative; }}
-.word {{ font-family: "Bricolage Grotesque"; font-weight: 800; font-stretch: 75%; line-height: .86; letter-spacing: .005em; text-transform: uppercase; }}
-.sub {{ font-family: "Bricolage Grotesque"; font-weight: 700; font-stretch: 85%; color: {YELLOW}; }}
+body {{ background: {bg} {HOOVES}; color: {INK}; font-family: "Atkinson Hyperlegible Next", sans-serif; position: relative; }}
+.word {{ color: {BLUE}; font-family: "Bricolage Grotesque"; font-weight: 800; font-stretch: 75%; line-height: .86; letter-spacing: .005em; text-transform: uppercase; }}
+.sub {{ font-family: "Bricolage Grotesque"; font-weight: 700; font-stretch: 85%; color: {BLUE}; }}
+body::after {{ content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: {max(8, h // 60)}px; background: {YELLOW}; }}
 .url {{ font-weight: 700; color: {SOFT}; }}
 .seal {{ position: absolute; display: block; }}
 .rule {{ height: 6px; background: {YELLOW}; border-radius: 3px; }}
@@ -115,7 +134,7 @@ def post(w: int, h: int, title: str, line: str, square: bool) -> str:
   <div class="sub" style="font-size:44px; line-height:1.15; max-width:24ch">{line}</div>
 </div>
 <div style="position:absolute; left:84px; bottom:92px">
-  <div class="sub" style="font-size:34px; color:#fff">{FACTS}</div>
+  <div class="sub" style="font-size:34px; color:{INK}">{FACTS}</div>
   <div class="url" style="font-size:32px; margin-top:16px">{URL}</div>
 </div>
 {seal(300, "right:72px; bottom:72px")}""")
@@ -126,7 +145,7 @@ def post(w: int, h: int, title: str, line: str, square: bool) -> str:
   <div class="sub" style="font-size:36px; line-height:1.15">{line}</div>
 </div>
 <div style="position:absolute; left:72px; bottom:64px">
-  <div class="sub" style="font-size:28px; color:#fff">{FACTS}</div>
+  <div class="sub" style="font-size:28px; color:{INK}">{FACTS}</div>
   <div class="url" style="font-size:26px; margin-top:12px">{URL}</div>
 </div>
 {seal(340, "right:72px; top:50%; transform:translateY(-50%)")}""")
@@ -135,7 +154,7 @@ def post(w: int, h: int, title: str, line: str, square: bool) -> str:
 def goats_post(w: int, h: int, square: bool, crowd_in: bool = True) -> str:
     """The painted goats, as a crowd: the post that shows them off (ADR goat-mascot)."""
     def g(pose, width, style):
-        return f'<img src="{(goat_atlas.ART / (pose + ".webp")).as_uri()}" style="position:absolute; width:{width}px; {style}">'
+        return f'<img src="{goat_src(pose)}" style="position:absolute; width:{width}px; {style}">'
     if square:
         crowd = (g("sticker-salt-lakes", 255, "left:30px; top:392px")
                  + g("sticker-hike", 230, "left:290px; top:372px")
@@ -170,7 +189,7 @@ def goatchi_card(w: int = 1200, h: int = 630, square: bool = False, url: str = "
     """Goatchi's link preview and its post: its name and what you do, beside the goat eating burek and the plain goat
     saying hello."""
     def g(pose, width, style):
-        return f'<img src="{(goat_atlas.ART / (pose + ".webp")).as_uri()}" style="position:absolute; width:{width}px; {style}">'
+        return f'<img src="{goat_src(pose)}" style="position:absolute; width:{width}px; {style}">'
     if square:
         return page(w, h, f"""
 <div style="position:absolute; left:84px; top:96px; right:84px">
@@ -214,7 +233,7 @@ POSTS = {
     "see-you-thursday": ("See you<br>Thursday", f"Welcome at {THURSDAY['welcome']}, IPI Academy, Kulina bana 2, Tuzla."),
     "day-one": ("Day<br>one", "Seven rooms, four sessions each, an hour off after every one."),
     "day-two": ("Day<br>two", f"Starting at {FRIDAY['slots'][0]}, welcome at {FRIDAY['welcome']}."),
-    "community-day": ("The<br>community's<br>day", "The salt lakes, the goat hunt, and the evening meetup."),
+    "community-day": ("The<br>community's<br>day", "The salt lakes and the evening meetup."),
     "thank-you": ("Thank<br>you", "To everyone who spoke, supported, hosted, volunteered and came."),
     # The Tuesday Tuzla posts (wiki/org/outreach/drumbeat.md)
     "where-to-run-it": ("58 places<br>to run<br>yours", "From cafés on Freedom Square to halls for a few hundred people."),
@@ -228,7 +247,7 @@ PHOTO_POSTS = {
     "getting-to-tuzla": ("Getting<br>to Tuzla", "Fly to Tuzla or Sarajevo, or come by bus.", "img/city-square-mosque-summer.jpg", "Photo: Grad Tuzla"),
     "an-hour-off": ("An hour<br>off", "After every session: Freedom Square, five minutes away.", "img/city-square-fountain-summer.jpg", "Photo: Grad Tuzla"),
     "where-to-stay": ("Where<br>to stay", "Hotels and guest houses a short walk from IPI Academy.", "img/city-korzo-clock.jpg", "Photo: Grad Tuzla"),
-    "saturday": ("Saturday<br>at the lakes", "The salt lakes, the goat hunt, and what people add.", "img/city-lakes-aerial-summer.jpg", "Photo: Grad Tuzla"),
+    "saturday": ("Saturday<br>at the lakes", "The salt lakes and what people add.", "img/city-lakes-aerial-summer.jpg", "Photo: Grad Tuzla"),
     "next-week": ("Next week<br>in Tuzla", "The salt lakes open for the season on 1 June.", "img/city-old-town-aerial-paving.jpg", "Photo: Grad Tuzla"),
     "city-of-salt": ("A city of<br>salt", "Tuzla takes its name from tuz, the Turkish for salt.", "img/city-aerial-summer.jpg", "Photo: Grad Tuzla"),
     "seven-thousand-years": ("7,000<br>years", "Neolithic people boiled salt here, in houses on stilts.", "img/city-archaeological-park.jpg", "Photo: Grad Tuzla"),
@@ -262,7 +281,7 @@ def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, squ
   <div class="sub" style="font-size:36px; line-height:1.15; margin-top:30px">{line}</div>
 </div>
 <div style="position:absolute; left:644px; bottom:290px; right:56px">
-  <div class="sub" style="font-size:30px; line-height:1.3; color:#fff">{FACTS.replace(" · ", "<br>")}</div>
+  <div class="sub" style="font-size:30px; line-height:1.3; color:{INK}">{FACTS.replace(" · ", "<br>")}</div>
   <div class="url" style="font-size:28px; margin-top:12px">{URL}</div>
 </div>
 {seal(200, "right:56px; bottom:64px")}""")
@@ -276,7 +295,7 @@ def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, squ
   <div class="sub" style="font-size:38px; line-height:1.15; margin-top:30px; margin-right:246px">{line}</div>
 </div>
 <div style="position:absolute; left:84px; bottom:64px">
-  <div class="sub" style="font-size:30px; color:#fff">{FACTS}</div>
+  <div class="sub" style="font-size:30px; color:{INK}">{FACTS}</div>
   <div class="url" style="font-size:28px; margin-top:10px">{URL}</div>
 </div>
 {seal(230, "right:64px; bottom:64px")}""")
@@ -289,7 +308,7 @@ def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, squ
   <div class="sub" style="font-size:30px; line-height:1.15; margin-top:24px">{line}</div>
 </div>
 <div style="position:absolute; left:620px; bottom:56px; right:200px">
-  <div class="sub" style="font-size:22px; color:#fff">{FACTS}</div>
+  <div class="sub" style="font-size:22px; color:{INK}">{FACTS}</div>
   <div class="url" style="font-size:22px; margin-top:8px">{URL}</div>
 </div>
 {seal(140, "right:48px; bottom:48px")}""")
@@ -326,14 +345,14 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
         goat = ""
     elif corner:
         gw = 170 if square else min(160, h * 0.25)
-        goat = (f'<img src="{(goat_atlas.ART / (pose + ".webp")).as_uri()}" style="position:absolute; right:{72 if square else 56}px; '
+        goat = (f'<img src="{goat_src(pose)}" style="position:absolute; right:{72 if square else 56}px; '
                 f'bottom:{40 if square else 28}px; width:{gw:.0f}px">')
     else:
         gw = 140 if square else 112
         left = (84 + size - gw * 0.55) if square else (64 + size - gw * 0.55)
-        goat = (f'<img src="{(goat_atlas.ART / (pose + ".webp")).as_uri()}" style="position:absolute; left:{left:.0f}px; '
+        goat = (f'<img src="{goat_src(pose)}" style="position:absolute; left:{left:.0f}px; '
                 f'top:{top + size - gw * 1.05:.0f}px; width:{gw}px">')
-    head = f'<div class="sub" style="font-size:{44 if square else 30}px; color:#fff">{"Confirmed speaker at GoatConf 2027" if announce else "I&#39;m speaking at GoatConf 2027"}</div>'
+    head = f'<div class="sub" style="font-size:{44 if square else 30}px; color:{INK}">{"Confirmed speaker at GoatConf 2027" if announce else "I&#39;m speaking at GoatConf 2027"}</div>'
     who = f'<div class="word" style="font-size:{name_px}px; margin-top:18px">{name}</div>'
     role = (f'<div style="font-size:{36 if square else 30}px; font-weight:700; line-height:1.25; margin-top:20px; text-wrap:balance">{esc(str(meta["role"]))}</div>'
             if meta.get("role") else "")
@@ -392,7 +411,7 @@ def supporter_card(slug: str, meta, square: bool) -> str:
     url_px = (32 if len(address) <= 36 else 26) if square else 26
     return page(w, h, f"""
 <div style="position:absolute; left:{84 if square else 72}px; top:{96 if square else 72}px; right:{84 if square else 460}px">
-  <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">Thank you,</div>
+  <div class="sub" style="font-size:{40 if square else 32}px; color:{INK}">Thank you,</div>
   <div class="word" style="font-size:{(120 if len(str(meta['name'])) <= 24 else 88) if square else 92}px; margin-top:16px">{esc(str(meta['name']))}</div>
   <div class="sub" style="font-size:{36 if square else 28}px; line-height:1.2; margin-top:28px">{thanks(meta)}</div>
 </div>
@@ -411,7 +430,7 @@ def proud_card(slug: str, meta, square: bool) -> str:
     url_px = (32 if len(address) <= 36 else 26) if square else 26
     return page(w, h, f"""
 <div style="position:absolute; left:{84 if square else 72}px; top:{96 if square else 72}px; right:{84 if square else 72}px">
-  <div class="sub" style="font-size:{40 if square else 32}px; color:#fff">Proud supporter of</div>
+  <div class="sub" style="font-size:{40 if square else 32}px; color:{INK}">Proud supporter of</div>
   <div class="word" style="font-size:{120 if square else 92}px; margin-top:16px">GoatConf 2027</div>
 </div>
 <div style="position:absolute; left:{84 if square else 72}px; top:{400 if square else 290}px; width:{560 if square else 400}px; height:{280 if square else 200}px; background:{logo_ground(meta)}; border-radius:18px; display:grid; place-items:center; padding:32px">
@@ -434,7 +453,7 @@ def event_card(meta, slug: str, square: bool, height: int = 675) -> str:
     when = f'{start.strftime("%A")} {extensions.when(meta)}'
     return page(w, h, f"""
 <div style="position:absolute; left:{84 if square else 72}px; top:{120 if square else 72}px; right:{84 if square else 320}px">
-  <div class="sub" style="font-size:{46 if square else 30}px; color:#fff">Part of GoatConf 2027</div>
+  <div class="sub" style="font-size:{46 if square else 30}px; color:{INK}">Part of GoatConf 2027</div>
   <div class="word" style="font-size:{name_px}px; margin-top:{24 if square else 16}px">{esc(name)}</div>
   <div style="font-size:{40 if square else 28}px; font-weight:700; line-height:1.2; margin-top:{36 if square else 24}px; text-wrap:balance">Organised by {esc(str(meta["host"]))}</div>
   <div class="sub" style="font-size:{40 if square else 28}px; line-height:1.2; margin-top:{28 if square else 20}px">{esc(when)}<br>{esc(str(meta["location"]))}</div>
@@ -517,6 +536,10 @@ def main(argv=None) -> int:
     with tempfile.TemporaryDirectory() as tmp:
         for name, (w, h, doc) in todo.items():
             if args.only and args.only not in name:
+                continue
+            gone = missing(doc)
+            if gone:
+                print(f"skipped site/share/{name}: not on this machine: {', '.join(Path(g).name for g in gone)}")
                 continue
             render(name, w, h, doc, Path(tmp), exe)
             print(f"rendered site/share/{name}")

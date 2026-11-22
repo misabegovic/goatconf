@@ -2,12 +2,13 @@
 title: "Speaker profiles and travel supporters: consented records, a speakers page and a supporters wall"
 kind: decision
 status: accepted
-updated: 2026-10-26
+updated: 2026-11-21
 confidence: medium
 depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-11-21--org--keep-iterating.md
   - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
   - sources/conversations/2026-10-26--org--speaking-card-on-the-profile.md
   - sources/conversations/2026-10-26--org--speaking-cards-show-the-talk.md
@@ -111,3 +112,4 @@ profile goes up only with the speaker's consent.
 - **2026-10-26, the session title on the cards before a slot.** While a confirmed speaker's session has no slot, their "I'm speaking" cards (square, wide and the link preview) show the title from their record, as "Talk: <title>" or its own format, where they showed only "Tuzla · 3–5 June 2027"; a speaker without a title keeps that line (source: sources/conversations/2026-10-26--org--speaking-cards-show-the-talk.md).
 - **2026-10-26, the card on the profile.** Each speaker's profile shows their "I'm speaking" card in its own section, "Your card: I'm speaking", after the session: the wide card as an image and both sizes to download, the way a supporter's profile shows its cards, in place of a single link to the square card (source: sources/conversations/2026-10-26--org--speaking-card-on-the-profile.md).
 - **2026-10-26, a "Confirmed speaker" card in GoatConf's voice.** Each speaker also gets a card from GoatConf announcing them, "Confirmed speaker at GoatConf 2027", with their name, role, session title, when and where, and the address of their own page, square and wide. Their profile shows it under "The announcement card", after their own card, the way a supporter's profile shows the thank-you card after "Your card: proud supporter"; the drumbeat's spotlights post it (source: sources/conversations/2026-10-26--org--confirmed-speaker-cards.md).
+- **2026-11-21, the session's place on a card and on a speaker's page.** Second round on the local branch `site/phone-first-and-one-ask`, pending the organiser's approval from screenshots; nothing is published before that (source: sources/conversations/2026-11-21--org--keep-iterating.md). `tools/speakers.py` keeps writing "Session to be announced" and "The session will be on the program soon." word for word; the stylesheet sets both as an empty printed slot, and sets an announced session on a speaker's page as an album-blue sticker with its title lettered in yellow. The measures are in the CFP PRD's amendment of the same date.

@@ -5,6 +5,7 @@
   const cards = [...document.querySelectorAll("[data-venue]")];
   const count = form.querySelector("[data-count]");
   const none = document.querySelector("[data-none]");
+  const unfold = document.querySelector("[data-places-all]");
   const sizes = { small: ["small"], medium: ["medium"], large: ["large"] };
   form.hidden = false;
 
@@ -27,6 +28,8 @@
       card.hidden = !ok;
       if (ok) shown += 1;
     });
+    // On a phone the list folds after its first places: any filter opens it, so a match is never hidden.
+    if (unfold && (text || kind || size || far || setting || first)) unfold.checked = true;
     count.textContent = shown === cards.length ? `Showing all ${cards.length} places.` : `Showing ${shown} of ${cards.length} places.`;
     if (none) none.hidden = shown > 0;
   };
@@ -40,4 +43,5 @@
   const wanted = new URLSearchParams(location.search).get("kind");
   if (wanted && [...form.kind.options].some((o) => o.value === wanted)) form.kind.value = wanted;
   apply();
+  if (unfold && /^#venue-/.test(location.hash)) unfold.checked = true;
 })();

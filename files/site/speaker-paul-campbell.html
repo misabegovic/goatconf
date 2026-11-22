@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paul Campbell: speaking at GoatConf 2027, Tuzla</title>
 <meta name="description" content="Paul Campbell (Co-founder and CEO of Tito) speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: The story of CARLOS.">
-<meta name="theme-color" content="#0b3d91">
+<meta name="theme-color" content="#edf2fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#061a3f" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://goatconf.com/speaker-paul-campbell">
 <link rel="image_src" href="https://goatconf.com/share/speaker-paul-campbell-preview.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -24,10 +25,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- /gen:link-preview -->
 <link rel="preload" href="fonts/bricolage-wdth-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="goatconf.css?v=227e1894">
+<link rel="stylesheet" href="goatconf.css?v=9555e7f0">
 </head>
 <body>
 <!-- gen:topbar tools/nav.py -->
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <a class="skip" href="#main">Skip to the content</a>
 <header class="topbar">
   <a class="topbar__home" href="index.html" aria-label="GoatConf home"><img class="topbar__coin" src="brand/coin.svg" width="36" height="36" alt="">GoatConf <span class="topbar__year">2027</span></a>
@@ -36,11 +38,12 @@
     <a href="speakers.html" aria-current="page">Speakers</a>
     <a href="travel.html">Travel</a>
     <a href="supporters.html">Supporters</a>
-    <a class="topbar__cta" href="extend.html">Host an event</a>
-    <a class="topbar__cta" href="talk.html">Propose a session</a>
-    <a class="topbar__cta topbar__cta--main" href="register.html">Register</a>
+    <a href="extend.html">Host an event</a>
+    <a href="talk.html">Propose a session</a>
+    <a class="topbar__cta" href="register.html">Register</a>
   </nav>
   <div class="topbar__phone">
+    <a class="topbar__register" href="register.html">Register</a>
     <details class="topbar__menu">
       <summary><span class="topbar__open">Menu</span><span class="topbar__close">Close</span></summary>
       <nav class="topbar__panel" aria-label="Menu">
@@ -53,6 +56,7 @@
           <a class="topbar__panel-cta" href="talk.html">Propose a session</a>
           <a class="topbar__panel-main" href="register.html">Register</a>
         </p>
+        <fieldset class="theme" data-theme-control hidden><legend>Theme</legend><input type="radio" name="theme-menu" id="theme-menu-system" value="system" checked><label for="theme-menu-system">System</label><input type="radio" name="theme-menu" id="theme-menu-light" value="light"><label for="theme-menu-light">Light</label><input type="radio" name="theme-menu" id="theme-menu-dark" value="dark"><label for="theme-menu-dark">Dark</label></fieldset>
       </nav>
     </details>
   </div>
@@ -66,7 +70,7 @@
   <p class="lede"><span class="lede__role">Co-founder and CEO of Tito</span>Speaking at GoatConf 2027 in Tuzla.</p>
 </div>
 <section class="album-page wrap speaker-page" aria-labelledby="h-about">
-  <h2 class="band" id="h-about"><span data-says="Try Tito!|Ask me about CARLOS!" class="goat peek peek--face" aria-hidden="true" data-goat="speaker-paul-campbell" data-gaze="img/goat/gaze-speaker-paul-campbell.webp?v=496e0788" data-anim="img/goat/anim-speaker-paul-campbell.webp?v=d1a88fec|ears,petted,scratch,sneeze,wink,yawn" style="--size:1.269;--beat:-2s;--edge:78.189%;aspect-ratio:269/243;background-image:url(img/goat/sheet-speakers.webp?v=0f0a694e);background-size:145.725% auto;background-position:0 71.429%"><i class="goat-blink" style="left:26.766%;top:26.337%;width:45.725%;height:20.988%;background-size:318.699% auto;background-position:100% 14.263%"></i></span>Who they are</h2>
+  <h2 class="band" id="h-about">Who they are</h2>
   <div class="speaker-page__goat"><img class="goat-whole" src="img/goat/speaker-paul-campbell-sitting.webp?v=f5ea4d21" alt="" width="348" height="480" loading="lazy" decoding="async"><a class="go go--ink speaker-page__sticker" href="stickers/speaker-paul-campbell.png" download>Save as a sticker</a></div><div class="copy copy--wide"><p>Paul makes software in Dublin, Ireland. He is the co-founder and CEO of Team Tito, whose registration software, Tito, has processed over $1 billion worth of tickets for thousands of organisers worldwide. The team also makes Vito, for online communities, and Tito Pro, for fully branded event registration.</p><p>A Rails developer since version 0.13, Paul spoke at RailsConf and RubyConf in 2010. He has run a number of experiential events, such as Funconf, a conference series that happened on moving buses, in a castle and on an island, and This Next Thing, which brought 150 tech leaders together in the Swiss Alps.</p><p>These days he is working on CARLOS: fast, open and accessible software, built with AI agents.</p></div>
   <ul class="speaker-page__links"><li><a href="https://paulca.com/">paulca.com</a></li><li><a href="https://ti.to/">ti.to</a></li><li><a href="https://github.com/paulca">github.com/paulca</a></li><li><a href="https://bsky.app/profile/paulca.com">bsky.app/profile/paulca.com</a></li><li><a href="https://mastodon.social/@paulca">mastodon.social/@paulca</a></li></ul>
 </section>
@@ -104,12 +108,13 @@
 <!-- gen:footer tools/frame.py -->
 <footer class="footer">
   <p>GoatConf 2027, a free conference in Tuzla, Bosnia and Herzegovina, 3–5 June 2027. Organised by <a href="https://muhamed.at">Muhamed Isabegović</a>, with IPI Academy as host and partner.</p>
-  <p class="footer__links"><a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="talk.html">Propose a session</a> <a href="extend.html">Host an event</a> <a href="register.html">Register</a> <a href="travel.html">Travel</a> <a href="supporters.html">Supporters</a> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="brand.html">Brand</a> <a href="stickers.html">Stickers</a> <a href="goatchi.html">Goatchi</a> <a href="access.html">Accessibility</a> <a href="contact.html">Contact</a></p>
+  <p class="footer__links"><span class="footer__group"><b>The conference</b> <a href="index.html">Home</a> <a href="program.html">Program</a> <a href="speakers.html">Speakers</a> <a href="travel.html">Travel</a> <a href="register.html">Register</a></span> <span class="footer__group"><b>Take part</b> <a href="talk.html">Propose a session</a> <a href="extend.html">Host an event</a> <a href="supporters.html">Supporters</a> <a href="contact.html">Contact</a></span> <span class="footer__group"><b>Good to know</b> <a href="charter.html">Charter</a> <a href="code-of-conduct.html">Code of conduct</a> <a href="access.html">Accessibility</a></span> <span class="footer__group"><b>Brand and goats</b> <a href="brand.html">Brand</a> <a href="stickers.html">Stickers</a> <a href="goatchi.html">Goatchi</a></span></p>
   <!-- gen:follow tools/nav.py --><p class="follow"><span class="follow__label">Follow GoatConf</span> <a class="follow__link" href="https://www.linkedin.com/company/goatconf/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a> <a class="follow__link" href="https://x.com/goatconf"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>X</a></p><!-- /gen:follow -->
+  <fieldset class="theme" data-theme-control hidden><legend>Theme</legend><input type="radio" name="theme-foot" id="theme-foot-system" value="system" checked><label for="theme-foot-system">System</label><input type="radio" name="theme-foot" id="theme-foot-light" value="light"><label for="theme-foot-light">Light</label><input type="radio" name="theme-foot" id="theme-foot-dark" value="dark"><label for="theme-foot-dark">Dark</label></fieldset>
   <p class="footer__legal">© 2026 Muhamed Isabegović. The GoatConf name, logo and goats: all rights reserved, <a href="brand.html#use">share them unchanged</a> to talk about GoatConf. The site's code and text: <a href="https://github.com/misabegovic/goatconf">Apache 2.0</a>.</p>
 </footer>
 <!-- /gen:footer -->
 <!-- gen:companion-says tools/frame.py --><script type="application/json" id="goat-says">["Baaa!", "Come to GoatConf!", "See you in Tuzla!", "Tuzla, 3–5 June 2027!", "Free to attend!"]</script><!-- /gen:companion-says -->
-<script src="album.js?v=5fe7e269" defer></script>
+<script src="album.js?v=3605c275" defer></script>
 </body>
 </html>

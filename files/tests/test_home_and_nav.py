@@ -123,18 +123,41 @@ def test_the_follow_links_sit_in_every_footer_and_in_marked_spots_once():
     assert nav.place(once, "contact.html") == once
 
 
-def test_the_phone_bar_is_the_mark_and_a_menu_with_every_link():
+def test_the_phone_bar_is_the_mark_register_and_a_menu_with_every_link():
     nav = importlib.reload(importlib.import_module("nav"))
     bar = nav.bar("travel.html")
     phone = bar[bar.index('<div class="topbar__phone">'):]
     assert "<details class=\"topbar__menu\">" in phone and "<summary>" in phone
-    assert "topbar__register" not in phone  # Register is in the menu, not beside it
+    # Register sits beside Menu, before it, so it is one tap away at every scroll position
+    assert phone.index('<a class="topbar__register" href="register.html">Register</a>') < phone.index("<details")
     panel = phone[phone.index('<nav class="topbar__panel"'):phone.index("</nav>")]
     for href, label in [*nav.LINKS, ("extend.html", "Host an event"), ("talk.html", "Propose a session"), ("register.html", "Register")]:
         assert f'href="{href}"' in panel and label in panel
-    actions = panel[panel.index('<p class="topbar__panel-actions">'):]
+    actions = panel[panel.index('<p class="topbar__panel-actions">'):panel.index("</p>") + 4]
+    # the theme control closes the menu: three radio buttons in a labelled group, hidden until the script shows it
+    assert '<fieldset class="theme" data-theme-control hidden><legend>Theme</legend>' in panel[panel.index("</p>"):]
+    assert panel.count('type="radio" name="theme-menu"') == 3
     assert '<a class="topbar__panel-cta" href="extend.html">Host an event</a>' in actions
     assert '<a class="topbar__panel-cta" href="talk.html">Propose a session</a>' in actions
     assert actions.rstrip().endswith('<a class="topbar__panel-main" href="register.html">Register</a>\n        </p>')
     assert '<a href="travel.html" aria-current="page">Travel</a>' in panel
     assert 'class="topbar__year">2027<' in bar
+
+
+def test_the_wide_bar_has_one_button_and_the_doors_are_plain_links():
+    nav = importlib.reload(importlib.import_module("nav"))
+    bar = nav.bar("index.html")
+    wide = bar[bar.index('<nav class="topbar__wide"'):bar.index("</nav>")]
+    assert wide.count('class="topbar__cta') == 1
+    assert '<a class="topbar__cta" href="register.html">Register</a>' in wide
+    assert '<a href="extend.html">Host an event</a>' in wide and '<a href="talk.html">Propose a session</a>' in wide
+
+
+def test_the_footer_groups_hold_every_link_once():
+    frame = importlib.reload(importlib.import_module("frame"))
+    grouped = [href for _, hrefs in frame.GROUPS for href in hrefs]
+    assert sorted(grouped) == sorted(href for href, _ in frame.LINKS) and len(grouped) == len(set(grouped))
+    inner, cover = frame.links(), frame.links(back_cover=True)
+    assert inner.count("<a ") == len(frame.LINKS) and cover.count("<a ") == len(frame.LINKS) - 1
+    assert inner.count('<span class="footer__group"><b>') == len(frame.GROUPS)
+    assert '<a href="charter.html">The charter</a>' in cover and '<a href="charter.html">Charter</a>' in inner

@@ -299,7 +299,9 @@ def day_block(day, label, table, start_n) -> tuple[str, int]:
             n += 1
         filled = sum(1 for room in ROOMS if (day, t, room) in table or (day, t, room) in held)
         open_rooms = len(ROOMS) - filled
-        open_line = (f'\n    <p class="timeslot__open">{open_rooms} of {len(ROOMS)} rooms still open. <a href="talk.html">Propose a session</a></p>'
+        # One small drawn slot per open room, then the one line (sources/conversations/2026-11-21--org--continue-iterating-round-four.md).
+        pips = '<span class="timeslot__rooms" aria-hidden="true">' + "<i></i>" * open_rooms + "</span>"
+        open_line = (f'\n    <p class="timeslot__open">{pips}<span>{open_rooms} of {len(ROOMS)} rooms still open. <a href="talk.html">Propose a session</a></span></p>'
                      if open_rooms else "")
         rows.append(f"""<li class="timeslot">
     <h3 class="timeslot__time">{t}<span>{filled} of {len(ROOMS)} rooms taken</span></h3>{open_line}
@@ -360,9 +362,10 @@ def page() -> str:
     sat_ext = ext.get(sat, [])
     sat_items = "\n".join(ext_item(s, m, n + i) for i, (_, s, m, _) in enumerate(sat_ext))
     n += len(sat_ext)
-    sat_open = "\n".join(f'<li class="slot"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp{" stamp--planned" if planned else ""}">{"Planned" if planned else "Yours?"}</span></li>'
+    # A slot stamped "Yours?" is a link to where it invites; a planned one is not a link.
+    sat_open = "\n".join((f'<li class="slot"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp stamp--planned">Planned</span></li>' if planned else
+                          f'<li><a class="slot slot--link" href="extend.html"><span class="num num--printed">{n + i}</span><strong>{name}</strong><small>{what}</small><span class="stamp">Yours?</span></a></li>')
                          for i, (name, what, planned) in enumerate([("A day at the lakes", "Swimming, the salt waterfalls and the beach at the Pannonian Lakes.", True),
-                                                           ("The goat hunt", "Clues through town for teams of people who just met, ending at the goat statue.", True),
                                                            ("A walk or a hike", "The old town, the salt story, the hills above Tuzla.", False),
                                                            ("Something else?", "A meetup, a dinner, a corner for your community.", False)]))
     around = []
@@ -376,7 +379,9 @@ def page() -> str:
     room_list = "\n".join(f"    <li><strong>{name}</strong>, {seats}</li>" for name, seats in ROOMS.values())
     return frame.page("program", "Program: GoatConf 2027, 3–5 June, Tuzla",
         "The GoatConf 2027 program: two core days, Thursday 3rd and Friday 4th June, in every room of IPI Academy, Tuzla, and Saturday 5th June for the community.",
-        ("img/ipi-lecture-hall.jpg", 1024, 768, "A talk in IPI Academy's lecture hall, students' faces blurred"),
+        # Freedom Square, where the hour off is spent; the speakers and propose pages open on their own pictures
+        # (sources/conversations/2026-11-21--org--continue-iterating.md).
+        ("img/city-square-mosque-summer.jpg", 1800, 1195, "Freedom Square in Tuzla in summer, the mosque's minaret above the colourful houses"),
         "The program",
         "Two days of sessions in every room of IPI Academy, an hour off after each for the hallway track, then a community day on Saturday.",
         f"""{confirmed_block()}<section class="album-page wrap" aria-labelledby="h-how">
@@ -404,7 +409,7 @@ def page() -> str:
 {chr(10).join(days)}
 <section class="album-page wrap day" id="{sat.isoformat()}" aria-labelledby="h-sat">
   <h2 class="band" id="h-sat">{sat_label}<span class="band__sub">The community's day</span></h2>
-  <p class="copy copy--wide">No talks on Saturday. We plan a day at the lakes and run the goat hunt. Walks, meetups and anything else are events people add; each host runs their own and says how to join.</p>
+  <p class="copy copy--wide">No talks on Saturday. We plan a day at the lakes. Walks, meetups and anything else are events people add; each host runs their own and says how to join.</p>
   <ul class="slots slots--kinds">
 {sat_items}
 {sat_open}

@@ -59,7 +59,7 @@ FACTS = [
     "Price: tickets are free. Registration asks only for a name and an email, on Luma.",
     "Format: one-hour talks, panels and workshops in all seven rooms of IPI Academy, with an hour off after each slot: the hallway track, in the cafés on Freedom Square, to meet the speakers and each other. Proposals for 30 minutes are welcome too, and may be paired into one hour. A session that needs more than an hour can say how long in its proposal, and the organiser sees if it can be made to work. Closer to June, people with a ticket also register for the sessions they want, because each room has only so many seats; everyone with a ticket gets an email with how, and seats nobody registered for go to whoever is at the door.",
     "Friday starts half an hour earlier, at {fri[slots][0]}, and ends at {fri[end]}.".format(fri=program.DAY_PLAN[program.dt.date(2027, 6, 4)]),
-    "Saturday has no talks: it is the community's day, with the organiser's day at the Pannonian salt lakes and the goat hunt, plus events people add, such as walks and meetups.",
+    "Saturday has no talks: it is the community's day, with the organiser's day at the Pannonian salt lakes, plus events people add, such as walks and meetups.",
     "Talks: an open call; anyone may propose a session, first-time speakers welcome. We read every proposal.",
     "Supporters: companies can support GoatConf online for 500 EUR plus VAT where it applies (logo and link on the site, one social post, a mention in attendee emails; nothing at the venue), arranged with the organiser at info@muhamed.at, or pay a supplier directly. A host who funds and organises an accepted event is listed as a supporter too, if they agree. Speakers pay their own travel and stay; money from supporters that the event does not need goes first to refunding speakers who pay their own way, after the event, never promised.",
     "Recording: GoatConf aims to record the sessions in the two big halls of IPI Academy, the main hall and the first-floor hall; this is not promised yet, as it depends on the available budget. People may also bring a camera or a podcast, and a supporter may pay for a crew.",
@@ -140,7 +140,7 @@ def days() -> list[dict]:
                     "slots": list(plan["slots"]), "after_each_slot": {s: plan["breaks"][s] for s in plan["slots"] if s in plan["breaks"]},
                     "note": program.day_note(plan)})
     out.append({"date": program.COMMUNITY_DAY[0].isoformat(), "name": program.COMMUNITY_DAY[1],
-                "note": "No talks. The community's day: the organiser's lake day and goat hunt, plus events people add."})
+                "note": "No talks. The community's day: the organiser's lake day, plus events people add."})
     return out
 
 
@@ -226,7 +226,7 @@ def calendar() -> str:
     lines += ["BEGIN:VEVENT", f"UID:{sat.isoformat()}@goatconf.com", f"DTSTAMP:{STAMP}",
               f"DTSTART;VALUE=DATE:{sat.strftime('%Y%m%d')}", f"DTEND;VALUE=DATE:{(sat + dt.timedelta(days=1)).strftime('%Y%m%d')}",
               "SUMMARY:GoatConf 2027: the community day", "LOCATION:Tuzla\\, Bosnia and Herzegovina",
-              f"DESCRIPTION:{ics_text('No talks. The organiser\'s lake day and goat hunt, plus events people add, such as walks and meetups. ' + url('program.html') + '#' + sat.isoformat())}",
+              f"DESCRIPTION:{ics_text('No talks. The organiser\'s lake day, plus events people add, such as walks and meetups. ' + url('program.html') + '#' + sat.isoformat())}",
               f"URL:{url('program.html')}", "END:VEVENT", "END:VCALENDAR"]
     return "".join(fold(line) + "\r\n" for line in lines)
 

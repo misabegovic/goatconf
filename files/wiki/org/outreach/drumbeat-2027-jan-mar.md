@@ -102,7 +102,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
   > Registration for GoatConf 2027 is open, and tickets are free.
   >
-  > Talks on Thursday 3 and Friday 4 June at IPI Academy in Tuzla, then Saturday 5 June for the community: the salt lakes, a goat hunt through town, and whatever people add.
+  > Talks on Thursday 3 and Friday 4 June at IPI Academy in Tuzla, then Saturday 5 June for the community: the salt lakes and whatever people add.
   >
   > Register on Luma in a minute, and Luma emails you when you're in. Closer to June, you'll also pick the sessions you want, because each room has only so many seats.
   >

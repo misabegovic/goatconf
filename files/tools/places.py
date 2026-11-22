@@ -108,10 +108,10 @@ def base(view, ways) -> str:
                 small.append(f'<path d="{path(view, g)}"/>')
             else:
                 roads.setdefault(hw, []).append(path(view, g))
-    out = [f'<rect width="{W}" height="{view.h}" fill="#edf2fb"/>',
-           f'<g fill="#d9f2df">{"".join(parks)}</g>',
+    out = [f'<rect class="map-ground" width="{W}" height="{view.h}" fill="#edf2fb"/>',
+           f'<g class="map-parks" fill="#d9f2df">{"".join(parks)}</g>',
            f'<g fill="#a9c7f2" stroke="#a9c7f2" stroke-width="3" class="water">{"".join(water)}</g>',
-           f'<g fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" opacity=".9">{"".join(small)}</g>']
+           f'<g class="map-small" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" opacity=".9">{"".join(small)}</g>']
     order = ["service", "residential", "unclassified", "living_street", "tertiary", "secondary", "primary", "trunk", "pedestrian"]
     for hw in order:
         if hw not in roads:
@@ -120,8 +120,8 @@ def base(view, ways) -> str:
         color = "#fff3b0" if hw == "pedestrian" else "#ffffff"
         casing = "#c9d7f5"
         d = " ".join(roads[hw])
-        out.append(f'<path d="{d}" fill="none" stroke="{casing}" stroke-width="{wdt + 2.4}" stroke-linecap="round" stroke-linejoin="round"/>')
-        out.append(f'<path d="{d}" fill="none" stroke="{color}" stroke-width="{wdt}" stroke-linecap="round" stroke-linejoin="round"/>')
+        out.append(f'<path class="map-casing" d="{d}" fill="none" stroke="{casing}" stroke-width="{wdt + 2.4}" stroke-linecap="round" stroke-linejoin="round"/>')
+        out.append(f'<path class="map-road{" map-road--walk" if hw == "pedestrian" else ""}" d="{d}" fill="none" stroke="{color}" stroke-width="{wdt}" stroke-linecap="round" stroke-linejoin="round"/>')
     return "".join(out)
 
 
@@ -153,8 +153,35 @@ def relax(points, r, fixed=()):
     return pos
 
 
-def landmark(view, lat, lon, label, kind):
-    x, y = view.xy(lat, lon)
+def clear_of(x, y, label, circles, boxes, height):
+    """Where a label goes so that no pin, marker or other label sits on it: the nearest free spot to (x, y).
+
+    A label is taken as a box about its drawn size (34 px condensed capitals); a pin is taken at the size it has on a
+    phone, where the stylesheet draws it 1.6 times larger. Returns the spot and the label's box."""
+    half, up, down = 10.5 * len(label), 32, 8
+
+    def box(cx, cy):
+        return (cx - half, cy - up, cx + half, cy + down)
+
+    def free(b):
+        if b[0] < 8 or b[2] > W - 8 or b[1] < 8 or b[3] > height - 8:
+            return False
+        for cx, cy, cr in circles:
+            nx, ny = min(max(cx, b[0]), b[2]), min(max(cy, b[1]), b[3])
+            if math.hypot(cx - nx, cy - ny) < cr:
+                return False
+        return not any(b[0] < o[2] and o[0] < b[2] and b[1] < o[3] and o[1] < b[3] for o in boxes)
+
+    steps = sorted(((dx, dy) for dx in range(-300, 301, 20) for dy in range(-300, 301, 20)),
+                   key=lambda d: (math.hypot(d[0], d[1] * 1.5), d[1], d[0]))
+    for dx, dy in steps:
+        if free(box(x + dx, y + dy)):
+            return x + dx, y + dy, box(x + dx, y + dy)
+    return x, y, box(x, y)
+
+
+def landmark(view, lat, lon, label, kind, at=None):
+    x, y = at or view.xy(lat, lon)
     if kind == "ipi":
         return (f'<g transform="translate({x:.1f} {y:.1f})"><circle r="36" fill="#051d47"/><circle r="30" fill="#ffd400"/>'
                 f'<text y="10" text-anchor="middle" class="map-ipi">IPI</text></g>')
@@ -165,19 +192,30 @@ def map_svg(view, ways, data, items, prefix, color, ink, title) -> str:
     pins = [view.xy(p["lat"], p["lon"]) for p in items]
     r = 30
     ix, iy = view.xy(data["ipi"]["lat"], data["ipi"]["lon"])
-    placed = relax(pins, r, fixed=[(ix, iy, 36)])
+    # Pins are spaced for their phone size (the stylesheet draws them 1.6 times larger there), so they never
+    # overlap on any screen; a pin moved off its place keeps a line back to it.
+    placed = relax(pins, r * 1.6, fixed=[(ix, iy, 36)])
     lines, dots = [], []
     for i, ((x0, y0), (x, y)) in enumerate(zip(pins, placed), start=1):
         if math.hypot(x - x0, y - y0) > 3:
             lines.append(f'<line x1="{x0:.1f}" y1="{y0:.1f}" x2="{x:.1f}" y2="{y:.1f}"/><circle cx="{x0:.1f}" cy="{y0:.1f}" r="4"/>')
-        dots.append(f'<a href="#{prefix}-{i}" tabindex="-1"><g class="pin" transform="translate({x:.1f} {y:.1f})"><g class="pin__dot"><circle r="{r}" fill="{color}" stroke="#ffffff" stroke-width="4"/>'
+        dots.append(f'<a href="#{prefix}-{i}" tabindex="-1"><g class="pin" transform="translate({x:.1f} {y:.1f})"><g class="pin__dot"><circle class="pin__hit" r="46" fill="none"/><circle r="{r}" fill="{color}" stroke="#ffffff" stroke-width="4"/>'
                     f'<text y="11" text-anchor="middle" fill="{ink}">{i}</text></g></g></a>')
-    lm = [landmark(view, data["trg_slobode"]["lat"], data["trg_slobode"]["lon"] - 0.0004, "Freedom Square", "label")]
+    # Labels keep clear of the pins (at their phone size), of the IPI marker and of each other.
+    circles = [(x, y, r * 1.6 + 6) for x, y in placed] + [(ix, iy, 44)]
+    boxes = []
+
+    def label(lat, lon, text):
+        x, y, b = clear_of(*view.xy(lat, lon), text, circles, boxes, view.h)
+        boxes.append(b)
+        return landmark(view, lat, lon, text, "label", at=(x, y))
+
+    lm = [label(data["trg_slobode"]["lat"], data["trg_slobode"]["lon"] - 0.0004, "Freedom Square")]
     lakes = [w for w in ways if w["tags"].get("name", "").startswith("Panonsko jezero")]
     pts = [(a, b) for w in lakes for a, b in w["geometry"] if view.inside(a, b, margin=0)]
     if len(pts) > 10:
         la = sum(a for a, _ in pts) / len(pts); lo = sum(b for _, b in pts) / len(pts)
-        lm.append(landmark(view, la - 0.0004, lo, "Pannonian Lakes", "label"))
+        lm.append(label(la - 0.0004, lo, "Pannonian Lakes"))
     ipi = landmark(view, data["ipi"]["lat"], data["ipi"]["lon"], "IPI Academy", "ipi")
     return (f'<svg class="map" viewBox="0 0 {W} {view.h}" role="img" aria-labelledby="{prefix}-map-title">'
             f'<title id="{prefix}-map-title">{esc(title)}</title>'

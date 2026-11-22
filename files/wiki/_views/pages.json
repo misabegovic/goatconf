@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-21",
+  "generated": "2026-11-22",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -65,12 +65,13 @@
       "title": "The organiser runs the goat hunt; the core publishes prices, the breaks list and the lake day",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-13",
+      "updated": "2026-11-21",
       "confidence": "medium",
       "depends_on": [
         "org/prds/activities-lake-and-town.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--goat-hunt-not-promised-for-now.md",
         "sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md",
         "sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md",
         "sources/conversations/2026-10-07--org--adr-answers.md",
@@ -81,7 +82,7 @@
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md",
         "sources/web/tuzla/tuzla-wikipedia.md"
       ],
-      "tokens": 1004
+      "tokens": 1163
     },
     {
       "path": "org/adrs/budget-and-public-ledger.md",
@@ -218,12 +219,22 @@
       "title": "Build the pages in plain HTML and CSS, with the goat everywhere and playful",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-27",
+      "updated": "2026-11-22",
       "confidence": "medium",
       "depends_on": [
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--continue-round-nine.md",
+        "sources/conversations/2026-11-22--org--fix-all.md",
+        "sources/conversations/2026-11-22--org--continue-round-eight.md",
+        "sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md",
+        "sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md",
+        "sources/conversations/2026-11-21--org--hooves-stay-and-more-improvements.md",
+        "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
+        "sources/conversations/2026-11-21--org--continue-iterating.md",
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
+        "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-10-27--org--goat-mascot.md",
         "sources/conversations/2026-10-27--org--sticker-packs.md",
         "sources/conversations/2026-10-27--org--still-stickers.md",
@@ -239,7 +250,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 1593
+      "tokens": 7330
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -395,7 +406,7 @@
       "title": "Website: goatconf.com on GitHub Pages, with every intake through Google Forms",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-19",
+      "updated": "2026-11-21",
       "confidence": "medium",
       "depends_on": [
         "org/prds/website-and-registration.md",
@@ -404,6 +415,10 @@
       ],
       "supersedes": "org/adrs/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
+        "sources/conversations/2026-11-21--org--continue-iterating.md",
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
+        "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-17--org--three-days-section.md",
         "sources/conversations/2026-10-17--org--event-kinds-clickable.md",
@@ -426,7 +441,7 @@
         "sources/web/tooling/google-forms-response-destination.md",
         "sources/web/legal/bih-zakon-o-zastiti-licnih-podataka-12-25.md"
       ],
-      "tokens": 3040
+      "tokens": 3934
     },
     {
       "path": "org/adrs/make-it-yours-hub.md",
@@ -627,13 +642,14 @@
       "title": "Speaker profiles and travel supporters: consented records, a speakers page and a supporters wall",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-26",
+      "updated": "2026-11-21",
       "confidence": "medium",
       "depends_on": [
         "org/prds/cfp-and-speakers.md",
         "org/prds/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-10-26--org--confirmed-speaker-cards.md",
         "sources/conversations/2026-10-26--org--speaking-card-on-the-profile.md",
         "sources/conversations/2026-10-26--org--speaking-cards-show-the-talk.md",
@@ -651,7 +667,7 @@
         "sources/conversations/2026-10-07--org--no-money-through-me.md",
         "sources/conversations/2026-10-07--org--goatconf-will-be-public.md"
       ],
-      "tokens": 2056,
+      "tokens": 2211,
       "consumed_by": [
         "org/adrs/online-supporters-through-the-business.md"
       ]
@@ -1185,7 +1201,7 @@
         "sources/conversations/2026-10-12--org--day-chain-and-session-format.md",
         "sources/conversations/2026-10-07--org--saying-confirmed.md"
       ],
-      "tokens": 4370
+      "tokens": 4330
     },
     {
       "path": "org/outreach/drumbeat-2027-jan-mar.md",
@@ -1262,7 +1278,7 @@
         "sources/conversations/2026-10-13--org--outside-review-fixes.md",
         "sources/conversations/2026-10-18--org--registration-approval-not-on-the-site.md"
       ],
-      "tokens": 3507
+      "tokens": 3500
     },
     {
       "path": "org/outreach/drumbeat.md",
@@ -1803,12 +1819,13 @@
       "title": "Activities: the salt lake, a goat hunt, and a cheap city as the gift",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-11-21",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/activities-the-lake-and-the-town.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--goat-hunt-not-promised-for-now.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--lakes-planned-and-every-evening.md",
@@ -1837,7 +1854,7 @@
         "sources/web/venue/tztz-peace-flame-house.md",
         "sources/web/models/bansko-nomad-fest-life-in-bansko.md"
       ],
-      "tokens": 3437,
+      "tokens": 3528,
       "consumed_by": [
         "org/adrs/activities-lake-and-town.md"
       ]
@@ -1889,12 +1906,16 @@
       "title": "An open call by Google Form, judged by the organiser, filling every room's slots, and travel that speakers fund",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-11-07",
+      "updated": "2026-11-22",
       "parent_epic": "goatconf-2027",
       "appetite": "medium",
       "confidence": "medium",
       "supersedes": "org/pitches/cfp-and-speakers.md",
       "sources": [
+        "sources/conversations/2026-11-22--org--continue-round-eight.md",
+        "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
+        "sources/conversations/2026-11-21--org--continue-iterating.md",
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-07--org--meet-them-in-person.md",
         "sources/conversations/2026-11-07--org--speakers-register-cta.md",
         "sources/conversations/2026-11-07--org--program-page-lineup.md",
@@ -1935,7 +1956,7 @@
         "sources/web/tooling/sessionize-anonymous-mode.md",
         "sources/web/tooling/pretalx-review-docs.md"
       ],
-      "tokens": 5454,
+      "tokens": 6382,
       "consumed_by": [
         "org/adrs/call-organiser-judges.md",
         "org/adrs/cfp-and-speakers.md",
@@ -2140,7 +2161,7 @@
       "kind": "initiative",
       "status": "living",
       "parent_epic": "goatconf-2027",
-      "updated": "2026-10-23",
+      "updated": "2026-11-21",
       "team": "organiser",
       "repos": [
         "org"
@@ -2152,6 +2173,7 @@
         "org/adrs/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
         "sources/conversations/2026-10-23--org--extendable-and-each-edition.md",
         "sources/conversations/2026-10-23--org--host-guides-and-venues.md",
         "sources/conversations/2026-10-23--org--reserved-venues-and-explore.md",
@@ -2179,7 +2201,7 @@
         "sources/web/models/fosdem-2026-fringe.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3223,
+      "tokens": 3578,
       "consumed_by": [
         "org/adrs/make-it-yours-hub.md"
       ]
@@ -2361,12 +2383,18 @@
       "title": "Website and registration: goatconf.com and a free pass per core day",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-11-07",
+      "updated": "2026-11-21",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md",
+        "sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md",
+        "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
+        "sources/conversations/2026-11-21--org--continue-iterating.md",
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
+        "sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md",
         "sources/conversations/2026-11-07--org--home-goats-stay.md",
         "sources/conversations/2026-11-07--org--home-page-order.md",
         "sources/conversations/2026-11-07--org--register-page-and-hallway-track.md",
@@ -2397,7 +2425,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 3493,
+      "tokens": 6258,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
@@ -2760,6 +2788,7 @@
         "org/tuzla.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-21--org--keep-iterating.md",
         "sources/conversations/2026-11-21--org--goat-statue-photo.md",
         "sources/conversations/2026-11-07--org--mesa-and-ismet-photo.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
@@ -2825,7 +2854,7 @@
         "sources/web/images/burek-nisici.md",
         "sources/conversations/2026-10-12--org--site-as-a-pitch.md"
       ],
-      "tokens": 8700
+      "tokens": 8750
     },
     {
       "path": "org/tuzla.md",

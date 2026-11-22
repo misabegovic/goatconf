@@ -2,7 +2,7 @@
 title: "Website: goatconf.com on GitHub Pages, with every intake through Google Forms"
 kind: decision
 status: accepted
-updated: 2026-10-19
+updated: 2026-11-21
 confidence: medium
 depends_on:
   - org/prds/website-and-registration.md
@@ -10,6 +10,10 @@ depends_on:
   - org/prds/extension-slots-and-the-record.md
 supersedes: org/adrs/website-and-registration.md
 sources:
+  - sources/conversations/2026-11-21--org--continue-iterating-round-four.md
+  - sources/conversations/2026-11-21--org--continue-iterating.md
+  - sources/conversations/2026-11-21--org--keep-iterating.md
+  - sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md
   - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/conversations/2026-10-17--org--three-days-section.md
   - sources/conversations/2026-10-17--org--event-kinds-clickable.md
@@ -135,6 +139,10 @@ builds are checked by the local CI.
 - **2026-10-17, who's organising, below why a goat.** On the organiser's ask, the organiser block (the organiser, IPI Academy, the fact stickers and the conferences run before) moves from after the three days to after why a goat, so the home page runs: the cover with the seal, the three days, who is speaking, give a talk, Tuzla, food, propose an event, the supporters, why a goat, who's organising, and the code of conduct; the album's numbers follow the new order (source: sources/conversations/2026-10-17--org--organiser-block-below-the-goat.md).
 - **2026-10-17, the event kinds are links.** On the organiser's ask, every kind in the home page's "Propose an event" section links to the page for proposing one, as the "Your talk" slots link to the call for talks (source: sources/conversations/2026-10-17--org--event-kinds-clickable.md).
 - **2026-10-17, the three days invite events on any day.** On the organiser's ask, the home page's day stickers link to their day on the program, say what the hours off are, open the Thursday and Friday evenings to events people add, and list accepted events under their day; a "Yours?" slot after them invites an event on any day from 2 to 6 June (source: sources/conversations/2026-10-17--org--three-days-section.md).
+- **2026-11-21, one button in the top bar, Register on the phone bar, and the button in the register page's head.** Decided on the local branch `site/phone-first-and-one-ask` and pending the organiser's approval from screenshots; nothing is published before that (source: sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md). The top bar from `tools/nav.py` keeps Program, Speakers, Travel and Supporters, shows Host an event and Propose a session as plain links after them, and keeps Register as its only button. On phones the bar shows the mark with its year, a compact Register button and Menu; the Menu panel keeps its three buttons as the organiser set them on 2026-10-23 (source: sources/conversations/2026-10-23--org--phone-menu.md). The register page's head carries the Luma button and one line under it; the "Your ticket" section says that choosing sessions comes later and links to the seats, instead of repeating the button. The home page's ticket page becomes a ticket-shaped sticker. The home page's order, and every card on it, stay as decided on 2026-11-07. The measures are in the PRD's amendment of the same date.
+- **2026-11-21, round two: the footer in groups, the address and the calendar link on the home page, the register page in one sequence.** Second round on the local branch `site/phone-first-and-one-ask`, pending the organiser's approval from screenshots; nothing is published before that (source: sources/conversations/2026-11-21--org--keep-iterating.md). `tools/frame.py` holds the footer's links in four named groups and writes them into every footer and the home page's back cover; every link stays. The home page names the venue with its address, and its ticket links `goatconf-2027.ics`, the file `tools/agents.py` already writes. The register page keeps its parts and orders them: the ticket's four stickers in one row, the days with the seats, the speakers, getting here, how it works. The home page's closing page and the end of "Why a goat" are redrawn as the PRD's amendment of the same date says, where the measures are.
+- **2026-11-21, round three: a compact footer, page heads on phones, and each page its own opening photo.** Third round on the local branch `site/phone-first-and-one-ask`, pending the organiser's approval from screenshots; nothing is published before that (source: sources/conversations/2026-11-21--org--continue-iterating.md). `tools/frame.py` keeps the four groups; the stylesheet lays them in one row on wide screens and as a label over a wrapped row on phones. Every inner page's head, from `frame.page()` and the hand-written pages alike, shows its photo as a corner sticker on a phone. `tools/program.py` opens the program page on the Freedom Square photo and `tools/speakers.py` opens the speakers page on the painted speaker goat from `tools/goat_atlas.py`; `tools/home.py` writes the home page's supporters as numbered stickers. The measures are in the PRD's amendment of the same date.
+- **2026-11-21, round four: page heads without a repeated picture, the places folded on a phone, the open rooms drawn.** Fourth round on the local branch `site/phone-first-and-one-ask`, pending the organiser's approval from screenshots; nothing is published before that (source: sources/conversations/2026-11-21--org--continue-iterating-round-four.md). The contact and accessibility pages' heads carry no picture and the charter's carries the painted host goat; `tools/extensions.py` wraps the places in the fold the travel page uses and `site/extend.js` opens it whenever a filter or a link to a place is in play; `tools/program.py` writes one small drawn slot per open room into the open-rooms line. The measures are in the PRDs' amendments of the same date.
 
 ## Related
 

@@ -383,7 +383,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
 </section>
 <section class="album-page wrap" aria-labelledby="h-talks">
   <h2 class="band" id="h-talks">{"Sessions" if len(sessions) > 1 else "Session"}</h2>
-  {f'<ul class="talks">{talks}</ul>' if talks else '<p class="copy">The session will be on the program soon.</p>'}
+  {f'<ul class="talks">{talks}</ul>' if talks else '<p class="copy talks-soon">The session will be on the program soon.</p>'}
   {register_cta(f"Meet {esc(str(meta['name']).split()[0])} in person")}
   <p class="copy"><a class="go go--ink" href="program.html">See the whole program</a> <a class="go go--ink" href="speakers.html">All speakers</a></p>
 </section>{support_section(meta)}{share}"""
@@ -400,7 +400,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     # The speaker's own goat stands on every band of their page; with the script one of them follows the visitor
     # down the page (ADR goat-mascot).
     goat = frame.speaker_peek(slug)
-    main = re.sub(r'(<h2 class="band"[^>]*>)', lambda m: m.group(1) + goat, main)
+    main = re.sub(r'(<h2 class="band"[^>]*>)', lambda m: m.group(1) + ("" if 'id="h-about"' in m.group(1) and goat_atlas.has(f"speaker-{slug}-sitting") else goat), main)
     return formlinks.rewrite(shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main, preview), formlinks.forms())
 
 
@@ -540,8 +540,9 @@ def speakers_page() -> str:
 </section>"""
     return formlinks.rewrite(shell("speakers", "Speakers: GoatConf 2027, 3–5 June, Tuzla",
                  "The speakers at GoatConf 2027 in Tuzla: their sessions, in their own words.",
-                 ("img/ipi-lecture-hall.jpg", 1024, 768, "A talk in IPI Academy's lecture hall, students' faces blurred"),
-                 "The speakers", "The people giving the talks, panels and workshops, in their own words.", main), formlinks.forms())
+                 (*goat_atlas.single("sticker-speaker"), "The GoatConf goat as a speaker, holding a microphone"),
+                 "The speakers", "The people giving the talks, panels and workshops, in their own words.", main,
+                 photo_class=" page-head__photo--mark page-head__photo--goat"), formlinks.forms())
 
 
 def supporters_page() -> str:

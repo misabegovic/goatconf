@@ -88,9 +88,22 @@ def block(name: str, body: str) -> str:
     return blocks.wrap(name, "tools/frame.py", body)
 
 
+# The same links in four groups, so a visitor can scan them (sources/conversations/2026-11-21--org--keep-iterating.md).
+# Every page in LINKS belongs to exactly one group; tests/test_home_and_nav.py checks it.
+GROUPS = [("The conference", ("index.html", "program.html", "speakers.html", "travel.html", "register.html")),
+          ("Take part", ("talk.html", "extend.html", "supporters.html", "contact.html")),
+          ("Good to know", ("charter.html", "code-of-conduct.html", "access.html")),
+          ("Brand and goats", ("brand.html", "stickers.html", "goatchi.html"))]
+
+
 def links(back_cover: bool = False) -> str:
-    return " ".join(f'<a href="{href}">{BACK_COVER.get(href, label) if back_cover else label}</a>'
-                    for href, label in LINKS if not (back_cover and href == "index.html"))
+    labels = dict(LINKS)
+    groups = []
+    for title, hrefs in GROUPS:
+        items = " ".join(f'<a href="{href}">{BACK_COVER.get(href, labels[href]) if back_cover else labels[href]}</a>'
+                         for href in hrefs if not (back_cover and href == "index.html"))
+        groups.append(f'<span class="footer__group"><b>{title}</b> {items}</span>')
+    return " ".join(groups)
 
 
 def footer() -> str:
@@ -98,12 +111,13 @@ def footer() -> str:
   <p>{LINE}</p>
   <p class="footer__links">{links()}</p>
   {nav.follow()}
+  {nav.theme_control("foot")}
   <p class="footer__legal">{LEGAL}</p>
 </footer>""")
 
 
 def legal() -> str:
-    return block("legal", f'    <p class="back-cover__legal">{LEGAL}</p>')
+    return block("legal", f'    {nav.theme_control("foot")}\n    <p class="back-cover__legal">{LEGAL}</p>')
 
 
 def back_cover_links() -> str:
@@ -122,7 +136,8 @@ def page(canonical: str, title: str, description: str, photo, h1: str, lede: str
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
-<meta name="theme-color" content="#0b3d91">
+<meta name="theme-color" content="#edf2fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#061a3f" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://goatconf.com/{canonical}">{image}
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-96.png" sizes="96x96" type="image/png">

@@ -37,7 +37,25 @@ SOCIAL = (
 FOLLOW = blocks.pattern("follow")
 FOOTER_LINKS = re.compile(r'(<footer\b.*?<p class="(?:footer|back-cover)__links">.*?</p>)', re.S)
 LINKS = [("program.html", "Program"), ("speakers.html", "Speakers"), ("travel.html", "Travel"), ("supporters.html", "Supporters")]
-ACTIONS = [("extend.html", "Host an event", "topbar__cta"), ("talk.html", "Propose a session", "topbar__cta"), ("register.html", "Register", "topbar__cta topbar__cta--main")]
+# Register is the bar's one button. The two doors are plain links on wide screens, so the bar has one ask, and
+# stay buttons in the phone menu, as the organiser set them (sources/conversations/2026-10-23--org--phone-menu.md,
+# sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md).
+DOORS = [("extend.html", "Host an event"), ("talk.html", "Propose a session")]
+REGISTER = ("register.html", "Register")
+
+
+# The visitor's theme (sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md): the
+# site follows the system setting; a stored choice of light or dark is put on <html> before the page paints. The
+# control is three radio buttons in a labelled group, hidden until the script shows it, so with scripting off it
+# is not there and the system setting still applies.
+THEME_BOOT = ('<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")'
+              'document.documentElement.dataset.theme=t}catch(e){}</script>')
+
+
+def theme_control(where: str) -> str:
+    opts = "".join(f'<input type="radio" name="theme-{where}" id="theme-{where}-{v}" value="{v}"{" checked" if v == "system" else ""}>'
+                   f'<label for="theme-{where}-{v}">{label}</label>' for v, label in (("system", "System"), ("light", "Light"), ("dark", "Dark")))
+    return f'<fieldset class="theme" data-theme-control hidden><legend>Theme</legend>{opts}</fieldset>'
 
 
 def bar(current: str) -> str:
@@ -45,14 +63,17 @@ def bar(current: str) -> str:
         attrs = f' class="{cls}"' if cls else ""
         here = ' aria-current="page"' if href == current else ""
         return f'<a{attrs} href="{href}"{here}>{label}</a>'
-    links = "\n    ".join(a(h, l) for h, l in LINKS)
-    actions = "\n    ".join(a(h, l, c) for h, l, c in ACTIONS)
-    # On phones the bar is the mark and a Menu that opens every link, the three actions as buttons at the end,
-    # Register filled (the organiser, 2026-10-23, sources/conversations/2026-10-23--org--phone-menu.md).
-    # A <details> opens it without a script.
+    links = "\n    ".join(a(h, l) for h, l in LINKS + DOORS)
+    actions = a(*REGISTER, "topbar__cta")
+    # On phones the bar is the mark, Register and a Menu that opens every link, the three actions as buttons at
+    # the end, Register filled (the organiser, 2026-10-23, sources/conversations/2026-10-23--org--phone-menu.md).
+    # Register sits beside Menu so it is one tap away wherever the page is scrolled to. A <details> opens the
+    # menu without a script.
     panel = "\n        ".join(a(h, l) for h, l in LINKS)
-    panel_actions = "\n          ".join(a(h, l, "topbar__panel-main" if "topbar__cta--main" in c else "topbar__panel-cta") for h, l, c in ACTIONS)
+    panel_actions = "\n          ".join([a(h, l, "topbar__panel-cta") for h, l in DOORS] + [a(*REGISTER, "topbar__panel-main")])
+    register = a(*REGISTER, "topbar__register")
     return f"""{START}
+{THEME_BOOT}
 <a class="skip" href="#main">Skip to the content</a>
 <header class="topbar">
   <a class="topbar__home" href="index.html" aria-label="GoatConf home"><img class="topbar__coin" src="brand/coin.svg" width="36" height="36" alt="">GoatConf <span class="topbar__year">2027</span></a>
@@ -61,6 +82,7 @@ def bar(current: str) -> str:
     {actions}
   </nav>
   <div class="topbar__phone">
+    {register}
     <details class="topbar__menu">
       <summary><span class="topbar__open">Menu</span><span class="topbar__close">Close</span></summary>
       <nav class="topbar__panel" aria-label="Menu">
@@ -68,6 +90,7 @@ def bar(current: str) -> str:
         <p class="topbar__panel-actions">
           {panel_actions}
         </p>
+        {theme_control("menu")}
       </nav>
     </details>
   </div>
