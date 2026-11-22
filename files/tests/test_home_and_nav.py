@@ -173,7 +173,7 @@ def _home_sections():
     return main, re.findall(r'<section([^>]*)>(.*?)</section>', main, re.S)
 
 
-def test_only_the_hero_and_the_free_ticket_never_close_and_only_the_speakers_start_open():
+def test_three_sections_never_close_and_no_section_starts_open():
     """sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md and
     sources/conversations/2026-11-22--org--sections-start-closed-speakers-open.md"""
     import re
@@ -185,8 +185,9 @@ def test_only_the_hero_and_the_free_ticket_never_close_and_only_the_speakers_sta
         how = re.search(r'data-fold="([a-z]+)"', attrs)
         (never if how and how.group(1) == "never" else starts_open if how and how.group(1) == "open" else closes).append(name)
     assert never == ["title", "ticket", "see-you"]
-    assert starts_open == ["speakers"]
-    assert closes == ["days", "tuzla", "food", "talk", "add", "money", "the-goat", "conduct", "goatchi"]
+    # sources/conversations/2026-11-22--org--speakers-section-also-collapsed-by-default.md
+    assert starts_open == []
+    assert closes == ["days", "speakers", "tuzla", "food", "talk", "add", "money", "the-goat", "conduct", "goatchi"]
 
 
 def test_a_closed_row_shows_only_what_its_section_holds_and_one_goat_stop():

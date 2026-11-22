@@ -171,8 +171,8 @@ def speakers_block() -> str:
     intro_html = f'\n  <p class="copy copy--wide">{intro}</p>' if intro else ""
     faces = "".join(f'<img src="{esc(small(m["photo"]))}" width="96" height="96" alt="" loading="lazy" decoding="async">'
                     for _s, (m, _b) in people[:SHOWN] if m.get("photo"))
-    row = closed_row((f'<span class="sec__strip sec__strip--faces" aria-hidden="true">{faces}</span>' if faces else "") + more.replace('class="go go--ink"', 'class="go go--ink sec__more"'))
-    return f"""<section class="album-page wrap" id="speakers" aria-labelledby="speakers-title" data-fold="open">
+    row = closed_row((f'<span class="sec__strip sec__strip--faces" aria-hidden="true">{faces}</span>' if faces else "") + more)
+    return f"""<section class="album-page wrap" id="speakers" aria-labelledby="speakers-title">
 {row_goat("peek-speaker")}
   <h2 class="band" id="speakers-title">Who is speaking</h2>
 {row}{intro_html}

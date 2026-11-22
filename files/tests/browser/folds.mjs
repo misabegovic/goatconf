@@ -44,11 +44,11 @@ const forget = () => ev(`localStorage.removeItem("folds"); 1`);
 const closed = () => ev(`[...document.querySelectorAll("[data-folds] > section.is-closed")].map((s) => s.id).join(",")`);
 const alive = () => ev(`document.documentElement.classList.contains("folds-on") && document.documentElement.classList.contains("folds-ready") && document.querySelectorAll(".sec__toggle").length`);
 const FOLDING = ["days", "speakers", "tuzla", "food", "talk", "add", "money", "the-goat", "conduct", "goatchi"];
-const START_CLOSED = FOLDING.filter((s) => s !== "speakers");
+const START_CLOSED = FOLDING;
 const shut = Object.fromEntries(FOLDING.map((s) => [s, "closed"]));
 
 await nav("index.html"); await forget(); await nav("index.html");
-check(await closed() === START_CLOSED.join(","), "a first visit has the speakers open and every other section closed");
+check(await closed() === START_CLOSED.join(","), "a first visit has every section that opens and closes closed, the speakers too");
 check(await alive() === FOLDING.length, "every section that closes has its button; the hero and the free ticket have none");
 check(await ev(`!document.querySelector("#ticket .sec__toggle") && !document.querySelector(".spread .sec__toggle") && !document.querySelector("#see-you .sec__toggle")`), "the hero, the free ticket and See you in Tuzla have no control");
 
@@ -63,10 +63,11 @@ check(await alive() === FOLDING.length && await closed() === START_CLOSED.join("
 
 await forget(); await nav("index.html");
 await ev(`document.querySelector("#days-title .sec__toggle").click(); document.querySelector("#speakers-title .sec__toggle").click(); 1`);
-check(await ev(`localStorage.getItem("folds")`) === JSON.stringify({ index: { days: "open", speakers: "closed" } }), "a press is kept under the key folds, one entry a page");
-check(await ev(`document.querySelector("#days-title .sec__toggle").getAttribute("aria-expanded") + document.querySelector("#speakers-title .sec__toggle").getAttribute("aria-expanded")`) === "truefalse", "the button says whether its section is open");
+await ev(`document.querySelector("#tuzla-title .sec__toggle").click(); document.querySelector("#tuzla-title .sec__toggle").click(); 1`);
+check(await ev(`localStorage.getItem("folds")`) === JSON.stringify({ index: { days: "open", speakers: "open", tuzla: "closed" } }), "a press is kept under the key folds, one entry a page");
+check(await ev(`document.querySelector("#days-title .sec__toggle").getAttribute("aria-expanded") + document.querySelector("#speakers-title .sec__toggle").getAttribute("aria-expanded") + document.querySelector("#tuzla-title .sec__toggle").getAttribute("aria-expanded")`) === "truetruefalse", "the button says whether its section is open");
 await nav("index.html");
-check(!(await closed()).split(",").includes("days") && (await closed()).split(",").includes("speakers"), "the choice is there after a reload");
+check(!(await closed()).split(",").includes("days") && !(await closed()).split(",").includes("speakers") && (await closed()).split(",").includes("tuzla"), "the choice is there after a reload");
 await ev(`document.querySelector("#days [data-fold-end]").focus(); document.querySelector("#days [data-fold-end]").click(); 1`);
 check((await closed()).split(",").includes("days") && await ev(`document.activeElement === document.querySelector("#days-title .sec__toggle") && JSON.parse(localStorage.getItem("folds")).index.days`) === "closed", "Show less at a section's end closes it, remembers it and puts the keyboard on its heading");
 check(await ev(`document.querySelectorAll("[data-fold-end]").length`) === FOLDING.length, "every section that closes ends with Show less; the hero, the free ticket and See you in Tuzla have none");
