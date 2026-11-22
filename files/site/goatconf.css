@@ -1997,3 +1997,9 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
   .fold--text .fold__toggle:not(:checked) ~ .fold__rest { display: none; }
   .fold--text .fold__more { margin: 0 0 var(--gap-4); min-height: 2.75rem; display: inline-flex; align-items: center; }
 }
+
+/* The goat on a photo of Tuzla (round eleven, 2026-11-22; a designer's choice, for the organiser to look at again):
+   a third of the photo's width, in the lower right corner on the photo's bottom edge, so the picture and its subject
+   stay clear. It was two thirds of the width and covered more than two fifths of the photo. album.js fades it in. */
+.slots--city .goat-one__stage.is-scene { right: 0.45rem; width: 32%; }
+.slots--city .goat-one__stage.is-scene .goat { filter: drop-shadow(0 0.15rem 0.2rem rgb(0 0 0 / 0.3)); }
