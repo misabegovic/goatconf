@@ -940,3 +940,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #297: site: closed sections hold still, one tap opens a whole section, the phone menu scrolls
    diff: 47 files, +513/-273
    restricted-paths: true
+2026-11-22 merge — PR #299: site: the speakers section starts closed, and speaker and register pages say when, where and free
+   diff: 45 files, +179/-57
+   restricted-paths: true
