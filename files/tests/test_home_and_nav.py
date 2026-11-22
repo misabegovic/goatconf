@@ -238,3 +238,33 @@ def test_every_page_marks_closed_sections_before_the_first_paint_and_keeps_one_k
     assert 'classList.remove("folds-on")' in nav.FOLD_BOOT
     text = (Path(__file__).resolve().parent.parent / "site" / "index.html").read_text(encoding="utf-8")
     assert nav.FOLD_BOOT in text and text.index(nav.FOLD_BOOT) < text.index("<main")
+
+
+def test_the_cover_keeps_every_word_and_the_phone_only_hides():
+    """sources/conversations/2026-11-22--org--phone-hero-layout-and-trim-keep-the-six-cards.md: the phone cover is layout
+    and one sentence a phone does not display; the words in the page are the same at every width, and "What is
+    decided" is not touched."""
+    import re
+    files = Path(__file__).resolve().parent.parent
+    home = (files / "site" / "index.html").read_text(encoding="utf-8")
+    cover = home.split('<div class="spread__cover">', 1)[1].split('<div class="spread__page"', 1)[0]
+    words = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", cover)).strip()
+    assert words == ("GoatConf 2027 3–5 June 2027 · Tuzla, Bosnia and Herzegovina A free conference for people who build and "
+                     "sell software. Engineers, designers, product people, founders, and the incurably curious dreamers and "
+                     "visionaries. Any programming language, any stack. Register for free Propose a session Host an event "
+                     "See the program")
+    assert "An excuse to" not in cover
+    assert ('<span class="cover-lede__who"><span class="cover-lede__long">Engineers, designers, product people, founders, and the incurably '
+            'curious dreamers and visionaries. </span>Any programming language, any stack.</span>') in cover
+    assert re.search(r'<span class="cover-perch"><!-- gen:goat-peeking tools/frame.py --><span class="goat peek peek--art" aria-hidden="true"', cover)
+    # The six stickers, in their order, each with its one number.
+    decided = home.split('<div class="slots slots--hero">', 1)[1].split("</section>", 1)[0]
+    assert re.findall(r'class="(?:sticker|slot)[^"]* (hero-\w+)"[^>]*>(?:<span class="goat.*?</span>)?<span class="num(?: num--printed)?">(\d+)</span>', decided) == [
+        ("hero-free", "1"), ("hero-tuzla", "2"), ("hero-june", "3"), ("hero-ipi", "4"), ("hero-stack", "5"), ("hero-slot", "6")]
+    css = (files / "site" / "goatconf.css").read_text(encoding="utf-8")
+    # Off for everyone, then on for phones only, so a wide screen never has the stop; and nothing hides a sticker.
+    before, after = css.split(".cover-perch { display: none; }", 1)
+    assert after.lstrip().startswith("@media (max-width: 47.99rem) {") and ".cover-perch { display: block;" in after
+    assert ".cover-perch" not in before and ".cover-lede__long { display: none; }" in after and ".cover-lede__long" not in before
+    assert "wide-only" not in css and "num__p" not in css and "wide-only" not in home and "num__p" not in home
+

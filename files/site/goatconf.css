@@ -2321,3 +2321,34 @@ p.sec__line { margin: 0; font-size: 0.95rem; line-height: 1.4; color: var(--ink-
 /* The travel page's jump row on a phone (review 18): its seven links set closer, so they stand on one line from 390
    pixels wide where "June" stood alone on a second; each link is still 44 pixels tall. */
 @media (max-width: 47.99rem) { main[data-folds] > .daynav.daynav--page a { padding-inline: 0.14rem; min-width: 2.2rem; } }
+
+/* The cover on a phone, as the organiser chose it (2026-11-22: "Ok, let's do layout and trim but keep the 6 what is
+   decides cards", sources/conversations/2026-11-22--org--phone-hero-layout-and-trim-keep-the-six-cards.md). Under 48rem
+   only; from 48rem up nothing here applies, and "What is decided" is not touched at any width. The seal at about half
+   its size beside the name on one line, since the top bar already carries both; the goat on the yellow rule at the
+   right end of that line, in the room the smaller name leaves; the date on one line and the place on the next; of who
+   it is for, "Any programming language, any stack." (the sentence before it is not displayed, so it is not read out
+   either, and it stays in the page); the three links on one row, each 44 high. */
+.cover-perch { display: none; }
+@media (max-width: 47.99rem) {
+  .cover-head { position: relative; gap: 0.55rem; padding-right: 6rem; }
+  .cover-seal { width: 2.75rem; filter: drop-shadow(0 0.2rem 0.25rem rgb(0 0 0 / 0.25)); }
+  .cover-title { font-size: clamp(0.95rem, calc((100vw - 14rem) / 6.6), 1.6rem); line-height: 1; white-space: nowrap; }
+  .cover-title span { margin-top: 0; margin-left: 0.08em; }
+  .cover-perch { display: block; position: absolute; left: 0; right: 0; bottom: 0; height: 0; }
+  .cover-perch .peek { right: 0.6rem; width: 5.2rem; }
+  .cover-when__part { display: block; }
+  .cover-when__dot { display: none; }
+  .cover-when { font-size: clamp(0.9rem, 4.6vw, 1.15rem); }
+  .cover-lede__long { display: none; }
+  .cover-lede__who { text-wrap: balance; }
+  .cover-links, .spread .cover-actions p.cover-links { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 0 0.3rem; }
+  .cover-actions .go { font-size: clamp(0.8rem, 3.75vw, 0.95rem); font-stretch: 78%; white-space: nowrap; }
+  .cover-actions .go::after { content: none; }
+}
+/* Under 21.5rem the three do not fit one line at a size that reads, and wrapped they left one link alone on a second
+   row. They stay three across, each on two lines at 0.9rem, as wide as its longer line: one row, no link left over. */
+@media (max-width: 21.49rem) {
+  .cover-links, .spread .cover-actions p.cover-links { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 0 0.5rem; }
+  .cover-actions .go { font-size: 0.9rem; line-height: 1.15; white-space: normal; max-width: 5.2em; text-wrap: balance; }
+}
