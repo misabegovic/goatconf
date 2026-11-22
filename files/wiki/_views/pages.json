@@ -2423,6 +2423,7 @@
         "sources/conversations/2026-11-22--org--ship-the-collapsible-home-page.md",
         "sources/conversations/2026-11-22--org--meals-section-weird-when-collapsed.md",
         "sources/conversations/2026-11-22--org--first-visit-stays-see-you-fixed-open-ship-when-ready.md",
+        "sources/conversations/2026-11-22--org--speakers-section-also-collapsed-by-default.md",
         "sources/conversations/2026-11-22--org--no-goat-beside-the-organising-link.md",
         "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md",
@@ -2464,7 +2465,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 8206,
+      "tokens": 8447,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
