@@ -122,8 +122,10 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     assert "og.png" in names and "og-dark.png" in names and len(names) % 2 == 0
     assert "#edf2fb" in names["og.png"][2] and "#051534" in names["og-dark.png"][2]
     assert shareables.THEME == "light"
-    # The goat on a card says nothing until a line is picked; one value picks, and a record's own line wins.
-    assert shareables.SPEAKER_SAYS == "" and shareables.card_line("ana-example", meta) == ""
+    # The goat on a card says the line the organiser picked; one value picks, and a record's own line wins. The
+    # link preview carries no bubble.
+    assert shareables.SPEAKER_SAYS == "See you in Tuzla!" and shareables.card_line("ana-example", meta) == "See you in Tuzla!"
+    assert shareables.card_line("ana-example", meta, mode="") == ""
     assert shareables.card_line("ana-example", meta, 1, mode="rotate") == shareables.SAYS_CARD[1]
     assert shareables.card_line("ana-example", meta, mode="See you in Tuzla!") == "See you in Tuzla!"
     assert shareables.card_line("ana-example", {**meta, "card_says": "Baaa!"}, mode="rotate") == "Baaa!"

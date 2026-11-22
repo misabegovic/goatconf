@@ -344,13 +344,16 @@ def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, squ
 SPEAKER_GOAT = "corner"
 # The goat on a speaker's card may say a line (the organiser's "maybe",
 # sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md). Picking is this one value:
-#   ""         it says nothing: the cards as they are (the default until the organiser picks)
+# The organiser picked "See you in Tuzla" (sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md);
+# it carries the exclamation mark every line the goat says on the site carries (tools/frame.py SAYS_EVERY). The link
+# previews (1200 x 630, shown small by the sites that unfurl a link) carry no bubble.
+#   ""         it says nothing
 #   a line     every speaker's goat says that line, for example "See you in Tuzla!"
 #   "rotate"   each speaker's goat takes the next line of SAYS_CARD, in the speakers' order
 #   "own"      each says the first line about its own work (tools/frame.py SAYS_SPEAKER), or the first of SAYS_CARD
 # A record's own `card_says:` line wins over all of them. Every line here is already on the site or in the organiser's
 # recorded words; the list with where each comes from is in DESIGN.md under "Share cards, light and dark".
-SPEAKER_SAYS = ""
+SPEAKER_SAYS = "See you in Tuzla!"
 SAYS_CARD = ("See you in Tuzla!", "Come to GoatConf!", "Free to attend!", "See you in June!")
 SAYS_CANDIDATES = (*SAYS_CARD, "Tuzla, 3–5 June 2027!", "Baaa!", "Any programming language, any stack.")
 
@@ -373,7 +376,7 @@ def bubble(line: str, right: float, bottom: float, px: int, room: int) -> str:
     speech bubble, yellow with night lettering in both versions so it reads at the size a card is seen in a feed."""
     if not line:
         return ""
-    return (f'<div style="position:absolute; right:{right:.0f}px; bottom:{bottom:.0f}px; max-width:{room}px; '
+    return (f'<div class="says" style="position:absolute; right:{right:.0f}px; bottom:{bottom:.0f}px; max-width:{room}px; '
             f'padding:{px * .28:.0f}px {px * .62:.0f}px {px * .34:.0f}px; border-radius:{px * .8:.0f}px {px * .8:.0f}px {px * .16:.0f}px {px * .8:.0f}px; '
             f'background:{YELLOW}; color:{NIGHT}; font-family:\'Bricolage Grotesque\'; font-weight:800; font-stretch:85%; '
             f'font-size:{px}px; line-height:1.08; text-wrap:balance; text-align:center">{esc(line)}</div>')
@@ -564,7 +567,7 @@ def cards() -> dict[str, tuple[int, int, str]]:
         says = card_line(slug, meta, i)
         out[f"speaker-{slug}-square.png"] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True, says=says))
         out[f"speaker-{slug}-wide.png"] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False, says=says))
-        out[speakers.preview_name(slug)] = (1200, 630, speaker_card(slug, meta, talks.get(slug, []), False, 630, says=says))
+        out[speakers.preview_name(slug)] = (1200, 630, speaker_card(slug, meta, talks.get(slug, []), False, 630))
         announce = speakers.announce_cards(slug)
         out[announce["square"]] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True, announce=True, says=says))
         out[announce["wide"]] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False, announce=True, says=says))
