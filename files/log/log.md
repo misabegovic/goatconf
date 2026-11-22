@@ -919,3 +919,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-21 merge — PR #283: drumbeat: Why a goat went out on LinkedIn and X, with the statue cards
    diff: 4 files, +16/-3
    restricted-paths: false
+2026-11-22 merge — PR #285: site: a lighter album with light and dark themes, clearer links and one type scale
+   diff: 218 files, +2557/-534
+   restricted-paths: true
