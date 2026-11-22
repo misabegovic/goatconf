@@ -225,6 +225,8 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--ship-round-twelve-when-ready.md",
+        "sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md",
         "sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md",
         "sources/conversations/2026-11-22--org--continue-round-nine.md",
         "sources/conversations/2026-11-22--org--fix-all.md",
@@ -251,7 +253,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 7968
+      "tokens": 8429
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -313,6 +315,8 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--ship-round-twelve-when-ready.md",
+        "sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md",
         "sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md",
         "sources/conversations/2026-10-27--org--speaker-goat-on-phones.md",
         "sources/conversations/2026-10-27--org--see-you-goat-on-phones.md",
@@ -340,7 +344,7 @@
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 5203
+      "tokens": 5321
     },
     {
       "path": "org/adrs/goat-tamagotchi-on-the-site.md",
@@ -2385,12 +2389,14 @@
       "title": "Website and registration: goatconf.com and a free pass per core day",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-11-21",
+      "updated": "2026-11-22",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-22--org--ship-round-twelve-when-ready.md",
+        "sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md",
         "sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md",
         "sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md",
         "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
@@ -2427,7 +2433,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 6258,
+      "tokens": 6417,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
