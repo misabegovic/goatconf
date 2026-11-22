@@ -544,3 +544,21 @@ def test_a_session_can_span_several_areas(tmp_path, monkeypatch):
         (tmp_path / "program" / "s.md").write_text(SESSION.replace("accepted: yes", f"accepted: yes\narea: {bad}"), encoding="utf-8")
         problems, _, _ = program.check_record(tmp_path / "program" / "s.md")
         assert any("area must be one of" in p for p in problems), bad
+
+
+def test_speaker_and_register_pages_say_when_where_and_free_in_the_covers_words():
+    """sources/conversations/2026-11-22--org--date-place-and-free-on-speaker-and-register-pages.md"""
+    import re
+    site = Path(__file__).resolve().parent.parent / "site"
+    home = (site / "index.html").read_text(encoding="utf-8")
+    when = re.search(r'<p class="cover-when">(.*?)</p>', home).group(1)
+    # The line is the cover's own, kept in one place for the pages that repeat it.
+    assert when == importlib.import_module("speakers").COVER_WHEN
+    assert "Free to attend." in home and '<a class="button" href="register.html">Register for free</a>' in home
+    assert f'<span class="lede__when">{when}</span>' in (site / "register.html").read_text(encoding="utf-8")
+    pages = sorted(site.glob("speaker-*.html"))
+    assert pages
+    for page in pages:
+        head = page.read_text(encoding="utf-8").split("<main", 1)[-1][:6000]
+        assert f'<span class="lede__when">{when}</span>' in head, page.name
+        assert '<span class="lede__go">Free to attend. <a class="go" href="register.html">Register for free</a></span>' in head, page.name
