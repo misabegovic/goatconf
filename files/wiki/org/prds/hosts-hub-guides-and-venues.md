@@ -3,7 +3,7 @@ title: "Make it yours: one hub with guides on how, what and where, a searchable 
 kind: initiative
 status: living
 parent_epic: goatconf-2027
-updated: 2026-11-21
+updated: 2026-11-22
 team: organiser
 repos:
   - org
@@ -13,6 +13,8 @@ depends_on:
   - org/tuzla/venues-for-hosts.md
   - org/adrs/extension-slots-and-the-record.md
 sources:
+  - sources/conversations/2026-11-22--org--ship-round-thirteen-when-ready.md
+  - sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md
   - sources/conversations/2026-11-21--org--continue-iterating-round-four.md
   - sources/conversations/2026-10-23--org--extendable-and-each-edition.md
   - sources/conversations/2026-10-23--org--host-guides-and-venues.md
@@ -270,3 +272,4 @@ as listed in the frontmatter.
 ## Amendments
 
 - **2026-11-21, the places on a phone, far shorter with every place kept.** Fourth round on the local branch `site/phone-first-and-one-ask`, pending the organiser's approval from screenshots; nothing is published before that (source: sources/conversations/2026-11-21--org--continue-iterating-round-four.md). On a phone Make it yours ran to 45,742 pixels, 58 places one after another, each about 660 pixels tall. (1) Under 48rem a place is a compact row: its photo as a small square beside its name, then the same lines as before in a smaller size; no line of a place is dropped, and photos stay, as asked on 2026-10-23 (source: sources/conversations/2026-10-23--org--extensions-page-search-guides-photos.md). (2) Under 48rem the list shows its first eight places and a "Show all places" control that needs no script, the pattern the organiser chose for the travel page's places to eat (source: sources/conversations/2026-11-07--org--travel-page-redesign.md). (3) With the script, any filter, a kind chosen from the home page or a link to one place opens the whole list, so a match is never hidden; without the script every place is one tap away. (4) The page is under 15,000 pixels at 390 wide before the list is opened and under 35,000 with it open (from 45,742), and is unchanged at 1440. The filters give the same counts as before at both widths.
+- **2026-11-22, a host does not have to pay for everything.** On the organiser's words (source: sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md). The deal on the host page reads: you run it and answer for it, and GoatConf does not pay for it, as before; and, said once and stressed under "Who pays" in "How to host", you do not have to pay for everything, since it is fine for the people who come to pay for themselves, as long as the listing says what it costs. The places list says GoatConf has arranged nothing with the places and pays for nothing. An event in an hour off stays free. The form and the Luma event carry the same sentence; they are changed outside the repository. Published on the organiser's "Ship when ready" (source: sources/conversations/2026-11-22--org--ship-round-thirteen-when-ready.md).

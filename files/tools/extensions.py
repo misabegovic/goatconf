@@ -314,6 +314,9 @@ def event_page(slug: str, meta, body) -> str:
     supporter = (f'\n      <p>{html.escape(profile[1])} is a supporter of GoatConf 2027. <a href="{profile[0]}">See their profile</a>: who they are and how to support them.</p>'
                  if profile else "")
     to_profile = f' <a class="go go--ink" href="{profile[0]}">{html.escape(profile[1])}</a>' if profile else ""
+    # Who covers the event's costs is the record's own line: a host who does says so; where the people who come pay
+    # for themselves, or someone else pays, the page says only who runs it (the Cost line says what it costs).
+    pays = " and pays for it" if str(meta.get("paid_by", "")).strip().lower() in (str(meta["host"]).strip().lower(), "the host", "host") else ""
     start = as_datetime(meta["start"])
     # The program has a section per day from Thursday to Saturday; other days sit under "Around the talks".
     day = start.date().isoformat() if dt.date(2027, 6, 3) <= start.date() <= dt.date(2027, 6, 5) else "h-around"
@@ -336,7 +339,7 @@ def event_page(slug: str, meta, body) -> str:
     </dl>
     <div class="copy">
       {cta}
-      <p>We accepted it as part of GoatConf 2027. {e('host')} runs it and pays for it, so questions about it go to the host. It follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>.</p>{supporter}
+      <p>We accepted it as part of GoatConf 2027. {e('host')} runs it{pays}, so questions about it go to the host. It follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>.</p>{supporter}
     </div>
   </div>
 </section>
@@ -638,7 +641,7 @@ def hub(show_all=False) -> str:
         where = '<p class="ledger-empty">We are still checking the places in Tuzla where you could run something. The list will be here.</p>'
     main = f"""<section class="album-page wrap" aria-labelledby="h-adding">
   <h2 class="band" id="h-adding">What people are adding</h2>
-  <p class="copy copy--wide">Every event here is part of GoatConf 2027: we accepted it, and it follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>. Each host runs their own event and pays for it directly. Open one to see when and where, and how to join.</p>
+  <p class="copy copy--wide">Every event here is part of GoatConf 2027: we accepted it, and it follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>. Each host runs their own event, and GoatConf does not pay for it. Each listing says what it costs. Open one to see when and where, and how to join.</p>
   {listings}
 </section>
 <section class="album-page wrap" aria-labelledby="h-how">
@@ -656,6 +659,8 @@ def hub(show_all=False) -> str:
       <p class="cta"><a class="button" data-form="add" href="#propose">Propose your event</a><span>Open now. It takes about ten minutes.</span></p>
     </div>
     <div class="copy">
+      <h3 class="list-title">Who pays</h3>
+      <p class="stress">You run it. You do not have to pay for everything: it is fine if the people who come pay for themselves, as long as the listing says what it costs.</p>
       <h3 class="list-title">In an hour off</h3>
       <p>An event in an hour off is short, free and open to everyone who comes. It is near IPI Academy, so people can walk there and back, and it ends five minutes before the next session starts. Nothing runs at the same time as a session.</p>
       <h3 class="list-title">Before you book a place</h3>
@@ -679,7 +684,7 @@ def hub(show_all=False) -> str:
 </section>
 <section class="album-page wrap" aria-labelledby="h-where" id="where">
   <h2 class="band" id="h-where">Where in Tuzla</h2>
-  <p class="copy copy--wide">Places a host could ask, from cafés on Freedom Square to halls for a few hundred people. GoatConf has arranged nothing with them: you ask, you book and you pay.{first_note}</p>
+  <p class="copy copy--wide">Places a host could ask, from cafés on Freedom Square to halls for a few hundred people. GoatConf has arranged nothing with them and pays for nothing: you ask and you book.{first_note}</p>
 {where}
 </section>
 <section class="album-page wrap" aria-labelledby="h-propose" id="propose">
@@ -696,8 +701,8 @@ def hub(show_all=False) -> str:
     </div>
     <div class="copy">
       <h3 class="list-title">The rules</h3>
-      <p>Not everything people propose becomes part of GoatConf. We accept what follows the <a href="code-of-conduct.html">code of conduct</a> and the <a href="charter.html">charter</a> and fits the program: its time, its place, who it is for and how it sits next to the talks. You run it and you pay for it, and its name says who runs it, for example "Rust night, part of GoatConf 2027". Anything not accepted may still happen, but not under GoatConf's name.</p>
-      <p><strong>An event or a session?</strong> An event is something you run and pay for yourself. A talk, a panel or a workshop in one of the hour slots at IPI Academy on Thursday or Friday is a session, picked by us: <a href="talk.html">propose a session</a> instead.</p>
+      <p>Not everything people propose becomes part of GoatConf. We accept what follows the <a href="code-of-conduct.html">code of conduct</a> and the <a href="charter.html">charter</a> and fits the program: its time, its place, who it is for and how it sits next to the talks. You run it and answer for it, GoatConf does not pay for it, and its name says who runs it, for example "Rust night, part of GoatConf 2027". Anything not accepted may still happen, but not under GoatConf's name.</p>
+      <p><strong>An event or a session?</strong> An event is something you run yourself, and GoatConf does not pay for it. A talk, a panel or a workshop in one of the hour slots at IPI Academy on Thursday or Friday is a session, picked by us: <a href="talk.html">propose a session</a> instead.</p>
       <p>If you or your organisation fund and run it, you can also be listed as a <a href="supporters.html">supporter</a>. Want to support GoatConf with money or something in kind instead? See the <a href="supporters.html">supporters page</a>.</p>
     </div>
   </div>

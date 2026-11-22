@@ -2,12 +2,13 @@
 title: "Extension slots and the record: how anyone adds to GoatConf"
 kind: initiative
 status: living
-updated: 2026-10-14
+updated: 2026-11-22
 parent_epic: goatconf-2027
 appetite: small
 confidence: medium
 supersedes: org/pitches/one-goat-minimal-core-and-extensions.md
 sources:
+  - sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md
   - sources/conversations/2026-10-13--org--online-supporters-through-the-business.md
   - sources/conversations/2026-10-14--org--catch-up-stale-pages.md
   - sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md
@@ -301,3 +302,4 @@ first.
 - **2026-10-14, read with the later decisions.** A support item no longer appears on a public ledger: the budget is private, with no budget page and no public ledger; online supporters pay the organiser's Austrian business 500 EUR for online perks only, and speakers' travel is refunded only if the budget allows, never promised (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
 - **2026-10-13, the kinds renamed.** The list of events to propose is now Evening event, Community trip, Meetup, Live podcast, Hike, Hackathon, Karaoke and Something else, replacing Fringe event, Workshop, Community hub, Activity, Another venue, Support and Hiring; support is handled on the supporters page (source: sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md).
 - **2026-10-12.** Additions arrive through the add-something Google Form on goatconf.com, and the extension list is published there rather than on muhamed.at/goatconf. The organiser judges every listing. Events run independently by their hosts on the days around the core days, or on Saturday 5 June, are listed as GoatConf fringe events; sessions in the core days' rooms and slots are part of the program. See [Website: goatconf.com and Google Forms](../adrs/goatconf-ba-and-google-forms.md), [The call: the organiser judges](../adrs/call-organiser-judges.md) (`sources/conversations/2026-10-12--org--goatconf-ba-program-forms-approved.md`).
+- **2026-11-22, the fourth rule read plainly.** "The host carries its own costs and risks" means the host's own costs, not everyone's: an event where the people who come pay for themselves (a dinner where each pays their own bill, a trip with a ticket) is welcome, with its cost on the listing, and GoatConf still lends no money. The charter's words are unchanged (source: sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md).

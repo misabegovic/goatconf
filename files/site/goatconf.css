@@ -2032,14 +2032,14 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 .card-fold[open] { margin-bottom: var(--gap-5); }
 @media (min-width: 48rem) { .card-list__row a { padding-block: 0.1rem; } .card-list__row { display: inline-block; margin-right: 1.2rem; } }
 
-/* Who's organising has a page of its own (round twelve, 2026-11-22,
-   sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md). On the home page its place is
-   one row: the link, lettered like every link on its own, and the host goat's stop beside it, which stays on the
-   home page (sources/conversations/2026-11-07--org--home-goats-stay.md). */
-.album-page--row { padding-block: 0; }
-.row-link { position: relative; display: flex; align-items: center; min-height: 5.6rem; margin: 0; padding-right: 7rem; }
-.row-link > .go { font-size: 1.2rem; }
-.row-link > .peek { right: clamp(0.5rem, 3vw, 2.5rem); bottom: 0; width: calc(5.4rem * var(--size, 1)); }
+/* Who's organising has a page of its own (round twelve). Since round thirteen the home page has no row for it
+   (sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md): the link sits beside "The supporters"
+   under "Who makes it possible", with the host goat's stop at the end of that row, which stays on the home page
+   (sources/conversations/2026-11-07--org--home-goats-stay.md). */
+.row-link { position: relative; min-height: 5.6rem; margin-bottom: 0; padding-right: 7rem; align-items: center; align-content: center; }
+.row-link > .peek { right: clamp(0rem, 2vw, 1.5rem); bottom: 0; width: calc(5.4rem * var(--size, 1)); }
+#organiser { scroll-margin-top: 8rem; }
+@media (max-width: 47.99rem) { .copy.row-link { align-items: flex-start; justify-content: center; } }
 /* The organising page's first sheet has no heading of its own: the page's title heads it. */
 .album-page--open { padding-top: clamp(1.75rem, 3.5vw, 3rem); }
 @media (max-width: 47.99rem) { .album-page--open { padding-top: var(--gap-5); } }
@@ -2049,3 +2049,11 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 /* The footer's four groups stay on one row on a wide screen with the organising page's link among them: the links
    and the groups sit a little closer there. */
 @media (min-width: 90rem) { .footer__links, .back-cover__links { column-gap: 0.9rem; } .footer__group a { margin-right: 0.5rem; } .footer__group a:last-child { margin-right: 0; } }
+
+/* The host page's stressed line (round thirteen, sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md):
+   who pays, lettered a step larger than the text around it, in ink, not as a banner. */
+.copy > .stress { font-family: var(--display); font-weight: 700; font-stretch: 90%; font-size: 1.2rem; line-height: 1.3; color: var(--ink); max-width: 34ch; text-wrap: pretty; }
+
+/* The footer's four groups between 1024 and 1440 wide: where they do not fit one row they sit two and two, not
+   three and one left alone (round thirteen). The footer is no taller. */
+@media (min-width: 64rem) and (max-width: 89.99rem) { .footer__links, .back-cover__links { display: grid; grid-template-columns: repeat(2, max-content); column-gap: clamp(1.5rem, 4vw, 3.5rem); } }
