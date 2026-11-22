@@ -931,3 +931,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #291: site: a host need not pay for everything, and the organising row leaves the home page
    diff: 48 files, +224/-70
    restricted-paths: true
+2026-11-22 merge — PR #293: site: no host goat beside the organising link on the home page
+   diff: 42 files, +96/-50
+   restricted-paths: true
