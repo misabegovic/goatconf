@@ -93,6 +93,42 @@ check(!(await closed()).split(",").includes("conduct"), "a link to a sentence in
 await forget(); await remember(shut); await nav("index.html");
 await ev(`document.documentElement.style.scrollBehavior = "auto"; window.__shift = 0; new PerformanceObserver((l) => { for (const e of l.getEntries()) if (!e.hadRecentInput) window.__shift += e.value; }).observe({ type: "layout-shift" }); 1`);
 const boxes = new Set(); let moved = 0, absent = 0, inside = 0;
+// The section goats at a size that reads and never cut, nor what they say
+// (sources/conversations/2026-11-22--org--section-goats-too-small-and-cut-off.md): whether the goat or its open speech
+// bubble is clipped by anything it stands in, lies under the sticky top bar or leaves the window, and how wide it is.
+const whole = `(() => { const st = document.querySelector(".goat-one__stage"), say = st.querySelector(".goat-say"), bar = document.querySelector(".topbar").getBoundingClientRect().bottom;
+  const cut = (e) => { const b = e.getBoundingClientRect(); if (b.top < bar - 0.5 || b.left < 0 || b.right > document.documentElement.clientWidth) return true;
+    for (let a = st.parentElement; a && a !== document.documentElement; a = a.parentElement) { const c = getComputedStyle(a), r = a.getBoundingClientRect(); if ((/hidden|clip|auto|scroll/.test(c.overflowX + c.overflowY) || c.clipPath !== "none") && (b.left < r.left - 0.5 || b.top < r.top - 0.5 || b.right > r.right + 0.5 || b.bottom > r.bottom + 0.5)) return true; } return false; };
+  const said = parseFloat(getComputedStyle(say).opacity) > 0.5; const range = document.createRange(); range.selectNodeContents(say);
+  return { on: st.parentElement.id, goat: cut(st.querySelector(".goat")), said, say: said && cut(say), lines: new Set([...range.getClientRects()].map((r) => Math.round(r.top))).size, width: Math.round(st.getBoundingClientRect().width) }; })()`;
+// A press is a trick, and every second trick says a line: it is pressed until it speaks, five times at most, each
+// press given the time of the longest trick.
+// It is pressed only where it stands: while it flies to a row or ducks behind the edge the press would land on what
+// is under it, a heading or a strip of pictures, and that would open a section.
+const steady = async () => {
+  const where = () => ev(`(() => { const st = document.querySelector(".goat-one__stage"), g = st.querySelector(".goat").getBoundingClientRect(), s = st.parentElement.getBoundingClientRect(); return Math.abs(g.bottom - s.top) < g.height * 0.25 && !st.classList.contains("is-tucked") ? [Math.round(g.left), Math.round(g.top)].join() : ""; })()`);
+  for (let i = 0, last = "x"; i < 40; i++) { const now = await where(); if (now && now === last) return true; last = now; await sleep(120); }
+  return false;
+};
+const press = async () => {
+  for (let n = 0; n < 5; n++) {
+    if (!await steady()) continue;
+    await mouse(".goat-one__stage .goat", 0.5, 0.4, true);
+    for (let i = 0; i < 24; i++) { await sleep(100); const now = await ev(whole); if (now.said || now.goat) return now; }
+  }
+  return ev(whole);
+};
+const arrived = async (sid) => { for (let i = 0; i < 40; i++) { if (await ev(`(() => { const st = document.querySelector(".goat-one__stage"); return !!st && !!st.parentElement && st.parentElement.id === "${sid}"; })()`)) break; await sleep(100); } await sleep(1000); };
+let cutGoats = 0, cutWords = 0, mute = 0, small = 0;
+const look = async (sid, pressed = true) => {
+  const at = await ev(whole);
+  if (at.on !== sid || at.goat) cutGoats += 1;
+  if (at.width < 80) small += 1;
+  if (!pressed) return;
+  const after = await press();
+  if (!after.said) mute += 1; else if (after.say || after.goat || after.lines > 2) cutWords += 1;
+  await sleep(900);
+};
 const point = (sel, fx = 0.5, fy = 0.5) => ev(`(() => { const r = document.querySelector(${JSON.stringify(sel)}).getBoundingClientRect(); return [Math.round(r.left + r.width * ${fx}), Math.round(r.top + r.height * ${fy})]; })()`);
 const mouse = async (sel, fx, fy, press = false) => { const [x, y] = await point(sel, fx, fy); await S("Input.dispatchMouseEvent", { type: "mouseMoved", x, y }); if (press) for (const type of ["mousePressed", "mouseReleased"]) await S("Input.dispatchMouseEvent", { type, x, y, button: "left", clickCount: 1 }); };
 for (const sid of FOLDING) {
@@ -101,7 +137,7 @@ for (const sid of FOLDING) {
   const first = await tall();
   await S("Input.dispatchMouseEvent", { type: "mouseMoved", x: 5, y: 5 }); await mouse(`#${sid} h2`, 0.5, 0.5); await sleep(1800);
   const g = await ev(`(() => { const st = document.querySelector(".goat-one__stage"), s = st && st.parentElement; if (!s || s.id !== "${sid}") return null; const r = st.getBoundingClientRect(), b = s.getBoundingClientRect(); return [Math.round(r.width), Math.round(b.right - r.right), Math.round(r.bottom - b.top)].join(","); })()`);
-  if (!g) absent += 1; else boxes.add(g);
+  if (!g) absent += 1; else { boxes.add(g); await look(sid); }
   if (first !== await tall()) moved += 1;
   if (await ev(`!!document.querySelector("[data-fold-part][hidden] .goat-one__stage, .is-closed h2 .goat-one__stage")`)) inside += 1;
 }
@@ -109,25 +145,57 @@ check(moved === 0, "no closed row, heading or line on it changes size as the goa
 check(await ev(`window.__shift`) === 0, "no layout shift on the closed page while the goat goes from row to row");
 check(absent === 0 && boxes.size === 1, `the goat stands on every closed row in one place of one size (${[...boxes].join(" | ")}${absent ? `; ${absent} rows without it` : ""})`);
 check(inside === 0, "the goat is never inside a closed section");
+check(small === 0, "the goat on a section is as wide as the goat on a slot of the cover, 80 pixels or more");
+check(cutGoats === 0 && cutWords === 0 && mute === 0, `pressed on each closed row, the goat and what it says are whole: not clipped, not under the top bar, inside the window, on two lines at most (${cutGoats} goats cut, ${cutWords} bubbles cut, ${mute} said nothing)`);
+check(await ev(`window.__shift`) === 0, "no layout shift on the closed page while a goat does its trick and says its line");
 await ev(`window.scrollTo(0, document.getElementById("food").getBoundingClientRect().top + scrollY - innerHeight * 0.45); 1`); await sleep(400);
-await mouse("#food h2", 0.5, 0.5); await sleep(1800);
+await mouse("#food h2", 0.5, 0.5); await sleep(1800); await steady();
 await mouse(".goat-one__stage .goat", 0.5, 0.4, true); await sleep(700);
 check((await closed()).split(",").includes("food") && await ev(`document.querySelector(".goat-one__stage").parentElement.id`) === "food", "a press on the row's goat is for the goat: the section stays closed");
-await sleep(1200);
+await sleep(3200);
 await ev(`window.__moves = 0; const animate = Element.prototype.animate; Element.prototype.animate = function (...a) { if (this.closest && this.closest(".goat-one__stage")) window.__moves += 1; return animate.apply(this, a); }; 1`);
-await mouse("#food-title .sec__toggle", 0.2, 0.5, true); await sleep(250);
+// The heading's row is pressed at its far end from the goat, after the pointer has rested there: a goat turns its head
+// towards a pointer that moves within 260 pixels of it, which is its answer to the pointer and not to the press.
+await mouse("#food-title", 0.01, 0.5); await sleep(1500);
+await ev(`window.__moves = 0; 1`);
+await mouse("#food-title", 0.01, 0.5, true); await sleep(180);
 check(!(await closed()).split(",").includes("food") && await ev(`window.__moves`) === 0, "a press on the heading opens the section and does not set the goat off");
 await sleep(900);
-check(await ev(`(() => { const st = document.querySelector(".goat-one__stage"); if (st.parentElement.id !== "food") return true; return Math.abs(st.getBoundingClientRect().bottom - document.getElementById("food").getBoundingClientRect().top) < 12; })()`), "the section's own goat stays on the section's top edge when the section opens");
+check(await ev(`(() => { const st = document.querySelector(".goat-one__stage"); if (st.parentElement.id !== "food") return true; const r = st.getBoundingClientRect(); return Math.abs(r.bottom - document.getElementById("food").getBoundingClientRect().top) < r.height * 0.2; })()`), "the section's own goat stays on the section's top edge when the section opens");
 check(await ev(`document.querySelectorAll("[data-folds] details").length === 0 && document.getElementById("food-dishes").getClientRects().length > 0 && document.querySelectorAll("#food-dishes img").length >= 12`), "opening a section opens all of it: the twelve dishes are there, with no second fold");
 await ev(`document.querySelector("#food-title .sec__toggle").click(); 1`); await sleep(1800);
 check(await ev(`!document.querySelector("[data-fold-part][hidden] .goat-one__stage")`), "a goat inside a section that closes does not stay inside it");
 await ev(`document.querySelector("#tuzla .sec__strip img").click(); 1`); await sleep(300);
 check(!(await closed()).split(",").includes("tuzla") && await ev(`JSON.parse(localStorage.getItem("folds")).index.tuzla`) === "open", "a press on a closed row's strip of pictures opens the section");
 check(await ev(`!document.querySelector("#see-you .sec__toggle") && !document.querySelector("#see-you [data-fold-end]") && !document.getElementById("see-you").classList.contains("is-closed")`), "See you in Tuzla has no control and is open whatever is remembered");
+// The same with every section open, where the section's own page used to cut the goat standing on its top edge, and
+// on a wide screen.
+const everyOpen = Object.fromEntries(FOLDING.map((s) => [s, "open"]));
+for (const [width, height, state] of [[390, 844, everyOpen], [1440, 900, everyOpen], [1440, 900, shut]]) {
+  await S("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: false });
+  await forget(); await remember(state); await nav("index.html");
+  await ev(`document.documentElement.style.scrollBehavior = "auto"; 1`);
+  cutGoats = cutWords = mute = small = 0;
+  for (const sid of FOLDING) {
+    await ev(`window.scrollTo(0, document.getElementById("${sid}").getBoundingClientRect().top + scrollY - innerHeight * 0.45); 1`); await sleep(400);
+    await S("Input.dispatchMouseEvent", { type: "mouseMoved", x: 5, y: 5 }); await mouse(`#${sid} h2`, 0.5, 0.5); await sleep(1800); await arrived(sid);
+    await look(sid);
+  }
+  check(cutGoats === 0 && cutWords === 0 && mute === 0 && small === 0, `at ${width} wide with every section ${state === shut ? "closed" : "open"}, each section's goat and what it says are whole and the goat is 80 pixels wide or more (${cutGoats} goats cut, ${cutWords} bubbles cut, ${mute} said nothing, ${small} small)`);
+}
+await S("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
+// A row just under the sticky top bar is not a stop: the goat is never called where its head would be under the bar.
+await forget(); await remember(shut); await nav("index.html");
+await ev(`document.documentElement.style.scrollBehavior = "auto"; 1`);
+let under = 0;
+for (const sid of ["tuzla", "add", "conduct"]) {
+  await ev(`window.scrollTo(0, document.getElementById("${sid}").getBoundingClientRect().top + scrollY - document.querySelector(".topbar").getBoundingClientRect().bottom - 30); 1`); await sleep(1900);
+  if (await ev(`(() => { const st = document.querySelector(".goat-one__stage"); if (getComputedStyle(st).visibility === "hidden" || !st.parentElement) return false; return st.querySelector(".goat").getBoundingClientRect().top < document.querySelector(".topbar").getBoundingClientRect().bottom - 0.5 && st.getBoundingClientRect().bottom > 0; })()`)) under += 1;
+}
+check(under === 0, "when the page comes to rest with a row just under the top bar, the goat is not left under the bar");
 const tops = [];
 for (const target of ["days", "food", "the-goat", "conduct", "ticket"]) { await nav(`index.html#${target}`, 1600); tops.push(await ev(`Math.round(document.getElementById("${target}").getBoundingClientRect().top)`)); }
-check(new Set(tops).size === 1, `a link to any section lands at one distance from the top (${tops.join(", ")})`);
+check(Math.max(...tops) - Math.min(...tops) <= 1, `a link to any section lands at one distance from the top, to the pixel's rounding (${tops.join(", ")})`);
 // The phone menu on a phone held sideways, and the theme control in the footer.
 await S("Emulation.setDeviceMetricsOverride", { width: 667, height: 375, deviceScaleFactor: 1, mobile: false }); await nav("index.html");
 await ev(`document.querySelector(".topbar__phone summary, .topbar__phone [aria-controls], .topbar__phone button").click(); 1`); await sleep(400);
