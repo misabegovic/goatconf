@@ -46,18 +46,42 @@ THURSDAY, FRIDAY = (program.DAY_PLAN[d] for d in program.CORE_DAYS)
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 OUT = SITE / "share"
-# The cards take the site's chosen look, the light one: paper with hoof marks, blue lettering, ink text, a yellow
-# rule along the foot and the seal (sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md).
-BLUE, YELLOW, NIGHT, SOFT = brand.BLUE, brand.YELLOW, brand.NIGHT, "#46557a"
-PAPER, INK = "#edf2fb", brand.INK
+# The cards take the site's chosen look (sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md)
+# and come in two versions (sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md). The light
+# card is paper with hoof marks, blue lettering and ink text; it keeps the name it always had, so no shared link
+# breaks. The dark card is the same card on the night ground with pale lettering, its name ending in -dark. Both keep
+# the seal and the yellow rule along the foot. The values are DESIGN.md's theme tokens.
+YELLOW, NIGHT = brand.YELLOW, brand.NIGHT
+THEMES = {
+    "light": {"BLUE": brand.BLUE, "SOFT": "#46557a", "PAPER": "#edf2fb", "INK": brand.INK, "RING": "#ffffff",
+              "ACCENT": brand.BLUE, "HOOF": "0b3d91", "HOOF_A": ".13"},
+    "dark": {"BLUE": "#f3f6ff", "SOFT": "#b6c5e8", "PAPER": "#051534", "INK": "#e8eefc", "RING": "#14387a",
+             "ACCENT": "#a9c4ff", "HOOF": "a9c4ff", "HOOF_A": ".1"},
+}
 FACTS = "Tuzla · 3–5 June 2027 · Free to attend"
 URL = "goatconf.com"
 esc = html.escape
 
-HOOVES = ("url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E"
-          "%3Cg fill='%230b3d91' fill-opacity='.13'%3E%3Cpath d='M30 40c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E"
-          "%3Cpath d='M34 40c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3Cpath d='M112 104c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E"
-          "%3Cpath d='M116 104c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3C/g%3E%3C/svg%3E\")")
+
+def hooves(fill: str, alpha: str) -> str:
+    return ("url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E"
+            f"%3Cg fill='%23{fill}' fill-opacity='{alpha}'%3E%3Cpath d='M30 40c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E"
+            "%3Cpath d='M34 40c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3Cpath d='M112 104c-5 0-7 6-7 11s3 8 6 8c2 0 2-2 2-3z'/%3E"
+            "%3Cpath d='M116 104c5 0 7 6 7 11s-3 8-6 8c-2 0-2-2-2-3z'/%3E%3C/g%3E%3C/svg%3E\")")
+
+
+def use(theme: str) -> None:
+    """The colours every card built after this call is drawn in: "light" or "dark"."""
+    global THEME, BLUE, SOFT, PAPER, INK, RING, ACCENT, HOOVES
+    t = THEMES[theme]
+    THEME, BLUE, SOFT, PAPER, INK, RING, ACCENT = theme, t["BLUE"], t["SOFT"], t["PAPER"], t["INK"], t["RING"], t["ACCENT"]
+    HOOVES = hooves(t["HOOF"], t["HOOF_A"])
+
+
+use("light")
+
+
+dark = extensions.dark_card
 
 
 def goat_src(pose: str) -> str:
@@ -74,7 +98,8 @@ def missing(doc: str) -> list[str]:
     return sorted({p for p in paths if not Path(p).exists()})
 
 
-def page(w: int, h: int, body: str, bg: str = PAPER) -> str:
+def page(w: int, h: int, body: str, bg: str | None = None) -> str:
+    bg = bg or PAPER
     fonts = (SITE / "fonts").as_uri()
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face {{ font-family: "Bricolage Grotesque"; src: url("{fonts}/bricolage-wdth-latin.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; }}
@@ -85,7 +110,7 @@ def page(w: int, h: int, body: str, bg: str = PAPER) -> str:
 html, body {{ width: {w}px; height: {h}px; overflow: hidden; }}
 body {{ background: {bg} {HOOVES}; color: {INK}; font-family: "Atkinson Hyperlegible Next", sans-serif; position: relative; }}
 .word {{ color: {BLUE}; font-family: "Bricolage Grotesque"; font-weight: 800; font-stretch: 75%; line-height: .86; letter-spacing: .005em; text-transform: uppercase; }}
-.sub {{ font-family: "Bricolage Grotesque"; font-weight: 700; font-stretch: 85%; color: {BLUE}; }}
+.sub {{ font-family: "Bricolage Grotesque"; font-weight: 700; font-stretch: 85%; color: {ACCENT}; }}
 body::after {{ content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: {max(8, h // 60)}px; background: {YELLOW}; }}
 .url {{ font-weight: 700; color: {SOFT}; }}
 .seal {{ position: absolute; display: block; }}
@@ -336,7 +361,7 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
     name_px = (84 if long_name else 110) if square else (70 if long_name else 92)
     top = 72 if square else (h - size) // 2
     frame = (f'<div style="position:absolute; left:{84 if square else 64}px; top:{top}px; width:{size}px; height:{size}px; border-radius:50%; '
-             f'overflow:hidden; background:{YELLOW}; box-shadow:0 0 0 10px #fff">{photo}</div>')
+             f'overflow:hidden; background:{YELLOW}; box-shadow:0 0 0 10px {RING}">{photo}</div>')
     # The speaker's own painted goat, whole, sitting in the bottom corner (ADR goat-mascot), or small against
     # the photo's ring.
     corner = SPEAKER_GOAT == "corner"
@@ -403,6 +428,12 @@ def logo_ground(meta) -> str:
     return NIGHT if meta.get("logo_on") == "dark" else str(meta.get("logo_bg") or "#fff")
 
 
+def logo_edge(meta) -> str:
+    """On the dark card a logo drawn for the dark sits on a night tile on the night ground: a thin ring in the line
+    blue keeps the tile's shape."""
+    return "box-shadow:0 0 0 2px rgb(169 196 255 / .55); " if THEME == "dark" and logo_ground(meta) == NIGHT else ""
+
+
 def supporter_card(slug: str, meta, square: bool) -> str:
     w, h = (1080, 1080) if square else (1200, 675)
     logo = (SITE / meta["logo"]).as_uri()
@@ -415,7 +446,7 @@ def supporter_card(slug: str, meta, square: bool) -> str:
   <div class="word" style="font-size:{(120 if len(str(meta['name'])) <= 24 else 88) if square else 92}px; margin-top:16px">{esc(str(meta['name']))}</div>
   <div class="sub" style="font-size:{36 if square else 28}px; line-height:1.2; margin-top:28px">{thanks(meta)}</div>
 </div>
-<div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:{logo_ground(meta)}; border-radius:18px; display:grid; place-items:center; padding:28px">
+<div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:{logo_ground(meta)}; {logo_edge(meta)}border-radius:18px; display:grid; place-items:center; padding:28px">
   <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
 <div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{url_px}px">{address}</div>
 {seal(240 if square else 220, "right:72px; bottom:72px")}""")
@@ -433,7 +464,7 @@ def proud_card(slug: str, meta, square: bool) -> str:
   <div class="sub" style="font-size:{40 if square else 32}px; color:{INK}">Proud supporter of</div>
   <div class="word" style="font-size:{120 if square else 92}px; margin-top:16px">GoatConf 2027</div>
 </div>
-<div style="position:absolute; left:{84 if square else 72}px; top:{400 if square else 290}px; width:{560 if square else 400}px; height:{280 if square else 200}px; background:{logo_ground(meta)}; border-radius:18px; display:grid; place-items:center; padding:32px">
+<div style="position:absolute; left:{84 if square else 72}px; top:{400 if square else 290}px; width:{560 if square else 400}px; height:{280 if square else 200}px; background:{logo_ground(meta)}; {logo_edge(meta)}border-radius:18px; display:grid; place-items:center; padding:32px">
   <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
 <div style="position:absolute; left:{84 if square else 520}px; top:{730 if square else 300}px; right:{360 if square else 72}px">
   <div class="sub" style="font-size:{34 if square else 28}px; line-height:1.2">{esc(str(meta["funds"]))}</div>
@@ -462,7 +493,8 @@ def event_card(meta, slug: str, square: bool, height: int = 675) -> str:
 {seal(240 if square else 220, "right:72px; bottom:72px")}""")
 
 
-def jobs() -> dict[str, tuple[int, int, str]]:
+def cards() -> dict[str, tuple[int, int, str]]:
+    """Every still card, drawn in the colours last chosen with use()."""
     out = {
         "linkedin-banner.png": (1584, 396, banner(1584, 396, 104, 36, 26, 320, 560, 90)),
         "linkedin-page-cover.png": (4200, 700, page_cover()),
@@ -506,6 +538,17 @@ def jobs() -> dict[str, tuple[int, int, str]]:
         out[names["square"]] = (1080, 1080, event_card(meta, slug, True))
         out[names["wide"]] = (1200, 675, event_card(meta, slug, False))
         out[names["preview"]] = (1200, 630, event_card(meta, slug, False, 630))
+    return out
+
+
+def jobs() -> dict[str, tuple[int, int, str]]:
+    """Every still card twice: the light one under its own name, the dark one under the same name ending in -dark."""
+    out = cards()
+    use("dark")
+    try:
+        out.update({dark(name): job for name, job in cards().items()})
+    finally:
+        use("light")
     return out
 
 

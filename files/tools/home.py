@@ -17,7 +17,11 @@ The register page carries one part from here too:
 
   <!-- gen:register-speakers --> every listed speaker's photo and name, from speakers/
 
-  build [--check]   write site/index.html and site/register.html; with --check, fail if either is not current
+The brand page carries one part from here too:
+
+  <!-- gen:brand-cards -->       every card to post, light and dark, from speakers/, supporters/ and extensions/
+
+  build [--check]   write site/index.html, site/register.html and site/brand.html; with --check, fail if any is not current
 
 Usage: python3 tools/home.py build [--check]
 """
@@ -42,6 +46,7 @@ import speakers  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 PAGE = ROOT / "site" / "index.html"
 REGISTER = ROOT / "site" / "register.html"
+BRAND = ROOT / "site" / "brand.html"
 # The home page plans for eight speakers: two full rows of four on a wide screen,
 # four rows of two on a phone. Places not yet taken invite a proposal; once all
 # eight are speakers, none does, and the line under them says how many are shown
@@ -151,6 +156,49 @@ def register_speakers() -> str:
     return strip + '\n  <p class="copy"><a class="go go--ink" href="speakers.html">View all speakers and their sessions</a></p>'
 
 
+def brand_cards() -> str:
+    """Every card a speaker, a supporter or a host can post, listed in one place on the brand page: each card in its
+    square and its wide shape, light and dark (sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md).
+    A card shows only once both its versions are rendered."""
+    share = BRAND.parent / "share"
+
+    def links(names: dict) -> str:
+        parts = []
+        for shape in ("square", "wide"):
+            light, dark = names[shape], extensions.dark_card(names[shape])
+            if (share / light).exists() and (share / dark).exists():
+                parts.append(f'<span class="card-list__shape">{shape} <a href="share/{light}" download>Light</a> '
+                             f'<a href="share/{dark}" download>Dark</a></span>')
+        return " ".join(parts)
+
+    def row(label: str, names: dict) -> str:
+        found = links(names)
+        return f'<span class="card-list__row">{label}: {found}</span>' if found else ""
+
+    def group(title: str, items: list) -> str:
+        items = [f'<li><strong><a href="{page}">{esc(str(name))}</a></strong> {"".join(rows)}</li>'
+                 for page, name, rows in items if any(rows)]
+        # Each group opens on its own, without the script, so the brand page stays short.
+        return (f'<details class="fold-list card-fold"><summary>{title}</summary>\n<ul class="card-list">\n'
+                + "\n".join(items) + "\n</ul>\n</details>") if items else ""
+
+    people = [(speakers.page_name(slug), meta["name"],
+               [row("I&#39;m speaking", {"square": f"speaker-{slug}-square.png", "wide": f"speaker-{slug}-wide.png"}),
+                row("Confirmed speaker", speakers.announce_cards(slug))])
+              for slug, (meta, _) in speakers.speakers().items()]
+    backers = [(speakers.supporter_page_name(slug), meta["name"],
+                [row("Proud supporter", speakers.proud_cards(slug)), row("Thank you", speakers.supporter_cards(slug))])
+               for slug, (meta, _) in speakers.supporters().items()]
+    events = [(extensions.page_name(slug), meta["name"], [row("The card", extensions.cards(slug))])
+              for _, slug, meta, _ in extensions.accepted()]
+    return "\n".join(g for g in (group("Speakers", people), group("Supporters", backers), group("Events", events)) if g)
+
+
+def brand_page() -> str:
+    text = BRAND.read_text(encoding="utf-8")
+    return blocks.fill(text, "brand-cards", "tools/home.py", brand_cards(), "site/brand.html")
+
+
 def register_page() -> str:
     text = REGISTER.read_text(encoding="utf-8")
     return blocks.fill(text, "register-speakers", "tools/home.py", register_speakers(), "site/register.html")
@@ -235,7 +283,7 @@ def main(argv=None) -> int:
     b.add_argument("--check", action="store_true")
     args = ap.parse_args(argv)
     stale = 0
-    for path, make in ((PAGE, page), (REGISTER, register_page)):
+    for path, make in ((PAGE, page), (REGISTER, register_page), (BRAND, brand_page)):
         want = images.wrap(make())
         have = path.read_text(encoding="utf-8")
         name = f"site/{path.name}"

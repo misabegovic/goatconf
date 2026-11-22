@@ -298,8 +298,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .cta span { color: var(--ink-soft); font-size: 0.95rem; max-width: 34ch; }
 .prose .cta:last-child { margin: 2.4rem 0 0; }
 .slot--link { text-decoration: none; transition: background-color 200ms; }
-.slot--link:hover { background: #e2eafa; }
-.slot--link:hover .stamp { transform: rotate(-4deg) scale(1.08); }
+@media (hover: hover) { .slot--link:hover { background: #e2eafa; } .slot--link:hover .stamp { transform: rotate(-4deg) scale(1.08); } }
 .footer__links { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; }
 
 /* The program: a timetable per day */
@@ -1443,7 +1442,7 @@ html { scrollbar-color: var(--album) var(--page-print); }
 ::-webkit-scrollbar-thumb { border-color: var(--page-print); background: var(--album); }
 ::selection { background: var(--yellow); color: var(--on-yellow); }
 .stamp { mix-blend-mode: var(--stamp-blend); }
-.slot--link:hover { background: var(--slot-hover); }
+@media (hover: hover) { .slot--link:hover { background: var(--slot-hover); } }
 .album-page, .prose, .spread, .page-head, .shiny { box-shadow: 0 0 0 2px var(--album), 0 0.4rem 0 0 var(--edge); }
 .goat-heart { color: var(--heart); }
 .goatchi__kept { color: var(--ink-soft); }
@@ -1607,8 +1606,13 @@ a.sticker--day:active, a.sticker--example:active, .sticker--speaker:has(.speaker
 .speaker__link::before { content: ""; position: absolute; z-index: 1; top: 1.07rem; right: 1.07rem; width: 0.86rem; height: 0.86rem; background: var(--on-yellow); -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; }
 /* A slot link answers as a whole */
 .slot--link { cursor: pointer; transition: background-color 160ms, border-color 160ms; }
-.slot--link:hover { border-style: solid; border-color: var(--line); }
-.slot--link:active { background: var(--yellow); }
+@media (hover: hover) { .slot--link:hover { border-style: solid; border-color: var(--line); } }
+/* A press on the goat is for the goat (2026-11-22, sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md):
+   the goat stands inside the slot's link, so pressing it used to give the whole slot its pressed yellow. The slot takes
+   its pressed look only when the slot itself is pressed, its words then go to the ink that reads on yellow, and the
+   pointed-at look is for screens that have a pointer, so a touch leaves nothing behind. */
+.slot--link:active:not(:has(.goat-one__stage:active)) { background: var(--yellow); border-style: solid; border-color: var(--on-yellow); }
+.slot--link:active:not(:has(.goat-one__stage:active)) :is(strong, small, .slot__where) { color: var(--on-yellow); }
 /* The small controls answer too */
 .fold__more:hover, .daynav a:hover, .daynav a:focus-visible { background: var(--yellow); color: var(--on-yellow); border-color: var(--yellow); }
 .fold-list summary:hover { text-decoration: underline; text-decoration-thickness: 2px; }
@@ -1993,3 +1997,37 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
   .fold--text .fold__toggle:not(:checked) ~ .fold__rest { display: none; }
   .fold--text .fold__more { margin: 0 0 var(--gap-4); min-height: 2.75rem; display: inline-flex; align-items: center; }
 }
+
+/* The goat on a photo of Tuzla (round eleven, 2026-11-22; a designer's choice, for the organiser to look at again):
+   a third of the photo's width, in the lower right corner on the photo's bottom edge, so the picture and its subject
+   stay clear. It was two thirds of the width and covered more than two fifths of the photo. album.js fades it in. */
+.slots--city .goat-one__stage.is-scene { right: 0.45rem; width: 32%; }
+.slots--city .goat-one__stage.is-scene .goat { filter: drop-shadow(0 0.15rem 0.2rem rgb(0 0 0 / 0.3)); }
+
+/* A card to download, in light and in dark (round eleven, 2026-11-22): the two versions of each shape side by side,
+   each picture a link that downloads it, with its word under it in the standalone link's look. The square pair and
+   the wide pair share a row at the same height on a wide screen and stack on a phone. */
+.share-cards:has(.share-pair) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.778fr); gap: var(--gap-5) 2rem; max-width: 62rem; }
+.share-pair { margin: 0; display: grid; gap: var(--gap-2); align-content: start; }
+.share-pair figcaption { font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.05rem; color: var(--album); }
+.share-pair__cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; align-items: start; }
+.share-dl { display: grid; gap: 0.15rem; justify-items: start; text-decoration: none; color: var(--link); border-radius: 0.5rem; }
+.share-dl .share-card { border-radius: 0.5rem; transition: translate 160ms var(--ease); }
+.share-dl__label { display: inline-block; min-height: 2.75rem; align-content: center; padding-inline: 0.15em; border-radius: 0.15em; font-family: var(--display); font-weight: 750; font-size: 1.05rem; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.22em; }
+.share-dl__label::after { content: ""; display: inline-block; width: 0.72em; height: 0.72em; margin-left: 0.32em; vertical-align: -0.04em; rotate: 90deg; background: currentColor; -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; }
+.share-dl:is(:hover, :active, :focus-visible) .share-dl__label { background: var(--yellow); box-shadow: 0 0 0 0.14em var(--yellow); color: var(--on-yellow); }
+@media (hover: hover) { .share-dl:hover .share-card { translate: 0 -0.15rem; } }
+@media (prefers-reduced-motion: reduce) { .share-dl .share-card { transition: none; translate: none !important; } }
+@media (max-width: 47.99rem) { .share-cards:has(.share-pair) { grid-template-columns: minmax(0, 1fr); max-width: 26rem; } }
+@media (forced-colors: active) { .share-dl__label::after { background: LinkText; forced-color-adjust: none; } .share-dl .share-card { box-shadow: none; border: 1px solid CanvasText; } }
+
+/* The brand page's list of every card: a name, then each card's shapes with a Light and a Dark download. */
+.prose .card-list { list-style: none; padding-left: 0; max-width: 62ch; }
+.card-list li { margin-bottom: var(--gap-3); }
+.card-list__row { display: block; color: var(--ink-soft); }
+.card-list__shape { display: inline-block; white-space: nowrap; margin-right: 0.9rem; }
+.card-list__row a { display: inline-block; min-width: 2.75rem; padding-block: 0.55rem; margin-inline: 0.15rem; text-align: center; font-weight: 700; }
+.card-fold { margin-bottom: var(--gap-2); }
+.card-fold summary { min-height: 2.75rem; align-content: center; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.2rem; }
+.card-fold[open] { margin-bottom: var(--gap-5); }
+@media (min-width: 48rem) { .card-list__row a { padding-block: 0.1rem; } .card-list__row { display: inline-block; margin-right: 1.2rem; } }

@@ -5,8 +5,8 @@ The card's lettering and seal come from tools/shareables.py (headless Chrome); t
 fitted into its own cell of a grid so no two touch. The animation has them pop up one by one, stretch and settle,
 bob and wiggle for a while, then duck away so the loop starts again.
 
-  render      write site/share/post-goats-are-in-{square,wide}.png, .mp4 and .gif (needs Chrome, Pillow, ffmpeg
-              and the painted masters in art/goat/)
+  render      write site/share/post-goats-are-in-{square,wide}.png, .mp4 and .gif, and the same in the dark look
+              with names ending in -dark (needs Chrome, Pillow, ffmpeg and the painted masters in art/goat/)
   one-by-one  write site/share/post-goats-one-by-one-{square,wide}.mp4 and .gif: one goat at a time,
               whole, each changing into the next at once in the same place, every speaker's goat among them
 
@@ -33,6 +33,26 @@ ROLES = ("sticker-host", "sticker-coder", "sticker-pirate", "sticker-cook")
 CARDS = {"square": (1080, 1080, (40, 372, 1040, 1052)), "wide": (1200, 675, (470, 150, 1176, 660))}
 FPS = 25
 GAP = 14
+
+
+def versions(cards: dict):
+    """Each card twice: in the light look under its own name, then in the dark look, whose files end in -dark
+    (sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md). The light look is put back at
+    the end."""
+    try:
+        for theme in ("light", "dark"):
+            shareables.use(theme)
+            for name, card in cards.items():
+                yield theme, name, card
+    finally:
+        shareables.use("light")
+
+
+def masters() -> None:
+    """The painted goats these posts are made from are not in the repository: without them nothing is rendered."""
+    if not any(goat_atlas.ART.glob("*.webp")):
+        raise SystemExit(f"the painted masters are not on this machine ({goat_atlas.ART}/*.webp): "
+                         "the goats posts are rendered where they are")
 
 
 def goat(pose: str):
@@ -106,11 +126,13 @@ def frame(bg, placed, t: float, total: float):
 
 def render() -> int:
     from PIL import Image
+    masters()
     exe = brand.chrome()
     total = 5.0
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
-        for name, (w, h, box) in CARDS.items():
+        for theme, name, (w, h, box) in versions(CARDS):
+            end = "" if theme == "light" else "-dark"
             shareables.render(f"bg-{name}.png", w, h, shareables.goats_post(w, h, name == "square", crowd_in=False), tmp, exe)
             bg = Image.open(OUT / f"bg-{name}.png").convert("RGBA")
             (OUT / f"bg-{name}.png").unlink()
@@ -118,20 +140,20 @@ def render() -> int:
             if overlaps(placed):
                 raise SystemExit(f"the goats overlap on the {name} card")
             # The still card: every goat settled.
-            frame(bg, placed, total / 2, total).convert("RGB").save(OUT / f"post-goats-are-in-{name}.png", optimize=True)
-            frames = tmp / name
+            frame(bg, placed, total / 2, total).convert("RGB").save(OUT / f"post-goats-are-in-{name}{end}.png", optimize=True)
+            frames = tmp / f"{name}{end}"
             frames.mkdir()
             for f in range(int(total * FPS)):
                 frame(bg, placed, f / FPS, total).convert("RGB").save(frames / f"{f:04d}.png")
-            mp4 = OUT / f"post-goats-are-in-{name}.mp4"
+            mp4 = OUT / f"post-goats-are-in-{name}{end}.mp4"
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(frames / "%04d.png"),
-                            "-vf", "pad=ceil(iw/2)*2:ceil(ih/2)*2:color=0x0b3d91", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-movflags", "+faststart", str(mp4)], check=True)
-            gif = OUT / f"post-goats-are-in-{name}.gif"
+                            "-vf", f"pad=ceil(iw/2)*2:ceil(ih/2)*2:color=0x{shareables.PAPER[1:]}", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-movflags", "+faststart", str(mp4)], check=True)
+            gif = OUT / f"post-goats-are-in-{name}{end}.gif"
             scale = "720:-1" if name == "square" else "800:-1"
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(frames / "%04d.png"),
                             "-vf", f"fps=15,scale={scale}:flags=lanczos,split[a][b];[a]palettegen=max_colors=200:stats_mode=diff[p];[b][p]paletteuse=dither=sierra2_4a",
                             "-loop", "0", str(gif)], check=True)
-            for f in (OUT / f"post-goats-are-in-{name}.png", mp4, gif):
+            for f in (OUT / f"post-goats-are-in-{name}{end}.png", mp4, gif):
                 print(f"wrote site/share/{f.name}: {f.stat().st_size // 1024} KB")
     return 0
 
@@ -222,17 +244,19 @@ def load(pose):
 
 def one_by_one() -> int:
     from PIL import Image
+    masters()
     exe = brand.chrome()
     total = BEAT * len(SEQUENCE)
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
         goats = [load(p)[0]["front"] for p, _ in SEQUENCE]
-        for name, (w, h, cx, floor, tall) in STAGES.items():
+        for theme, name, (w, h, cx, floor, tall) in versions(STAGES):
+            end = "" if theme == "light" else "-dark"
             shareables.render(f"bg-{name}.png", w, h, shareables.goats_post(w, h, name == "square", crowd_in=False), tmp, exe)
             bg = Image.open(OUT / f"bg-{name}.png").convert("RGBA")
             (OUT / f"bg-{name}.png").unlink()
             sized = [g.resize((round(g.width * tall / g.height), tall), Image.LANCZOS) for g in goats]
-            frames = tmp / f"one-{name}"
+            frames = tmp / f"one-{name}{end}"
             frames.mkdir()
             for f in range(int(total * FPS)):
                 t = f / FPS
@@ -246,11 +270,11 @@ def one_by_one() -> int:
                 # Standing on the same line, the middle of its feet in the same place.
                 canvas.alpha_composite(im, (round(cx - im.width / 2), round(floor - im.height + (im.height - g.height * sy) / 2 - lift * tall)))
                 canvas.convert("RGB").save(frames / f"{f:04d}.png")
-            mp4 = OUT / f"post-goats-one-by-one-{name}.mp4"
+            mp4 = OUT / f"post-goats-one-by-one-{name}{end}.mp4"
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(frames / "%04d.png"),
-                            "-vf", "pad=ceil(iw/2)*2:ceil(ih/2)*2:color=0x0b3d91", "-c:v", "libx264", "-pix_fmt", "yuv420p",
+                            "-vf", f"pad=ceil(iw/2)*2:ceil(ih/2)*2:color=0x{shareables.PAPER[1:]}", "-c:v", "libx264", "-pix_fmt", "yuv420p",
                             "-crf", "21", "-movflags", "+faststart", str(mp4)], check=True)
-            gif = OUT / f"post-goats-one-by-one-{name}.gif"
+            gif = OUT / f"post-goats-one-by-one-{name}{end}.gif"
             scale = "540:-1" if name == "square" else "640:-1"
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(frames / "%04d.png"),
                             "-vf", f"fps=10,scale={scale}:flags=lanczos,split[a][b];[a]palettegen=max_colors=160:stats_mode=diff[p];[b][p]paletteuse=dither=sierra2_4a:diff_mode=rectangle",

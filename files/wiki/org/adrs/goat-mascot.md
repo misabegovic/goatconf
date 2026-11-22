@@ -2,11 +2,12 @@
 title: "A cute goat mascot that peeks over the open slots, in roles from the EuRuKo 2024 goat multiverse"
 kind: decision
 status: accepted
-updated: 2026-10-27
+updated: 2026-11-22
 confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md
   - sources/conversations/2026-10-27--org--speaker-goat-on-phones.md
   - sources/conversations/2026-10-27--org--see-you-goat-on-phones.md
   - sources/conversations/2026-10-27--org--goat-tricks.md
@@ -316,3 +317,4 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
 - **2026-10-28, Baaa, and BaaaaAI for Carmine.** The goat's bleat is "Baaa!"
   only, and "Use Ruby for BaaaaAI" is said by Carmine Paolino's goat, beside
   "Try RubyLLM!", not by every goat (source: sources/conversations/2026-10-28--org--goat-says-baaa.md).
+- **2026-11-22, a press on the goat, and a smaller goat on Tuzla's photos.** A press on the goat is for the goat alone: the slot it stands on no longer flashes its pressed yellow. On the photos of "Tuzla, the host town" the goat's scene is a third of the photo's width, in the lower right corner, and it fades in and out instead of popping; every stop stays, as decided on 7 November. Pending the organiser's approval (source: sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md).

@@ -214,11 +214,12 @@
   const duck = () => {
     stage.classList.add("is-tucked");
     down = true;
+    // On a photo it leaves gently: it fades as it sinks a little, then is gone.
     if (onPhoto()) return play(goat, [
-      { transform: REST, easing: "cubic-bezier(.3,0,.6,1)" },
-      { transform: T("-4%", 1.06, 1.06, -4), offset: 0.3, easing: "cubic-bezier(.55,0,.85,.3)" },
-      { transform: TINY },
-    ], { duration: 380 });
+      { transform: REST, opacity: 1, easing: "ease-in" },
+      { transform: T("6%", 0.94, 0.94), opacity: 0, offset: 0.96 },
+      { transform: TINY, opacity: 0 },
+    ], { duration: 300 });
     return play(goat, [
       { transform: REST, easing: "cubic-bezier(.3,0,.6,1)" },
       { transform: T("-5%", 0.97, 1.04), offset: 0.28, easing: "cubic-bezier(.55,0,.85,.3)" },
@@ -229,13 +230,12 @@
   const pop = () => {
     stage.classList.add("is-tucked");
     down = false;
-    // On a photo: out of the corner, a little too big and tilted, back, and settled.
+    // On a photo it arrives gently: it fades in as it rises a little into its corner, with no overshoot and no tilt
+    // (the organiser, 2026-11-22: the goats popping up on the photos were too much).
     if (onPhoto()) return play(goat, [
-      { transform: TINY, easing: "cubic-bezier(.2,.75,.35,1)" },
-      { transform: T("-6%", 1.1, 1.1, -5), offset: 0.55, easing: "cubic-bezier(.5,0,.6,1)" },
-      { transform: T("1%", 0.96, 0.96, 2), offset: 0.78, easing: "ease-out" },
-      { transform: REST },
-    ], { duration: 620 }).then(() => stage.classList.remove("is-tucked"));
+      { transform: T("8%", 0.92, 0.92), opacity: 0, easing: "cubic-bezier(.2,.7,.3,1)" },
+      { transform: REST, opacity: 1 },
+    ], { duration: 520 }).then(() => stage.classList.remove("is-tucked"));
     return play(goat, [
       { transform: HIDDEN, easing: "cubic-bezier(.2,.75,.35,1)" },
       { transform: T("-10%", 0.94, 1.08), offset: 0.5, easing: "cubic-bezier(.5,0,.6,1)" },
