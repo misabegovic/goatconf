@@ -937,3 +937,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #295: site: home page sections open and close, and remember how they were left
    diff: 49 files, +862/-173
    restricted-paths: true
+2026-11-22 merge — PR #297: site: closed sections hold still, one tap opens a whole section, the phone menu scrolls
+   diff: 47 files, +513/-273
+   restricted-paths: true
