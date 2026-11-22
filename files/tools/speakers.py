@@ -401,7 +401,7 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     # down the page (ADR goat-mascot).
     goat = frame.speaker_peek(slug)
     main = re.sub(r'(<h2 class="band"[^>]*>)', lambda m: m.group(1) + ("" if 'id="h-about"' in m.group(1) and goat_atlas.has(f"speaker-{slug}-sitting") else goat), main)
-    return formlinks.rewrite(shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede, main, preview), formlinks.forms())
+    return formlinks.rewrite(shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede + when_and_free(), main, preview), formlinks.forms())
 
 
 def support_problems(meta) -> list:
@@ -495,6 +495,19 @@ def logo_class(meta, base: str) -> str:
 def logo_style(meta) -> str:
     """The supporter's own colour behind their logo, if their record gives one (logo_bg)."""
     return f' style="--logo-bg:{esc(meta["logo_bg"])}"' if meta.get("logo_bg") else ""
+
+
+# The cover's own line of when and where, word for word as the home page has it under the title. Kept here so the
+# pages that repeat it need no built home page to read it from; tests/test_speakers.py holds the two together.
+COVER_WHEN = "3–5 June 2027 · Tuzla, Bosnia and Herzegovina"
+
+
+def when_and_free() -> str:
+    """Under a speaker's lede: when and where GoatConf is, that it is free, and the way to register, in the words the
+    home page already uses (sources/conversations/2026-11-22--org--date-place-and-free-on-speaker-and-register-pages.md).
+    A visitor who arrives from a shared speaker card has seen none of them."""
+    return (f'<span class="lede__when">{COVER_WHEN}</span>'
+            '<span class="lede__go">Free to attend. <a class="go" href="register.html">Register for free</a></span>')
 
 
 def shell(slug: str, title: str, description: str, photo, h1: str, lede: str, main: str, preview: str = "", photo_class: str = "",

@@ -2159,3 +2159,10 @@ main[data-folds] > section[id], #organiser { scroll-margin-top: 3rem; }
 @media (prefers-reduced-motion: reduce) { .folds-on [data-folds] > section h2::before { transition: none; } }
 /* On paper everything is open (album.js opens it before printing) and no control shows */
 @media print { .folds-all, .sec__peek, .sec__end, .folds-on [data-folds] > section h2::before { display: none !important; } [data-fold-part][hidden="until-found"] { content-visibility: visible !important; } }
+
+/* When, where and free under a page head's lede, in the cover's own words, on the pages a visitor may land on first
+   (sources/conversations/2026-11-22--org--date-place-and-free-on-speaker-and-register-pages.md) */
+.lede__when { display: block; margin: 0.6rem 0 0.35rem; font-family: var(--display); font-weight: 800; font-stretch: 88%; font-size: var(--step-sub); line-height: 1.15; text-transform: uppercase; color: var(--ink); }
+.lede > .lede__when:first-child { margin-top: 0; }
+.lede__go { display: block; margin-top: 0.35rem; }
+.lede__go .go { display: inline-block; padding-block: 0.6rem; }
