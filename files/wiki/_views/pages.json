@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--ship-round-thirteen-when-ready.md",
         "sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md",
         "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-11-22--org--ship-round-twelve-when-ready.md",
@@ -255,7 +256,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 8643
+      "tokens": 8673
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -2184,6 +2185,7 @@
         "org/adrs/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--ship-round-thirteen-when-ready.md",
         "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
         "sources/conversations/2026-10-23--org--extendable-and-each-edition.md",
@@ -2213,7 +2215,7 @@
         "sources/web/models/fosdem-2026-fringe.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3776,
+      "tokens": 3790,
       "consumed_by": [
         "org/adrs/make-it-yours-hub.md"
       ]
