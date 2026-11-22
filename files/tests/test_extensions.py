@@ -162,7 +162,8 @@ def test_each_accepted_event_gets_its_own_page_that_links_out(ext):
     # The host page stresses, once, that a host need not pay for everything, and never says a host must.
     hub = (root / "site" / "extend.html").read_text(encoding="utf-8")
     assert hub.count('<p class="stress">You run it. You do not have to pay for everything:') == 1
-    assert "GoatConf does not pay for it" in hub and "GoatConf has arranged nothing with them and pays for nothing" in hub
+    assert "it is fine if the people who come pay for themselves, as long as the listing says what it costs.</p>" in hub
+    assert "GoatConf does not pay for it" in hub and "GoatConf has arranged nothing with them and pays for nothing: you ask and you book." in hub
     assert "pays for it directly" not in hub and "you pay for it" not in hub and "pay for yourself" not in hub
     assert "An event in an hour off is short, free and open to everyone who comes." in hub
 

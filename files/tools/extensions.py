@@ -641,7 +641,7 @@ def hub(show_all=False) -> str:
         where = '<p class="ledger-empty">We are still checking the places in Tuzla where you could run something. The list will be here.</p>'
     main = f"""<section class="album-page wrap" aria-labelledby="h-adding">
   <h2 class="band" id="h-adding">What people are adding</h2>
-  <p class="copy copy--wide">Every event here is part of GoatConf 2027: we accepted it, and it follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>. Each host runs their own event, and GoatConf does not pay for it. At some, the people who come pay for themselves: each listing says what it costs. Open one to see when and where, and how to join.</p>
+  <p class="copy copy--wide">Every event here is part of GoatConf 2027: we accepted it, and it follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>. Each host runs their own event, and GoatConf does not pay for it. Each listing says what it costs. Open one to see when and where, and how to join.</p>
   {listings}
 </section>
 <section class="album-page wrap" aria-labelledby="h-how">
@@ -660,7 +660,7 @@ def hub(show_all=False) -> str:
     </div>
     <div class="copy">
       <h3 class="list-title">Who pays</h3>
-      <p class="stress">You run it. You do not have to pay for everything: it is fine if the people who come pay for themselves, as long as the listing says what it costs. GoatConf does not pay for it.</p>
+      <p class="stress">You run it. You do not have to pay for everything: it is fine if the people who come pay for themselves, as long as the listing says what it costs.</p>
       <h3 class="list-title">In an hour off</h3>
       <p>An event in an hour off is short, free and open to everyone who comes. It is near IPI Academy, so people can walk there and back, and it ends five minutes before the next session starts. Nothing runs at the same time as a session.</p>
       <h3 class="list-title">Before you book a place</h3>
@@ -684,7 +684,7 @@ def hub(show_all=False) -> str:
 </section>
 <section class="album-page wrap" aria-labelledby="h-where" id="where">
   <h2 class="band" id="h-where">Where in Tuzla</h2>
-  <p class="copy copy--wide">Places a host could ask, from cafés on Freedom Square to halls for a few hundred people. GoatConf has arranged nothing with them and pays for nothing: you ask and you book, and you agree with the place who pays for what.{first_note}</p>
+  <p class="copy copy--wide">Places a host could ask, from cafés on Freedom Square to halls for a few hundred people. GoatConf has arranged nothing with them and pays for nothing: you ask and you book.{first_note}</p>
 {where}
 </section>
 <section class="album-page wrap" aria-labelledby="h-propose" id="propose">
