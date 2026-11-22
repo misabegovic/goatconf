@@ -169,17 +169,20 @@ await mouse("#food h2", 0.5, 0.5); await sleep(1800); await steady();
 await mouse(".goat-one__stage .goat-hit", 0.5, 0.5, true); await sleep(700);
 check((await closed()).split(",").includes("food") && await ev(`document.querySelector(".goat-one__stage").parentElement.id`) === "food", "a press on the row's goat is for the goat: the section stays closed");
 await sleep(3200);
-await ev(`window.__moves = 0; const animate = Element.prototype.animate; Element.prototype.animate = function (...a) { if (this.closest && this.closest(".goat-one__stage")) window.__moves += 1; return animate.apply(this, a); }; 1`);
+// What the goat does is counted in the page, in the 200 milliseconds after the press lands, so a slow answer from
+// the browser cannot stretch that time into the goat's next move of its own (it picks its stop again 250
+// milliseconds after a section opens).
+await ev(`window.__moves = 0; window.__pressAt = 0; const animate = Element.prototype.animate; Element.prototype.animate = function (...a) { if (this.closest && this.closest(".goat-one__stage") && (!window.__pressAt || performance.now() - window.__pressAt < 200)) window.__moves += 1; return animate.apply(this, a); }; 1`);
 // The heading is pressed directly under the goat, the nearest a press on a heading comes to it, with the pointer
 // already at rest there and the press sent alone, with no move before it. A goat turns its head towards a pointer
 // that moves to one side of it, which is its answer to the pointer and never to a press; straight under it there is
 // no side to turn to, so anything the goat does after the press is the press's doing, and nothing is excused.
 const [hx, hy] = await ev(`(() => { const g = document.querySelector(".goat-one__stage").getBoundingClientRect(), h = document.querySelector("#food-title .sec__toggle").getBoundingClientRect(); return [Math.round(g.left + g.width / 2), Math.round(h.top + h.height / 2)]; })()`);
 await S("Input.dispatchMouseEvent", { type: "mouseMoved", x: hx, y: hy }); await sleep(1500);
-await ev(`window.__moves = 0; 1`);
+await ev(`window.__moves = 0; document.addEventListener("pointerdown", () => { window.__pressAt = performance.now(); }, { capture: true, once: true }); 1`);
 for (const type of ["mousePressed", "mouseReleased"]) await S("Input.dispatchMouseEvent", { type, x: hx, y: hy, button: "left", clickCount: 1 });
-await sleep(200);
-check(!(await closed()).split(",").includes("food") && await ev(`window.__moves`) === 0, "a press on the heading opens the section and does not set the goat off");
+await sleep(450);
+check(!(await closed()).split(",").includes("food") && await ev(`window.__pressAt > 0 && window.__moves`) === 0, "a press on the heading opens the section and does not set the goat off");
 await sleep(900);
 check(await ev(`(() => { const st = document.querySelector(".goat-one__stage"); if (st.parentElement.id !== "food") return true; const r = st.getBoundingClientRect(); return Math.abs(r.bottom - document.getElementById("food").getBoundingClientRect().top) < r.height * 0.2; })()`), "the section's own goat stays on the section's top edge when the section opens");
 check(await ev(`document.querySelectorAll("[data-folds] details").length === 0 && document.getElementById("food-dishes").getClientRects().length > 0 && document.querySelectorAll("#food-dishes img").length >= 12`), "opening a section opens all of it: the twelve dishes are there, with no second fold");
