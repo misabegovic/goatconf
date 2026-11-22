@@ -50,6 +50,28 @@ REGISTER = ("register.html", "Register")
 # is not there and the system setting still applies.
 THEME_BOOT = ('<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")'
               'document.documentElement.dataset.theme=t}catch(e){}</script>')
+# The sections of a page that open and close (site/album.js; a page opts in with data-folds on its main). Before the
+# page is painted this marks which sections are closed, so nothing shows and then vanishes: a section is closed unless
+# its markup says it starts open (data-fold="open") or never closes (data-fold="never"), and what the visitor last
+# chose, kept in this browser under the key "folds" beside "theme", wins over both. A link to a section opens it. It
+# marks each section as the parser adds it, which is before the first paint. Without the script nothing is closed.
+# If site/album.js never arrives, everything opens again when the page has loaded, so nothing is left shut with no control.
+# Nothing is sent anywhere (sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md).
+FOLD_BOOT = ('<script>(function(){try{var d=document,h=d.documentElement,f={},x="";'
+             'try{x=decodeURIComponent(location.hash.slice(1))}catch(e){}'
+             'try{var p=(location.pathname.split("/").pop()||"index").replace(/\\.html$/,"")||"index",'
+             'a=JSON.parse(localStorage.getItem("folds")||"{}");if(a&&a[p]&&typeof a[p]==="object")f=a[p]}catch(e){}'
+             'h.classList.add("folds-on");'
+             'var o=new MutationObserver(function(m){for(var i=0;i<m.length;i++)for(var j=0;j<m[i].addedNodes.length;j++){'
+             'var n=m[i].addedNodes[j];if(n.nodeType!==1||!n.id)continue;'
+             'if(n.tagName==="SECTION"&&n.parentNode&&n.parentNode.hasAttribute("data-folds")&&n.getAttribute("data-fold")!=="never"){'
+             'var s=f[n.id]==="open"||f[n.id]==="closed"?f[n.id]:n.getAttribute("data-fold")==="open"?"open":"closed";'
+             'if(s==="closed"&&x!==n.id)n.classList.add("is-closed")}'
+             'else if(n.tagName==="DETAILS"&&n.classList.contains("photo-fold")&&f[n.id]==="open")n.open=true}});'
+             'o.observe(h,{childList:true,subtree:true});'
+             'd.addEventListener("DOMContentLoaded",function(){o.disconnect()});'
+             'addEventListener("load",function(){if(!h.classList.contains("folds-ready"))h.classList.remove("folds-on")})'
+             '}catch(e){}})()</script>')
 
 
 def theme_control(where: str) -> str:
@@ -73,7 +95,7 @@ def bar(current: str) -> str:
     panel_actions = "\n          ".join([a(h, l, "topbar__panel-cta") for h, l in DOORS] + [a(*REGISTER, "topbar__panel-main")])
     register = a(*REGISTER, "topbar__register")
     return f"""{START}
-{THEME_BOOT}
+{THEME_BOOT}{FOLD_BOOT}
 <a class="skip" href="#main">Skip to the content</a>
 <header class="topbar">
   <a class="topbar__home" href="index.html" aria-label="GoatConf home"><img class="topbar__coin" src="brand/coin.svg" width="36" height="36" alt="">GoatConf <span class="topbar__year">2027</span></a>

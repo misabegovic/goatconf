@@ -283,6 +283,12 @@
     const mid = innerHeight * 0.45;
     let best = null, most = -Infinity;
     for (const s of slots) {
+      // A stop inside a list or a section that is closed is not a stop until it is opened; the list's control and
+      // the closed section's heading carry a stop of their own.
+      const fold = s.slot.closest("details");
+      if (fold && !fold.open && !s.slot.closest("summary")) continue;
+      if (s.slot.closest("[data-fold-part][hidden]")) continue;
+      if (!s.scene && s.slot.matches(".is-closed h2")) continue;
       const r = s.slot.getBoundingClientRect();
       const spot = s.scene ? r.top + r.height * 0.7 : r.top;
       if (spot < (s.scene ? 160 : 70) || spot > innerHeight - 12) continue;
@@ -640,4 +646,153 @@
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(hold);
   let waiting = 0;
   addEventListener("resize", () => { cancelAnimationFrame(waiting); waiting = requestAnimationFrame(hold); });
+})();
+
+// The sections of a page that open and close, and the lists that close on a phone (the photos of Tuzla, the dishes):
+// sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md. A page opts in with data-folds
+// on its main; a section with data-fold="never" has no control and one with data-fold="open" starts open. Each
+// section's heading gets a button around its words. What the visitor last chose is kept in this browser under the
+// key "folds", one entry a page, and nothing is sent anywhere; with storage off or cleared the page shows what a
+// first visit shows. A link, a sentence a link points at, or find in page opens whatever it lands in, for that visit
+// only. The script in the page's head (tools/nav.py) has already marked the closed sections, so nothing jumps here.
+(() => {
+  const root = document.documentElement;
+  const KEY = "folds";
+  const page = (location.pathname.split("/").pop() || "index").replace(/\.html$/, "") || "index";
+  const kept = () => {
+    try {
+      const all = JSON.parse(localStorage.getItem(KEY) || "{}");
+      return all && all[page] && typeof all[page] === "object" ? all[page] : {};
+    } catch (e) { return {}; }
+  };
+  const keep = (id, open) => {
+    try {
+      let all = JSON.parse(localStorage.getItem(KEY) || "{}");
+      if (!all || typeof all !== "object") all = {};
+      if (!all[page] || typeof all[page] !== "object") all[page] = {};
+      all[page][id] = open ? "open" : "closed";
+      localStorage.setItem(KEY, JSON.stringify(all));
+    } catch (e) { /* storage is off: the page works the same and only forgets */ }
+  };
+  // The goat picks its stop when the page stops moving; something opening or closing is the page moving.
+  const moved = () => window.dispatchEvent(new Event("scroll"));
+  const aim = () => {
+    try { return location.hash.length > 1 ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null; } catch (e) { return null; }
+  };
+  const was = kept();
+  const main = document.querySelector("[data-folds]");
+  const sections = main ? [...main.querySelectorAll(":scope > section[id]")].filter((s) => s.dataset.fold !== "never" && s.querySelector("h2")) : [];
+  const lists = [...document.querySelectorAll("details.photo-fold")];
+  if (!sections.length && !lists.length) { root.classList.add("folds-ready"); return; }
+  const canFind = "onbeforematch" in root;
+  const every = main ? main.querySelector("[data-folds-all]") : null;
+  const state = new Map();
+  const closed = (s) => state.has(s) && !state.get(s).open;
+  const name = () => { if (every) every.textContent = sections.some(closed) ? "Open all sections" : "Close all sections"; };
+  const set = (s, open, remember) => {
+    const st = state.get(s);
+    st.open = open;
+    s.classList.toggle("is-closed", !open);
+    st.button.setAttribute("aria-expanded", String(open));
+    st.parts.forEach((p) => { if (open) p.removeAttribute("hidden"); else p.setAttribute("hidden", canFind ? "until-found" : ""); });
+    if (remember) keep(s.id, open);
+    name();
+  };
+  sections.forEach((s) => {
+    const head = s.querySelector("h2");
+    // The parts that close: everything beside the heading, and beside whatever holds the heading, but the closed row.
+    const parts = [];
+    for (let node = head; node !== s; node = node.parentElement) {
+      [...node.parentElement.children].forEach((c) => { if (c !== node && !c.classList.contains("sec__peek")) parts.push(c); });
+    }
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "sec__toggle";
+    [...head.childNodes].forEach((n) => { if (!(n.nodeType === 1 && n.matches(".goat, .sec__goat"))) button.appendChild(n); });
+    head.insertBefore(button, head.firstChild);
+    state.set(s, { open: true, button, parts });
+    parts.forEach((p) => {
+      p.setAttribute("data-fold-part", "");
+      p.addEventListener("beforematch", () => { set(s, true, false); moved(); });
+    });
+    button.addEventListener("click", () => {
+      const open = !state.get(s).open;
+      set(s, open, true);
+      if (!open && head.getBoundingClientRect().top < 0) s.scrollIntoView();
+      moved();
+    });
+    const chosen = was[s.id] === "open" || was[s.id] === "closed" ? was[s.id] === "open" : s.dataset.fold === "open";
+    set(s, chosen || aim() === s, false);
+    s.classList.add("is-ready");
+  });
+  if (every) {
+    every.addEventListener("click", () => {
+      const open = sections.some(closed);
+      sections.forEach((s) => set(s, open, true));
+      moved();
+    });
+  }
+
+  // The lists. Without the script the control still opens and closes them. A wide screen has them open and shows no
+  // control; on a phone a list the visitor opened last time is open. "Show less" at the end of an open list closes
+  // it and brings its control back into view.
+  const wide = window.matchMedia ? matchMedia("(min-width: 48rem)") : null;
+  const forWidth = () => lists.forEach((d) => { if (wide && wide.matches) d.open = true; else if (was[d.id] === "open") d.open = true; });
+  forWidth();
+  if (wide && wide.addEventListener) wide.addEventListener("change", () => { if (wide.matches) lists.forEach((d) => { d.open = true; }); });
+  lists.forEach((d) => {
+    const less = d.querySelector("[data-fold-close]");
+    const control = d.querySelector("summary");
+    let byHand = false;
+    control.addEventListener("click", () => { byHand = true; });
+    if (less) {
+      less.hidden = false;
+      less.addEventListener("click", () => {
+        byHand = true;
+        d.open = false;
+        control.focus({ preventScroll: true });
+        control.scrollIntoView({ block: "center" });
+      });
+    }
+    d.addEventListener("toggle", () => {
+      if (byHand && !(wide && wide.matches)) keep(d.id, d.open);
+      byHand = false;
+      moved();
+    });
+  });
+
+  // A link to a section, or to something inside one, opens what it lands in and goes there.
+  const toAim = () => {
+    const t = aim();
+    if (!t) return;
+    const s = sections.find((x) => x === t || x.contains(t));
+    const list = t.closest("details.photo-fold");
+    let opened = false;
+    if (s && closed(s)) { set(s, true, false); opened = true; }
+    if (list && list !== t && !list.open) { list.open = true; opened = true; }
+    if (!opened) return;
+    // What was just opened may still be loading its pictures, which moves the place aimed at; go there again once
+    // they have settled, unless the visitor has started moving the page themselves.
+    const go = () => { if (!byVisitor && aim() === t) t.scrollIntoView(); };
+    go();
+    moved();
+    [300, 900, 1800].forEach((ms) => setTimeout(go, ms));
+  };
+  let byVisitor = false;
+  ["wheel", "touchstart", "keydown", "mousedown"].forEach((kind) => addEventListener(kind, () => { byVisitor = true; }, { passive: true }));
+  toAim();
+  addEventListener("hashchange", () => { byVisitor = false; toAim(); });
+  // A link to the address already in the bar changes nothing the browser reports, so it is read from the press.
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest ? e.target.closest('a[href*="#"]') : null;
+    if (a && a.hash && a.pathname === location.pathname && a.hash === location.hash) setTimeout(() => { byVisitor = false; toAim(); });
+  });
+  // On paper everything is open; what was closed is closed again afterwards.
+  let closedForPaper = [];
+  addEventListener("beforeprint", () => {
+    closedForPaper = sections.filter(closed);
+    closedForPaper.forEach((s) => set(s, true, false));
+  });
+  addEventListener("afterprint", () => { closedForPaper.forEach((s) => set(s, false, false)); closedForPaper = []; });
+  root.classList.add("folds-ready");
 })();

@@ -164,3 +164,63 @@ def test_the_footer_groups_hold_every_link_once():
     # Who's organising has a page of its own, linked from every footer beside the conference's own pages.
     link = '<a href="organising.html">Who\'s organising</a>'
     assert link in inner and link in cover and "organising.html" in dict(frame.GROUPS)["The conference"]
+
+
+def _home_sections():
+    import re
+    text = (Path(__file__).resolve().parent.parent / "site" / "index.html").read_text(encoding="utf-8")
+    main = text[text.index("<main"):text.index("</main>")]
+    return main, re.findall(r'<section([^>]*)>(.*?)</section>', main, re.S)
+
+
+def test_only_the_hero_and_the_free_ticket_never_close_and_only_the_speakers_start_open():
+    """sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md and
+    sources/conversations/2026-11-22--org--sections-start-closed-speakers-open.md"""
+    import re
+    main, sections = _home_sections()
+    assert "data-folds" in main[:main.index(">")]
+    never, starts_open, closes = [], [], []
+    for attrs, _body in sections:
+        name = (re.search(r'id="([a-z-]+)"', attrs) or re.search(r'aria-labelledby="([a-z-]+)"', attrs)).group(1)
+        how = re.search(r'data-fold="([a-z]+)"', attrs)
+        (never if how and how.group(1) == "never" else starts_open if how and how.group(1) == "open" else closes).append(name)
+    assert never == ["title", "ticket"]
+    assert starts_open == ["speakers"]
+    assert closes == ["days", "tuzla", "food", "talk", "add", "money", "the-goat", "conduct", "goatchi", "see-you"]
+
+
+def test_a_closed_row_shows_only_what_its_section_holds_and_one_goat_stop():
+    """A closed section's row is a hint, never a claim of its own: each link, picture and line on it is in the section."""
+    import re
+    _main, sections = _home_sections()
+    seen = 0
+    for attrs, body in sections:
+        if 'data-fold="never"' in attrs:
+            assert "sec__peek" not in body and "sec__goat" not in body
+            continue
+        seen += 1
+        head = re.search(r"<h2[^>]*>(.*?)</h2>", body, re.S).group(1)
+        assert head.count('class="sec__goat"') == 1, attrs
+        row = re.search(r'<div class="sec__peek[^"]*">(.*?)</div>', body, re.S)
+        assert row, attrs
+        rest = body.replace(row.group(0), "")
+        for href, words in re.findall(r'<a class="(?:go go--ink|button)" href="([^"]+)">([^<]+)</a>', row.group(1)):
+            assert re.search(r'href="' + re.escape(href) + r'">' + re.escape(words) + "</a>", rest), (href, words)
+        for href in re.findall(r'<a class="sec__logo[^"]*"[^>]*href="([^"]+)"', row.group(1)):
+            assert f'href="{href}"' in rest, href
+        for src in re.findall(r'<img[^>]*src="([^"]+)"', row.group(1)):
+            assert src.rsplit("-", 1)[0].rsplit(".", 1)[0] in rest or src in rest, src
+        for words in re.findall(r'<(?:li|span class="sec__count"|span class="sec__line")>([^<]+)</', row.group(1)):
+            assert words in rest, words
+        for what, price in re.findall(r"<li>([^<]+) <b>([^<]+)</b></li>", row.group(1)):
+            assert f"<span>{what}</span>" in rest and f"<b>{price}</b>" in rest, (what, price)
+    assert seen == 11
+
+
+def test_every_page_marks_closed_sections_before_the_first_paint_and_keeps_one_key():
+    nav = importlib.reload(importlib.import_module("nav"))
+    assert 'localStorage.getItem("folds")' in nav.FOLD_BOOT and "MutationObserver" in nav.FOLD_BOOT
+    # If the script file never arrives nothing is left closed with no control.
+    assert 'classList.remove("folds-on")' in nav.FOLD_BOOT
+    text = (Path(__file__).resolve().parent.parent / "site" / "index.html").read_text(encoding="utf-8")
+    assert nav.FOLD_BOOT in text and text.index(nav.FOLD_BOOT) < text.index("<main")
