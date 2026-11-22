@@ -225,6 +225,8 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--phone-hero-layout-and-trim-keep-the-six-cards.md",
+        "sources/conversations/2026-11-22--org--phone-hero-tips-show-me.md",
         "sources/conversations/2026-11-22--org--anything-left-lets-iterate.md",
         "sources/conversations/2026-11-22--org--food-and-tuzla-open-and-close-on-phones.md",
         "sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md",
@@ -264,7 +266,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 10818
+      "tokens": 11140
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -326,6 +328,8 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--phone-hero-layout-and-trim-keep-the-six-cards.md",
+        "sources/conversations/2026-11-22--org--phone-hero-tips-show-me.md",
         "sources/conversations/2026-11-22--org--anything-left-lets-iterate.md",
         "sources/conversations/2026-11-22--org--goats-overlay-no-empty-room.md",
         "sources/conversations/2026-11-22--org--speaker-goats-on-the-left-and-smaller.md",
@@ -367,7 +371,7 @@
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 7260
+      "tokens": 7640
     },
     {
       "path": "org/adrs/goat-tamagotchi-on-the-site.md",
@@ -2424,6 +2428,8 @@
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
         "sources/conversations/2026-11-22--org--ship-the-polish-round-and-the-folds-you-choose.md",
+        "sources/conversations/2026-11-22--org--phone-hero-layout-and-trim-keep-the-six-cards.md",
+        "sources/conversations/2026-11-22--org--phone-hero-tips-show-me.md",
         "sources/conversations/2026-11-22--org--anything-left-lets-iterate.md",
         "sources/conversations/2026-11-22--org--food-and-tuzla-open-and-close-on-phones.md",
         "sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md",
@@ -2477,7 +2483,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 11273,
+      "tokens": 11957,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
