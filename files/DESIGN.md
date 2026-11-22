@@ -281,6 +281,28 @@ A saturated album blue in three depths, white and a pale printed blue for the pa
 - **Body** (400, clamp(1.0625rem, 0.98rem + 0.3vw, 1.1875rem), 1.6): all running text, held to 62ch (74ch on wide copy, 58ch on the shiny page).
 - **Small / Credit** (400, 0.98rem at 1.35; 0.82rem at 1.45): slot and fact explanations; checked dates.
 
+### Type scale
+Since 2026-11-22 (`sources/conversations/2026-11-22--org--continue-round-nine.md`) every size set in rem comes from one scale of fourteen steps; the fluid sizes above (display, headline, fact, title, lede, body) stay as they are.
+
+| Step | rem | Used for |
+|---|---|---|
+| 1 | 0.75 | the smallest print: postcard captions, map credit |
+| 2 | 0.8 | tags, group labels, credits |
+| 3 | 0.85 | card small print, checked dates |
+| 4 | 0.9 | card body, captions |
+| 5 | 0.95 | slot and fact explanations, nav, footer |
+| 6 | 1.05 | stamps, numbers, labels |
+| 7 | 1.15 | photo captions, prices on cards |
+| 8 | 1.2 | card titles, buttons in the ticket |
+| 9 | 1.35 | bar mark, card names on phones |
+| 10 | 1.5 | slot titles, sub-heads |
+| 11 | 1.6 | prices in a price list |
+| 12 | 2.2 | facts on phones |
+| 13 | 3 | the cover title on phones |
+| 14 | 4.6 | the ticket's FREE on phones |
+
+Running text is held to 62 characters a line (74 on wide copy). Headings balance their lines; times, dates and prices use tabular figures.
+
 ### Named Rules
 **The Lettered, Not Typed Rule.** Every heading, caption, number and stamp is Bricolage at 800, condensed and uppercase. Weight never varies to make hierarchy; size does.
 

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-21",
+  "generated": "2026-11-22",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--continue-round-nine.md",
         "sources/conversations/2026-11-22--org--continue-round-eight.md",
         "sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md",
         "sources/conversations/2026-11-21--org--minimal-chosen-phone-hooves-light-and-dark.md",
@@ -248,7 +249,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 6054
+      "tokens": 6427
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
