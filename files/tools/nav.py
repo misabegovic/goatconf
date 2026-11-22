@@ -67,7 +67,7 @@ FOLD_BOOT = ('<script>(function(){try{var d=document,h=d.documentElement,f={},x=
              'if(n.tagName==="SECTION"&&n.parentNode&&n.parentNode.hasAttribute("data-folds")&&n.getAttribute("data-fold")!=="never"){'
              'var s=f[n.id]==="open"||f[n.id]==="closed"?f[n.id]:n.getAttribute("data-fold")==="open"?"open":"closed";'
              'if(s==="closed"&&x!==n.id)n.classList.add("is-closed")}'
-             'else if(n.tagName==="DETAILS"&&n.classList.contains("photo-fold")&&f[n.id]==="open")n.open=true}});'
+             '}});'
              'o.observe(h,{childList:true,subtree:true});'
              'd.addEventListener("DOMContentLoaded",function(){o.disconnect()});'
              'addEventListener("load",function(){if(!h.classList.contains("folds-ready"))h.classList.remove("folds-on")})'

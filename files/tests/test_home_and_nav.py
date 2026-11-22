@@ -184,9 +184,9 @@ def test_only_the_hero_and_the_free_ticket_never_close_and_only_the_speakers_sta
         name = (re.search(r'id="([a-z-]+)"', attrs) or re.search(r'aria-labelledby="([a-z-]+)"', attrs)).group(1)
         how = re.search(r'data-fold="([a-z]+)"', attrs)
         (never if how and how.group(1) == "never" else starts_open if how and how.group(1) == "open" else closes).append(name)
-    assert never == ["title", "ticket"]
+    assert never == ["title", "ticket", "see-you"]
     assert starts_open == ["speakers"]
-    assert closes == ["days", "tuzla", "food", "talk", "add", "money", "the-goat", "conduct", "goatchi", "see-you"]
+    assert closes == ["days", "tuzla", "food", "talk", "add", "money", "the-goat", "conduct", "goatchi"]
 
 
 def test_a_closed_row_shows_only_what_its_section_holds_and_one_goat_stop():
@@ -196,25 +196,38 @@ def test_a_closed_row_shows_only_what_its_section_holds_and_one_goat_stop():
     seen = 0
     for attrs, body in sections:
         if 'data-fold="never"' in attrs:
-            assert "sec__peek" not in body and "sec__goat" not in body
+            assert "sec__peek" not in body and not re.match(r'\s*(?:<!--[^>]*-->)?<span class="goat peek', body)
+            assert "data-fold-end" not in body
             continue
         seen += 1
-        head = re.search(r"<h2[^>]*>(.*?)</h2>", body, re.S).group(1)
-        assert head.count('class="sec__goat"') == 1, attrs
+        # The row's one goat is the section's first child, a single character and never a cast that changes
+        # (sources/conversations/2026-11-22--org--meals-section-weird-when-collapsed.md).
+        first = re.match(r'\s*(?:<!-- gen:goat-([a-z-]+) tools/frame.py -->)?(<span class="goat peek peek--art"[^>]*data-goat="([a-z-]+)".*?</span>)\s*(?:<!-- /gen:goat-\1 -->)?\s*<(h2|div)', body, re.S)
+        assert first, attrs
+        assert first.group(2).count('class="goat peek') == 1 and first.group(3).startswith("peek"), attrs
+        assert "sec__goat" not in body, attrs
+        assert body.count("data-fold-end") == 1, attrs
         row = re.search(r'<div class="sec__peek[^"]*">(.*?)</div>', body, re.S)
         assert row, attrs
         rest = body.replace(row.group(0), "")
-        for href, words in re.findall(r'<a class="(?:go go--ink|button)" href="([^"]+)">([^<]+)</a>', row.group(1)):
-            assert re.search(r'href="' + re.escape(href) + r'">' + re.escape(words) + "</a>", rest), (href, words)
+        for href, words in re.findall(r'<a class="(?:go go--ink|button)[^"]*" href="([^"]+)">([^<]+)</a>', row.group(1)):
+            # The link is the section's own, under the words it has there or under a label the same page gives it.
+            assert f'href="{href}"' in rest, href
+            assert re.search(r'href="' + re.escape(href) + r'">' + re.escape(words) + "</a>", _main.replace(row.group(0), "")), (href, words)
         for href in re.findall(r'<a class="sec__logo[^"]*"[^>]*href="([^"]+)"', row.group(1)):
             assert f'href="{href}"' in rest, href
         for src in re.findall(r'<img[^>]*src="([^"]+)"', row.group(1)):
             assert src.rsplit("-", 1)[0].rsplit(".", 1)[0] in rest or src in rest, src
-        for words in re.findall(r'<(?:li|span class="sec__count"|span class="sec__line")>([^<]+)</', row.group(1)):
+        for words in re.findall(r'<(?:li|span class="sec__line")>([^<]+)</', row.group(1)):
             assert words in rest, words
+        # A count under a strip of pictures says how many pictures the strip has, and the section has as many.
+        for words in re.findall(r'<span class="sec__count">([^<]+)</', row.group(1)):
+            many = {"Six": 6, "Twelve": 12}[words.split()[0]]
+            strip = re.findall(r'<img[^>]*src="([^"]+)"', row.group(1))
+            assert len(strip) == many and all(src.rsplit("-", 1)[0] in rest for src in strip), words
         for what, price in re.findall(r"<li>([^<]+) <b>([^<]+)</b></li>", row.group(1)):
             assert f"<span>{what}</span>" in rest and f"<b>{price}</b>" in rest, (what, price)
-    assert seen == 11
+    assert seen == 10
 
 
 def test_every_page_marks_closed_sections_before_the_first_paint_and_keeps_one_key():

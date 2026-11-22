@@ -31,7 +31,7 @@
   peeks.forEach((p) => {
     const at = slots.find((s) => s.slot === p.parentElement);
     if (at) at.alts.push(p);
-    else slots.push({ slot: p.parentElement, peek: p, alts: [p], turn: 0, scene: p.classList.contains("goat-scene") });
+    else slots.push({ slot: p.parentElement, peek: p, alts: [p], turn: 0, scene: p.classList.contains("goat-scene"), row: p.parentElement.matches("[data-folds] > section") });
   });
   const next = (s) => { s.peek = s.alts[s.turn++ % s.alts.length]; };
   const stage = document.createElement("div");
@@ -190,14 +190,18 @@
       s.peek.style.display = "";
     }
     stage.style.width = s.scene ? "" : width;
-    stage.style.right = s.scene ? "" : own.right;
-    stage.style.bottom = s.scene ? "" : own.bottom;
+    const seat = !s.scene && s.seat && typeof s.seat === "object" ? s.seat : null;
+    if (seat && seat.size !== 1) stage.style.width = `${parseFloat(width) * seat.size}px`;
+    stage.style.right = s.scene ? "" : seat ? `${seat.right}px` : own.right;
+    // A section's own goat stays on the section's top edge however tall the section grows when it opens.
+    stage.style.bottom = s.scene ? "" : s.row ? "100%" : own.bottom;
     // On a photo it stands on the photo's own bottom edge, above the caption and the text under it.
     // A food card keeps its photo clear: the goat sits in the white corner beside the price instead (CSS).
     const food = !!s.scene && !!s.slot.querySelector(".price");
     stage.classList.toggle("is-food", food);
     const img = s.scene && !food && s.slot.querySelector("img");
     if (img) stage.style.bottom = `${s.slot.clientHeight - (img.offsetTop + img.offsetHeight) - 4}px`;
+    stage.style.visibility = "";
     const was = stage.parentElement;
     if (was && was !== s.slot) was.classList.remove("has-goat");
     s.slot.classList.add("has-goat");
@@ -276,6 +280,69 @@
     return Promise.all([body, trip.finished]);
   };
 
+  // Where the goat may stand (sources/conversations/2026-11-22--org--meals-section-weird-when-collapsed.md). A
+  // section that opens and closes has one stop of its own, its row's top edge, and that is a stop only while the
+  // section is closed; nothing inside a closed section is a stop, its heading's own goat included, and nothing inside
+  // a closed list but the list's control. Every way of calling the goat asks here first: the page coming to rest,
+  // the pointer entering a slot, and a section opening or closing under it.
+  const eligible = (s) => {
+    if (s.blocked) return false;
+    if (s.row) return true;
+    const section = s.slot.closest("[data-folds] > section");
+    return !(section && section.classList.contains("is-closed"));
+  };
+  // A goat never covers a word, a link or a stamp. A goat that peeks over a slot's top edge stands at the slot's
+  // right end; if it would cover something there that is not the slot's own, it stands at the left end, and if it
+  // would there too it stands smaller; where no place is clear, that slot is not a stop at this width. What it found
+  // is kept until the page is laid out again.
+  const hit = (a, b) => a.left < b.right - 1 && a.right > b.left + 1 && a.top < b.bottom - 1 && a.bottom > b.top + 1;
+  const covers = (s, box) => {
+    const root = s.slot.closest("section, main") || document.body;
+    for (const el of root.querySelectorAll(".stamp, a.go, a.button, button, .num, .tag")) {
+      if (!s.slot.contains(el) && el.getClientRects().length && hit(el.getBoundingClientRect(), box)) return true;
+    }
+    const walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const range = document.createRange();
+    for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+      const p = n.parentElement;
+      if (!n.nodeValue.trim() || !p || s.slot.contains(p) || !hit(p.getBoundingClientRect(), box)) continue;
+      range.selectNodeContents(n);
+      for (const r of range.getClientRects()) if (hit(r, box)) return true;
+    }
+    return false;
+  };
+  const seatOf = (s) => {
+    if (s.scene || s.row) return true;
+    if (s.seat !== undefined) return s.seat;
+    const own = getComputedStyle(s.peek);
+    const width = parseFloat(own.width), right = parseFloat(own.right);
+    const [a, b] = (s.peek.style.aspectRatio || "1/1").split("/").map(parseFloat);
+    // Only the goats that peek over a top edge are checked; one placed some other way keeps its place.
+    const slot = s.slot.getBoundingClientRect();
+    const onTop = own.bottom === "100%" || Math.abs(parseFloat(own.bottom) - slot.height) < 1.5;
+    if (!onTop || !width || Number.isNaN(right)) return (s.seat = true);
+    const height = width * (b || 1) / (a || 1);
+    const top = slot.top - height * (parseFloat(own.getPropertyValue("--edge")) || 88) / 100;
+    // Its own size at the right end, then at the left; then smaller, at the left and at the right.
+    for (const [size, left] of [[1, false], [1, true], [0.62, true], [0.62, false], [0.45, true], [0.45, false]]) {
+      const w = width * size, r = left ? slot.width - right - w : right;
+      const t = slot.top - (slot.top - top) * size;
+      if (!covers(s, { left: slot.right - r - w, right: slot.right - r, top: t, bottom: slot.top - 2 })) return (s.seat = { right: r, size });
+    }
+    return (s.seat = null);
+  };
+  const again = () => slots.forEach((s) => { s.seat = undefined; s.blocked = false; });
+  // The goat leaves at once, with no move to watch, when the stop it stands on stops being one.
+  const leave = () => {
+    if (!current) return;
+    if (goat) { goat.getAnimations().forEach((a) => a.cancel()); goat.style.transform = HIDDEN; }
+    stage.style.visibility = "hidden";
+    current.slot.classList.remove("has-goat");
+    current = null;
+    wanted = null;
+    asked = false;
+    down = true;
+  };
   // The slot mainly on screen: the one showing most, and of slots showing whole, the one nearest the middle. The goat
   // keeps its own slot until another shows clearly more, so it does not hop onto every card scrolled past, and it only
   // goes where it would be seen: over a slot, the slot's top; on a photo, the photo's lower part.
@@ -283,23 +350,22 @@
     const mid = innerHeight * 0.45;
     let best = null, most = -Infinity;
     for (const s of slots) {
-      // A stop inside a list or a section that is closed is not a stop until it is opened; the list's control and
-      // the closed section's heading carry a stop of their own.
-      const fold = s.slot.closest("details");
-      if (fold && !fold.open && !s.slot.closest("summary")) continue;
-      if (s.slot.closest("[data-fold-part][hidden]")) continue;
-      if (!s.scene && s.slot.matches(".is-closed h2")) continue;
+      if (!eligible(s)) continue;
       const r = s.slot.getBoundingClientRect();
       const spot = s.scene ? r.top + r.height * 0.7 : r.top;
       if (spot < (s.scene ? 160 : 70) || spot > innerHeight - 12) continue;
-      const seen = Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 70));
+      // A section's own stop counts as a row's height, however tall the open section is, so the goats inside win.
+      const seen = Math.min(Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 70)), s.row ? 150 : Infinity);
       const score = seen - Math.abs(r.top - mid) * 0.1 + (s === current ? Math.min(r.height, innerHeight) * 0.25 : 0);
       if (score > most) { most = score; best = s; }
     }
+    // The best stop is checked for what the goat would cover there; one where it has no clear place is passed over.
+    if (best && seatOf(best) === null) { best.blocked = true; return pick(); }
     return best;
   };
   const go = async (s) => {
-    if (!s) return;
+    if (!s || !eligible(s)) return;
+    if (seatOf(s) === null) { s.blocked = true; return; }
     wanted = s;
     // A move while it waits gives way at once; the goat goes on when it ends.
     if (busy) { if (idling) { goat.getAnimations().forEach((a) => a.finish()); face("front"); } return; }
@@ -332,6 +398,8 @@
     } finally {
       busy = false;
     }
+    // A section may have opened or closed while it moved: it does not stay where it may no longer stand.
+    if (current && !eligible(current)) { leave(); schedule(); return; }
     catchUp();
   };
   // A trick asked for while it was busy comes first, then where it was last asked to go, by a scroll or a pointer.
@@ -521,7 +589,12 @@
   const start = () => {
     stage.style.visibility = "";
     addEventListener("scroll", schedule, { passive: true });
-    slots.forEach((s) => s.slot.addEventListener("pointerenter", () => go(s)));
+    // The pointer entering a slot calls the goat there. A closed row is a slot as wide as the page, so only a mouse
+    // calls it: a finger on the row is opening the section, and the goat would arrive only to leave again.
+    slots.forEach((s) => s.slot.addEventListener("pointerenter", (e) => { if (!(s.row && e.pointerType !== "mouse")) go(s); }));
+    addEventListener("folds:change", () => { again(); if (current && !eligible(current) && !busy) leave(); schedule(); });
+    addEventListener("resize", again);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(again);
     stage.addEventListener("click", tapped);
     stage.addEventListener("mousedown", (e) => { if (goat && goat.contains(e.target)) e.preventDefault(); });
     go(pick());
@@ -648,7 +721,7 @@
   addEventListener("resize", () => { cancelAnimationFrame(waiting); waiting = requestAnimationFrame(hold); });
 })();
 
-// The sections of a page that open and close, and the lists that close on a phone (the photos of Tuzla, the dishes):
+// The sections of a page that open and close:
 // sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md. A page opts in with data-folds
 // on its main; a section with data-fold="never" has no control and one with data-fold="open" starts open. Each
 // section's heading gets a button around its words. What the visitor last chose is kept in this browser under the
@@ -675,15 +748,14 @@
     } catch (e) { /* storage is off: the page works the same and only forgets */ }
   };
   // The goat picks its stop when the page stops moving; something opening or closing is the page moving.
-  const moved = () => window.dispatchEvent(new Event("scroll"));
+  const moved = () => window.dispatchEvent(new Event("folds:change"));
   const aim = () => {
     try { return location.hash.length > 1 ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null; } catch (e) { return null; }
   };
   const was = kept();
   const main = document.querySelector("[data-folds]");
   const sections = main ? [...main.querySelectorAll(":scope > section[id]")].filter((s) => s.dataset.fold !== "never" && s.querySelector("h2")) : [];
-  const lists = [...document.querySelectorAll("details.photo-fold")];
-  if (!sections.length && !lists.length) { root.classList.add("folds-ready"); return; }
+  if (!sections.length) { root.classList.add("folds-ready"); return; }
   const canFind = "onbeforematch" in root;
   const every = main ? main.querySelector("[data-folds-all]") : null;
   const state = new Map();
@@ -721,6 +793,18 @@
       if (!open && head.getBoundingClientRect().top < 0) s.scrollIntoView();
       moved();
     });
+    // "Show less" at the end of an open section closes it and brings its heading back, with the keyboard on it.
+    const less = s.querySelector("[data-fold-end]");
+    if (less) {
+      less.addEventListener("click", () => {
+        set(s, false, true);
+        button.focus({ preventScroll: true });
+        s.scrollIntoView();
+        moved();
+      });
+    }
+    // A press on the closed row's strip of pictures opens the section; the logos beside it are links of their own.
+    s.querySelectorAll(".sec__peek .sec__strip").forEach((strip) => strip.addEventListener("click", () => { set(s, true, true); moved(); }));
     const chosen = was[s.id] === "open" || was[s.id] === "closed" ? was[s.id] === "open" : s.dataset.fold === "open";
     set(s, chosen || aim() === s, false);
     s.classList.add("is-ready");
@@ -733,43 +817,13 @@
     });
   }
 
-  // The lists. Without the script the control still opens and closes them. A wide screen has them open and shows no
-  // control; on a phone a list the visitor opened last time is open. "Show less" at the end of an open list closes
-  // it and brings its control back into view.
-  const wide = window.matchMedia ? matchMedia("(min-width: 48rem)") : null;
-  const forWidth = () => lists.forEach((d) => { if (wide && wide.matches) d.open = true; else if (was[d.id] === "open") d.open = true; });
-  forWidth();
-  if (wide && wide.addEventListener) wide.addEventListener("change", () => { if (wide.matches) lists.forEach((d) => { d.open = true; }); });
-  lists.forEach((d) => {
-    const less = d.querySelector("[data-fold-close]");
-    const control = d.querySelector("summary");
-    let byHand = false;
-    control.addEventListener("click", () => { byHand = true; });
-    if (less) {
-      less.hidden = false;
-      less.addEventListener("click", () => {
-        byHand = true;
-        d.open = false;
-        control.focus({ preventScroll: true });
-        control.scrollIntoView({ block: "center" });
-      });
-    }
-    d.addEventListener("toggle", () => {
-      if (byHand && !(wide && wide.matches)) keep(d.id, d.open);
-      byHand = false;
-      moved();
-    });
-  });
-
   // A link to a section, or to something inside one, opens what it lands in and goes there.
   const toAim = () => {
     const t = aim();
     if (!t) return;
     const s = sections.find((x) => x === t || x.contains(t));
-    const list = t.closest("details.photo-fold");
     let opened = false;
     if (s && closed(s)) { set(s, true, false); opened = true; }
-    if (list && list !== t && !list.open) { list.open = true; opened = true; }
     if (!opened) return;
     // What was just opened may still be loading its pictures, which moves the place aimed at; go there again once
     // they have settled, unless the visitor has started moving the page themselves.
