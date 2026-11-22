@@ -2423,6 +2423,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-22--org--ship-the-polish-round-and-the-folds-you-choose.md",
         "sources/conversations/2026-11-22--org--anything-left-lets-iterate.md",
         "sources/conversations/2026-11-22--org--food-and-tuzla-open-and-close-on-phones.md",
         "sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md",
@@ -2476,7 +2477,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 10817,
+      "tokens": 11273,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
