@@ -181,6 +181,7 @@
   const settle = (s) => {
     // On a photo it sits in the photo's corner (CSS); over a slot it stands where the slot's own goat would.
     stage.classList.toggle("is-scene", s.scene);
+    stage.classList.toggle("is-row", !!s.row);
     const own = getComputedStyle(s.peek);
     // A goat sized by its height (a whole goat on a band) has no width while hidden, so it is measured shown.
     let width = own.width;
@@ -346,6 +347,16 @@
   // The slot mainly on screen: the one showing most, and of slots showing whole, the one nearest the middle. The goat
   // keeps its own slot until another shows clearly more, so it does not hop onto every card scrolled past, and it only
   // goes where it would be seen: over a slot, the slot's top; on a photo, the photo's lower part.
+  // A section's own goat rises over the section's top edge, and its speech bubble opens beside its head: a row is a
+  // stop only while the whole of that is clear of the sticky top bar, so the goat is never called under the bar
+  // (sources/conversations/2026-11-22--org--section-goats-too-small-and-cut-off.md).
+  const bar = document.querySelector(".topbar");
+  const headroom = (s) => {
+    const own = getComputedStyle(s.peek);
+    const [a, b] = (s.peek.style.aspectRatio || "1/1").split("/").map(parseFloat);
+    const rise = (parseFloat(own.width) || 0) * (b || 1) / (a || 1) * (parseFloat(own.getPropertyValue("--edge")) || 88) / 100;
+    return (bar ? bar.getBoundingClientRect().bottom : 0) + rise * 1.12 + 6;
+  };
   const pick = () => {
     const mid = innerHeight * 0.45;
     let best = null, most = -Infinity;
@@ -353,7 +364,7 @@
       if (!eligible(s)) continue;
       const r = s.slot.getBoundingClientRect();
       const spot = s.scene ? r.top + r.height * 0.7 : r.top;
-      if (spot < (s.scene ? 160 : 70) || spot > innerHeight - 12) continue;
+      if (spot < (s.scene ? 160 : s.row ? headroom(s) : 70) || spot > innerHeight - 12) continue;
       // A section's own stop counts as a row's height, however tall the open section is, so the goats inside win.
       const seen = Math.min(Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 70)), s.row ? 150 : Infinity);
       const score = seen - Math.abs(r.top - mid) * 0.1 + (s === current ? Math.min(r.height, innerHeight) * 0.25 : 0);
@@ -365,6 +376,7 @@
   };
   const go = async (s) => {
     if (!s || !eligible(s)) return;
+    if (s.row && s !== current && s.slot.getBoundingClientRect().top < headroom(s)) return;
     if (seatOf(s) === null) { s.blocked = true; return; }
     wanted = s;
     // A move while it waits gives way at once; the goat goes on when it ends.
@@ -409,7 +421,12 @@
   };
   // It moves once the scrolling stops, not while the page is still going past.
   let tick = 0;
-  const schedule = () => { clearTimeout(tick); tick = setTimeout(() => go(pick()), 250); };
+  const schedule = () => { clearTimeout(tick); tick = setTimeout(() => {
+    const next = pick();
+    // With nowhere else to stand, it does not stay on a row that has come to rest under the top bar.
+    if (!next && current && current.row && !busy && current.slot.getBoundingClientRect().top < headroom(current)) leave();
+    else go(next);
+  }, 250); };
 
   // Moves while it waits, each one transform keyframes on the goat.
   const moves = {

@@ -2102,9 +2102,27 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
    the heading, the strip and the links never move or make room for it, and the row below a section keeps clear of
    it: the space between two rows and the lower padding of the row above are as tall as the goat. */
 [data-folds] > section { position: relative; }
-[data-folds] > section > .peek { right: clamp(0.7rem, 2.4vw, 2rem); width: 2.8rem; }
-@media (min-width: 48rem) { [data-folds] > section > .peek { width: clamp(2.8rem, 1.6rem + 2.6vw, 4.2rem); } }
+[data-folds] > section > .peek { right: clamp(0.7rem, 2.4vw, 2rem); }
 .folds-on .album-page.is-closed, .folds-on .shiny.is-closed { overflow: visible; }
+/* The section's goat at a size that reads, and never cut (the organiser, 2026-11-22: "Goats seem to small now and
+   the text and the goat can be cut off by the section it is in apparently?",
+   sources/conversations/2026-11-22--org--section-goats-too-small-and-cut-off.md). It is as wide as the goat on a
+   slot of the cover, 5.2rem at every width, where it was 2.8rem on a phone and 4.2rem at most on a wide screen. A
+   goat that wide rises 4.8rem over the section's top edge, so the room for it is kept above every section that opens
+   and closes, in both states and whether or not a goat is there: the space between two sections and the lower
+   padding of a closed row together are as tall as the goat, and nothing on a row has to make way. A section that
+   opens and closes no longer clips what leaves its page, in either state: opened, its own page cut the goat and
+   its speech bubble, which stand above the top edge. The bubble of a section's goat opens beside its head, inside
+   the room between two sections, where a bubble over its head would lie on the row above. */
+:root { --row-room: 3.75rem; }
+@media (min-width: 48rem) { :root { --row-room: 4.2rem; } }
+@media (min-width: 62rem) { :root { --row-room: 4.5rem; } }
+[data-folds] > section > .peek { width: 5.2rem; }
+[data-folds] > section:not([data-fold="never"]) { margin-top: max(var(--space), var(--row-room)); overflow: visible; }
+.folds-on .folds-all { margin-bottom: calc(var(--space) * 0.55 - max(var(--space), var(--row-room))); }
+.goat-one__stage.is-row .goat-say { right: 84%; bottom: 36%; }
+.goat-one__stage.is-row .goat-say.is-right { right: auto; left: 84%; }
+.goat-one__stage.is-row.is-tucked { clip-path: inset(-100% -60% calc(100% - var(--edge) - 2%) -400%); }
 .sec__peek .button { display: inline-flex; align-items: center; min-height: 2.75rem; }
 .sec__peek .go { display: inline-block; padding-block: 0.6rem; font-size: 1.1rem; line-height: 1.3; }
 .sec__peek .button { padding-block: 0; font-size: 1.05rem; }
@@ -2140,7 +2158,7 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 .sec__strip--twelve img:nth-child(n+7) { display: none; }
 .shiny > .sec__end { order: 4; grid-column: 1 / -1; }
 /* One landing place for a link to any section: its top just under the bar, with room for the row's goat */
-main[data-folds] > section[id], #organiser { scroll-margin-top: 3rem; }
+main[data-folds] > section[id], #organiser { scroll-margin-top: 5.6rem; }
 /* On a wide screen a closed row is one line: the heading, then what the row shows, and the rule under both */
 @media (min-width: 62rem) {
   .folds-on .album-page.is-closed, .folds-on .shiny.is-closed > .sec__keep { display: flex; flex-wrap: wrap; align-items: center; column-gap: var(--gap-5); }
