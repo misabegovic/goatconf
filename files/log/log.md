@@ -955,3 +955,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #307: site: free on the speaker cards, a supporter line, and a named register link
    diff: 79 files, +71/-17
    restricted-paths: true
+2026-11-22 merge — PR #309: site: the cover on a phone says it once and reaches the Tuzla photo
+   diff: 46 files, +383/-78
+   restricted-paths: true
