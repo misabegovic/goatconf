@@ -1984,3 +1984,12 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
   .venue__links a, .place__links a, .speaker-page__links a { z-index: 1; }
   a.go.speaker-page__sticker::before { inset: -0.3rem 0; }
 }
+
+/* The shorter phone home page (branch site/less-blue-minimal-short-home, for the organiser to choose or not):
+   on a phone the second and later paragraphs of three sections fold behind a control that needs no script.
+   On a wider screen nothing folds. No sticker list, photo or goat stop is folded. */
+.fold--text .fold__rest > p { margin-bottom: var(--gap-4); }
+@media (max-width: 47.99rem) {
+  .fold--text .fold__toggle:not(:checked) ~ .fold__rest { display: none; }
+  .fold--text .fold__more { margin: 0 0 var(--gap-4); min-height: 2.75rem; display: inline-flex; align-items: center; }
+}
