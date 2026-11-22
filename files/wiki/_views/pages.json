@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--food-and-tuzla-open-and-close-on-phones.md",
         "sources/conversations/2026-11-22--org--no-goat-beside-the-organising-link.md",
         "sources/conversations/2026-11-22--org--ship-round-thirteen-when-ready.md",
         "sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md",
@@ -257,7 +258,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 8784
+      "tokens": 8996
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -319,6 +320,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--food-and-tuzla-open-and-close-on-phones.md",
         "sources/conversations/2026-11-22--org--no-goat-beside-the-organising-link.md",
         "sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md",
         "sources/conversations/2026-11-22--org--ship-round-twelve-when-ready.md",
@@ -350,7 +352,7 @@
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 5583
+      "tokens": 5731
     },
     {
       "path": "org/adrs/goat-tamagotchi-on-the-site.md",
@@ -2405,6 +2407,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-22--org--food-and-tuzla-open-and-close-on-phones.md",
         "sources/conversations/2026-11-22--org--no-goat-beside-the-organising-link.md",
         "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md",
@@ -2446,7 +2449,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 6676,
+      "tokens": 6977,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
