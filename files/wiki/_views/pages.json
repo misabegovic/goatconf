@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--anything-left-lets-iterate.md",
         "sources/conversations/2026-11-22--org--food-and-tuzla-open-and-close-on-phones.md",
         "sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md",
         "sources/conversations/2026-11-22--org--sections-start-closed-speakers-open.md",
@@ -263,7 +264,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 9715
+      "tokens": 10818
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -325,6 +326,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--anything-left-lets-iterate.md",
         "sources/conversations/2026-11-22--org--goats-overlay-no-empty-room.md",
         "sources/conversations/2026-11-22--org--speaker-goats-on-the-left-and-smaller.md",
         "sources/conversations/2026-11-22--org--section-goats-too-small-and-cut-off.md",
@@ -365,7 +367,7 @@
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 6993
+      "tokens": 7260
     },
     {
       "path": "org/adrs/goat-tamagotchi-on-the-site.md",
@@ -2202,6 +2204,7 @@
         "org/adrs/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--anything-left-lets-iterate.md",
         "sources/conversations/2026-11-22--org--ship-round-thirteen-when-ready.md",
         "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
@@ -2232,7 +2235,7 @@
         "sources/web/models/fosdem-2026-fringe.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3790,
+      "tokens": 4002,
       "consumed_by": [
         "org/adrs/make-it-yours-hub.md"
       ]
@@ -2420,6 +2423,7 @@
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-22--org--anything-left-lets-iterate.md",
         "sources/conversations/2026-11-22--org--food-and-tuzla-open-and-close-on-phones.md",
         "sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md",
         "sources/conversations/2026-11-22--org--sections-start-closed-speakers-open.md",
@@ -2472,7 +2476,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 9628,
+      "tokens": 10817,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",

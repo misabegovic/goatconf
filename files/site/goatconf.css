@@ -719,7 +719,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .topbar__close { display: none; }
 .topbar__menu[open] .topbar__open { display: none; }
 .topbar__menu[open] .topbar__close { display: inline; }
-@media (max-width: 47.99rem) {
+@media (max-width: 55.99rem) {
   .topbar { flex-wrap: nowrap; gap: 0.5rem; padding-block: 0.4rem; }
   .topbar__home { font-size: 1.2rem; gap: 0.45rem; }
   .topbar__home .topbar__coin { width: 2rem; height: 2rem; }
@@ -966,7 +966,7 @@ button.button { border: 0; cursor: pointer; }
 .talks + .cta { margin-top: 1.6rem; }
 
 /* 2026-11-21: one ask, and the album's own rules (sources/conversations/2026-11-21--org--design-iteration-on-a-branch.md) */
-@media (min-width: 48rem) { .topbar__register { display: none; } }
+@media (min-width: 56rem) { .topbar__register { display: none; } }
 /* The narrowest phones keep the mark's year beside Register and Menu */
 @media (max-width: 23.4rem) {
   .topbar { gap: 0.35rem; padding-inline: 0.7rem; }
@@ -975,11 +975,8 @@ button.button { border: 0; cursor: pointer; }
   .topbar__phone { gap: 0.35rem; font-size: 0.85rem; letter-spacing: 0.01em; }
   .topbar__menu summary, .topbar__register { padding: 0 0.55rem; }
 }
-/* Between a phone and a wide screen the links take a row of their own under the mark, Register at its end */
-@media (min-width: 48rem) and (max-width: 63rem) {
-  .topbar nav.topbar__wide { width: 100%; flex-wrap: nowrap; gap: 0 0.85rem; font-size: 0.9rem; }
-  .topbar nav.topbar__wide a.topbar__cta { margin-left: auto; }
-}
+/* Between a phone and a wide screen the links took a row of their own under the mark; since round sixteen the bar
+   is one row at every width (see the end of this file), so nothing is set here. */
 /* A sticker's number and a goat never sit on the line above them */
 .list-title + .slots--events { padding-top: 0.5rem; }
 .copy + .slots--kinds { margin-top: 3rem; }
@@ -1881,7 +1878,7 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
   .daynav a { display: grid; place-items: center; min-height: 2.75rem; padding-block: 0; border-radius: 0.5rem; }
   main:has(> .daynav) .album-page[id] { scroll-margin-top: 3.75rem; }
 }
-@media (min-width: 48rem) and (max-width: 67.49rem) { :root { --bar-h: 7.4rem; } }
+/* (The bar was two rows tall between 48rem and 67.49rem until round sixteen.) */
 @media (max-width: 47.99rem) {
   .daynav:not(.daynav--page) { position: static; }
   .jump-smart .daynav:not(.daynav--page) { position: sticky; top: 3.55rem; transition: transform 0.2s ease-out; }
@@ -2190,3 +2187,137 @@ main[data-folds] > section[id], #organiser { scroll-margin-top: 5.6rem; }
 .goat-one__stage:not(.is-scene) .goat { pointer-events: none; cursor: auto; filter: drop-shadow(0 0.2rem 0.25rem rgb(0 0 0 / 0.22)); }
 .goat-one__stage .goat-hit { display: none; }
 .goat-one__stage:not(.is-scene) .goat-hit { display: block; position: absolute; left: 8%; right: 8%; top: 4%; bottom: calc(100% - var(--edge)); border-radius: 46% 46% 24% 24% / 40% 40% 20% 20%; pointer-events: auto; cursor: pointer; touch-action: manipulation; }
+/* Round sixteen (sources/conversations/2026-11-22--org--anything-left-lets-iterate.md): what the day's work left
+   open. Each rule says which fault it answers. */
+/* The closed Tuzla row on a phone carries one price again, on the line of its count, where the two fit: from 390
+   pixels wide "Six photos of Tuzla" and "A simple meal 4.60 €" share the line with room to spare, the second price
+   does not fit beside them, and neither fits the one line of a wide screen. The row keeps its height. */
+.sec__prices { display: none; margin: 0; padding: 0; list-style: none; font-size: 0.95rem; line-height: 1.1; color: var(--ink-soft); white-space: nowrap; }
+.sec__prices b { margin-left: 0.25em; font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1rem; line-height: 1; color: var(--album); font-variant-numeric: tabular-nums; }
+@media (min-width: 24.375rem) and (max-width: 47.99rem) { .folds-on .is-closed .sec__prices { display: block; } }
+/* The top bar is one row at every width (carried from earlier rounds: it wrapped to two rows below about 1080
+   pixels, and by design between 48rem and 63rem). From 56rem the links hold one row, drawn a little closer together
+   under 68rem; below 56rem the mark, Register and Menu take over as on a phone (the block that draws them now
+   reaches 55.99rem). */
+@media (min-width: 56rem) { .topbar { flex-wrap: nowrap; } .topbar nav.topbar__wide { width: auto; flex-wrap: nowrap; } }
+@media (min-width: 56rem) and (max-width: 67.99rem) {
+  .topbar { gap: 0.6rem; padding-inline: clamp(1.1rem, 2.6vw, 2.6rem); }
+  .topbar__home { font-size: 1.2rem; gap: 0.45rem; }
+  .topbar nav.topbar__wide { gap: 0 0.1rem; font-size: 0.9rem; letter-spacing: 0.02em; }
+  .topbar nav.topbar__wide a:not(.topbar__cta) { padding-inline: 0.42rem; }
+  .topbar nav.topbar__wide a.topbar__cta { margin-left: 0.35rem; padding-inline: 0.7rem; }
+}
+/* Tap targets on a phone (review 13). The press area grows and the drawing stays wherever two press areas do not
+   then overlap; where targets stood on a pitch under 44 pixels, each row becomes 44 tall and the page grows. */
+@media (max-width: 47.99rem) {
+  /* A place's contacts on the host page stood on a 30 pixel pitch, their press areas overlapping: one row of 44 each */
+  .sticker--venue .venue__links { display: flex; flex-wrap: wrap; align-items: center; gap: 0 1rem; }
+  .sticker--venue .venue__links a { display: inline-flex; align-items: center; min-width: 2.75rem; min-height: 2.75rem; margin-right: 0; padding-block: 0; }
+  .sticker--venue .venue__links a::before { inset: 0 -0.5rem; }
+  /* The finder's checkbox is pressed through its label, which covers the box and the whole row */
+  .finder__field--check input { position: relative; z-index: 1; }
+  .finder__field--check label { display: flex; align-items: center; flex: 1; min-height: 2.75rem; margin-left: -2.05rem; padding-left: 2.05rem; }
+  /* The brand page's file links: 44 tall to the finger, the caption's line as it was */
+  .brand-files figcaption a { position: relative; }
+  .brand-files figcaption a::before { content: ""; position: absolute; inset: -0.8rem -0.25rem; }
+  /* The lists of links on a speaker's and a supporter's page: each link 44 tall */
+  .support-them li { margin-bottom: 0; }
+  .support-them a { display: block; width: fit-content; padding-block: 0.55rem; }
+  /* The program's "Propose a session" under each slot */
+  .timeslot__open a { position: relative; }
+  .timeslot__open a::before { content: ""; position: absolute; inset: -0.8rem -0.35rem; }
+  /* The brand page's card list (carried from earlier rounds: six ragged lines a speaker). The two kinds of card
+     stand side by side, each a label over its square and its wide card, every link 44 tall. */
+  .card-list li { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 0.75rem; margin-bottom: var(--gap-2); }
+  .card-list li > strong { grid-column: 1 / -1; }
+  .card-list li > strong a { display: inline-block; padding-block: 0.55rem; }
+  .card-list__row { display: block; font-size: 0.95rem; }
+  .card-list__shape { display: grid; grid-template-columns: 3.3rem max-content max-content; column-gap: 0.55rem; align-items: center; margin-right: 0; }
+  .card-list__row a { position: relative; min-width: 0; margin-inline: 0; padding-block: 0.65rem; text-align: left; }
+  .card-list__row a::before { content: ""; position: absolute; inset: 0 -0.27rem; }
+  /* The supporters page's stickers, one a row (review 27): the logo beside the name and the line, so the page is no taller */
+  .album-page .slots--supporters { grid-template-columns: minmax(0, 26rem); justify-content: center; gap: 1.1rem; }
+  .slots--supporters .sticker--supporter { display: grid; grid-template-columns: 7.2rem minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 0.9rem; row-gap: 0.3rem; align-content: center; padding: 0.7rem 2rem 0.7rem 0.7rem; }
+  .slots--supporters .sticker--supporter .supporter__logo { grid-row: 1 / span 2; align-self: center; padding: 0.55rem; }
+  .slots--supporters .sticker--supporter strong { align-self: end; }
+  .slots--supporters .sticker--supporter p { align-self: start; }
+}
+/* Two tags on the host page read as tags (review 14): filled as the others are and marked with a dot, where a 2px
+   outline in the link blue made them look like buttons. A full dot: the place fits an hour off. A ring: ask first. */
+.venue__tags .tag--near, .tag--near, .venue__tags .tag--first { background: var(--tag-bg); color: var(--ink); box-shadow: var(--tag-edge); }
+.venue__tags .tag--near::before, .venue__tags .tag--first::before { content: ""; display: inline-block; width: 0.5em; height: 0.5em; margin-right: 0.45em; border-radius: 50%; vertical-align: 0.06em; background: var(--link); }
+.venue__tags .tag--first::before { box-sizing: border-box; background: none; border: 0.14em solid var(--ink); }
+@media (forced-colors: active) { .venue__tags .tag--near::before { forced-color-adjust: none; background: CanvasText; } .venue__tags .tag--first::before { border-color: CanvasText; } }
+/* The arrow of a link that leaves the site stays with the link's last word (review 20): it is drawn on a no-break
+   space inside the link's own line, where an inline block could wrap to a line of its own */
+:is(.copy, .prose, .checked, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register, .slot, .sticker, .sticker__open, .speaker__link, .supporter-chip, .supporter__logo, .sticker--face)[href^="http"]:not([href*="goatconf.com"])::after, a.go[href^="http"]:not([href*="goatconf.com"])::after { content: "\00a0"; content: "\00a0" / " (another site)"; display: inline; width: auto; height: auto; margin-left: 0; padding-right: 0.42em; vertical-align: baseline; -webkit-mask: var(--arrow-out) right 58% / 0.56em 0.56em no-repeat; mask: var(--arrow-out) right 58% / 0.56em 0.56em no-repeat; text-decoration: none; }
+/* The host finder's hint keeps its contrast at night (review 21): the browser's grey was 3.16 to 1 */
+.finder input::placeholder { color: var(--ink-soft); opacity: 1; }
+/* A dark logo tile on the closed supporters row keeps its edge at night (review 22): the thin lit ring a photo has.
+   A supporter's sticker and chip already have their pale edge. */
+.sec__logo--dark { box-shadow: var(--photo-lit); }
+/* A logo on the closed supporters row answers the pointer as a supporter's sticker does (review 30) */
+.sec__logo { transition: transform 180ms var(--ease); }
+@media (hover: hover) { .sec__logo:hover { transform: translateY(-0.18rem); } }
+.sec__logo:active { transform: none; }
+@media (prefers-reduced-motion: reduce) { .sec__logo { transition: none; } .sec__logo:hover { transform: none; } }
+/* One family of things that open and close (review 23). A row that opens a list is drawn as the home page's
+   headings are: the album's arrow before the words, down while closed and up while open, lettered and never
+   underlined, the whole row the press area and at least 44 tall. A button that shows more of a list is the home
+   page's own outlined button, "Show less" and "Open all sections". */
+.fold-list > summary { display: flex; align-items: center; gap: 0.5em; width: fit-content; min-height: 2.75rem; padding: 0 0.6rem 0 0.35rem; margin-left: -0.35rem; border-radius: 0.4rem; list-style: none; cursor: pointer; font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 1.05rem; line-height: 1.15; color: var(--link); text-decoration: none; }
+.fold-list > summary::-webkit-details-marker { display: none; }
+.fold-list > summary::before { content: ""; flex: none; width: 0.7em; height: 0.7em; background: currentColor; -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; rotate: 90deg; transition: rotate 160ms var(--ease); }
+.fold-list[open] > summary::before { rotate: -90deg; }
+.fold-list > summary:hover { text-decoration: none; }
+@media (hover: hover) { .fold-list > summary:hover { background: var(--slot-hover); } }
+.fold-list > summary:active { background: var(--yellow); color: var(--on-yellow); }
+.fold-list > summary:focus-visible { outline: 3px solid var(--line); outline-offset: -3px; }
+.card-fold > summary { font-size: 1.2rem; font-stretch: 80%; }
+.fold__more { box-sizing: border-box; min-height: 2.75rem; padding: 0.4em 0.9em; align-content: center; background: var(--page); font-size: 1rem; }
+@media (forced-colors: active) { .fold-list > summary::before { background: ButtonText; forced-color-adjust: none; } }
+@media (prefers-reduced-motion: reduce) { .fold-list > summary::before { transition: none; } }
+@media print { .fold-list > summary::before { display: none; } }
+/* On a phone "Who pays" comes before the button that proposes an event (review 10): the same words, moved, so a
+   host reads who pays before deciding. The two columns of "How to host" become one run of blocks in a new order;
+   on a wide screen "Who pays" stays at the head of the right-hand column. */
+@media (max-width: 61.99rem) {
+  .page-grid:has(> .howto + .copy > .stress) { display: flex; flex-direction: column; gap: 0; }
+  .page-grid:has(> .howto + .copy > .stress) > :is(.howto, .copy) { display: contents; }
+  .page-grid:has(> .howto + .copy > .stress) > .howto > .steps { order: 1; }
+  .page-grid:has(> .howto + .copy > .stress) > .copy > :is(.list-title:first-child, .stress) { order: 2; }
+  .page-grid:has(> .howto + .copy > .stress) > .howto > .cta { order: 3; margin-block: var(--gap-4) 0; }
+  .page-grid:has(> .howto + .copy > .stress) > .copy > :not(.list-title:first-child, .stress) { order: 4; }
+  .page-grid:has(> .howto + .copy > .stress) > .copy > .stress { margin-bottom: 0; }
+  .page-grid:has(> .howto + .copy > .stress) > .howto > .steps > li:last-child, .page-grid:has(> .howto + .copy > .stress) > .copy > :last-child { margin-bottom: 0; }
+}
+/* A speaker's cards wait behind one closed row at the foot of their page (review 19): the page's last section is
+   itself the row that opens, its heading drawn as the home page's closed headings are, and no taller than they are. */
+.fold-page > summary.band { width: auto; min-height: 2.75rem; margin-left: calc(0.42rem - clamp(1.25rem, 3.5vw, 3rem)); padding-block: 0.85rem 0.8rem; border-radius: 0.4rem 0.4rem 0 0; font-size: var(--step-head); font-stretch: 78%; line-height: 0.95; }
+.fold-page > summary.band h2 { margin: 0; font: inherit; letter-spacing: inherit; color: inherit; }
+.fold-page > summary.band::before { width: 0.62em; height: 0.62em; }
+.fold-page:not([open]) { padding-bottom: var(--gap-3); }
+.fold-page:not([open]) > summary.band { margin-bottom: 0; }
+.fold-page > .list-title:not(:first-of-type) { margin-top: var(--gap-6); }
+@media (max-width: 47.99rem) { .fold-page > summary.band { margin-left: calc(0.42rem - 0.85rem); } }
+/* Forced colours, on the pages not checked before (the code of conduct, access, the charter, a supporter's page, an
+   event's page, organising and the home page's closed rows). What was drawn with a fill and vanished: the arrow of
+   a link that leaves the site, on every page; the rule under a closed row on a wide screen; and the tile behind a
+   supporter's logo in a page head and behind a past conference's logo, without which a pale logo is lost. */
+@media (forced-colors: active) {
+  :is(.copy, .prose, .checked, .support-them, .timeslot__open, .slot--reserved small, .map-frame figcaption, .shiny__copy, .steps, .checklist, .facts, .footer > p, .back-cover__inner > p, .footer__group, .follow, .past-confs__credit, .howto) a:not(.button, .go, .session__register, .slot, .sticker, .sticker__open, .speaker__link, .supporter-chip, .supporter__logo, .sticker--face)[href^="http"]:not([href*="goatconf.com"])::after, a.go[href^="http"]:not([href*="goatconf.com"])::after { background: LinkText; forced-color-adjust: none; }
+  .folds-on .album-page.is-closed::after, .folds-on .shiny.is-closed > .sec__keep::after { background: CanvasText; forced-color-adjust: none; }
+  .page-head__photo--logo, .past-conf__logo { forced-color-adjust: none; }
+}
+/* A proposal, to be shown (DESIGN.md, "A proposal: the travel page and the host page open and close";
+   sources/conversations/2026-11-22--org--anything-left-lets-iterate.md): the two other long pages opt in to the home
+   page's sections that open and close, with data-folds on their main. The rules above serve them as they are; these
+   are the three things those pages have that the home page does not. A closed row that is a sentence is set in the
+   reading face (a paragraph, so the home page's own line about the statue stays as it is). A closed row's one price shows at every width where it is the row's only line. The host finder is
+   shown by its own script (site/extend.js), so a closed section hides it by rule. */
+p.sec__line { margin: 0; font-size: 0.95rem; line-height: 1.4; color: var(--ink-soft); }
+.folds-on .is-closed .sec__prices--row { display: block; }
+.folds-on [data-folds] > .is-closed > .finder { display: none; }
+/* The travel page's jump row on a phone (review 18): its seven links set closer, so they stand on one line from 390
+   pixels wide where "June" stood alone on a second; each link is still 44 pixels tall. */
+@media (max-width: 47.99rem) { main[data-folds] > .daynav.daynav--page a { padding-inline: 0.14rem; min-width: 2.2rem; } }

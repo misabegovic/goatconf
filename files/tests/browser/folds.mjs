@@ -219,7 +219,8 @@ for (const [width, height] of [[320, 700], [390, 844], [768, 900], [1024, 900], 
   await S("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: false });
   let slotsSeen = 0; const off = [];
   for (const page of ["index.html", "speakers.html", "extend.html", "talk.html", "organising.html"]) {
-    await forget(); await remember(everyOpen); await nav(page, 1200);
+    // The host page's sections fold too in the proposal: its slots are measured with every one of them open.
+    await forget(); await ev(`localStorage.setItem("folds", JSON.stringify({ index: ${JSON.stringify(everyOpen)}, extend: { adding: "open", what: "open", where: "open", propose: "open" } })); 1`); await nav(page, 1200);
     const seats = JSON.parse(await ev(`JSON.stringify(window.goatSeats ? window.goatSeats() : [])`));
     slotsSeen += seats.length;
     for (const [goat, seat] of seats) { if (seat !== "own" && !seat.startsWith("1R")) off.push(`${page} ${goat} ${seat}`); if (seat.includes("moved")) nudged.push(`${width} ${page} ${goat} ${seat}`); }
@@ -266,6 +267,75 @@ await ev(`document.querySelector(".topbar__phone summary, .topbar__phone [aria-c
 check(await ev(`(() => { const p = document.querySelector(".topbar__panel"); p.scrollTop = p.scrollHeight; const last = [...p.querySelectorAll("a, input, label")].pop().getBoundingClientRect(); return p.getBoundingClientRect().bottom <= innerHeight + 1 && last.bottom <= innerHeight + 1 && last.height > 0; })()`), "the open menu fits a sideways phone and scrolls to its last control");
 await S("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: false }); await nav("index.html");
 check(await ev(`(() => { const t = document.querySelector("footer .theme"); return !!t && t.getClientRects().length > 0 && [...t.querySelectorAll("label")].every((l) => l.getBoundingClientRect().height >= 44); })()`), "the footer shows the theme control on a phone, each choice at least 44 pixels tall");
+
+// A proposal, to be shown (DESIGN.md, "A proposal: the travel page and the host page open and close";
+// sources/conversations/2026-11-22--org--anything-left-lets-iterate.md): the same sections on the two other long
+// pages. What a first visit shows on each, that a choice is kept under the page's own name and leaves the home
+// page's alone, that a link into a closed section opens it, that each section that folds has its goat on its top
+// edge and a press on it is the goat's alone, and that the page is whole with script off.
+const LONG = {
+  travel: { never: ["ways"], open: ["costs", "staying", "eating"], shut: ["getting-here", "good-to-know", "june"] },
+  extend: { never: ["how"], open: ["adding", "propose"], shut: ["what", "where"] },
+};
+const stored = () => ev(`localStorage.getItem("folds")`);
+for (const [name, want] of Object.entries(LONG)) {
+  const page = `${name}.html`, folding = [...want.open, ...want.shut];
+  const inOrder = (ids) => ev(`[...document.querySelectorAll("[data-folds] > section")].map((s) => s.id).filter((id) => ${JSON.stringify(ids)}.includes(id)).join(",")`);
+  await S("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
+  await nav(page); await forget(); await nav(page);
+  check(await closed() === await inOrder(want.shut), `${page}: a first visit shows ${want.shut.join(", ")} closed and every other section open`);
+  check(await ev(`document.documentElement.classList.contains("folds-ready") && document.querySelectorAll(".sec__toggle").length`) === folding.length && await ev(`${JSON.stringify(want.never)}.every((id) => !document.querySelector("#" + id + " .sec__toggle") && !document.querySelector("#" + id + " > .peek") && !document.getElementById(id).classList.contains("is-closed"))`), `${page}: every section that folds has its control; ${want.never.join(", ")} has none, no goat of its own, and is open`);
+  check(await ev(`${JSON.stringify(folding)}.every((id) => document.querySelectorAll("#" + id + " > .peek").length === 1 && document.querySelectorAll("#" + id + " [data-fold-end]").length === 1 && document.querySelectorAll("#" + id + " .sec__peek").length === 1)`), `${page}: every section that folds has one goat on its edge, one closed row and Show less at its end`);
+  check(await ev(`[...document.querySelectorAll("[data-folds] > section.is-closed")].every((s) => [...s.children].every((c) => c.matches("h2, .sec__peek, .peek, .goat-one__stage") || !c.getClientRects().length || getComputedStyle(c).contentVisibility === "hidden"))`), `${page}: a closed section shows its heading and its row and nothing else`);
+  // A press is kept under this page's name, survives a reload, and the home page's record is not touched.
+  await ev(`localStorage.setItem("folds", JSON.stringify({ index: { days: "open" } })); 1`); await nav(page);
+  await ev(`document.querySelector("#${want.shut[0]} .sec__toggle").click(); document.querySelector("#${want.open[0]} .sec__toggle").click(); 1`);
+  check(await stored() === JSON.stringify({ index: { days: "open" }, [name]: { [want.shut[0]]: "open", [want.open[0]]: "closed" } }), `${page}: a press is kept under the page's own name and the home page's record stays as it was`);
+  await nav(page);
+  check((await closed()).split(",").includes(want.open[0]) && !(await closed()).split(",").includes(want.shut[0]), `${page}: the choice is there after a reload`);
+  await ev(`document.querySelector("#${want.shut[0]} [data-fold-end]").click(); 1`); await sleep(200);
+  check((await closed()).split(",").includes(want.shut[0]) && await ev(`document.activeElement === document.querySelector("#${want.shut[0]} .sec__toggle")`), `${page}: Show less closes the section and puts the keyboard on its heading`);
+  // A link into a closed section opens it and remembers nothing.
+  await forget(); await nav(page);
+  if (name === "travel") {
+    await ev(`document.querySelector('#ways a[href="#getting-here"]').click(); 1`); await sleep(700);
+    check(!(await closed()).split(",").includes("getting-here") && await stored() === null, `${page}: "Every route in detail" opens the routes and remembers nothing`);
+    await nav(`${page}#car`, 700);
+    check(!(await closed()).split(",").includes("getting-here") && await ev(`document.getElementById("car").getClientRects().length > 0`), `${page}: a link to something inside a closed section opens it`);
+    await forget(); await nav(page);
+    await ev(`document.querySelector('.daynav a[href="#good-to-know"]').click(); 1`); await sleep(700);
+    check(!(await closed()).split(",").includes("good-to-know"), `${page}: the jump row opens the section it jumps to`);
+    check(await ev(`(() => { const n = document.querySelector(".daynav--page"); return n.getBoundingClientRect().height < 50 && [...n.querySelectorAll("a")].every((a) => a.getBoundingClientRect().height >= 44); })()`), `${page}: at 390 wide the jump row is one line and each link is 44 pixels tall`);
+  } else {
+    check(await ev(`document.querySelector(".finder").getClientRects().length`) === 0, `${page}: the closed places hide their finder too`);
+    await ev(`document.querySelector("#what .sec__toggle").click(); 1`); await sleep(200);
+    await ev(`document.querySelector('#what a[data-pick-kind="hike"]').click(); 1`); await sleep(900);
+    check(!(await closed()).split(",").includes("where") && await ev(`document.getElementById("f-kind").value === "hike" && document.querySelector(".finder").getClientRects().length > 0 && document.querySelector("[data-places]").getClientRects().length > 0`), `${page}: a kind pressed in "What you could run" opens the places with that kind picked`);
+  }
+  // Each section's goat, closed and at both widths: on the top edge at the right end, 80 pixels wide or more, whole,
+  // and a press on it changes neither the address, the closed sections nor what is stored.
+  for (const [width, height] of [[390, 844], [1440, 900]]) {
+    await S("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: false });
+    await ev(`localStorage.setItem("folds", JSON.stringify({ ${JSON.stringify(name)}: ${JSON.stringify(Object.fromEntries(folding.map((s) => [s, "closed"])))} })); 1`); await nav(page);
+    await ev(`document.documentElement.style.scrollBehavior = "auto"; 1`);
+    cutGoats = 0; cutWords = 0; mute = 0; small = 0; leaks = 0; overlaid = 0; unreachable = 0;
+    let away = 0; const seats = new Set();
+    for (const sid of await (async () => (await inOrder(folding)).split(","))()) {
+      await ev(`window.scrollTo(0, document.getElementById("${sid}").getBoundingClientRect().top + scrollY - innerHeight * 0.45); 1`); await sleep(500);
+      await S("Input.dispatchMouseEvent", { type: "mouseMoved", x: 5, y: 5 }); await mouse(`#${sid} h2`, 0.3, 0.5); await arrived(sid);
+      const g = await ev(`(() => { const st = document.querySelector(".goat-one__stage"), s = st && st.parentElement; if (!s || s.id !== "${sid}") return null; const r = st.getBoundingClientRect(), b = s.getBoundingClientRect(); return [Math.round(r.width), Math.round(b.right - r.right)].join(","); })()`);
+      if (!g) away += 1; else { seats.add(g); await look(sid); }
+    }
+    check(away === 0 && seats.size === 1 && cutGoats === 0 && small === 0, `${page} at ${width} wide: the goat stands on every closed row in one place of one size, whole and 80 pixels wide or more (${[...seats].join(" | ")}; ${away} rows without it, ${cutGoats} cut, ${small} small)`);
+    check(leaks === 0 && unreachable === 0 && cutWords === 0, `${page} at ${width} wide: a press on a row's goat follows no link, opens no section and stores nothing, what it says is whole, and the ${overlaid} links and buttons under its picture can still be pressed (${leaks} leaked, ${unreachable} out of reach, ${cutWords} bubbles cut)`);
+  }
+  await S("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
+  await forget();
+  await S("Emulation.setScriptExecutionDisabled", { value: true }); await nav(page, 1200);
+  check(await ev(`document.querySelectorAll("[data-folds] > section.is-closed, .sec__toggle").length === 0 && [...document.querySelectorAll(".sec__peek, .sec__end, .folds-all")].every((e) => getComputedStyle(e).display === "none") && ${JSON.stringify(want.shut)}.every((id) => document.querySelector("#" + id + " > :not(h2, .sec__peek, .sec__end, .peek, [hidden])").getClientRects().length > 0)`), `${page}: with script off everything is open and no control shows`);
+  await S("Emulation.setScriptExecutionDisabled", { value: false });
+}
+await forget();
 
 // Never a trap.
 await forget();

@@ -153,6 +153,34 @@ def relax(points, r, fixed=()):
     return pos
 
 
+def cells(points, r, sides=24):
+    """Each pin's press area on a phone: its ring of radius r, cut along the line midway to every pin near enough to
+    reach into it, so a point belongs to the pin it is nearest to. Returns, for each pin, None when no other pin
+    reaches its ring (the whole circle is its own) or the corners of its share, relative to the pin."""
+    out = []
+    for i, (x, y) in enumerate(points):
+        near = [(qx - x, qy - y) for j, (qx, qy) in enumerate(points) if j != i and math.hypot(qx - x, qy - y) < 2 * r]
+        if not near:
+            out.append(None)
+            continue
+        shape = [(r * math.cos(2 * math.pi * k / sides), r * math.sin(2 * math.pi * k / sides)) for k in range(sides)]
+        for dx, dy in near:
+            # Keep what lies on this pin's side of the line midway to the other: p . d <= |d|^2 / 2.
+            half = (dx * dx + dy * dy) / 2
+            side = lambda p: p[0] * dx + p[1] * dy - half
+            kept = []
+            for a, b in zip(shape, shape[1:] + shape[:1]):
+                sa, sb = side(a), side(b)
+                if sa <= 0:
+                    kept.append(a)
+                if (sa < 0) != (sb < 0) and sa != sb:
+                    f = sa / (sa - sb)
+                    kept.append((a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f))
+            shape = kept
+        out.append(shape)
+    return out
+
+
 def clear_of(x, y, label, circles, boxes, height):
     """Where a label goes so that no pin, marker or other label sits on it: the nearest free spot to (x, y).
 
@@ -196,10 +224,16 @@ def map_svg(view, ways, data, items, prefix, color, ink, title) -> str:
     # overlap on any screen; a pin moved off its place keeps a line back to it.
     placed = relax(pins, r * 1.6, fixed=[(ix, iy, 36)])
     lines, dots = [], []
-    for i, ((x0, y0), (x, y)) in enumerate(zip(pins, placed), start=1):
+    # On a phone a pin takes a press on a clear ring around its dot (46 units at the dot's own scale, drawn 1.6 times
+    # larger there as the dot is). Where two rings meet, each pin keeps the ground nearer to it, so a press on a dot
+    # is always that pin's; the pins stay where they are.
+    ring = 46 * 1.6
+    for i, ((x0, y0), (x, y), cell) in enumerate(zip(pins, placed, cells(placed, ring)), start=1):
         if math.hypot(x - x0, y - y0) > 3:
             lines.append(f'<line x1="{x0:.1f}" y1="{y0:.1f}" x2="{x:.1f}" y2="{y:.1f}"/><circle cx="{x0:.1f}" cy="{y0:.1f}" r="4"/>')
-        dots.append(f'<a href="#{prefix}-{i}" tabindex="-1"><g class="pin" transform="translate({x:.1f} {y:.1f})"><g class="pin__dot"><circle class="pin__hit" r="46" fill="none"/><circle r="{r}" fill="{color}" stroke="#ffffff" stroke-width="4"/>'
+        hit = (f'<circle class="pin__hit" r="{ring:.1f}" fill="none"/>' if cell is None else
+               '<path class="pin__hit" d="M' + "L".join(f"{px:.1f} {py:.1f}" for px, py in cell) + 'Z" fill="none"/>')
+        dots.append(f'<a href="#{prefix}-{i}" tabindex="-1"><g class="pin" transform="translate({x:.1f} {y:.1f})">{hit}<g class="pin__dot"><circle r="{r}" fill="{color}" stroke="#ffffff" stroke-width="4"/>'
                     f'<text y="11" text-anchor="middle" fill="{ink}">{i}</text></g></g></a>')
     # Labels keep clear of the pins (at their phone size), of the IPI marker and of each other.
     circles = [(x, y, r * 1.6 + 6) for x, y in placed] + [(ix, iy, 44)]

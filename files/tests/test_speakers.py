@@ -104,6 +104,14 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], speakers.sessions_by_speaker(detail=True)["ana-example"], speakers.supporters())
     assert page.index("Your card: I'm speaking") < page.index("The announcement card")
     assert page.index('id="h-talks"') < page.index("Your card: I'm speaking")  # the session comes before the cards
+    # Both kinds of card wait behind one closed row at the foot of the page, the browser's own, each under a sub-heading
+    # (sources/conversations/2026-11-22--org--anything-left-lets-iterate.md).
+    fold = page[page.index('<details class="album-page wrap fold-list fold-page" id="cards">'):]
+    fold = fold[:fold.index("</details>")]
+    assert page.count('id="cards"') == 1 and "<h2>Cards to share</h2></summary>" in fold
+    assert '<h3 class="list-title" id="h-cards-speaker-ana-example">Your card: I\'m speaking</h3>' in fold and "The announcement card</h3>" in fold
+    assert fold.count('class="share-cards"') == page.count('class="share-cards"') == 2 and page.index('id="h-talks"') < page.index('id="cards"')
+    assert '<summary class="band"><span' in fold and "peek--face" in fold[:fold.index("<h2>")]  # the speaker's goat stands on the row too
     assert '<img class="share-card" src="share/speaker-ana-example-announce-wide.png"' in page
     # With the dark cards rendered too, each shape offers its light and its dark card, each one a download.
     for size in ("square", "wide"):
@@ -131,7 +139,14 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     assert shareables.card_line("ana-example", {**meta, "card_says": "Baaa!"}, mode="rotate") == "Baaa!"
     assert "See you in Tuzla!" in shareables.bubble("See you in Tuzla!", 200, 200, 38, 520) and shareables.bubble("", 0, 0, 38, 520) == ""
     # One quiet line says when, where and the speaker's page (the organiser's choice, 2026-10-27).
-    assert "Confirmed speaker at GoatConf 2027" in card and "Tuzla · 3–5 June 2027 · goatconf.com/speaker-ana-example<" in card
+    # The dot between its parts belongs to the address, so none is left hanging when the address takes its own line
+    # (sources/conversations/2026-11-22--org--anything-left-lets-iterate.md).
+    assert "Confirmed speaker at GoatConf 2027" in card and "Tuzla · 3–5 June 2027</span>" in card
+    assert ">·</span>goatconf.com/speaker-ana-example<" in card and "2027 · goatconf.com" not in card
+    # A card built around a photograph never takes a palette; the flat ones may.
+    photo = next(iter(shareables.PHOTO_POSTS))
+    assert shareables.photo_card(f"post-{photo}-square.png") and shareables.photo_card(f"post-{photo}-wide-dark.png")
+    assert not shareables.photo_card("og.png") and not shareables.photo_card("speaker-ana-example-square.png")
 
 
 def test_a_speaker_without_a_title_says_the_session_is_to_be_announced(tmp_path, monkeypatch):
@@ -407,6 +422,11 @@ def test_each_supporter_has_a_profile_with_their_cards(tmp_path, monkeypatch, ca
     assert 'href="share/supporter-acme-square.png" download' in page and 'href="share/supporter-acme-wide.png" download' in page
     assert 'href="share/supporter-acme-proud-square.png" download' in page and 'href="share/supporter-acme-proud-wide.png" download' in page
     assert page.index("Your card: proud supporter") < page.index("The thank-you card")
+    # A supporter's cards wait behind the same closed row a speaker's do.
+    fold = page[page.index('<details class="album-page wrap fold-list fold-page" id="cards">'):]
+    fold = fold[:fold.index("</details>")]
+    assert "<h2>Cards to share</h2></summary>" in fold and fold.index("Your card: proud supporter") < fold.index("The thank-you card")
+    assert fold.count('class="share-cards"') == page.count('class="share-cards"') == 2
     assert '<link rel="image_src" href="https://goatconf.com/share/supporter-acme-wide.png">' in page
     (tmp_path / "supporters" / "acme.md").unlink()
     assert speakers.cmd_build(type("A", (), {"check": False})()) == 0

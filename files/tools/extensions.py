@@ -347,7 +347,7 @@ def event_page(slug: str, meta, body) -> str:
   <h2 class="band" id="h-about">In the host's words</h2>
   <div class="copy copy--wide">{about}</div>
   <p class="copy"><a class="go go--ink" href="extend.html">All events people add</a> <a class="go go--ink" href="program.html#{day}">The program for that day</a>{to_profile}</p>
-</section>{share_section(cards(slug), f"The card for {e('name')}", "For the host and anyone going: post it wherever you like. It links back to this page.")}"""
+</section>{share_fold(share_block(cards(slug), f"The card for {e('name')}", "For the host and anyone going: post it wherever you like. It links back to this page."))}"""
     names = cards(slug)
     preview = names["preview"] if (PAGE.parent / "share" / names["preview"]).exists() else ""
     return shell(page_name(slug), f"{e('name')}: part of GoatConf 2027, Tuzla", f"{kind}: {when(meta)}, {e('location')}.",
@@ -373,21 +373,32 @@ def card_offer(name: str, w: int, h: int, alt: str, shape: str, share: Path) -> 
             f'      <div class="share-pair__cards">{one(name, "Light")}{one(dark_card(name), "Dark")}</div></figure>')
 
 
-def share_section(names: dict, alt: str, note: str, heading: str = "Cards to share", site=None) -> str:
-    """Both cards to look at, the square and the wide, each in light and in dark with its download; nothing until the
-    cards are rendered."""
+def share_block(names: dict, alt: str, note: str, heading: str = "", site=None) -> str:
+    """One kind of card inside a row of cards that opens (share_fold): its sub-heading, under the id its section had,
+    its line and both shapes, each in light and in dark; nothing until the cards are rendered. A page with one kind
+    of card gives no heading: the row's own label is its heading."""
     share = (site or PAGE.parent) / "share"
     if not all((share / names[k]).exists() for k in ("square", "wide")):
         return ""
-    return f"""
-<section class="album-page wrap" aria-labelledby="h-cards-{names['wide'][:-9]}">
-  <h2 class="band" id="h-cards-{names['wide'][:-9]}">{heading}</h2>
+    title = f"""
+  <h3 class="list-title" id="h-cards-{names['wide'][:-9]}">{heading}</h3>""" if heading else ""
+    return f"""{title}
   <p class="copy copy--wide">{note}</p>
   <div class="share-cards">
     {card_offer(names['square'], 1080, 1080, alt, "square", share)}
     {card_offer(names['wide'], 1200, 675, alt, "wide", share)}
-  </div>
-</section>"""
+  </div>"""
+
+
+def share_fold(blocks: str, label: str = "Cards to share") -> str:
+    """Cards only their owner needs, behind one closed row at the foot of a page that visitors read: the row that
+    opens on the brand page (a details, so it needs no script), under the label an event's page gave its cards."""
+    if not blocks:
+        return ""
+    return f"""
+<details class="album-page wrap fold-list fold-page" id="cards">
+  <summary class="band"><h2>{label}</h2></summary>{blocks}
+</details>"""
 
 
 # Venues: the places in Tuzla a host could ask (places/venues.yml).
@@ -606,6 +617,23 @@ def finder() -> str:
   </form>"""
 
 
+# The host page's sections open and close as the home page's do (a proposal, DESIGN.md; the mechanism is site/album.js,
+# and a page opts in with data-folds on its main). A section that folds has one goat on its top edge, a row of words the
+# page already has for when it is closed, and "Show less" at its end.
+SHOW_LESS = '  <p class="sec__end"><button type="button" class="folds-all__button sec__less" data-fold-end>Show less</button></p>'
+OPEN_ALL = '<p class="folds-all wrap"><button type="button" class="folds-all__button" data-folds-all>Open all sections</button></p>'
+
+
+def section_goat(role: str = "") -> str:
+    """The goat on the top edge of a section that opens and closes, in a role or the plain goat."""
+    return "  " + frame.goat_atlas.goat(f"peek-{role}" if role else "peeking", "peek peek--art", frame._beat(role or "peeking"))
+
+
+def closed_list(words) -> str:
+    """A closed row that names what is inside the section, in the page's own words."""
+    return '  <div class="sec__peek"><ul class="sec__dates">' + "".join(f"<li>{w}</li>" for w in words) + "</ul></div>"
+
+
 def hub(show_all=False) -> str:
     good = accepted()
     n = 0
@@ -639,12 +667,18 @@ def hub(show_all=False) -> str:
   <p class="checked">Checked on {checked.day} {checked:%B %Y}. Places change hands and close: ask each one before you plan, and tell us if something here is wrong.</p>"""
     else:
         where = '<p class="ledger-empty">We are still checking the places in Tuzla where you could run something. The list will be here.</p>'
-    main = f"""<section class="album-page wrap" aria-labelledby="h-adding">
+    adding = [html.escape(str(m["name"])) for _, _s, m, _b in good] or ["No events yet."]
+    kinds = ["Something else?" if k == "other" else KINDS[k] for k, _ in WHAT]
+    main = f"""{OPEN_ALL}
+<section class="album-page wrap" aria-labelledby="h-adding" id="adding" data-fold="open">
+{section_goat()}
   <h2 class="band" id="h-adding">What people are adding</h2>
+{closed_list(adding)}
   <p class="copy copy--wide">Every event here is part of GoatConf 2027: we accepted it, and it follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>. Each host runs their own event, and GoatConf does not pay for it. Each listing says what it costs. Open one to see when and where, and how to join.</p>
   {listings}
+{SHOW_LESS}
 </section>
-<section class="album-page wrap" aria-labelledby="h-how">
+<section class="album-page wrap" aria-labelledby="h-how" id="how" data-fold="never">
   <h2 class="band" id="h-how">How to host</h2>
   <div class="page-grid">
     <div class="howto">
@@ -677,18 +711,26 @@ def hub(show_all=False) -> str:
     </div>
   </div>
 </section>
-<section class="album-page wrap" aria-labelledby="h-what">
+<section class="album-page wrap" aria-labelledby="h-what" id="what">
+{section_goat("host")}
   <h2 class="band" id="h-what">What you could run</h2>
+{closed_list(kinds)}
   <p class="copy copy--wide">{MORE} Pick one to see the places that suit it.</p>
 {what_block(n + 1)}
+{SHOW_LESS}
 </section>
 <section class="album-page wrap" aria-labelledby="h-where" id="where">
+{section_goat("pirate")}
   <h2 class="band" id="h-where">Where in Tuzla</h2>
+  <div class="sec__peek"><p class="sec__line">Places a host could ask, from cafés on Freedom Square to halls for a few hundred people.</p></div>
   <p class="copy copy--wide">Places a host could ask, from cafés on Freedom Square to halls for a few hundred people. GoatConf has arranged nothing with them and pays for nothing: you ask and you book.{first_note}</p>
 {where}
+{SHOW_LESS}
 </section>
-<section class="album-page wrap" aria-labelledby="h-propose" id="propose">
+<section class="album-page wrap" aria-labelledby="h-propose" id="propose" data-fold="open">
+{section_goat()}
   <h2 class="band" id="h-propose">Propose yours</h2>
+  <div class="sec__peek"><a class="button" data-form="add" href="#propose">Propose your event</a></div>
   <div class="page-grid">
     <div class="howto">
       <p class="cta"><a class="button" data-form="add" href="#propose">Propose your event</a><span>Open now. It takes about ten minutes.</span></p>
@@ -706,6 +748,7 @@ def hub(show_all=False) -> str:
       <p>If you or your organisation fund and run it, you can also be listed as a <a href="supporters.html">supporter</a>. Want to support GoatConf with money or something in kind instead? See the <a href="supporters.html">supporters page</a>.</p>
     </div>
   </div>
+{SHOW_LESS}
 </section>"""
     page = shell("extend.html", "Make it yours: GoatConf 2027",
                  "Every GoatConf is shaped by who joins it. Add a meetup, a party, a walk or a workshop to GoatConf 2027 in Tuzla: how to host, what to run, and places to ask.",
@@ -713,6 +756,7 @@ def hub(show_all=False) -> str:
                  "Every GoatConf is shaped by who joins it. Add a meetup, a party, a walk or a workshop: you run it, and once we accept it, it is part of GoatConf 2027.",
                  main, "files/tools/extensions.py build from files/extensions/*.md and files/places/venues.yml")
     page = page.replace('<script src="album.js" defer></script>', '<script src="album.js" defer></script>\n<script src="extend.js" defer></script>')
+    page = page.replace('<main id="main">', '<main id="main" data-folds>', 1)
     return formlinks.rewrite(page, formlinks.forms())
 
 
