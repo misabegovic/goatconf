@@ -2,13 +2,14 @@
 title: "Make it yours: one hub at /extend, built from event and venue records, with guides, filters, photos and the hours off"
 kind: decision
 status: accepted
-updated: 2026-10-23
+updated: 2026-11-22
 team: organiser
 confidence: medium
 depends_on:
   - org/prds/hosts-hub-guides-and-venues.md
   - org/adrs/extension-slots-and-the-record.md
 sources:
+  - sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md
   - sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md
   - sources/conversations/2026-10-23--org--venues-approved.md
   - sources/conversations/2026-10-23--org--add-form-updated.md
@@ -256,3 +257,7 @@ organiser ("Approve all 9 and deliver",
 room, a gaming café and a rock bar with pub quizzes near IPI, and the Konjuh
 hiking club's lodge. SKPC Mejdan has a working contact again, and Code Hub
 gained BIT Centar's 42-seat event room.
+
+## Amendments
+
+- **2026-11-22, "you run it and pay for it" becomes "you run it; you need not pay for everything".** The guide's deal no longer says the host pays for the event. It says the host runs it and answers for it, GoatConf does not pay for it, and the people who come may pay for themselves if the listing says what it costs; the sentence stands under its own sub-heading, "Who pays", in "How to host" (source: sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md). An accepted event's page says the host pays for it only where its record's `paid_by` names the host.

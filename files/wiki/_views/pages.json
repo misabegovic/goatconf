@@ -225,6 +225,8 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md",
+        "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-11-22--org--ship-round-twelve-when-ready.md",
         "sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md",
         "sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md",
@@ -253,7 +255,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 8429
+      "tokens": 8643
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -315,6 +317,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md",
         "sources/conversations/2026-11-22--org--ship-round-twelve-when-ready.md",
         "sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md",
         "sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md",
@@ -344,7 +347,7 @@
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 5321
+      "tokens": 5407
     },
     {
       "path": "org/adrs/goat-tamagotchi-on-the-site.md",
@@ -454,7 +457,7 @@
       "title": "Make it yours: one hub at /extend, built from event and venue records, with guides, filters, photos and the hours off",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-23",
+      "updated": "2026-11-22",
       "team": "organiser",
       "confidence": "medium",
       "depends_on": [
@@ -462,6 +465,7 @@
         "org/adrs/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-10-23--org--make-it-yours-adr-approved.md",
         "sources/conversations/2026-10-23--org--venues-approved.md",
         "sources/conversations/2026-10-23--org--add-form-updated.md",
@@ -482,7 +486,7 @@
         "sources/web/models/edfringe-how-to-start-making-your-show-accessible-2026-10-23.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3416
+      "tokens": 3571
     },
     {
       "path": "org/adrs/one-page-frame-and-one-site-build.md",
@@ -2058,12 +2062,13 @@
       "title": "Extension slots and the record: how anyone adds to GoatConf",
       "kind": "initiative",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-11-22",
       "parent_epic": "goatconf-2027",
       "appetite": "small",
       "confidence": "medium",
       "supersedes": "org/pitches/one-goat-minimal-core-and-extensions.md",
       "sources": [
+        "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-10-13--org--online-supporters-through-the-business.md",
         "sources/conversations/2026-10-14--org--catch-up-stale-pages.md",
         "sources/conversations/2026-10-13--org--evening-event-karaoke-hackathon.md",
@@ -2086,7 +2091,7 @@
         "sources/web/hiring/strangeloop-privacy-policy.md",
         "sources/web/guides/rubyevents-how-to-organize-a-ruby-conference.md"
       ],
-      "tokens": 3751,
+      "tokens": 3865,
       "consumed_by": [
         "org/adrs/extension-slots-and-the-record.md",
         "org/adrs/goatconf-ba-and-google-forms.md",
@@ -2167,7 +2172,7 @@
       "kind": "initiative",
       "status": "living",
       "parent_epic": "goatconf-2027",
-      "updated": "2026-11-21",
+      "updated": "2026-11-22",
       "team": "organiser",
       "repos": [
         "org"
@@ -2179,6 +2184,7 @@
         "org/adrs/extension-slots-and-the-record.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-11-21--org--continue-iterating-round-four.md",
         "sources/conversations/2026-10-23--org--extendable-and-each-edition.md",
         "sources/conversations/2026-10-23--org--host-guides-and-venues.md",
@@ -2207,7 +2213,7 @@
         "sources/web/models/fosdem-2026-fringe.md",
         "sources/web/legal/tk-zakon-o-javnom-okupljanju-1-12.md"
       ],
-      "tokens": 3578,
+      "tokens": 3776,
       "consumed_by": [
         "org/adrs/make-it-yours-hub.md"
       ]
@@ -2395,6 +2401,8 @@
       "confidence": "medium",
       "supersedes": "org/pitches/website-and-registration.md",
       "sources": [
+        "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
+        "sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md",
         "sources/conversations/2026-11-22--org--ship-round-twelve-when-ready.md",
         "sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md",
         "sources/conversations/2026-11-21--org--links-clickable-and-dark-mode-love.md",
@@ -2433,7 +2441,7 @@
         "sources/web/tooling/tally-pricing.md",
         "sources/web/funding/fosdem-charter.md"
       ],
-      "tokens": 6417,
+      "tokens": 6554,
       "consumed_by": [
         "org/adrs/goatconf-ba-and-google-forms.md",
         "org/adrs/one-page-frame-and-one-site-build.md",
