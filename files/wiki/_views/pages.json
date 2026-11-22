@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md",
         "sources/conversations/2026-11-22--org--continue-round-nine.md",
         "sources/conversations/2026-11-22--org--fix-all.md",
         "sources/conversations/2026-11-22--org--continue-round-eight.md",
@@ -250,7 +251,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 7330
+      "tokens": 7761
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -306,12 +307,13 @@
       "title": "A cute goat mascot that peeks over the open slots, in roles from the EuRuKo 2024 goat multiverse",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-27",
+      "updated": "2026-11-22",
       "confidence": "medium",
       "depends_on": [
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md",
         "sources/conversations/2026-10-27--org--speaker-goat-on-phones.md",
         "sources/conversations/2026-10-27--org--see-you-goat-on-phones.md",
         "sources/conversations/2026-10-27--org--goat-tricks.md",
@@ -338,7 +340,7 @@
         "sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 5066
+      "tokens": 5203
     },
     {
       "path": "org/adrs/goat-tamagotchi-on-the-site.md",
