@@ -2055,3 +2055,48 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 /* The footer's four groups between 1024 and 1440 wide: where they do not fit one row they sit two and two, not
    three and one left alone (round thirteen). The footer is no taller. */
 @media (min-width: 64rem) and (max-width: 89.99rem) { .footer__links, .back-cover__links { display: grid; grid-template-columns: repeat(2, max-content); column-gap: clamp(1.5rem, 4vw, 3.5rem); } }
+
+/* A list that opens and closes on a phone (a proposal, round fourteen:
+   sources/conversations/2026-11-22--org--food-and-tuzla-open-and-close-on-phones.md). The six photos of Tuzla and the
+   twelve dishes sit in a details; on a phone it is closed until the visitor opens it, and its control is a row
+   directly above the list: a strip of small pictures of what is inside, a label that says what and how many, a goat's
+   stop, and a mark that points down when closed and up when open. On a wide screen the list is open and there is no
+   control. The text folds of round ten wear the same mark, so the page has one kind of control. */
+.photo-fold > summary { list-style: none; }
+.photo-fold > summary::-webkit-details-marker { display: none; }
+.photo-fold__end { margin: var(--gap-4) 0 0; }
+.photo-fold__less[hidden] { display: none; }
+.photo-fold .checked { max-width: 74ch; }
+.fold__more::after, .photo-fold__mark { content: ""; display: inline-block; width: 0.8em; height: 0.8em; margin-left: 0.5em; background: currentColor; -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; rotate: 90deg; }
+.fold__toggle:checked ~ .fold__more::after, .photo-fold[open] .photo-fold__mark, .photo-fold__less::after { rotate: -90deg; }
+@media (min-width: 48rem) {
+  .photo-fold[open] > summary, .photo-fold__end { display: none; }
+  @supports selector(::details-content) {
+    .photo-fold > summary { display: none; }
+    .photo-fold::details-content { content-visibility: visible; display: block; }
+  }
+}
+@media print { .photo-fold::details-content { content-visibility: visible; display: block; } .photo-fold > summary, .photo-fold__end { display: none; } }
+@media (max-width: 47.99rem) {
+  .page-grid--photos-first > .photo-fold { order: -1; }
+  .photo-fold { margin-bottom: var(--gap-4); }
+  .page-grid--photos-first > .photo-fold { margin-bottom: 0; }
+  .photo-fold > summary { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0.55rem 0.5rem; min-height: 2.75rem; padding: 0.55rem; border: 2px solid var(--line); border-radius: 0.6rem; background: var(--page-print); color: var(--link); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .photo-fold[open] > summary { margin-bottom: var(--gap-4); }
+  .photo-fold__strip { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.3rem; }
+  .photo-fold__strip img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 0.3rem; }
+  .photo-fold__label { min-height: 3.4rem; align-content: center; padding-left: 0.2rem; padding-right: 4.2rem; font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 1.05rem; line-height: 1.1; }
+  .photo-fold__mark { margin: 0 0.35rem 0 0; width: 1.05rem; height: 1.05rem; }
+  .photo-fold__goat { position: absolute; right: 2.4rem; bottom: 0.45rem; width: 3.3rem; height: 0; }
+  .photo-fold__goat .goat-one__stage.is-scene { right: 0; bottom: 0; width: 100%; }
+  .photo-fold__goat .goat-one__stage.is-scene .goat { filter: drop-shadow(0 0.1rem 0.15rem rgb(0 0 0 / 0.3)); }
+  .photo-fold[open] .photo-fold__goat { display: none; }
+  .photo-fold > summary:focus-visible { outline: 3px solid var(--album); outline-offset: 2px; }
+  .photo-fold > summary:active { background: var(--yellow); color: var(--on-yellow); border-color: var(--on-yellow); }
+  .photo-fold > summary:active:has(.goat-one__stage:active) { background: var(--page-print); color: var(--link); border-color: var(--line); }
+  .photo-fold[open] > summary .photo-fold__strip { display: none; }
+  .photo-fold[open] > summary .photo-fold__label { min-height: 0; padding-right: 0; }
+  .photo-fold[open] > summary { min-height: 2.75rem; }
+}
+@media (hover: hover) and (max-width: 47.99rem) { .photo-fold > summary:hover { border-style: solid; background: var(--slot-hover); } }
+@media (forced-colors: active) { .photo-fold > summary { border: 2px solid ButtonText; } .photo-fold__mark, .fold__more::after { background: ButtonText; forced-color-adjust: none; } }

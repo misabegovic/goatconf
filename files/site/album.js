@@ -283,6 +283,10 @@
     const mid = innerHeight * 0.45;
     let best = null, most = -Infinity;
     for (const s of slots) {
+      // A stop inside a list that is closed (the photos of Tuzla and the dishes, on a phone) is not a stop until
+      // the list is opened; the list's control carries a stop of its own.
+      const fold = s.slot.closest("details");
+      if (fold && !fold.open && !s.slot.closest("summary")) continue;
       const r = s.slot.getBoundingClientRect();
       const spot = s.scene ? r.top + r.height * 0.7 : r.top;
       if (spot < (s.scene ? 160 : 70) || spot > innerHeight - 12) continue;
@@ -640,4 +644,41 @@
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(hold);
   let waiting = 0;
   addEventListener("resize", () => { cancelAnimationFrame(waiting); waiting = requestAnimationFrame(hold); });
+})();
+
+// The lists that open and close on a phone (the photos of Tuzla, the dishes). Without the script the control still
+// opens and closes them. With it: a wide screen has them open; a link to something inside one opens it; "Show less"
+// at the end of an open list closes it and brings its control back into view; and the goat chooses its place again
+// when a list opens or closes. Nothing is remembered between visits.
+(() => {
+  const folds = [...document.querySelectorAll("details.photo-fold")];
+  if (!folds.length) return;
+  const wide = window.matchMedia ? matchMedia("(min-width: 48rem)") : null;
+  const forWidth = () => { if (wide && wide.matches) folds.forEach((d) => { d.open = true; }); };
+  forWidth();
+  if (wide && wide.addEventListener) wide.addEventListener("change", forWidth);
+  const toHash = () => {
+    let target = null;
+    try { target = location.hash.length > 1 ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null; } catch (e) { /* not an id */ }
+    const fold = target && target.closest("details.photo-fold");
+    if (!fold || target === fold || fold.open) return;
+    fold.open = true;
+    target.scrollIntoView();
+  };
+  toHash();
+  addEventListener("hashchange", toHash);
+  folds.forEach((d) => {
+    const less = d.querySelector("[data-fold-close]");
+    const control = d.querySelector("summary");
+    if (less) {
+      less.hidden = false;
+      less.addEventListener("click", () => {
+        d.open = false;
+        control.focus({ preventScroll: true });
+        control.scrollIntoView({ block: "center" });
+      });
+    }
+    // The goat picks its stop when the page stops moving; a list opening or closing is the page moving.
+    d.addEventListener("toggle", () => window.dispatchEvent(new Event("scroll")));
+  });
 })();
