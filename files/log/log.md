@@ -949,3 +949,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #303: site: goats stand at full size at the right end and overlay what is above them
    diff: 43 files, +337/-124
    restricted-paths: true
+2026-11-22 merge — PR #305: site: a polish round, and the travel and host pages open and close
+   diff: 275 files, +753/-182
+   restricted-paths: true
