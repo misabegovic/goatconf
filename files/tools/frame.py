@@ -37,7 +37,8 @@ LINKS = [("index.html", "Home"), ("program.html", "Program"), ("speakers.html", 
          ("talk.html", "Propose a session"), ("extend.html", "Host an event"), ("register.html", "Register"),
          ("travel.html", "Travel"), ("supporters.html", "Supporters"), ("charter.html", "Charter"),
          ("code-of-conduct.html", "Code of conduct"), ("brand.html", "Brand"), ("stickers.html", "Stickers"),
-         ("goatchi.html", "Goatchi"), ("access.html", "Accessibility"), ("contact.html", "Contact")]
+         ("goatchi.html", "Goatchi"), ("access.html", "Accessibility"), ("contact.html", "Contact"),
+         ("organising.html", "Who's organising")]
 # The copyright line under every page: the code and text are Apache 2.0, the brand is reserved but may be shared
 # unchanged (NOTICE; sources/conversations/2026-10-28--org--apache-licence-and-brand.md).
 LEGAL = ('© 2026 Muhamed Isabegović. The GoatConf name, logo and goats: all rights reserved, '
@@ -90,7 +91,7 @@ def block(name: str, body: str) -> str:
 
 # The same links in four groups, so a visitor can scan them (sources/conversations/2026-11-21--org--keep-iterating.md).
 # Every page in LINKS belongs to exactly one group; tests/test_home_and_nav.py checks it.
-GROUPS = [("The conference", ("index.html", "program.html", "speakers.html", "travel.html", "register.html")),
+GROUPS = [("The conference", ("index.html", "program.html", "speakers.html", "travel.html", "register.html", "organising.html")),
           ("Take part", ("talk.html", "extend.html", "supporters.html", "contact.html")),
           ("Good to know", ("charter.html", "code-of-conduct.html", "access.html")),
           ("Brand and goats", ("brand.html", "stickers.html", "goatchi.html"))]

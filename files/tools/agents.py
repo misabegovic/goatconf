@@ -66,7 +66,7 @@ FACTS = [
 ]
 # The pages an agent most likely needs first, in this order; the rest follow.
 FIRST = ["index.html", "program.html", "register.html", "talk.html", "travel.html", "speakers.html",
-         "extend.html", "supporters.html", "charter.html",
+         "extend.html", "supporters.html", "organising.html", "charter.html",
          "code-of-conduct.html", "access.html", "contact.html", "brand.html"]
 START, END = blocks.marks("event-data", "tools/agents.py")
 
