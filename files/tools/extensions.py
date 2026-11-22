@@ -307,6 +307,9 @@ def host_profile(slug: str):
     return None
 
 
+REGISTER_WITH_HOST = "Register with the host"
+
+
 def event_page(slug: str, meta, body) -> str:
     e = lambda k: html.escape(str(meta[k]))
     profile = host_profile(slug)
@@ -320,9 +323,13 @@ def event_page(slug: str, meta, body) -> str:
     start = as_datetime(meta["start"])
     # The program has a section per day from Thursday to Saturday; other days sit under "Around the talks".
     day = start.date().isoformat() if dt.date(2027, 6, 3) <= start.date() <= dt.date(2027, 6, 5) else "h-around"
+    # A web address to register at is a button, and the Register row's link says the button's own words where it
+    # showed the raw address (sources/conversations/2026-11-22--org--ship-the-polish-round-and-the-folds-you-choose.md).
     reg = str(meta["registration"])
-    cta = (f'<p class="cta"><a class="button" href="{html.escape(reg)}">Register with the host</a></p>' if re.match(r"^https?://", reg)
+    online = re.match(r"^https?://", reg)
+    cta = (f'<p class="cta"><a class="button" href="{html.escape(reg)}">{REGISTER_WITH_HOST}</a></p>' if online
            else f"<p><strong>How to join:</strong> {html.escape(reg)}</p>")
+    register = f'<a href="{html.escape(reg)}">{REGISTER_WITH_HOST}</a>' if online else link(reg)
     about = "".join(f"<p>{html.escape(p.strip())}</p>" for p in body.split("\n\n") if p.strip())
     kind = f"{KINDS[meta['kind']]}, part of GoatConf 2027, run by {e('host')}"
     main = f"""<section class="album-page wrap" aria-labelledby="h-details">
@@ -332,7 +339,7 @@ def event_page(slug: str, meta, body) -> str:
       <dt>When</dt><dd>{when(meta)}</dd>
       <dt>Where</dt><dd>{e('location')}</dd>
       <dt>Cost</dt><dd>{e('cost')}</dd>
-      <dt>Register</dt><dd>{link(meta['registration'])}</dd>
+      <dt>Register</dt><dd>{register}</dd>
       <dt>Run by</dt><dd>{run_by}</dd>
       <dt>Paid by</dt><dd>{e('paid_by')}</dd>
       <dt>Contact</dt><dd>{link(meta['contact'])}</dd>

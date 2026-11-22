@@ -385,10 +385,12 @@ def bubble(line: str, right: float, bottom: float, px: int, room: int) -> str:
 
 
 def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 675, announce: bool = False,
-                 says: str = "") -> str:
+                 says: str = "", free: bool = True) -> str:
     """The speaker's own "I'm speaking" card, or with `announce` GoatConf's card announcing them. Both say the same,
-    and little: the name and photo, their role and session, one quiet line of when, where and their page's address,
-    and their own goat. Only the headline differs."""
+    and little: the name and photo, their role and session, one quiet line of where, when and that it is free, their
+    page's address, and their own goat. Only the headline differs. The quiet line is FACTS, the post cards' own line
+    (sources/conversations/2026-11-22--org--ship-the-polish-round-and-the-folds-you-choose.md); without `free` it
+    stops before its last part, as the link preview's does."""
     name = esc(str(meta["name"]))
     photo = (f'<img src="{(SITE / meta["photo"]).as_uri()}" style="width:100%;height:100%;object-fit:cover">'
              if meta.get("photo") else
@@ -428,12 +430,12 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
             if meta.get("role") else "")
     session = (f'<div class="sub" style="font-size:{40 if square else 32}px; line-height:1.2; margin-top:24px; text-wrap:balance">{talk}</div>'
                if talk else "")
-    # The quiet line of when, where and the page's address follows the text, so the two never meet.
+    # The quiet line of where, when and free, then the page's address, follows the text, so the two never meet.
     # The dot between the two parts belongs to the second and stands to its left: when the address takes a line of
     # its own the dot falls outside the line's clipped edge, so no dot is left hanging at the end of the first line.
     foot = (f'<div class="url" style="font-size:{26 if square else 22}px; line-height:1.3; overflow:hidden">'
             f'<div style="display:flex; flex-wrap:wrap; margin-left:-0.8em">'
-            f'<span style="padding-left:0.8em; white-space:nowrap">Tuzla · 3–5 June 2027</span>'
+            f'<span style="padding-left:0.8em; white-space:nowrap">{FACTS if free else FACTS.rsplit(" · ", 1)[0]}</span>'
             f'<span style="position:relative; padding-left:0.8em; white-space:nowrap">'
             f'<span style="position:absolute; left:0; width:0.8em; text-align:center">·</span>{address}</span></div></div>')
     clear = (270 if square else 270) if corner else (84 if square else 72)
@@ -574,7 +576,7 @@ def cards() -> dict[str, tuple[int, int, str]]:
         says = card_line(slug, meta, i)
         out[f"speaker-{slug}-square.png"] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True, says=says))
         out[f"speaker-{slug}-wide.png"] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False, says=says))
-        out[speakers.preview_name(slug)] = (1200, 630, speaker_card(slug, meta, talks.get(slug, []), False, 630))
+        out[speakers.preview_name(slug)] = (1200, 630, speaker_card(slug, meta, talks.get(slug, []), False, 630, free=False))
         announce = speakers.announce_cards(slug)
         out[announce["square"]] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True, announce=True, says=says))
         out[announce["wide"]] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False, announce=True, says=says))
