@@ -7,6 +7,7 @@ confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-11-22--org--no-goat-beside-the-organising-link.md
   - sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md
   - sources/conversations/2026-11-22--org--ship-round-twelve-when-ready.md
   - sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md
@@ -323,3 +324,4 @@ sources/conversations/2026-10-27--org--goat-mascot-approved.md).
 - **2026-11-22, a press on the goat, and a smaller goat on Tuzla's photos.** A press on the goat is for the goat alone: the slot it stands on no longer flashes its pressed yellow. On the photos of "Tuzla, the host town" the goat's scene is a third of the photo's width, in the lower right corner, and it fades in and out instead of popping; every stop stays, as decided on 7 November. Pending the organiser's approval (source: sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md).
 - **2026-11-22, the goat says "See you in Tuzla!" on a speaker's card, and the host goat keeps its stop on the home page.** The organiser picked the line (source: sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md). When "Who's organising" moved to a page of its own, the host goat's stop stayed on the home page, on the row that links to it, and the new page has the stop too.
 - **2026-11-22, the host goat's stop moves with the link.** With the organising row gone from the home page, the host goat's stop stands at the end of the supporters section's link row, beside "Who's organising"; the home page keeps its 51 stops (source: sources/conversations/2026-11-22--org--organising-row-off-the-home-page.md).
+- **2026-11-22, the organiser removes one stop: no host goat beside "Who's organising" on the home page.** The organiser's words: "The host goat doesn't need to show up next to the who is organising link on homepage" (source: sources/conversations/2026-11-22--org--no-goat-beside-the-organising-link.md). The stop that was moved into the supporters section in round thirteen is removed. The decision of 7 November that the home page's goats stay (sources/conversations/2026-11-07--org--home-goats-stay.md) holds for every other stop: the home page goes from 51 stops to 50 by the organiser's own word, and by nothing else. The host goat keeps its stop on the organising page.
