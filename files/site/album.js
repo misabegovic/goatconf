@@ -58,7 +58,7 @@
     goat.className = "goat";
     goat.setAttribute("style", `--beat:${own.getPropertyValue("--beat")};--edge:${own.getPropertyValue("--edge")};aspect-ratio:${own.aspectRatio}`);
     goat.style.transform = pose;
-    goat.innerHTML = `<i class="goat-body"></i>${s.peek.innerHTML}<i class="goat-head"></i>`;
+    goat.innerHTML = `<i class="goat-body"></i>${s.peek.innerHTML}<i class="goat-head"></i><i class="goat-hit"></i>`;
     goat.rest = { backgroundImage: own.backgroundImage, backgroundSize: own.backgroundSize, backgroundPosition: own.backgroundPosition };
     Object.assign(goat.querySelector(".goat-body").style, goat.rest);
     goat.dataset.gaze = s.peek.dataset.gaze || "";
@@ -292,47 +292,55 @@
     const section = s.slot.closest("[data-folds] > section");
     return !(section && section.classList.contains("is-closed"));
   };
-  // A goat never covers a word, a link or a stamp. A goat that peeks over a slot's top edge stands at the slot's
-  // right end; if it would cover something there that is not the slot's own, it stands at the left end, and if it
-  // would there too it stands smaller; where no place is clear, that slot is not a stop at this width. What it found
-  // is kept until the page is laid out again.
-  const hit = (a, b) => a.left < b.right - 1 && a.right > b.left + 1 && a.top < b.bottom - 1 && a.bottom > b.top + 1;
-  const covers = (s, box) => {
-    const root = s.slot.closest("section, main") || document.body;
-    for (const el of root.querySelectorAll(".stamp, a.go, a.button, button, .num, .tag")) {
-      if (!s.slot.contains(el) && el.getClientRects().length && hit(el.getBoundingClientRect(), box)) return true;
-    }
-    const walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    const range = document.createRange();
-    for (let n = walk.nextNode(); n; n = walk.nextNode()) {
-      const p = n.parentElement;
-      if (!n.nodeValue.trim() || !p || s.slot.contains(p) || !hit(p.getBoundingClientRect(), box)) continue;
-      range.selectNodeContents(n);
-      for (const r of range.getClientRects()) if (hit(r, box)) return true;
-    }
-    return false;
-  };
+  // Where a goat stands on a top edge (the organiser, 2026-11-22: "Why do we need empty spaces between? Can't the goats
+  // have overlay over the sections above?", sources/conversations/2026-11-22--org--goats-overlay-no-empty-room.md).
+  // It stands at its own size at the slot's right end, on every slot and at every width, and overlays what is above
+  // it: no room is kept for it, it is never moved to the left end and never drawn smaller. A press on the goat is the
+  // goat's and never reaches what is under it ("If a goat is drawn above a link, clicking on a goat should not
+  // trigger that link"). So one thing moves it: a link or a button that is not the slot's own would be left, under
+  // the goat, with no part of 44 pixels to press, and then the goat stands further along the edge by the least that
+  // leaves it one. BODY is the share of the goat's picture that takes a press, as the stylesheet's .goat-hit has it.
+  // What it found is kept until the page is laid out again.
+  const BODY = { side: 0.08, top: 0.04 };
   const seatOf = (s) => {
     if (s.scene || s.row) return true;
     if (s.seat !== undefined) return s.seat;
     const own = getComputedStyle(s.peek);
     const width = parseFloat(own.width), right = parseFloat(own.right);
     const [a, b] = (s.peek.style.aspectRatio || "1/1").split("/").map(parseFloat);
-    // Only the goats that peek over a top edge are checked; one placed some other way keeps its place.
+    // Only the goats that peek over a top edge are seated here; one placed some other way keeps its place.
     const slot = s.slot.getBoundingClientRect();
     const onTop = own.bottom === "100%" || Math.abs(parseFloat(own.bottom) - slot.height) < 1.5;
     if (!onTop || !width || Number.isNaN(right)) return (s.seat = true);
-    const height = width * (b || 1) / (a || 1);
-    const top = slot.top - height * (parseFloat(own.getPropertyValue("--edge")) || 88) / 100;
-    // Its own size at the right end, then at the left; then smaller, at the left and at the right.
-    for (const [size, left] of [[1, false], [1, true], [0.62, true], [0.62, false], [0.45, true], [0.45, false]]) {
-      const w = width * size, r = left ? slot.width - right - w : right;
-      const t = slot.top - (slot.top - top) * size;
-      if (!covers(s, { left: slot.right - r - w, right: slot.right - r, top: t, bottom: slot.top - 2 })) return (s.seat = { right: r, size });
+    const rise = width * (b || 1) / (a || 1) * (parseFloat(own.getPropertyValue("--edge")) || 88) / 100;
+    const root = s.slot.closest("section, main") || document.body;
+    const small = [...root.querySelectorAll("a.go, a.button, button, p a, li a, small a, figcaption a")]
+      .filter((el) => !s.slot.contains(el) && !el.contains(s.slot) && !el.closest("[hidden]") && el.getClientRects().length)
+      .map((el) => el.getBoundingClientRect());
+    let r = right;
+    for (let tries = 0; tries < 4; tries++) {
+      const box = { left: slot.right - r - width * (1 - BODY.side), right: slot.right - r - width * BODY.side, top: slot.top - rise * (1 - BODY.top), bottom: slot.top };
+      // How much of a link is left to press beside the goat or over it; enough is 44 pixels, or the whole link.
+      const short = small.map((t) => {
+        if (t.right <= box.left || t.left >= box.right || t.bottom <= box.top || t.top >= box.bottom) return 0;
+        const need = Math.min(44, t.width), tall = Math.min(44, t.height);
+        if (box.left - t.left >= need || t.right - box.right >= need || box.top - t.top >= tall) return 0;
+        return need - Math.max(0, t.right - box.right);
+      }).reduce((x, y) => Math.max(x, y), 0);
+      if (!short) break;
+      r = Math.min(slot.width - width, r + short);
     }
-    return (s.seat = null);
+    return (s.seat = { right: r, size: 1, nudged: Math.round(r - right) });
   };
   const again = () => slots.forEach((s) => { s.seat = undefined; s.blocked = false; });
+  // For the browser check (tests/browser/folds.mjs): the seat each visible slot's goat takes now, by the rule above.
+  // "1R" is its own size at the right end, with the pixels it was moved along the edge if it was; "own" is a goat
+  // placed some other way, which keeps its place.
+  window.goatSeats = () => slots.filter((s) => !s.scene && !s.row && s.slot.getClientRects().length && !s.slot.closest("[hidden]")).map((s) => {
+    s.seat = undefined;
+    const seat = seatOf(s);
+    return [s.peek.dataset.goat || "", seat === true ? "own" : `${seat.size}R${seat.nudged ? ` moved ${seat.nudged}px` : ""}`];
+  });
   // The goat leaves at once, with no move to watch, when the stop it stands on stops being one.
   const leave = () => {
     if (!current) return;
@@ -364,7 +372,7 @@
       if (!eligible(s)) continue;
       const r = s.slot.getBoundingClientRect();
       const spot = s.scene ? r.top + r.height * 0.7 : r.top;
-      if (spot < (s.scene ? 160 : s.row ? headroom(s) : 70) || spot > innerHeight - 12) continue;
+      if (spot < (s.scene ? 160 : s.row || getComputedStyle(s.peek).bottom === "100%" ? headroom(s) : 70) || spot > innerHeight - 12) continue;
       // A section's own stop counts as a row's height, however tall the open section is, so the goats inside win.
       const seen = Math.min(Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 70)), s.row ? 150 : Infinity);
       const score = seen - Math.abs(r.top - mid) * 0.1 + (s === current ? Math.min(r.height, innerHeight) * 0.25 : 0);
@@ -376,7 +384,7 @@
   };
   const go = async (s) => {
     if (!s || !eligible(s)) return;
-    if (s.row && s !== current && s.slot.getBoundingClientRect().top < headroom(s)) return;
+    if ((s.row || getComputedStyle(s.peek).bottom === "100%") && s !== current && s.slot.getBoundingClientRect().top < headroom(s)) return;
     if (seatOf(s) === null) { s.blocked = true; return; }
     wanted = s;
     // A move while it waits gives way at once; the goat goes on when it ends.
