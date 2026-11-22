@@ -928,3 +928,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #289: site: who's organising gets its own page, and the speaker card goat says See you in Tuzla
    diff: 113 files, +393/-126
    restricted-paths: true
+2026-11-22 merge — PR #291: site: a host need not pay for everything, and the organising row leaves the home page
+   diff: 48 files, +224/-70
+   restricted-paths: true
