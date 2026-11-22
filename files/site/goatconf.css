@@ -1739,7 +1739,7 @@ a.supporter__logo, .sticker--supporter strong a { text-decoration: none; }
 }
 @media (max-width: 47.99rem) {
   .daynav, .daynav.daynav--page { position: sticky; top: 3.55rem; z-index: 6; width: auto; margin: 0 0 0.9rem; padding: 0.1rem 0.5rem; border-radius: 0; outline: 0; background: var(--page); box-shadow: 0 2px 0 var(--line); justify-content: center; flex-wrap: wrap; overflow: visible; gap: 0; }
-  .daynav a { min-height: 2.75rem; padding-inline: 0.32rem; white-space: nowrap; font-size: 0.78rem; letter-spacing: 0; }
+  .daynav a { min-height: 2.75rem; padding-inline: 0.32rem; white-space: nowrap; font-size: 0.8rem; letter-spacing: -0.01em; }
   .daynav.daynav--page { position: static; }
   .day { scroll-margin-top: 7rem; }
   .album-page[id] { scroll-margin-top: 7rem; }
@@ -1797,3 +1797,4 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 @media (min-width: 48rem) { :root { --space: clamp(2.4rem, 1.65rem + 2.8vw, 4.7rem); } }
 @media (max-width: 47.99rem) { :root { --space: 1.38rem; } .daynav, .daynav.daynav--page { margin-bottom: 0; } }
 @media (max-width: 47.99rem) { .daynav, .daynav.daynav--page { padding-block: 0; } .timetable { gap: 0.65rem; } }
+@media (max-width: 47.99rem) { .footer { padding-bottom: 2rem; } }
