@@ -2309,3 +2309,15 @@ main[data-folds] > section[id], #organiser { scroll-margin-top: 5.6rem; }
   .folds-on .album-page.is-closed::after, .folds-on .shiny.is-closed > .sec__keep::after { background: CanvasText; forced-color-adjust: none; }
   .page-head__photo--logo, .past-conf__logo { forced-color-adjust: none; }
 }
+/* A proposal, to be shown (DESIGN.md, "A proposal: the travel page and the host page open and close";
+   sources/conversations/2026-11-22--org--anything-left-lets-iterate.md): the two other long pages opt in to the home
+   page's sections that open and close, with data-folds on their main. The rules above serve them as they are; these
+   are the three things those pages have that the home page does not. A closed row that is a sentence is set in the
+   reading face (a paragraph, so the home page's own line about the statue stays as it is). A closed row's one price shows at every width where it is the row's only line. The host finder is
+   shown by its own script (site/extend.js), so a closed section hides it by rule. */
+p.sec__line { margin: 0; font-size: 0.95rem; line-height: 1.4; color: var(--ink-soft); }
+.folds-on .is-closed .sec__prices--row { display: block; }
+.folds-on [data-folds] > .is-closed > .finder { display: none; }
+/* The travel page's jump row on a phone (review 18): its seven links set closer, so they stand on one line from 390
+   pixels wide where "June" stood alone on a second; each link is still 44 pixels tall. */
+@media (max-width: 47.99rem) { main[data-folds] > .daynav.daynav--page a { padding-inline: 0.14rem; min-width: 2.2rem; } }

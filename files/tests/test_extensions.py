@@ -1,6 +1,7 @@
 """tools/extensions.py: the record check and the generated page."""
 
 import importlib.util
+import re
 from pathlib import Path
 
 import pytest
@@ -354,3 +355,26 @@ def test_the_old_addresses_send_visitors_on(ext):
     hub = (root / "site" / "extend.html").read_text(encoding="utf-8")
     assert "Every GoatConf is shaped by who joins it." in hub and 'id="propose"' in hub and 'id="where"' in hub
     assert 'src="extend.js' in hub
+
+
+def test_the_two_long_pages_mark_their_sections_for_opening_and_closing():
+    """A proposal (DESIGN.md, "A proposal: the travel page and the host page open and close"): both pages opt in to
+    the home page's mechanism, the sections a reader must see are open or have no control, and each section that
+    folds has one goat, one closed row and "Show less"."""
+    site = Path(__file__).resolve().parent.parent / "site"
+    want = {"extend.html": {"adding": "open", "how": "never", "what": None, "where": None, "propose": "open"},
+            "travel.html": {"ways": "never", "costs": "open", "getting-here": None, "staying": "open", "eating": "open",
+                            "good-to-know": None, "june": None}}
+    for name, sections in want.items():
+        page = (site / name).read_text(encoding="utf-8")
+        main = page[page.index('<main id="main" data-folds>'):page.index("</main>")]
+        found = re.findall(r'<section class="album-page wrap"[^>]*>', main)
+        assert [re.search(r' id="([^"]+)"', s).group(1) for s in found] == list(sections)
+        for tag, (sid, state) in zip(found, sections.items()):
+            assert (re.search(r' data-fold="([^"]+)"', tag) or [None, None])[1] == state, (name, sid)
+            body = main[main.index(tag):]
+            body = body[:body.index("</section>")]
+            folds = state != "never"
+            assert body.count('class="sec__peek"') == body.count("data-fold-end") == (1 if folds else 0), (name, sid)
+            assert bool(re.match(r'\s*(<!--[^>]*-->)?<span class="goat peek peek--art"', body[len(tag):])) == folds, (name, sid)
+        assert main.count("data-folds-all") == 1 and "Open all sections" in main

@@ -617,6 +617,23 @@ def finder() -> str:
   </form>"""
 
 
+# The host page's sections open and close as the home page's do (a proposal, DESIGN.md; the mechanism is site/album.js,
+# and a page opts in with data-folds on its main). A section that folds has one goat on its top edge, a row of words the
+# page already has for when it is closed, and "Show less" at its end.
+SHOW_LESS = '  <p class="sec__end"><button type="button" class="folds-all__button sec__less" data-fold-end>Show less</button></p>'
+OPEN_ALL = '<p class="folds-all wrap"><button type="button" class="folds-all__button" data-folds-all>Open all sections</button></p>'
+
+
+def section_goat(role: str = "") -> str:
+    """The goat on the top edge of a section that opens and closes, in a role or the plain goat."""
+    return "  " + frame.goat_atlas.goat(f"peek-{role}" if role else "peeking", "peek peek--art", frame._beat(role or "peeking"))
+
+
+def closed_list(words) -> str:
+    """A closed row that names what is inside the section, in the page's own words."""
+    return '  <div class="sec__peek"><ul class="sec__dates">' + "".join(f"<li>{w}</li>" for w in words) + "</ul></div>"
+
+
 def hub(show_all=False) -> str:
     good = accepted()
     n = 0
@@ -650,12 +667,18 @@ def hub(show_all=False) -> str:
   <p class="checked">Checked on {checked.day} {checked:%B %Y}. Places change hands and close: ask each one before you plan, and tell us if something here is wrong.</p>"""
     else:
         where = '<p class="ledger-empty">We are still checking the places in Tuzla where you could run something. The list will be here.</p>'
-    main = f"""<section class="album-page wrap" aria-labelledby="h-adding">
+    adding = [html.escape(str(m["name"])) for _, _s, m, _b in good] or ["No events yet."]
+    kinds = ["Something else?" if k == "other" else KINDS[k] for k, _ in WHAT]
+    main = f"""{OPEN_ALL}
+<section class="album-page wrap" aria-labelledby="h-adding" id="adding" data-fold="open">
+{section_goat()}
   <h2 class="band" id="h-adding">What people are adding</h2>
+{closed_list(adding)}
   <p class="copy copy--wide">Every event here is part of GoatConf 2027: we accepted it, and it follows the <a href="charter.html">charter</a> and the <a href="code-of-conduct.html">code of conduct</a>. Each host runs their own event, and GoatConf does not pay for it. Each listing says what it costs. Open one to see when and where, and how to join.</p>
   {listings}
+{SHOW_LESS}
 </section>
-<section class="album-page wrap" aria-labelledby="h-how">
+<section class="album-page wrap" aria-labelledby="h-how" id="how" data-fold="never">
   <h2 class="band" id="h-how">How to host</h2>
   <div class="page-grid">
     <div class="howto">
@@ -688,18 +711,26 @@ def hub(show_all=False) -> str:
     </div>
   </div>
 </section>
-<section class="album-page wrap" aria-labelledby="h-what">
+<section class="album-page wrap" aria-labelledby="h-what" id="what">
+{section_goat("host")}
   <h2 class="band" id="h-what">What you could run</h2>
+{closed_list(kinds)}
   <p class="copy copy--wide">{MORE} Pick one to see the places that suit it.</p>
 {what_block(n + 1)}
+{SHOW_LESS}
 </section>
 <section class="album-page wrap" aria-labelledby="h-where" id="where">
+{section_goat("pirate")}
   <h2 class="band" id="h-where">Where in Tuzla</h2>
+  <div class="sec__peek"><p class="sec__line">Places a host could ask, from cafés on Freedom Square to halls for a few hundred people.</p></div>
   <p class="copy copy--wide">Places a host could ask, from cafés on Freedom Square to halls for a few hundred people. GoatConf has arranged nothing with them and pays for nothing: you ask and you book.{first_note}</p>
 {where}
+{SHOW_LESS}
 </section>
-<section class="album-page wrap" aria-labelledby="h-propose" id="propose">
+<section class="album-page wrap" aria-labelledby="h-propose" id="propose" data-fold="open">
+{section_goat()}
   <h2 class="band" id="h-propose">Propose yours</h2>
+  <div class="sec__peek"><a class="button" data-form="add" href="#propose">Propose your event</a></div>
   <div class="page-grid">
     <div class="howto">
       <p class="cta"><a class="button" data-form="add" href="#propose">Propose your event</a><span>Open now. It takes about ten minutes.</span></p>
@@ -717,6 +748,7 @@ def hub(show_all=False) -> str:
       <p>If you or your organisation fund and run it, you can also be listed as a <a href="supporters.html">supporter</a>. Want to support GoatConf with money or something in kind instead? See the <a href="supporters.html">supporters page</a>.</p>
     </div>
   </div>
+{SHOW_LESS}
 </section>"""
     page = shell("extend.html", "Make it yours: GoatConf 2027",
                  "Every GoatConf is shaped by who joins it. Add a meetup, a party, a walk or a workshop to GoatConf 2027 in Tuzla: how to host, what to run, and places to ask.",
@@ -724,6 +756,7 @@ def hub(show_all=False) -> str:
                  "Every GoatConf is shaped by who joins it. Add a meetup, a party, a walk or a workshop: you run it, and once we accept it, it is part of GoatConf 2027.",
                  main, "files/tools/extensions.py build from files/extensions/*.md and files/places/venues.yml")
     page = page.replace('<script src="album.js" defer></script>', '<script src="album.js" defer></script>\n<script src="extend.js" defer></script>')
+    page = page.replace('<main id="main">', '<main id="main" data-folds>', 1)
     return formlinks.rewrite(page, formlinks.forms())
 
 
