@@ -200,6 +200,10 @@ def test_an_accepted_event_needs_its_cards_and_its_page_offers_them(ext, capsys)
     event = (root / "site" / "event-rust.html").read_text(encoding="utf-8")
     assert '<link rel="image_src" href="https://goatconf.com/share/event-rust-preview.png">' in event
     assert 'href="share/event-rust-square.png" download' in event and 'href="share/event-rust-wide.png" download' in event
+    # The event's card waits behind one closed row, "Cards to share", which is its heading: no sub-heading under it.
+    fold = event[event.index('<details class="album-page wrap fold-list fold-page" id="cards">'):]
+    fold = fold[:fold.index("</details>")]
+    assert "<h2>Cards to share</h2></summary>" in fold and "<h3" not in fold and fold.count('class="share-cards"') == event.count('class="share-cards"') == 1
     assert mod.main(["build", "--check"]) == 0
 
 

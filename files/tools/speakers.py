@@ -362,14 +362,16 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
     else:
         talks = ""
     links = "".join(f'<li><a href="{esc(u)}">{esc(re.sub(r"^https?://(www\.)?", "", str(u)).rstrip("/"))}</a></li>' for u in meta.get("links") or [])
-    # The "I'm speaking" card shown as supporters' cards are, with both sizes to download.
-    share = extensions.share_section({"square": f"speaker-{slug}-square.png", "wide": f"speaker-{slug}-wide.png"},
-                                     f"{name}, speaking at GoatConf 2027",
-                                     "Your card, to post as your own: speaking at GoatConf 2027. It links back to this page.",
-                                     "Your card: I'm speaking", SITE)
-    share += extensions.share_section(announce_cards(slug), f"Confirmed speaker at GoatConf 2027: {name}",
-                                      "GoatConf 2027's card announcing you, for anyone to post. It links to this page.",
-                                      "The announcement card", SITE)
+    # The speaker's two kinds of card, each with both sizes to download. Only the speaker needs them, so they wait
+    # behind one closed row at the foot of the page (sources/conversations/2026-11-22--org--anything-left-lets-iterate.md).
+    share = extensions.share_fold(
+        extensions.share_block({"square": f"speaker-{slug}-square.png", "wide": f"speaker-{slug}-wide.png"},
+                               f"{name}, speaking at GoatConf 2027",
+                               "Your card, to post as your own: speaking at GoatConf 2027. It links back to this page.",
+                               "Your card: I'm speaking", SITE)
+        + extensions.share_block(announce_cards(slug), f"Confirmed speaker at GoatConf 2027: {name}",
+                                 "GoatConf 2027's card announcing you, for anyone to post. It links to this page.",
+                                 "The announcement card", SITE))
     photo = (esc(meta["photo"]), 800, 800, meta["name"]) if meta.get("photo") else ("brand/coin.svg", 300, 300, "")
     first = sessions[0] if sessions else None
     lede = (f'{esc(first["format"])} on {program.CORE_DAYS[first["day"]]} at {first["start"]}, {esc(first["room"])}.' if first
@@ -397,10 +399,10 @@ def speaker_page(slug: str, meta, body, sessions, known) -> str:
         subject = "a session at IPI Academy"
     desc = f"{esc(who)} speaks at GoatConf 2027 in Tuzla, 3–5 June 2027: {subject}."
     preview = preview_name(slug) if (SITE / "share" / preview_name(slug)).exists() else ""
-    # The speaker's own goat stands on every band of their page; with the script one of them follows the visitor
-    # down the page (ADR goat-mascot).
+    # The speaker's own goat stands on every band of their page, the row that opens the cards included; with the
+    # script one of them follows the visitor down the page (ADR goat-mascot).
     goat = frame.speaker_peek(slug)
-    main = re.sub(r'(<h2 class="band"[^>]*>)', lambda m: m.group(1) + ("" if 'id="h-about"' in m.group(1) and goat_atlas.has(f"speaker-{slug}-sitting") else goat), main)
+    main = re.sub(r'(<(?:h2|summary) class="band"[^>]*>)', lambda m: m.group(1) + ("" if 'id="h-about"' in m.group(1) and goat_atlas.has(f"speaker-{slug}-sitting") else goat), main)
     return formlinks.rewrite(shell(page_name(slug)[:-5], esc(title), desc, photo, name, lede + when_and_free(), main, preview), formlinks.forms())
 
 
@@ -455,20 +457,23 @@ def supporter_page(slug: str, meta, body) -> str:
 {cards}
   </ul>
 </section>"""
-    proud = extensions.share_section(proud_cards(slug), f"{name}, proud supporter of GoatConf 2027",
-                                     "Your card, to post as your own: proud supporter of GoatConf 2027. It links back to this page.",
-                                     "Your card: proud supporter", SITE)
-    thanks = extensions.share_section(supporter_cards(slug), f"Thank you, {name}", "A thank-you from GoatConf 2027 to post wherever you like. It links back to this page.",
-                                      "The thank-you card", SITE)
-    event_cards = "".join(extensions.share_section(extensions.cards(s), f"The card for {esc(m['name'])}",
-                                                   f"{esc(m['name'])}, organised by {name}, part of GoatConf 2027: for you and anyone going to post. It links to the event's page.",
-                                                   f"The card for {esc(m['name'])}", SITE) for s, (m, _) in hosted.items())
+    # The supporter's cards and their events' cards wait behind one closed row at the foot of the page, as a speaker's
+    # do (sources/conversations/2026-11-22--org--anything-left-lets-iterate.md).
+    proud = extensions.share_block(proud_cards(slug), f"{name}, proud supporter of GoatConf 2027",
+                                   "Your card, to post as your own: proud supporter of GoatConf 2027. It links back to this page.",
+                                   "Your card: proud supporter", SITE)
+    thanks = extensions.share_block(supporter_cards(slug), f"Thank you, {name}", "A thank-you from GoatConf 2027 to post wherever you like. It links back to this page.",
+                                    "The thank-you card", SITE)
+    event_cards = "".join(extensions.share_block(extensions.cards(s), f"The card for {esc(m['name'])}",
+                                                 f"{esc(m['name'])}, organised by {name}, part of GoatConf 2027: for you and anyone going to post. It links to the event's page.",
+                                                 f"The card for {esc(m['name'])}", SITE) for s, (m, _) in hosted.items())
+    share = extensions.share_fold(proud + thanks + event_cards)
     support = support_section(meta)
     main = f"""<section class="album-page wrap" aria-labelledby="h-support">
   <h2 class="band" id="h-support">{"Who they are" if words else "Host and partner" if meta.get("host") is True else "Their support"}</h2>
   {f'<div class="copy copy--wide">{words}</div>' if words else ""}
   <p class="copy"><a class="go go--ink" href="{esc(meta["url"])}">{site}</a> <a class="go go--ink" href="supporters.html">All supporters</a></p>
-</section>{support}{events}{proud}{thanks}{event_cards}"""
+</section>{support}{events}{share}"""
     # A link to the profile shows the card of the first event they host, else their thank-you card.
     previews = [extensions.cards(s)["preview"] for s in hosted] + [supporter_cards(slug)["wide"]]
     preview = next((name for name in previews if (SITE / "share" / name).exists()), "")

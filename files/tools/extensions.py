@@ -347,7 +347,7 @@ def event_page(slug: str, meta, body) -> str:
   <h2 class="band" id="h-about">In the host's words</h2>
   <div class="copy copy--wide">{about}</div>
   <p class="copy"><a class="go go--ink" href="extend.html">All events people add</a> <a class="go go--ink" href="program.html#{day}">The program for that day</a>{to_profile}</p>
-</section>{share_section(cards(slug), f"The card for {e('name')}", "For the host and anyone going: post it wherever you like. It links back to this page.")}"""
+</section>{share_fold(share_block(cards(slug), f"The card for {e('name')}", "For the host and anyone going: post it wherever you like. It links back to this page."))}"""
     names = cards(slug)
     preview = names["preview"] if (PAGE.parent / "share" / names["preview"]).exists() else ""
     return shell(page_name(slug), f"{e('name')}: part of GoatConf 2027, Tuzla", f"{kind}: {when(meta)}, {e('location')}.",
@@ -373,21 +373,32 @@ def card_offer(name: str, w: int, h: int, alt: str, shape: str, share: Path) -> 
             f'      <div class="share-pair__cards">{one(name, "Light")}{one(dark_card(name), "Dark")}</div></figure>')
 
 
-def share_section(names: dict, alt: str, note: str, heading: str = "Cards to share", site=None) -> str:
-    """Both cards to look at, the square and the wide, each in light and in dark with its download; nothing until the
-    cards are rendered."""
+def share_block(names: dict, alt: str, note: str, heading: str = "", site=None) -> str:
+    """One kind of card inside a row of cards that opens (share_fold): its sub-heading, under the id its section had,
+    its line and both shapes, each in light and in dark; nothing until the cards are rendered. A page with one kind
+    of card gives no heading: the row's own label is its heading."""
     share = (site or PAGE.parent) / "share"
     if not all((share / names[k]).exists() for k in ("square", "wide")):
         return ""
-    return f"""
-<section class="album-page wrap" aria-labelledby="h-cards-{names['wide'][:-9]}">
-  <h2 class="band" id="h-cards-{names['wide'][:-9]}">{heading}</h2>
+    title = f"""
+  <h3 class="list-title" id="h-cards-{names['wide'][:-9]}">{heading}</h3>""" if heading else ""
+    return f"""{title}
   <p class="copy copy--wide">{note}</p>
   <div class="share-cards">
     {card_offer(names['square'], 1080, 1080, alt, "square", share)}
     {card_offer(names['wide'], 1200, 675, alt, "wide", share)}
-  </div>
-</section>"""
+  </div>"""
+
+
+def share_fold(blocks: str, label: str = "Cards to share") -> str:
+    """Cards only their owner needs, behind one closed row at the foot of a page that visitors read: the row that
+    opens on the brand page (a details, so it needs no script), under the label an event's page gave its cards."""
+    if not blocks:
+        return ""
+    return f"""
+<details class="album-page wrap fold-list fold-page" id="cards">
+  <summary class="band"><h2>{label}</h2></summary>{blocks}
+</details>"""
 
 
 # Venues: the places in Tuzla a host could ask (places/venues.yml).
