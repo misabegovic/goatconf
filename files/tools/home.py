@@ -83,6 +83,9 @@ def added(events) -> str:
                    for start, _, m, _ in sorted(events, key=lambda e: e[0]))
 
 
+SECTION_END = '<p class="sec__end"><button type="button" class="folds-all__button sec__less" data-fold-end>Show less</button></p>'
+
+
 def closed_row(inside: str) -> str:
     """What a section of the home page shows under its heading while it is closed: a hint of what is inside and the
     section's own link, both taken from the section. site/album.js closes and opens the sections; without the script
@@ -98,10 +101,12 @@ def small(photo: str) -> str:
     return (Path(photo).parent / made[0].name).as_posix() if made else photo
 
 
-def row_goat(poses: str) -> str:
-    """The goat's one stop on a closed section's heading; the goats inside come back when the section is opened."""
-    return ('<span class="sec__goat" aria-hidden="true">'
-            + "".join(goat_atlas.goat(pose, "goat-scene", frame._beat(pose)) for pose in poses.split("+")) + '</span>')
+def row_goat(pose: str) -> str:
+    """The one goat that stands on a section's row while it is closed, peeking over the row's top edge at its right
+    end: the section's own character, the same one every time. site/album.js lets it stand there only while the
+    section is closed; the goats inside come back when the section is opened
+    (sources/conversations/2026-11-22--org--meals-section-weird-when-collapsed.md)."""
+    return "  " + goat_atlas.goat(pose, "peek peek--art", frame._beat(pose))
 
 
 def day_sticker(i: int, day, label: str, hours: str, lines: str) -> str:
@@ -126,14 +131,16 @@ def days() -> str:
                  '<small>Anything you would like to run for the people who come. You run it, and once we accept it, it is on the program.</small>'
                  + added(outside) + '<span class="stamp">Yours?</span></a></li>')
     dates = "".join(f"<li>{label}</li>" for label in (*program.CORE_DAYS.values(), program.COMMUNITY_DAY[1]))
-    row = closed_row(f'<ul class="sec__dates">{dates}</ul><a class="go go--ink" href="program.html">See the program, room by room</a>')
+    row = closed_row(f'<ul class="sec__dates">{dates}</ul><a class="go go--ink sec__more" href="program.html">See the program, room by room</a>')
     return f"""<section class="album-page wrap" id="days" aria-labelledby="days-title">
-  <h2 class="band" id="days-title">Three days in June{row_goat("waving")}</h2>
+{row_goat("peeking")}
+  <h2 class="band" id="days-title">Three days in June</h2>
 {row}
   <ul class="slots slots--days">
 {chr(10).join(items)}
   </ul>
   <p class="copy"><a class="go go--ink" href="program.html">See the program, room by room</a></p>
+  {SECTION_END}
 </section>"""
 
 
@@ -164,14 +171,16 @@ def speakers_block() -> str:
     intro_html = f'\n  <p class="copy copy--wide">{intro}</p>' if intro else ""
     faces = "".join(f'<img src="{esc(small(m["photo"]))}" width="96" height="96" alt="" loading="lazy" decoding="async">'
                     for _s, (m, _b) in people[:SHOWN] if m.get("photo"))
-    row = closed_row((f'<span class="sec__strip sec__strip--faces" aria-hidden="true">{faces}</span>' if faces else "") + more)
+    row = closed_row((f'<span class="sec__strip sec__strip--faces" aria-hidden="true">{faces}</span>' if faces else "") + more.replace('class="go go--ink"', 'class="go go--ink sec__more"'))
     return f"""<section class="album-page wrap" id="speakers" aria-labelledby="speakers-title" data-fold="open">
-  <h2 class="band" id="speakers-title">Who is speaking{row_goat("jumping")}</h2>
+{row_goat("peek-speaker")}
+  <h2 class="band" id="speakers-title">Who is speaking</h2>
 {row}{intro_html}
   <ul class="slots slots--mini">
 {cards}
   </ul>
   <p class="copy">{more}</p>
+  {SECTION_END}
 </section>"""
 
 
