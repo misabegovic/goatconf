@@ -946,3 +946,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #301: site: a section's goat is the cover goat's size and nothing cuts it
    diff: 42 files, +251/-78
    restricted-paths: true
+2026-11-22 merge — PR #303: site: goats stand at full size at the right end and overlay what is above them
+   diff: 43 files, +337/-124
+   restricted-paths: true
