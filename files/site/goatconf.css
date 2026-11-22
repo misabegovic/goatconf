@@ -2027,4 +2027,7 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 .card-list__row { display: block; color: var(--ink-soft); }
 .card-list__shape { display: inline-block; white-space: nowrap; margin-right: 0.9rem; }
 .card-list__row a { display: inline-block; min-width: 2.75rem; padding-block: 0.55rem; margin-inline: 0.15rem; text-align: center; font-weight: 700; }
-.prose h3 { margin: var(--gap-5) 0 var(--gap-3); font-size: 1.2rem; color: var(--album); }
+.card-fold { margin-bottom: var(--gap-2); }
+.card-fold summary { min-height: 2.75rem; align-content: center; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.2rem; }
+.card-fold[open] { margin-bottom: var(--gap-5); }
+@media (min-width: 48rem) { .card-list__row a { padding-block: 0.1rem; } .card-list__row { display: inline-block; margin-right: 1.2rem; } }

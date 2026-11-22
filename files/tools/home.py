@@ -178,7 +178,9 @@ def brand_cards() -> str:
     def group(title: str, items: list) -> str:
         items = [f'<li><strong><a href="{page}">{esc(str(name))}</a></strong> {"".join(rows)}</li>'
                  for page, name, rows in items if any(rows)]
-        return f'<h3>{title}</h3>\n<ul class="card-list">\n' + "\n".join(items) + "\n</ul>" if items else ""
+        # Each group opens on its own, without the script, so the brand page stays short.
+        return (f'<details class="fold-list card-fold"><summary>{title}</summary>\n<ul class="card-list">\n'
+                + "\n".join(items) + "\n</ul>\n</details>") if items else ""
 
     people = [(speakers.page_name(slug), meta["name"],
                [row("I&#39;m speaking", {"square": f"speaker-{slug}-square.png", "wide": f"speaker-{slug}-wide.png"}),
