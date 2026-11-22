@@ -943,3 +943,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #299: site: the speakers section starts closed, and speaker and register pages say when, where and free
    diff: 45 files, +179/-57
    restricted-paths: true
+2026-11-22 merge — PR #301: site: a section's goat is the cover goat's size and nothing cuts it
+   diff: 42 files, +251/-78
+   restricted-paths: true
