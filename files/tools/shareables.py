@@ -342,9 +342,48 @@ def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, squ
 # Where the speaker's goat sits on their cards: "corner", whole, in the bottom corner (the organiser's choice,
 # 2026-10-27), or "ring", small against the photo's ring.
 SPEAKER_GOAT = "corner"
+# The goat on a speaker's card may say a line (the organiser's "maybe",
+# sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md). Picking is this one value:
+# The organiser picked "See you in Tuzla" (sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md);
+# it carries the exclamation mark every line the goat says on the site carries (tools/frame.py SAYS_EVERY). The link
+# previews (1200 x 630, shown small by the sites that unfurl a link) carry no bubble.
+#   ""         it says nothing
+#   a line     every speaker's goat says that line, for example "See you in Tuzla!"
+#   "rotate"   each speaker's goat takes the next line of SAYS_CARD, in the speakers' order
+#   "own"      each says the first line about its own work (tools/frame.py SAYS_SPEAKER), or the first of SAYS_CARD
+# A record's own `card_says:` line wins over all of them. Every line here is already on the site or in the organiser's
+# recorded words; the list with where each comes from is in DESIGN.md under "Share cards, light and dark".
+SPEAKER_SAYS = "See you in Tuzla!"
+SAYS_CARD = ("See you in Tuzla!", "Come to GoatConf!", "Free to attend!", "See you in June!")
+SAYS_CANDIDATES = (*SAYS_CARD, "Tuzla, 3–5 June 2027!", "Baaa!", "Any programming language, any stack.")
 
 
-def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 675, announce: bool = False) -> str:
+def card_line(slug: str, meta, index: int = 0, mode: str | None = None) -> str:
+    """What the goat says on this speaker's card: nothing unless a line is picked."""
+    mode = SPEAKER_SAYS if mode is None else mode
+    if meta.get("card_says"):
+        return str(meta["card_says"])
+    if mode == "rotate":
+        return SAYS_CARD[index % len(SAYS_CARD)]
+    if mode == "own":
+        import frame
+        return (frame.SAYS_SPEAKER.get(slug) or SAYS_CARD)[0]
+    return mode
+
+
+def bubble(line: str, right: float, bottom: float, px: int, room: int) -> str:
+    """The goat's line in a bubble up and to the left of its head, its tail corner towards the goat: the site's own
+    speech bubble, yellow with night lettering in both versions so it reads at the size a card is seen in a feed."""
+    if not line:
+        return ""
+    return (f'<div class="says" style="position:absolute; right:{right:.0f}px; bottom:{bottom:.0f}px; max-width:{room}px; '
+            f'padding:{px * .28:.0f}px {px * .62:.0f}px {px * .34:.0f}px; border-radius:{px * .8:.0f}px {px * .8:.0f}px {px * .16:.0f}px {px * .8:.0f}px; '
+            f'background:{YELLOW}; color:{NIGHT}; font-family:\'Bricolage Grotesque\'; font-weight:800; font-stretch:85%; '
+            f'font-size:{px}px; line-height:1.08; text-wrap:balance; text-align:center">{esc(line)}</div>')
+
+
+def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 675, announce: bool = False,
+                 says: str = "") -> str:
     """The speaker's own "I'm speaking" card, or with `announce` GoatConf's card announcing them. Both say the same,
     and little: the name and photo, their role and session, one quiet line of when, where and their page's address,
     and their own goat. Only the headline differs."""
@@ -372,6 +411,10 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
         gw = 170 if square else min(160, h * 0.25)
         goat = (f'<img src="{goat_src(pose)}" style="position:absolute; right:{72 if square else 56}px; '
                 f'bottom:{40 if square else 28}px; width:{gw:.0f}px">')
+        # What it says, if a line is picked: beside its head, clear of the quiet line under it and the text above.
+        tall = gw * goat_atlas.manifest()[pose]["h"] / goat_atlas.manifest()[pose]["w"] if says else 0
+        goat += bubble(says, (72 if square else 56) + gw * 0.86, (40 if square else 28) + tall * 0.6,
+                       38 if square else 30, 520 if square else 380)
     else:
         gw = 140 if square else 112
         left = (84 + size - gw * 0.55) if square else (64 + size - gw * 0.55)
@@ -520,13 +563,14 @@ def cards() -> dict[str, tuple[int, int, str]]:
                                                                 upright=key in UPRIGHT))
         out[f"post-{key}-wide.png"] = (1200, 675, photo_post(1200, 675, title, line, img, credit, False, *focus))
     talks = speakers.sessions_by_speaker()
-    for slug, (meta, _) in speakers.speakers().items():
-        out[f"speaker-{slug}-square.png"] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True))
-        out[f"speaker-{slug}-wide.png"] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False))
+    for i, (slug, (meta, _)) in enumerate(speakers.speakers().items()):
+        says = card_line(slug, meta, i)
+        out[f"speaker-{slug}-square.png"] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True, says=says))
+        out[f"speaker-{slug}-wide.png"] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False, says=says))
         out[speakers.preview_name(slug)] = (1200, 630, speaker_card(slug, meta, talks.get(slug, []), False, 630))
         announce = speakers.announce_cards(slug)
-        out[announce["square"]] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True, announce=True))
-        out[announce["wide"]] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False, announce=True))
+        out[announce["square"]] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True, announce=True, says=says))
+        out[announce["wide"]] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False, announce=True, says=says))
     for slug, (meta, _) in speakers.supporters().items():
         out[f"supporter-{slug}-square.png"] = (1080, 1080, supporter_card(slug, meta, True))
         out[f"supporter-{slug}-wide.png"] = (1200, 675, supporter_card(slug, meta, False))
@@ -552,14 +596,41 @@ def jobs() -> dict[str, tuple[int, int, str]]:
     return out
 
 
-def render(name: str, w: int, h: int, doc: str, tmp: Path, exe: str) -> None:
+def says_samples(out: Path) -> int:
+    """The proposal to look at, nothing in site/share/ touched: four speakers' cards in light and dark, each goat
+    saying a different line, and every candidate line on the same card."""
+    out.mkdir(parents=True, exist_ok=True)
+    people = speakers.speakers()
+    talks = speakers.sessions_by_speaker()
+    todo = {}
+    picks = [(slug, line) for slug, line in zip(list(people)[:4], SAYS_CARD)]
+    first = picks[0][0]
+    for theme in ("light", "dark"):
+        use(theme)
+        for slug, line in picks:
+            meta = people[slug][0]
+            todo[f"sample-{slug}-square-{theme}.png"] = (1080, 1080, speaker_card(slug, meta, talks.get(slug, []), True, says=line))
+            todo[f"sample-{slug}-wide-{theme}.png"] = (1200, 675, speaker_card(slug, meta, talks.get(slug, []), False, says=line))
+        own = card_line(first, people[first][0], mode="own")
+        for n, line in enumerate((*SAYS_CANDIDATES, own), start=1):
+            todo[f"candidate-{n}-{theme}.png"] = (1080, 1080, speaker_card(first, people[first][0], talks.get(first, []), True, says=line))
+    use("light")
+    exe = brand.chrome()
+    with tempfile.TemporaryDirectory() as tmp:
+        for name, (w, h, doc) in todo.items():
+            render(name, w, h, doc, Path(tmp), exe, out)
+            print(f"rendered {out / name}")
+    return 0
+
+
+def render(name: str, w: int, h: int, doc: str, tmp: Path, exe: str, out: Path | None = None) -> None:
     src = tmp / f"{name}.html"
     src.write_text(doc, encoding="utf-8")
     shot = tmp / name
     subprocess.run([exe, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--virtual-time-budget=4000",
                     f"--window-size={w},{h + 200}", f"--screenshot={shot}", src.as_uri()],
                    check=True, capture_output=True, timeout=120)
-    brand.crop(shot, OUT / name, w, h)
+    brand.crop(shot, (out or OUT) / name, w, h)
 
 
 def main(argv=None) -> int:
@@ -568,7 +639,11 @@ def main(argv=None) -> int:
     r = sub.add_parser("render")
     r.add_argument("--only")
     sub.add_parser("list")
+    sm = sub.add_parser("says-samples", help="the proposal's samples of a goat that says a line, written to a folder outside the site")
+    sm.add_argument("out")
     args = ap.parse_args(argv)
+    if args.cmd == "says-samples":
+        return says_samples(Path(args.out))
     todo = jobs()
     if args.cmd == "list":
         for name, (w, h, _) in todo.items():

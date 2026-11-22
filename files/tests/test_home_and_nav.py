@@ -161,3 +161,6 @@ def test_the_footer_groups_hold_every_link_once():
     assert inner.count("<a ") == len(frame.LINKS) and cover.count("<a ") == len(frame.LINKS) - 1
     assert inner.count('<span class="footer__group"><b>') == len(frame.GROUPS)
     assert '<a href="charter.html">The charter</a>' in cover and '<a href="charter.html">Charter</a>' in inner
+    # Who's organising has a page of its own, linked from every footer beside the conference's own pages.
+    link = '<a href="organising.html">Who\'s organising</a>'
+    assert link in inner and link in cover and "organising.html" in dict(frame.GROUPS)["The conference"]

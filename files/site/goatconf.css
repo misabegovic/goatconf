@@ -2031,3 +2031,21 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 .card-fold summary { min-height: 2.75rem; align-content: center; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.2rem; }
 .card-fold[open] { margin-bottom: var(--gap-5); }
 @media (min-width: 48rem) { .card-list__row a { padding-block: 0.1rem; } .card-list__row { display: inline-block; margin-right: 1.2rem; } }
+
+/* Who's organising has a page of its own (round twelve, 2026-11-22,
+   sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md). On the home page its place is
+   one row: the link, lettered like every link on its own, and the host goat's stop beside it, which stays on the
+   home page (sources/conversations/2026-11-07--org--home-goats-stay.md). */
+.album-page--row { padding-block: 0; }
+.row-link { position: relative; display: flex; align-items: center; min-height: 5.6rem; margin: 0; padding-right: 7rem; }
+.row-link > .go { font-size: 1.2rem; }
+.row-link > .peek { right: clamp(0.5rem, 3vw, 2.5rem); bottom: 0; width: calc(5.4rem * var(--size, 1)); }
+/* The organising page's first sheet has no heading of its own: the page's title heads it. */
+.album-page--open { padding-top: clamp(1.75rem, 3.5vw, 3rem); }
+@media (max-width: 47.99rem) { .album-page--open { padding-top: var(--gap-5); } }
+@media (min-width: 62rem) { .album-page--open { padding-top: 0.42rem; } .album-page--open .ledger-stickers:has(.peek) { margin-top: 6.9rem; } .album-page--open .page-grid { align-items: center; } .album-page--open .copy { padding-top: 4rem; } }
+/* On its page the conferences run before take the page's width: the two side by side, the four photos in a row. */
+.past-confs--page { margin-top: 0; }
+/* The footer's four groups stay on one row on a wide screen with the organising page's link among them: the links
+   and the groups sit a little closer there. */
+@media (min-width: 90rem) { .footer__links, .back-cover__links { column-gap: 0.9rem; } .footer__group a { margin-right: 0.5rem; } .footer__group a:last-child { margin-right: 0; } }
