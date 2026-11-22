@@ -114,13 +114,13 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .sticker--photo figcaption { margin: 0; padding: 0.45rem 0.6rem 0.5rem; border-radius: 0 0 0.35rem 0.35rem; background: var(--album); color: var(--page); font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.15rem; line-height: 1.05; }
 .sticker--fact { display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; padding: 1.2rem 1.1rem; background: var(--album); color: var(--page); outline: 0.42rem solid var(--page); outline-offset: -0.42rem; border-radius: 0.6rem; }
 .sticker--fact strong { font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; font-size: clamp(2.2rem, 1.5rem + 2.5vw, 3.4rem); line-height: 0.9; color: var(--yellow); font-variant-numeric: tabular-nums; }
-.sticker--fact small { font-size: 0.98rem; line-height: 1.35; color: var(--album-soft); }
-.tag { display: inline-block; margin: 0.45rem 0.2rem 0.1rem; padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.82rem; font-weight: 700; color: var(--ink); background: var(--page-print); }
+.sticker--fact small { font-size: 0.95rem; line-height: 1.35; color: var(--album-soft); }
+.tag { display: inline-block; margin: 0.45rem 0.2rem 0.1rem; padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 700; color: var(--ink); background: var(--page-print); }
 .tag--veg { background: #d9f2df; color: #0f4d24; }
 
 .slot { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 1.1rem 1.1rem 1.2rem; border-radius: 0.6rem; border: 2px dashed var(--slot-line); background: var(--page-print); color: var(--ink); min-height: 9rem; list-style: none; }
 .slot strong { font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: 1.5rem; line-height: 1; color: var(--album); }
-.slot small { margin-top: 0.35rem; font-size: 0.98rem; line-height: 1.35; color: var(--ink-soft); }
+.slot small { margin-top: 0.35rem; font-size: 0.95rem; line-height: 1.35; color: var(--ink-soft); }
 .stamp { position: absolute; right: 0.7rem; bottom: 0.6rem; transform: rotate(-9deg); padding: 0.05em 0.45em; border: 3px solid currentColor; border-radius: 0.35rem; color: var(--red); font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.05rem; letter-spacing: 0.04em; mix-blend-mode: multiply; }
 
 
@@ -133,7 +133,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .cover-lede { margin-top: 1.1rem; font-family: var(--display); font-weight: 700; font-stretch: 88%; font-size: var(--step-1); line-height: 1.2; }
 .cover-actions { margin-top: 1.6rem; display: grid; gap: 1rem; }
 .cover-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; margin: 0; }
-.go { font-family: var(--display); font-weight: 750; font-stretch: 85%; font-size: 1.25rem; text-decoration-thickness: 3px; }
+.go { font-family: var(--display); font-weight: 750; font-stretch: 85%; font-size: 1.2rem; text-decoration-thickness: 3px; }
 .go--ink { color: var(--album); }
 .spread__page { padding: clamp(1.25rem, 2.5vw, 2rem); background: var(--page); color: var(--ink); border-radius: 0 0.8rem 0.8rem 0; box-shadow: inset 1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.25); }
 .page-title { color: var(--album); font-size: clamp(1.4rem, 1.1rem + 0.9vw, 1.9rem); margin-bottom: 1.2rem; }
@@ -207,8 +207,8 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 
 .print { margin: 0; }
 .print img { width: 100%; border-radius: 0.5rem; }
-.print figcaption { margin-top: 0.7rem; font-size: 0.98rem; line-height: 1.45; color: var(--ink-soft); }
-.print small { display: block; font-size: 0.82rem; margin-top: 0.2rem; }
+.print figcaption { margin-top: 0.7rem; font-size: 0.95rem; line-height: 1.45; color: var(--ink-soft); }
+.print small { display: block; font-size: 0.8rem; margin-top: 0.2rem; }
 
 /* The shiny: the one solid beat */
 .shiny { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: clamp(1.75rem, 5vw, 4rem); align-items: center; margin-block: var(--space); padding: clamp(1.75rem, 4vw, 3.5rem); border-radius: 0.8rem; background: var(--album-night); box-shadow: inset 0 0 0 0.42rem var(--page); }
@@ -219,7 +219,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .saying small { display: block; margin-top: 0.4rem; font-family: var(--text); font-weight: 400; font-size: 0.9rem; color: var(--album-soft); }
 
 /* Back cover */
-.back-cover { margin-top: var(--space); padding-block: 3rem 3.5rem; background: var(--album-night); color: var(--album-soft); font-size: 0.98rem; }
+.back-cover { margin-top: var(--space); padding-block: 3rem 3.5rem; background: var(--album-night); color: var(--album-soft); font-size: 0.95rem; }
 .back-cover__inner { display: grid; gap: 1rem; }
 .back-cover__mark { display: flex; align-items: center; gap: 0.6rem; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: 1.6rem; color: var(--page); margin: 0; }
 .back-cover__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
@@ -269,29 +269,29 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   .slots--hero { grid-template-columns: minmax(0, 26rem); grid-template-areas: "free" "tuzla" "june" "ipi" "stack" "slot"; justify-content: center; gap: 1.4rem; }
   .slots--hero .sticker--fact { padding: 1.1rem 1.1rem 1.15rem; }
   .slots--hero .sticker--fact strong, .slots--hero .sticker--fact strong.sticker__long { font-size: 2.2rem; }
-  .slots--hero .sticker--fact small { font-size: 0.98rem; }
+  .slots--hero .sticker--fact small { font-size: 0.95rem; }
   .slots--hero .sticker--photo img { flex: none; height: auto; min-height: 0; aspect-ratio: 1; }
   .slots--hero .sticker--place figcaption { font-size: 2.2rem; }
   .slots--hero .slot { padding: 1.1rem 1.1rem 2.9rem; }
   .slots--hero .slot strong { font-size: 1.5rem; }
-  .slots--hero .slot small { font-size: 0.98rem; }
+  .slots--hero .slot small { font-size: 0.95rem; }
   .spread .cover-actions p.cover-links { flex-direction: row; gap: 0.1rem 1.2rem; }
-  .cover-actions .go { font-size: 1.1rem; }
+  .cover-actions .go { font-size: 1.15rem; }
 }
 .slot:has(.stamp) { padding-bottom: 2.9rem; }
 @media (max-width: 47.99rem) {
   .album-page .slots, .slots--kinds, .ledger-stickers, .prices ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 0.9rem; }
-  .sticker--photo figcaption { font-size: 1rem; }
-  .slots--kinds .slot strong { font-size: 1.1rem; padding-right: 0; }
+  .sticker--photo figcaption { font-size: 1.05rem; }
+  .slots--kinds .slot strong { font-size: 1.15rem; padding-right: 0; }
 }
 
 /* Buttons: a yellow die-cut sticker you press */
-.button { display: inline-block; padding: 0.75em 1.3em; border-radius: 0.5rem; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.25rem; line-height: 1.1; text-decoration: none; text-transform: uppercase; letter-spacing: 0.02em; box-shadow: 0 0 0 0.3rem var(--page), 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3); transform: rotate(-1deg); transition: transform 300ms var(--ease); }
+.button { display: inline-block; padding: 0.75em 1.3em; border-radius: 0.5rem; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.2rem; line-height: 1.1; text-decoration: none; text-transform: uppercase; letter-spacing: 0.02em; box-shadow: 0 0 0 0.3rem var(--page), 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3); transform: rotate(-1deg); transition: transform 300ms var(--ease); }
 .button:hover { transform: rotate(0.5deg) translateY(-2px); text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .button { transition: none; } .button:hover { transform: rotate(-1deg); } }
 .button--cover { font-size: 1.35rem; }
 .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; margin: 0.6rem 0 2rem; }
-.cta span { color: var(--ink-soft); font-size: 0.98rem; max-width: 34ch; }
+.cta span { color: var(--ink-soft); font-size: 0.95rem; max-width: 34ch; }
 .prose .cta:last-child { margin: 2.4rem 0 0; }
 .slot--link { text-decoration: none; transition: background-color 200ms; }
 .slot--link:hover { background: #e2eafa; }
@@ -300,12 +300,12 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 
 /* The program: a timetable per day */
 .band__sub { display: block; margin-top: 0.4rem; font-size: 1.05rem; font-stretch: 85%; letter-spacing: 0.04em; color: var(--album-soft); }
-.list-title { color: var(--album); font-size: 1.4rem; margin-bottom: 0.6rem; }
+.list-title { color: var(--album); font-size: 1.5rem; margin-bottom: 0.6rem; }
 .rooms-list { margin: 0; padding-left: 1.2rem; }
 .rooms-list li { margin-bottom: 0.3rem; }
 .rooms-list li::marker { color: var(--album); }
 .timetable { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
-.timeslot__time { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; color: var(--album); font-size: 2rem; margin-bottom: 0.9rem; font-variant-numeric: tabular-nums; }
+.timeslot__time { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; color: var(--album); font-size: 2.2rem; margin-bottom: 0.9rem; font-variant-numeric: tabular-nums; }
 .timeslot__time span { font-family: var(--text); font-weight: 400; text-transform: none; font-size: 0.95rem; color: var(--ink-soft); letter-spacing: 0; }
 .rooms { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr)); gap: 1.2rem 0.9rem; }
 .slot--session { min-height: 8.5rem; justify-content: flex-start; padding: 0.8rem 0.8rem 2.6rem; }
@@ -317,16 +317,16 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .sticker--session { display: flex; flex-direction: column; gap: 0.25rem; padding: 0.9rem; min-height: 8.5rem; }
 .sticker--session strong { font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; color: var(--album); font-size: 1.2rem; line-height: 1; }
 .sticker--session p { margin: 0.2rem 0 0; font-size: 0.85rem; line-height: 1.35; color: var(--ink-soft); }
-.session__format { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
+.session__format { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
 .breakrow { display: flex; align-items: baseline; gap: 1rem; padding: 0.7rem 1rem; border-radius: 0.6rem; background: var(--page-print); color: var(--ink); }
-.breakrow__time { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.3rem; color: var(--album); font-variant-numeric: tabular-nums; min-width: 3.6rem; }
+.breakrow__time { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.35rem; color: var(--album); font-variant-numeric: tabular-nums; min-width: 3.6rem; }
 .breakrow--welcome { background: transparent; border: 2px solid var(--page-print); }
 .day .slots--kinds { margin-top: 1.5rem; }
 .sticker--ext strong { font-size: 1.6rem; }
 .ext-list { list-style: none; }
 .sticker--example { height: 100%; min-height: 10rem; justify-content: flex-start; text-decoration: none; }
 .sticker--example strong { font-size: 1.6rem; overflow-wrap: normal; word-break: normal; hyphens: manual; }
-.sticker--fact .sticker__kind { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--page); }
+.sticker--fact .sticker__kind { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--page); }
 
 /* Events and sessions: stickers that open their own page, and the facts on it */
 .slots--events { list-style: none; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); margin-bottom: 1.8rem; }
@@ -359,7 +359,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .speaker__goat { display: grid; place-items: center; color: var(--slot-line); --goat-fill: transparent; }
 .speaker__goat .goat-sit { width: 50%; }
 .speaker__photo figcaption { padding: 0.45rem 0.6rem 0.5rem; border-radius: 0 0 0.35rem 0.35rem; background: var(--album); color: var(--page); font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.2rem; line-height: 1; }
-.speaker__body { padding: 0 0.5rem 0.5rem; font-size: 0.92rem; line-height: 1.45; }
+.speaker__body { padding: 0 0.5rem 0.5rem; font-size: 0.9rem; line-height: 1.45; }
 .speaker__body p { margin: 0 0 0.5rem; }
 .sticker--supporter a { color: var(--album); }
 .sticker--supporter { padding: 0.9rem; }
@@ -370,7 +370,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .sticker--supporter strong { font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; color: var(--album); font-size: 1.2rem; line-height: 1; }
 .sticker--supporter strong a { color: inherit; text-decoration: none; }
 .sticker--supporter strong a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
-.sticker--supporter p { margin: 0; font-size: 0.88rem; line-height: 1.4; color: var(--ink-soft); }
+.sticker--supporter p { margin: 0; font-size: 0.9rem; line-height: 1.4; color: var(--ink-soft); }
 @media (max-width: 47.99rem) {
   .speaker__photo img, .speaker__goat { aspect-ratio: 4 / 3; }
 }
@@ -427,7 +427,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 }
 .slots--mini > li { list-style: none; display: grid; }
 .slot--open { min-height: 0; justify-content: flex-end; gap: 0.3rem; }
-.slot--open strong { font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.25rem; line-height: 1.05; }
+.slot--open strong { font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.2rem; line-height: 1.05; }
 .slot--open small { font-size: 0.85rem; line-height: 1.3; color: var(--ink-soft); }
 .slots--mini .slot--open { padding: 0.9rem 0.9rem 3.3rem; }
 .slot--open .stamp { font-size: 0.9rem; right: 0.6rem; bottom: 0.7rem; }
@@ -455,7 +455,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   .sticker--session { transform: none; min-height: 0; padding: 0.7rem 0.8rem 0.75rem 3rem; box-shadow: 0 0.3rem 0.8rem -0.4rem rgb(0 0 0 / 0.35); }
   .sticker--session .num { left: 0.6rem; top: 0.7rem; }
   .sticker--session p { display: none; }
-  .sticker--session strong { font-size: 1.1rem; }
+  .sticker--session strong { font-size: 1.15rem; }
   .sticker--speaker { gap: 0.4rem 0.9rem; align-items: start; }
 }
 @media (max-width: 47.99rem) { .timeslot__time span { display: none; } }
@@ -469,7 +469,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .map-ipi { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 28px; fill: var(--album-night); }
 .map .pin text { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 30px; }
 .map a:hover .pin circle, .map a:focus-visible .pin circle { stroke: var(--album-night); }
-.map-frame figcaption { margin-top: 0.4rem; font-size: 0.78rem; color: var(--ink-soft); }
+.map-frame figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--ink-soft); }
 .map-frame figcaption a { color: inherit; }
 .places { list-style: none; padding: 0; margin: 0 0 0.8rem; display: grid; gap: 0.7rem; }
 .prose .places { padding-left: 0; }
@@ -492,7 +492,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .sticker--speaker { padding: 0.42rem; }
 .speaker__link { display: flex; flex-direction: column; gap: 0.5rem; height: 100%; text-decoration: none; color: var(--ink); }
 .speaker__link:hover .speaker__photo figcaption, .speaker__link:focus-visible .speaker__photo figcaption { background: var(--album-night); }
-.speaker__first { display: block; font-size: 0.88rem; line-height: 1.35; color: var(--ink); }
+.speaker__first { display: block; font-size: 0.9rem; line-height: 1.35; color: var(--ink); }
 .speaker__first--tba { color: var(--ink-soft); font-style: italic; }
 .speaker__role { display: block; margin-bottom: 0.2rem; font-size: 0.85rem; font-weight: 700; line-height: 1.3; color: var(--ink-soft); }
 .lede__role { display: block; margin-bottom: 0.35rem; color: var(--page); }
@@ -510,7 +510,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .talk p { margin: 0.4rem 0 0; font-size: 0.95rem; color: var(--ink-soft); }
 .tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.45rem; }
 /* The session and venue tags; the food tags keep the plain pill above. */
-:is(.tags, .venue__tags) .tag { padding: 0.35em 0.7em; border-radius: 0.3rem; font-size: 0.74rem; font-weight: 700; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.05em; }
+:is(.tags, .venue__tags) .tag { padding: 0.35em 0.7em; border-radius: 0.3rem; font-size: 0.75rem; font-weight: 700; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.05em; }
 /* The session area tags read in normal case, quieter than the venue labels. */
 .tags .tag { font-size: 0.8rem; font-weight: 650; text-transform: none; letter-spacing: 0; }
 .tag--area { background: var(--yellow); color: var(--album-night); }
@@ -523,7 +523,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .tag--research { background: #dcf1d8; color: #1f5a17; }
 .tag--business { background: #f4ecc0; color: #554500; }
 .tag--leadership { background: #fbdcdc; color: #8f1111; }
-.for-line { display: block; margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.35; color: var(--ink); }
+.for-line { display: block; margin-top: 0.4rem; font-size: 0.9rem; line-height: 1.35; color: var(--ink); }
 .talk .for-line { font-size: 0.95rem; color: var(--ink); }
 @media (max-width: 47.99rem) {
   .speaker__first { font-size: 0.8rem; }
@@ -577,7 +577,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .past-confs__list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.4rem 1.6rem; margin: 0 0 2rem; padding: 0; }
 .past-conf { padding: 1.1rem; border-radius: 0.6rem; background: var(--page-print); }
 .past-conf__logo { display: block; height: 3.6rem; width: auto; margin-bottom: 0.8rem; }
-.past-conf__name { display: block; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.45rem; line-height: 1.05; color: var(--album); }
+.past-conf__name { display: block; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.5rem; line-height: 1.05; color: var(--album); }
 .past-conf__where { display: block; margin: 0.2rem 0 0.5rem; font-weight: 600; color: var(--ink-soft); }
 .past-conf p { margin: 0 0 0.6rem; }
 .slots--photos { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -612,10 +612,10 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .slots--why > li:nth-child(even) { --tilt: 0.6deg !important; }
   .slots--why .sticker--fact strong { font-size: 2.2rem; }
   .slots--why .slot strong { font-size: 1.5rem; }
-  .slots--why small { font-size: 0.98rem; }
+  .slots--why small { font-size: 0.95rem; }
   .page-grid--cards-first > .slots { margin-bottom: 0.4rem; }
-  .prices--stay .pricelist span { font-size: 0.98rem; }
-  .prices--stay .pricelist b { font-size: 1.3rem; }
+  .prices--stay .pricelist span { font-size: 0.95rem; }
+  .prices--stay .pricelist b { font-size: 1.35rem; }
 }
 /* The formats on the talk page: one goat, over the first slot, so the rows close up below it */
 .album-page .slots.slots--formats.slots--one-goat { row-gap: 1.2rem; }
@@ -655,7 +655,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .slots--formats .slot .stamp { position: static; grid-column: 2; justify-self: end; margin-top: 0.15rem; }
   .album-page .slots--supporters-home { grid-template-columns: minmax(0, 26rem); justify-content: center; gap: 1rem; }
   .slots--supporters-home .supporter-chip img { aspect-ratio: 5 / 2; box-sizing: border-box; padding: 0.8rem 1.6rem; }
-  .slots--supporters-home .supporter-chip small { font-size: 0.92rem; }
+  .slots--supporters-home .supporter-chip small { font-size: 0.9rem; }
 }
 
 /* Tuzla and the food on a phone: one photo after another, a big photo on top */
@@ -665,7 +665,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
   .album-page .slots--food .sticker--photo img { aspect-ratio: 4 / 3; }
   .slots--city .sticker--photo figcaption, .slots--food .sticker--photo figcaption { font-size: 1.35rem; padding: 0.55rem 0.7rem 0.6rem; }
   .slots--food .tag { font-size: 0.9rem; margin: 0.6rem 0.35rem 0.1rem; }
-  .slots--food .sticker--photo .price { font-size: 1.3rem; margin: 0.3rem 0.6rem 0.4rem; }
+  .slots--food .sticker--photo .price { font-size: 1.35rem; margin: 0.3rem 0.6rem 0.4rem; }
 }
 
 /* Make it yours: what to run, the places in Tuzla, and the filters over them */
@@ -678,8 +678,8 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .finder[hidden] { display: none; }
 .finder__field { display: flex; flex-direction: column; gap: 0.3rem; margin: 0; }
 .finder__field--wide, .finder__count { grid-column: 1 / -1; }
-.finder label { font-weight: 700; font-size: 0.92rem; color: var(--album); }
-.finder input[type="search"], .finder select { width: 100%; min-width: 0; padding: 0.55rem 0.65rem; border: 2px solid var(--slot-line); border-radius: 0.45rem; background: var(--page); color: var(--ink); font: inherit; font-size: 1rem; }
+.finder label { font-weight: 700; font-size: 0.9rem; color: var(--album); }
+.finder input[type="search"], .finder select { width: 100%; min-width: 0; padding: 0.55rem 0.65rem; border: 2px solid var(--slot-line); border-radius: 0.45rem; background: var(--page); color: var(--ink); font: inherit; font-size: 1.05rem; }
 .finder input[type="search"]:focus-visible, .finder select:focus-visible, .finder input[type="checkbox"]:focus-visible { outline: 3px solid var(--album); outline-offset: 2px; }
 .finder__field--check { flex-direction: row; align-items: center; gap: 0.55rem; align-self: center; }
 .finder__field--check input { flex: none; width: 1.25rem; height: 1.25rem; margin: 0; accent-color: var(--album); }
@@ -692,16 +692,16 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .venue__empty { align-content: center; gap: 0.2rem; }
 .venue__empty .goat-sit { width: 34%; }
 .venue__empty small { font-size: 0.8rem; color: var(--ink-soft); }
-.venue__body { padding: 0 0.5rem 0.5rem; font-size: 0.92rem; line-height: 1.45; }
+.venue__body { padding: 0 0.5rem 0.5rem; font-size: 0.9rem; line-height: 1.45; }
 .venue__body p { margin: 0 0 0.45rem; }
 .venue__english { display: block; margin-bottom: 0.15rem; font-weight: 700; color: var(--album); }
-.venue__where, .venue__size, .venue__suits { color: var(--ink-soft); font-size: 0.86rem; }
+.venue__where, .venue__size, .venue__suits { color: var(--ink-soft); font-size: 0.85rem; }
 .venue__tags { margin-bottom: 0.55rem; }
 .venue__tags .tag { margin: 0 0.25rem 0.3rem 0; background: var(--page-print); color: var(--ink); }
 .venue__tags .tag--near { background: var(--yellow); color: var(--album-night); }
 .venue__tags .tag--first { background: var(--album-night); color: var(--page); }
-.venue__first { padding: 0.5rem 0.65rem; border-radius: 0.35rem; background: var(--page-print); font-size: 0.86rem; }
-.venue__links { font-size: 0.86rem; color: var(--ink-soft); }
+.venue__first { padding: 0.5rem 0.65rem; border-radius: 0.35rem; background: var(--page-print); font-size: 0.85rem; }
+.venue__links { font-size: 0.85rem; color: var(--ink-soft); }
 .venue__links a { display: inline-block; margin-right: 0.65rem; color: var(--album); font-weight: 700; overflow-wrap: anywhere; }
 @media (max-width: 61.99rem) { .slots--what { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 47.99rem) {
@@ -847,7 +847,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 /* A tap on the goat is a pet, not a selection: no highlight, no picture menu, no double-tap zoom. */
 .goatchi__stage { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
 .goatchi__goat { touch-action: manipulation; -webkit-user-drag: none; }
-.goatchi__stage .goat-heart { top: 2.6rem; font-size: 2rem; }
+.goatchi__stage .goat-heart { top: 2.6rem; font-size: 2.2rem; }
 .goatchi__goat { display: block; width: 100%; max-width: 16rem; height: auto; margin: 0 auto; transform-origin: 50% 100%; filter: drop-shadow(0 0.35rem 0.4rem rgb(0 0 0 / 0.2)); transition: filter 400ms; }
 .goatchi__say { position: absolute; top: 0; left: 50%; translate: -50% 0; width: max-content; max-width: 14rem; padding: 0.25rem 0.75rem 0.3rem; border-radius: 1rem 1rem 1rem 0.2rem; background: var(--yellow); color: var(--album-night); font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.15rem; line-height: 1.1; box-shadow: 0 0.15rem 0.3rem -0.1rem rgb(0 0 0 / 0.35); }
 .goatchi__say:empty { display: none; }
@@ -855,8 +855,8 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goatchi__mode label { display: inline-flex; gap: 0.6rem; align-items: flex-start; font-weight: 700; cursor: pointer; }
 .goatchi__mode input { width: 1.2rem; height: 1.2rem; margin-top: 0.2rem; accent-color: var(--album); }
 .goatchi__hike { display: block; width: 100%; max-width: 13rem; height: auto; margin: 0.5rem 0 0.8rem; }
-.goatchi__gone-line { font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.4rem; }
-.goatchi__name { display: block; margin-top: 0.6rem; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.3rem; }
+.goatchi__gone-line { font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.5rem; }
+.goatchi__name { display: block; margin-top: 0.6rem; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.35rem; }
 .is-sulking .goatchi__goat { filter: saturate(0.55) drop-shadow(0 0.35rem 0.4rem rgb(0 0 0 / 0.2)); }
 .goatchi__needs { list-style: none; margin: 0 0 0.8rem; padding: 0; display: grid; gap: 0.55rem; max-width: 24rem; }
 .goatchi__needs li { display: grid; grid-template-columns: 4.5rem 1fr 3rem; align-items: center; gap: 0.8rem; font-weight: 700; }
@@ -867,7 +867,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .goatchi__bar.is-low::before { min-width: 0.9rem; background: var(--red); }
 .goatchi__acts { display: flex; flex-wrap: wrap; gap: 1rem 1.2rem; margin: 0 0 1.4rem; }
 button.button { border: 0; cursor: pointer; }
-.goatchi__trip { font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.3rem; margin: 0 0 0.6rem; }
+.goatchi__trip { font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.35rem; margin: 0 0 0.6rem; }
 .goatchi__cheers-intro { margin: 0 0 0.3rem; }
 .goatchi__cheers { margin: 0 0 1.2rem; padding-left: 1.2rem; }
 .goatchi__cheers .is-done { text-decoration-style: dotted; }
@@ -897,12 +897,12 @@ button.button { border: 0; cursor: pointer; }
 .goatchi__card figure { margin: 0; padding: 0.25rem 0.25rem 0.35rem; border-radius: 0.3rem; background: #fff; box-shadow: 0 0.15rem 0.35rem -0.1rem rgb(0 0 0 / 0.3); transform: rotate(-2deg); }
 .goatchi__card:nth-child(2) figure { transform: rotate(1.5deg); }
 .goatchi__card img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 0.2rem; }
-.goatchi__card figcaption { margin-top: 0.25rem; color: var(--ink); font-size: 0.78rem; line-height: 1.15; }
-.goatchi__card small { display: block; color: var(--ink-soft); font-size: 0.66rem; font-weight: 400; }
+.goatchi__card figcaption { margin-top: 0.25rem; color: var(--ink); font-size: 0.8rem; line-height: 1.15; }
+.goatchi__card small { display: block; color: var(--ink-soft); font-size: 0.75rem; font-weight: 400; }
 @media (max-width: 47.99rem) {
   .goatchi-kept .page-head__photo, .goatchi-kept .page-head .lede { display: none; }
   .goatchi__acts { flex-wrap: nowrap; gap: 0.7rem; }
-  .goatchi__acts .button { flex: 1 1 0; padding-inline: 0.3em; font-size: 1.1rem; text-align: center; }
+  .goatchi__acts .button { flex: 1 1 0; padding-inline: 0.3em; font-size: 1.15rem; text-align: center; }
 }
 /* Goatchi on the home page, near the end of the album (ADR goatchi-full-game, amended 2026-10-31). */
 .goatchi-promo__goats { display: grid; grid-template-columns: repeat(4, auto); justify-content: center; align-items: end; gap: 0.8rem clamp(0.5rem, 3vw, 2.5rem); margin: 0.4rem 0 1.2rem; }
@@ -927,7 +927,7 @@ button.button { border: 0; cursor: pointer; }
   .album-page[id] { scroll-margin-top: 4rem; }
   .fold { position: relative; }
   .fold__toggle:not(:checked) ~ .places > .place:nth-child(n+6) { display: none; }
-  .fold__more { display: inline-block; margin: 0.2rem 0 1rem; padding: 0.55em 1em; border-radius: 0.45rem; border: 2px solid var(--album); color: var(--album); font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 1rem; cursor: pointer; }
+  .fold__more { display: inline-block; margin: 0.2rem 0 1rem; padding: 0.55em 1em; border-radius: 0.45rem; border: 2px solid var(--album); color: var(--album); font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 1.05rem; cursor: pointer; }
   .fold__toggle:checked ~ .fold__more .fold__show, .fold__toggle:not(:checked) ~ .fold__more .fold__hide { display: none; }
   .fold:has(.fold__toggle:focus-visible) .fold__more { outline: 3px solid var(--album); outline-offset: 2px; }
 }
@@ -970,9 +970,9 @@ button.button { border: 0; cursor: pointer; }
 /* The narrowest phones keep the mark's year beside Register and Menu */
 @media (max-width: 23.4rem) {
   .topbar { gap: 0.35rem; padding-inline: 0.7rem; }
-  .topbar__home { font-size: 1.02rem; gap: 0.35rem; }
+  .topbar__home { font-size: 1.05rem; gap: 0.35rem; }
   .topbar__home .topbar__coin { width: 1.75rem; height: 1.75rem; }
-  .topbar__phone { gap: 0.35rem; font-size: 0.86rem; letter-spacing: 0.01em; }
+  .topbar__phone { gap: 0.35rem; font-size: 0.85rem; letter-spacing: 0.01em; }
   .topbar__menu summary, .topbar__register { padding: 0 0.55rem; }
 }
 /* Between a phone and a wide screen the links take a row of their own under the mark, Register at its end */
@@ -1011,13 +1011,13 @@ button.button { border: 0; cursor: pointer; }
 .ticket__facts { margin: 0; }
 .ticket__when, .ticket__where { display: block; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; line-height: 1.02; }
 .ticket__when { font-size: clamp(1.6rem, 1.2rem + 1.3vw, 2.3rem); color: var(--page); }
-.ticket__where { margin-top: 0.25rem; font-size: 1.25rem; color: var(--yellow); }
-.ticket__what { margin: 0.7rem 0 0; font-size: 0.98rem; line-height: 1.4; color: var(--album-soft); max-width: 44ch; }
+.ticket__where { margin-top: 0.25rem; font-size: 1.2rem; color: var(--yellow); }
+.ticket__what { margin: 0.7rem 0 0; font-size: 0.95rem; line-height: 1.4; color: var(--album-soft); max-width: 44ch; }
 .ticket__stub { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 1.1rem; padding: 1.4rem 1.3rem 1.4rem 1.6rem; border-left: 2px dashed rgb(255 255 255 / 0.75); border-radius: 0 0.35rem 0.35rem 0; }
 .ticket__stub::before, .ticket__stub::after { content: ""; position: absolute; left: calc(-0.75rem - 1px); width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--page); }
 .ticket__stub::before { top: calc(-0.42rem - 0.75rem); }
 .ticket__stub::after { bottom: calc(-0.42rem - 0.75rem); }
-.ticket__note { margin: 0; font-size: 0.92rem; line-height: 1.4; color: var(--album-soft); }
+.ticket__note { margin: 0; font-size: 0.9rem; line-height: 1.4; color: var(--album-soft); }
 .ticket .button { font-size: 1.2rem; }
 @media (max-width: 47.99rem) {
   .ticket { max-width: 26rem; }
@@ -1045,7 +1045,7 @@ button.button { border: 0; cursor: pointer; }
 .farewell-row { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem clamp(1.5rem, 4vw, 3.5rem); }
 .farewell { margin: 0; }
 .farewell > span { display: block; }
-.farewell__free { font-family: var(--display); font-weight: 700; font-stretch: 88%; font-size: 1.25rem; line-height: 1.2; color: var(--ink-soft); }
+.farewell__free { font-family: var(--display); font-weight: 700; font-stretch: 88%; font-size: 1.2rem; line-height: 1.2; color: var(--ink-soft); }
 .farewell__when { margin-top: 0.35rem; max-width: 21ch; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: clamp(1.6rem, 1.15rem + 1.9vw, 2.75rem); line-height: 0.95; letter-spacing: 0.005em; color: var(--album); text-wrap: balance; }
 .farewell__where { margin-top: 0.5rem; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: clamp(1.1rem, 0.95rem + 0.6vw, 1.4rem); line-height: 1; color: var(--ink); }
 .farewell-row .cta { position: relative; flex: none; margin: 0; }
@@ -1066,9 +1066,9 @@ button.button { border: 0; cursor: pointer; }
 .statue .goat-one__stage.is-scene { right: -2rem; bottom: -0.5rem; width: 3.6rem; }
 
 /* The venue's address under its name, on the opening page's photo */
-.caption__where { display: block; margin-top: 0.2rem; font-family: var(--text); font-weight: 400; font-stretch: normal; font-size: 0.82rem; line-height: 1.3; text-transform: none; letter-spacing: 0; color: var(--album-soft); }
+.caption__where { display: block; margin-top: 0.2rem; font-family: var(--text); font-weight: 400; font-stretch: normal; font-size: 0.8rem; line-height: 1.3; text-transform: none; letter-spacing: 0; color: var(--album-soft); }
 /* The ticket's calendar link, under its button */
-.ticket .ticket__cal { display: inline-flex; align-items: center; min-height: 2.75rem; margin-block: -0.7rem; color: var(--page); font-family: var(--display); font-weight: 750; font-stretch: 85%; font-size: 1.1rem; text-decoration-color: var(--yellow); text-decoration-thickness: 2px; }
+.ticket .ticket__cal { display: inline-flex; align-items: center; min-height: 2.75rem; margin-block: -0.7rem; color: var(--page); font-family: var(--display); font-weight: 750; font-stretch: 85%; font-size: 1.15rem; text-decoration-color: var(--yellow); text-decoration-thickness: 2px; }
 .ticket .ticket__cal:focus-visible { outline-color: var(--yellow); }
 @media (max-width: 47.99rem) { .ticket .ticket__cal { justify-content: center; } }
 
@@ -1151,7 +1151,7 @@ button.button { border: 0; cursor: pointer; }
 
 /* The program: a slot's open rooms take one line, beside its cards on a wide screen and as a printed line on a phone */
 @media (min-width: 48rem) { .timeslot__open { align-self: center; flex: 0 1 auto; } }
-@media (max-width: 47.99rem) { .timeslot__open { margin: -0.5rem 0 0.7rem; padding: 0; border: 0; border-radius: 0; background: none; font-size: 0.92rem; color: var(--ink-soft); } }
+@media (max-width: 47.99rem) { .timeslot__open { margin: -0.5rem 0 0.7rem; padding: 0; border: 0; border-radius: 0; background: none; font-size: 0.9rem; color: var(--ink-soft); } }
 
 /* The home page's supporters, stuck in as numbered stickers like the supporters page's */
 .supporter-chip { position: relative; background: var(--page); box-shadow: var(--lift); transform: rotate(var(--tilt, 0deg)); }
@@ -1224,7 +1224,7 @@ button.button { border: 0; cursor: pointer; }
   .sticker--venue .venue__photo img, .sticker--venue .venue__photo .venue__empty { grid-column: 1; grid-row: 1; width: 5rem; aspect-ratio: 1; border-radius: 0.35rem; }
   .sticker--venue .venue__photo .venue__empty small { display: none; }
   .sticker--venue .venue__photo figcaption { grid-column: 2; grid-row: 1; align-self: center; border-radius: 0.35rem; font-size: 1.05rem; padding: 0.45rem 0.6rem; }
-  .sticker--venue .venue__body { grid-column: 1 / -1; padding: 0 0.15rem; font-size: 0.86rem; line-height: 1.4; }
+  .sticker--venue .venue__body { grid-column: 1 / -1; padding: 0 0.15rem; font-size: 0.85rem; line-height: 1.4; }
   .sticker--venue .venue__body p { margin-bottom: 0.3rem; }
   .sticker--venue .venue__tags { margin-bottom: 0.3rem; }
   .sticker--venue .venue__first { padding: 0.4rem 0.55rem; }
@@ -1481,7 +1481,7 @@ html { scrollbar-color: var(--album) var(--page-print); }
 .theme label { display: inline-flex; align-items: center; min-height: 2rem; padding: 0.15rem 0.75rem; border-radius: 1rem; box-shadow: inset 0 0 0 2px var(--slot-line); font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.04em; color: var(--album); cursor: pointer; }
 .theme input:checked + label { background: var(--album); color: var(--page); box-shadow: none; }
 .theme input:focus-visible + label { outline: 3px solid var(--album); outline-offset: 2px; }
-.topbar__panel .theme { justify-content: center; margin-top: 1.1rem; font-size: 1rem; }
+.topbar__panel .theme { justify-content: center; margin-top: 1.1rem; font-size: 1.05rem; }
 @media (max-width: 47.99rem) { .theme label { min-height: 2.75rem; padding-inline: 0.9rem; } }
 
 /* Hoof marks on a phone, by design: a wider margin and a narrower page inset keep the text's width, and the marks
@@ -1504,7 +1504,7 @@ html { scrollbar-color: var(--album) var(--page-print); }
 }
 a.button, button.button, .copy a.button, .prose a.button, .album-page a.button { color: var(--on-yellow); }
 .brand-files .brand-files__dark figcaption, .brand-files .brand-files__dark a { color: var(--tile-white); }
-@media (max-width: 23.4rem) { .topbar { padding-inline: 0.5rem; gap: 0.3rem; } .topbar__home { font-size: 0.92rem; gap: 0.28rem; } .topbar__home .topbar__coin { width: 1.55rem; height: 1.55rem; } .topbar__menu summary, .topbar__register { padding: 0 0.45rem; } .topbar__phone { gap: 0.3rem; } }
+@media (max-width: 23.4rem) { .topbar { padding-inline: 0.5rem; gap: 0.3rem; } .topbar__home { font-size: 0.9rem; gap: 0.28rem; } .topbar__home .topbar__coin { width: 1.55rem; height: 1.55rem; } .topbar__menu summary, .topbar__register { padding: 0 0.45rem; } .topbar__phone { gap: 0.3rem; } }
 /* The footer's theme control shares the Follow row on wide screens; on a phone the control is in the menu, which is
    always within reach, so no page gets taller */
 @media (min-width: 48rem) { footer .theme { float: right; margin: -2.05rem 0 0; } .back-cover__inner { position: relative; } .back-cover__inner > .theme { float: none; position: absolute; right: 0; bottom: 2.3rem; margin: 0; } }
@@ -1621,7 +1621,7 @@ a.sticker--day:active, a.sticker--example:active, .sticker--speaker:has(.speaker
 :is(.place__links, .venue__links, .speaker-page__links, .fold-list) a::after { display: none !important; }
 .supporter-chip::after { right: 0.55rem; bottom: 0.5rem; width: 0.9rem; height: 0.9rem; }
 .supporter-chip small { padding-right: 1.1rem; }
-@media (min-width: 62rem) { .spread .cover-links { gap: 0.4rem 1.05rem; } .cover-actions .go { font-size: 1.12rem; } }
+@media (min-width: 62rem) { .spread .cover-links { gap: 0.4rem 1.05rem; } .cover-actions .go { font-size: 1.15rem; } }
 @media (max-width: 47.99rem) { .supporter-chip small { padding-right: 0; } .supporter-chip::after { top: 0.6rem; bottom: auto; } :root { --space: 1.45rem; } }
 /* The cover, tightened: the mark and name, the date and place, the promise, who it is for in a quieter line, the
    button, the links */
@@ -1641,7 +1641,7 @@ a.go:is(:hover, :active, :focus-visible), a.go.go--ink:is(:hover, :active, :focu
 .button:active { box-shadow: 0 0.06rem 0 0 var(--lip); }
 /* 5, 6: tags. A dish's description is a plain line; a pill is for a word or two; no tag is filled yellow */
 .tag { background: var(--tag-bg); }
-.slots--food .tag:not(.tag--veg) { display: block; margin: 0.4rem 0.6rem 0.1rem; padding: 0; border-radius: 0; background: none; font-weight: 400; font-size: 0.86rem; line-height: 1.35; color: var(--ink-soft); }
+.slots--food .tag:not(.tag--veg) { display: block; margin: 0.4rem 0.6rem 0.1rem; padding: 0; border-radius: 0; background: none; font-weight: 400; font-size: 0.85rem; line-height: 1.35; color: var(--ink-soft); }
 :is(.tags, .venue__tags) .tag { font-size: 0.8rem; }
 .venue__tags .tag { background: var(--tag-bg); color: var(--ink); }
 .venue__tags .tag--near, .tag--near { background: transparent; color: var(--link); box-shadow: inset 0 0 0 2px var(--line); }
@@ -1674,7 +1674,7 @@ a.go:is(:hover, :active, :focus-visible), a.go.go--ink:is(:hover, :active, :focu
 /* 23: a sub-head stands clear of the numbers under it */
 .list-title + .slots, .list-title + ul.slots { margin-top: 0.9rem; }
 /* 27: a session not announced yet is a quiet line, not a box */
-.speaker__body .speaker__first--tba { min-height: 0; margin-top: auto; padding: 0.2rem 0 0; border: 0; background: none; color: var(--ink-soft); font-family: var(--text); font-weight: 400; font-style: italic; text-transform: none; font-size: 0.88rem; line-height: 1.35; }
+.speaker__body .speaker__first--tba { min-height: 0; margin-top: auto; padding: 0.2rem 0 0; border: 0; background: none; color: var(--ink-soft); font-family: var(--text); font-weight: 400; font-style: italic; text-transform: none; font-size: 0.9rem; line-height: 1.35; }
 .talks-soon { border: 0; background: none; min-height: 0; padding: 0; color: var(--ink-soft); font-style: italic; }
 /* 29: the code of conduct's photo is a photo sticker */
 .print img { box-sizing: border-box; padding: 0.42rem; background: var(--sticker); border-radius: 0.6rem; box-shadow: var(--lift), var(--photo-lit); transform: rotate(1deg); }
@@ -1726,3 +1726,73 @@ a.supporter__logo, .sticker--supporter strong a { text-decoration: none; }
 @media (max-width: 47.99rem) { .daynav--page { margin-top: 0.1rem; } .goat-one .slots:has(.peek--face), .goat-one .album-page .slots:has(.peek--face) { padding-top: 3.9rem; } }
 .page-head__photo--logo { box-shadow: 0 0 0 0.22rem var(--tile-white), 0 0 0 calc(0.22rem + 1px) rgb(0 0 0 / 0.12), var(--lift); }
 @media (max-width: 47.99rem) { .daynav--page { margin-top: 0; padding-block: 0.05rem; } }
+
+/* 2026-11-22, round nine (sources/conversations/2026-11-22--org--continue-round-nine.md) */
+:root { --rule-w: 0.45rem; --tag-edge: 0 0 0 0 transparent; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --rule-w: 0.22rem; --tag-edge: inset 0 0 0 1px rgb(169 196 255 / 0.62); } }
+:root[data-theme="dark"] { --rule-w: 0.22rem; --tag-edge: inset 0 0 0 1px rgb(169 196 255 / 0.62); }
+/* 1: the jump links never sit on a heading. Wide: the pill keeps to the right end of the page, over the empty end
+   of a band. Phone: docked under the top bar as a bar of its own. */
+@media (min-width: 48rem) {
+  .daynav, .daynav.daynav--page { margin-left: auto; margin-right: max(var(--pad), calc((100% - 82rem) / 2)); background: var(--page); }
+  .day, .album-page[id] { scroll-margin-top: 4.6rem; }
+}
+@media (max-width: 47.99rem) {
+  .daynav, .daynav.daynav--page { position: sticky; top: 3.55rem; z-index: 6; width: auto; margin: 0 0 0.9rem; padding: 0.1rem 0.5rem; border-radius: 0; outline: 0; background: var(--page); box-shadow: 0 2px 0 var(--line); justify-content: center; flex-wrap: wrap; overflow: visible; gap: 0; }
+  .daynav a { min-height: 2.75rem; padding-inline: 0.32rem; white-space: nowrap; font-size: 0.78rem; letter-spacing: 0; }
+  .daynav.daynav--page { position: static; }
+  .day { scroll-margin-top: 7rem; }
+  .album-page[id] { scroll-margin-top: 7rem; }
+}
+/* 2: the room over the speaker cards comes from the margin above it, so the goat clears the intro line */
+@media (min-width: 48rem) { .goat-one .copy--wide:has(+ .slots:has(.peek--face)) { margin-bottom: 0; } .goat-one .slots:has(.peek--face), .goat-one .album-page .slots:has(.peek--face) { padding-top: 4.9rem; } }
+/* 3: a tag's shape holds against its sticker at night by a thin ring */
+.tag:not(.tag--near, .tag--first), .slots--food .tag--veg { box-shadow: var(--tag-edge); }
+.slots--food .tag:not(.tag--veg) { box-shadow: none; }
+/* 4, review 22: sticker grids centre their last row, and a caption keeps room for two lines */
+@media (min-width: 48rem) { .sticker-grid { display: flex; flex-wrap: wrap; justify-content: center; } .sticker-grid > li { width: 10.5rem; } .sticker-dl a { height: 100%; align-content: start; } }
+/* review 28: the peeking goat is clipped a hair at its sides, so no neighbour from its sheet shows */
+.peek--art, .goat-one__stage .goat-body { clip-path: inset(0 1.2%); }
+/* review 32: on a phone the supporter's arrow sits at the foot, beside its line */
+@media (max-width: 47.99rem) { .supporter-chip::after { top: auto; bottom: 0.55rem; } .supporter-chip small { padding-right: 1.3rem; } }
+/* review 33: phone tap targets grow by their hit area */
+.topbar__home { min-height: 2.75rem; }
+.follow__link, a.go { position: relative; }
+@media (max-width: 47.99rem) { .follow__link::before { content: ""; position: absolute; inset: -0.7rem -0.35rem; } a.go::before { content: ""; position: absolute; inset: -0.15rem 0; } }
+/* review 36: a mark in a page head is capped, so heads are of a height; centred on a phone */
+@media (min-width: 62rem) { .page-head__photo--mark { max-height: 15rem; width: auto; justify-self: center; } }
+@media (max-width: 47.99rem) { .page-head__photo--mark:not(.page-head__photo--goat) { justify-self: center; } }
+/* review 37: the supporters page's prose keeps the album's rhythm */
+.album-page .copy--wide > p { margin-bottom: 1em; }
+.album-page .copy--wide > ul, .album-page .copy > ul:not([class]) { padding-left: 1.3rem; margin: 0 0 1em; }
+.album-page .copy--wide > ul > li, .album-page .copy > ul:not([class]) > li { margin-bottom: 0.45rem; }
+/* review 19: the cover's three links share one row on a phone */
+/* review 31: the disclosure's marker takes the link blue */
+.fold-list summary { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.22em; color: var(--link); }
+.fold-list summary::marker { color: var(--link); }
+/* review 35: a price stays on one line */
+@media (min-width: 48rem) { .slots--food .sticker--photo .price { white-space: nowrap; font-size: clamp(0.9rem, 1.02vw, 1.15rem); } }
+/* 5: at night the yellow marks action and accent; the rules are half as thick, the heights unchanged */
+.band { border-bottom-width: var(--rule-w); padding-bottom: calc(0.8rem + 0.45rem - var(--rule-w)); }
+.page-head { border-bottom-width: var(--rule-w); padding-bottom: calc(clamp(1.5rem, 4vw, 3rem) - var(--rule-w)); }
+.back-cover { border-top-width: var(--rule-w); padding-top: calc(2.2rem - var(--rule-w)); }
+.cover-head { border-bottom-width: min(var(--rule-w), 0.35rem); }
+@media (min-width: 62rem) { .cover-head { border-bottom-width: var(--rule-w); padding-bottom: calc(1.3rem + 0.45rem - var(--rule-w)); } }
+footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link); }
+/* 6: headings and ledes balance their lines; figures line up */
+.band, .sign, .page-title, .list-title, .cover-title, .shiny__title, .sticker--fact strong, .slot strong, .ticket__when, .farewell__when { text-wrap: balance; }
+.lede, .cover-lede__who, .copy p, .prose p { text-wrap: pretty; }
+.day__hours, .price, .pricelist b, .breakrow__time, .timeslot__time, .facts dd, .talk__when { font-variant-numeric: tabular-nums; }
+/* 8: forced colours: what was only a background becomes a border or system colour */
+@media (forced-colors: active) {
+  .slot, .tag, .daynav, .topbar, .back-cover, .map, .supporter-chip, .place, .breakrow, .finder, .past-conf { border: 1px solid CanvasText; }
+  .band, .page-head, .back-cover { border-color: CanvasText; }
+  .num:not(.num--printed), .topbar__year, .cover-title span { border: 1px solid CanvasText; forced-color-adjust: none; background: Canvas; color: CanvasText; }
+  .theme label { forced-color-adjust: none; background: Canvas; color: CanvasText; border: 2px solid CanvasText; box-shadow: none; }
+  .theme input:checked + label { background: Highlight; color: HighlightText; border-color: Highlight; }
+  .theme input:focus-visible + label, :focus-visible { outline: 3px solid Highlight; }
+  a.sticker--day::after, a.sticker--example::after, .speaker__link::after, .supporter-chip::after, .sticker--face .sticker__name::after, .sticker--ext::before, .sticker--supporter::after, a.go::after { background: LinkText; forced-color-adjust: none; }
+}
+@media (min-width: 48rem) { :root { --space: clamp(2.4rem, 1.65rem + 2.8vw, 4.7rem); } }
+@media (max-width: 47.99rem) { :root { --space: 1.38rem; } .daynav, .daynav.daynav--page { margin-bottom: 0; } }
+@media (max-width: 47.99rem) { .daynav, .daynav.daynav--page { padding-block: 0; } .timetable { gap: 0.65rem; } }
