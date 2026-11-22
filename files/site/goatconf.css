@@ -56,7 +56,11 @@
   --step-0: clamp(1.0625rem, 0.98rem + 0.3vw, 1.1875rem);
   --step-1: clamp(1.3rem, 1.1rem + 0.8vw, 1.75rem);
   --step-2: clamp(2.1rem, 1.4rem + 3vw, 3.75rem);
-  --step-3: clamp(3.6rem, 2rem + 7vw, 6rem);
+  --step-3: clamp(3.4rem, 0.9rem + 5.2vw, 5.7rem);
+  --step-sub: clamp(1.15rem, 1rem + 0.6vw, 1.45rem);
+  --step-title: clamp(1.45rem, 1.15rem + 1.1vw, 2rem);
+  --step-fact: clamp(1.7rem, 1.2rem + 1.5vw, 2.5rem);
+  --step-head: clamp(1.75rem, 1.25rem + 2.2vw, 3rem);
   --pad: clamp(1.1rem, 4vw, 3.5rem);
   --space: clamp(2.5rem, 1.8rem + 3vw, 5rem);
   --lift: 0 0.2rem 0.35rem -0.15rem rgb(0 0 0 / 0.3), 0 0 0 1px rgb(0 0 0 / 0.08);
@@ -109,11 +113,11 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .num--printed { background: transparent; color: var(--album); box-shadow: inset 0 0 0 2px var(--slot-line); position: static; margin-bottom: 0.6rem; }
 
 .sticker { position: relative; margin: 0; padding: 0.42rem; border-radius: 0.6rem; background: var(--page); color: var(--ink); box-shadow: var(--lift); transform: rotate(var(--tilt, 0deg)); }
-.sticker--photo.sticker--place figcaption { font-size: clamp(2.2rem, 1.5rem + 2.5vw, 3.4rem); line-height: 0.9; color: var(--yellow); padding-block: 0.6rem 0.55rem; }
+.sticker--photo.sticker--place figcaption { font-size: var(--step-head); line-height: 0.9; color: var(--yellow); padding-block: 0.6rem 0.55rem; }
 .sticker--photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 0.35rem 0.35rem 0 0; background: var(--page-print); }
 .sticker--photo figcaption { margin: 0; padding: 0.45rem 0.6rem 0.5rem; border-radius: 0 0 0.35rem 0.35rem; background: var(--album); color: var(--page); font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; font-size: 1.15rem; line-height: 1.05; }
 .sticker--fact { display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; padding: 1.2rem 1.1rem; background: var(--album); color: var(--page); outline: 0.42rem solid var(--page); outline-offset: -0.42rem; border-radius: 0.6rem; }
-.sticker--fact strong { font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; font-size: clamp(2.2rem, 1.5rem + 2.5vw, 3.4rem); line-height: 0.9; color: var(--yellow); font-variant-numeric: tabular-nums; }
+.sticker--fact strong { font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; font-size: var(--step-head); line-height: 0.9; color: var(--yellow); font-variant-numeric: tabular-nums; }
 .sticker--fact small { font-size: 0.95rem; line-height: 1.35; color: var(--album-soft); }
 .tag { display: inline-block; margin: 0.45rem 0.2rem 0.1rem; padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 700; color: var(--ink); background: var(--page-print); }
 .tag--veg { background: #d9f2df; color: #0f4d24; }
@@ -128,7 +132,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .spread { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); margin-block: clamp(1.25rem, 3vw, 2.5rem) var(--space); border-radius: 0.8rem; overflow: visible; box-shadow: 0 0.8rem 1.4rem -1rem rgb(0 0 0 / 0.35); }
 .spread__cover { position: relative; padding: clamp(1.5rem, 3.5vw, 3.25rem); background: var(--album-deep); border-radius: 0.8rem 0 0 0.8rem; box-shadow: inset -1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.55); }
 .cover-head { display: flex; align-items: center; gap: clamp(0.9rem, 2vw, 1.4rem); }
-.cover-title { font-size: clamp(2.8rem, 0.8rem + 4.4vw, 5rem); line-height: 0.86; font-stretch: 75%; }
+.cover-title { font-size: var(--step-3); line-height: 0.86; font-stretch: 75%; }
 .cover-title span { display: block; color: var(--yellow); }
 .cover-lede { margin-top: 1.1rem; font-family: var(--display); font-weight: 700; font-stretch: 88%; font-size: var(--step-1); line-height: 1.2; }
 .cover-actions { margin-top: 1.6rem; display: grid; gap: 1rem; }
@@ -136,7 +140,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .go { font-family: var(--display); font-weight: 750; font-stretch: 85%; font-size: 1.2rem; text-decoration-thickness: 3px; }
 .go--ink { color: var(--album); }
 .spread__page { padding: clamp(1.25rem, 2.5vw, 2rem); background: var(--page); color: var(--ink); border-radius: 0 0.8rem 0.8rem 0; box-shadow: inset 1.4rem 0 1.6rem -1.2rem rgb(0 0 0 / 0.25); }
-.page-title { color: var(--album); font-size: clamp(1.4rem, 1.1rem + 0.9vw, 1.9rem); margin-bottom: 1.2rem; }
+.page-title { color: var(--album); font-size: var(--step-title); margin-bottom: 1.2rem; }
 .slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr)); gap: 1.6rem 1.3rem; margin: 0; padding: 0; }
 /* What is decided: two big photos, the facts beside them, read 1 to 6 */
 .slots--hero { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: "free tuzla tuzla" "june tuzla tuzla" "ipi ipi stack" "ipi ipi slot"; gap: 1.2rem 1rem; }
@@ -147,12 +151,12 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .hero-stack { grid-area: stack; }
 .hero-slot { grid-area: slot; }
 .slots--hero .sticker--fact { padding: 0.95rem 0.85rem; }
-.slots--hero .sticker--fact strong { font-size: clamp(1.9rem, 1.2rem + 1.5vw, 2.6rem); }
-.slots--hero .sticker--fact strong.sticker__long { font-size: clamp(1.7rem, 1.1rem + 1.2vw, 2.3rem); }
+.slots--hero .sticker--fact strong { font-size: var(--step-fact); }
+.slots--hero .sticker--fact strong.sticker__long { font-size: var(--step-title); }
 .slots--hero .sticker--fact small { font-size: 0.85rem; }
 .slots--hero .sticker--photo { display: flex; flex-direction: column; }
 .slots--hero .sticker--photo img { flex: 1 1 0; height: 100%; min-height: 15rem; aspect-ratio: auto; }
-.slots--hero .sticker--place figcaption { font-size: clamp(1.8rem, 1.3rem + 1.4vw, 2.6rem); }
+.slots--hero .sticker--place figcaption { font-size: var(--step-fact); }
 .slots--hero .slot { min-height: 0; padding: 0.9rem 0.85rem 2.8rem; justify-content: flex-start; }
 .slots--hero .slot strong { font-size: 1.15rem; }
 .slots--hero .slot small { font-size: 0.85rem; }
@@ -234,7 +238,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .page-head .lede { grid-column: 1; grid-row: 3; align-self: start; margin: 0.9rem 0 0; color: var(--album-soft); font-size: var(--step-1); line-height: 1.3; font-family: var(--display); font-stretch: 90%; font-weight: 650; }
 .page-head__photo { grid-column: 2; grid-row: 1 / -1; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; padding: 0.42rem; background: var(--page); border-radius: 0.6rem; transform: rotate(2deg); box-shadow: var(--lift); }
 .prose { width: min(100% - 2 * var(--pad), 58rem); margin: clamp(1.5rem, 3vw, 2.5rem) auto var(--space); padding: clamp(1.5rem, 4vw, 3.25rem); background: var(--page); color: var(--ink); border-radius: 0.8rem; box-shadow: 0 0.6rem 1rem -0.8rem rgb(0 0 0 / 0.3); }
-.prose h2 { color: var(--album); font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem); margin: 2.4rem 0 0.9rem; }
+.prose h2 { color: var(--album); font-size: var(--step-title); margin: 2.4rem 0 0.9rem; }
 .prose h2:first-child { margin-top: 0; }
 .prose a { color: var(--album); }
 .prose ul, .prose ol { padding-left: 1.3rem; }
@@ -404,7 +408,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .slots--days { grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; }
 .sticker--day { height: 100%; justify-content: flex-start; text-decoration: none; }
 .day__added { font-weight: 700; color: var(--yellow) !important; }
-.sticker--day strong { font-size: clamp(1.7rem, 1.2rem + 1.6vw, 2.5rem); }
+.sticker--day strong { font-size: var(--step-fact); }
 .day__hours { font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.35rem; line-height: 1.1; color: var(--page); font-variant-numeric: tabular-nums; }
 .slots--mini { grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; margin-bottom: 1.4rem; }
 @media (max-width: 47.99rem) { .slots--mini { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -565,7 +569,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .session__register:hover, .session__register:focus-visible { background: #ffe25a; }
 
 /* A fact sticker whose words are longer than the sticker is wide */
-.sticker--fact strong.sticker__long { font-size: clamp(1.6rem, 1rem + 1.8vw, 2.5rem); }
+.sticker--fact strong.sticker__long { font-size: var(--step-fact); }
 
 /* The cover's second line: the feeling, a step quieter than the first */
 .cover-lede strong { color: var(--yellow); }
@@ -586,13 +590,13 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 @media (max-width: 47.99rem) { .slots--photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 0.9rem; } }
 .ledger-stickers--quad { grid-template-columns: repeat(2, minmax(0, 1fr)); align-self: start; }
 .ledger-stickers--quad .sticker--fact { justify-content: flex-start; }
-.ledger-stickers--quad .sticker--fact strong { font-size: clamp(2rem, 1.5rem + 1.4vw, 2.8rem); }
+.ledger-stickers--quad .sticker--fact strong { font-size: var(--step-fact); }
 /* The talk page: what a speaker gets, as stickers beside the copy, two across. The cards come first in the
    source, so on one column they follow the intro (why) or open the section (formats); wide, the copy keeps the
    left column and the cards the right. */
 .slots--why { grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; align-self: start; }
 .slots--why > li { height: 100%; justify-content: flex-start; }
-.slots--why .sticker--fact strong { font-size: clamp(1.9rem, 1.3rem + 1.4vw, 2.6rem); }
+.slots--why .sticker--fact strong { font-size: var(--step-fact); }
 .slots--why .slot { min-height: 0; }
 .page-grid > .prices { margin-top: 0; }
 @media (min-width: 62rem) {
@@ -627,7 +631,7 @@ p:has(> a.go ~ a.go) { display: flex; flex-wrap: wrap; align-items: center; gap:
 .slots--city .sticker--photo img { aspect-ratio: 4 / 3.4; }
 .slots > .slots__wide { grid-column: 1 / -1; list-style: none; }
 .slot--wait { min-height: 12rem; padding: clamp(1.4rem, 3vw, 2.2rem) clamp(1.4rem, 4vw, 2.8rem); padding-right: clamp(6rem, 18vw, 13rem); }
-.slot--wait strong { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.8rem); }
+.slot--wait strong { font-size: var(--step-fact); }
 .slot--wait small { max-width: 44ch; font-size: 1.05rem; }
 .sticker--photo .price { display: block; margin: 0.15rem 0.6rem 0.35rem; font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 1.15rem; color: var(--album); font-variant-numeric: tabular-nums; }
 
@@ -1007,10 +1011,10 @@ button.button { border: 0; cursor: pointer; }
 .ticket__paper { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 20rem); padding: 0.42rem; border-radius: 0.6rem; background: var(--page); box-shadow: var(--lift); }
 .ticket__main, .ticket__stub { background: var(--album); color: var(--page); }
 .ticket__main { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 0.5rem clamp(1.2rem, 3vw, 2.4rem); padding: clamp(1.2rem, 2.5vw, 1.9rem) clamp(1.2rem, 2.5vw, 2rem); border-radius: 0.35rem 0 0 0.35rem; }
-.ticket__fact { font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; font-size: clamp(4rem, 2.2rem + 5.5vw, 6.5rem); line-height: 0.82; color: var(--yellow); }
+.ticket__fact { font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; font-size: var(--step-3); line-height: 0.82; color: var(--yellow); }
 .ticket__facts { margin: 0; }
 .ticket__when, .ticket__where { display: block; font-family: var(--display); font-weight: 800; font-stretch: 80%; text-transform: uppercase; line-height: 1.02; }
-.ticket__when { font-size: clamp(1.6rem, 1.2rem + 1.3vw, 2.3rem); color: var(--page); }
+.ticket__when { font-size: var(--step-title); color: var(--page); }
 .ticket__where { margin-top: 0.25rem; font-size: 1.2rem; color: var(--yellow); }
 .ticket__what { margin: 0.7rem 0 0; font-size: 0.95rem; line-height: 1.4; color: var(--album-soft); max-width: 44ch; }
 .ticket__stub { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 1.1rem; padding: 1.4rem 1.3rem 1.4rem 1.6rem; border-left: 2px dashed rgb(255 255 255 / 0.75); border-radius: 0 0.35rem 0.35rem 0; }
@@ -1046,8 +1050,8 @@ button.button { border: 0; cursor: pointer; }
 .farewell { margin: 0; }
 .farewell > span { display: block; }
 .farewell__free { font-family: var(--display); font-weight: 700; font-stretch: 88%; font-size: 1.2rem; line-height: 1.2; color: var(--ink-soft); }
-.farewell__when { margin-top: 0.35rem; max-width: 21ch; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: clamp(1.6rem, 1.15rem + 1.9vw, 2.75rem); line-height: 0.95; letter-spacing: 0.005em; color: var(--album); text-wrap: balance; }
-.farewell__where { margin-top: 0.5rem; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: clamp(1.1rem, 0.95rem + 0.6vw, 1.4rem); line-height: 1; color: var(--ink); }
+.farewell__when { margin-top: 0.35rem; max-width: 21ch; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: var(--step-fact); line-height: 0.95; letter-spacing: 0.005em; color: var(--album); text-wrap: balance; }
+.farewell__where { margin-top: 0.5rem; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: var(--step-sub); line-height: 1; color: var(--ink); }
 .farewell-row .cta { position: relative; flex: none; margin: 0; }
 #see-you .farewell-row .goat-one__stage.is-scene { right: auto; left: calc(100% + 1.4rem); bottom: -2.6rem; width: clamp(8rem, 11vw, 10rem); }
 @media (min-width: 48rem) { .farewell-row { min-height: 9.4rem; padding-right: clamp(10rem, 15vw, 13rem); } }
@@ -1060,7 +1064,7 @@ button.button { border: 0; cursor: pointer; }
 
 /* Why a goat closes on one row: the sentence, and a small photo sticker of the statue with the painted statue at its corner */
 .statue { display: flex; align-items: center; gap: clamp(1.2rem, 3vw, 2.2rem); min-height: 7rem; }
-.statue .statue__line { margin: 0; max-width: 19ch; font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem); line-height: 1.1; color: var(--page); }
+.statue .statue__line { margin: 0; max-width: 19ch; font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: var(--step-sub); line-height: 1.1; color: var(--page); }
 .statue__photo { flex: none; width: 7rem; margin-right: 2rem; }
 .statue__photo img { aspect-ratio: 1; object-position: 50% 30%; border-radius: 0.35rem; }
 .statue .goat-one__stage.is-scene { right: -2rem; bottom: -0.5rem; width: 3.6rem; }
@@ -1083,7 +1087,7 @@ button.button { border: 0; cursor: pointer; }
 .talks .talk { padding: clamp(1.4rem, 2.6vw, 2rem) clamp(1.3rem, 2.6vw, 2.1rem); border-radius: 0.6rem; background: var(--album); color: var(--page); outline: 0.42rem solid var(--page); outline-offset: -0.42rem; box-shadow: var(--lift); transform: rotate(-0.3deg); }
 .talks .talk .talk__when { color: var(--album-soft); font-size: 0.95rem; }
 .talks .talk .talk__when > span:first-child, .talks .talk .talk__when a { font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 1.05rem; letter-spacing: 0.03em; color: var(--page); text-decoration-color: var(--yellow); }
-.talks .talk strong { margin-top: 0.7rem; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem); line-height: 0.95; color: var(--yellow); text-wrap: balance; }
+.talks .talk strong { margin-top: 0.7rem; font-family: var(--display); font-weight: 800; font-stretch: 78%; text-transform: uppercase; font-size: var(--step-fact); line-height: 0.95; color: var(--yellow); text-wrap: balance; }
 .talks .talk strong a { color: inherit; text-decoration-color: var(--yellow); }
 .talks .talk .tags { margin-top: 0.8rem; }
 .talks .talk .for-line { margin-top: 0.7rem; color: var(--album-soft); }
@@ -1092,7 +1096,7 @@ button.button { border: 0; cursor: pointer; }
 
 /* The register page: what the ticket gets you in one row, then one line for students and volunteers */
 .slots--four { margin-bottom: 1.7rem; }
-@media (min-width: 62rem) { .slots--four { grid-template-columns: repeat(4, minmax(0, 1fr)); } .slots--four.slots--why .sticker--fact strong { font-size: clamp(1.9rem, 1.2rem + 1.2vw, 2.4rem); } }
+@media (min-width: 62rem) { .slots--four { grid-template-columns: repeat(4, minmax(0, 1fr)); } .slots--four.slots--why .sticker--fact strong { font-size: var(--step-title); } }
 .ticket-also { max-width: 74ch; margin-bottom: 0; }
 
 /* The footer's links in four groups: each a label over its links in one row, the groups side by side on wide
@@ -1319,7 +1323,7 @@ a.sticker--fact:focus-visible, .album-page a.sticker--fact:focus-visible { outli
 .tag--leadership { background: oklch(0.93 0.035 25); color: oklch(0.36 0.09 25); }
 .tag--veg { background: oklch(0.93 0.035 145); color: oklch(0.36 0.08 145); }
 /* The band a step smaller, so it weighs less against its page; a band with a goat keeps the goat's room */
-.band { font-size: clamp(1.75rem, 1.25rem + 2.2vw, 3rem); padding-block: 0.85rem 0.8rem; }
+.band { font-size: var(--step-head); padding-block: 0.85rem 0.8rem; }
 @media (min-width: 48rem) { .band:has(> .peek) { min-height: 5.7rem; align-content: center; } }
 
 /* Variant: less blue, minimal (branch site/less-blue-minimal, sources/conversations/2026-11-21--org--continue-iterating-round-four.md).
@@ -1393,7 +1397,7 @@ html { scrollbar-color: var(--album) var(--page-print); }
 @media (min-width: 62rem) {
   .cover-head { gap: 1.5rem; padding-bottom: 1.3rem; border-bottom-width: 0.45rem; }
   .cover-seal { width: 9.5rem; }
-  .cover-title { font-size: clamp(3.4rem, 0.9rem + 5.2vw, 5.7rem); line-height: 0.84; }
+  .cover-title { font-size: var(--step-3); line-height: 0.84; }
   .cover-when { margin-top: 1.1rem; }
 }
 /* A button is a yellow sticker with a solid lip: it lifts when pointed at and goes flat when pressed */
@@ -1625,7 +1629,7 @@ a.sticker--day:active, a.sticker--example:active, .sticker--speaker:has(.speaker
 @media (max-width: 47.99rem) { .supporter-chip small { padding-right: 0; } .supporter-chip::after { top: 0.6rem; bottom: auto; } :root { --space: 1.45rem; } }
 /* The cover, tightened: the mark and name, the date and place, the promise, who it is for in a quieter line, the
    button, the links */
-.cover-lede strong { display: block; font-size: clamp(1.45rem, 1.15rem + 1.1vw, 2rem); line-height: 1.12; text-wrap: balance; }
+.cover-lede strong { display: block; font-size: var(--step-title); line-height: 1.12; text-wrap: balance; }
 .cover-lede__who { display: block; margin-top: 0.55rem; font-family: var(--text); font-weight: 400; font-stretch: normal; font-size: var(--step-0); line-height: 1.5; color: var(--ink-soft); max-width: 36ch; }
 @media (min-width: 62rem) { .spread { min-height: 0; } .cover-actions { margin-top: 1.6rem; padding-top: 0; } }
 @media (max-width: 47.99rem) { .cover-when { margin-top: 0.55rem; font-size: 1.15rem; } .cover-lede { margin-top: 0.7rem; } .cover-lede__who { margin-top: 0.4rem; } .cover-actions { margin-top: 0.95rem; } }
@@ -1771,7 +1775,7 @@ a.supporter__logo, .sticker--supporter strong a { text-decoration: none; }
 .fold-list summary { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.22em; color: var(--link); }
 .fold-list summary::marker { color: var(--link); }
 /* review 35: a price stays on one line */
-@media (min-width: 48rem) { .slots--food .sticker--photo .price { white-space: nowrap; font-size: clamp(0.9rem, 1.02vw, 1.15rem); } }
+@media (min-width: 48rem) { .slots--food .sticker--photo .price { white-space: nowrap; font-size: 0.9rem; } }
 /* 5: at night the yellow marks action and accent; the rules are half as thick, the heights unchanged */
 .band { border-bottom-width: var(--rule-w); padding-bottom: calc(0.8rem + 0.45rem - var(--rule-w)); }
 .page-head { border-bottom-width: var(--rule-w); padding-bottom: calc(clamp(1.5rem, 4vw, 3rem) - var(--rule-w)); }
@@ -1798,3 +1802,178 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 @media (max-width: 47.99rem) { :root { --space: 1.38rem; } .daynav, .daynav.daynav--page { margin-bottom: 0; } }
 @media (max-width: 47.99rem) { .daynav, .daynav.daynav--page { padding-block: 0; } .timetable { gap: 0.65rem; } }
 @media (max-width: 47.99rem) { .footer { padding-bottom: 2rem; } }
+
+/* Round ten, 2026-11-22 (sources/conversations/2026-11-22--org--fix-all.md).
+   One spacing scale. Six steps and the section step; every gap between a heading and its text, between two
+   pieces of text, and between two sections is one of them (DESIGN.md, "Spacing scale"). */
+:root { --gap-1: 0.25rem; --gap-2: 0.5rem; --gap-3: 0.75rem; --gap-4: 1rem; --gap-5: 1.5rem; --gap-6: 2.5rem; }
+@media (max-width: 47.99rem) { :root { --space: var(--gap-5); } }
+/* lines of one item */
+.venue__body p, .sticker--venue .venue__body p { margin-bottom: var(--gap-1); }
+.place__links { margin-top: var(--gap-1); }
+/* a heading and the text it heads */
+.list-title, .page-grid--three .list-title, .prose h2, .howto h3, .prices h3 { margin-bottom: var(--gap-3); }
+.list-title + .slots, .list-title + ul.slots, .list-title + .map-frame { margin-top: 0; }
+.list-title + .slots--events { padding-top: 0; }
+.prose h2 + ul, .prose h2 + ol { margin-top: 0; }
+.band { margin-bottom: var(--gap-4); }
+@media (min-width: 48rem) { .band { margin-bottom: var(--gap-5); } }
+@media (min-width: 64rem) { .band { margin-bottom: var(--gap-6); } }
+.band + .ticket, .band + .goatchi-promo__goats { margin-top: 0; }
+.page-title, .shiny__title { margin-bottom: var(--gap-4); }
+.page-head .lede { margin-top: var(--gap-3); }
+/* text after text */
+.copy > p, .prose > p, .copy > ul, .copy > ol, .prose > ul:not([class]), .prose > ol:not([class]), .shiny__copy > p, .checklist, .steps { margin-bottom: var(--gap-4); }
+.prose p + ul, .prose p + ol, .prose ul + p { margin-top: 0; }
+.prose > :is(ul, ol):not([class]) > li { margin-bottom: var(--gap-2); }
+.page-grid--three .copy > p:last-child { margin-bottom: 0; }
+.album-page > .copy--wide { margin-bottom: var(--gap-5); }
+.album-page > .copy--wide:has(+ p.copy, + ul.copy, + .cta) { margin-bottom: var(--gap-4); }
+.album-page > .copy + .cta, .copy p + .cta { margin-top: 0; }
+.cta { margin-bottom: var(--gap-5); }
+.checked { margin-top: var(--gap-4); margin-bottom: var(--gap-3); }
+.saying { margin-block: var(--gap-5); }
+/* text before the next heading */
+.howto + .copy .list-title:not(:first-child), .copy .list-title:not(:first-child) { margin-top: var(--gap-5); }
+.album-page > .list-title { margin-top: var(--gap-5); }
+@media (min-width: 64rem) { .album-page > .list-title { margin-top: var(--gap-6); } }
+.prose h2 { margin-top: var(--gap-6); }
+.album-page .copy--wide > p, .album-page .copy--wide > ul, .album-page .copy > ul:not([class]), .talks { margin-bottom: var(--gap-4); }
+.album-page .copy--wide > ul > li, .album-page .copy > ul:not([class]) > li { margin-bottom: var(--gap-2); }
+.album-page > ul.copy, .album-page > ol.copy { margin-top: 0; }
+.steps + .cta, .howto .cta { margin-top: 0; }
+.howto .cta { margin-bottom: var(--gap-5); }
+/* cards after text, text after cards */
+.album-page .slots:has(+ p.copy), .money-supporters .slots:has(+ p.copy), .talks:has(+ .cta) { margin-bottom: 0; }
+.album-page .slots + p.copy, .money-supporters .slots + p.copy, .talks + .cta, .slots--days + .copy { margin-top: var(--gap-5); }
+.goatchi-promo__goats { margin-bottom: var(--gap-4); }
+.copy + .slots--kinds { margin-top: 0; }
+@media (min-width: 48rem) { .copy:has(+ .slots--kinds) { margin-bottom: var(--gap-6); } }
+/* inside a card, a form and the page head */
+.ticket__what, .talks .talk .for-line, .talks .talk p:not(.for-line) { margin-top: var(--gap-2); }
+.finder { gap: var(--gap-3) 1.1rem; }
+.page-head .page-head__cta { margin-top: var(--gap-4); }
+@media (max-width: 47.99rem) {
+  .farewell-row { gap: var(--gap-4); }
+  .timeslot__open { margin: calc(var(--gap-1) - 0.9rem) 0 var(--gap-3); }
+}
+@media (min-width: 48rem) {
+  .page-head { row-gap: var(--gap-5); }
+  .page-head .lede { margin-top: var(--gap-4); }
+}
+/* the cover */
+.cover-when { margin-bottom: 0; }
+.cover-lede { margin-top: var(--gap-4); }
+.cover-lede__who { margin-bottom: 0; }
+.cover-actions, .spread .cover-actions { gap: var(--gap-5); }
+@media (min-width: 62rem) { .cover-lede { margin-top: var(--gap-6); } }
+
+/* The jump links (program days, travel sections). On a wide screen they are a row of their own under the top bar,
+   as wide as the window and opaque, so a heading passes under the row and can never sit beside or behind a pill.
+   On a phone the program's row is shown only on the way up (album.js); without the script it stays in the page. */
+@media (min-width: 48rem) {
+  :root { --bar-h: 3.95rem; }
+  html { scroll-padding-top: calc(var(--bar-h) + 0.55rem); }
+  .daynav, .daynav.daynav--page { position: sticky; top: var(--bar-h); z-index: 6; width: auto; max-width: none; margin: var(--space) 0 calc(var(--space) * -0.5); padding: 0 max(var(--pad), calc((100% - 82rem) / 2)); border-radius: 0; outline: 0; background: var(--page-print); box-shadow: 0 2px 0 var(--line); clip-path: none; justify-content: flex-end; flex-wrap: nowrap; gap: 0.2rem; }
+  .daynav a { display: grid; place-items: center; min-height: 2.75rem; padding-block: 0; border-radius: 0.5rem; }
+  main:has(> .daynav) .album-page[id] { scroll-margin-top: 3.75rem; }
+}
+@media (min-width: 48rem) and (max-width: 67.49rem) { :root { --bar-h: 7.4rem; } }
+@media (max-width: 47.99rem) {
+  .daynav:not(.daynav--page) { position: static; }
+  .jump-smart .daynav:not(.daynav--page) { position: sticky; top: 3.55rem; transition: transform 0.2s ease-out; }
+  .jump-smart .daynav.daynav--away:not(:focus-within) { transform: translateY(-120%); pointer-events: none; }
+  main:has(> .daynav:not(.daynav--page)) .album-page[id] { scroll-margin-top: 7rem; }
+}
+@media (prefers-reduced-motion: reduce) { .jump-smart .daynav:not(.daynav--page) { transition: none; } }
+
+/* Yellow at night. In the dark theme yellow is kept for what asks to be pressed or is being pointed at: the
+   register buttons, the year chip, focus and hover. The number chips, the rule under a heading and the goat's
+   speech lose it and take the line colour instead. The light theme is unchanged. A designer's choice, marked in
+   DESIGN.md for the organiser to look at again. */
+:root { --rule: var(--yellow); --chip: var(--yellow); --chip-ink: var(--on-yellow); --chip-ring: 0 0 0 0 transparent; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --rule: rgb(169 196 255 / 0.5); --chip: var(--page); --chip-ink: var(--album); --chip-ring: inset 0 0 0 2px var(--line); } }
+:root[data-theme="dark"] { --rule: rgb(169 196 255 / 0.5); --chip: var(--page); --chip-ink: var(--album); --chip-ring: inset 0 0 0 2px var(--line); }
+.band, .page-head, .cover-head { border-bottom-color: var(--rule); }
+.back-cover { border-top-color: var(--rule); }
+.num:not(.num--printed), .place__num, .goat-say, .goatchi__say { background: var(--chip); color: var(--chip-ink); box-shadow: var(--chip-ring); }
+[id^="stay-"] .place__num { background: var(--pin); color: #ffffff; box-shadow: 0 0 0 2px #ffffff; }
+
+/* On a phone a heading that is a goat's stop keeps the goat's room only while the goat is on it (album.js marks
+   the stop and holds the heading's height, so nothing moves when the goat arrives). Without the script each such
+   heading has its own goat and keeps the room, as before. */
+@media (max-width: 47.99rem) {
+  .goat-room.goat-one .band:has(> .peek):not(.has-goat, .band--room), .goat-room.goat-one #food-title:not(.has-goat, .band--room) { padding-right: calc(0.85rem - 0.42rem); text-wrap: balance; align-content: center; }
+}
+
+/* Tap targets on a phone: the footer's short links (Home, Travel, Brand) reach 44 by 44 through a hit area that
+   changes no layout. */
+@media (max-width: 47.99rem) {
+  footer .footer__group a { position: relative; }
+  footer .footer__group a::before { content: ""; position: absolute; inset: -0.3px -0.18rem; }
+}
+
+/* Map pins on a phone: the dot keeps its size and a clear ring around it takes the tap, 44 across where no
+   other pin is in the way (tools/places.py draws the ring; the list under the map has every place as a full row). */
+.map .pin__hit { pointer-events: none; }
+@media (max-width: 47.99rem) { .map .pin__hit { pointer-events: all; } }
+/* Small links in a row (a venue's site, phone and map) and a speaker's or supporter's list of links take a tap
+   at 44 high without the card growing. */
+@media (max-width: 47.99rem) {
+  .venue__links a, .place__links a, .speaker-page__links a, .speaker-page__sticker { position: relative; }
+  .venue__links a::before, .place__links a::before, .speaker-page__links a::before { content: ""; position: absolute; inset: -0.45rem -0.55rem; }
+  .daynav.daynav--page a { min-width: 2.75rem; }
+  .finder__field--check { min-height: 2.75rem; }
+}
+
+/* The host page's "What you could run" on a phone: one slot a row with its number beside the words, like the
+   formats on the propose page, instead of two narrow slots whose text ran to ten short lines (review, item 17). */
+@media (max-width: 47.99rem) {
+  .album-page .slots.slots--what { grid-template-columns: minmax(0, 1fr); gap: 0.9rem; }
+  .slots--what .slot { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 0.75rem; align-content: center; min-height: 0; height: auto; padding: 0.85rem 0.9rem 0.9rem; }
+  .slots--what .slot .num { grid-row: 1 / span 2; margin: 0; }
+  .slots--what .slot strong { padding-right: 0; }
+  .slots--what .slot small { margin: 0.2rem 0 0; }
+  .slots--what .slot .stamp { position: static; grid-column: 2; justify-self: start; margin-top: 0.35rem; }
+  .goat-one .album-page .slots.slots--what, .album-page .slots.slots--what { row-gap: 1.25rem; }
+}
+
+/* The cover's three links on a phone: a short list, one link a row, instead of one link alone above two
+   (review, item 19). Each row is 44 high. */
+@media (max-width: 47.99rem) {
+  .cover-links, .spread .cover-actions p.cover-links { display: grid; justify-items: start; gap: 0; }
+  .cover-actions, .spread .cover-actions { gap: var(--gap-4); }
+  .cover-actions .go::before { inset: 0; }
+}
+
+/* The closing page on a wide screen (review, item 18): the dates run across the page on one line at heading size,
+   the place and the Register button share the row under them, and the goat, when it is here, stands at the right
+   end beyond the dates. Nothing is held empty for it in the middle of the page, and nothing moves when it comes. */
+@media (min-width: 48rem) {
+  .farewell-row { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--gap-3) var(--gap-6); min-height: 0; padding-right: 0; }
+  .farewell-row:not(:has(.goat-one__stage)) { padding-right: 0; }
+  .farewell { display: contents; }
+  .farewell__free, .farewell__when { grid-column: 1 / -1; }
+  .farewell__when { margin-top: 0; max-width: calc(100% - clamp(10rem, 15vw, 13rem)); font-size: var(--step-head); }
+  .farewell__where { grid-column: 1; margin-top: 0; }
+  .farewell-row .cta { grid-column: 2; justify-self: start; position: static; }
+  #see-you .farewell-row .goat-one__stage.is-scene { left: auto; right: 0.6rem; bottom: -0.9rem; }
+}
+
+/* Forced colours, second pass over every page type: what still vanished. A logo keeps the tile it was drawn for,
+   a colour swatch keeps its colour, the printed numbers and the list numbers keep a ring, the page you are on
+   keeps a mark in the top bar, and the jump row keeps its line. */
+@media (forced-colors: active) {
+  .supporter-chip img, .supporter__logo, .swatches li, .brand-files figure { forced-color-adjust: none; }
+  .supporter-chip img { background: #ffffff; border-radius: 0.3rem; }
+  .supporter-chip--dark img { background: #051d47; }
+  .swatches li { color: #12204a; }
+  .swatches strong { color: #12204a; }
+  .num--printed, .place__num { border: 2px solid CanvasText; box-shadow: none; }
+  .topbar nav a[aria-current="page"] { outline: 2px solid Highlight; outline-offset: -2px; }
+  .daynav, .daynav.daynav--page { border-width: 0 0 2px; box-shadow: none; }
+}
+
+/* The last gaps put on the spacing scale. */
+.cover-actions > p { margin-bottom: 0; }
+.album-page > p.copy:not(.copy--wide, .ticket-also, :last-child), .swatches { margin-bottom: var(--gap-4); }
