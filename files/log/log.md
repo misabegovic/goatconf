@@ -952,3 +952,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #305: site: a polish round, and the travel and host pages open and close
    diff: 275 files, +753/-182
    restricted-paths: true
+2026-11-22 merge — PR #307: site: free on the speaker cards, a supporter line, and a named register link
+   diff: 79 files, +71/-17
+   restricted-paths: true
