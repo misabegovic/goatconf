@@ -105,9 +105,23 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     assert page.index("Your card: I'm speaking") < page.index("The announcement card")
     assert page.index('id="h-talks"') < page.index("Your card: I'm speaking")  # the session comes before the cards
     assert '<img class="share-card" src="share/speaker-ana-example-announce-wide.png"' in page
+    # With the dark cards rendered too, each shape offers its light and its dark card, each one a download.
+    for size in ("square", "wide"):
+        (share / f"speaker-ana-example-{size}-dark.png").write_bytes(b"png")
+    page = speakers.speaker_page("ana-example", *speakers.speakers()["ana-example"], speakers.sessions_by_speaker(detail=True)["ana-example"], speakers.supporters())
+    assert '<a class="share-dl" href="share/speaker-ana-example-square.png" download>' in page
+    assert '<a class="share-dl" href="share/speaker-ana-example-square-dark.png" download>' in page
+    assert '<span class="share-dl__label">Light</span>' in page and '<span class="share-dl__label">Dark</span>' in page
+    assert "the wide card, dark" in page and "Download the wide card" in page
+    assert 'href="share/speaker-ana-example-announce-square.png" download>Download the square card</a>' in page  # no dark one yet
     shareables = importlib.reload(importlib.import_module("shareables"))
     meta = speakers.speakers()["ana-example"][0]
     card = shareables.speaker_card("ana-example", {**meta, "talk": "Salt"}, [], True, announce=True)
+    # Every still card is listed twice: under its own name in the light look, and ending in -dark in the dark one.
+    names = shareables.jobs()
+    assert "og.png" in names and "og-dark.png" in names and len(names) % 2 == 0
+    assert "#edf2fb" in names["og.png"][2] and "#051534" in names["og-dark.png"][2]
+    assert shareables.THEME == "light"
     # One quiet line says when, where and the speaker's page (the organiser's choice, 2026-10-27).
     assert "Confirmed speaker at GoatConf 2027" in card and "Tuzla · 3–5 June 2027 · goatconf.com/speaker-ana-example<" in card
 

@@ -351,19 +351,38 @@ def event_page(slug: str, meta, body) -> str:
                  OLD_TOWN, e("name"), f"{kind}. {when(meta)}.", main, "files/tools/extensions.py build from files/extensions/*.md", preview)
 
 
+def dark_card(name: str) -> str:
+    """A card's dark version in site/share/: the same name ending in -dark (tools/shareables.py renders both)."""
+    stem, dot, ext = name.rpartition(".")
+    return f"{stem}-dark{dot}{ext}"
+
+
+def card_offer(name: str, w: int, h: int, alt: str, shape: str, share: Path) -> str:
+    """One shape of a card to look at and download. With its dark version rendered, the light and the dark card sit
+    side by side, each picture a link that downloads it; until then, the one card with its download under it."""
+    if not (share / dark_card(name)).exists():
+        return (f'<figure><img class="share-card" src="share/{name}" width="{w}" height="{h}" alt="{alt}, the {shape} card" loading="lazy">\n'
+                f'      <figcaption><a class="go go--ink" href="share/{name}" download>Download the {shape} card</a></figcaption></figure>')
+    def one(file: str, label: str) -> str:
+        return (f'<a class="share-dl" href="share/{file}" download><img class="share-card" src="share/{file}" width="{w}" height="{h}" '
+                f'alt="{alt}, the {shape} card, {label.lower()}" loading="lazy"><span class="share-dl__label">{label}</span></a>')
+    return (f'<figure class="share-pair share-pair--{shape}"><figcaption>Download the {shape} card</figcaption>\n'
+            f'      <div class="share-pair__cards">{one(name, "Light")}{one(dark_card(name), "Dark")}</div></figure>')
+
+
 def share_section(names: dict, alt: str, note: str, heading: str = "Cards to share", site=None) -> str:
-    """Both cards to look at, the square and the wide, each with its download; nothing until the cards are rendered."""
-    if not all(((site or PAGE.parent) / "share" / names[k]).exists() for k in ("square", "wide")):
+    """Both cards to look at, the square and the wide, each in light and in dark with its download; nothing until the
+    cards are rendered."""
+    share = (site or PAGE.parent) / "share"
+    if not all((share / names[k]).exists() for k in ("square", "wide")):
         return ""
     return f"""
 <section class="album-page wrap" aria-labelledby="h-cards-{names['wide'][:-9]}">
   <h2 class="band" id="h-cards-{names['wide'][:-9]}">{heading}</h2>
   <p class="copy copy--wide">{note}</p>
   <div class="share-cards">
-    <figure><img class="share-card" src="share/{names['square']}" width="1080" height="1080" alt="{alt}, the square card" loading="lazy">
-      <figcaption><a class="go go--ink" href="share/{names['square']}" download>Download the square card</a></figcaption></figure>
-    <figure><img class="share-card" src="share/{names['wide']}" width="1200" height="675" alt="{alt}, the wide card" loading="lazy">
-      <figcaption><a class="go go--ink" href="share/{names['wide']}" download>Download the wide card</a></figcaption></figure>
+    {card_offer(names['square'], 1080, 1080, alt, "square", share)}
+    {card_offer(names['wide'], 1200, 675, alt, "wide", share)}
   </div>
 </section>"""
 
