@@ -2037,6 +2037,7 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
    goat stood at the end of that row until the organiser removed that one stop
    (sources/conversations/2026-11-22--org--no-goat-beside-the-organising-link.md). */
 #organiser { scroll-margin-top: 8rem; }
+.money-supporters > .copy:last-child { margin-bottom: 0; }
 /* The organising page's first sheet has no heading of its own: the page's title heads it. */
 .album-page--open { padding-top: clamp(1.75rem, 3.5vw, 3rem); }
 @media (max-width: 47.99rem) { .album-page--open { padding-top: var(--gap-5); } }
