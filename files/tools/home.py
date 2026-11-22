@@ -83,6 +83,27 @@ def added(events) -> str:
                    for start, _, m, _ in sorted(events, key=lambda e: e[0]))
 
 
+def closed_row(inside: str) -> str:
+    """What a section of the home page shows under its heading while it is closed: a hint of what is inside and the
+    section's own link, both taken from the section. site/album.js closes and opens the sections; without the script
+    nothing is closed and this row is not shown
+    (sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md)."""
+    return f'  <div class="sec__peek">{inside}</div>'
+
+
+def small(photo: str) -> str:
+    """The smallest copy made of a photo, for a closed row's strip of pictures, or the photo itself where none was made."""
+    made = sorted((PAGE.parent / photo).parent.glob(Path(photo).stem + "-*.webp"),
+                  key=lambda f: int(f.stem.rsplit("-", 1)[1]) if f.stem.rsplit("-", 1)[1].isdigit() else 10 ** 6)
+    return (Path(photo).parent / made[0].name).as_posix() if made else photo
+
+
+def row_goat(poses: str) -> str:
+    """The goat's one stop on a closed section's heading; the goats inside come back when the section is opened."""
+    return ('<span class="sec__goat" aria-hidden="true">'
+            + "".join(goat_atlas.goat(pose, "goat-scene", frame._beat(pose)) for pose in poses.split("+")) + '</span>')
+
+
 def day_sticker(i: int, day, label: str, hours: str, lines: str) -> str:
     return (f'    <li><a class="sticker sticker--fact sticker--day" href="program.html#{day.isoformat()}" style="--tilt:{TILTS[i]}deg">'
             f'<span class="num">0</span><strong>{label}</strong><span class="day__hours">{hours}</span>{lines}</a></li>')
@@ -104,8 +125,11 @@ def days() -> str:
                  '<span class="num num--printed">0</span><strong>Your event, any day from Wednesday 2nd to Sunday 6th June</strong>'
                  '<small>Anything you would like to run for the people who come. You run it, and once we accept it, it is on the program.</small>'
                  + added(outside) + '<span class="stamp">Yours?</span></a></li>')
+    dates = "".join(f"<li>{label}</li>" for label in (*program.CORE_DAYS.values(), program.COMMUNITY_DAY[1]))
+    row = closed_row(f'<ul class="sec__dates">{dates}</ul><a class="go go--ink" href="program.html">See the program, room by room</a>')
     return f"""<section class="album-page wrap" id="days" aria-labelledby="days-title">
-  <h2 class="band" id="days-title">Three days in June</h2>
+  <h2 class="band" id="days-title">Three days in June{row_goat("waving")}</h2>
+{row}
   <ul class="slots slots--days">
 {chr(10).join(items)}
   </ul>
@@ -138,8 +162,12 @@ def speakers_block() -> str:
         more = '<a class="go go--ink" href="talk.html">Propose a session</a>'
         intro = ""
     intro_html = f'\n  <p class="copy copy--wide">{intro}</p>' if intro else ""
-    return f"""<section class="album-page wrap" id="speakers" aria-labelledby="speakers-title">
-  <h2 class="band" id="speakers-title">Who is speaking</h2>{intro_html}
+    faces = "".join(f'<img src="{esc(small(m["photo"]))}" width="96" height="96" alt="" loading="lazy" decoding="async">'
+                    for _s, (m, _b) in people[:SHOWN] if m.get("photo"))
+    row = closed_row((f'<span class="sec__strip sec__strip--faces" aria-hidden="true">{faces}</span>' if faces else "") + more)
+    return f"""<section class="album-page wrap" id="speakers" aria-labelledby="speakers-title" data-fold="open">
+  <h2 class="band" id="speakers-title">Who is speaking{row_goat("jumping")}</h2>
+{row}{intro_html}
   <ul class="slots slots--mini">
 {cards}
   </ul>
@@ -224,6 +252,13 @@ def supporters_block() -> str:
     <p class="copy"><a class="go go--ink" href="supporters.html">The supporters</a> <a class="go go--ink" id="organiser" href="organising.html">Who's organising</a></p>"""
 
 
+def supporters_row() -> str:
+    """The supporters' logos, small, for the closed "Support GoatConf" row: a supporter is never out of sight."""
+    known = speakers.listed_supporters(speakers.supporters())
+    return "".join(f'<a class="sec__logo{speakers.logo_class(m, " sec__logo")}"{speakers.logo_style(m)} href="{speakers.supporter_page_name(s)}">'
+                   f'<img src="{esc(m["logo"])}" alt="{esc(m["name"])}" loading="lazy"></a>' for s, (m, _) in known)
+
+
 # The kinds of event the home page invites, in the form's order. They stay open
 # however many are accepted: more than one of each is welcome.
 HOME_KINDS = ("evening-event", "trip", "meetup", "podcast", "hike", "hackathon", "karaoke", "other")
@@ -271,7 +306,7 @@ def renumber(text: str) -> str:
 
 def page() -> str:
     text = PAGE.read_text(encoding="utf-8")
-    for name, html in (("days", days()), ("speakers", speakers_block()), ("supporters", supporters_block()), ("kinds", kinds_block()),
+    for name, html in (("days", days()), ("speakers", speakers_block()), ("supporters", supporters_block()), ("supporters-row", supporters_row()), ("kinds", kinds_block()),
                        ("goatchi", goatchi_block())):
         pattern, filled = block(name, html)
         if not pattern.search(text):

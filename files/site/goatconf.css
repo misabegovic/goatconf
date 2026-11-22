@@ -1989,15 +1989,6 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
   a.go.speaker-page__sticker::before { inset: -0.3rem 0; }
 }
 
-/* The shorter phone home page (branch site/less-blue-minimal-short-home, for the organiser to choose or not):
-   on a phone the second and later paragraphs of three sections fold behind a control that needs no script.
-   On a wider screen nothing folds. No sticker list, photo or goat stop is folded. */
-.fold--text .fold__rest > p { margin-bottom: var(--gap-4); }
-@media (max-width: 47.99rem) {
-  .fold--text .fold__toggle:not(:checked) ~ .fold__rest { display: none; }
-  .fold--text .fold__more { margin: 0 0 var(--gap-4); min-height: 2.75rem; display: inline-flex; align-items: center; }
-}
-
 /* The goat on a photo of Tuzla (round eleven, 2026-11-22; a designer's choice, for the organiser to look at again):
    a third of the photo's width, in the lower right corner on the photo's bottom edge, so the picture and its subject
    stay clear. It was two thirds of the width and covered more than two fifths of the photo. album.js fades it in. */
@@ -2081,13 +2072,14 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
   .page-grid--photos-first > .photo-fold { order: -1; }
   .photo-fold { margin-bottom: var(--gap-4); }
   .page-grid--photos-first > .photo-fold { margin-bottom: 0; }
-  .photo-fold > summary { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0.55rem 0.5rem; min-height: 2.75rem; padding: 0.55rem; border: 2px solid var(--line); border-radius: 0.6rem; background: var(--page-print); color: var(--link); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .photo-fold > summary { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 0.55rem 0.5rem; min-height: 2.75rem; padding: 0.55rem; border: 2px solid var(--line); border-radius: 0.6rem; background: var(--page-print); color: var(--link); cursor: pointer; -webkit-tap-highlight-color: transparent; }
   .photo-fold[open] > summary { margin-bottom: var(--gap-4); }
   .photo-fold__strip { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.3rem; }
   .photo-fold__strip img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 0.3rem; }
   .photo-fold__label { min-height: 3.4rem; align-content: center; padding-left: 0.2rem; padding-right: 4.2rem; font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 1.05rem; line-height: 1.1; }
-  .photo-fold__mark { margin: 0 0.35rem 0 0; width: 1.05rem; height: 1.05rem; }
-  .photo-fold__goat { position: absolute; right: 2.4rem; bottom: 0.45rem; width: 3.3rem; height: 0; }
+  .photo-fold__mark { order: 1; margin: 0 0 0 0.2rem; width: 1.05rem; height: 1.05rem; }
+  .photo-fold__label { order: 2; }
+  .photo-fold__goat { position: absolute; right: 0.7rem; bottom: 0.45rem; width: 3.3rem; height: 0; }
   .photo-fold__goat .goat-one__stage.is-scene { right: 0; bottom: 0; width: 100%; }
   .photo-fold__goat .goat-one__stage.is-scene .goat { filter: drop-shadow(0 0.1rem 0.15rem rgb(0 0 0 / 0.3)); }
   .photo-fold[open] .photo-fold__goat { display: none; }
@@ -2100,3 +2092,82 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 }
 @media (hover: hover) and (max-width: 47.99rem) { .photo-fold > summary:hover { border-style: solid; background: var(--slot-hover); } }
 @media (forced-colors: active) { .photo-fold > summary { border: 2px solid ButtonText; } .photo-fold__mark, .fold__more::after { background: ButtonText; forced-color-adjust: none; } }
+
+/* Sections that open and close (round fourteen, the organiser's words:
+   sources/conversations/2026-11-22--org--every-section-collapsible-and-remembered.md and
+   sources/conversations/2026-11-22--org--sections-start-closed-speakers-open.md). A page opts in with data-folds on
+   its main; a section with data-fold="never" has no control, and one with data-fold="open" starts open. The heading
+   is the control: an arrow before the words, pointing down while the section is closed and up while it is open, and
+   a button inside the heading that site/album.js makes. A closed section shows its heading and one row under it: a
+   hint of what is inside and the section's own link, taken from the section, with one stop for the goat on the
+   heading. The script in every page's head (tools/nav.py) marks the closed sections before the first paint, and
+   album.js then hides their parts so that find in page and a link to a sentence can still open them. One family
+   with the lists that close on a phone, below: the same arrow, before the words. Without the script .folds-on is
+   never set, nothing here applies and every section is open. */
+.sec__peek, .sec__goat, .folds-all { display: none; }
+.folds-on .folds-all { display: flex; justify-content: flex-end; margin-block: calc(var(--space) * 0.6) calc(var(--space) * -0.45); }
+.folds-all__button { min-height: 2.75rem; padding: 0.4em 0.9em; border: 2px solid var(--line); border-radius: 0.45rem; background: var(--page); color: var(--link); font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 1rem; cursor: pointer; }
+.folds-all__button:focus-visible { outline: 3px solid var(--album); outline-offset: 2px; }
+.folds-all__button:active { background: var(--yellow); color: var(--on-yellow); border-color: var(--on-yellow); }
+.folds-on [data-folds] > section:not([data-fold="never"]) h2 { position: relative; isolation: isolate; display: flex; align-items: baseline; gap: 0.5em; }
+.folds-on [data-folds] > section:not([data-fold="never"]) h2::before { content: ""; flex: none; width: 0.62em; height: 0.62em; background: currentColor; -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; rotate: -90deg; transition: rotate 160ms var(--ease); }
+.folds-on [data-folds] > section.is-closed h2::before { rotate: 90deg; }
+.sec__toggle { flex: 1; min-width: 0; margin: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; text-align: left; text-wrap: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.sec__toggle::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 0.4rem 0.4rem 0 0; }
+.sec__toggle:focus-visible { outline: none; }
+.sec__toggle:focus-visible::after { outline: 3px solid var(--album); outline-offset: -3px; border-radius: 0.4rem; }
+.sec__toggle:active::after { background: var(--yellow); }
+.folds-on [data-folds] > section h2:has(.sec__toggle:active) { color: var(--on-yellow); }
+.shiny__title:has(.sec__toggle) { min-height: 2.75rem; align-items: center; }
+/* Closed, before album.js has hidden the parts itself */
+.folds-on .is-closed:not(.is-ready) > :not(h2, .sec__peek, .sec__keep), .folds-on .is-closed:not(.is-ready) > .sec__keep > :not(h2, .sec__peek) { display: none !important; }
+/* Closed, hidden by album.js: a part that find in page can still open keeps no box of its own */
+@media screen { [data-fold-part][hidden="until-found"] { display: block !important; height: 0 !important; min-height: 0 !important; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; overflow: hidden !important; } }
+[data-fold-part][hidden]:not([hidden="until-found"]) { display: none !important; }
+.folds-on .album-page.is-closed { padding-bottom: var(--gap-3); }
+.folds-on .album-page.is-closed > .band { margin-bottom: var(--gap-3); }
+.folds-on .shiny.is-closed { display: block; padding: var(--gap-4) clamp(1.25rem, 3.5vw, 3rem); }
+.folds-on .shiny.is-closed .shiny__title { margin-bottom: var(--gap-2); }
+.folds-on .is-closed .sec__peek { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap-2) var(--gap-4); min-height: 2.75rem; }
+.folds-on .is-closed .sec__goat { display: block; position: absolute; right: clamp(0.6rem, 2vw, 1.6rem); bottom: calc(-1 * var(--rule-w, 0.3rem)); width: 2.9rem; height: 0; }
+.shiny .sec__goat { bottom: 0.2rem; }
+.sec__goat .goat-one__stage.is-scene { right: 0; bottom: 0; width: 100%; }
+.sec__goat .goat-one__stage.is-scene .goat { filter: drop-shadow(0 0.1rem 0.15rem rgb(0 0 0 / 0.3)); }
+.folds-on .is-closed h2:has(> .sec__goat) .sec__toggle { padding-right: 3.6rem; }
+.sec__peek .button { display: inline-flex; align-items: center; min-height: 2.75rem; }
+.sec__peek .go { display: inline-block; padding-block: 0.6rem; font-size: 1.1rem; line-height: 1.3; }
+.sec__peek .button { padding-block: 0; font-size: 1.05rem; }
+.sec__dates, .sec__count { font-family: var(--display); font-weight: 800; font-stretch: 85%; text-transform: uppercase; font-size: 1.05rem; line-height: 1.15; color: var(--ink); }
+.sec__dates { display: flex; flex-wrap: wrap; gap: 0.15rem 1.1rem; margin: 0; padding: 0; list-style: none; }
+.sec__line { max-width: 58ch; }
+.sec__prices { display: flex; flex-wrap: wrap; gap: 0.1rem 1.1rem; margin: 0; padding: 0; list-style: none; color: var(--ink-soft); }
+.sec__prices b { margin-left: 0.25em; font-family: var(--display); font-weight: 800; font-stretch: 85%; font-size: 1.1rem; color: var(--album); white-space: nowrap; }
+.sec__strip { display: grid; grid-auto-flow: column; grid-auto-columns: 2.75rem; gap: 0.3rem; }
+.sec__strip picture { display: contents; }
+.sec__strip img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 0.3rem; }
+.sec__logos { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.sec__logo { display: block; box-sizing: border-box; height: 2.75rem; padding: 0.45rem 0.7rem; border-radius: 0.35rem; background: var(--tile); }
+.sec__logo img { display: block; height: 100%; width: auto; max-width: 6.5rem; object-fit: contain; }
+.sec__logo--dark { background: var(--album-deep); }
+.sec__logo--tinted { background: var(--logo-bg); }
+/* A heading that holds a goat of its own (the cook over the food) gives it back when the section is opened */
+.folds-on .is-closed > .band > .peek, .folds-on .is-closed > .band > .goat-one__stage:not(.is-scene) { display: none; }
+.folds-on .album-page.is-closed > .band { min-height: 0 !important; padding-right: calc(clamp(1.25rem, 3.5vw, 3rem) - 0.42rem); }
+@media (max-width: 47.99rem) {
+  /* The arrow takes room from the food heading's words, so the cook gives a little back and the words keep three lines */
+  .folds-on #food-title { padding-right: 6.2rem; }
+  .folds-on #food-title > .peek { width: 6rem; }
+  .sec__prices { flex: 0 0 100%; gap: 0.1rem 0.9rem; font-size: 0.95rem; }
+  .sec__prices b { font-size: 1rem; }
+  .sec__logos { flex: 0 0 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sec__logo { height: 2.5rem; padding: 0.4rem 0.5rem; }
+  .sec__logo img { margin-inline: auto; max-width: 100%; }
+  .sec__strip { flex: 0 0 100%; grid-auto-flow: row; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .sec__strip--twelve img:nth-child(n+7) { display: none; }
+  .sec__strip--faces { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+}
+@media (hover: hover) { .sec__toggle:hover::after { background: var(--slot-hover); } .folds-all__button:hover { background: var(--yellow); color: var(--on-yellow); border-color: var(--yellow); } }
+@media (forced-colors: active) { .sec__logo { forced-color-adjust: none; background: #ffffff; } .sec__logo--dark { background: #051d47; } .folds-on [data-folds] > section h2::before { background: ButtonText; forced-color-adjust: none; } .folds-all__button { border-color: ButtonText; } }
+@media (prefers-reduced-motion: reduce) { .folds-on [data-folds] > section h2::before { transition: none; } }
+/* On paper everything is open (album.js opens it before printing) and no control shows */
+@media print { .folds-all, .sec__peek, .sec__goat, .folds-on [data-folds] > section h2::before { display: none !important; } [data-fold-part][hidden="until-found"] { content-visibility: visible !important; } }
