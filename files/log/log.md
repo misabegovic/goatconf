@@ -925,3 +925,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #287: site: a goat tap no longer flashes its slot, smaller Tuzla goats, every card in light and dark
    diff: 178 files, +522/-229
    restricted-paths: true
+2026-11-22 merge — PR #289: site: who's organising gets its own page, and the speaker card goat says See you in Tuzla
+   diff: 113 files, +393/-126
+   restricted-paths: true
