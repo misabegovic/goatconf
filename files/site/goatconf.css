@@ -1785,7 +1785,8 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 .day__hours, .price, .pricelist b, .breakrow__time, .timeslot__time, .facts dd, .talk__when { font-variant-numeric: tabular-nums; }
 /* 8: forced colours: what was only a background becomes a border or system colour */
 @media (forced-colors: active) {
-  .slot, .tag, .daynav, .topbar, .back-cover, .map, .supporter-chip, .place, .breakrow, .finder, .past-conf { border: 1px solid CanvasText; }
+  .tag, .daynav, .topbar, .back-cover, .map, .supporter-chip, .place, .breakrow, .finder, .past-conf { border: 1px solid CanvasText; }
+  .topbar nav a.topbar__cta, .topbar .topbar__register, .topbar__menu summary, .topbar .topbar__panel a.topbar__panel-cta, .topbar .topbar__panel a.topbar__panel-main { border: 2px solid ButtonText; }
   .band, .page-head, .back-cover { border-color: CanvasText; }
   .num:not(.num--printed), .topbar__year, .cover-title span { border: 1px solid CanvasText; forced-color-adjust: none; background: Canvas; color: CanvasText; }
   .theme label { forced-color-adjust: none; background: Canvas; color: CanvasText; border: 2px solid CanvasText; box-shadow: none; }
