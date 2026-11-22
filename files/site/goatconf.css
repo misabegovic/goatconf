@@ -1977,3 +1977,10 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
 /* The last gaps put on the spacing scale. */
 .cover-actions > p { margin-bottom: 0; }
 .album-page > p.copy:not(.copy--wide, .ticket-also, :last-child), .swatches { margin-bottom: var(--gap-4); }
+
+/* Tap areas, measured again by hit testing: a small link's area sits above the lines around it, and the speaker
+   page's "Save as a sticker" reaches 44. */
+@media (max-width: 47.99rem) {
+  .venue__links a, .place__links a, .speaker-page__links a { z-index: 1; }
+  a.go.speaker-page__sticker::before { inset: -0.3rem 0; }
+}

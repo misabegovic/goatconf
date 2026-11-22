@@ -199,7 +199,7 @@ def map_svg(view, ways, data, items, prefix, color, ink, title) -> str:
     for i, ((x0, y0), (x, y)) in enumerate(zip(pins, placed), start=1):
         if math.hypot(x - x0, y - y0) > 3:
             lines.append(f'<line x1="{x0:.1f}" y1="{y0:.1f}" x2="{x:.1f}" y2="{y:.1f}"/><circle cx="{x0:.1f}" cy="{y0:.1f}" r="4"/>')
-        dots.append(f'<a href="#{prefix}-{i}" tabindex="-1"><g class="pin" transform="translate({x:.1f} {y:.1f})"><g class="pin__dot"><circle class="pin__hit" r="42" fill="none"/><circle r="{r}" fill="{color}" stroke="#ffffff" stroke-width="4"/>'
+        dots.append(f'<a href="#{prefix}-{i}" tabindex="-1"><g class="pin" transform="translate({x:.1f} {y:.1f})"><g class="pin__dot"><circle class="pin__hit" r="46" fill="none"/><circle r="{r}" fill="{color}" stroke="#ffffff" stroke-width="4"/>'
                     f'<text y="11" text-anchor="middle" fill="{ink}">{i}</text></g></g></a>')
     # Labels keep clear of the pins (at their phone size), of the IPI marker and of each other.
     circles = [(x, y, r * 1.6 + 6) for x, y in placed] + [(ix, iy, 44)]
