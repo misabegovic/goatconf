@@ -2108,18 +2108,11 @@ footer .footer__group a[aria-current="page"] { text-decoration-color: var(--link
    the text and the goat can be cut off by the section it is in apparently?",
    sources/conversations/2026-11-22--org--section-goats-too-small-and-cut-off.md). It is as wide as the goat on a
    slot of the cover, 5.2rem at every width, where it was 2.8rem on a phone and 4.2rem at most on a wide screen. A
-   goat that wide rises 4.8rem over the section's top edge, so the room for it is kept above every section that opens
-   and closes, in both states and whether or not a goat is there: the space between two sections and the lower
-   padding of a closed row together are as tall as the goat, and nothing on a row has to make way. A section that
-   opens and closes no longer clips what leaves its page, in either state: opened, its own page cut the goat and
-   its speech bubble, which stand above the top edge. The bubble of a section's goat opens beside its head, inside
-   the room between two sections, where a bubble over its head would lie on the row above. */
-:root { --row-room: 3.75rem; }
-@media (min-width: 48rem) { :root { --row-room: 4.2rem; } }
-@media (min-width: 62rem) { :root { --row-room: 4.5rem; } }
+   section that opens and closes does not clip what leaves its page, in either state: opened, its own page cut the
+   goat and its speech bubble, which stand above the top edge. The bubble of a section's goat opens beside its
+   head. (The room kept between two sections for the goat, the same day, is withdrawn: see the end of this file.) */
 [data-folds] > section > .peek { width: 5.2rem; }
-[data-folds] > section:not([data-fold="never"]) { margin-top: max(var(--space), var(--row-room)); overflow: visible; }
-.folds-on .folds-all { margin-bottom: calc(var(--space) * 0.55 - max(var(--space), var(--row-room))); }
+[data-folds] > section:not([data-fold="never"]) { overflow: visible; }
 .goat-one__stage.is-row .goat-say { right: 84%; bottom: 36%; }
 .goat-one__stage.is-row .goat-say.is-right { right: auto; left: 84%; }
 .goat-one__stage.is-row.is-tucked { clip-path: inset(-100% -60% calc(100% - var(--edge) - 2%) -400%); }
@@ -2184,3 +2177,16 @@ main[data-folds] > section[id], #organiser { scroll-margin-top: 5.6rem; }
 .lede > .lede__when:first-child { margin-top: 0; }
 .lede__go { display: block; margin-top: 0.35rem; }
 .lede__go .go { display: inline-block; padding-block: 0.6rem; }
+
+/* A goat on a top edge overlays what is above it (the organiser, 2026-11-22: "Why do we need empty spaces between?
+   Can't the goats have overlay over the sections above?", sources/conversations/2026-11-22--org--goats-overlay-no-empty-room.md).
+   No room is kept for a goat: the 3.75rem to 4.5rem kept between the home page's sections since the same day is
+   withdrawn, and so is the rule that a goat on a top edge covers no word. It stands at its own size at the right
+   end of every slot and every section, in front of the section, the card or the paragraph above, with a soft
+   shadow so it reads as standing on the edge. A press on the goat is the goat's and never reaches what is under
+   it ("If a goat is drawn above a link, clicking on a goat should not trigger that link"): its picture takes the
+   press (.goat-hit, the picture less its empty corners, as BODY in album.js has it), and only those corners let a
+   press through. */
+.goat-one__stage:not(.is-scene) .goat { pointer-events: none; cursor: auto; filter: drop-shadow(0 0.2rem 0.25rem rgb(0 0 0 / 0.22)); }
+.goat-one__stage .goat-hit { display: none; }
+.goat-one__stage:not(.is-scene) .goat-hit { display: block; position: absolute; left: 8%; right: 8%; top: 4%; bottom: calc(100% - var(--edge)); border-radius: 46% 46% 24% 24% / 40% 40% 20% 20%; pointer-events: auto; cursor: pointer; touch-action: manipulation; }

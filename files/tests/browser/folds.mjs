@@ -113,19 +113,34 @@ const steady = async () => {
 const press = async () => {
   for (let n = 0; n < 5; n++) {
     if (!await steady()) continue;
-    await mouse(".goat-one__stage .goat", 0.5, 0.4, true);
+    await mouse(".goat-one__stage .goat-hit", 0.5, 0.5, true);
     for (let i = 0; i < 24; i++) { await sleep(100); const now = await ev(whole); if (now.said || now.goat) return now; }
   }
   return ev(whole);
 };
 const arrived = async (sid) => { for (let i = 0; i < 40; i++) { if (await ev(`(() => { const st = document.querySelector(".goat-one__stage"); return !!st && !!st.parentElement && st.parentElement.id === "${sid}"; })()`)) break; await sleep(100); } await sleep(1000); };
-let cutGoats = 0, cutWords = 0, mute = 0, small = 0;
+// A goat overlays what is above it, and a press on the goat is the goat's alone
+// (sources/conversations/2026-11-22--org--goats-overlay-no-empty-room.md): what the page's address, its closed sections
+// and its stored state are, to compare around a press; and, of the links, buttons, heading controls and linked cards
+// the goat's picture lies over, how many have no point left that still takes a press.
+const state = () => ev(`location.href + "|" + [...document.querySelectorAll("[data-folds] > section.is-closed")].map((s) => s.id).join(",") + "|" + localStorage.getItem("folds")`);
+const beneath = `(() => { const st = document.querySelector(".goat-one__stage"), hit = st.querySelector(".goat-hit") || st.querySelector(".goat"), g = hit.getBoundingClientRect(); let over = 0, lost = 0;
+  for (const el of document.querySelectorAll("main a, main button")) { if (st.contains(el) || !el.getClientRects().length || el.closest("[hidden]")) continue; const r = el.getBoundingClientRect();
+    if (r.right <= g.left || r.left >= g.right || r.bottom <= g.top || r.top >= g.bottom) continue; over += 1; let free = false;
+    for (let i = 1; i < 12 && !free; i++) for (let j = 1; j < 6 && !free; j++) { const x = r.left + r.width * i / 12, y = r.top + r.height * j / 6; if (y < 0 || y > innerHeight) continue; const t = document.elementFromPoint(x, y); free = !!t && !st.contains(t) && (t === el || el.contains(t) || !!t.closest("a, button") && t.closest("a, button") === el); }
+    if (!free) lost += 1; }
+  return { over, lost }; })()`;
+let cutGoats = 0, cutWords = 0, mute = 0, small = 0, leaks = 0, overlaid = 0, unreachable = 0;
 const look = async (sid, pressed = true) => {
   const at = await ev(whole);
   if (at.on !== sid || at.goat) cutGoats += 1;
   if (at.width < 80) small += 1;
   if (!pressed) return;
+  await steady();
+  const below = await ev(beneath); overlaid += below.over; unreachable += below.lost;
+  const before = await state();
   const after = await press();
+  if (before !== await state()) leaks += 1;
   if (!after.said) mute += 1; else if (after.say || after.goat || after.lines > 2) cutWords += 1;
   await sleep(900);
 };
@@ -148,17 +163,22 @@ check(inside === 0, "the goat is never inside a closed section");
 check(small === 0, "the goat on a section is as wide as the goat on a slot of the cover, 80 pixels or more");
 check(cutGoats === 0 && cutWords === 0 && mute === 0, `pressed on each closed row, the goat and what it says are whole: not clipped, not under the top bar, inside the window, on two lines at most (${cutGoats} goats cut, ${cutWords} bubbles cut, ${mute} said nothing)`);
 check(await ev(`window.__shift`) === 0, "no layout shift on the closed page while a goat does its trick and says its line");
+check(leaks === 0 && unreachable === 0, `a press on a closed row's goat follows no link, opens no section and stores nothing, and each of the ${overlaid} links and buttons its picture lies over can still be pressed beside it (${leaks} presses leaked, ${unreachable} out of reach)`);
 await ev(`window.scrollTo(0, document.getElementById("food").getBoundingClientRect().top + scrollY - innerHeight * 0.45); 1`); await sleep(400);
 await mouse("#food h2", 0.5, 0.5); await sleep(1800); await steady();
-await mouse(".goat-one__stage .goat", 0.5, 0.4, true); await sleep(700);
+await mouse(".goat-one__stage .goat-hit", 0.5, 0.5, true); await sleep(700);
 check((await closed()).split(",").includes("food") && await ev(`document.querySelector(".goat-one__stage").parentElement.id`) === "food", "a press on the row's goat is for the goat: the section stays closed");
 await sleep(3200);
 await ev(`window.__moves = 0; const animate = Element.prototype.animate; Element.prototype.animate = function (...a) { if (this.closest && this.closest(".goat-one__stage")) window.__moves += 1; return animate.apply(this, a); }; 1`);
-// The heading's row is pressed at its far end from the goat, after the pointer has rested there: a goat turns its head
-// towards a pointer that moves within 260 pixels of it, which is its answer to the pointer and not to the press.
-await mouse("#food-title", 0.01, 0.5); await sleep(1500);
+// The heading is pressed directly under the goat, the nearest a press on a heading comes to it, with the pointer
+// already at rest there and the press sent alone, with no move before it. A goat turns its head towards a pointer
+// that moves to one side of it, which is its answer to the pointer and never to a press; straight under it there is
+// no side to turn to, so anything the goat does after the press is the press's doing, and nothing is excused.
+const [hx, hy] = await ev(`(() => { const g = document.querySelector(".goat-one__stage").getBoundingClientRect(), h = document.querySelector("#food-title .sec__toggle").getBoundingClientRect(); return [Math.round(g.left + g.width / 2), Math.round(h.top + h.height / 2)]; })()`);
+await S("Input.dispatchMouseEvent", { type: "mouseMoved", x: hx, y: hy }); await sleep(1500);
 await ev(`window.__moves = 0; 1`);
-await mouse("#food-title", 0.01, 0.5, true); await sleep(180);
+for (const type of ["mousePressed", "mouseReleased"]) await S("Input.dispatchMouseEvent", { type, x: hx, y: hy, button: "left", clickCount: 1 });
+await sleep(200);
 check(!(await closed()).split(",").includes("food") && await ev(`window.__moves`) === 0, "a press on the heading opens the section and does not set the goat off");
 await sleep(900);
 check(await ev(`(() => { const st = document.querySelector(".goat-one__stage"); if (st.parentElement.id !== "food") return true; const r = st.getBoundingClientRect(); return Math.abs(r.bottom - document.getElementById("food").getBoundingClientRect().top) < r.height * 0.2; })()`), "the section's own goat stays on the section's top edge when the section opens");
@@ -171,19 +191,60 @@ check(await ev(`!document.querySelector("#see-you .sec__toggle") && !document.qu
 // The same with every section open, where the section's own page used to cut the goat standing on its top edge, and
 // on a wide screen.
 const everyOpen = Object.fromEntries(FOLDING.map((s) => [s, "open"]));
-for (const [width, height, state] of [[390, 844, everyOpen], [1440, 900, everyOpen], [1440, 900, shut]]) {
+for (const [width, height, folds] of [[390, 844, everyOpen], [1440, 900, everyOpen], [1440, 900, shut]]) {
   await S("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: false });
-  await forget(); await remember(state); await nav("index.html");
+  await forget(); await remember(folds); await nav("index.html");
   await ev(`document.documentElement.style.scrollBehavior = "auto"; 1`);
-  cutGoats = cutWords = mute = small = 0;
+  cutGoats = cutWords = mute = small = leaks = overlaid = unreachable = 0;
   for (const sid of FOLDING) {
     await ev(`window.scrollTo(0, document.getElementById("${sid}").getBoundingClientRect().top + scrollY - innerHeight * 0.45); 1`); await sleep(400);
     await S("Input.dispatchMouseEvent", { type: "mouseMoved", x: 5, y: 5 }); await mouse(`#${sid} h2`, 0.5, 0.5); await sleep(1800); await arrived(sid);
     await look(sid);
   }
-  check(cutGoats === 0 && cutWords === 0 && mute === 0 && small === 0, `at ${width} wide with every section ${state === shut ? "closed" : "open"}, each section's goat and what it says are whole and the goat is 80 pixels wide or more (${cutGoats} goats cut, ${cutWords} bubbles cut, ${mute} said nothing, ${small} small)`);
+  check(cutGoats === 0 && cutWords === 0 && mute === 0 && small === 0, `at ${width} wide with every section ${folds === shut ? "closed" : "open"}, each section's goat and what it says are whole and the goat is 80 pixels wide or more (${cutGoats} goats cut, ${cutWords} bubbles cut, ${mute} said nothing, ${small} small)`);
+  check(leaks === 0 && unreachable === 0, `at ${width} wide with every section ${folds === shut ? "closed" : "open"}, a press on a section's goat reaches nothing under it, and the ${overlaid} links and buttons under its picture can still be pressed (${leaks} leaked, ${unreachable} out of reach)`);
 }
+// Every goat on a top edge at its own size at the right end
+// (sources/conversations/2026-11-22--org--goats-overlay-no-empty-room.md,
+// sources/conversations/2026-11-22--org--speaker-goats-on-the-left-and-smaller.md): with everything open, the page's
+// own rule seats every slot's goat at 100 percent at the right end, on every page that has slots and at five widths;
+// a seat moved along the edge so a small link keeps 44 pixels to press is named. Then, visited one by one on a phone,
+// the eight speakers' goats: each speaker's own, drawn at its own size at the right end, clear of every face, a press
+// on it opening no card, and the card it stands over still pressed beside it.
+const nudged = [];
+for (const [width, height] of [[320, 700], [390, 844], [768, 900], [1024, 900], [1440, 900]]) {
+  await S("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: false });
+  let slotsSeen = 0; const off = [];
+  for (const page of ["index.html", "speakers.html", "extend.html", "talk.html", "organising.html"]) {
+    await forget(); await remember(everyOpen); await nav(page, 1200);
+    const seats = JSON.parse(await ev(`JSON.stringify(window.goatSeats ? window.goatSeats() : [])`));
+    slotsSeen += seats.length;
+    for (const [goat, seat] of seats) { if (seat !== "own" && !seat.startsWith("1R")) off.push(`${page} ${goat} ${seat}`); if (seat.includes("moved")) nudged.push(`${width} ${page} ${goat} ${seat}`); }
+    if (page === "index.html" || page === "speakers.html") { const faces = seats.filter(([goat]) => goat.startsWith("speaker-")); if (faces.length !== 8 || new Set(faces.map(([goat]) => goat)).size !== 8) off.push(`${page}: ${faces.length} speakers' goats`); }
+  }
+  check(slotsSeen > 40 && off.length === 0, `at ${width} wide every one of the ${slotsSeen} goats on a slot's top edge stands at its own size at the right end, each speaker with their own (${off.join(", ") || "none off"})`);
+}
+console.log(`     seats moved along the edge to leave a link 44 pixels: ${nudged.join("; ") || "none"}`);
 await S("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
+await forget(); await remember(everyOpen); await nav("index.html");
+await ev(`document.documentElement.style.scrollBehavior = "auto"; 1`);
+const drawn = new Set(); let strangers = 0, faces = 0; leaks = overlaid = unreachable = 0;
+const cards = await ev(`document.querySelectorAll("#speakers .sticker--speaker").length`);
+for (let i = 0; i < cards; i++) {
+  await ev(`(() => { const c = document.querySelectorAll("#speakers .sticker--speaker")[${i}]; window.scrollTo(0, c.getBoundingClientRect().top + scrollY - innerHeight * 0.45); })(); 1`); await sleep(400);
+  await S("Input.dispatchMouseEvent", { type: "mouseMoved", x: 5, y: 5 });
+  const [x, y] = await ev(`(() => { const r = document.querySelectorAll("#speakers .sticker--speaker")[${i}].getBoundingClientRect(); return [Math.round(r.left + r.width / 2), Math.round(r.top + r.height / 2)]; })()`);
+  await S("Input.dispatchMouseEvent", { type: "mouseMoved", x, y }); await sleep(2200);
+  const seen = await ev(`(() => { const st = document.querySelector(".goat-one__stage"), c = document.querySelectorAll("#speakers .sticker--speaker")[${i}]; if (st.parentElement !== c) return null; const own = c.querySelector(".peek"), g = st.getBoundingClientRect(), b = c.getBoundingClientRect(); const face = [...document.querySelectorAll("#speakers .sticker--speaker img")].some((im) => { if (c.contains(im)) return false; const r = im.getBoundingClientRect(); return r.left < g.right && r.right > g.left && r.top < g.bottom && r.bottom > g.top; }); return { same: st.querySelector(".goat").dataset.goat === own.dataset.goat, part: Math.round(g.width / parseFloat(getComputedStyle(own).width) * 100), end: Math.round(b.right - g.right), face }; })()`);
+  if (seen && seen.face) faces += 1;
+  if (seen) { await steady(); const below = await ev(beneath); overlaid += below.over; unreachable += below.lost; const before = await state(); await mouse(".goat-one__stage .goat-hit", 0.5, 0.5, true); await sleep(500); if (before !== await state()) leaks += 1; }
+  // A card is tilted a degree or two, so the goat's box reads a few pixels wider than it is drawn and its distance
+  // from the card's corner a few pixels either way: own size is within a twentieth, the right end within 2rem.
+  if (!seen || !seen.same) strangers += 1; else drawn.add(`${Math.abs(seen.part - 100) <= 5 ? "its own size" : `${seen.part}%`} at the ${seen.end >= 0 && seen.end <= 32 ? "right" : `other (${seen.end}px)`} end`);
+}
+check(cards === 8 && strangers === 0 && drawn.size === 1 && [...drawn][0] === "its own size at the right end", `visited one by one on a phone, every speaker's card has that speaker's own goat at its own size and at the same end (${[...drawn].join(" | ")}${strangers ? `; ${strangers} cards without their goat` : ""})`);
+check(faces === 0, "no speaker's goat lies over the photo of another speaker");
+check(leaks === 0 && unreachable === 0, `a press on a speaker's goat opens no card and stores nothing, and the ${overlaid} cards and links under the goats' pictures can still be pressed beside them (${leaks} leaked, ${unreachable} out of reach)`);
 // A row just under the sticky top bar is not a stop: the goat is never called where its head would be under the bar.
 await forget(); await remember(shut); await nav("index.html");
 await ev(`document.documentElement.style.scrollBehavior = "auto"; 1`);
