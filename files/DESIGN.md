@@ -405,6 +405,17 @@ Since round eleven (`sources/conversations/2026-11-22--org--goat-tap-flash-and-l
 
 Where a page offers a card (a speaker's own card and the card announcing them, a supporter's cards, an event's card) each shape shows its light and its dark card side by side, each one a link that downloads it, labelled "Light" and "Dark" under the picture in the standalone link style with its arrow; it works without the script. The brand page lists every such card in one place.
 
+**A goat that says a line (a proposal on the branch `site/cards-goat-says`, the organiser's "maybe", `sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md`).** On a speaker's card the goat may say one short line in the site's own speech bubble: yellow with night lettering in both versions, up and to the left of the goat's head with its tail corner towards the goat, lettered at 38 pixels on the square card and 30 on the wide one so it reads at the size a card has in a feed. Nothing is rendered with a line until the organiser picks: `SPEAKER_SAYS` in `tools/shareables.py` is empty. Setting it to a line gives every goat that line; `rotate` gives each speaker the next of four; `own` gives each the line about their own work; a record's `card_says:` line wins. The candidate lines, each already on the site or in the organiser's recorded words:
+- "See you in Tuzla!": the organiser's own for this (`sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md`), the closing page's heading, and a line the goat already says when tapped (`sources/conversations/2026-10-28--org--goat-says.md`).
+- "Come to GoatConf!": the organiser's words of 2026-10-28, and a line the goat says.
+- "Free to attend!": a line the goat says, and the fact on the cover and the ticket.
+- "See you in June!": the title of the post "See you in June" in the drumbeat.
+- "Tuzla, 3–5 June 2027!": a line the goat says; it repeats the card's own foot line.
+- "Baaa!": the goat's bleat (`sources/conversations/2026-10-28--org--goat-says-baaa.md`).
+- "Any programming language, any stack.": the cover's sentence; too long for the bubble, shown for completeness.
+- The speaker's own line ("Try Tito!", "Try RubyLLM!", "Read Rails Scales!"): the lines each speaker's goat already says, approved on 2026-10-28.
+The site's own speaker cards keep no standing bubble (a designer's choice, for the organiser to look at again): there the goat already says these lines when it is tapped, and eight bubbles at rest would be eight more yellow things on a calm page.
+
 ### Ticket
 The home page's "Get your free ticket" page holds one sticker cut as a ticket: album blue inside the white die-cut border, a dashed tear line with a notch bitten out of each end, and a number like any other sticker. The larger part letters FREE in yellow at fact scale over the dates and the place in white; the stub holds the Register button and one line on what registering gets you. On wide screens the stub is on the right; under 48rem it is below, with the tear line across. It is matte and tilted like every sticker, and it is the only ticket on the site. The place reads with its address, and under the button a plain link adds the three days to a calendar.
 
