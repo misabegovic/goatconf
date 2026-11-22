@@ -470,6 +470,7 @@ Until a photo loads, its place in a sticker shows an unprinted sticker: the page
 - **Do** keep a map's labels clear of its pins and space the pins for their phone size, where they are drawn 1.6 times larger and take a tap on a clear ring 44 across; a pin moved off its place keeps a line back to it.
 - **Do** keep a goat's room beside a phone heading only while the goat is on it; the heading keeps the height it has with the room, so nothing moves when the goat comes.
 - **Do** check every page type under forced colours: a logo keeps its tile, a swatch its colour, a number its ring, the page you are on its mark.
+- **Do**, on the shorter phone home page only (the branch `site/less-blue-minimal-short-home`, built for the organiser to choose or not, `sources/conversations/2026-11-22--org--fix-all.md`), fold the second and later paragraphs of "Tuzla, the host town", "Eat and drink" and "Propose a session" behind a control that needs no script ("More about Tuzla", "Show less"). A wider screen folds nothing. No sticker list, photo, price or goat stop is folded, because the organiser set those one after another and in full on a phone.
 - **Do not** print photo credits on the site; the organiser decided on 2026-10-12 to show no credits (`sources/conversations/2026-10-12--org--no-photo-credits.md`).
 - **Do** write plain sentences: one idea per sentence, common words, and no em dashes anywhere, including captions, alt text and generated pages.
 
