@@ -298,8 +298,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .cta span { color: var(--ink-soft); font-size: 0.95rem; max-width: 34ch; }
 .prose .cta:last-child { margin: 2.4rem 0 0; }
 .slot--link { text-decoration: none; transition: background-color 200ms; }
-.slot--link:hover { background: #e2eafa; }
-.slot--link:hover .stamp { transform: rotate(-4deg) scale(1.08); }
+@media (hover: hover) { .slot--link:hover { background: #e2eafa; } .slot--link:hover .stamp { transform: rotate(-4deg) scale(1.08); } }
 .footer__links { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; }
 
 /* The program: a timetable per day */
@@ -1443,7 +1442,7 @@ html { scrollbar-color: var(--album) var(--page-print); }
 ::-webkit-scrollbar-thumb { border-color: var(--page-print); background: var(--album); }
 ::selection { background: var(--yellow); color: var(--on-yellow); }
 .stamp { mix-blend-mode: var(--stamp-blend); }
-.slot--link:hover { background: var(--slot-hover); }
+@media (hover: hover) { .slot--link:hover { background: var(--slot-hover); } }
 .album-page, .prose, .spread, .page-head, .shiny { box-shadow: 0 0 0 2px var(--album), 0 0.4rem 0 0 var(--edge); }
 .goat-heart { color: var(--heart); }
 .goatchi__kept { color: var(--ink-soft); }
@@ -1607,8 +1606,13 @@ a.sticker--day:active, a.sticker--example:active, .sticker--speaker:has(.speaker
 .speaker__link::before { content: ""; position: absolute; z-index: 1; top: 1.07rem; right: 1.07rem; width: 0.86rem; height: 0.86rem; background: var(--on-yellow); -webkit-mask: var(--arrow) center / contain no-repeat; mask: var(--arrow) center / contain no-repeat; }
 /* A slot link answers as a whole */
 .slot--link { cursor: pointer; transition: background-color 160ms, border-color 160ms; }
-.slot--link:hover { border-style: solid; border-color: var(--line); }
-.slot--link:active { background: var(--yellow); }
+@media (hover: hover) { .slot--link:hover { border-style: solid; border-color: var(--line); } }
+/* A press on the goat is for the goat (2026-11-22, sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md):
+   the goat stands inside the slot's link, so pressing it used to give the whole slot its pressed yellow. The slot takes
+   its pressed look only when the slot itself is pressed, its words then go to the ink that reads on yellow, and the
+   pointed-at look is for screens that have a pointer, so a touch leaves nothing behind. */
+.slot--link:active:not(:has(.goat-one__stage:active)) { background: var(--yellow); border-style: solid; border-color: var(--on-yellow); }
+.slot--link:active:not(:has(.goat-one__stage:active)) :is(strong, small, .slot__where) { color: var(--on-yellow); }
 /* The small controls answer too */
 .fold__more:hover, .daynav a:hover, .daynav a:focus-visible { background: var(--yellow); color: var(--on-yellow); border-color: var(--yellow); }
 .fold-list summary:hover { text-decoration: underline; text-decoration-thickness: 2px; }
