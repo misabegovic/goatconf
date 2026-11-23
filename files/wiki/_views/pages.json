@@ -1082,6 +1082,8 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-23--org--carmine-x-text-chat-with-work.md",
+        "sources/web/speakers/carmine-paolino-support-2026-10-18.md",
         "sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md",
         "sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md",
         "sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md",
@@ -1191,7 +1193,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 9924
+      "tokens": 9982
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
