@@ -2,11 +2,20 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-11-21
+updated: 2026-11-23
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-23--org--carmine-x-text-use-the-spare-room.md
+  - sources/conversations/2026-11-23--org--carmine-x-text-no-disco-line.md
+  - sources/conversations/2026-11-23--org--carmine-x-text-chat-with-work.md
+  - sources/web/speakers/carmine-paolino-support-2026-10-18.md
+  - sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md
+  - sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md
+  - sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md
+  - sources/web/speakers/paolino-me-2026-10-14.md
+  - sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md
   - sources/conversations/2026-11-21--org--why-a-goat-where-posted.md
   - sources/conversations/2026-11-21--org--why-a-goat-published.md
   - sources/conversations/2026-11-21--org--goat-statue-photo.md
@@ -335,23 +344,36 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 24 Nov 2026, Tuesday: Speaker: Carmine Paolino
 
-- **State:** drafted
+- **State:** drafted, rewritten twice on Monday 23 November 2026: first around his test of frameworks against coding agents, which the organiser did not like, then as the excited introduction below, with a short text written for X on its own (sources: sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md)
 - **Image:** [`speaker-carmine-paolino-announce-square.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-square.png) (LinkedIn, Mastodon), [`speaker-carmine-paolino-announce-wide.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-wide.png) (X, Bluesky)
-- **Tag:** Carmine Paolino
-- **Before posting:** Moved from Tuesday 17 November (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-carmine-paolino-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **Tag:** Carmine Paolino; on X he is @paolino, tagged on the image so the text keeps its 280 characters (source: sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md)
+- **Before posting:** Moved from Tuesday 17 November (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-carmine-paolino-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). His session is not known yet, so the post names none. The download count was read on 2026-11-23 and only grows. "This month" is November 2026: RubyLLM 2.2 came out on the 10th.
 - **LinkedIn:**
 
-  > Meet a GoatConf 2027 speaker: Carmine Paolino.
+  > Carmine Paolino is coming to Tuzla!
   >
-  > Carmine is a software engineer, founder and musician in Berlin. He created RubyLLM, a framework for building AI applications in Ruby, and builds Chat with Work, an AI assistant that connects to your work tools. He runs Plenty, the company behind this work.
+  > Meet the creator of RubyLLM, the AI framework for Ruby that developers have downloaded more than 16 million times.
   >
-  > He's speaking in Tuzla on 3 or 4 June 2027. His profile: goatconf.com/speaker-carmine-paolino
+  > Carmine has keynoted San Francisco Ruby Conference, closed RubyConf TH and taken the stage at EuRuKo, Balkan Ruby and RubyConf Austria. This month he released RubyLLM 2.2 live on stage, built for a world where coding agents write more and more of our code.
+  >
+  > He runs Plenty in Berlin, where he also builds Chat with Work, desktop apps and developer tools. He wrote his first scripts at five and never stopped. And when he is not shipping, he makes house and disco as Crimson Lake.
+  >
+  > A builder, a founder and a musician, and in June you can meet him in person. We can't wait!
+  >
+  > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
+  > Carmine's profile: goatconf.com/speaker-carmine-paolino
+  > Register: goatconf.com/register
 
-- **Short** (192 characters):
+- **Short** (278 characters), written for X. On the organiser's asks it names Chat with Work where it first named his SF Ruby keynote, carries no line about his music, and uses its spare room to say what Chat with Work and Plenty are (sources: sources/conversations/2026-11-23--org--carmine-x-text-chat-with-work.md, sources/conversations/2026-11-23--org--carmine-x-text-no-disco-line.md, sources/conversations/2026-11-23--org--carmine-x-text-use-the-spare-room.md):
 
-  > Meet a GoatConf 2027 speaker: Carmine Paolino, creator of RubyLLM and founder of Plenty, software engineer and musician in Berlin. In Tuzla on 3 or 4 June. goatconf.com/speaker-carmine-paolino
+  > Carmine Paolino is coming to GoatConf!
+  >
+  > He created RubyLLM, the Ruby AI framework with 16M+ downloads. At his company, Plenty, he builds Chat with Work, an AI agent for your team's tools.
+  >
+  > Meet him in Tuzla, 3 to 5 June 2027. Free to attend.
+  > goatconf.com/speaker-carmine-paolino
 
-  Sources: sources/conversations/2026-10-14--org--carmine-paolino.md.
+  Sources: sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md, sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md, sources/web/speakers/paolino-me-2026-10-14.md, sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md, sources/conversations/2026-10-14--org--carmine-paolino.md.
 
 ### Sat 28 Nov 2026, week 7: 58 places to run yours
 
