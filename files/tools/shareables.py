@@ -130,41 +130,14 @@ def seal(size: int, style: str, which: str = "seal.svg") -> str:
     return f'<img class="seal" src="{(SITE / "brand" / which).as_uri()}" width="{size}" height="{size}" style="{style}" alt="">'
 
 
-def banner(w: int, h: int, word: int, sub: int, url: int, seal_size: int, left: int, right: int, top: int | None = None) -> str:
-    """A wide band: the name, the facts and the address on the left, the whole seal on the right."""
-    top_css = f"top:{top}px" if top is not None else "top:50%; transform:translateY(-50%)"
-    return page(w, h, f"""
-<div style="position:absolute; left:{left}px; {top_css}">
-  <div class="word" style="font-size:{word}px">GoatConf 2027</div>
-  <div class="sub" style="font-size:{sub}px; margin-top:{int(sub * .55)}px">{FACTS}</div>
-  <div class="url" style="font-size:{url}px; margin-top:{int(sub * .7)}px">{URL}</div>
-</div>
-{seal(seal_size, f"right:{right}px; top:50%; transform:translateY(-50%)")}""")
-
-
-def page_cover(w: int = 4200, h: int = 700) -> str:
-    """The LinkedIn company page cover, at LinkedIn's 4200 x 700.
-
-    LinkedIn lays the page's square logo over the bottom left of the cover and
-    the phone app trims both sides, so the text starts past the logo's quarter
-    and the seal sits well inside the right edge."""
-    return page(w, h, f"""
-<style>body {{ background-size: 600px 600px; }}</style>
-<div style="position:absolute; left:1240px; top:50%; transform:translateY(-50%)">
-  <div class="word" style="font-size:236px">GoatConf 2027</div>
-  <div class="sub" style="font-size:100px; margin-top:52px">{FACTS}</div>
-  <div style="font-size:70px; font-weight:700; margin-top:40px">Any programming language, any stack.<span class="url" style="margin-left:.9em">{URL}</span></div>
-</div>
-{seal(500, "right:360px; top:50%; transform:translateY(-50%)")}""")
-
-
 # The cards' look (sources/conversations/2026-11-23--org--speaker-cards-photo-first.md, chosen for the speaker cards,
 # and sources/conversations/2026-11-23--org--other-cards-follow-the-speaker-cards.md, for the rest): what the card is
 # about first, as a sticker tilted like the album's, on a yellow block; lettering in two tones, as large as its room
 # allows; a yellow band along the foot with the date, the town and "Free" in a dark pill. The light card is on paper,
 # the dark one on the album's blue: per version the ground, its hoof marks, the first and second tone of the
-# lettering, the text, the accent line and the wordmark. The banners, the covers, the site's link preview and the
-# Goatchi card keep the look they had.
+# lettering, the text, the accent line and the wordmark. The banners and the covers follow
+# (sources/conversations/2026-11-23--org--banners-and-covers-follow.md); the site's link preview and the Goatchi card
+# keep the look they had.
 CARD_TONES = {
     "light": ("#edf2fb", ("0b3d91", ".13"), brand.INK, brand.BLUE, brand.INK, brand.BLUE, brand.BLUE),
     "dark": (brand.BLUE, ("ffffff", ".07"), "#ffffff", YELLOW, "#ffffff", YELLOW, "#ffffff"),
@@ -197,10 +170,11 @@ def card(w: int, h: int, body: str) -> str:
     return page(w, h, body + "\n" + FIT, ground, hooves(*hoof), rule=False)
 
 
-def wordmark(px: int, colour: str) -> str:
-    """GoatConf and the year in its yellow tab, on one line: the top bar's mark."""
+def wordmark(px: int, colour: str, year: float = 1.0) -> str:
+    """GoatConf and the year in its yellow tab, on one line: the top bar's mark. On a banner, where the mark is the
+    largest thing, `year` sets the tab's lettering smaller than the name's so the tab stands no taller than the name."""
     return (f'<span class="disp" style="font-size:{px}px; color:{colour}; vertical-align:middle">GoatConf</span>'
-            f'<span class="tab" style="font-size:{px}px; margin-left:{px * .22:.0f}px; vertical-align:middle; font-stretch:75%">2027</span>')
+            f'<span class="tab" style="font-size:{px * year:.0f}px; margin-left:{px * .22:.0f}px; vertical-align:middle; font-stretch:75%">2027</span>')
 
 
 def sticker(inner: str, left: int, top: int, wide: int, tall: int, off: int = 18, radius: int = 26, ring: int = 8,
@@ -281,6 +255,67 @@ def title_line(title: str, first: str, second: str) -> str:
     if len(parts) == 1:
         return f'<span style="color:{first}">{parts[0]}</span>'
     return f'<span style="color:{first}">{" ".join(parts[:-1])}</span> <span style="color:{second}">{parts[-1]}</span>'
+
+
+def banner(w: int, h: int, word: int, sub: int, url: int, seal_size: int, left: int, right: int, top: int | None = None) -> str:
+    """A wide band: the name, the facts and the address on the left, the whole seal on the right."""
+    top_css = f"top:{top}px" if top is not None else "top:50%; transform:translateY(-50%)"
+    return page(w, h, f"""
+<div style="position:absolute; left:{left}px; {top_css}">
+  <div class="word" style="font-size:{word}px">GoatConf 2027</div>
+  <div class="sub" style="font-size:{sub}px; margin-top:{int(sub * .55)}px">{FACTS}</div>
+  <div class="url" style="font-size:{url}px; margin-top:{int(sub * .7)}px">{URL}</div>
+</div>
+{seal(seal_size, f"right:{right}px; top:50%; transform:translateY(-50%)")}""")
+
+
+TAGLINE = "Any programming language, any stack."
+
+
+def brand_band(w: int, h: int, left: int, top: int, mark: int, tag: int, band: int, facts: int, small: int,
+               goat: int, right: int, band_left: int | None = None, tile: int = 0) -> str:
+    """A banner or a cover in the cards' look: the wordmark and the line under it, the yellow band along the foot
+    with when, where, "Free" and the address, the seal at the band's right end and the plain goat sitting on the band
+    beside it. `left` keeps the lettering clear of what a platform lays over the bottom left (a profile photo, a
+    page's logo), and `band_left` does so for the band's lines where only they are covered; `right` keeps the seal
+    inside what a phone trims; `tile` sets the hoof marks' size on a very large cover."""
+    _, _, _, _, ink, _, colour = CARD_TONES[THEME]
+    coin = round(band * .8)
+    animal, wide = card_goat(goat, f"right:{right + coin + round(band * .35)}px; bottom:{band - round(goat * .02)}px")
+    return card(w, h, f"""
+{f'<style>body {{ background-size: {tile}px {tile}px; }}</style>' if tile else ''}
+<div style="position:absolute; left:{left}px; top:{top}px; color:{ink}">
+  <div style="white-space:nowrap">{wordmark(mark, colour, .72)}</div>
+  <div style="{SUB}; font-size:{tag}px; line-height:1.15; margin-top:{round(tag * .6)}px">{TAGLINE}</div>
+</div>
+{foot_band(left if band_left is None else band_left, band, URL, True, facts, small, round(band * .4), round(band * .13))}
+{seal(coin, f"right:{right}px; bottom:{(band - coin) // 2}px")}
+{animal}""")
+
+
+def page_cover(w: int = 4200, h: int = 700) -> str:
+    """The LinkedIn company page cover, at LinkedIn's 4200 x 700.
+
+    LinkedIn lays the page's square logo over the bottom left of the cover and
+    the phone app trims both sides, so the lettering starts past the logo's quarter
+    and the seal sits well inside the right edge."""
+    return brand_band(w, h, left=1240, top=84, mark=230, tag=80, band=180, facts=96, small=40, goat=430, right=360, tile=600)
+
+
+def luma_cover(w: int = 1080, h: int = 1080) -> str:
+    """The Luma event's cover: the name on two lines, the line under it, the whole seal beside them, and the plain
+    goat sitting on the band. The band carries no second seal."""
+    _, _, _, _, ink, _, colour = CARD_TONES[THEME]
+    animal, _ = card_goat(400, "right:200px; bottom:118px")
+    return card(w, h, f"""
+<div style="position:absolute; left:72px; top:84px; color:{ink}">
+  <div class="disp" style="font-size:178px; color:{colour}">GoatConf</div>
+  <div><span class="tab" style="font-size:150px; font-stretch:75%; margin-top:20px">2027</span></div>
+  <div style="{SUB}; font-size:50px; line-height:1.15; margin-top:48px; max-width:520px">{TAGLINE}</div>
+</div>
+{seal(330, "right:64px; top:72px")}
+{animal}
+{foot_band(72, 124, URL, True, 56, 22, 50, 16)}""")
 
 
 def post(w: int, h: int, title: str, line: str, square: bool) -> str:
@@ -702,19 +737,14 @@ def event_card(meta, slug: str, square: bool, height: int = 675) -> str:
 def cards() -> dict[str, tuple[int, int, str]]:
     """Every still card, drawn in the colours last chosen with use()."""
     out = {
-        "linkedin-banner.png": (1584, 396, banner(1584, 396, 104, 36, 26, 320, 560, 90)),
+        "linkedin-banner.png": (1584, 396, brand_band(1584, 396, left=560, top=54, mark=124, tag=40, band=100, facts=46, small=20, goat=230, right=80)),
         "linkedin-page-cover.png": (4200, 700, page_cover()),
-        "header-3x1.png": (1500, 500, banner(1500, 500, 128, 40, 28, 400, 90, 96)),
+        "header-3x1.png": (1500, 500, brand_band(1500, 500, left=90, top=78, mark=170, tag=50, band=116, facts=52, small=22, goat=290, right=80, band_left=420)),
         "og.png": (1200, 630, banner(1200, 630, 104, 34, 26, 400, 64, 56)),
         "goatchi-preview.png": (1200, 630, goatchi_card()),
         "post-goatchi-square.png": (1080, 1080, goatchi_card(1080, 1080, True, "goatconf.com/goatchi")),
         "post-goatchi-wide.png": (1200, 675, goatchi_card(1200, 675, url="goatconf.com/goatchi")),
-        "luma-cover.png": (1080, 1080, page(1080, 1080, f"""
-{seal(600, "left:240px; top:110px")}
-<div style="position:absolute; left:0; right:0; bottom:110px; text-align:center">
-  <div class="word" style="font-size:120px">GoatConf 2027</div>
-  <div class="sub" style="font-size:42px; margin-top:24px">{FACTS}</div>
-</div>""")),
+        "luma-cover.png": (1080, 1080, luma_cover()),
     }
     # The goats post's cards, still and animated, are tools/goats_post.py's: it lays the goats out on goats_post's
     # lettering and seal.
