@@ -961,3 +961,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-23 merge — PR #311: drumbeat: Carmine Paolino's spotlight as an excited introduction, and "Why a goat" shown as published
    diff: 18 files, +383/-108
    restricted-paths: false
+2026-11-23 merge — PR #313: cards: the speaker cards put the photo first, on paper and on the album's blue
+   diff: 89 files, +254/-82
+   restricted-paths: true
