@@ -128,7 +128,6 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     # Every still card is listed twice: under its own name in the light look, and ending in -dark in the dark one.
     names = shareables.jobs()
     assert "og.png" in names and "og-dark.png" in names and len(names) % 2 == 0
-    assert "#edf2fb" in names["og.png"][2] and "#051534" in names["og-dark.png"][2]
     assert shareables.THEME == "light"
     # The goat on a card says the line the organiser picked; one value picks, and a record's own line wins. The
     # link preview carries no bubble.
@@ -185,9 +184,15 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
         assert f">{shareables.CARD_WHEN} · <span" in cover and ">Free</span>" in cover and ">goatconf.com</div>" in cover, name
         assert "background: #edf2fb" in cover and "background: #0b3d91" in night, name
     assert names["luma-cover.png"][2].count('class="seal"') == 1 and names["header-3x1.png"][2].count('class="seal"') == 1
-    # The site's link preview keeps the look it had: the night ground and the rule.
-    assert "#051534" in names["og-dark.png"][2] and "body::after" in names["og.png"][2]
-    assert shareables.FACTS == "Tuzla · 3–5 June 2027 · Free to attend" and shareables.FACTS in names["og.png"][2]
+    # The site's link preview and the Goatchi card follow as well
+    # (sources/conversations/2026-11-23--org--link-preview-and-goatchi-follow.md), so every still card has the look.
+    assert "og.png" in names and shareables.TAGLINE in names["og.png"][2] and ">Free</span>" in names["og.png"][2]
+    assert "background: #edf2fb" in names["og.png"][2] and "background: #0b3d91" in names["og-dark.png"][2]
+    for name in ("goatchi-preview.png", "post-goatchi-square.png", "post-goatchi-wide-dark.png"):
+        goatchi = names[name][2]
+        assert ">Goatchi</div>" in goatchi and ">Baaa!</div>" in goatchi and ">GoatConf</span>" in goatchi, name
+        assert f">{shareables.CARD_WHEN} · <span" in goatchi and "goatconf.com/goatchi" in goatchi, name
+    assert all("body::after" in doc and "height: 0px" in doc for _, _, doc in names.values())  # no card keeps the yellow rule
     # A card built around a photograph never takes a palette; the flat ones may.
     photo = next(iter(shareables.PHOTO_POSTS))
     assert shareables.photo_card(f"post-{photo}-square.png") and shareables.photo_card(f"post-{photo}-wide-dark.png")
