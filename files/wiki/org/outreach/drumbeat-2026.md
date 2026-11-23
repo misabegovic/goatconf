@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-23--org--carmine-x-text-use-the-spare-room.md
   - sources/conversations/2026-11-23--org--carmine-x-text-no-disco-line.md
   - sources/conversations/2026-11-23--org--carmine-x-text-chat-with-work.md
   - sources/web/speakers/carmine-paolino-support-2026-10-18.md
@@ -363,11 +364,11 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Carmine's profile: goatconf.com/speaker-carmine-paolino
   > Register: goatconf.com/register
 
-- **Short** (257 characters), written for X, with Chat with Work where it first named his SF Ruby keynote, and without the line about his music, both on the organiser's asks (sources: sources/conversations/2026-11-23--org--carmine-x-text-chat-with-work.md, sources/conversations/2026-11-23--org--carmine-x-text-no-disco-line.md):
+- **Short** (278 characters), written for X. On the organiser's asks it names Chat with Work where it first named his SF Ruby keynote, carries no line about his music, and uses its spare room to say what Chat with Work and Plenty are (sources: sources/conversations/2026-11-23--org--carmine-x-text-chat-with-work.md, sources/conversations/2026-11-23--org--carmine-x-text-no-disco-line.md, sources/conversations/2026-11-23--org--carmine-x-text-use-the-spare-room.md):
 
   > Carmine Paolino is coming to GoatConf!
   >
-  > Creator of RubyLLM, the Ruby AI framework with 16M+ downloads. Builds Chat with Work, an AI agent for work. Founder of Plenty.
+  > He created RubyLLM, the Ruby AI framework with 16M+ downloads. At his company, Plenty, he builds Chat with Work, an AI agent for your team's tools.
   >
   > Meet him in Tuzla, 3 to 5 June 2027. Free to attend.
   > goatconf.com/speaker-carmine-paolino
