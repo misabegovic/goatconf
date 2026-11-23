@@ -55,9 +55,9 @@ OUT = SITE / "share"
 # the seal and the yellow rule along the foot. The values are DESIGN.md's theme tokens.
 YELLOW, NIGHT = brand.YELLOW, brand.NIGHT
 THEMES = {
-    "light": {"BLUE": brand.BLUE, "SOFT": "#46557a", "PAPER": "#edf2fb", "INK": brand.INK, "RING": "#ffffff",
+    "light": {"BLUE": brand.BLUE, "SOFT": "#46557a", "PAPER": "#edf2fb", "INK": brand.INK,
               "ACCENT": brand.BLUE, "HOOF": "0b3d91", "HOOF_A": ".13"},
-    "dark": {"BLUE": "#f3f6ff", "SOFT": "#b6c5e8", "PAPER": "#051534", "INK": "#e8eefc", "RING": "#14387a",
+    "dark": {"BLUE": "#f3f6ff", "SOFT": "#b6c5e8", "PAPER": "#051534", "INK": "#e8eefc",
              "ACCENT": "#a9c4ff", "HOOF": "a9c4ff", "HOOF_A": ".1"},
 }
 FACTS = "Tuzla · 3–5 June 2027 · Free to attend"
@@ -74,9 +74,9 @@ def hooves(fill: str, alpha: str) -> str:
 
 def use(theme: str) -> None:
     """The colours every card built after this call is drawn in: "light" or "dark"."""
-    global THEME, BLUE, SOFT, PAPER, INK, RING, ACCENT, HOOVES
+    global THEME, BLUE, SOFT, PAPER, INK, ACCENT, HOOVES
     t = THEMES[theme]
-    THEME, BLUE, SOFT, PAPER, INK, RING, ACCENT = theme, t["BLUE"], t["SOFT"], t["PAPER"], t["INK"], t["RING"], t["ACCENT"]
+    THEME, BLUE, SOFT, PAPER, INK, ACCENT = theme, t["BLUE"], t["SOFT"], t["PAPER"], t["INK"], t["ACCENT"]
     HOOVES = hooves(t["HOOF"], t["HOOF_A"])
 
 
@@ -158,30 +158,154 @@ def page_cover(w: int = 4200, h: int = 700) -> str:
 {seal(500, "right:360px; top:50%; transform:translateY(-50%)")}""")
 
 
+# The cards' look (sources/conversations/2026-11-23--org--speaker-cards-photo-first.md, chosen for the speaker cards,
+# and sources/conversations/2026-11-23--org--other-cards-follow-the-speaker-cards.md, for the rest): what the card is
+# about first, as a sticker tilted like the album's, on a yellow block; lettering in two tones, as large as its room
+# allows; a yellow band along the foot with the date, the town and "Free" in a dark pill. The light card is on paper,
+# the dark one on the album's blue: per version the ground, its hoof marks, the first and second tone of the
+# lettering, the text, the accent line and the wordmark. The banners, the covers, the site's link preview and the
+# Goatchi card keep the look they had.
+CARD_TONES = {
+    "light": ("#edf2fb", ("0b3d91", ".13"), brand.INK, brand.BLUE, brand.INK, brand.BLUE, brand.BLUE),
+    "dark": (brand.BLUE, ("ffffff", ".07"), "#ffffff", YELLOW, "#ffffff", YELLOW, "#ffffff"),
+}
+CARD_TILT = -2.5
+CARD_WHEN = "3–5 June 2027 · Tuzla"
+# The generic goat of a card that is about no speaker: the plain one, sitting.
+CARD_GOAT = "sitting"
+# Lettering marked data-fit is set at its largest size and stepped down until it fits its line; lines that share a
+# data-group then take the smallest of their sizes, so a title's lines stay one size. It runs once the fonts are in.
+FIT = """<script>
+document.fonts.ready.then(() => {
+  const groups = {};
+  document.querySelectorAll('[data-fit]').forEach(el => {
+    let s = parseFloat(getComputedStyle(el).fontSize);
+    const min = parseFloat(el.dataset.fit) || 40;
+    while (el.scrollWidth > el.clientWidth && s > min) { s -= 2; el.style.fontSize = s + 'px'; }
+    if (el.dataset.group) (groups[el.dataset.group] = groups[el.dataset.group] || []).push([el, s]);
+  });
+  Object.values(groups).forEach(g => { const m = Math.min(...g.map(x => x[1])); g.forEach(([el]) => { el.style.fontSize = m + 'px'; }); });
+});
+</script>"""
+SUB = "font-family:'Bricolage Grotesque'; font-weight:700; font-stretch:85%; text-wrap:balance"
+
+
+def card(w: int, h: int, body: str) -> str:
+    """A card in the look above: its version's ground and hoof marks, no yellow rule (the band replaces it), and the
+    script that fits the lettering."""
+    ground, hoof, *_ = CARD_TONES[THEME]
+    return page(w, h, body + "\n" + FIT, ground, hooves(*hoof), rule=False)
+
+
+def wordmark(px: int, colour: str) -> str:
+    """GoatConf and the year in its yellow tab, on one line: the top bar's mark."""
+    return (f'<span class="disp" style="font-size:{px}px; color:{colour}; vertical-align:middle">GoatConf</span>'
+            f'<span class="tab" style="font-size:{px}px; margin-left:{px * .22:.0f}px; vertical-align:middle; font-stretch:75%">2027</span>')
+
+
+def sticker(inner: str, left: int, top: int, wide: int, tall: int, off: int = 18, radius: int = 26, ring: int = 8,
+            ground: str = YELLOW) -> str:
+    """What a card is about, as a sticker: a rounded shape with a white edge on a yellow block set down and to the
+    right, the two tilted together about the sticker's centre. A photo fills it; a logo sits on its own ground."""
+    box = f"position:absolute; left:{left}px; top:{top}px; width:{wide}px; height:{tall}px; border-radius:{radius}px"
+    return (f'<div style="position:absolute; left:0; top:0; width:0; height:0; transform-origin:{left + wide / 2:.0f}px {top + tall / 2:.0f}px; '
+            f'transform:rotate({CARD_TILT}deg)">'
+            f'<div style="{box}; background:{YELLOW}; transform:translate({off}px,{off}px)"></div>'
+            f'<div style="{box}; overflow:hidden; background:{ground}; box-shadow:0 0 0 {ring}px #fff">{inner}</div></div>')
+
+
+def snapshot(photo: str, left: int, top: int, size: int, off: int, radius: int, ring: int) -> str:
+    """A speaker's photo as a square sticker."""
+    return sticker(photo, left, top, size, size, off, radius, ring)
+
+
+def label(text: str, px: int, left: int, top: int, tilt: float = CARD_TILT) -> str:
+    """The yellow tab that says which card this is: on a sticker's lower edge it tilts with the sticker."""
+    return (f'<div style="position:absolute; left:{left}px; top:{top}px; transform:rotate({tilt}deg); transform-origin:0 50%">'
+            f'<span class="tab" style="font-size:{px}px; box-shadow:0 6px 14px -6px rgb(5 29 71 / .6)">{text}</span></div>')
+
+
+def foot_band(left: int, band: int, address: str, free: bool, px: int, small: int, lift: int, low: int) -> str:
+    """The yellow band along the foot: when and where, "Free" in a dark pill, and the page's address under them."""
+    pill = (f' · <span style="background:{NIGHT}; color:{YELLOW}; border-radius:.2em; padding:.03em .3em .06em; margin-left:.06em">Free</span>'
+            if free else "")
+    return (f'<div style="position:absolute; left:0; right:0; bottom:0; height:{band}px; background:{YELLOW}"></div>'
+            f'<div class="disp" style="position:absolute; left:{left}px; bottom:{lift}px; font-size:{px}px; color:{NIGHT}; white-space:nowrap">{CARD_WHEN}{pill}</div>'
+            f'<div style="position:absolute; left:{left}px; bottom:{low}px; font-size:{small}px; font-weight:700; color:{NIGHT}">{address}</div>')
+
+
+def band_square(address: str, free: bool = True) -> str:
+    """The foot of a square card: the band, and the seal at its right end."""
+    return foot_band(72, 124, address, free, 56, 22, 50, 16) + seal(100, "right:64px; bottom:12px")
+
+
+def band_wide(address: str, band: int, left: int = 50, free: bool = True) -> str:
+    """The foot of a wide card: the seal, then the band's lines."""
+    return foot_band(left + 110, band, address, free, 52, 20, 48, 17) + seal(88, f"left:{left}px; bottom:{(band - 88) // 2}px")
+
+
+def card_goat(tall: int, place: str) -> tuple[str, float]:
+    """The plain goat sitting on a card that is about no speaker, and how wide it stands; nothing where its picture
+    is not on this machine's atlas."""
+    if not goat_atlas.has(CARD_GOAT):
+        return "", 0
+    shape = goat_atlas.manifest()[CARD_GOAT]
+    wide = tall * shape["w"] / shape["h"]
+    return f'<img src="{goat_src(CARD_GOAT)}" style="position:absolute; {place}; width:{wide:.0f}px">', wide
+
+
+def two_tone(words: str, first: str, second: str) -> str:
+    """A name in the card's two tones: its first word, then the rest."""
+    head, _, rest = words.partition(" ")
+    return f'<span style="color:{first}">{esc(head)}</span>' + (f' <span style="color:{second}">{esc(rest)}</span>' if rest else "")
+
+
+def title_lines(title: str, px: int, first: str, second: str, least: int = 70, most: int = 0) -> str:
+    """A title on its set lines, every line one size, the last line in the second tone. With `most`, the lines
+    before the last are joined until no more than that many are left."""
+    lines = [t.strip() for t in title.split("<br>")]
+    while most and len(lines) > most:
+        lines[:2] = [f"{lines[0]} {lines[1]}"]
+    return "".join(
+        f'<div class="disp fit" data-fit="{least}" data-group="title" style="font-size:{px}px; '
+        f'color:{second if (i == len(lines) - 1 and len(lines) > 1) else first}; margin-top:{6 if i else 0}px">{line}</div>'
+        for i, line in enumerate(lines))
+
+
+def title_line(title: str, first: str, second: str) -> str:
+    """A title on one line: its last set line, or its last word, in the second tone."""
+    parts = [t.strip() for t in title.split("<br>")]
+    if len(parts) == 1:
+        head, _, tail = parts[0].rpartition(" ")
+        parts = [head, tail] if head else parts
+    if len(parts) == 1:
+        return f'<span style="color:{first}">{parts[0]}</span>'
+    return f'<span style="color:{first}">{" ".join(parts[:-1])}</span> <span style="color:{second}">{parts[-1]}</span>'
+
+
 def post(w: int, h: int, title: str, line: str, square: bool) -> str:
+    """A post of words: the title large on its set lines, its line under it, and the plain goat sitting on the band."""
+    _, _, first, second, ink, _, mark = CARD_TONES[THEME]
     if square:
-        return page(w, h, f"""
-<div style="position:absolute; left:84px; top:96px; right:84px">
-  <div class="word" style="font-size:132px">{title}</div>
-  <div class="rule" style="width:120px; margin:44px 0 36px"></div>
-  <div class="sub" style="font-size:44px; line-height:1.15; max-width:24ch">{line}</div>
+        goat, wide = card_goat(380, "right:56px; bottom:118px")
+        return card(w, h, f"""
+<div style="position:absolute; left:72px; top:64px; white-space:nowrap">{wordmark(46, mark)}</div>
+<div style="position:absolute; left:72px; right:72px; top:176px">{title_lines(title, 190, first, second)}</div>
+<div style="position:absolute; left:72px; right:{72 + wide + 30:.0f}px; bottom:190px; color:{ink}">
+  <div style="{SUB}; font-size:46px; line-height:1.15">{line}</div>
 </div>
-<div style="position:absolute; left:84px; bottom:92px">
-  <div class="sub" style="font-size:34px; color:{INK}">{FACTS}</div>
-  <div class="url" style="font-size:32px; margin-top:16px">{URL}</div>
+{goat}
+{band_square(URL)}""")
+    band = 116
+    goat, wide = card_goat(300, f"right:44px; bottom:{band - 6}px")
+    return card(w, h, f"""
+<div style="position:absolute; right:40px; top:38px; white-space:nowrap">{wordmark(40, mark)}</div>
+<div style="position:absolute; left:60px; width:760px; top:54px">{title_lines(title, 136, first, second, 60, most=2)}</div>
+<div style="position:absolute; left:60px; right:{44 + wide + 40:.0f}px; bottom:{band + 40}px; color:{ink}">
+  <div style="{SUB}; font-size:36px; line-height:1.15">{line}</div>
 </div>
-{seal(300, "right:72px; bottom:72px")}""")
-    return page(w, h, f"""
-<div style="position:absolute; left:72px; top:72px; width:720px">
-  <div class="word" style="font-size:104px">{title}</div>
-  <div class="rule" style="width:100px; margin:34px 0 28px"></div>
-  <div class="sub" style="font-size:36px; line-height:1.15">{line}</div>
-</div>
-<div style="position:absolute; left:72px; bottom:64px">
-  <div class="sub" style="font-size:28px; color:{INK}">{FACTS}</div>
-  <div class="url" style="font-size:26px; margin-top:12px">{URL}</div>
-</div>
-{seal(340, "right:72px; top:50%; transform:translateY(-50%)")}""")
+{goat}
+{band_wide(URL, band, 60)}""")
 
 
 def goats_post(w: int, h: int, square: bool, crowd_in: bool = True) -> str:
@@ -298,53 +422,41 @@ UPRIGHT = {"why-a-goat"}
 
 def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, square: bool,
                focus: tuple[str, str] = ("50% 50%", "50% 50%"), upright: bool = False) -> str:
-    """A post with a photo: the photo on top (square) or on the left (wide, and square when `upright`), its credit on
-    it if it has one, the words beside. A title without set line breaks takes the card's full width and wraps into
-    even lines."""
+    """A post with a photo: the photo as a sticker, on top (square) or on the left (wide, and square when
+    `upright`), its credit on it if it has one, the words under or beside it."""
+    _, _, first, second, ink, _, mark = CARD_TONES[THEME]
     src = (SITE / img).as_uri()
-    cred = (f'<div style="position:absolute; left:18px; bottom:14px; font-size:20px; font-weight:700; '
+    cred = (f'<div style="position:absolute; left:18px; bottom:12px; font-size:20px; font-weight:700; color:#fff; '
             f'text-shadow:0 1px 4px rgb(0 0 0 / .8)">{esc(credit)}</div>') if credit else ""
+
+    def pic(at: str) -> str:
+        return f'<img src="{src}" style="display:block; width:100%; height:100%; object-fit:cover; object-position:{at}">{cred}'
     if square and upright:
-        return page(w, h, f"""
-<div style="position:absolute; left:0; top:0; width:580px; height:{h}px; overflow:hidden">
-  <img src="{src}" style="width:100%; height:100%; object-fit:cover; object-position:{focus[0]}">{cred}</div>
-<div class="rule" style="position:absolute; left:580px; top:0; width:8px; height:{h}px; border-radius:0"></div>
-<div style="position:absolute; left:644px; top:84px; right:56px">
-  <div class="word" style="font-size:104px; text-wrap:balance">{title}</div>
-  <div class="sub" style="font-size:36px; line-height:1.15; margin-top:30px">{line}</div>
-</div>
-<div style="position:absolute; left:644px; bottom:290px; right:56px">
-  <div class="sub" style="font-size:30px; line-height:1.3; color:{INK}">{FACTS.replace(" · ", "<br>")}</div>
-  <div class="url" style="font-size:28px; margin-top:12px">{URL}</div>
-</div>
-{seal(200, "right:56px; bottom:64px")}""")
+        return card(w, h, f"""
+{sticker(pic(focus[0]), 64, 58, 500, 760)}
+<div style="position:absolute; left:626px; right:56px; top:64px; white-space:nowrap; text-align:right">{wordmark(44, mark)}</div>
+<div style="position:absolute; left:626px; right:56px; top:210px">{title_lines(title, 150, first, second)}</div>
+<div style="position:absolute; left:626px; right:56px; top:560px; color:{ink}"><div style="{SUB}; font-size:44px; line-height:1.15">{line}</div></div>
+{band_square(URL)}""")
     if square:
-        return page(w, h, f"""
-<div style="position:absolute; left:0; top:0; width:{w}px; height:540px; overflow:hidden">
-  <img src="{src}" style="width:100%; height:100%; object-fit:cover; object-position:{focus[0]}">{cred}</div>
-<div class="rule" style="position:absolute; left:0; top:540px; width:{w}px; border-radius:0"></div>
-<div style="position:absolute; left:84px; top:600px; right:84px">
-  <div class="word" style="font-size:112px; text-wrap:balance">{title}</div>
-  <div class="sub" style="font-size:38px; line-height:1.15; margin-top:30px; margin-right:246px">{line}</div>
+        return card(w, h, f"""
+<div style="position:absolute; left:72px; top:56px; white-space:nowrap">{wordmark(44, mark)}</div>
+{sticker(pic(focus[0]), 72, 140, 918, 450)}
+<div style="position:absolute; left:72px; right:72px; top:646px">
+  <div class="disp fit" data-fit="60" style="font-size:150px">{title_line(title, first, second)}</div>
 </div>
-<div style="position:absolute; left:84px; bottom:64px">
-  <div class="sub" style="font-size:30px; color:{INK}">{FACTS}</div>
-  <div class="url" style="font-size:28px; margin-top:10px">{URL}</div>
-</div>
-{seal(230, "right:64px; bottom:64px")}""")
-    return page(w, h, f"""
-<div style="position:absolute; left:0; top:0; width:560px; height:{h}px; overflow:hidden">
-  <img src="{src}" style="width:100%; height:100%; object-fit:cover; object-position:{focus[1]}">{cred}</div>
-<div class="rule" style="position:absolute; left:560px; top:0; width:6px; height:{h}px; border-radius:0"></div>
-<div style="position:absolute; left:620px; top:64px; right:56px">
-  <div class="word" style="font-size:{88 if "<br>" in title else 100}px; text-wrap:balance">{title}</div>
-  <div class="sub" style="font-size:30px; line-height:1.15; margin-top:24px">{line}</div>
-</div>
-<div style="position:absolute; left:620px; bottom:56px; right:200px">
-  <div class="sub" style="font-size:22px; color:{INK}">{FACTS}</div>
-  <div class="url" style="font-size:22px; margin-top:8px">{URL}</div>
-</div>
-{seal(140, "right:48px; bottom:48px")}""")
+<div style="position:absolute; left:72px; right:72px; bottom:168px; color:{ink}"><div style="{SUB}; font-size:42px; line-height:1.15">{line}</div></div>
+{band_square(URL)}""")
+    band = 116
+    # A title with set lines keeps them, fitted to the column; one without wraps into even lines.
+    words = (title_lines(title, 120, first, second, 60) if "<br>" in title else
+             f'<div class="disp" style="font-size:84px; text-wrap:balance">{title_line(title, first, second)}</div>')
+    return card(w, h, f"""
+{band_wide(URL, band)}
+{sticker(pic(focus[1]), 50, 36, 520, h - band - 88, 16, 24, 7)}
+<div style="position:absolute; right:40px; top:38px; white-space:nowrap">{wordmark(40, mark)}</div>
+<div style="position:absolute; left:640px; right:40px; top:120px">{words}</div>
+<div style="position:absolute; left:640px; right:60px; bottom:{band + 40}px; color:{ink}"><div style="{SUB}; font-size:32px; line-height:1.15">{line}</div></div>""")
 
 
 # The goat on a speaker's card may say a line (the organiser's "maybe",
@@ -387,61 +499,13 @@ def bubble(line: str, right: float, bottom: float, px: int, room: int) -> str:
             f'font-size:{px}px; line-height:1.08; text-wrap:balance; text-align:center">{esc(line)}</div>')
 
 
-# The speaker cards (sources/conversations/2026-11-23--org--speaker-cards-photo-first.md): the photo first, tilted
-# like a sticker in the album, on a yellow block; the name on one line, as large as its room allows; a yellow band
-# along the foot with the date, the town and "Free" in a dark pill. The light card is on paper, the dark one on the
-# album's blue: per version the ground, its hoof marks, the first and last name, the text, the session and the
-# wordmark.
-SPEAKER_TONES = {
-    "light": ("#edf2fb", ("0b3d91", ".13"), brand.INK, brand.BLUE, brand.INK, brand.BLUE, brand.BLUE),
-    "dark": (brand.BLUE, ("ffffff", ".07"), "#ffffff", YELLOW, "#ffffff", YELLOW, "#ffffff"),
-}
-SPEAKER_TILT = -2.5
-SPEAKER_WHEN = "3–5 June 2027 · Tuzla"
-# A name is set at its largest size and stepped down until it fits its line: the script runs once the fonts are in.
-FIT = """<script>
-document.fonts.ready.then(() => {
-  document.querySelectorAll('[data-fit]').forEach(el => {
-    let s = parseFloat(getComputedStyle(el).fontSize);
-    const min = parseFloat(el.dataset.fit) || 40;
-    while (el.scrollWidth > el.clientWidth && s > min) { s -= 2; el.style.fontSize = s + 'px'; }
-  });
-});
-</script>"""
-
-
-def wordmark(px: int, colour: str) -> str:
-    """GoatConf and the year in its yellow tab, on one line: the top bar's mark."""
-    return (f'<span class="disp" style="font-size:{px}px; color:{colour}; vertical-align:middle">GoatConf</span>'
-            f'<span class="tab" style="font-size:{px}px; margin-left:{px * .22:.0f}px; vertical-align:middle; font-stretch:75%">2027</span>')
-
-
-def snapshot(photo: str, left: int, top: int, size: int, off: int, radius: int, ring: int) -> str:
-    """The speaker's photo as a sticker: a rounded square with a white edge on a yellow block set down and to the
-    right, the two tilted together about the photo's centre."""
-    box = f"position:absolute; left:{left}px; top:{top}px; width:{size}px; height:{size}px; border-radius:{radius}px"
-    return (f'<div style="position:absolute; left:0; top:0; width:0; height:0; transform-origin:{left + size / 2:.0f}px {top + size / 2:.0f}px; '
-            f'transform:rotate({SPEAKER_TILT}deg)">'
-            f'<div style="{box}; background:{YELLOW}; transform:translate({off}px,{off}px)"></div>'
-            f'<div style="{box}; overflow:hidden; background:{YELLOW}; box-shadow:0 0 0 {ring}px #fff">{photo}</div></div>')
-
-
-def foot_band(left: int, band: int, address: str, free: bool, px: int, small: int, lift: int, low: int) -> str:
-    """The yellow band along the foot: when and where, "Free" in a dark pill, and the page's address under them."""
-    pill = (f' · <span style="background:{NIGHT}; color:{YELLOW}; border-radius:.2em; padding:.03em .3em .06em; margin-left:.06em">Free</span>'
-            if free else "")
-    return (f'<div style="position:absolute; left:0; right:0; bottom:0; height:{band}px; background:{YELLOW}"></div>'
-            f'<div class="disp" style="position:absolute; left:{left}px; bottom:{lift}px; font-size:{px}px; color:{NIGHT}; white-space:nowrap">{SPEAKER_WHEN}{pill}</div>'
-            f'<div style="position:absolute; left:{left}px; bottom:{low}px; font-size:{small}px; font-weight:700; color:{NIGHT}">{address}</div>')
-
-
 def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 675, announce: bool = False,
                  says: str = "", free: bool = True) -> str:
     """The speaker's own "I'm speaking" card, or with `announce` GoatConf's card announcing them. Both say the same,
     and little: the photo, the name, their role and session, their own goat, and a yellow band with when, where,
     that it is free, and their page's address. Only the tab on the photo differs. Without `free` the band stops
     before "Free", as the link preview's line does."""
-    ground, hoof, first_tone, last_tone, ink, talk_tone, mark = SPEAKER_TONES[THEME]
+    _, _, first_tone, last_tone, ink, talk_tone, mark = CARD_TONES[THEME]
     first, _, last = str(meta["name"]).partition(" ")
     name = (f'<span style="color:{first_tone}">{esc(first)}</span>'
             + (f' <span style="color:{last_tone}">{esc(last)}</span>' if last else ""))
@@ -472,11 +536,11 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
             goat = (f'<img src="{goat_src(pose)}" style="position:absolute; left:{mid - wide / 2 + 4:.0f}px; top:{up:.0f}px; width:{wide:.0f}px">'
                     + bubble(says, w - mid - 128, h - up + 4, 31, 300))
         session = f'<div style="{session_style}; font-size:32px; line-height:1.12; margin-top:8px">{talk}</div>' if talk else ""
-        return page(w, h, f"""
+        return card(w, h, f"""
 {snapshot(photo, left, top, size, 18, 26, 8)}
 <div style="position:absolute; left:{side}px; width:{room}px; top:{foot - 66}px; text-align:center; white-space:nowrap">{wordmark(46, mark)}</div>
 {goat}
-<div style="position:absolute; left:{left + 8}px; top:{top + size - 12}px; transform:rotate({SPEAKER_TILT}deg); transform-origin:0 50%"><span class="tab" style="font-size:36px; {tab_shadow}">{head}</span></div>
+<div style="position:absolute; left:{left + 8}px; top:{top + size - 12}px; transform:rotate({CARD_TILT}deg); transform-origin:0 50%"><span class="tab" style="font-size:36px; {tab_shadow}">{head}</span></div>
 <div style="position:absolute; left:{left}px; right:{left}px; top:{foot + 36}px; color:{ink}">
   <div class="disp fit" data-fit="70" style="font-size:{122 if talk else 146}px">{name}</div>
   <div style="font-size:{32 if talk else 36}px; font-weight:700; line-height:1.2; margin-top:{10 if talk else 16}px; text-wrap:balance">{esc(str(meta.get("role") or ""))}</div>
@@ -484,7 +548,7 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
 </div>
 {foot_band(left, band, address, free, 56, 22, 50, 16)}
 {seal(100, f"right:64px; bottom:{(band - 100) // 2}px")}
-{FIT}""", ground, hooves(*hoof), rule=False)
+""")
     w, h = 1200, height
     band = 116 if h >= 675 else 108
     left, top = 50, 36
@@ -497,10 +561,10 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
                 + bubble(says, 36 + wide * .9, band - 50 + wide * shape * .56, 25, 250))
     session = f'<div style="{session_style}; font-size:27px; line-height:1.15; margin-top:8px">{talk}</div>' if talk else ""
     # The seal stands on the band before the line, the wordmark in the top corner, and the goat sits on the band.
-    return page(w, h, f"""
+    return card(w, h, f"""
 {foot_band(left + 110, band, address, free, 52, 20, 48, 17)}
 {snapshot(photo, left, top, size, 16, 24, 7)}
-<div style="position:absolute; left:{left + 6}px; top:{top + size - 10}px; transform:rotate({SPEAKER_TILT}deg); transform-origin:0 50%"><span class="tab" style="font-size:28px; {tab_shadow}">{head}</span></div>
+<div style="position:absolute; left:{left + 6}px; top:{top + size - 10}px; transform:rotate({CARD_TILT}deg); transform-origin:0 50%"><span class="tab" style="font-size:28px; {tab_shadow}">{head}</span></div>
 <div style="position:absolute; right:40px; top:38px; white-space:nowrap">{wordmark(40, mark)}</div>
 <div style="position:absolute; left:{text}px; right:40px; top:112px; color:{ink}">
   <div class="disp fit" data-fit="50" style="font-size:112px">{name}</div>
@@ -511,7 +575,7 @@ def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 
 </div>
 {seal(88, f"left:{left}px; bottom:{(band - 88) // 2}px")}
 {goat}
-{FIT}""", ground, hooves(*hoof), rule=False)
+""")
 
 
 def thanks(meta) -> str:
@@ -538,69 +602,101 @@ def logo_ground(meta) -> str:
     return NIGHT if meta.get("logo_on") == "dark" else str(meta.get("logo_bg") or "#fff")
 
 
-def logo_edge(meta) -> str:
-    """On the dark card a logo drawn for the dark sits on a night tile on the night ground: a thin ring in the line
-    blue keeps the tile's shape."""
-    return "box-shadow:0 0 0 2px rgb(169 196 255 / .55); " if THEME == "dark" and logo_ground(meta) == NIGHT else ""
+def support_card(slug: str, meta, square: bool, head: str, words: str) -> str:
+    """A supporter's card: their logo on its own ground as the sticker, a tab saying whose voice the card is in,
+    their name, and one line under it. On the square card the plain goat sits on the wordmark beside the logo, as a
+    speaker's goat does; on the wide one it sits on the band."""
+    _, _, first, second, ink, accent, mark = CARD_TONES[THEME]
+    logo = (f'<div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:9%">'
+            f'<img src="{(SITE / meta["logo"]).as_uri()}" style="max-width:100%; max-height:100%; object-fit:contain"></div>')
+    address = f"{URL}/{speakers.supporter_page_name(slug)[:-5]}"
+    name = str(meta["name"])
+    long_name = len(name) > 22  # a long name takes two lines; a short one is fitted to one
+    if square:
+        w = h = 1080
+        left, top, wide, tall = 72, 62, 600, 440
+        foot = top + tall + 18
+        side = left + wide + 32
+        room = w - side - 40
+        goat, gw = card_goat(330, f"left:{{at}}px; top:{foot - 62 - 330 + 8}px")
+        goat = goat.replace("{at}", f"{side + room / 2 - gw / 2 + 4:.0f}")
+        lettering = ('<div class="disp" style="font-size:92px; text-wrap:balance">' if long_name
+                     else '<div class="disp fit" data-fit="70" style="font-size:150px">')
+        return card(w, h, f"""
+{sticker(logo, left, top, wide, tall, ground=logo_ground(meta))}
+<div style="position:absolute; left:{side}px; width:{room}px; top:{foot - 66}px; text-align:center; white-space:nowrap">{wordmark(46, mark)}</div>
+{goat}
+{label(head, 36, left + 8, top + tall - 12)}
+<div style="position:absolute; left:{left}px; right:{left}px; top:{foot + 44}px; color:{ink}">
+  {lettering}{two_tone(name, first, second)}</div>
+  <div style="{SUB}; font-size:{36 if long_name else 42}px; line-height:1.15; margin-top:22px; color:{accent}">{words}</div>
+</div>
+{band_square(address)}""")
+    w, h = 1200, 675
+    band, left, top, wide = 116, 50, 36, 520
+    tall = h - band - top - 52
+    text = left + wide + 70
+    goat, gw = card_goat(250, f"right:36px; bottom:{band - 6}px")
+    lettering = ('<div class="disp" style="font-size:66px; text-wrap:balance">' if long_name
+                 else '<div class="disp fit" data-fit="50" style="font-size:112px">')
+    return card(w, h, f"""
+{band_wide(address, band, left)}
+{sticker(logo, left, top, wide, tall, 16, 24, 7, ground=logo_ground(meta))}
+{label(head, 28, left + 6, top + tall - 10)}
+<div style="position:absolute; right:40px; top:38px; white-space:nowrap">{wordmark(40, mark)}</div>
+<div style="position:absolute; left:{text}px; right:40px; top:120px; color:{ink}">
+  {lettering}{two_tone(name, first, second)}</div>
+  <div style="{SUB}; font-size:{28 if long_name else 32}px; line-height:1.15; margin-top:18px; color:{accent}; max-width:{w - text - 52 - gw:.0f}px">{words}</div>
+</div>
+{goat}""")
 
 
 def supporter_card(slug: str, meta, square: bool) -> str:
-    w, h = (1080, 1080) if square else (1200, 675)
-    logo = (SITE / meta["logo"]).as_uri()
-    address = f"{URL}/{speakers.supporter_page_name(slug)[:-5]}"
-    # A long address shrinks on the square card so it stays clear of the seal.
-    url_px = (32 if len(address) <= 36 else 26) if square else 26
-    return page(w, h, f"""
-<div style="position:absolute; left:{84 if square else 72}px; top:{96 if square else 72}px; right:{84 if square else 460}px">
-  <div class="sub" style="font-size:{40 if square else 32}px; color:{INK}">Thank you,</div>
-  <div class="word" style="font-size:{(120 if len(str(meta['name'])) <= 24 else 88) if square else 92}px; margin-top:16px">{esc(str(meta['name']))}</div>
-  <div class="sub" style="font-size:{36 if square else 28}px; line-height:1.2; margin-top:28px">{thanks(meta)}</div>
-</div>
-<div style="position:absolute; {'left:84px; bottom:300px' if square else 'right:72px; top:72px'}; width:{420 if square else 340}px; height:{220 if square else 180}px; background:{logo_ground(meta)}; {logo_edge(meta)}border-radius:18px; display:grid; place-items:center; padding:28px">
-  <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
-<div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{url_px}px">{address}</div>
-{seal(240 if square else 220, "right:72px; bottom:72px")}""")
+    """GoatConf's thank-you to a supporter."""
+    return support_card(slug, meta, square, "Thank you", thanks(meta))
 
 
 def proud_card(slug: str, meta, square: bool) -> str:
-    """For the supporter to post as their own: their logo, what they give, when and where, and their profile."""
-    w, h = (1080, 1080) if square else (1200, 675)
-    logo = (SITE / meta["logo"]).as_uri()
-    address = f"{URL}/{speakers.supporter_page_name(slug)[:-5]}"
-    # A long address shrinks on the square card so it stays clear of the seal.
-    url_px = (32 if len(address) <= 36 else 26) if square else 26
-    return page(w, h, f"""
-<div style="position:absolute; left:{84 if square else 72}px; top:{96 if square else 72}px; right:{84 if square else 72}px">
-  <div class="sub" style="font-size:{40 if square else 32}px; color:{INK}">Proud supporter of</div>
-  <div class="word" style="font-size:{120 if square else 92}px; margin-top:16px">GoatConf 2027</div>
-</div>
-<div style="position:absolute; left:{84 if square else 72}px; top:{400 if square else 290}px; width:{560 if square else 400}px; height:{280 if square else 200}px; background:{logo_ground(meta)}; {logo_edge(meta)}border-radius:18px; display:grid; place-items:center; padding:32px">
-  <img src="{logo}" style="max-width:100%; max-height:100%; object-fit:contain"></div>
-<div style="position:absolute; left:{84 if square else 520}px; top:{730 if square else 300}px; right:{360 if square else 72}px">
-  <div class="sub" style="font-size:{34 if square else 28}px; line-height:1.2">{esc(str(meta["funds"]))}</div>
-  <div style="font-size:{30 if square else 24}px; font-weight:700; line-height:1.2; margin-top:20px">{FACTS}</div>
-</div>
-<div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{url_px}px">{address}</div>
-{seal(240 if square else 160, "right:72px; bottom:72px" if square else "right:56px; bottom:48px")}""")
+    """For the supporter to post as their own: their logo, their name, and what they give."""
+    return support_card(slug, meta, square, "Proud supporter", esc(str(meta["funds"])))
 
 
 def event_card(meta, slug: str, square: bool, height: int = 675) -> str:
     """For the host and anyone going: the event, who organises it, that it is part of GoatConf 2027, and when and where."""
-    w, h = (1080, 1080) if square else (1200, height)
+    _, _, first, _, ink, accent, mark = CARD_TONES[THEME]
     name = str(meta["name"])
-    # The square card has room for the name on two or three lines; the wide one keeps it to one or two.
-    name_px = (132 if len(name) <= 30 else 104) if square else (92 if len(name) <= 22 else 72)
     start = extensions.as_datetime(meta["start"])
     when = f'{start.strftime("%A")} {extensions.when(meta)}'
-    return page(w, h, f"""
-<div style="position:absolute; left:{84 if square else 72}px; top:{120 if square else 72}px; right:{84 if square else 320}px">
-  <div class="sub" style="font-size:{46 if square else 30}px; color:{INK}">Part of GoatConf 2027</div>
-  <div class="word" style="font-size:{name_px}px; margin-top:{24 if square else 16}px">{esc(name)}</div>
-  <div style="font-size:{40 if square else 28}px; font-weight:700; line-height:1.2; margin-top:{36 if square else 24}px; text-wrap:balance">Organised by {esc(str(meta["host"]))}</div>
-  <div class="sub" style="font-size:{40 if square else 28}px; line-height:1.2; margin-top:{28 if square else 20}px">{esc(when)}<br>{esc(str(meta["location"]))}</div>
+    address = f"{URL}/{extensions.page_name(slug)[:-5]}"
+    if square:
+        w = h = 1080
+        # The square card has room for the name on two or three lines; the wide one keeps it to one or two.
+        goat, wide = card_goat(340, "right:56px; bottom:118px")
+        return card(w, h, f"""
+<div style="position:absolute; left:72px; top:64px; white-space:nowrap">{wordmark(46, mark)}</div>
+{label("Part of GoatConf 2027", 38, 72, 196, 0)}
+<div style="position:absolute; left:72px; right:72px; top:256px; color:{ink}">
+  <div class="disp" style="font-size:{142 if len(name) <= 30 else 112}px; color:{first}; text-wrap:balance">{esc(name)}</div>
+  <div style="max-width:{w - 144 - wide - 20:.0f}px">
+    <div style="font-size:38px; font-weight:700; line-height:1.2; text-wrap:balance; margin-top:44px">Organised by {esc(str(meta["host"]))}</div>
+    <div style="{SUB}; font-size:40px; line-height:1.18; margin-top:22px; color:{accent}">{esc(when)}<br>{esc(str(meta["location"]))}</div>
+  </div>
 </div>
-<div class="url" style="position:absolute; left:{84 if square else 72}px; bottom:{84 if square else 64}px; font-size:{32 if square else 26}px">{URL}/{extensions.page_name(slug)[:-5]}</div>
-{seal(240 if square else 220, "right:72px; bottom:72px")}""")
+{goat}
+{band_square(address)}""")
+    w, h = 1200, height
+    band = 116 if h >= 675 else 108
+    goat, wide = card_goat(270 if h >= 675 else 240, f"right:40px; bottom:{band - 6}px")
+    return card(w, h, f"""
+<div style="position:absolute; right:40px; top:38px; white-space:nowrap">{wordmark(40, mark)}</div>
+{label("Part of GoatConf 2027", 28, 60, 60, 0)}
+<div style="position:absolute; left:60px; right:{40 + wide + 20:.0f}px; top:106px; color:{ink}">
+  <div class="disp" style="font-size:{104 if len(name) <= 22 else 84}px; color:{first}; text-wrap:balance">{esc(name)}</div>
+  <div style="font-size:28px; font-weight:700; line-height:1.2; margin-top:20px; text-wrap:balance">Organised by {esc(str(meta["host"]))}</div>
+  <div style="{SUB}; font-size:29px; line-height:1.18; margin-top:12px; color:{accent}">{esc(when)} · {esc(str(meta["location"]))}</div>
+</div>
+{goat}
+{band_wide(address, band, 60)}""")
 
 
 def cards() -> dict[str, tuple[int, int, str]]:
@@ -624,7 +720,7 @@ def cards() -> dict[str, tuple[int, int, str]]:
     # lettering and seal.
     for key, (title, line) in POSTS.items():
         out[f"post-{key}-square.png"] = (1080, 1080, post(1080, 1080, title, line, True))
-        out[f"post-{key}-wide.png"] = (1200, 675, post(1200, 675, title.replace("<br>", " "), line, False))
+        out[f"post-{key}-wide.png"] = (1200, 675, post(1200, 675, title, line, False))
     for key, (title, line, img, credit, *focus) in PHOTO_POSTS.items():
         out[f"post-{key}-square.png"] = (1080, 1080, photo_post(1080, 1080, title, line, img, credit, True, *focus,
                                                                 upright=key in UPRIGHT))
