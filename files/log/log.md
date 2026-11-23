@@ -958,3 +958,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-22 merge — PR #309: site: the cover on a phone says it once and reaches the Tuzla photo
    diff: 46 files, +383/-78
    restricted-paths: true
+2026-11-23 merge — PR #311: drumbeat: Carmine Paolino's spotlight as an excited introduction, and "Why a goat" shown as published
+   diff: 18 files, +383/-108
+   restricted-paths: false
