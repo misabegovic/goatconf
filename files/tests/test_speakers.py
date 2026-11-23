@@ -138,21 +138,33 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     assert shareables.card_line("ana-example", meta, mode="See you in Tuzla!") == "See you in Tuzla!"
     assert shareables.card_line("ana-example", {**meta, "card_says": "Baaa!"}, mode="rotate") == "Baaa!"
     assert "See you in Tuzla!" in shareables.bubble("See you in Tuzla!", 200, 200, 38, 520) and shareables.bubble("", 0, 0, 38, 520) == ""
-    # One quiet line says when, where and the speaker's page (the organiser's choice, 2026-10-27).
-    # The dot between its parts belongs to the address, so none is left hanging when the address takes its own line
-    # (sources/conversations/2026-11-22--org--anything-left-lets-iterate.md).
-    assert "Confirmed speaker at GoatConf 2027" in card
-    assert ">·</span>goatconf.com/speaker-ana-example<" in card and "2027 · goatconf.com" not in card
-    # The line says it is free too, in the post cards' own line, held in one place; a speaker's link preview keeps
-    # the line it had (sources/conversations/2026-11-22--org--ship-the-polish-round-and-the-folds-you-choose.md).
-    assert shareables.FACTS == "Tuzla · 3–5 June 2027 · Free to attend" and shareables.FACTS in names["post-register-square.png"][2]
+    # The speaker cards put the photo first (sources/conversations/2026-11-23--org--speaker-cards-photo-first.md):
+    # a tab on the photo says which card it is, the wordmark names the conference, the name stands on one line
+    # that is fitted to its room, and a yellow band along the foot says when, where, that it is free, and the
+    # page's address.
     own = shareables.speaker_card("ana-example", meta, [], False)
-    assert f"{shareables.FACTS}</span>" in card and f"{shareables.FACTS}</span>" in own and "attend · goatconf.com" not in card
+    assert ">Confirmed speaker</span>" in card and ">I&#39;m speaking</span>" in own and "Confirmed speaker" not in own
+    assert ">GoatConf</span>" in card and ">2027</span>" in card and ">GoatConf</span>" in own
+    assert '<span style="color:#12204a">Ana</span> <span style="color:#0b3d91">Example</span>' in card
+    assert 'class="disp fit" data-fit=' in card and "document.fonts.ready" in card
+    assert f"rotate({shareables.SPEAKER_TILT}deg)" in card and shareables.SPEAKER_TILT
+    assert ">goatconf.com/speaker-ana-example</div>" in card and ">goatconf.com/speaker-ana-example</div>" in own
+    assert shareables.SPEAKER_WHEN == "3–5 June 2027 · Tuzla"
     for name in ("speaker-ana-example-square.png", "speaker-ana-example-wide-dark.png", "speaker-ana-example-announce-square-dark.png",
                  "speaker-ana-example-announce-wide.png"):
-        assert f"{shareables.FACTS}</span>" in names[name][2], name
+        assert f">{shareables.SPEAKER_WHEN} · <span" in names[name][2] and ">Free</span>" in names[name][2], name
+    # The light card is on paper and the dark one on the album's blue, with the last name in yellow.
+    assert "background: #edf2fb" in names["speaker-ana-example-square.png"][2]
+    assert "background: #0b3d91" in names["speaker-ana-example-square-dark.png"][2]
+    assert '<span style="color:#ffffff">Ana</span> <span style="color:#ffd400">Example</span>' in names["speaker-ana-example-square-dark.png"][2]
+    # A speaker's link preview carries the band without "Free" and no bubble; the post cards keep their own line.
+    assert shareables.FACTS == "Tuzla · 3–5 June 2027 · Free to attend" and shareables.FACTS in names["post-register-square.png"][2]
     for name in ("speaker-ana-example-preview.png", "speaker-ana-example-preview-dark.png"):
-        assert "Tuzla · 3–5 June 2027</span>" in names[name][2] and "Free to attend" not in names[name][2], name
+        assert f">{shareables.SPEAKER_WHEN}</div>" in names[name][2] and ">Free</span>" not in names[name][2], name
+        assert "See you in Tuzla!" not in names[name][2], name
+    assert "See you in Tuzla!" in names["speaker-ana-example-square.png"][2] or not shareables.goat_atlas.has("speaker-ana-example-sitting")
+    # Only the speaker cards changed their ground: every other dark card keeps the night.
+    assert "#051534" in names["og-dark.png"][2] and "body::after" in names["og.png"][2]
     # A card built around a photograph never takes a palette; the flat ones may.
     photo = next(iter(shareables.PHOTO_POSTS))
     assert shareables.photo_card(f"post-{photo}-square.png") and shareables.photo_card(f"post-{photo}-wide-dark.png")
@@ -215,7 +227,7 @@ def test_a_talk_shows_before_it_has_a_slot(tmp_path, monkeypatch):
     shareables = importlib.reload(importlib.import_module("shareables"))
     meta = speakers.speakers()["ana-example"][0]
     assert ">Talk: Salt, goats and servers</div>" in shareables.speaker_card("ana-example", meta, [], True)  # the "I'm speaking" card too
-    assert "Tuzla · 3–5 June 2027" in shareables.speaker_card("ana-example", {**meta, "talk": None}, [], True)
+    assert "3–5 June 2027 · Tuzla" in shareables.speaker_card("ana-example", {**meta, "talk": None}, [], True)
 
 
 def test_the_talk_fields_come_off_once_the_session_is_on_the_program(tmp_path, monkeypatch):
