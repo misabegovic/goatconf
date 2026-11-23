@@ -5,6 +5,7 @@ status: living
 updated: 2026-11-23
 confidence: medium
 sources:
+  - sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md
   - sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md
   - sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md
   - sources/conversations/2026-10-14--org--carmine-paolino.md
@@ -28,7 +29,7 @@ sources say and what bears on GoatConf.
 - **Who:** "a software engineer, founder, and musician in Berlin", who runs Plenty, "the company behind this work" (source: sources/web/speakers/paolino-me-2026-10-14.md).
 - **RubyLLM:** he created and maintains it, an open-source Ruby gem with one framework for AI applications across about twenty model providers; RubyLLM 2.0 and 2.1 were announced on 5 and 8 October 2026 (source: sources/web/speakers/paolino-me-2026-10-14.md).
 - **RubyLLM since October:** version 2.2 came out on 10 November 2026, released on stage at SF Ruby and built, in his words, for "a new kind of user: the coding agent"; the gem had 16,692,109 downloads on RubyGems on 2026-11-23. His post of 12 November tells how he had a coding agent build the same chat app four times, with RubyLLM, with LangChain and LangGraph, with the Vercel AI SDK and with no framework, and concludes "Same bill, then, but a quarter of the code"; he notes he wrote the benchmark and ran a handful of attempts (source: sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md).
-- **Spotlight:** his drumbeat post for Tuesday 24 November 2026 is rewritten around that test, with a text written for X; his session is still not known, so it names none ([the drumbeat](../outreach/drumbeat-2026.md); source: sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md).
+- **Spotlight:** his drumbeat post for Tuesday 24 November 2026 was first rewritten around that test, which the organiser did not like; it is now an excited introduction of who he is, with a text written for X. His session is still not known, so it names none ([the drumbeat](../outreach/drumbeat-2026.md); sources: sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md).
 - **His About page has changed:** it now calls Chat with Work "AI bots in Europe that work across your team's tools while you decide"; the site's bio still carries the October wording, and is left as it is until the organiser says (source: sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md).
 - **Also builds:** Chat with Work, ArchSpec, Schematist, Kamal Backup, and the Spotifast and ZapFast desktop apps; co-founded Freshflow; worked at OLX, Capgemini and the Alan Turing Institute (source: sources/web/speakers/paolino-me-2026-10-14.md).
 - **Community:** helps organise Berlin.rb, founded the Floppy Disco music collective, and makes house and disco as Crimson Lake (source: sources/web/speakers/paolino-me-2026-10-14.md).

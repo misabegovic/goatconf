@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md
   - sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md
   - sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md
   - sources/web/speakers/paolino-me-2026-10-14.md
@@ -339,36 +340,36 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 24 Nov 2026, Tuesday: Speaker: Carmine Paolino
 
-- **State:** drafted, rewritten on Monday 23 November 2026 to sell the conference, with a short text written for X on its own (source: sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md)
+- **State:** drafted, rewritten twice on Monday 23 November 2026: first around his test of frameworks against coding agents, which the organiser did not like, then as the excited introduction below, with a short text written for X on its own (sources: sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md)
 - **Image:** [`speaker-carmine-paolino-announce-square.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-square.png) (LinkedIn, Mastodon), [`speaker-carmine-paolino-announce-wide.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-wide.png) (X, Bluesky)
 - **Tag:** Carmine Paolino; on X he is @paolino, tagged on the image so the text keeps its 280 characters (source: sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md)
-- **Before posting:** Moved from Tuesday 17 November (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-carmine-paolino-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). His session is not known yet, so the post names none. The download count was read on 2026-11-23 and only grows. The figures in the second and third paragraphs are his own, from a benchmark he wrote and calls a handful of attempts on one kind of app.
+- **Before posting:** Moved from Tuesday 17 November (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-carmine-paolino-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). His session is not known yet, so the post names none. The download count was read on 2026-11-23 and only grows. "This month" is November 2026: RubyLLM 2.2 came out on the 10th.
 - **LinkedIn:**
 
-  > Carmine Paolino is coming to Tuzla.
+  > Carmine Paolino is coming to Tuzla!
   >
-  > This year he kept hearing that frameworks are over: "just let the agent write it." So he tested it. He gave a coding agent the same chat app to build four times: on RubyLLM, his own AI framework, on LangChain and LangGraph, on the Vercel AI SDK and with no framework at all, and checked every build with 198 tests the agent never saw.
+  > Meet the creator of RubyLLM, the AI framework for Ruby that developers have downloaded more than 16 million times.
   >
-  > The agent managed without a framework. By Carmine's numbers the bill came out about the same, and with RubyLLM there was a quarter of the code left to own. The harder finding was about his own work: at first the agent could not see how to use RubyLLM, so he went 28 rounds fixing the framework until it could.
+  > Carmine has keynoted San Francisco Ruby Conference, closed RubyConf TH and taken the stage at EuRuKo, Balkan Ruby and RubyConf Austria. This month he released RubyLLM 2.2 live on stage, built for a world where coding agents write more and more of our code.
   >
-  > Carmine created RubyLLM, downloaded over 16 million times, and runs Plenty in Berlin. He wrote his first scripts at five, ran the Italian Gentoo Linux community as a teenager, and has keynoted San Francisco Ruby Conference. He also makes house and disco as Crimson Lake.
+  > He runs Plenty in Berlin, where he also builds Chat with Work, desktop apps and developer tools. He wrote his first scripts at five and never stopped. And when he is not shipping, he makes house and disco as Crimson Lake.
   >
-  > If AI writes part of your code, in any language, he is one to hear, and to find in the hour off after his session.
+  > A builder, a founder and a musician, and in June you can meet him in person. We can't wait!
   >
   > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
   > Carmine's profile: goatconf.com/speaker-carmine-paolino
   > Register: goatconf.com/register
 
-- **Short** (277 characters), written for X: it opens on the claim he tested and leaves his role and the address to the card.
+- **Short** (265 characters), written for X:
 
-  > "You don't need frameworks anymore. Just let the agent write it."
+  > Carmine Paolino is coming to GoatConf!
   >
-  > Carmine Paolino, creator of RubyLLM, tested it: an agent built one app with a framework and without. Same bill, a quarter of the code.
+  > Creator of RubyLLM, the Ruby AI framework with 16M+ downloads. Keynote speaker at SF Ruby. Founder of Plenty. Makes disco on the side.
   >
-  > Hear him in Tuzla, 3 to 5 June. Free.
+  > Meet him in Tuzla, 3 to 5 June 2027. Free to attend.
   > goatconf.com/speaker-carmine-paolino
 
-  Sources: sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md, sources/web/speakers/paolino-me-2026-10-14.md, sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md, sources/conversations/2026-10-14--org--carmine-paolino.md.
+  Sources: sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md, sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md, sources/web/speakers/paolino-me-2026-10-14.md, sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md, sources/conversations/2026-10-14--org--carmine-paolino.md.
 
 ### Sat 28 Nov 2026, week 7: 58 places to run yours
 
