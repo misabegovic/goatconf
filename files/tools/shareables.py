@@ -136,8 +136,8 @@ def seal(size: int, style: str, which: str = "seal.svg") -> str:
 # allows; a yellow band along the foot with the date, the town and "Free" in a dark pill. The light card is on paper,
 # the dark one on the album's blue: per version the ground, its hoof marks, the first and second tone of the
 # lettering, the text, the accent line and the wordmark. The banners and the covers follow
-# (sources/conversations/2026-11-23--org--banners-and-covers-follow.md); the site's link preview and the Goatchi card
-# keep the look they had.
+# (sources/conversations/2026-11-23--org--banners-and-covers-follow.md), and the site's link preview and the Goatchi
+# card (sources/conversations/2026-11-23--org--link-preview-and-goatchi-follow.md).
 CARD_TONES = {
     "light": ("#edf2fb", ("0b3d91", ".13"), brand.INK, brand.BLUE, brand.INK, brand.BLUE, brand.BLUE),
     "dark": (brand.BLUE, ("ffffff", ".07"), "#ffffff", YELLOW, "#ffffff", YELLOW, "#ffffff"),
@@ -257,18 +257,6 @@ def title_line(title: str, first: str, second: str) -> str:
     return f'<span style="color:{first}">{" ".join(parts[:-1])}</span> <span style="color:{second}">{parts[-1]}</span>'
 
 
-def banner(w: int, h: int, word: int, sub: int, url: int, seal_size: int, left: int, right: int, top: int | None = None) -> str:
-    """A wide band: the name, the facts and the address on the left, the whole seal on the right."""
-    top_css = f"top:{top}px" if top is not None else "top:50%; transform:translateY(-50%)"
-    return page(w, h, f"""
-<div style="position:absolute; left:{left}px; {top_css}">
-  <div class="word" style="font-size:{word}px">GoatConf 2027</div>
-  <div class="sub" style="font-size:{sub}px; margin-top:{int(sub * .55)}px">{FACTS}</div>
-  <div class="url" style="font-size:{url}px; margin-top:{int(sub * .7)}px">{URL}</div>
-</div>
-{seal(seal_size, f"right:{right}px; top:50%; transform:translateY(-50%)")}""")
-
-
 TAGLINE = "Any programming language, any stack."
 
 
@@ -378,31 +366,40 @@ def goats_post(w: int, h: int, square: bool, crowd_in: bool = True) -> str:
 
 
 def goatchi_card(w: int = 1200, h: int = 630, square: bool = False, url: str = "goatconf.com/goatchi.html") -> str:
-    """Goatchi's link preview and its post: its name and what you do, beside the goat eating burek and the plain goat
-    saying hello."""
+    """Goatchi's link preview and its post, in the cards' look: its name and what you do, and on the band the goat
+    eating burek and the plain goat saying hello."""
+    _, _, first, _, ink, _, mark = CARD_TONES[THEME]
+
     def g(pose, width, style):
         return f'<img src="{goat_src(pose)}" style="position:absolute; width:{width}px; {style}">'
+
+    def baaa(px, style):
+        return (f'<div class="sub" style="position:absolute; {style}; padding:{px * .25:.0f}px {px * .58:.0f}px {px * .3:.0f}px; '
+                f'border-radius:{px * .7:.0f}px {px * .7:.0f}px {px * .7:.0f}px {px * .13:.0f}px; background:{YELLOW}; color:{NIGHT}; '
+                f'font-size:{px}px; font-weight:800">Baaa!</div>')
+    words = "Keep a GoatConf goat. Feed it, play with it, let it sleep."
     if square:
-        return page(w, h, f"""
-<div style="position:absolute; left:84px; top:96px; right:84px">
-  <div class="word" style="font-size:150px">Goatchi</div>
-  <div class="rule" style="width:120px; margin:40px 0 34px"></div>
-  <div class="sub" style="font-size:46px; line-height:1.15; max-width:20ch">Keep a GoatConf goat. Feed it, play with it, let it sleep.</div>
+        return card(w, h, f"""
+<div style="position:absolute; left:72px; top:64px; white-space:nowrap">{wordmark(46, mark)}</div>
+<div style="position:absolute; left:72px; right:72px; top:170px; color:{ink}">
+  <div class="disp" style="font-size:210px; color:{first}">Goatchi</div>
+  <div style="{SUB}; font-size:48px; line-height:1.15; margin-top:34px; max-width:15em">{words}</div>
 </div>
-<div style="position:absolute; left:84px; bottom:84px"><div class="url" style="font-size:32px">{url}</div></div>
-{g("sticker-burek", 330, "left:84px; bottom:150px")}
-{g("sitting", 380, "right:72px; bottom:72px")}
-<div class="sub" style="position:absolute; right:300px; bottom:470px; padding:12px 28px 14px; border-radius:34px 34px 34px 6px; background:{YELLOW}; color:#0a1f4d; font-size:48px; font-weight:800">Baaa!</div>""")
-    return page(w, h, f"""
-<div style="position:absolute; left:72px; top:84px; width:500px">
-  <div class="word" style="font-size:124px">Goatchi</div>
-  <div class="rule" style="width:100px; margin:32px 0 28px"></div>
-  <div class="sub" style="font-size:38px; line-height:1.15">Keep a GoatConf goat. Feed it, play with it, let it sleep.</div>
+{g("sticker-burek", 320, "left:64px; bottom:112px")}
+{g(CARD_GOAT, 290, "right:170px; bottom:116px")}
+{baaa(46, "right:420px; bottom:410px")}
+{band_square(url)}""")
+    band = 116 if h >= 675 else 108
+    return card(w, h, f"""
+<div style="position:absolute; right:40px; top:38px; white-space:nowrap">{wordmark(40, mark)}</div>
+<div style="position:absolute; left:60px; width:560px; top:70px; color:{ink}">
+  <div class="disp" style="font-size:150px; color:{first}">Goatchi</div>
+  <div style="{SUB}; font-size:38px; line-height:1.15; margin-top:26px">{words}</div>
 </div>
-<div style="position:absolute; left:72px; bottom:62px"><div class="url" style="font-size:28px">{url}</div></div>
-{g("sticker-burek", 255, "left:590px; bottom:44px")}
-{g("sitting", 290, "right:56px; bottom:40px")}
-<div class="sub" style="position:absolute; right:250px; top:128px; padding:10px 24px 12px; border-radius:30px 30px 30px 6px; background:{YELLOW}; color:#0a1f4d; font-size:40px; font-weight:800">Baaa!</div>""")
+{g("sticker-burek", 250, f"left:610px; bottom:{band - 10}px")}
+{g(CARD_GOAT, 270, f"right:50px; bottom:{band - 6}px")}
+{baaa(38, f"right:250px; bottom:{band + 330}px")}
+{band_wide(url, band, 60)}""")
 
 
 POSTS = {
@@ -740,7 +737,7 @@ def cards() -> dict[str, tuple[int, int, str]]:
         "linkedin-banner.png": (1584, 396, brand_band(1584, 396, left=560, top=54, mark=124, tag=40, band=100, facts=46, small=20, goat=230, right=80)),
         "linkedin-page-cover.png": (4200, 700, page_cover()),
         "header-3x1.png": (1500, 500, brand_band(1500, 500, left=90, top=78, mark=170, tag=50, band=116, facts=52, small=22, goat=290, right=80, band_left=420)),
-        "og.png": (1200, 630, banner(1200, 630, 104, 34, 26, 400, 64, 56)),
+        "og.png": (1200, 630, brand_band(1200, 630, left=60, top=110, mark=132, tag=42, band=124, facts=58, small=24, goat=330, right=60)),
         "goatchi-preview.png": (1200, 630, goatchi_card()),
         "post-goatchi-square.png": (1080, 1080, goatchi_card(1080, 1080, True, "goatconf.com/goatchi")),
         "post-goatchi-wide.png": (1200, 675, goatchi_card(1200, 675, url="goatconf.com/goatchi")),
