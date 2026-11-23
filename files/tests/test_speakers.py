@@ -177,7 +177,15 @@ def test_profile_session_and_supporter_link_up(tmp_path, monkeypatch):
     assert ">Thank you</span>" in thank and ">Proud supporter</span>" in proud and ">Thank you</span>" not in proud
     assert ">Acme</span>" in thank and ">Acme</span>" in proud and ">goatconf.com/supporter-acme</div>" in proud
     assert shareables.thanks(speakers.supporters()["acme"][0]) in thank and ">Free</span>" in thank
-    # The banners, the covers and the site's link preview keep the look they had: the night ground and the rule.
+    # The banners and the covers follow too (sources/conversations/2026-11-23--org--banners-and-covers-follow.md):
+    # the wordmark, one line under it, the band and its pill, on paper and on the album's blue.
+    for name in ("linkedin-banner.png", "linkedin-page-cover.png", "header-3x1.png", "luma-cover.png"):
+        cover, night = names[name][2], names[shareables.dark(name)][2]
+        assert shareables.TAGLINE in cover and ">GoatConf<" in cover and ">2027</span>" in cover, name
+        assert f">{shareables.CARD_WHEN} · <span" in cover and ">Free</span>" in cover and ">goatconf.com</div>" in cover, name
+        assert "background: #edf2fb" in cover and "background: #0b3d91" in night, name
+    assert names["luma-cover.png"][2].count('class="seal"') == 1 and names["header-3x1.png"][2].count('class="seal"') == 1
+    # The site's link preview keeps the look it had: the night ground and the rule.
     assert "#051534" in names["og-dark.png"][2] and "body::after" in names["og.png"][2]
     assert shareables.FACTS == "Tuzla · 3–5 June 2027 · Free to attend" and shareables.FACTS in names["og.png"][2]
     # A card built around a photograph never takes a palette; the flat ones may.
