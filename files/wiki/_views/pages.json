@@ -1076,12 +1076,16 @@
       "title": "The drumbeat, October to December 2026",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-11-21",
+      "updated": "2026-11-23",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md",
+        "sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md",
+        "sources/web/speakers/paolino-me-2026-10-14.md",
+        "sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md",
         "sources/conversations/2026-11-21--org--why-a-goat-where-posted.md",
         "sources/conversations/2026-11-21--org--why-a-goat-published.md",
         "sources/conversations/2026-11-21--org--goat-statue-photo.md",
@@ -1186,7 +1190,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 9507
+      "tokens": 9980
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -2528,15 +2532,17 @@
       "title": "Speaker: Carmine Paolino",
       "kind": "entity",
       "status": "living",
-      "updated": "2026-10-14",
+      "updated": "2026-11-23",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md",
+        "sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md",
         "sources/conversations/2026-10-14--org--carmine-paolino.md",
         "sources/web/speakers/paolino-me-2026-10-14.md",
         "sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md",
         "sources/web/organiser/muhamed-at-home.md"
       ],
-      "tokens": 733
+      "tokens": 1042
     },
     {
       "path": "org/speakers/christoph-lipautz.md",
