@@ -2,11 +2,14 @@
 title: "The drumbeat: the weekly posts, from launch to June 2027"
 kind: reference
 status: draft
-updated: 2026-11-17
+updated: 2026-11-23
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-23--org--correct-the-calendar-row.md
+  - sources/conversations/2026-11-21--org--why-a-goat-where-posted.md
+  - sources/conversations/2026-11-21--org--why-a-goat-published.md
   - sources/conversations/2026-11-17--org--roy-spotlight-published.md
   - sources/conversations/2026-11-14--org--propose-an-event-published.md
   - sources/conversations/2026-11-14--org--mesa-published.md
@@ -66,7 +69,7 @@ The texts are on three pages: [October to December 2026](drumbeat-2026.md), [Jan
 | Sat 7 Nov 2026 | week 4 | [Meet at Meša and Ismet](drumbeat-2026.md) | `post-mesa-and-ismet` | published |
 | Sat 14 Nov 2026 | week 5 | [Propose an event](drumbeat-2026.md) | `post-add-something` | published |
 | Tue 17 Nov 2026 | Tuesday, speaker | [Speaker: Roy Tomeij](drumbeat-2026.md) | `speaker-roy-tomeij` | published |
-| Sat 21 Nov 2026 | week 6 | [Why a goat](drumbeat-2026.md) | `post-why-a-goat` | drafted |
+| Sat 21 Nov 2026 | week 6 | [Why a goat](drumbeat-2026.md) | `post-why-a-goat` | published |
 | Tue 24 Nov 2026 | Tuesday, speaker | [Speaker: Carmine Paolino](drumbeat-2026.md) | `speaker-carmine-paolino` | drafted |
 | Sat 28 Nov 2026 | week 7 | [58 places to run yours](drumbeat-2026.md) | `post-where-to-run-it` | drafted |
 | Tue 1 Dec 2026 | Tuesday, speaker | [Speaker: Dejan Menges](drumbeat-2026.md) | `speaker-dejan-menges` | drafted |
