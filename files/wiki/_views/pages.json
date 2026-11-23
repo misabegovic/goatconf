@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-23--org--link-preview-and-goatchi-follow.md",
         "sources/conversations/2026-11-23--org--banners-and-covers-follow.md",
         "sources/conversations/2026-11-23--org--other-cards-follow-the-speaker-cards.md",
         "sources/conversations/2026-11-23--org--speaker-cards-photo-first.md",
@@ -269,7 +270,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 11665
+      "tokens": 11802
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
