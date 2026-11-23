@@ -964,3 +964,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-23 merge — PR #313: cards: the speaker cards put the photo first, on paper and on the album's blue
    diff: 89 files, +254/-82
    restricted-paths: true
+2026-11-23 merge — PR #315: cards: the posts', supporters' and events' cards follow the speaker cards
+   diff: 178 files, +351/-182
+   restricted-paths: true
