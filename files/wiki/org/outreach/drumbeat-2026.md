@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-23--org--carmine-x-text-no-disco-line.md
   - sources/conversations/2026-11-23--org--carmine-x-text-chat-with-work.md
   - sources/web/speakers/carmine-paolino-support-2026-10-18.md
   - sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md
@@ -362,13 +363,13 @@ The posts in the order they go out. The calendar, the rules and what to do when 
   > Carmine's profile: goatconf.com/speaker-carmine-paolino
   > Register: goatconf.com/register
 
-- **Short** (277 characters), written for X, with Chat with Work where it first named his SF Ruby keynote, on the organiser's ask; the year is left to the card to keep it under 280 (source: sources/conversations/2026-11-23--org--carmine-x-text-chat-with-work.md):
+- **Short** (257 characters), written for X, with Chat with Work where it first named his SF Ruby keynote, and without the line about his music, both on the organiser's asks (sources: sources/conversations/2026-11-23--org--carmine-x-text-chat-with-work.md, sources/conversations/2026-11-23--org--carmine-x-text-no-disco-line.md):
 
   > Carmine Paolino is coming to GoatConf!
   >
-  > Creator of RubyLLM, the Ruby AI framework with 16M+ downloads. Builds Chat with Work, an AI agent for work. Founder of Plenty. Makes disco on the side.
+  > Creator of RubyLLM, the Ruby AI framework with 16M+ downloads. Builds Chat with Work, an AI agent for work. Founder of Plenty.
   >
-  > Meet him in Tuzla, 3 to 5 June. Free to attend.
+  > Meet him in Tuzla, 3 to 5 June 2027. Free to attend.
   > goatconf.com/speaker-carmine-paolino
 
   Sources: sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md, sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md, sources/web/speakers/paolino-me-2026-10-14.md, sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md, sources/conversations/2026-10-14--org--carmine-paolino.md.
