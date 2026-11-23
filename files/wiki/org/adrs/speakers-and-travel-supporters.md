@@ -2,12 +2,13 @@
 title: "Speaker profiles and travel supporters: consented records, a speakers page and a supporters wall"
 kind: decision
 status: accepted
-updated: 2026-11-21
+updated: 2026-11-23
 confidence: medium
 depends_on:
   - org/prds/cfp-and-speakers.md
   - org/prds/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-11-23--org--speaker-cards-photo-first.md
   - sources/conversations/2026-11-21--org--keep-iterating.md
   - sources/conversations/2026-10-26--org--confirmed-speaker-cards.md
   - sources/conversations/2026-10-26--org--speaking-card-on-the-profile.md
@@ -113,3 +114,4 @@ profile goes up only with the speaker's consent.
 - **2026-10-26, the card on the profile.** Each speaker's profile shows their "I'm speaking" card in its own section, "Your card: I'm speaking", after the session: the wide card as an image and both sizes to download, the way a supporter's profile shows its cards, in place of a single link to the square card (source: sources/conversations/2026-10-26--org--speaking-card-on-the-profile.md).
 - **2026-10-26, a "Confirmed speaker" card in GoatConf's voice.** Each speaker also gets a card from GoatConf announcing them, "Confirmed speaker at GoatConf 2027", with their name, role, session title, when and where, and the address of their own page, square and wide. Their profile shows it under "The announcement card", after their own card, the way a supporter's profile shows the thank-you card after "Your card: proud supporter"; the drumbeat's spotlights post it (source: sources/conversations/2026-10-26--org--confirmed-speaker-cards.md).
 - **2026-11-21, the session's place on a card and on a speaker's page.** Second round on the local branch `site/phone-first-and-one-ask`, pending the organiser's approval from screenshots; nothing is published before that (source: sources/conversations/2026-11-21--org--keep-iterating.md). `tools/speakers.py` keeps writing "Session to be announced" and "The session will be on the program soon." word for word; the stylesheet sets both as an empty printed slot, and sets an announced session on a speaker's page as an album-blue sticker with its title lettered in yellow. The measures are in the CFP PRD's amendment of the same date.
+- **2026-11-23, the speaker cards put the photo first.** On the organiser's choices over six rounds of pictures, a speaker's "I'm speaking" card, GoatConf's "Confirmed speaker" card and the link preview of their page are redrawn: the photo large and tilted like a sticker in the album, on a yellow block, with a yellow tab saying which card it is; the name on one line, fitted to its room; the speaker's goat sitting on the wordmark (square) or on the band (wide); and a yellow band along the foot with "3–5 June 2027 · Tuzla", "Free" in a dark pill, and the page's address. The light card is on paper and the dark one on the album's blue. Every card keeps its file name and size in pixels, so the profiles and the drumbeat link the same files. The other cards are to follow the same design and are not redrawn yet (source: sources/conversations/2026-11-23--org--speaker-cards-photo-first.md).
