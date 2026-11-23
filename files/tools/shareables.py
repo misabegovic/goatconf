@@ -100,8 +100,11 @@ def missing(doc: str) -> list[str]:
     return sorted({p for p in paths if not Path(p).exists()})
 
 
-def page(w: int, h: int, body: str, bg: str | None = None) -> str:
+def page(w: int, h: int, body: str, bg: str | None = None, hoofs: str | None = None, rule: bool = True) -> str:
+    """A card's page. `bg` and `hoofs` replace the theme's ground and hoof marks, and without `rule` the yellow rule
+    along the foot is left to the card, which draws its own yellow band."""
     bg = bg or PAPER
+    hoofs = hoofs or HOOVES
     fonts = (SITE / "fonts").as_uri()
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face {{ font-family: "Bricolage Grotesque"; src: url("{fonts}/bricolage-wdth-latin.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; }}
@@ -110,10 +113,13 @@ def page(w: int, h: int, body: str, bg: str | None = None) -> str:
 @font-face {{ font-family: "Atkinson Hyperlegible Next"; src: url("{fonts}/atkinson-latin-ext.woff2") format("woff2"); font-weight: 200 800; unicode-range: U+0100-02BA; }}
 * {{ box-sizing: border-box; margin: 0; }}
 html, body {{ width: {w}px; height: {h}px; overflow: hidden; }}
-body {{ background: {bg} {HOOVES}; color: {INK}; font-family: "Atkinson Hyperlegible Next", sans-serif; position: relative; }}
+body {{ background: {bg} {hoofs}; color: {INK}; font-family: "Atkinson Hyperlegible Next", sans-serif; position: relative; }}
 .word {{ color: {BLUE}; font-family: "Bricolage Grotesque"; font-weight: 800; font-stretch: 75%; line-height: .86; letter-spacing: .005em; text-transform: uppercase; }}
 .sub {{ font-family: "Bricolage Grotesque"; font-weight: 700; font-stretch: 85%; color: {ACCENT}; }}
-body::after {{ content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: {max(8, h // 60)}px; background: {YELLOW}; }}
+body::after {{ content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: {max(8, h // 60) if rule else 0}px; background: {YELLOW}; }}
+.disp {{ font-family: "Bricolage Grotesque"; font-weight: 800; font-stretch: 75%; line-height: .86; letter-spacing: .005em; text-transform: uppercase; }}
+.tab {{ display: inline-block; background: {YELLOW}; color: {NIGHT}; font-family: "Bricolage Grotesque"; font-weight: 800; font-stretch: 80%; line-height: 1; text-transform: uppercase; border-radius: .22em; padding: .16em .34em .2em; }}
+.fit {{ white-space: nowrap; overflow: hidden; }}
 .url {{ font-weight: 700; color: {SOFT}; }}
 .seal {{ position: absolute; display: block; }}
 .rule {{ height: 6px; background: {YELLOW}; border-radius: 3px; }}
@@ -341,9 +347,6 @@ def photo_post(w: int, h: int, title: str, line: str, img: str, credit: str, squ
 {seal(140, "right:48px; bottom:48px")}""")
 
 
-# Where the speaker's goat sits on their cards: "corner", whole, in the bottom corner (the organiser's choice,
-# 2026-10-27), or "ring", small against the photo's ring.
-SPEAKER_GOAT = "corner"
 # The goat on a speaker's card may say a line (the organiser's "maybe",
 # sources/conversations/2026-11-22--org--goat-tap-flash-and-light-dark-cards.md). Picking is this one value:
 # The organiser picked "See you in Tuzla" (sources/conversations/2026-11-22--org--organisers-own-page-and-see-you-in-tuzla.md);
@@ -384,76 +387,131 @@ def bubble(line: str, right: float, bottom: float, px: int, room: int) -> str:
             f'font-size:{px}px; line-height:1.08; text-wrap:balance; text-align:center">{esc(line)}</div>')
 
 
+# The speaker cards (sources/conversations/2026-11-23--org--speaker-cards-photo-first.md): the photo first, tilted
+# like a sticker in the album, on a yellow block; the name on one line, as large as its room allows; a yellow band
+# along the foot with the date, the town and "Free" in a dark pill. The light card is on paper, the dark one on the
+# album's blue: per version the ground, its hoof marks, the first and last name, the text, the session and the
+# wordmark.
+SPEAKER_TONES = {
+    "light": ("#edf2fb", ("0b3d91", ".13"), brand.INK, brand.BLUE, brand.INK, brand.BLUE, brand.BLUE),
+    "dark": (brand.BLUE, ("ffffff", ".07"), "#ffffff", YELLOW, "#ffffff", YELLOW, "#ffffff"),
+}
+SPEAKER_TILT = -2.5
+SPEAKER_WHEN = "3–5 June 2027 · Tuzla"
+# A name is set at its largest size and stepped down until it fits its line: the script runs once the fonts are in.
+FIT = """<script>
+document.fonts.ready.then(() => {
+  document.querySelectorAll('[data-fit]').forEach(el => {
+    let s = parseFloat(getComputedStyle(el).fontSize);
+    const min = parseFloat(el.dataset.fit) || 40;
+    while (el.scrollWidth > el.clientWidth && s > min) { s -= 2; el.style.fontSize = s + 'px'; }
+  });
+});
+</script>"""
+
+
+def wordmark(px: int, colour: str) -> str:
+    """GoatConf and the year in its yellow tab, on one line: the top bar's mark."""
+    return (f'<span class="disp" style="font-size:{px}px; color:{colour}; vertical-align:middle">GoatConf</span>'
+            f'<span class="tab" style="font-size:{px}px; margin-left:{px * .22:.0f}px; vertical-align:middle; font-stretch:75%">2027</span>')
+
+
+def snapshot(photo: str, left: int, top: int, size: int, off: int, radius: int, ring: int) -> str:
+    """The speaker's photo as a sticker: a rounded square with a white edge on a yellow block set down and to the
+    right, the two tilted together about the photo's centre."""
+    box = f"position:absolute; left:{left}px; top:{top}px; width:{size}px; height:{size}px; border-radius:{radius}px"
+    return (f'<div style="position:absolute; left:0; top:0; width:0; height:0; transform-origin:{left + size / 2:.0f}px {top + size / 2:.0f}px; '
+            f'transform:rotate({SPEAKER_TILT}deg)">'
+            f'<div style="{box}; background:{YELLOW}; transform:translate({off}px,{off}px)"></div>'
+            f'<div style="{box}; overflow:hidden; background:{YELLOW}; box-shadow:0 0 0 {ring}px #fff">{photo}</div></div>')
+
+
+def foot_band(left: int, band: int, address: str, free: bool, px: int, small: int, lift: int, low: int) -> str:
+    """The yellow band along the foot: when and where, "Free" in a dark pill, and the page's address under them."""
+    pill = (f' · <span style="background:{NIGHT}; color:{YELLOW}; border-radius:.2em; padding:.03em .3em .06em; margin-left:.06em">Free</span>'
+            if free else "")
+    return (f'<div style="position:absolute; left:0; right:0; bottom:0; height:{band}px; background:{YELLOW}"></div>'
+            f'<div class="disp" style="position:absolute; left:{left}px; bottom:{lift}px; font-size:{px}px; color:{NIGHT}; white-space:nowrap">{SPEAKER_WHEN}{pill}</div>'
+            f'<div style="position:absolute; left:{left}px; bottom:{low}px; font-size:{small}px; font-weight:700; color:{NIGHT}">{address}</div>')
+
+
 def speaker_card(slug: str, meta, talks: list[str], square: bool, height: int = 675, announce: bool = False,
                  says: str = "", free: bool = True) -> str:
     """The speaker's own "I'm speaking" card, or with `announce` GoatConf's card announcing them. Both say the same,
-    and little: the name and photo, their role and session, one quiet line of where, when and that it is free, their
-    page's address, and their own goat. Only the headline differs. The quiet line is FACTS, the post cards' own line
-    (sources/conversations/2026-11-22--org--ship-the-polish-round-and-the-folds-you-choose.md); without `free` it
-    stops before its last part, as the link preview's does."""
-    name = esc(str(meta["name"]))
-    photo = (f'<img src="{(SITE / meta["photo"]).as_uri()}" style="width:100%;height:100%;object-fit:cover">'
+    and little: the photo, the name, their role and session, their own goat, and a yellow band with when, where,
+    that it is free, and their page's address. Only the tab on the photo differs. Without `free` the band stops
+    before "Free", as the link preview's line does."""
+    ground, hoof, first_tone, last_tone, ink, talk_tone, mark = SPEAKER_TONES[THEME]
+    first, _, last = str(meta["name"]).partition(" ")
+    name = (f'<span style="color:{first_tone}">{esc(first)}</span>'
+            + (f' <span style="color:{last_tone}">{esc(last)}</span>' if last else ""))
+    photo = (f'<img src="{(SITE / meta["photo"]).as_uri()}" style="display:block;width:100%;height:100%;object-fit:cover">'
              if meta.get("photo") else
              f'<img src="{(SITE / "brand" / "coin-yellow.svg").as_uri()}" style="width:70%;height:70%;margin:15%">')
     address = f"{URL}/{speakers.page_name(slug)[:-5]}"
     # Before the session has a slot, the record's own title stands in for it.
     talk = talks[0] if talks else f'{speakers.talk_format(meta)}: {esc(str(meta["talk"]))}' if meta.get("talk") else ""
-    w, h = (1080, 1080) if square else (1200, height)
-    size = 330 if square else min(330, h - 150)
-    long_name = len(str(meta["name"])) > 14
-    name_px = (84 if long_name else 110) if square else (70 if long_name else 92)
-    top = 72 if square else (h - size) // 2
-    frame = (f'<div style="position:absolute; left:{84 if square else 64}px; top:{top}px; width:{size}px; height:{size}px; border-radius:50%; '
-             f'overflow:hidden; background:{YELLOW}; box-shadow:0 0 0 10px {RING}">{photo}</div>')
-    # The speaker's own painted goat, whole, sitting in the bottom corner (ADR goat-mascot), or small against
-    # the photo's ring.
-    corner = SPEAKER_GOAT == "corner"
+    head = "Confirmed speaker" if announce else "I&#39;m speaking"
     pose = f"speaker-{slug}-sitting"
-    if not goat_atlas.has(pose):
-        goat = ""
-    elif corner:
-        gw = 170 if square else min(160, h * 0.25)
-        goat = (f'<img src="{goat_src(pose)}" style="position:absolute; right:{72 if square else 56}px; '
-                f'bottom:{40 if square else 28}px; width:{gw:.0f}px">')
-        # What it says, if a line is picked: beside its head, clear of the quiet line under it and the text above.
-        tall = gw * goat_atlas.manifest()[pose]["h"] / goat_atlas.manifest()[pose]["w"] if says else 0
-        goat += bubble(says, (72 if square else 56) + gw * 0.86, (40 if square else 28) + tall * 0.6,
-                       38 if square else 30, 520 if square else 380)
-    else:
-        gw = 140 if square else 112
-        left = (84 + size - gw * 0.55) if square else (64 + size - gw * 0.55)
-        goat = (f'<img src="{goat_src(pose)}" style="position:absolute; left:{left:.0f}px; '
-                f'top:{top + size - gw * 1.05:.0f}px; width:{gw}px">')
-    head = f'<div class="sub" style="font-size:{44 if square else 30}px; color:{INK}">{"Confirmed speaker at GoatConf 2027" if announce else "I&#39;m speaking at GoatConf 2027"}</div>'
-    who = f'<div class="word" style="font-size:{name_px}px; margin-top:18px">{name}</div>'
-    role = (f'<div style="font-size:{36 if square else 30}px; font-weight:700; line-height:1.25; margin-top:20px; text-wrap:balance">{esc(str(meta["role"]))}</div>'
-            if meta.get("role") else "")
-    session = (f'<div class="sub" style="font-size:{40 if square else 32}px; line-height:1.2; margin-top:24px; text-wrap:balance">{talk}</div>'
-               if talk else "")
-    # The quiet line of where, when and free, then the page's address, follows the text, so the two never meet.
-    # The dot between the two parts belongs to the second and stands to its left: when the address takes a line of
-    # its own the dot falls outside the line's clipped edge, so no dot is left hanging at the end of the first line.
-    foot = (f'<div class="url" style="font-size:{26 if square else 22}px; line-height:1.3; overflow:hidden">'
-            f'<div style="display:flex; flex-wrap:wrap; margin-left:-0.8em">'
-            f'<span style="padding-left:0.8em; white-space:nowrap">{FACTS if free else FACTS.rsplit(" · ", 1)[0]}</span>'
-            f'<span style="position:relative; padding-left:0.8em; white-space:nowrap">'
-            f'<span style="position:absolute; left:0; width:0.8em; text-align:center">·</span>{address}</span></div></div>')
-    clear = (270 if square else 270) if corner else (84 if square else 72)
+    shape = goat_atlas.manifest()[pose]["h"] / goat_atlas.manifest()[pose]["w"] if goat_atlas.has(pose) else 0
+    tab_shadow = "box-shadow:0 6px 14px -6px rgb(5 29 71 / .6)"
+    session_style = f"font-family:'Bricolage Grotesque'; font-weight:700; font-stretch:85%; color:{talk_tone}; text-wrap:balance"
     if square:
-        # The text has the card's width above the goat; only the quiet line beside it steps around it.
+        w = h = 1080
+        band, size, left, top = 124, 600, 72, 62
+        foot = top + size + 18
+        # Beside the photo the wordmark stands on the photo's foot line, and the goat sits on the wordmark.
+        side = left + size + 32
+        room = w - side - 40
+        mid = side + room / 2
+        goat = ""
+        if shape:
+            tall = 392
+            wide = tall / shape
+            up = foot - 62 - tall + 8
+            goat = (f'<img src="{goat_src(pose)}" style="position:absolute; left:{mid - wide / 2 + 4:.0f}px; top:{up:.0f}px; width:{wide:.0f}px">'
+                    + bubble(says, w - mid - 128, h - up + 4, 31, 300))
+        session = f'<div style="{session_style}; font-size:32px; line-height:1.12; margin-top:8px">{talk}</div>' if talk else ""
         return page(w, h, f"""
-{frame}{goat}{seal(210, "right:84px; top:84px")}
-<div style="position:absolute; left:84px; right:84px; bottom:{290 if corner else 150}px">
-  {head}{who}{role}{session}
+{snapshot(photo, left, top, size, 18, 26, 8)}
+<div style="position:absolute; left:{side}px; width:{room}px; top:{foot - 66}px; text-align:center; white-space:nowrap">{wordmark(46, mark)}</div>
+{goat}
+<div style="position:absolute; left:{left + 8}px; top:{top + size - 12}px; transform:rotate({SPEAKER_TILT}deg); transform-origin:0 50%"><span class="tab" style="font-size:36px; {tab_shadow}">{head}</span></div>
+<div style="position:absolute; left:{left}px; right:{left}px; top:{foot + 36}px; color:{ink}">
+  <div class="disp fit" data-fit="70" style="font-size:{122 if talk else 146}px">{name}</div>
+  <div style="font-size:{32 if talk else 36}px; font-weight:700; line-height:1.2; margin-top:{10 if talk else 16}px; text-wrap:balance">{esc(str(meta.get("role") or ""))}</div>
+  {session}
 </div>
-<div style="position:absolute; left:84px; right:{clear}px; bottom:80px">{foot}</div>""")
-    # The seal stands small in the top corner, above the end of the longest name.
+{foot_band(left, band, address, free, 56, 22, 50, 16)}
+{seal(100, f"right:64px; bottom:{(band - 100) // 2}px")}
+{FIT}""", ground, hooves(*hoof), rule=False)
+    w, h = 1200, height
+    band = 116 if h >= 675 else 108
+    left, top = 50, 36
+    size = h - band - top - 52
+    text = left + size + 70
+    goat, wide = "", 0
+    if shape:
+        wide = 190 if h >= 675 else 172
+        goat = (f'<img src="{goat_src(pose)}" style="position:absolute; right:36px; bottom:{band - 50}px; width:{wide}px">'
+                + bubble(says, 36 + wide * .9, band - 50 + wide * shape * .56, 25, 250))
+    session = f'<div style="{session_style}; font-size:27px; line-height:1.15; margin-top:8px">{talk}</div>' if talk else ""
+    # The seal stands on the band before the line, the wordmark in the top corner, and the goat sits on the band.
     return page(w, h, f"""
-{frame}{goat}{seal(112, "right:44px; top:32px")}
-<div style="position:absolute; left:{64 + size + 64}px; right:72px; top:{56 if h < 675 else 72}px">
-  {head}{who}{role}{session}
+{foot_band(left + 110, band, address, free, 52, 20, 48, 17)}
+{snapshot(photo, left, top, size, 16, 24, 7)}
+<div style="position:absolute; left:{left + 6}px; top:{top + size - 10}px; transform:rotate({SPEAKER_TILT}deg); transform-origin:0 50%"><span class="tab" style="font-size:28px; {tab_shadow}">{head}</span></div>
+<div style="position:absolute; right:40px; top:38px; white-space:nowrap">{wordmark(40, mark)}</div>
+<div style="position:absolute; left:{text}px; right:40px; top:112px; color:{ink}">
+  <div class="disp fit" data-fit="50" style="font-size:112px">{name}</div>
+  <div style="max-width:{w - text - 52 - wide}px">
+    <div style="font-size:30px; font-weight:700; line-height:1.2; margin-top:16px; text-wrap:balance">{esc(str(meta.get("role") or ""))}</div>
+    {session}
+  </div>
 </div>
-<div style="position:absolute; left:{64 + size + 64}px; right:{clear}px; bottom:{48 if h < 675 else 60}px">{foot}</div>""")
+{seal(88, f"left:{left}px; bottom:{(band - 88) // 2}px")}
+{goat}
+{FIT}""", ground, hooves(*hoof), rule=False)
 
 
 def thanks(meta) -> str:
