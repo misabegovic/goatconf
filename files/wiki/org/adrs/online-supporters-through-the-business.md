@@ -2,13 +2,14 @@
 title: "Online supporters pay the organiser's Austrian business; the budget becomes private"
 kind: decision
 status: accepted
-updated: 2026-10-21
+updated: 2026-11-23
 confidence: medium
 supersedes: org/adrs/budget-and-public-ledger.md
 depends_on:
   - org/adrs/speakers-and-travel-supporters.md
   - org/adrs/supporters-and-hiring.md
 sources:
+  - sources/conversations/2026-11-23--org--other-cards-follow-the-speaker-cards.md
   - sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md
   - sources/conversations/2026-10-19--org--site-review-decisions.md
   - sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md
@@ -114,6 +115,7 @@ A single level treats every supporter alike.
 - **2026-10-18, self-funded speakers' travel comes first.** Of the surplus, refunds to speakers who pay their own travel come first, before other costs it may pay; still never promised (source: sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md).
 - **2026-10-19, the site no longer names the Austrian business.** Online supporters still pay the organiser's Austrian business, but the supporters page, the charter and llms.txt no longer say so: the supporters page says whom a supporter reaches (the 120 to 300 engineers, designers, product people and founders who come), that supporters reach Muhamed, the organiser, through the contact form or by email, and carries a "Become a supporter" button to the contact form (source: sources/conversations/2026-10-19--org--site-review-decisions.md).
 - **2026-10-21, a community partner that gives in kind.** A community partner that supports GoatConf in kind, such as by sharing it on its social media, is listed on the site as a supporter, the same as online supporters, with its logo and link, in the same list. No money goes through the organiser, so there is nothing to invoice. Being listed buys nothing: no talk, no stage time, no say over the program and nothing at GoatConf's venue. The first is wroclove.rb, the Ruby conference in Wrocław, for "Community partner: social media" (source: sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md).
+- **2026-11-23, the supporters' cards redrawn.** Both cards a supporter has, GoatConf's thank-you and the "Proud supporter" card they post themselves, take the speaker cards' look: the logo as a sticker with a tab saying which card it is, the supporter's name, one line, and the yellow band with the date, the town and "Free". The proud card now names the supporter where it said "GoatConf 2027". The files keep their names ([the impeccable ADR](design-with-impeccable.md); source: sources/conversations/2026-11-23--org--other-cards-follow-the-speaker-cards.md).
 
 
 ## Related

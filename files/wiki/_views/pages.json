@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-23--org--other-cards-follow-the-speaker-cards.md",
         "sources/conversations/2026-11-23--org--speaker-cards-photo-first.md",
         "sources/conversations/2026-11-22--org--phone-hero-layout-and-trim-keep-the-six-cards.md",
         "sources/conversations/2026-11-22--org--phone-hero-tips-show-me.md",
@@ -267,7 +268,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 11314
+      "tokens": 11492
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
@@ -537,7 +538,7 @@
       "title": "Online supporters pay the organiser's Austrian business; the budget becomes private",
       "kind": "decision",
       "status": "accepted",
-      "updated": "2026-10-21",
+      "updated": "2026-11-23",
       "confidence": "medium",
       "supersedes": "org/adrs/budget-and-public-ledger.md",
       "depends_on": [
@@ -545,6 +546,7 @@
         "org/adrs/supporters-and-hiring.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-23--org--other-cards-follow-the-speaker-cards.md",
         "sources/conversations/2026-10-21--org--wroclove-rb-community-partner.md",
         "sources/conversations/2026-10-19--org--site-review-decisions.md",
         "sources/conversations/2026-10-18--org--speaker-travel-first-recording-main-hall-150.md",
@@ -556,7 +558,7 @@
         "sources/web/legal/online-sponsorship-austria-bih-2026-10-13.md",
         "sources/conversations/2026-10-07--org--no-money-through-me.md"
       ],
-      "tokens": 2041
+      "tokens": 2181
     },
     {
       "path": "org/adrs/open-program-every-room.md",
