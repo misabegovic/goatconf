@@ -973,3 +973,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-23 merge — PR #319: cards: the site's link preview and the Goatchi card follow the cards' design
    diff: 15 files, +77/-42
    restricted-paths: true
+2026-11-24 merge — PR #321: drumbeat: Carmine Paolino's spotlight is published, and the five speaker posts after it are rewritten
+   diff: 15 files, +284/-57
+   restricted-paths: false
