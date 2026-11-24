@@ -1088,6 +1088,17 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-24--org--improve-the-speaker-posts.md",
+        "sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md",
+        "sources/web/speakers/christoph-lipautz-github-2026-10-15.md",
+        "sources/web/speakers/cpp-in-embedded-systems-google-books-2026-10-14.md",
+        "sources/web/speakers/eoc-amar-mahmutbegovic-2026-10-14.md",
+        "sources/web/speakers/euruko-2024-team-2026-10-15.md",
+        "sources/web/speakers/kaigi-on-rails-2026-cristian-planas-2026-10-14.md",
+        "sources/web/speakers/menges-dev-2026-10-14.md",
+        "sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md",
+        "sources/web/speakers/rubyconf-india-2026-cristian-planas-2026-10-22.md",
+        "sources/web/speakers/semblie-about-2026-10-14.md",
         "sources/conversations/2026-11-24--org--carmine-spotlight-published.md",
         "sources/conversations/2026-11-23--org--speaker-cards-photo-first.md",
         "sources/conversations/2026-11-23--org--carmine-x-text-use-the-spare-room.md",
@@ -1203,7 +1214,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 10185
+      "tokens": 11638
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
