@@ -1088,6 +1088,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-24--org--speaker-posts-approved.md",
         "sources/conversations/2026-11-24--org--improve-the-speaker-posts.md",
         "sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md",
         "sources/web/speakers/christoph-lipautz-github-2026-10-15.md",
@@ -1214,7 +1215,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 11638
+      "tokens": 11723
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",

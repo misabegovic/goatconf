@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-24--org--speaker-posts-approved.md
   - sources/conversations/2026-11-24--org--improve-the-speaker-posts.md
   - sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md
   - sources/web/speakers/christoph-lipautz-github-2026-10-15.md
@@ -411,7 +412,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 1 Dec 2026, Tuesday: Speaker: Dejan Menges
 
-- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; the organiser has not read it yet (source: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md)
+- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; approved by the organiser that day (sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/conversations/2026-11-24--org--speaker-posts-approved.md)
 - **Image:** [`speaker-dejan-menges-announce-square.png`](https://goatconf.com/share/speaker-dejan-menges-announce-square.png) (LinkedIn, Mastodon), [`speaker-dejan-menges-announce-wide.png`](https://goatconf.com/share/speaker-dejan-menges-announce-wide.png) (X, Bluesky)
 - **Tag:** Dejan Menges and Vinted
 - **Before posting:** Moved from Tuesday 24 November (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-dejan-menges-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
@@ -461,7 +462,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 8 Dec 2026, Tuesday: Speaker: Amar Mahmutbegović
 
-- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; the organiser has not read it yet (source: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md)
+- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; approved by the organiser that day (sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/conversations/2026-11-24--org--speaker-posts-approved.md)
 - **Image:** [`speaker-amar-mahmutbegovic-announce-square.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-amar-mahmutbegovic-announce-wide.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-wide.png) (X, Bluesky)
 - **Tag:** Amar Mahmutbegović and Semblie
 - **Before posting:** Moved from Tuesday 1 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-amar-mahmutbegovic-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). His session is not known yet, so the post names none. Semblie's site refused the fetch on 2026-11-24, so the text rests on the October snapshots.
@@ -511,7 +512,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 15 Dec 2026, Tuesday: Speaker: Cristian Planas
 
-- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; the organiser has not read it yet (source: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md)
+- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; approved by the organiser that day (sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/conversations/2026-11-24--org--speaker-posts-approved.md)
 - **Image:** [`speaker-cristian-planas-announce-square.png`](https://goatconf.com/share/speaker-cristian-planas-announce-square.png) (LinkedIn, Mastodon), [`speaker-cristian-planas-announce-wide.png`](https://goatconf.com/share/speaker-cristian-planas-announce-wide.png) (X, Bluesky)
 - **Tag:** Cristian Planas
 - **Before posting:** Moved from Tuesday 8 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-cristian-planas-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). His session is not known yet, so the post names none. The count of 23 talks was read on RubyEvents on 2026-11-24 and only grows.
@@ -565,7 +566,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 22 Dec 2026, Tuesday: Speaker: Christoph Lipautz
 
-- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; the organiser has not read it yet (source: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md)
+- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; approved by the organiser that day (sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/conversations/2026-11-24--org--speaker-posts-approved.md)
 - **Image:** [`speaker-christoph-lipautz-announce-square.png`](https://goatconf.com/share/speaker-christoph-lipautz-announce-square.png) (LinkedIn, Mastodon), [`speaker-christoph-lipautz-announce-wide.png`](https://goatconf.com/share/speaker-christoph-lipautz-announce-wide.png) (X, Bluesky)
 - **Tag:** Christoph Lipautz and Meister
 - **Before posting:** Moved from Tuesday 15 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-christoph-lipautz-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). "The first Ruby conference in Bosnia and Herzegovina" is the organiser's own wording, from the post "Why a goat"; no snapshot here says it.
@@ -616,7 +617,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 29 Dec 2026, Tuesday: Speaker: Predrag Radenkovic
 
-- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; the organiser has not read it yet (source: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md)
+- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; approved by the organiser that day (sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/conversations/2026-11-24--org--speaker-posts-approved.md)
 - **Image:** [`speaker-predrag-radenkovic-announce-square.png`](https://goatconf.com/share/speaker-predrag-radenkovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-predrag-radenkovic-announce-wide.png`](https://goatconf.com/share/speaker-predrag-radenkovic-announce-wide.png) (X, Bluesky)
 - **Tag:** Predrag Radenkovic and *codeplain
 - **Before posting:** Moved from Tuesday 22 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). If his talk or workshop on regenerative software is on the program by then, add its title and day. When it goes, send the speaker their own "I'm speaking" card (speaker-predrag-radenkovic-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). "In July" is July 2026. The post keeps its thank-you to *codeplain, that supporter's one post.
