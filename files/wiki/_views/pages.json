@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23",
+  "generated": "2026-11-24",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -1082,12 +1082,25 @@
       "title": "The drumbeat, October to December 2026",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-11-23",
+      "updated": "2026-11-24",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-24--org--speaker-posts-approved.md",
+        "sources/conversations/2026-11-24--org--improve-the-speaker-posts.md",
+        "sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md",
+        "sources/web/speakers/christoph-lipautz-github-2026-10-15.md",
+        "sources/web/speakers/cpp-in-embedded-systems-google-books-2026-10-14.md",
+        "sources/web/speakers/eoc-amar-mahmutbegovic-2026-10-14.md",
+        "sources/web/speakers/euruko-2024-team-2026-10-15.md",
+        "sources/web/speakers/kaigi-on-rails-2026-cristian-planas-2026-10-14.md",
+        "sources/web/speakers/menges-dev-2026-10-14.md",
+        "sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md",
+        "sources/web/speakers/rubyconf-india-2026-cristian-planas-2026-10-22.md",
+        "sources/web/speakers/semblie-about-2026-10-14.md",
+        "sources/conversations/2026-11-24--org--carmine-spotlight-published.md",
         "sources/conversations/2026-11-23--org--speaker-cards-photo-first.md",
         "sources/conversations/2026-11-23--org--carmine-x-text-use-the-spare-room.md",
         "sources/conversations/2026-11-23--org--carmine-x-text-no-disco-line.md",
@@ -1202,7 +1215,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 10135
+      "tokens": 11723
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -1335,12 +1348,13 @@
       "title": "The drumbeat: the weekly posts, from launch to June 2027",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-11-23",
+      "updated": "2026-11-24",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-24--org--carmine-spotlight-published.md",
         "sources/conversations/2026-11-23--org--correct-the-calendar-row.md",
         "sources/conversations/2026-11-21--org--why-a-goat-where-posted.md",
         "sources/conversations/2026-11-21--org--why-a-goat-published.md",
@@ -2544,9 +2558,10 @@
       "title": "Speaker: Carmine Paolino",
       "kind": "entity",
       "status": "living",
-      "updated": "2026-11-23",
+      "updated": "2026-11-24",
       "confidence": "medium",
       "sources": [
+        "sources/conversations/2026-11-24--org--carmine-spotlight-published.md",
         "sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md",
         "sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md",
         "sources/web/speakers/carmine-paolino-rubyllm-and-coding-agents-2026-11-23.md",
@@ -2555,7 +2570,7 @@
         "sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md",
         "sources/web/organiser/muhamed-at-home.md"
       ],
-      "tokens": 1086
+      "tokens": 1127
     },
     {
       "path": "org/speakers/christoph-lipautz.md",

@@ -2,11 +2,24 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-11-23
+updated: 2026-11-24
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-24--org--speaker-posts-approved.md
+  - sources/conversations/2026-11-24--org--improve-the-speaker-posts.md
+  - sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md
+  - sources/web/speakers/christoph-lipautz-github-2026-10-15.md
+  - sources/web/speakers/cpp-in-embedded-systems-google-books-2026-10-14.md
+  - sources/web/speakers/eoc-amar-mahmutbegovic-2026-10-14.md
+  - sources/web/speakers/euruko-2024-team-2026-10-15.md
+  - sources/web/speakers/kaigi-on-rails-2026-cristian-planas-2026-10-14.md
+  - sources/web/speakers/menges-dev-2026-10-14.md
+  - sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md
+  - sources/web/speakers/rubyconf-india-2026-cristian-planas-2026-10-22.md
+  - sources/web/speakers/semblie-about-2026-10-14.md
+  - sources/conversations/2026-11-24--org--carmine-spotlight-published.md
   - sources/conversations/2026-11-23--org--speaker-cards-photo-first.md
   - sources/conversations/2026-11-23--org--carmine-x-text-use-the-spare-room.md
   - sources/conversations/2026-11-23--org--carmine-x-text-no-disco-line.md
@@ -345,7 +358,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 24 Nov 2026, Tuesday: Speaker: Carmine Paolino
 
-- **State:** drafted, rewritten twice on Monday 23 November 2026: first around his test of frameworks against coding agents, which the organiser did not like, then as the excited introduction below, with a short text written for X on its own (sources: sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md)
+- **State:** published, Tuesday 24 November 2026; where, with which of the two cards, and whether the texts went out as given is not recorded (source: sources/conversations/2026-11-24--org--carmine-spotlight-published.md). Rewritten twice on Monday 23 November 2026: first around his test of frameworks against coding agents, which the organiser did not like, then as the excited introduction below, with a short text written for X on its own (sources: sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md)
 - **Image:** the new card, photo first, on paper or on the album's blue (source: sources/conversations/2026-11-23--org--speaker-cards-photo-first.md). Paper: [`speaker-carmine-paolino-announce-square.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-square.png) (LinkedIn, Mastodon), [`speaker-carmine-paolino-announce-wide.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-wide.png) (X, Bluesky). Blue: [`speaker-carmine-paolino-announce-square-dark.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-square-dark.png), [`speaker-carmine-paolino-announce-wide-dark.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-wide-dark.png).
 - **Tag:** Carmine Paolino; on X he is @paolino, tagged on the image so the text keeps its 280 characters (source: sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md)
 - **Before posting:** Moved from Tuesday 17 November (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-carmine-paolino-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). His session is not known yet, so the post names none. The download count was read on 2026-11-23 and only grows. "This month" is November 2026: RubyLLM 2.2 came out on the 10th.
@@ -399,23 +412,34 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 1 Dec 2026, Tuesday: Speaker: Dejan Menges
 
-- **State:** drafted
+- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; approved by the organiser that day (sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/conversations/2026-11-24--org--speaker-posts-approved.md)
 - **Image:** [`speaker-dejan-menges-announce-square.png`](https://goatconf.com/share/speaker-dejan-menges-announce-square.png) (LinkedIn, Mastodon), [`speaker-dejan-menges-announce-wide.png`](https://goatconf.com/share/speaker-dejan-menges-announce-wide.png) (X, Bluesky)
 - **Tag:** Dejan Menges and Vinted
 - **Before posting:** Moved from Tuesday 24 November (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-dejan-menges-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
 - **LinkedIn:**
 
-  > Meet a GoatConf 2027 speaker: Dejan Menges.
+  > Dejan Menges is coming to Tuzla!
   >
-  > Dejan is a staff engineer at Vinted with more than twenty-five years spent designing distributed systems. He works on moving organisations from monoliths to scalable, event-driven architectures, and builds Enola, an open-source architecture intelligence tool for developers and coding agents.
+  > Meet a staff engineer at Vinted with more than twenty-five years of designing distributed systems, and the author of Enola, the open-source tool that maps a codebase into a graph that developers, coding agents and CI can query.
   >
-  > His talk: Teaching Twenty Languages to Describe One System. In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-dejan-menges
+  > At GoatConf he gives Teaching Twenty Languages to Describe One System. A Go backend, a TypeScript frontend, a mobile app, Terraform modules and API specifications are one system to us, and unrelated files to most tools. Dejan tells what it took to give them one shared vocabulary in Enola, the approaches that failed included.
+  >
+  > If you work with a real-life codebase, this hour is for you, and you need no knowledge of Enola or graph databases to follow it. We can't wait!
+  >
+  > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
+  > Dejan's profile: goatconf.com/speaker-dejan-menges
+  > Register: goatconf.com/register
 
-- **Short** (183 characters):
+- **Short** (279 characters), written for X:
 
-  > Meet a GoatConf 2027 speaker: Dejan Menges, staff engineer at Vinted and author of Enola. His talk: Teaching Twenty Languages to Describe One System. goatconf.com/speaker-dejan-menges
+  > Dejan Menges is coming to GoatConf!
+  >
+  > A staff engineer at Vinted, he builds Enola, the open-source tool that maps code into a graph. His talk: Teaching Twenty Languages to Describe One System.
+  >
+  > Meet him in Tuzla, 3 to 5 June 2027. Free to attend.
+  > goatconf.com/speaker-dejan-menges
 
-  Sources: sources/conversations/2026-10-14--org--speakers-before-sessions.md, sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md, sources/conversations/2026-10-17--org--dejan-photo-and-role.md.
+  Sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md, sources/web/speakers/menges-dev-2026-10-14.md, sources/cfp/2026-10-17--dejan-menges--teaching-twenty-languages.md, sources/conversations/2026-10-17--org--dejan-photo-and-role.md, sources/conversations/2026-10-14--org--speakers-before-sessions.md.
 
 ### Sat 5 Dec 2026, week 8: Thank you, IPI Academy
 
@@ -438,23 +462,34 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 8 Dec 2026, Tuesday: Speaker: Amar Mahmutbegović
 
-- **State:** drafted
+- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; approved by the organiser that day (sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/conversations/2026-11-24--org--speaker-posts-approved.md)
 - **Image:** [`speaker-amar-mahmutbegovic-announce-square.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-amar-mahmutbegovic-announce-wide.png`](https://goatconf.com/share/speaker-amar-mahmutbegovic-announce-wide.png) (X, Bluesky)
 - **Tag:** Amar Mahmutbegović and Semblie
-- **Before posting:** Moved from Tuesday 1 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-amar-mahmutbegovic-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **Before posting:** Moved from Tuesday 1 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-amar-mahmutbegovic-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). His session is not known yet, so the post names none. Semblie's site refused the fetch on 2026-11-24, so the text rests on the October snapshots.
 - **LinkedIn:**
 
-  > Meet a GoatConf 2027 speaker, from Tuzla itself: Amar Mahmutbegović.
+  > Amar Mahmutbegović is speaking at GoatConf, and he comes from Tuzla itself!
   >
-  > Amar is the co-founder and Head of Engineering at Semblie, where he leads the use of modern C++ for firmware development. He shows the embedded community what C++ can do through his blog posts and on LinkedIn, and he wrote C++ in Embedded Systems (Packt, 2025).
+  > Meet the author of C++ in Embedded Systems (Packt, 2025), a practical guide to moving firmware from C to modern C++.
   >
-  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-amar-mahmutbegovic
+  > Amar is co-founder and Head of Engineering at Semblie, the Tuzla company that began as two electrical engineering students' hobby and today develops electronics and runs its own PCB assembly line. His work runs inside Bluetooth devices and medical devices, and he has spoken at the Embedded Online Conference four years in a row.
+  >
+  > GoatConf welcomes every language and every stack, and Amar brings the code closest to the hardware. We can't wait!
+  >
+  > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
+  > Amar's profile: goatconf.com/speaker-amar-mahmutbegovic
+  > Register: goatconf.com/register
 
-- **Short** (175 characters):
+- **Short** (276 characters), written for X:
 
-  > Meet a GoatConf 2027 speaker from Tuzla: Amar Mahmutbegović, co-founder of Semblie and author of C++ in Embedded Systems (Packt, 2025). goatconf.com/speaker-amar-mahmutbegovic
+  > Amar Mahmutbegović is coming to GoatConf!
+  >
+  > He wrote C++ in Embedded Systems (Packt, 2025) and leads engineering at Semblie, the Tuzla company he co-founded, which builds electronics.
+  >
+  > Meet him in Tuzla, 3 to 5 June 2027. Free to attend.
+  > goatconf.com/speaker-amar-mahmutbegovic
 
-  Sources: sources/conversations/2026-10-14--org--amar-mahmutbegovic.md.
+  Sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md, sources/web/speakers/eoc-amar-mahmutbegovic-2026-10-14.md, sources/web/speakers/semblie-about-2026-10-14.md, sources/web/speakers/cpp-in-embedded-systems-google-books-2026-10-14.md, sources/conversations/2026-10-14--org--amar-mahmutbegovic.md.
 
 ### Sat 12 Dec 2026, week 9: Salt Square
 
@@ -477,23 +512,36 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 15 Dec 2026, Tuesday: Speaker: Cristian Planas
 
-- **State:** drafted
+- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; approved by the organiser that day (sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/conversations/2026-11-24--org--speaker-posts-approved.md)
 - **Image:** [`speaker-cristian-planas-announce-square.png`](https://goatconf.com/share/speaker-cristian-planas-announce-square.png) (LinkedIn, Mastodon), [`speaker-cristian-planas-announce-wide.png`](https://goatconf.com/share/speaker-cristian-planas-announce-wide.png) (X, Bluesky)
 - **Tag:** Cristian Planas
-- **Before posting:** Moved from Tuesday 8 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-cristian-planas-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **Before posting:** Moved from Tuesday 8 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-cristian-planas-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). His session is not known yet, so the post names none. The count of 23 talks was read on RubyEvents on 2026-11-24 and only grows.
 - **LinkedIn:**
 
-  > Meet a GoatConf 2027 speaker: Cristian Planas.
+  > Cristian Planas is coming to Tuzla!
   >
-  > Cristian is a Ruby developer, conference speaker and the author of Rails Scales!. With over 15 years of Rails experience, he has helped build and scale large applications at Zendesk, and now works at Combinaut, exploring the intersection of Ruby, testing and AI-assisted development.
+  > They say Rails doesn't scale. Cristian wrote the book that says it does: Rails Scales! (Pragmatic Bookshelf, 2025).
   >
-  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-cristian-planas
+  > He knows it first hand. As Group Tech Lead at Zendesk he worked on the performance of one of the biggest Rails monoliths in the world, and his talks carry titles like "A Rails Performance Guidebook: from 0 to 1B requests/day" and "2,000 Engineers, 2 Million Lines of Code". He has spoken at RailsConf, RubyKaigi and EuRuKo, 23 talks so far.
+  >
+  > Today he is Principal Engineer at Combinaut, and one of his newest talks is about safety nets for AI-written code.
+  >
+  > Fifteen years of making big software fast, and in June you can ask him how. We can't wait!
+  >
+  > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
+  > Cristian's profile: goatconf.com/speaker-cristian-planas
+  > Register: goatconf.com/register
 
-- **Short** (179 characters):
+- **Short** (279 characters), written for X:
 
-  > Meet a GoatConf 2027 speaker: Cristian Planas, author of Rails Scales!, 15 years of Rails, from Zendesk to Combinaut. In Tuzla on 3 or 4 June. goatconf.com/speaker-cristian-planas
+  > Cristian Planas is coming to GoatConf!
+  >
+  > He wrote the book Rails Scales! after working on one of the world's biggest Rails monoliths at Zendesk. Today he is Principal Engineer at Combinaut.
+  >
+  > Meet him in Tuzla, 3 to 5 June 2027. Free to attend.
+  > goatconf.com/speaker-cristian-planas
 
-  Sources: sources/conversations/2026-10-14--org--cristian-planas.md.
+  Sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md, sources/web/speakers/rails-scales-and-talks-cristian-planas-2026-10-14.md, sources/web/speakers/kaigi-on-rails-2026-cristian-planas-2026-10-14.md, sources/web/speakers/rubyconf-india-2026-cristian-planas-2026-10-22.md, sources/conversations/2026-10-14--org--cristian-planas.md.
 
 ### Sat 19 Dec 2026, week 10: 7,000 years of salt
 
@@ -518,23 +566,34 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 22 Dec 2026, Tuesday: Speaker: Christoph Lipautz
 
-- **State:** drafted
+- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; approved by the organiser that day (sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/conversations/2026-11-24--org--speaker-posts-approved.md)
 - **Image:** [`speaker-christoph-lipautz-announce-square.png`](https://goatconf.com/share/speaker-christoph-lipautz-announce-square.png) (LinkedIn, Mastodon), [`speaker-christoph-lipautz-announce-wide.png`](https://goatconf.com/share/speaker-christoph-lipautz-announce-wide.png) (X, Bluesky)
 - **Tag:** Christoph Lipautz and Meister
-- **Before posting:** Moved from Tuesday 15 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-christoph-lipautz-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **Before posting:** Moved from Tuesday 15 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-christoph-lipautz-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). "The first Ruby conference in Bosnia and Herzegovina" is the organiser's own wording, from the post "Why a goat"; no snapshot here says it.
 - **LinkedIn:**
 
-  > Meet a GoatConf 2027 speaker: Christoph Lipautz.
+  > Christoph Lipautz is coming to Tuzla!
   >
-  > Christoph is a Senior Staff Engineer at Meister, an open-source enthusiast and a Linux user, and he was on the speakers team of EuRuKo 2024. His talk at GoatConf: Back to the Future.
+  > Meet a Senior Staff Engineer at Meister, the author of airstream, an open-source tool for streaming to AirPlay devices, and one of the people who put together the program of EuRuKo 2024, the first Ruby conference in Bosnia and Herzegovina.
   >
-  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-christoph-lipautz
+  > At GoatConf he gives Back to the Future. Coding agents are powerful new tools, and Christoph's case is that well-established engineering practices are what make them deliver fast and well. He shares the strategies he adopted early and what they changed in how he builds software.
+  >
+  > It is a talk for every engineer, at any level of experience. We can't wait!
+  >
+  > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
+  > Christoph's profile: goatconf.com/speaker-christoph-lipautz
+  > Register: goatconf.com/register
 
-- **Short** (178 characters):
+- **Short** (277 characters), written for X:
 
-  > Meet a GoatConf 2027 speaker: Christoph Lipautz, Senior Staff Engineer at Meister and open-source enthusiast. His talk: Back to the Future. goatconf.com/speaker-christoph-lipautz
+  > Christoph Lipautz is coming to GoatConf!
+  >
+  > A Senior Staff Engineer at Meister, he gives Back to the Future: why established engineering practices matter most now that agents write code.
+  >
+  > Meet him in Tuzla, 3 to 5 June 2027. Free to attend.
+  > goatconf.com/speaker-christoph-lipautz
 
-  Sources: sources/conversations/2026-10-15--org--christoph-lipautz.md, sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md.
+  Sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md, sources/cfp/2026-10-15--christoph-lipautz--back-to-the-future.md, sources/web/speakers/christoph-lipautz-github-2026-10-15.md, sources/web/speakers/euruko-2024-team-2026-10-15.md, sources/conversations/2026-11-21--org--ruby-line-a-wider-community.md, sources/conversations/2026-10-15--org--christoph-lipautz.md.
 
 ### Sat 26 Dec 2026, week 11: Your first talk?
 
@@ -558,25 +617,36 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 29 Dec 2026, Tuesday: Speaker: Predrag Radenkovic
 
-- **State:** drafted
+- **State:** drafted, rewritten on Tuesday 24 November 2026 as an excited introduction, as Carmine Paolino's was, with a short text written for X on its own; approved by the organiser that day (sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/conversations/2026-11-24--org--speaker-posts-approved.md)
 - **Image:** [`speaker-predrag-radenkovic-announce-square.png`](https://goatconf.com/share/speaker-predrag-radenkovic-announce-square.png) (LinkedIn, Mastodon), [`speaker-predrag-radenkovic-announce-wide.png`](https://goatconf.com/share/speaker-predrag-radenkovic-announce-wide.png) (X, Bluesky)
 - **Tag:** Predrag Radenkovic and *codeplain
-- **Before posting:** Moved from Tuesday 22 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). If his talk or workshop on regenerative software is on the program by then, add its title and day. When it goes, send the speaker their own "I'm speaking" card (speaker-predrag-radenkovic-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **Before posting:** Moved from Tuesday 22 December (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). If his talk or workshop on regenerative software is on the program by then, add its title and day. When it goes, send the speaker their own "I'm speaking" card (speaker-predrag-radenkovic-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). "In July" is July 2026. The post keeps its thank-you to *codeplain, that supporter's one post.
 - **LinkedIn:**
 
-  > Meet a GoatConf 2027 speaker: Predrag Radenkovic.
+  > Predrag Radenkovic is coming to Tuzla!
   >
-  > Predrag is the CTO of *codeplain, which turns specifications written in ***plain into production-ready software: when something needs to change, the spec is edited and the code regenerated. A two-time founding engineer, he has led technical teams at Silverfin, Toptal and FIS, and he teaches developers to make specifications the source of truth for the code AI writes.
+  > Meet the CTO of *codeplain, where the idea is simple and bold: you maintain the specs, and the code is regenerated from them.
+  >
+  > Predrag is a two-time founding engineer who has helped take startups from their early days to unicorn valuations and acquisitions, and has led technical teams at Silverfin, Toptal and FIS. In July he ran a two-hour session on spec-driven development at WeAreDevelopers World Congress in Berlin.
+  >
+  > If AI writes part of your code and you wonder how to trust it, he is one to meet. We can't wait!
   >
   > Thank you, *codeplain, for covering his travel to Tuzla.
   >
-  > In Tuzla on 3 or 4 June 2027: goatconf.com/speaker-predrag-radenkovic
+  > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
+  > Predrag's profile: goatconf.com/speaker-predrag-radenkovic
+  > Register: goatconf.com/register
 
-- **Short** (215 characters):
+- **Short** (278 characters), written for X:
 
-  > Meet a GoatConf 2027 speaker: Predrag Radenkovic, CTO of *codeplain, where specs are the source of truth and code is regenerated from them. Thanks, *codeplain, for his travel. goatconf.com/speaker-predrag-radenkovic
+  > Predrag Radenkovic is coming to GoatConf!
+  >
+  > He is the CTO of *codeplain, where you maintain the specs and the code is regenerated from them. Thanks, *codeplain, for covering his travel.
+  >
+  > Meet him in Tuzla, 3 to 5 June 2027. Free to attend.
+  > goatconf.com/speaker-predrag-radenkovic
 
-  Sources: sources/conversations/2026-10-23--org--predrag-radenkovic.md, sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md, sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md, sources/web/supporters/codeplain-logo-and-site-2026-10-23.md, sources/web/speakers/thenewstack-codeplain-2026-10-23.md, sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md.
+  Sources: sources/conversations/2026-11-24--org--improve-the-speaker-posts.md, sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md, sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md, sources/web/speakers/thenewstack-codeplain-2026-10-23.md, sources/conversations/2026-10-23--org--predrag-radenkovic.md, sources/conversations/2026-10-23--org--predrag-radenkovic-spotlight.md, sources/web/supporters/codeplain-logo-and-site-2026-10-23.md, sources/conversations/2026-10-23--org--codeplain-supporter-and-home-speakers.md.
 
 ## Related
 
