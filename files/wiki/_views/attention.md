@@ -2,7 +2,7 @@
 title: Attention board
 kind: meta
 status: living
-updated: 2026-11-23
+updated: 2026-11-24
 confidence: high
 sources:
   - tools/brain.py

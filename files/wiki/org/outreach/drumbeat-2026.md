@@ -2,11 +2,12 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-11-23
+updated: 2026-11-24
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-24--org--carmine-spotlight-published.md
   - sources/conversations/2026-11-23--org--speaker-cards-photo-first.md
   - sources/conversations/2026-11-23--org--carmine-x-text-use-the-spare-room.md
   - sources/conversations/2026-11-23--org--carmine-x-text-no-disco-line.md
@@ -345,7 +346,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Tue 24 Nov 2026, Tuesday: Speaker: Carmine Paolino
 
-- **State:** drafted, rewritten twice on Monday 23 November 2026: first around his test of frameworks against coding agents, which the organiser did not like, then as the excited introduction below, with a short text written for X on its own (sources: sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md)
+- **State:** published, Tuesday 24 November 2026; where, with which of the two cards, and whether the texts went out as given is not recorded (source: sources/conversations/2026-11-24--org--carmine-spotlight-published.md). Rewritten twice on Monday 23 November 2026: first around his test of frameworks against coding agents, which the organiser did not like, then as the excited introduction below, with a short text written for X on its own (sources: sources/conversations/2026-11-23--org--carmine-spotlight-rewrite.md, sources/conversations/2026-11-23--org--carmine-spotlight-hypey-and-introductory.md)
 - **Image:** the new card, photo first, on paper or on the album's blue (source: sources/conversations/2026-11-23--org--speaker-cards-photo-first.md). Paper: [`speaker-carmine-paolino-announce-square.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-square.png) (LinkedIn, Mastodon), [`speaker-carmine-paolino-announce-wide.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-wide.png) (X, Bluesky). Blue: [`speaker-carmine-paolino-announce-square-dark.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-square-dark.png), [`speaker-carmine-paolino-announce-wide-dark.png`](https://goatconf.com/share/speaker-carmine-paolino-announce-wide-dark.png).
 - **Tag:** Carmine Paolino; on X he is @paolino, tagged on the image so the text keeps its 280 characters (source: sources/web/speakers/rubyevents-carmine-paolino-2026-10-14.md)
 - **Before posting:** Moved from Tuesday 17 November (a week back, after Roy Tomeij's spotlight moved; source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). When it goes, send the speaker their own "I'm speaking" card (speaker-carmine-paolino-square.png and -wide.png) and ask them to share it (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). His session is not known yet, so the post names none. The download count was read on 2026-11-23 and only grows. "This month" is November 2026: RubyLLM 2.2 came out on the 10th.
