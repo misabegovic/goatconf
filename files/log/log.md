@@ -976,3 +976,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-24 merge — PR #321: drumbeat: Carmine Paolino's spotlight is published, and the five speaker posts after it are rewritten
    diff: 15 files, +284/-57
    restricted-paths: false
+2026-11-25 merge — PR #323: brand: the lockup with the seal is one word over one line, and the goat is mended
+   diff: 35 files, +361/-142
+   restricted-paths: true
