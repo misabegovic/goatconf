@@ -225,6 +225,7 @@
         "org/prds/design-with-impeccable.md"
       ],
       "sources": [
+        "sources/conversations/2026-11-25--org--lockup-deliver-it.md",
         "sources/conversations/2026-11-25--org--stacked-lockup-looks-off.md",
         "sources/conversations/2026-11-23--org--link-preview-and-goatchi-follow.md",
         "sources/conversations/2026-11-23--org--banners-and-covers-follow.md",
@@ -271,7 +272,7 @@
         "sources/web/organiser/muhamed-at-about.md",
         "sources/web/funding/euruko-2024-why-the-goat.md"
       ],
-      "tokens": 12075
+      "tokens": 12090
     },
     {
       "path": "org/adrs/extension-slots-and-the-record.md",
