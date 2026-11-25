@@ -9,7 +9,7 @@ This script smooths it into curves and builds, into site/brand/:
   seal.svg                 the full seal: THE ONE THAT FEEDS THE COMMUNITY,
                            GOATCONF · 2027, and a band of hoof prints
   lockup-horizontal.svg    the coin with the wordmark beside it
-  lockup-stacked.svg       the seal with the wordmark and the line below it
+  lockup-stacked.svg       the seal with the wordmark and, under it, the line at the same width
 
 Seal and lockups carry their lettering as outlines of the site's display
 face, so they need no font and render the same anywhere. The outlines, with
@@ -59,7 +59,7 @@ RUNS = {
     "top": (TOP_LINE, 800, 75, 24.5),
     "bottom": (BOTTOM_LINE, 800, 75, 18),
     "word": ("GOATCONF", 800, 75, 96),
-    "line": ("The one that feeds the community.", 700, 85, 30),
+    "line": (TOP_LINE, 800, 75, 32),
 }
 
 
@@ -78,11 +78,26 @@ HANGING = 0.746
 HOOF = "M3.4 1C1.2 4 1 9 3 12.6c2.2-.6 2.8-6.4.4-11.6zM8.6 1c2.2 3 2.4 8 .4 11.6-2.2-.6-2.8-6.4-.4-11.6z"
 
 
+def goat_points(pts: list[list[float]]) -> list[tuple[float, float]]:
+    """A traced loop without its one-pixel stair steps: two points closer than 1.5 units become their midpoint."""
+    out: list[tuple[float, float]] = []
+    for x, y in pts:
+        if out and math.hypot(x - out[-1][0], y - out[-1][1]) < 1.5:
+            out[-1] = ((out[-1][0] + x) / 2, (out[-1][1] + y) / 2)
+        else:
+            out.append((x, y))
+    if len(out) > 2 and math.hypot(out[0][0] - out[-1][0], out[0][1] - out[-1][1]) < 1.5:
+        out[0] = ((out[0][0] + out[-1][0]) / 2, (out[0][1] + out[-1][1]) / 2)
+        out.pop()
+    return out
+
+
 def goat_path() -> str:
     """The traced outline as smooth cubic curves; turns sharper than 40 degrees stay corners."""
     data = json.loads((OUT / "goat-outline.json").read_text(encoding="utf-8"))
     parts = []
-    for pts in data["loops"]:
+    for loop in data["loops"]:
+        pts = goat_points(loop)
         n = len(pts)
 
         def corner(i):
@@ -91,17 +106,22 @@ def goat_path() -> str:
             turn = abs((a2 - a1 + math.pi) % (2 * math.pi) - math.pi)
             return turn > math.radians(40)
 
+        def handle(at, before, after, reach, sign):
+            """A curve handle at a point, along the line through its neighbours, and never longer than a third
+            of the segment it shapes: a short segment beside a long one would otherwise overshoot into a spur."""
+            dx, dy = (after[0] - before[0]) / 6, (after[1] - before[1]) / 6
+            length = math.hypot(dx, dy)
+            k = sign * min(1, reach / 3 / length) if length else 0
+            return at[0] + dx * k, at[1] + dy * k
+
         sharp = [corner(i) for i in range(n)]
         out = [f"M{pts[0][0]:.1f} {pts[0][1]:.1f}"]
         for i in range(n):
             p0, p1, p2, p3 = pts[i - 1], pts[i], pts[(i + 1) % n], pts[(i + 2) % n]
-            if sharp[i] or sharp[(i + 1) % n]:
-                # keep at least one end crisp: tangent collapses to the point itself
-                t1 = p1 if sharp[i] else ((p1[0] + (p2[0] - p0[0]) / 6), (p1[1] + (p2[1] - p0[1]) / 6))
-                t2 = p2 if sharp[(i + 1) % n] else ((p2[0] - (p3[0] - p1[0]) / 6), (p2[1] - (p3[1] - p1[1]) / 6))
-            else:
-                t1 = (p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6)
-                t2 = (p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6)
+            reach = math.hypot(p2[0] - p1[0], p2[1] - p1[1])
+            # a sharp end stays crisp: its handle collapses to the point itself
+            t1 = p1 if sharp[i] else handle(p1, p0, p2, reach, 1)
+            t2 = p2 if sharp[(i + 1) % n] else handle(p2, p1, p3, reach, -1)
             out.append(f"C{t1[0]:.1f} {t1[1]:.1f} {t2[0]:.1f} {t2[1]:.1f} {p2[0]:.1f} {p2[1]:.1f}")
         parts.append(" ".join(out) + "Z")
     return " ".join(parts)
@@ -182,7 +202,8 @@ def hoof_band(fg: str, r0=78, n=20, size=10.5) -> str:
 
 
 def goat_in(fg: str, x: float, y: float, w: float, clip_r: float, cid: str) -> str:
-    """The goat placed as a bust inside a circle of radius clip_r around (150, 150)."""
+    """The goat placed as a bust inside a circle of radius clip_r around (150, 150). The circle is the middle
+    of the ring that frames the goat, so the cut edge lies under the ring and no hairline shows between them."""
     s = w / 394
     return (f'<clipPath id="{cid}"><circle cx="150" cy="150" r="{clip_r}"/></clipPath>'
             f'<g clip-path="url(#{cid})"><path fill="{fg}" fill-rule="evenodd" '
@@ -202,14 +223,14 @@ def seal_body(fg: str, bg: str, cid: str = "seal-coin") -> str:
         + on_arc("bottom", 18, 1.3, ARC_BOT[0], 0, hanging=True, length_deg=ARC_BOT[1])
         + '<path d="M33 190 l5 -5 l5 5 l-5 5 Z"/><path d="M257 190 l5 -5 l5 5 l-5 5 Z"/></g>'
         + hoof_band(fg)
-        + goat_in(fg, 86, 86, 130, 66, cid)
+        + goat_in(fg, 86, 86, 130, 68, cid)
     )
 
 
 def coin_body(fg: str, bg: str, cid: str = "coin") -> str:
     return (f'<circle cx="150" cy="150" r="146" fill="{bg}"/>'
             f'<circle cx="150" cy="150" r="128" fill="none" stroke="{fg}" stroke-width="12"/>'
-            + goat_in(fg, 52, 40, 212, 122, cid))
+            + goat_in(fg, 52, 40, 212, 128, cid))
 
 
 def svg(view: str, body: str, title: str) -> str:
@@ -224,6 +245,58 @@ def word(fill: str, x: float, y: float, size: float, first: int = 0, last: int |
     return f'<g fill="{fill}">{straight("word", x, y, size, 0.5, first, last)}</g>'
 
 
+def ink(d: str) -> tuple[float, float, float]:
+    """Where a letter's outline starts, ends and tops out, in font units: (left, right, top).
+    The outlines use absolute M, L, H, V, Q and Z only (see `lettering`)."""
+    xs, ys, x, y = [], [], 0.0, 0.0
+    for cmd, args in re.findall(r"([MLHVQ])([^MLHVQZ]*)", d):
+        n = [float(v) for v in re.findall(r"-?\d+(?:\.\d+)?", args)]
+        if cmd == "H":
+            x = n[-1]
+        elif cmd == "V":
+            y = n[-1]
+        elif cmd == "Q":
+            for cx, cy, ex, ey in zip(n[0::4], n[1::4], n[2::4], n[3::4]):
+                for t in (i / 8 for i in range(1, 8)):  # points on the curve, not its control point
+                    xs.append((1 - t) ** 2 * x + 2 * t * (1 - t) * cx + t * t * ex)
+                    ys.append((1 - t) ** 2 * y + 2 * t * (1 - t) * cy + t * t * ey)
+                x, y = ex, ey
+        else:  # M and L take one point or several
+            xs.extend(n[0:-2:2])
+            ys.extend(n[1:-2:2])
+            x, y = n[-2], n[-1]
+        xs.append(x)
+        ys.append(y)
+    return min(xs), max(xs), max(ys)
+
+
+def fitted(run: str, left: float, right: float, size: float | None = None, spacing: float = 0) -> tuple[float, float, float]:
+    """Set a run so its ink starts at left and ends at right: by its size when none is given (at the given
+    letter-spacing), else by its letter-spacing at that size. Returns (x, size, spacing) for `straight`."""
+    gs = glyphs(run)
+    natural = sum(g["adv"] + g["kern"] for g in gs)
+    lsb, rsb = ink(gs[0]["d"])[0], gs[-1]["adv"] - ink(gs[-1]["d"])[1]
+    gaps = len(gs) - 1
+    if size is None:
+        size = (right - left - gaps * spacing) / (natural - lsb - rsb) * 1000
+    else:
+        spacing = (right - left - (natural - lsb - rsb) * size / 1000) / gaps
+    return left - lsb * size / 1000, size, spacing
+
+
+def seal_lockup() -> str:
+    """The seal with GOATCONF beside it on one line and THE ONE THAT FEEDS THE COMMUNITY under it,
+    letter-spaced out to the wordmark's width, so the two read as one block centred on the seal."""
+    left, right, centre, gap, line_size = 372, 876, 180, 31, 32
+    wx, size, _ = fitted("word", left, right, spacing=0.5)
+    lx, _, spacing = fitted("line", left, right, size=line_size)
+    cap = ink(glyphs("line")[0]["d"])[2] / 1000  # the height of a flat-topped capital, as a share of the em
+    base = centre - (size * cap + gap + line_size * cap) / 2 + size * cap
+    return (f'<g transform="translate(20 20) scale(1.066)">{seal_body(BLUE, YELLOW)}</g>'
+            + word(BLUE, wx, base, size)
+            + f'<g fill="{BLUE}">{straight("line", lx, base + gap + line_size * cap, line_size, spacing)}</g>')
+
+
 def files() -> dict[str, str]:
     goat = goat_path()
     return {
@@ -236,11 +309,7 @@ def files() -> dict[str, str]:
         "lockup-horizontal.svg": svg("0 0 1000 300",
             f'<g>{coin_body(YELLOW, BLUE)}</g>' + word(BLUE, 330, 212, 170),
             "GoatConf"),
-        "lockup-stacked.svg": svg("0 0 900 360",
-            f'<g transform="translate(20 20) scale(1.066)">{seal_body(BLUE, YELLOW)}</g>'
-            + word(BLUE, 370, 150, 118, 0, 4) + word(BLUE, 370, 250, 118, 4)
-            + f'<g fill="{BLUE}">{straight("line", 372, 310, 30, 0)}</g>',
-            "GoatConf: the one that feeds the community"),
+        "lockup-stacked.svg": svg("0 0 900 360", seal_lockup(), "GoatConf: the one that feeds the community"),
     }
 
 
