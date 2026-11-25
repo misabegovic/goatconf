@@ -2,11 +2,12 @@
 title: "Build the pages in plain HTML and CSS, with the goat everywhere and playful"
 kind: decision
 status: accepted
-updated: 2026-11-23
+updated: 2026-11-25
 confidence: medium
 depends_on:
   - org/prds/design-with-impeccable.md
 sources:
+  - sources/conversations/2026-11-25--org--stacked-lockup-looks-off.md
   - sources/conversations/2026-11-23--org--link-preview-and-goatchi-follow.md
   - sources/conversations/2026-11-23--org--banners-and-covers-follow.md
   - sources/conversations/2026-11-23--org--other-cards-follow-the-speaker-cards.md
@@ -170,3 +171,4 @@ first thing to check before the first copy.
 - **2026-11-23, the other cards follow the speaker cards.** On the organiser's ask, and approved from pictures with "Looks good", the posts, the supporters' thank-you and proud cards and the events' cards are redrawn in the speaker cards' look and rendered again at unchanged paths: 170 cards, light on paper and dark on the album's blue. The proud supporter card now names the supporter where it said "GoatConf 2027". The banners, the LinkedIn and Luma covers, the site's link preview, the Goatchi card and the animated goats posts keep the look they had. `DESIGN.md` records the look under "Share cards, light and dark" (source: sources/conversations/2026-11-23--org--other-cards-follow-the-speaker-cards.md).
 - **2026-11-23, the banners and the covers follow.** On the organiser's "Update the banners and covers to the new design too", and shipped on "Ship it" after pictures: the LinkedIn profile banner, the 3:1 header, the LinkedIn page cover and the Luma cover carry the wordmark, "Any programming language, any stack.", the yellow band with the date, the town and "Free", and the plain goat, on paper and on the album's blue, at unchanged paths. The site's link preview and the Goatchi card keep the look they had. The organiser's pages on LinkedIn, X and Luma change only when the organiser uploads the new images (source: sources/conversations/2026-11-23--org--banners-and-covers-follow.md).
 - **2026-11-23, the site's link preview and the Goatchi card follow.** On the organiser's "Update og.png and the Goatchi card too", shipped on "Ship it" after pictures: `og.png` is drawn as the banners are, and the Goatchi card keeps its two goats and "Baaa!" on the yellow band under the wordmark. Every still card now has the one look, on paper and on the album's blue; only Goatchi's promo video and the animated goats posts, which are videos, keep the old one (source: sources/conversations/2026-11-23--org--link-preview-and-goatchi-follow.md).
+- **2026-11-25, the lockup with the seal: one word, one line, one block.** The organiser sent the brand page's "Stacked, with the line" card with "This looks off", named what was off as "Stacked words, then a sentence below", and left the fix to the agent: "Fix all of it, your call". On the working branch, pending the organiser's approval from pictures, the lockup sets GOATCONF on one line beside the seal with THE ONE THAT FEEDS THE COMMUNITY under it in the same capitals, letter-spaced to the wordmark's width and centred with it on the seal; the sentence in mixed case is gone, as the rule that every caption is lettered asks. The seal and the small form lose a hairline between the goat and its ring, and the goat loses a spur on its horn's tip and nicks on its collar; nothing else in the drawing moves. The brand kit's files are built and rendered again under their old names; the share cards, stickers and guides take the mended goat when each is next rendered. `DESIGN.md` records it under "The mark" (source: sources/conversations/2026-11-25--org--stacked-lockup-looks-off.md).
