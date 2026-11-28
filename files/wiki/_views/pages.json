@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25",
+  "generated": "2026-11-28",
   "home_sections": [
     {
       "anchor": "what-changed",
@@ -1084,12 +1084,14 @@
       "title": "The drumbeat, October to December 2026",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-11-24",
+      "updated": "2026-11-28",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md",
+        "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-11-24--org--speaker-posts-approved.md",
         "sources/conversations/2026-11-24--org--improve-the-speaker-posts.md",
         "sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md",
@@ -1217,7 +1219,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 11723
+      "tokens": 12104
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
@@ -1350,12 +1352,13 @@
       "title": "The drumbeat: the weekly posts, from launch to June 2027",
       "kind": "reference",
       "status": "draft",
-      "updated": "2026-11-24",
+      "updated": "2026-11-28",
       "confidence": "medium",
       "affects": [
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md",
         "sources/conversations/2026-11-24--org--carmine-spotlight-published.md",
         "sources/conversations/2026-11-23--org--correct-the-calendar-row.md",
         "sources/conversations/2026-11-21--org--why-a-goat-where-posted.md",
@@ -1390,7 +1393,7 @@
         "sources/conversations/2026-10-12--org--registration-on-luma.md",
         "sources/web/images/food-photos-chosen-2026-10-13.md"
       ],
-      "tokens": 2937
+      "tokens": 3006
     },
     {
       "path": "org/outreach/ipi-proposal.md",
