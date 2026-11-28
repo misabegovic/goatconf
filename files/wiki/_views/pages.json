@@ -1090,6 +1090,7 @@
         "org"
       ],
       "sources": [
+        "sources/conversations/2026-11-28--org--58-places-on-linkedin-too.md",
         "sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md",
         "sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md",
         "sources/conversations/2026-11-24--org--speaker-posts-approved.md",
@@ -1219,7 +1220,7 @@
         "sources/web/speakers/wearedevelopers-predrag-radenkovic-2026-10-23.md",
         "sources/web/supporters/codeplain-logo-and-site-2026-10-23.md"
       ],
-      "tokens": 12104
+      "tokens": 12102
     },
     {
       "path": "org/outreach/drumbeat-2027-apr-jun.md",
