@@ -982,3 +982,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-28 merge — PR #325: drumbeat: "58 places to run yours" is rewritten, approved and published
    diff: 11 files, +113/-24
    restricted-paths: false
+2026-11-28 merge — PR #326: drumbeat: "58 places to run yours" went on LinkedIn too
+   diff: 4 files, +21/-3
+   restricted-paths: false
