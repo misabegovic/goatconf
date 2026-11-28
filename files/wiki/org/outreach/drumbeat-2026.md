@@ -2,11 +2,13 @@
 title: "The drumbeat, October to December 2026"
 kind: reference
 status: draft
-updated: 2026-11-24
+updated: 2026-11-28
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md
+  - sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md
   - sources/conversations/2026-11-24--org--speaker-posts-approved.md
   - sources/conversations/2026-11-24--org--improve-the-speaker-posts.md
   - sources/web/speakers/five-speakers-for-their-spotlights-2026-11-24.md
@@ -391,24 +393,32 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Sat 28 Nov 2026, week 7: 58 places to run yours
 
-- **State:** drafted
+- **State:** published, Saturday 28 November 2026, on X at least (read from the organiser counting the short text there); whether it also went on LinkedIn, which card went with it, and whether the LinkedIn text went out as given is not recorded. Rewritten that day as an excited invitation and approved by the organiser, with "you pay" gone, since a host does not have to pay for everything (sources: sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md, sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md)
 - **Image:** [`post-where-to-run-it-square.png`](https://goatconf.com/share/post-where-to-run-it-square.png) (LinkedIn, Mastodon), [`post-where-to-run-it-wide.png`](https://goatconf.com/share/post-where-to-run-it-wide.png) (X, Bluesky)
-- **Before posting:** News first: until the speaker run ends on Tuesday 29 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md).
+- **Before posting:** News first: until the speaker run ends on Tuesday 29 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). None came that week, so the post kept its Saturday.
 - **LinkedIn:**
 
-  > Want to run something around GoatConf 2027, but not sure where?
+  > Want to host something at GoatConf 2027? Here are 58 places to do it!
   >
-  > Make it yours now lists 58 places in Tuzla a host could ask, from cafés on Freedom Square to halls for a few hundred people. Search them by what you want to run, how many people are coming, how far it is from IPI Academy, and indoors or out.
+  > A meetup for your community, a dinner, a karaoke night, a hike, a hackathon: anything you add becomes part of GoatConf once we accept it. And you don't have to know Tuzla to pick a spot. Make it yours lists 58 places a host could ask, from cafés on Freedom Square to halls for a few hundred people.
   >
-  > GoatConf has arranged nothing with them: you ask, you book and you pay. Then propose your event, and once it's accepted, it's part of GoatConf.
+  > Search them by what you want to run, how many people are coming, how far it is from IPI Academy, and indoors or out. Small is fine: ten people round a café table is an event.
   >
+  > You ask the place and you book it, since GoatConf has arranged nothing with them. And you don't have to pay for everything: it's fine if the people who come pay for themselves, as long as the listing says what it costs.
+  >
+  > GoatConf 2027: 3 to 5 June, IPI Academy, Tuzla. Free to attend.
+  > Find a place and propose your event: goatconf.com/extend
+
+- **Short** (274 characters), written for X, where it counts 278, since X counts every link as 23 characters and this one is 19. The first version, 279 characters as written, came up three over on X, and "2027" left the first line (source: sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md):
+
+  > Want to host a meetup, a dinner or a karaoke night at GoatConf?
+  >
+  > Here are 58 places in Tuzla to ask, from cafés on Freedom Square to halls for a few hundred people.
+  >
+  > Pick one and propose your event: once accepted, it's part of GoatConf, 3 to 5 June 2027.
   > goatconf.com/extend
 
-- **Short** (225 characters):
-
-  > Want to run something around GoatConf 2027? Make it yours lists 58 places in Tuzla to ask, from cafés on Freedom Square to halls for a few hundred people. You book it; once accepted, it's part of GoatConf. goatconf.com/extend
-
-  Sources: sources/conversations/2026-10-23--org--keep-looking.md, sources/conversations/2026-10-23--org--venues-approved.md, sources/conversations/2026-10-10--org--charter-and-extensions-approved.md.
+  Sources: sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md, sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md, sources/conversations/2026-10-23--org--keep-looking.md, sources/conversations/2026-10-23--org--venues-approved.md, sources/conversations/2026-10-10--org--charter-and-extensions-approved.md.
 
 ### Tue 1 Dec 2026, Tuesday: Speaker: Dejan Menges
 

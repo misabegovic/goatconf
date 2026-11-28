@@ -979,3 +979,6 @@ Append-only. Newest entries at the bottom. One line per operation:
 2026-11-25 merge — PR #323: brand: the lockup with the seal is one word over one line, and the goat is mended
    diff: 35 files, +361/-142
    restricted-paths: true
+2026-11-28 merge — PR #325: drumbeat: "58 places to run yours" is rewritten, approved and published
+   diff: 11 files, +113/-24
+   restricted-paths: false

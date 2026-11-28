@@ -2,11 +2,12 @@
 title: "The drumbeat: the weekly posts, from launch to June 2027"
 kind: reference
 status: draft
-updated: 2026-11-24
+updated: 2026-11-28
 confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md
   - sources/conversations/2026-11-24--org--carmine-spotlight-published.md
   - sources/conversations/2026-11-23--org--correct-the-calendar-row.md
   - sources/conversations/2026-11-21--org--why-a-goat-where-posted.md
@@ -51,7 +52,7 @@ The calendar of posts that [the social drumbeat decision](../adrs/social-drumbea
 - **Tuesdays:** a second slot from Tuesday 27 October 2026. News takes it first: a confirmed speaker, a new supporter, an accepted event. With no news that week, a short Tuzla post goes: the city's salt, its history and the places to run something. Tuzla posts are drafted about a month ahead, so they stay current, and a Tuesday with nothing worth saying can be skipped (source: sources/conversations/2026-10-24--org--tuesday-and-saturday-posts.md).
 - **The speakers, one by one:** from Tuesday 3 November to Tuesday 29 December 2026 each Tuesday carries one speaker's spotlight, in the organiser's standing order from the speaker records: Paul Campbell, Roy Tomeij, Carmine Paolino, Dejan Menges, Amar Mahmutbegović, Cristian Planas, Christoph Lipautz, Predrag Radenkovic. There is no round-up post. The Tuzla posts those Tuesdays held go on the Saturdays the speakers left (Meet at Meša and Ismet on 7 November, 58 places to run yours on 28 November, Salt Square on 12 December, 7,000 years of salt on 19 December), and "Registration is open, and free" goes after the last speaker, on Saturday 9 January 2027. The Saturdays still open (30 January, 20 February, 13 March and 27 March 2027) are kept for news, with a Tuzla post drafted about a month ahead if none comes. Roy Tomeij's spotlight did not go out on Tuesday 10 November, when the organiser's podcast went out, so it moved to 17 November and every speaker after him a week, to Predrag Radenkovic on Tuesday 29 December, in the holiday week (source: sources/conversations/2026-11-14--org--roy-moves-to-17-november.md). From Tuesday 5 January 2027 Tuesdays are news and Tuzla again (sources: sources/conversations/2026-11-02--org--speakers-one-by-one.md, sources/conversations/2026-11-02--org--do-what-feels-best.md, sources/conversations/2026-11-02--org--speakers-from-tomorrow.md).
 - **Where:** GoatConf's own LinkedIn page (linkedin.com/company/goatconf) and X account (@goatconf), with Bluesky and Mastodon later, and Luma updates to registered guests for the practical news (sources: sources/conversations/2026-10-15--org--announcing-on-linkedin-and-x.md, sources/conversations/2026-10-12--org--brand-seal-and-euruko-goat.md, sources/conversations/2026-10-12--org--registration-on-luma.md).
-- **What each post has:** a LinkedIn text, a short text of at most 280 characters for X, Bluesky and Mastodon, and an image in `site/share/` made by `tools/shareables.py`: square for LinkedIn and Mastodon, wide for X and Bluesky. Each image is online at `https://goatconf.com/share/<image>-square.png` and `-wide.png`, and each post on the drumbeat pages links both; no page on the site lists them. Links point at goatconf.com, so each post also shows the link preview.
+- **What each post has:** a LinkedIn text, a short text of at most 280 characters for X, Bluesky and Mastodon, counted as X counts them, every link as 23 characters whatever its length, so a text that ends on a short link such as goatconf.com/extend is a few characters longer on X than as written (source: sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md), and an image in `site/share/` made by `tools/shareables.py`: square for LinkedIn and Mastodon, wide for X and Bluesky. Each image is online at `https://goatconf.com/share/<image>-square.png` and `-wide.png`, and each post on the drumbeat pages links both; no page on the site lists them. Links point at goatconf.com, so each post also shows the link preview.
 - **Photos:** the post images use only photos given for GoatConf, with the credit their giver asked for ("Photo: Grad Tuzla"). The food photos on the site are not freely licensed, so no post image uses them (source: sources/web/images/food-photos-chosen-2026-10-13.md).
 - **Before posting:** some posts carry a note (a price to recheck, a decision still to come). Check it, mark the state published here, and keep the link to the post if you like.
 - **Speakers and supporters:** each speaker has a spotlight with GoatConf's "Confirmed speaker" card (source: sources/conversations/2026-10-26--org--confirmed-speaker-cards.md), which links to their page, while their own "I'm speaking" card is theirs to share, and each supporter a thank-you with their card, so they can share them. Supporters get one post about them, as the supporters page promises (source: sources/conversations/2026-10-13--org--online-supporters-through-the-business.md).
@@ -72,7 +73,7 @@ The texts are on three pages: [October to December 2026](drumbeat-2026.md), [Jan
 | Tue 17 Nov 2026 | Tuesday, speaker | [Speaker: Roy Tomeij](drumbeat-2026.md) | `speaker-roy-tomeij` | published |
 | Sat 21 Nov 2026 | week 6 | [Why a goat](drumbeat-2026.md) | `post-why-a-goat` | published |
 | Tue 24 Nov 2026 | Tuesday, speaker | [Speaker: Carmine Paolino](drumbeat-2026.md) | `speaker-carmine-paolino` | published |
-| Sat 28 Nov 2026 | week 7 | [58 places to run yours](drumbeat-2026.md) | `post-where-to-run-it` | drafted |
+| Sat 28 Nov 2026 | week 7 | [58 places to run yours](drumbeat-2026.md) | `post-where-to-run-it` | published |
 | Tue 1 Dec 2026 | Tuesday, speaker | [Speaker: Dejan Menges](drumbeat-2026.md) | `speaker-dejan-menges` | drafted |
 | Sat 5 Dec 2026 | week 8 | [Thank you, IPI Academy](drumbeat-2026.md) | `supporter-ipi-academy` | drafted |
 | Tue 8 Dec 2026 | Tuesday, speaker | [Speaker: Amar Mahmutbegović](drumbeat-2026.md) | `speaker-amar-mahmutbegovic` | drafted |
