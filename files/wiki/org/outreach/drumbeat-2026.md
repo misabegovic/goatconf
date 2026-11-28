@@ -7,6 +7,7 @@ confidence: medium
 affects:
   - org
 sources:
+  - sources/conversations/2026-11-28--org--58-places-on-linkedin-too.md
   - sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md
   - sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md
   - sources/conversations/2026-11-24--org--speaker-posts-approved.md
@@ -393,7 +394,7 @@ The posts in the order they go out. The calendar, the rules and what to do when 
 
 ### Sat 28 Nov 2026, week 7: 58 places to run yours
 
-- **State:** published, Saturday 28 November 2026, on X at least (read from the organiser counting the short text there); whether it also went on LinkedIn, which card went with it, and whether the LinkedIn text went out as given is not recorded. Rewritten that day as an excited invitation and approved by the organiser, with "you pay" gone, since a host does not have to pay for everything (sources: sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md, sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md)
+- **State:** published, Saturday 28 November 2026, on LinkedIn and X (source: sources/conversations/2026-11-28--org--58-places-on-linkedin-too.md); which card went with it, and whether the LinkedIn text went out as given, is not recorded. Rewritten that day as an excited invitation and approved by the organiser, with "you pay" gone, since a host does not have to pay for everything (sources: sources/conversations/2026-11-28--org--58-places-rewritten-and-published.md, sources/conversations/2026-11-22--org--hosts-need-not-pay-for-everything.md)
 - **Image:** [`post-where-to-run-it-square.png`](https://goatconf.com/share/post-where-to-run-it-square.png) (LinkedIn, Mastodon), [`post-where-to-run-it-wide.png`](https://goatconf.com/share/post-where-to-run-it-wide.png) (X, Bluesky)
 - **Before posting:** News first: until the speaker run ends on Tuesday 29 December, a supporter or an event confirmed this week takes this Saturday, and this post moves to the next open Saturday (source: sources/conversations/2026-11-02--org--speakers-one-by-one.md). None came that week, so the post kept its Saturday.
 - **LinkedIn:**
